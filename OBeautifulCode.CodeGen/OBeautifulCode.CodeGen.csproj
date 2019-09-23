@@ -48,7 +48,7 @@
   <ItemGroup>
     <AdditionalFiles Include=".analyzers\stylecop.json" />
     <None Include=".analyzers\release.ruleset" />
-    <None Include="CodeGen.override-nuspec" />
+    <None Include="OBeautifulCode.CodeGen.override-nuspec" />
     <None Include="nuget-icon.png" />
     <None Include="packages.config" />
   </ItemGroup>
