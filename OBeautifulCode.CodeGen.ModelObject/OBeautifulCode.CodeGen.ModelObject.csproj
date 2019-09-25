@@ -7,8 +7,8 @@
     <ProjectGuid>{3FEDE36E-3FFF-4112-8223-C19301BA33AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OBeautifulCode.CodeGen</RootNamespace>
-    <AssemblyName>OBeautifulCode.CodeGen</AssemblyName>
+    <RootNamespace>OBeautifulCode.CodeGen.ModelObject</RootNamespace>
+    <AssemblyName>OBeautifulCode.CodeGen.ModelObject</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -25,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>bin\Debug\OBeautifulCode.CodeGen.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\OBeautifulCode.CodeGen.ModelObject.xml</DocumentationFile>
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>bin\Release\OBeautifulCode.CodeGen.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\OBeautifulCode.CodeGen.ModelObject.xml</DocumentationFile>
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
@@ -85,7 +85,7 @@
   <ItemGroup>
     <AdditionalFiles Include=".analyzers\stylecop.json" />
     <None Include=".analyzers\release.ruleset" />
-    <None Include="OBeautifulCode.CodeGen.override-nuspec" />
+    <None Include="OBeautifulCode.CodeGen.ModelObject.override-nuspec" />
     <None Include="nuget-icon.png" />
     <None Include="packages.config" />
   </ItemGroup>

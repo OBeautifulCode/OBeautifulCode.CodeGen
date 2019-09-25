@@ -2,6 +2,6 @@
   <metadata>
     <description>Code generation library to automate the creation of boilerplate code.</description>
     <tags>codegen</tags>
-    <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen/nuget-icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen.ModelObject/nuget-icon.png</iconUrl>
   </metadata>
 </package>

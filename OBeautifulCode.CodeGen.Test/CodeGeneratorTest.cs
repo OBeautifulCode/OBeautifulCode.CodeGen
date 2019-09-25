@@ -6,9 +6,7 @@
 
 namespace OBeautifulCode.CodeGen.Test
 {
-    using System.Diagnostics;
-
-    using OBeautifulCode.CodeGen;
+    using OBeautifulCode.CodeGen.ModelObject;
 
     using Xunit;
     using Xunit.Abstractions;

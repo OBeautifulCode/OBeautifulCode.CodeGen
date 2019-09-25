@@ -137,9 +137,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OBeautifulCode.CodeGen\OBeautifulCode.CodeGen.csproj">
+    <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject\OBeautifulCode.CodeGen.ModelObject.csproj">
       <Project>{3fede36e-3fff-4112-8223-c19301ba33ae}</Project>
-      <Name>OBeautifulCode.CodeGen</Name>
+      <Name>OBeautifulCode.CodeGen.ModelObject</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace OBeautifulCode.CodeGen
+namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
 

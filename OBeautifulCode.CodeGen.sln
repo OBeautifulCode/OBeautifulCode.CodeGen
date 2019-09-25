@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBeautifulCode.CodeGen", "OBeautifulCode.CodeGen\OBeautifulCode.CodeGen.csproj", "{3FEDE36E-3FFF-4112-8223-C19301BA33AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBeautifulCode.CodeGen.ModelObject", "OBeautifulCode.CodeGen.ModelObject\OBeautifulCode.CodeGen.ModelObject.csproj", "{3FEDE36E-3FFF-4112-8223-C19301BA33AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBeautifulCode.CodeGen.Test", "OBeautifulCode.CodeGen.Test\OBeautifulCode.CodeGen.Test.csproj", "{930983BD-5103-4991-836E-DDD80472A153}"
 EndProject
