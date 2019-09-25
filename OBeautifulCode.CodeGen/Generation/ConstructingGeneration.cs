@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
 
     using OBeautifulCode.Collection.Recipes;
@@ -46,7 +47,7 @@ namespace OBeautifulCode.CodeGen
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
-                var actualInterfaces = type.GetAllInterfaces();
+                var actualInterfaces = type.GetInterfaces();
                 var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
                 var actualModeMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
@@ -124,7 +125,7 @@ namespace OBeautifulCode.CodeGen
                          {
                              var parameters = _.GetParameters();
                              var nonMatchingParameters = parameters.Select(p => p.Name)
-                                                                   .SymmetricDifference(propertyNameToSourceCodeMap.Keys.Select(k => k.ToLowerFirstCharacter()))
+                                                                   .SymmetricDifference(propertyNameToSourceCodeMap.Keys.Select(k => k.ToLowerFirstCharacter(CultureInfo.InvariantCulture)))
                                                                    .ToList();
 
                              return nonMatchingParameters.Count == 0;
@@ -175,7 +176,7 @@ namespace OBeautifulCode.CodeGen
                         k => k.Name,
                         v =>
                         {
-                            var referenceObject = "referenceObject." + v.Name.ToUpperFirstCharacter();
+                            var referenceObject = "referenceObject." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
                             return v.Name == parameter.Name ? "null" : referenceObject;
                         });
 
@@ -193,7 +194,7 @@ namespace OBeautifulCode.CodeGen
                             k => k.Name,
                             v =>
                             {
-                                var referenceObject = "referenceObject." + v.Name.ToUpperFirstCharacter();
+                                var referenceObject = "referenceObject." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
                                 return v.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject;
                             });
 
@@ -212,7 +213,7 @@ namespace OBeautifulCode.CodeGen
                 {
                     var propertyNameToSourceCodeMap = parameters.ToDictionary(
                         k => k.Name,
-                        v => "referenceObject." + v.Name.ToUpperFirstCharacter());
+                        v => "referenceObject." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture));
 
                     var newObjectCode = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
 
@@ -222,7 +223,7 @@ namespace OBeautifulCode.CodeGen
 
                     var testMethod = PropertyGetterTestMethodTemplate
                                     .Replace(TypeNameToken,               type.ToStringCompilable())
-                                    .Replace(PropertyNameToken,           parameter.Name.ToUpperFirstCharacter())
+                                    .Replace(PropertyNameToken,           parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(ConstructorParameterToken,  parameter.Name)
                                     .Replace(AssertPropertyGetterToken,  assertPropertyGetterToken)
                                     .Replace(NewObjectForGetterTestToken, newObjectCode);

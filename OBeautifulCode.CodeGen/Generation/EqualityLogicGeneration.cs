@@ -30,9 +30,9 @@ namespace OBeautifulCode.CodeGen
         private const string EqualityMethodsCodeTemplate = @"    /// <summary>
         /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
         /// </summary>
-        /// <param name=""left"">The object to the left of the operator.</param>
-        /// <param name=""right"">The object to the right of the operator.</param>
-        /// <returns>True if the two items are equal; otherwise false.</returns>
+        /// <param name=""left"">The object to the left of the equality operator.</param>
+        /// <param name=""right"">The object to the right of the equality operator.</param>
+        /// <returns>true if the two items are equal; otherwise false.</returns>
         public static bool operator ==(" + TypeNameToken + @" left, " + TypeNameToken + @" right)
         {
             if (ReferenceEquals(left, right))
@@ -53,9 +53,9 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are not equal.
         /// </summary>
-        /// <param name=""left"">The object to the left of the operator.</param>
-        /// <param name=""right"">The object to the right of the operator.</param>
-        /// <returns>True if the two items not equal; otherwise false.</returns>
+        /// <param name=""left"">The object to the left of the equality operator.</param>
+        /// <param name=""right"">The object to the right of the equality operator.</param>
+        /// <returns>true if the two items not equal; otherwise false.</returns>
         public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);
 
         /// <inheritdoc />

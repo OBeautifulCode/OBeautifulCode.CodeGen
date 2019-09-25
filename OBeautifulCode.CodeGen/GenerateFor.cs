@@ -40,5 +40,10 @@ namespace OBeautifulCode.CodeGen
         /// The model implementation tests partial class without serialization.
         /// </summary>
         ModelImplementationTestsPartialClassWithoutSerialization = 8,
+
+        /// <summary>
+        /// All possible code.
+        /// </summary>
+        AllPossibleCode = ModelDummyFactorySnippet | ModelImplementationPartialClass | ModelImplementationTestsPartialClassWithSerialization,
     }
 }

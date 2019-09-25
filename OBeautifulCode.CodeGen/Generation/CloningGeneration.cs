@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
 
     using OBeautifulCode.Reflection.Recipes;
@@ -47,7 +48,7 @@ namespace OBeautifulCode.CodeGen
 
         private const string DeepCloneWithMethodCodeTemplate = @"
         /// <summary>
-        /// Deep clones this object with a new <paramref name=""" + ParameterNameToken + @""" />.
+        /// Deep clones this object with a new <see cref=""" + PropertyNameToken + @""" />.
         /// </summary>
         /// <param name=""" + ParameterNameToken + @""">The new <see cref=""" + PropertyNameToken + @""" />.</param>
         /// <returns>New <see cref=""" + TypeNameToken + @""" /> using the specified <paramref name=""" + ParameterNameToken + @""" /> for <see cref=""" + PropertyNameToken + @""" /> and a deep clone of every other property.</returns>
@@ -122,7 +123,7 @@ namespace OBeautifulCode.CodeGen
                         k => k.Name,
                         v =>
                         {
-                            var referenceObject = "this." + v.Name.ToUpperFirstCharacter();
+                            var referenceObject = "this." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
                             var referenceItemCloned = v.ParameterType.GenerateCloningLogicCodeForType(referenceObject);
                             return v.Name == parameter.Name ? parameter.Name : referenceItemCloned;
                         });
@@ -131,7 +132,7 @@ namespace OBeautifulCode.CodeGen
 
                     var testMethod = DeepCloneWithMethodCodeTemplate
                                     .Replace(TypeNameToken,                  type.ToStringCompilable())
-                                    .Replace(PropertyNameToken,                  parameter.Name.ToUpperFirstCharacter())
+                                    .Replace(PropertyNameToken,                  parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(ParameterNameToken,                  parameter.Name)
                                     .Replace(NewObjectForDeepCloneWithToken, newObjectCode)
                                     .Replace(ParameterTypeNameToken, parameter.ParameterType.ToStringCompilable());
@@ -176,14 +177,14 @@ namespace OBeautifulCode.CodeGen
                                                                 {
                                                                     var sourceName = _.Name == parameter.Name ? "referenceObject" : "systemUnderTest";
                                                                     var resultAssert = _.ParameterType.GenerateFluentAssertionsEqualityStatement(
-                                                                        Invariant($"actual.{_.Name.ToUpperFirstCharacter()}"),
-                                                                        Invariant($"{sourceName}.{_.Name.ToUpperFirstCharacter()}"));
+                                                                        Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
+                                                                        Invariant($"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"));
                                                                     if (_.Name != parameter.Name && !_.ParameterType.IsValueType && _.ParameterType != typeof(string))
                                                                     {
                                                                         resultAssert +=
                                                                             Environment.NewLine
                                                                           + Invariant(
-                                                                                $"               actual.{_.Name.ToUpperFirstCharacter()}.Should().NotBeSameAs({sourceName}.{_.Name.ToUpperFirstCharacter()});");
+                                                                                $"               actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.Should().NotBeSameAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
                                                                     }
 
                                                                     return resultAssert;
@@ -193,7 +194,7 @@ namespace OBeautifulCode.CodeGen
 
                     var testMethod = DeepCloneWithTestMethodCodeTemplate
                                     .Replace(TypeNameToken,                  type.ToStringCompilable())
-                                    .Replace(PropertyNameToken,              parameter.Name.ToUpperFirstCharacter())
+                                    .Replace(PropertyNameToken,              parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(ParameterNameToken,             parameter.Name)
                                     .Replace(DeepCloneWithAssertLogicToken, assertDeepCloneWithToken);
                     deepCloneWithTestMethods.Add(testMethod);

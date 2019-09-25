@@ -77,7 +77,12 @@ namespace OBeautifulCode.CodeGen
         {
             type.Named(nameof(type)).Must().NotBeNull();
 
-            var prefix = type.Namespace?.Split('.').Last();
+            var namespaceTokens = type.Namespace?.Split('.');
+
+            var prefix = namespaceTokens.Last() != "Test"
+                ? namespaceTokens.Last()
+                : namespaceTokens.Reverse().Skip(1).First() + "Test";
+
             var result = SerializationFieldsCodeTemplate
                         .Replace(TypeNameToken, type.ToStringCompilable())
                         .Replace(SerializationConfigurationPrefixToken, prefix);
