@@ -319,9 +319,16 @@
     <Rule Id="SA1629" Action="Warning" />
 
     <!--
-      ** Enable xml documentation output **
+      ** File header file name documentation must match type name **
       This drives consistency and ease of navigating the file tree.
     -->
     <Rule Id="SA1649" Action="Warning" />
+    
+    <!--
+      ** Enable XML documentation output **
+      Tests do not need documentation as they are not shared out and should not contain a lot of shared logic.
+    -->
+    <Rule Id="SA1652" Action="None" />
+
   </Rules>
 </RuleSet>

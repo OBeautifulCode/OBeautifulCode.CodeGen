@@ -151,7 +151,7 @@
     <Rule Id="SA1629" Action="Warning" />
 
     <!--
-      ** File name must match type name **
+      ** File header file name documentation must match type name **
       This drives consistency and ease of navigating the file tree.
     -->
     <Rule Id="SA1649" Action="Warning" />
