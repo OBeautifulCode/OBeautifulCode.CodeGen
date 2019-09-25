@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBeautifulCode.CodeGen.ModelObject", "OBeautifulCode.CodeGen.ModelObject\OBeautifulCode.CodeGen.ModelObject.csproj", "{3FEDE36E-3FFF-4112-8223-C19301BA33AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBeautifulCode.CodeGen.Test", "OBeautifulCode.CodeGen.Test\OBeautifulCode.CodeGen.Test.csproj", "{930983BD-5103-4991-836E-DDD80472A153}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBeautifulCode.CodeGen.ModelObject.Test", "OBeautifulCode.CodeGen.ModelObject.Test\OBeautifulCode.CodeGen.ModelObject.Test.csproj", "{930983BD-5103-4991-836E-DDD80472A153}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37370229-9764-4208-8D38-C316CB411C54}"
 	ProjectSection(SolutionItems) = preProject

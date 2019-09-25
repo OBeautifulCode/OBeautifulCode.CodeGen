@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace OBeautifulCode.CodeGen.Test
+namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using OBeautifulCode.CodeGen.ModelObject;
 
