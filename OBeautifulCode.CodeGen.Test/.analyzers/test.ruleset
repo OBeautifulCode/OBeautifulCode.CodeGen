@@ -4,6 +4,16 @@
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     
     <!--
+      ** Generic methods should provide type parameter **
+      Often enough, a generic type parameter exists so that a method can call typeof(T),
+      which also improves the readability of the code.  For example:
+          var code = CodeGenerator.GenerateForModel<MyModel>(options)
+              versus
+          var code = CodeGenerator.GenerateForModel(typeof(MyModel), options)
+    -->
+    <Rule Id="CA1004" Action="None" />
+
+    <!--
       ** Do not nest generic types in member signatures **
       This becomes a problem with async code when we are returning a Task<GENERIC_TYPE_HERE> 
       (e.g. Task<List<string>>).   CA sees this as nested generic types, whereas the Task<T> layer 
