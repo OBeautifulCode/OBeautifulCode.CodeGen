@@ -315,47 +315,55 @@ namespace OBeautifulCode.Validation.Recipes
         private static string ToStringReadable(
             this Type type)
         {
-            // A copy of this method exists in OBC.Validation.
-            // Any bug fixes made here should also be applied to OBC.Validation.
-            // OBC.Validation cannot take a reference to OBC.Representation because it creates a circular reference
-            // since OBC.Representation itself depends on OBC.Validation.
-            new { type }.Must().NotBeNull();
-
+            // A more full solution copy of this method exists in OBC.Representation.System (as ToStringReadableInternal, not ToStringReadable).
+            // Any bug fixes made here should also be applied to OBC.Representation.System.
+            // OBC.Validation cannot take a reference to OBC.Representation.System because it creates a circular reference
+            // since OBC.Representation.System itself depends on OBC.Validation.
             string result;
 
+            if (type == null)
+            {
+            }
             if (type.IsGenericParameter)
             {
                 result = type.Name;
             }
+            else if (Aliases.ContainsKey(type))
+            {
+                result = Aliases[type];
+            }
+            else if (type.IsNullableType())
+            {
+                result = Nullable.GetUnderlyingType(type).ToStringReadable() + "?";
+            }
+            else if (type.IsArray)
+            {
+                result = type.GetElementType().ToStringReadable() + "[]";
+            }
             else
             {
-                if (Aliases.ContainsKey(type))
-                {
-                    result = Aliases[type];
-                }
-                else if (type.IsNullableType())
-                {
-                    result = Nullable.GetUnderlyingType(type).ToStringReadable() + "?";
-                }
-                else if (type.IsArray)
-                {
-                    result = type.GetElementType().ToStringReadable() + "[]";
-                }
-                else
-                {
-                    result = CodeDomProvider.GetTypeOutput(new CodeTypeReference(type.FullName?.Replace(type.Namespace + ".", string.Empty) ?? type.Name));
+                result = CodeDomProvider.GetTypeOutput(new CodeTypeReference(type.FullName?.Replace(type.Namespace + ".", string.Empty) ?? type.Name));
 
-                    if (type.IsAnonymous())
+                if (type.IsGenericType)
+                {
+                    var isAnonymous = type.IsAnonymous();
+
+                    if (isAnonymous)
                     {
                         result = result.Replace("<>f__", string.Empty);
                     }
 
-                    if (type.IsGenericType)
+                    string[] genericParameters;
+                    if (isAnonymous && type.IsGenericTypeDefinition)
                     {
-                        var genericParameters = type.GetGenericArguments().Select(_ => _.ToStringReadable()).ToArray();
-
-                        result = GenericBracketsRegex.Replace(result, "<" + string.Join(", ", genericParameters) + ">");
+                        genericParameters = type.GetGenericArguments().Select((_, i) => "T" + (i + 1)).ToArray();
                     }
+                    else
+                    {
+                        genericParameters = type.GetGenericArguments().Select(_ => _.ToStringReadable()).ToArray();
+                    }
+
+                    result = GenericBracketsRegex.Replace(result, "<" + string.Join(", ", genericParameters) + ">");
                 }
             }
 
@@ -590,7 +598,6 @@ namespace OBeautifulCode.Validation.Recipes
 
             GenericType = 2,
         }
-
 #pragma warning restore SA1201
     }
 }

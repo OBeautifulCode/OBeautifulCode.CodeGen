@@ -54,7 +54,8 @@
     <Compile Include=".recipes\OBeautifulCode.Collection\EnumerableExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Math\HashCodeHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\TypeHelper.cs" />
-    <Compile Include=".recipes\OBeautifulCode.Representation\TypeExtensions.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Representation.System\ToStringReadableOptions.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Representation.System\TypeExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.String\StringExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Validation\ApplyBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Validation\DictionaryExtensions.cs" />

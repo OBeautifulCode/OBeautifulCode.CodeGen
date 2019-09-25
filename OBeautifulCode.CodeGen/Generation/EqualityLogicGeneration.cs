@@ -12,7 +12,7 @@ namespace OBeautifulCode.CodeGen
     using System.Reflection;
 
     using OBeautifulCode.Reflection.Recipes;
-    using OBeautifulCode.Representation.Recipes;
+    using OBeautifulCode.Representation.System.Recipes;
     using OBeautifulCode.Validation.Recipes;
 
     using static System.FormattableString;

@@ -8,7 +8,7 @@ namespace OBeautifulCode.CodeGen
 {
     using System;
 
-    using OBeautifulCode.Representation.Recipes;
+    using OBeautifulCode.Representation.System.Recipes;
 
     using static System.FormattableString;
 

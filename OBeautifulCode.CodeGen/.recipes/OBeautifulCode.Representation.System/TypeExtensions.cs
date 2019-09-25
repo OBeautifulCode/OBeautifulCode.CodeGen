@@ -8,18 +8,19 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 #if !OBeautifulCodeRepresentationRecipesProject
-namespace OBeautifulCode.Representation.Recipes
+namespace OBeautifulCode.Representation.System.Recipes
 #else
-namespace OBeautifulCode.Representation
+namespace OBeautifulCode.Representation.System
 #endif
 {
-    using System;
-    using System.CodeDom;
-    using System.CodeDom.Compiler;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text.RegularExpressions;
+    using global::System;
+    using global::System.CodeDom;
+    using global::System.CodeDom.Compiler;
+    using global::System.Collections.Generic;
+    using global::System.Linq;
+    using global::System.Text.RegularExpressions;
 
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Validation.Recipes;
 
@@ -164,56 +165,111 @@ namespace OBeautifulCode.Representation
         /// Helpful breakdown of generics: <a href="https://docs.microsoft.com/en-us/dotnet/api/system.type.isgenerictype" />.
         /// </remarks>
         /// <param name="type">The type.</param>
+        /// <param name="options">The options to use when generating the string representation.</param>
         /// <returns>
         /// A readability-optimized string representation of the specified type
         /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
         public static string ToStringReadable(
-            this Type type)
+            this Type type,
+            ToStringReadableOptions options = ToStringReadableOptions.None)
         {
-            // A copy of this method exists in OBC.Validation.
-            // Any bug fixes made here should also be applied to OBC.Validation.
-            // OBC.Validation cannot take a reference to OBC.Representation because it creates a circular reference
-            // since OBC.Representation itself depends on OBC.Validation.
             new { type }.Must().NotBeNull();
 
+            var assemblyDetailsTypes = new List<Type>();
+
+            var result = type.ToStringReadableInternal(options, assemblyDetailsTypes);
+
+            var includeAssemblyDetails = options.HasFlag(ToStringReadableOptions.IncludeAssemblyDetails);
+
+            if (includeAssemblyDetails && assemblyDetailsTypes.Any())
+            {
+                result = result + " || " + assemblyDetailsTypes.Select(_ => _.ToAssemblyDetails()).ToDelimitedString(" | ");
+            }
+
+            return result;
+        }
+
+        private static string ToStringReadableInternal(
+            this Type type,
+            ToStringReadableOptions options,
+            IList<Type> assemblyDetailsTypes = null)
+        {
+            // A paired-down copy of this method exists in OBC.Validation (as ToStringReadable, not ToStringReadableInternal).
+            // Any bug fixes made here should also be applied to OBC.Validation.
+            // OBC.Validation cannot take a reference to OBC.Representation.System because it creates a circular reference
+            // since OBC.Representation.System itself depends on OBC.Validation.
             string result;
 
             if (type.IsGenericParameter)
             {
                 result = type.Name;
             }
+            else if (Aliases.ContainsKey(type))
+            {
+                assemblyDetailsTypes?.Add(type);
+
+                result = Aliases[type];
+            }
+            else if (type.IsNullableType())
+            {
+                result = Nullable.GetUnderlyingType(type).ToStringReadableInternal(options, assemblyDetailsTypes) + "?";
+            }
+            else if (type.IsArray)
+            {
+                result = type.GetElementType().ToStringReadableInternal(options, assemblyDetailsTypes) + "[]";
+            }
             else
             {
-                if (Aliases.ContainsKey(type))
-                {
-                    result = Aliases[type];
-                }
-                else if (type.IsNullableType())
-                {
-                    result = Nullable.GetUnderlyingType(type).ToStringReadable() + "?";
-                }
-                else if (type.IsArray)
-                {
-                    result = type.GetElementType().ToStringReadable() + "[]";
-                }
-                else
-                {
-                    result = CodeDomProvider.GetTypeOutput(new CodeTypeReference(type.FullName?.Replace(type.Namespace + ".", string.Empty) ?? type.Name));
+                assemblyDetailsTypes?.Add(type);
 
-                    if (type.IsAnonymous())
+                result = CodeDomProvider.GetTypeOutput(new CodeTypeReference(type.FullName?.Replace(type.Namespace + ".", string.Empty) ?? type.Name));
+
+                var includeNamespace = options.HasFlag(ToStringReadableOptions.IncludeNamespace);
+                if (includeNamespace && (type.Namespace != null))
+                {
+                    result = type.Namespace + "." + result;
+                }
+
+                if (type.IsGenericType)
+                {
+                    var isAnonymous = type.IsAnonymous();
+
+                    if (isAnonymous)
                     {
                         result = result.Replace("<>f__", string.Empty);
                     }
 
-                    if (type.IsGenericType)
+                    string[] genericParameters;
+                    if (isAnonymous && type.IsGenericTypeDefinition)
                     {
-                        var genericParameters = type.GetGenericArguments().Select(_ => _.ToStringReadable()).ToArray();
-
-                        result = GenericBracketsRegex.Replace(result, "<" + string.Join(", ", genericParameters) + ">");
+                        genericParameters = type.GetGenericArguments().Select((_, i) => "T" + (i + 1)).ToArray();
                     }
+                    else
+                    {
+                        genericParameters = type.GetGenericArguments().Select(_ => _.ToStringReadableInternal(options, assemblyDetailsTypes)).ToArray();
+                    }
+
+                    result = GenericBracketsRegex.Replace(result, "<" + string.Join(", ", genericParameters) + ">");
                 }
             }
+
+            return result;
+        }
+
+        private static string ToAssemblyDetails(
+            this Type type)
+        {
+            if (type.IsGenericType)
+            {
+                type = type.GetGenericTypeDefinition();
+            }
+
+            var fullyQualifiedTypeName = type.ToStringReadableInternal(ToStringReadableOptions.IncludeNamespace);
+
+            var assemblyName = type.Assembly.GetName();
+
+            var result = fullyQualifiedTypeName + " => " + assemblyName.Name + " (" + assemblyName.Version + ")";
 
             return result;
         }

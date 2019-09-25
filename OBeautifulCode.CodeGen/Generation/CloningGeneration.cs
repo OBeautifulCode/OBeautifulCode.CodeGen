@@ -11,7 +11,7 @@ namespace OBeautifulCode.CodeGen
     using System.Linq;
 
     using OBeautifulCode.Reflection.Recipes;
-    using OBeautifulCode.Representation.Recipes;
+    using OBeautifulCode.Representation.System.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Validation.Recipes;
 

@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen
     using System;
     using System.Linq;
 
-    using OBeautifulCode.Representation.Recipes;
+    using OBeautifulCode.Representation.System.Recipes;
 
     /// <summary>
     /// Generates code related to string representation of model types.
