@@ -1,10 +1,10 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CodeGenTestBsonConfiguration.cs" company="OBeautifulCode">
+// <copyright file="CodeGenModelObjectTestBsonConfiguration.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace OBeautifulCode.CodeGen.Test
+namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace OBeautifulCode.CodeGen.Test
     using Naos.Serialization.Bson;
 
     /// <inheritdoc />
-    public class CodeGenTestBsonConfiguration : BsonConfigurationBase
+    public class CodeGenModelObjectTestBsonConfiguration : BsonConfigurationBase
     {
         /// <inheritdoc />
         protected override IReadOnlyCollection<Type> TypesToAutoRegister => new[]

@@ -65,6 +65,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type,
             GenerateFor kind)
         {
+            var assemblyName = typeof(CodeGenerator).Assembly.GetName();
+
             // ReSharper disable once UseObjectOrCollectionInitializer
             var items = new List<string>
             {
@@ -75,7 +77,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 Invariant($"namespace {type.Namespace}.Test"),
                 "{",
                 "    using System;",
+                "    using System.CodeDom.Compiler;",
                 "    using System.Collections.Generic;",
+                "    using System.Diagnostics.CodeAnalysis;",
                 "    using System.Linq;",
                 "    using System.Reflection;",
                 string.Empty,
@@ -96,6 +100,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 string.Empty,
                 "    using static System.FormattableString;",
                 string.Empty,
+                "    [ExcludeFromCodeCoverage]",
+                Invariant($"    [GeneratedCode(\"{assemblyName.Name}\", \"{assemblyName.Version}\")]"),
             };
 
             items.Add(Invariant($"    public partial class {type.ToStringCompilable()}Test"));

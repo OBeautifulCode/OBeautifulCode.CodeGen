@@ -2,10 +2,12 @@
 //   Generated using OBeautifulCode.CodeGen.ModelObject.CodeGenerator.GenerateForModel<T>
 // </auto-generated>
 
-namespace OBeautifulCode.CodeGen.Test
+namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
+    using System.CodeDom.Compiler;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.Linq;
 
@@ -15,6 +17,8 @@ namespace OBeautifulCode.CodeGen.Test
 
     using static System.FormattableString;
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
     public partial class InnerModel : IModel<InnerModel>
     {
         /// <summary>
@@ -166,7 +170,7 @@ namespace OBeautifulCode.CodeGen.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.Test)}.{nameof(InnerModel)}: BooleanProperty = {this.BooleanProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntegerProperty = {this.IntegerProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfStringString = {this.ReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}, ReadOnlyCollectionOfString = {this.ReadOnlyCollectionOfString?.ToString() ?? "<null>"}.");
+            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(InnerModel)}: BooleanProperty = {this.BooleanProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntegerProperty = {this.IntegerProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfStringString = {this.ReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}, ReadOnlyCollectionOfString = {this.ReadOnlyCollectionOfString?.ToString() ?? "<null>"}.");
 
             return result;
         }

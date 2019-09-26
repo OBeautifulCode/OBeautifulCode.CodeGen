@@ -124,8 +124,8 @@
     <Compile Include=".recipes\OBeautifulCode.Validation\Range.cs" />
     <Compile Include=".recipes\OBeautifulCode.Validation\ValidatedNotNullAttribute.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
-    <Compile Include="CodeGenTestBsonConfiguration.cs" />
-    <Compile Include="CodeGenTestJsonConfiguration.cs" />
+    <Compile Include="CodeGenModelObjectTestBsonConfiguration.cs" />
+    <Compile Include="CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="InnerModelTest.cs" />
     <Compile Include="InnerModelTest.designer.cs">
       <DependentUpon>InnerModelTest.cs</DependentUpon>

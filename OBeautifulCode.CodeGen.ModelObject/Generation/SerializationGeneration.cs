@@ -8,7 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Linq;
-
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Representation.System.Recipes;
     using OBeautifulCode.Validation.Recipes;
 
@@ -77,11 +77,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             type.Named(nameof(type)).Must().NotBeNull();
 
-            var namespaceTokens = type.Namespace?.Split('.');
-
-            var prefix = namespaceTokens.Last() != "Test"
-                ? namespaceTokens.Last()
-                : namespaceTokens.Reverse().Skip(1).First() + "Test";
+            var prefix = type
+                .Namespace?
+                .Split('.')
+                .Skip(1)
+                .Where(_ => _ != "Serialization")
+                .Where(_ => _ != "Bson")
+                .Where(_ => _ != "Json")
+                .ToDelimitedString(string.Empty);
 
             var result = SerializationFieldsCodeTemplate
                         .Replace(TypeNameToken, type.ToStringCompilable())
