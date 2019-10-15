@@ -8,8 +8,8 @@
     <ProjectGuid>{930983BD-5103-4991-836E-DDD80472A153}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OBeautifulCode.CodeGen.Test</RootNamespace>
-    <AssemblyName>OBeautifulCode.CodeGen.Test</AssemblyName>
+    <RootNamespace>OBeautifulCode.CodeGen.ModelObject.Test</RootNamespace>
+    <AssemblyName>OBeautifulCode.CodeGen.ModelObject.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -109,6 +109,7 @@
     <Compile Include=".recipes\OBeautifulCode.Collection\EnumerableEqualityComparer.cs" />
     <Compile Include=".recipes\OBeautifulCode.Collection\EnumerableEqualityComparerStrategy.cs" />
     <Compile Include=".recipes\OBeautifulCode.Collection\EnumerableExtensions.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Enum\EnumExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Math\HashCodeHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.String\StringExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Validation\ApplyBecause.cs" />
@@ -124,17 +125,26 @@
     <Compile Include=".recipes\OBeautifulCode.Validation\Range.cs" />
     <Compile Include=".recipes\OBeautifulCode.Validation\ValidatedNotNullAttribute.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
-    <Compile Include="CodeGenModelObjectTestBsonConfiguration.cs" />
-    <Compile Include="CodeGenModelObjectTestJsonConfiguration.cs" />
+    <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
+    <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="InnerModelTest.cs" />
     <Compile Include="InnerModelTest.designer.cs">
       <DependentUpon>InnerModelTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelGenerationExtensions.cs" />
+    <Compile Include="Models\CustomModels\ModelEquatableClass.cs" />
+    <Compile Include="Models\CustomModels\ModelClass.cs" />
+    <Compile Include="Models\CustomModels\ModelEnum.cs" />
+    <Compile Include="Models\CustomModels\ModelFlagsEnum.cs" />
+    <Compile Include="Models\CustomModels\ModelEquatableStruct.cs" />
+    <Compile Include="Models\CustomModels\ModelStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="InnerModel.cs" />
-    <Compile Include="InnerModel.designer.cs">
+    <Compile Include="Models\InnerModel.cs" />
+    <Compile Include="Models\InnerModel.designer.cs">
       <DependentUpon>InnerModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="SetterKind.cs" />
+    <Compile Include="TypeWrapperKind.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject\OBeautifulCode.CodeGen.ModelObject.csproj">
@@ -155,6 +165,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -50,7 +50,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Deep clones this object with a new <see cref=""" + PropertyNameToken + @""" />.
         /// </summary>
-        /// <param name=""" + ParameterNameToken + @""">The new <see cref=""" + PropertyNameToken + @""" />.</param>
+        /// <param name=""" + ParameterNameToken + @""">The new <see cref=""" + PropertyNameToken + @""" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref=""" + TypeNameToken + @""" /> using the specified <paramref name=""" + ParameterNameToken + @""" /> for <see cref=""" + PropertyNameToken + @""" /> and a deep clone of every other property.</returns>
         public " + TypeNameToken + @" DeepCloneWith" + PropertyNameToken + @"(" + ParameterTypeNameToken + @" " + ParameterNameToken + @")
         {
