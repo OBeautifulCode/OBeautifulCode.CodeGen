@@ -9,8 +9,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System;
     using System.Reflection;
 
-    using OBeautifulCode.Reflection.Recipes;
-    using OBeautifulCode.Validation.Recipes;
+    using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -49,7 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static PropertyInfo[] GetPropertiesOfConcernFromType(
             this Type type)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
 
             var result = type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.FlattenHierarchy);
 

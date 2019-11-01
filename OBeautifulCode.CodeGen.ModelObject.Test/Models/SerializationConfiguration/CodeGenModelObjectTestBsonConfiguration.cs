@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System;
     using System.Collections.Generic;
 
-    using Naos.Serialization.Bson;
+    using OBeautifulCode.Serialization.Bson;
 
     /// <inheritdoc />
     public class CodeGenModelObjectTestBsonConfiguration : BsonConfigurationBase

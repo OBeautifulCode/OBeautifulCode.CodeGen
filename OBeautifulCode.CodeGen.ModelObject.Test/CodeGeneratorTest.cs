@@ -13,8 +13,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.CodeGen.ModelObject;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
-    using OBeautifulCode.Representation.System;
     using OBeautifulCode.String.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using Xunit;
     using Xunit.Abstractions;
@@ -62,7 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             // Arrange
             var typesToTest = TypesToTest;
-            var typeWrapperKinds = EnumExtensions.GetEnumValues<TypeWrapperKind>();
+            var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
 
             // Act
             var actual = GenerateModel("MyModel", SetterKind.None, typesToTest, typeWrapperKinds);
@@ -145,7 +145,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                             var mustValidationMethodName = fullyWrappedType.GetMustValidationMethodName();
                             if (mustValidationMethodName != null)
                             {
-                                constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.Must().{mustValidationMethodName}();"));
+                                constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}();"));
                             }
                         }
                     }

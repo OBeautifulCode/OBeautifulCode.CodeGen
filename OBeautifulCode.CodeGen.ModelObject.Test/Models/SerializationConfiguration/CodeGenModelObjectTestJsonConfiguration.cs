@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System;
     using System.Collections.Generic;
 
-    using Naos.Serialization.Json;
+    using OBeautifulCode.Serialization.Json;
 
     /// <inheritdoc />
     public class CodeGenModelObjectTestJsonConfiguration : JsonConfigurationBase

@@ -8,7 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
 
-    using OBeautifulCode.Representation.System.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 

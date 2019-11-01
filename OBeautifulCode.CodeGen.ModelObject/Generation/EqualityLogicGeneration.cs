@@ -11,9 +11,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
     using System.Reflection;
 
-    using OBeautifulCode.Reflection.Recipes;
-    using OBeautifulCode.Representation.System.Recipes;
-    using OBeautifulCode.Validation.Recipes;
+    using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -408,7 +407,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private static string GenerateEqualityLogicCodeForProperty(
             this PropertyInfo propertyInfo)
         {
-            propertyInfo.Named(nameof(propertyInfo)).Must().NotBeNull();
+            propertyInfo.AsArg(nameof(propertyInfo)).Must().NotBeNull();
 
             if (propertyInfo.PropertyType.IsSystemDictionaryType())
             {

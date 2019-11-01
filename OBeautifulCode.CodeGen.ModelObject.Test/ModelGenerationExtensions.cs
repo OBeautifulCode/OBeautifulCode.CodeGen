@@ -105,11 +105,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else if (type == typeof(string))
             {
-                result = nameof(Validation.Recipes.ParameterValidation.NotBeNullNorWhiteSpace);
+                result = nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace);
             }
             else
             {
-                result = nameof(Validation.Recipes.ParameterValidation.NotBeNull);
+                result = nameof(Assertion.Recipes.Verifications.NotBeNull);
             }
 
             return result;

@@ -8,9 +8,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Linq;
+
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
-    using OBeautifulCode.Representation.System.Recipes;
-    using OBeautifulCode.Validation.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     /// <summary>
     /// Generates code related to serialization.
@@ -75,7 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateSerializationTestFields(
             this Type type)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
 
             var prefix = type
                 .Namespace?
@@ -103,7 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateSerializationTestMethods(
             this Type type)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
             var result = SerializationTestMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
             return result;
         }

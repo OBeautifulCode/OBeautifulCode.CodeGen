@@ -8,7 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
 
-    using OBeautifulCode.Math.Recipes;
+    using OBeautifulCode.Equality.Recipes;
 
     public class ModelEquatableClass : IEquatable<ModelEquatableClass>
     {

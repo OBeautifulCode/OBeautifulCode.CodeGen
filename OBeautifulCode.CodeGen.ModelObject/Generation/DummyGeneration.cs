@@ -9,8 +9,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System;
     using System.Linq;
 
-    using OBeautifulCode.Representation.System.Recipes;
-    using OBeautifulCode.Validation.Recipes;
+    using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     /// <summary>
     /// Generates code that creates model dummies.
@@ -52,7 +52,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type,
             string thatIsNot = null)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
 
             var result =
                 string.IsNullOrWhiteSpace(thatIsNot)

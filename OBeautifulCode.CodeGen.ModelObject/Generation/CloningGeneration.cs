@@ -11,10 +11,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Globalization;
     using System.Linq;
 
-    using OBeautifulCode.Reflection.Recipes;
-    using OBeautifulCode.Representation.System.Recipes;
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.String.Recipes;
-    using OBeautifulCode.Validation.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -214,13 +213,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type,
             string cloneSourceCode)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
 
             string result;
             if (type.IsSystemDictionaryType())
             {
                 var genericArguments = type.GetGenericArguments();
-                genericArguments.Length.Named(Invariant($"Number{nameof(genericArguments)}Of{nameof(type)}.{nameof(type)}For{type.Name}"))
+                genericArguments.Length.AsOp(Invariant($"Number{nameof(genericArguments)}Of{nameof(type)}.{nameof(type)}For{type.Name}"))
                                 .Must()
                                 .BeEqualTo(2);
 

@@ -11,10 +11,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Globalization;
     using System.Linq;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
-    using OBeautifulCode.Representation.System.Recipes;
     using OBeautifulCode.String.Recipes;
-    using OBeautifulCode.Validation.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -116,8 +116,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type,
             Dictionary<string, string> propertyNameToSourceCodeMap)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
-            propertyNameToSourceCodeMap.Named(nameof(propertyNameToSourceCodeMap)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
+            propertyNameToSourceCodeMap.AsArg(nameof(propertyNameToSourceCodeMap)).Must().NotBeNull();
 
             if (type.GetConstructors()
                     .Any(
@@ -160,7 +160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateConstructorTestMethods(
             this Type type)
         {
-            type.Named(nameof(type)).Must().NotBeNull();
+            type.AsArg(nameof(type)).Must().NotBeNull();
 
             var constructorWithParameters = type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
             var testMethods = new List<string>();
