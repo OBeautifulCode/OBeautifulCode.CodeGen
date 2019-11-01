@@ -17,7 +17,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         protected override IReadOnlyCollection<Type> TypesToAutoRegister => new[]
         {
-            typeof(InnerModel),
+            typeof(MyModelParent),
         };
     }
 }
