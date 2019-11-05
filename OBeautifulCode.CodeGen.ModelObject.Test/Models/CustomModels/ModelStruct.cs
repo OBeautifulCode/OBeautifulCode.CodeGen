@@ -6,6 +6,10 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System.Diagnostics.CodeAnalysis;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+
+    [SuppressMessage("Microsoft.Performance", "CA1815:OverrideEqualsAndOperatorEqualsOnValueTypes", Justification = ObcSuppressBecause.CA1815_OverrideEqualsAndOperatorEqualsOnValueTypes_TypeUsedForTestsThatRequireTypeToNotBeEquatable)]
     public struct ModelStruct
     {
         public ModelStruct(
