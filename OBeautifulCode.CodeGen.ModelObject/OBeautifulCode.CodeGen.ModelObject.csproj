@@ -94,6 +94,7 @@
     <Compile Include="Generation\EqualityLogicGeneration.cs" />
     <Compile Include="Generation\HashCodeGeneration.cs" />
     <Compile Include="Generation\ModelImplementationGeneration.cs" />
+    <Compile Include="Generation\TestGeneration.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generation\SerializationGeneration.cs" />
