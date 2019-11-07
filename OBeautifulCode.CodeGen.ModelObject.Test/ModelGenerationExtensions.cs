@@ -19,11 +19,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             bool result;
             switch (setterKind)
             {
-                case SetterKind.None:
-                case SetterKind.Private:
+                case SetterKind.GettersOnly:
+                case SetterKind.PrivateSetters:
                     result = true;
                     break;
-                case SetterKind.Public:
+                case SetterKind.PublicSetters:
                     result = false;
                     break;
                 default:
@@ -39,13 +39,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string result;
             switch (setterKind)
             {
-                case SetterKind.None:
+                case SetterKind.GettersOnly:
                     result = string.Empty;
                     break;
-                case SetterKind.Private:
+                case SetterKind.PrivateSetters:
                     result = "private set; ";
                     break;
-                case SetterKind.Public:
+                case SetterKind.PublicSetters:
                     result = "set; ";
                     break;
                 default:

@@ -11,7 +11,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Reflection;
 
     using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -39,8 +38,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             var properties = type.GetPropertiesOfConcernFromType();
+
             var hashLines = properties.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
+
             var hashToken = string.Join(Environment.NewLine + "            .", hashLines);
+
             var result = HashMethodCodeTemplate.Replace(HashToken, hashToken);
 
             return result;
@@ -51,22 +53,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             propertyInfo.AsArg(nameof(propertyInfo)).Must().NotBeNull();
 
-            if (propertyInfo.PropertyType.IsSystemDictionaryType())
-            {
-                return Invariant($"HashDictionary(this.{propertyInfo.Name})");
-            }
-            else if (propertyInfo.PropertyType.IsSystemCollectionType())
-            {
-                return Invariant($"HashElements(this.{propertyInfo.Name})");
-            }
-            else if (propertyInfo.PropertyType == typeof(string))
-            {
-                return Invariant($"Hash(this.{propertyInfo.Name})");
-            }
-            else
-            {
-                return Invariant($"Hash(this.{propertyInfo.Name})");
-            }
+            var result = Invariant($"Hash(this.{propertyInfo.Name})");
+
+            return result;
         }
     }
 }

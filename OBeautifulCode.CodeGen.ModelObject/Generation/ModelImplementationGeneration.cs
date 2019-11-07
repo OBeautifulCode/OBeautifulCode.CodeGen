@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "    using System.Linq;",
                 string.Empty,
                 "    using OBeautifulCode.Collection.Recipes;",
-                "    using OBeautifulCode.Math.Recipes;",
+                "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,
                 "    using static System.FormattableString;",

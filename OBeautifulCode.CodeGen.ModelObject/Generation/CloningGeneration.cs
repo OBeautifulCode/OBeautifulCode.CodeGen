@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.String.Recipes;
+    using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -211,45 +212,113 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private static string GenerateCloningLogicCodeForType(
             this Type type,
-            string cloneSourceCode)
+            string cloneSourceCode,
+            int recursionDepth = 0)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
+            recursionDepth++;
+
+            var deepCloneableType = typeof(IDeepCloneable<>).MakeGenericType(type);
 
             string result;
-            if (type.IsSystemDictionaryType())
+            if (type.IsAssignableTo(deepCloneableType))
+            {
+                if (type.IsValueType)
+                {
+                    result = Invariant($"{cloneSourceCode}.DeepClone()");
+                }
+                else
+                {
+                    result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                }
+            }
+            else if (type.IsSystemDictionaryType())
             {
                 var genericArguments = type.GetGenericArguments();
-                genericArguments.Length.AsOp(Invariant($"Number{nameof(genericArguments)}Of{nameof(type)}.{nameof(type)}For{type.Name}"))
-                                .Must()
-                                .BeEqualTo(2);
+                genericArguments.Length.AsOp(Invariant($"Number{nameof(genericArguments)}Of{nameof(type)}.{nameof(type)}For{type.Name}")).Must().BeEqualTo(2);
 
                 var keyType = genericArguments.First();
                 var valueType = genericArguments.Last();
-                var keyClone = keyType.GenerateCloningLogicCodeForType("k.Key");
-                var valueClone = valueType.GenerateCloningLogicCodeForType("v.Value");
-                result = Invariant($"{cloneSourceCode}?.ToDictionary(k => {keyClone}, v => {valueClone})");
+
+                var keyExpressionParameter = "k".ToExpressionParameter(recursionDepth);
+                var valueExpressionParameter = "v".ToExpressionParameter(recursionDepth);
+
+                var keyClone = keyType.GenerateCloningLogicCodeForType(Invariant($"{keyExpressionParameter}.Key"));
+                var valueClone = valueType.GenerateCloningLogicCodeForType(Invariant($"{valueExpressionParameter}.Value"));
+
+                result = Invariant($"{cloneSourceCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
             }
             else if (type.IsSystemCollectionType())
             {
                 var genericArguments = type.GetGenericArguments();
+
                 var valueType = genericArguments.Single();
-                var valueClone = valueType.GenerateCloningLogicCodeForType("_");
-                result = Invariant($"{cloneSourceCode}?.Select(_ => {valueClone}).ToList()");
+
+                var expressionParameter = "i".ToExpressionParameter(recursionDepth);
+
+                var valueClone = valueType.GenerateCloningLogicCodeForType(expressionParameter);
+
+                result = Invariant($"{cloneSourceCode}?.Select({expressionParameter} => {valueClone}).ToList()");
+            }
+            else if (type.IsArray)
+            {
+                var valueType = type.GetElementType();
+
+                var expressionParameter = "i".ToExpressionParameter(recursionDepth);
+
+                var valueClone = valueType.GenerateCloningLogicCodeForType(expressionParameter);
+
+                result = Invariant($"{cloneSourceCode}?.Select({expressionParameter} => {valueClone}).ToArray()");
             }
             else if (type == typeof(string))
             {
                 // string should be cloned using it's existing interface.
                 result = Invariant($"{cloneSourceCode}?.Clone().ToString()");
             }
-            else if (!type.IsValueType)
+            else
             {
-                // assume that we are driving the DeepClone convention and it exists.
-                result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                if (type.IsNullableType())
+                {
+                    var underlyingType = Nullable.GetUnderlyingType(type);
+
+                    var deepCloneableUnderlyingType = typeof(IDeepCloneable<>).MakeGenericType(underlyingType);
+
+                    if (underlyingType.IsAssignableTo(deepCloneableUnderlyingType))
+                    {
+                        result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                    }
+                    else
+                    {
+                        result = cloneSourceCode;
+                    }
+                }
+                else if (type.IsValueType)
+                {
+                    // this is just a copy of the item anyway (like bool, int, Enumerations, structs like DateTime, etc.).
+                    result = cloneSourceCode;
+                }
+                else
+                {
+                    // assume that we are driving the DeepClone convention and it exists.
+                    result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                }
+            }
+
+            return result;
+        }
+
+        private static string ToExpressionParameter(
+            this string expressionParameter,
+            int recursionDepth)
+        {
+            string result;
+            if (recursionDepth == 1)
+            {
+                result = expressionParameter;
             }
             else
             {
-                // this is just a copy of the item anyway (like bool, int, Enumerations, structs like DateTime, etc.).
-                result = cloneSourceCode;
+                result = expressionParameter + recursionDepth;
             }
 
             return result;

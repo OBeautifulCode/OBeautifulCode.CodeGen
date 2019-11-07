@@ -6,7 +6,9 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
-    public class ModelClass
+    using OBeautifulCode.Type;
+
+    public class ModelClass : IDeepCloneable<ModelClass>
     {
         public ModelClass(
             int item1,
@@ -19,5 +21,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public int Item1 { get; }
 
         public string Item2 { get; }
+
+        public ModelClass DeepClone()
+        {
+            var result = new ModelClass(this.Item1, this.Item2?.Clone().ToString());
+
+            return result;
+        }
+
+        public object Clone() => this.DeepClone();
     }
 }

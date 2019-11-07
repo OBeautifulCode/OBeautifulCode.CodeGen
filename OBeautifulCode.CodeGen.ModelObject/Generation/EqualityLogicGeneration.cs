@@ -409,22 +409,28 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             propertyInfo.AsArg(nameof(propertyInfo)).Must().NotBeNull();
 
-            if (propertyInfo.PropertyType.IsSystemDictionaryType())
+            var propertyType = propertyInfo.PropertyType;
+
+            string result;
+            if (propertyType == typeof(string))
             {
-                return Invariant($"left.{propertyInfo.Name}.DictionaryEqual(right.{propertyInfo.Name})");
-            }
-            else if (propertyInfo.PropertyType.IsSystemCollectionType())
-            {
-                return Invariant($"left.{propertyInfo.Name}.SequenceEqualHandlingNulls(right.{propertyInfo.Name})");
-            }
-            else if (propertyInfo.PropertyType == typeof(string))
-            {
-                return Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name}, StringComparison.Ordinal)");
+                result = Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name}, StringComparison.Ordinal)");
             }
             else
             {
-                return Invariant($"left.{propertyInfo.Name} == right.{propertyInfo.Name}");
+                var equatableType = typeof(IEquatable<>).MakeGenericType(propertyType);
+
+                if (propertyType.IsAssignableTo(equatableType) || propertyType.IsEnum)
+                {
+                    result = Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name})");
+                }
+                else
+                {
+                    result = Invariant($"left.{propertyInfo.Name}.IsEqualTo(right.{propertyInfo.Name})");
+                }
             }
+
+            return result;
         }
     }
 }

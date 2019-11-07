@@ -25,7 +25,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         private static readonly Type[] TypesToTest =
         {
-            typeof(object),
             typeof(bool),
             typeof(int),
             typeof(string),
@@ -51,7 +50,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateForModel___Should_generate_all_possible_code___When_parameter_generateFor_is_AllPossibleCode()
         {
             // Arrange, Act
-            var actual = CodeGenerator.GenerateForModel<MyModelParent>(GenerateFor.AllPossibleCode);
+            var actual = CodeGenerator.GenerateForModel<MyModelChild1>(GenerateFor.AllPossibleCode);
 
             // Assert
             this.testOutputHelper.WriteLine(actual);
@@ -65,7 +64,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
 
             // Act
-            var actual = GenerateModel("MyModel", SetterKind.None, typesToTest, typeWrapperKinds);
+            var actual = GenerateModel("MyModel", SetterKind.GettersOnly, typesToTest, typeWrapperKinds);
 
             // Assert
             this.testOutputHelper.WriteLine(actual);
@@ -96,7 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             HierarchyKind hierarchyKind,
             string childIdentifier = null)
         {
-            var modelName = BuildModelName(baseName, hierarchyKind, childIdentifier);
+            var modelName = BuildModelName(baseName, setterKind, hierarchyKind, childIdentifier);
 
             var constructorParentParameterStatements = new List<string>();
             var constructorParentParameterNames = new List<string>();
@@ -154,7 +153,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var abstractStatement = hierarchyKind == HierarchyKind.Abstract ? "abstract " : string.Empty;
 
-            var derivativeStatement = hierarchyKind == HierarchyKind.Derivative ? $"{BuildModelName(baseName, HierarchyKind.Abstract)}, " : string.Empty;
+            var derivativeStatement = hierarchyKind == HierarchyKind.Derivative ? $"{BuildModelName(baseName, setterKind, HierarchyKind.Abstract)}, " : string.Empty;
 
             var headerStatements = new List<string>
             {
@@ -175,8 +174,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using OBeautifulCode.Assertion.Recipes;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,
-                "    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]",
-                "    [System.CodeDom.Compiler.GeneratedCode(\"OBeautifulCode.CodeGen.ModelObject.Test.CodeGeneratorTest\", \"See assembly version number\")]",
                 Invariant($"    public {abstractStatement}partial class {modelName} : {derivativeStatement}IModelViaCodeGen"),
                 "    {",
             };
@@ -221,10 +218,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static string BuildModelName(
             string baseName,
+            SetterKind setterKind,
             HierarchyKind hierarchyKind,
             string childIdentifier = null)
         {
-            var result = Invariant($"{baseName}{BuildHierarchyNameToken(hierarchyKind)}{childIdentifier}");
+            var result = Invariant($"{baseName}{setterKind}{BuildHierarchyNameToken(hierarchyKind)}{childIdentifier}");
 
             return result;
         }

@@ -144,9 +144,42 @@
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
-    <Compile Include="Models\GeneratedModels\MyModelChild1.cs" />
-    <Compile Include="Models\GeneratedModels\MyModelChild2.cs" />
-    <Compile Include="Models\GeneratedModels\MyModelParent.cs" />
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1.cs" />
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1.designer.cs">
+      <DependentUpon>MyModelGettersOnlyChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2.cs" />
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2.designer.cs">
+      <DependentUpon>MyModelGettersOnlyChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyParent.cs" />
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyParent.designer.cs">
+      <DependentUpon>MyModelGettersOnlyParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1.designer.cs">
+      <DependentUpon>MyModelPrivateSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2.designer.cs">
+      <DependentUpon>MyModelPrivateSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersParent.designer.cs">
+      <DependentUpon>MyModelPrivateSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild1.designer.cs">
+      <DependentUpon>MyModelPublicSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild2.designer.cs">
+      <DependentUpon>MyModelPublicSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersParent.designer.cs">
+      <DependentUpon>MyModelPublicSettersParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="InnerModelTest.cs" />
@@ -184,6 +217,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

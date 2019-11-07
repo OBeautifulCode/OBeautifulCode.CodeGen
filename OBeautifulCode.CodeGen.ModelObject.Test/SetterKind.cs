@@ -8,10 +8,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     public enum SetterKind
     {
-        None,
+        GettersOnly,
 
-        Public,
+        PublicSetters,
 
-        Private,
+        PrivateSetters,
     }
 }

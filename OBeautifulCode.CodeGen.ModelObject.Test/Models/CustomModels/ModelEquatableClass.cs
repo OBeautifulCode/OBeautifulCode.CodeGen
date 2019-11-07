@@ -9,8 +9,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System;
 
     using OBeautifulCode.Equality.Recipes;
+    using OBeautifulCode.Type;
 
-    public class ModelEquatableClass : IEquatable<ModelEquatableClass>
+    public class ModelEquatableClass : IEquatable<ModelEquatableClass>, IDeepCloneable<ModelEquatableClass>
     {
         public ModelEquatableClass(
             int item1,
@@ -61,5 +62,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Item1)
                 .Hash(this.Item2)
                 .Value;
+
+        public ModelEquatableClass DeepClone()
+        {
+            var result = new ModelEquatableClass(this.Item1, this.Item2?.Clone().ToString());
+
+            return result;
+        }
+
+        public object Clone() => this.DeepClone();
     }
 }
