@@ -20,6 +20,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         ReadOnlyCollectionOfNullable,
 
+        ReadOnlyListOf,
+
+        ReadOnlyListOfNullable,
+
         ReadOnlyDictionaryOf,
 
         ReadOnlyDictionaryOfNullable,

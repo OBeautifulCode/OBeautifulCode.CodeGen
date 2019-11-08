@@ -23,7 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
-        private static readonly Type[] TypesToTest =
+        private static readonly Type[] TypesToWrap =
         {
             typeof(bool),
             typeof(int),
@@ -38,6 +38,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(ModelEquatableClass),
         };
 
+        private static readonly Type[] AdditionalTypes =
+        {
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>>),
+        };
+
         private readonly ITestOutputHelper testOutputHelper;
 
         public CodeGeneratorTest(
@@ -50,7 +55,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateForModel___Should_generate_all_possible_code___When_parameter_generateFor_is_AllPossibleCode()
         {
             // Arrange, Act
-            var actual = CodeGenerator.GenerateForModel<MyModelChild1>(GenerateFor.AllPossibleCode);
+            var actual = CodeGenerator.GenerateForModel<MyModelGettersOnlyChild1>(GenerateFor.AllPossibleCode);
 
             // Assert
             this.testOutputHelper.WriteLine(actual);
@@ -60,11 +65,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateModel___Should_generate_the_model___When_called()
         {
             // Arrange
-            var typesToTest = TypesToTest;
+            var typesToWrap = TypesToWrap;
             var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
+            var additionalTypes = AdditionalTypes;
 
             // Act
-            var actual = GenerateModel("MyModel", SetterKind.GettersOnly, typesToTest, typeWrapperKinds);
+            var actual = GenerateModel("MyModel", SetterKind.GettersOnly, typesToWrap, typeWrapperKinds, additionalTypes);
 
             // Assert
             this.testOutputHelper.WriteLine(actual);
@@ -73,14 +79,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         private static string GenerateModel(
             string modelName,
             SetterKind setterKind,
-            IReadOnlyCollection<Type> typesToTest,
-            IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds)
+            IReadOnlyCollection<Type> typesToWrap,
+            IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds,
+            IReadOnlyCollection<Type> additionalTypes)
         {
-            var parentCode = GenerateModel(modelName, setterKind, typesToTest, typeWrapperKinds, HierarchyKind.Abstract);
+            var parentCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Abstract);
 
-            var child1Code = GenerateModel(modelName, setterKind, typesToTest, typeWrapperKinds, HierarchyKind.Derivative, childIdentifier: "1");
+            var child1Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "1");
 
-            var child2Code = GenerateModel(modelName, setterKind, typesToTest, typeWrapperKinds, HierarchyKind.Derivative, childIdentifier: "2");
+            var child2Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "2");
 
             var result = Invariant($"{parentCode}{Environment.NewLine}{Environment.NewLine}{child1Code}{Environment.NewLine}{Environment.NewLine}{child2Code}");
 
@@ -90,12 +97,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         private static string GenerateModel(
             string baseName,
             SetterKind setterKind,
-            IReadOnlyCollection<Type> typesToTest,
+            IReadOnlyCollection<Type> typesToWrap,
             IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds,
+            IReadOnlyCollection<Type> additionalTypes,
             HierarchyKind hierarchyKind,
             string childIdentifier = null)
         {
-            var modelName = BuildModelName(baseName, setterKind, hierarchyKind, childIdentifier);
+            var modelName = baseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
 
             var constructorParentParameterStatements = new List<string>();
             var constructorParentParameterNames = new List<string>();
@@ -111,49 +119,49 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 constructorDeclarationStatement = Invariant($"        public {modelName}(");
             }
 
+            var typesToAddAsProperties = new List<Type>();
             foreach (var typeWrapperKind in typeWrapperKinds)
             {
-                foreach (var typeToTest in typesToTest)
+                typesToAddAsProperties.AddRange(typesToWrap.Select(_ => _.ToFullyWrappedType(typeWrapperKind)).Where(_ => _ != null));
+            }
+
+            typesToAddAsProperties.AddRange(additionalTypes);
+
+            foreach (var typeToAddAsProperty in typesToAddAsProperties)
+            {
+                var typeCompilableString = typeToAddAsProperty.ToStringCompilable();
+
+                var propertyName = typeToAddAsProperty.BuildPropertyName(hierarchyKind, childIdentifier);
+
+                propertyStatements.Add(string.Empty);
+                propertyStatements.Add(Invariant($"        public {typeCompilableString} {propertyName} {{ get; {setterKind.ToSetterString()}}}"));
+
+                if (setterKind.RequiresConstructor())
                 {
-                    var fullyWrappedType = typeToTest.ToFullyWrappedType(typeWrapperKind);
+                    var constructorParameterName = propertyName.ToLowerFirstCharacter();
+                    constructorParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParameterName},"));
 
-                    if (fullyWrappedType != null)
+                    if (hierarchyKind == HierarchyKind.Derivative)
                     {
-                        var typeCompilableString = fullyWrappedType.ToStringCompilable();
+                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.Abstract, null).ToLowerFirstCharacter();
+                        constructorParentParameterNames.Add(constructorParentParameterName);
 
-                        var propertyName = BuildPropertyName(typeToTest, typeWrapperKind, hierarchyKind, childIdentifier);
+                        constructorParentParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParentParameterName},"));
+                    }
 
-                        propertyStatements.Add(string.Empty);
-                        propertyStatements.Add(Invariant($"        public {typeCompilableString} {propertyName} {{ get; {setterKind.ToSetterString()}}}"));
+                    constructorPropertySettingStatements.Add(Invariant($"            this.{propertyName} = {constructorParameterName};"));
 
-                        if (setterKind.RequiresConstructor())
-                        {
-                            var constructorParameterName = propertyName.ToLowerFirstCharacter();
-                            constructorParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParameterName},"));
-
-                            if (hierarchyKind == HierarchyKind.Derivative)
-                            {
-                                var constructorParentParameterName = BuildPropertyName(typeToTest, typeWrapperKind, HierarchyKind.Abstract, null).ToLowerFirstCharacter();
-                                constructorParentParameterNames.Add(constructorParentParameterName);
-
-                                constructorParentParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParentParameterName},"));
-                            }
-
-                            constructorPropertySettingStatements.Add(Invariant($"            this.{propertyName} = {constructorParameterName};"));
-
-                            var mustValidationMethodName = fullyWrappedType.GetMustValidationMethodName();
-                            if (mustValidationMethodName != null)
-                            {
-                                constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}();"));
-                            }
-                        }
+                    var mustValidationMethodName = typeToAddAsProperty.GetMustValidationMethodName();
+                    if (mustValidationMethodName != null)
+                    {
+                        constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}();"));
                     }
                 }
             }
 
             var abstractStatement = hierarchyKind == HierarchyKind.Abstract ? "abstract " : string.Empty;
 
-            var derivativeStatement = hierarchyKind == HierarchyKind.Derivative ? $"{BuildModelName(baseName, setterKind, HierarchyKind.Abstract)}, " : string.Empty;
+            var derivativeStatement = hierarchyKind == HierarchyKind.Derivative ? $"{baseName.BuildModelName(setterKind, HierarchyKind.Abstract)}, " : string.Empty;
 
             var headerStatements = new List<string>
             {
@@ -212,54 +220,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Concat(propertyStatements)
                 .Concat(footerStatements)
                 .ToNewLineDelimited();
-
-            return result;
-        }
-
-        private static string BuildModelName(
-            string baseName,
-            SetterKind setterKind,
-            HierarchyKind hierarchyKind,
-            string childIdentifier = null)
-        {
-            var result = Invariant($"{baseName}{setterKind}{BuildHierarchyNameToken(hierarchyKind)}{childIdentifier}");
-
-            return result;
-        }
-
-        private static string BuildPropertyName(
-            Type typeToTest,
-            TypeWrapperKind typeWrapperKind,
-            HierarchyKind hierarchyKind,
-            string prefix)
-        {
-            var typeWrapperQualification = typeWrapperKind == TypeWrapperKind.None
-                ? string.Empty
-                : typeWrapperKind.ToString();
-
-            var hierarchyNameToken = BuildHierarchyNameToken(hierarchyKind);
-
-            var result = Invariant($"{hierarchyNameToken}{prefix}{typeWrapperQualification}{typeToTest.ToStringReadable().ToUpperFirstCharacter()}Property");
-
-            return result;
-        }
-
-        private static string BuildHierarchyNameToken(
-            HierarchyKind hierarchyKind)
-        {
-            string result;
-
-            switch (hierarchyKind)
-            {
-                case HierarchyKind.Abstract:
-                    result = "Parent";
-                    break;
-                case HierarchyKind.Derivative:
-                    result = "Child";
-                    break;
-                default:
-                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
-            }
 
             return result;
         }

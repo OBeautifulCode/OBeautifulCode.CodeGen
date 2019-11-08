@@ -8,6 +8,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+
+    using OBeautifulCode.String.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -81,6 +85,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 case TypeWrapperKind.ReadOnlyCollectionOfNullable:
                     result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.ReadOnlyCollectionOf);
                     break;
+                case TypeWrapperKind.ReadOnlyListOf:
+                    result = typeof(IReadOnlyList<>).MakeGenericType(type);
+                    break;
+                case TypeWrapperKind.ReadOnlyListOfNullable:
+                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.ReadOnlyListOf);
+                    break;
                 case TypeWrapperKind.ReadOnlyDictionaryOf:
                     result = typeof(IReadOnlyDictionary<,>).MakeGenericType(type, type);
                     break;
@@ -110,6 +120,88 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             else
             {
                 result = nameof(Assertion.Recipes.Verifications.NotBeNull);
+            }
+
+            return result;
+        }
+
+        public static string BuildModelName(
+            this string baseName,
+            SetterKind setterKind,
+            HierarchyKind hierarchyKind,
+            string childIdentifier = null)
+        {
+            var result = Invariant($"{baseName}{setterKind}{hierarchyKind.BuildNameToken()}{childIdentifier}");
+
+            return result;
+        }
+
+        public static string BuildPropertyName(
+            this Type type,
+            HierarchyKind hierarchyKind,
+            string prefix)
+        {
+            var result = Invariant($"{hierarchyKind.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
+
+            return result;
+        }
+
+        public static string BuildNameToken(
+            this HierarchyKind hierarchyKind)
+        {
+            string result;
+
+            switch (hierarchyKind)
+            {
+                case HierarchyKind.Abstract:
+                    result = "Parent";
+                    break;
+                case HierarchyKind.Derivative:
+                    result = "Child";
+                    break;
+                default:
+                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
+            }
+
+            return result;
+        }
+
+        public static string BuildNameToken(
+            this Type type)
+        {
+            string result;
+
+            if (type.IsArray)
+            {
+                result = "ArrayOf" + type.GetElementType().BuildNameToken();
+            }
+            else if (type.IsNullableType())
+            {
+                result = "Nullable" + Nullable.GetUnderlyingType(type).BuildNameToken();
+            }
+            else if (type.IsAssignableTo(typeof(IReadOnlyDictionary<,>), treatUnboundGenericAsAssignableTo: true))
+            {
+                var keyType = type.GetGenericArguments().First();
+
+                var valueType = type.GetGenericArguments().Last();
+
+                result = "ReadOnlyDictionaryOf" + valueType.BuildNameToken();
+            }
+            else if (type.IsAssignableTo(typeof(IReadOnlyList<>), treatUnboundGenericAsAssignableTo: true))
+            {
+                var genericType = type.GetGenericArguments().First();
+
+                result = "ReadOnlyListOf" + genericType.BuildNameToken();
+            }
+            else if (type.IsAssignableTo(typeof(IReadOnlyCollection<>), treatUnboundGenericAsAssignableTo: true))
+            {
+                var genericType = type.GetGenericArguments().First();
+
+                result = "ReadOnlyCollectionOf" + genericType.BuildNameToken();
+            }
+            else
+            {
+                result = type.ToStringReadable().ToUpperFirstCharacter();
             }
 
             return result;
