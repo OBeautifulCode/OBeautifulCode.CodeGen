@@ -40,7 +40,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static readonly Type[] AdditionalTypes =
         {
+            typeof(IReadOnlyList<IReadOnlyList<string>>),
+            typeof(IReadOnlyList<ICollection<string>>),
+            typeof(ICollection<IReadOnlyList<ICollection<string>>>),
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>>),
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<ICollection<string>, IReadOnlyDictionary<IList<string>, IReadOnlyList<string>>>>),
         };
 
         private readonly ITestOutputHelper testOutputHelper;

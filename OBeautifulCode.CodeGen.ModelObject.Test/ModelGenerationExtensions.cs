@@ -193,11 +193,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 result = "ReadOnlyListOf" + genericType.BuildNameToken();
             }
+            else if (type.IsAssignableTo(typeof(IList<>), treatUnboundGenericAsAssignableTo: true))
+            {
+                var genericType = type.GetGenericArguments().First();
+
+                result = "ListOf" + genericType.BuildNameToken();
+            }
             else if (type.IsAssignableTo(typeof(IReadOnlyCollection<>), treatUnboundGenericAsAssignableTo: true))
             {
                 var genericType = type.GetGenericArguments().First();
 
                 result = "ReadOnlyCollectionOf" + genericType.BuildNameToken();
+            }
+            else if (type.IsAssignableTo(typeof(ICollection<>), treatUnboundGenericAsAssignableTo: true))
+            {
+                var genericType = type.GetGenericArguments().First();
+
+                result = "CollectionOf" + genericType.BuildNameToken();
             }
             else
             {

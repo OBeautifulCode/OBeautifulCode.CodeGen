@@ -246,7 +246,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var keyClone = keyType.GenerateCloningLogicCodeForType(Invariant($"{keyExpressionParameter}.Key"), recursionDepth);
                 var valueClone = valueType.GenerateCloningLogicCodeForType(Invariant($"{valueExpressionParameter}.Value"), recursionDepth);
 
-                result = Invariant($"{cloneSourceCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
+                string cast = null;
+                if (recursionDepth > 1)
+                {
+                    cast = "(" + type.ToStringReadable() + ")";
+                }
+
+                result = Invariant($"{cast}{cloneSourceCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
             }
             else if (type.IsSystemCollectionType())
             {
@@ -258,12 +264,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var valueClone = valueType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
 
+                string cast = null;
+                if (recursionDepth > 1)
+                {
+                    cast = "(" + type.ToStringReadable() + ")";
+                }
+
                 // note: List<T> is assignable to all System collection types except Collection<T> and ReadOnlyCollection<T>.
                 // In general no properties of a model should use those types.  If we do want to support this in the future,
                 // we need to wrap the List<T>:
                 // - cloneSourceCode == null ? null : new Collection<T>(cloneSourceCode.Select(...).ToList())
                 // - cloneSourceCode == null ? null : new ReadOnlyCollection<T>(cloneSourceCode.Select(...).ToList())
-                result = Invariant($"{cloneSourceCode}?.Select({expressionParameter} => {valueClone}).ToList()");
+                result = Invariant($"{cast}{cloneSourceCode}?.Select({expressionParameter} => {valueClone}).ToList()");
             }
             else if (type.IsArray)
             {
