@@ -79,23 +79,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 case TypeWrapperKind.ArrayOfNullable:
                     result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.ArrayOf);
                     break;
-                case TypeWrapperKind.ReadOnlyCollectionOf:
+                case TypeWrapperKind.IReadOnlyCollectionOf:
                     result = typeof(IReadOnlyCollection<>).MakeGenericType(type);
                     break;
-                case TypeWrapperKind.ReadOnlyCollectionOfNullable:
-                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.ReadOnlyCollectionOf);
+                case TypeWrapperKind.IReadOnlyCollectionOfNullable:
+                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.IReadOnlyCollectionOf);
                     break;
-                case TypeWrapperKind.ReadOnlyListOf:
+                case TypeWrapperKind.IReadOnlyListOf:
                     result = typeof(IReadOnlyList<>).MakeGenericType(type);
                     break;
-                case TypeWrapperKind.ReadOnlyListOfNullable:
-                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.ReadOnlyListOf);
+                case TypeWrapperKind.IReadOnlyListOfNullable:
+                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.IReadOnlyListOf);
                     break;
-                case TypeWrapperKind.ReadOnlyDictionaryOf:
+                case TypeWrapperKind.IReadOnlyDictionaryOf:
                     result = typeof(IReadOnlyDictionary<,>).MakeGenericType(type, type);
                     break;
-                case TypeWrapperKind.ReadOnlyDictionaryOfNullable:
-                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.ReadOnlyDictionaryOf);
+                case TypeWrapperKind.IReadOnlyDictionaryOfNullable:
+                    result = type.ToFullyWrappedType(TypeWrapperKind.Nullable)?.ToFullyWrappedType(TypeWrapperKind.IReadOnlyDictionaryOf);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(typeWrapperKind), typeWrapperKind, null);

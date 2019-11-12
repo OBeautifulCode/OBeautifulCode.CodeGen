@@ -16,16 +16,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         ArrayOfNullable,
 
-        ReadOnlyCollectionOf,
+        // ReSharper disable once InconsistentNaming
+        IReadOnlyCollectionOf,
 
-        ReadOnlyCollectionOfNullable,
+        // ReSharper disable once InconsistentNaming
+        IReadOnlyCollectionOfNullable,
 
-        ReadOnlyListOf,
+        // ReSharper disable once InconsistentNaming
+        IReadOnlyListOf,
 
-        ReadOnlyListOfNullable,
+        // ReSharper disable once InconsistentNaming
+        IReadOnlyListOfNullable,
 
-        ReadOnlyDictionaryOf,
+        // ReSharper disable once InconsistentNaming
+        IReadOnlyDictionaryOf,
 
-        ReadOnlyDictionaryOfNullable,
+        // ReSharper disable once InconsistentNaming
+        IReadOnlyDictionaryOfNullable,
     }
 }
