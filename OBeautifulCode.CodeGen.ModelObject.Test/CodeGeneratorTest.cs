@@ -77,8 +77,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             // Arrange
             var modelName = "MyModel";
-            var childIdentifier1 = "1";
-            var childIdentifier2 = "2";
+            var childIdentifiers = new[] { "1", "2" };
             var typesToWrap = TypesToWrap;
             var additionalTypes = AdditionalTypes;
             var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
@@ -89,23 +88,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 var directoryPath = setterKind.GetGeneratedModelsPath();
 
-                var filePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.None) + ".cs";
-                var parentFilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Abstract) + ".cs";
-                var child1FilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Derivative, childIdentifier1) + ".cs";
-                var child2FilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Derivative, childIdentifier2) + ".cs";
+                var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
 
-                var code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.None);
+                foreach (var hierarchyKind in hierarchyKinds)
+                {
+                    void GenerateAndWriteModelCodeFile(string childIdentifier = null)
+                    {
+                        var modelFilePath = directoryPath + modelName.BuildModelName(setterKind, hierarchyKind, childIdentifier) + ".cs";
 
-                var parentCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Abstract);
+                        var modelCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, hierarchyKind, childIdentifier);
 
-                var child1Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "1");
+                        File.WriteAllText(modelFilePath, modelCode);
+                    }
 
-                var child2Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "2");
-
-                File.WriteAllText(filePath, code);
-                File.WriteAllText(parentFilePath, parentCode);
-                File.WriteAllText(child1FilePath, child1Code);
-                File.WriteAllText(child2FilePath, child2Code);
+                    if (hierarchyKind == HierarchyKind.Derivative)
+                    {
+                        foreach (var childIdentifier in childIdentifiers)
+                        {
+                            GenerateAndWriteModelCodeFile(childIdentifier);
+                        }
+                    }
+                    else
+                    {
+                        GenerateAndWriteModelCodeFile();
+                    }
+                }
             }
         }
 
