@@ -87,9 +87,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 var directoryPath = SourceRoot.AppendMissing("\\") + $"OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\{setterKind}\\";
 
+                var filePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.None) + ".cs";
                 var parentFilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Abstract) + ".cs";
                 var child1FilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Derivative, childIdentifier1) + ".cs";
                 var child2FilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Derivative, childIdentifier2) + ".cs";
+
+                var code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.None);
 
                 var parentCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Abstract);
 
@@ -97,6 +100,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var child2Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "2");
 
+                File.WriteAllText(filePath, code);
                 File.WriteAllText(parentFilePath, parentCode);
                 File.WriteAllText(child1FilePath, child1Code);
                 File.WriteAllText(child2FilePath, child2Code);

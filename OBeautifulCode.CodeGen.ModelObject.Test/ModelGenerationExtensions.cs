@@ -153,6 +153,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             switch (hierarchyKind)
             {
+                case HierarchyKind.None:
+                    result = string.Empty;
+                    break;
                 case HierarchyKind.Abstract:
                     result = "Parent";
                     break;
