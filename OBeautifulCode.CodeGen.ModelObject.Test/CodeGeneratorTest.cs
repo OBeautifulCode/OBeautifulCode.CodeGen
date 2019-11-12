@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
 
     using OBeautifulCode.CodeGen.ModelObject;
@@ -23,6 +24,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
+        private const string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\";
+
         private static readonly Type[] TypesToWrap =
         {
             typeof(bool),
@@ -59,43 +62,45 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateForModel___Should_generate_all_possible_code___When_parameter_generateFor_is_AllPossibleCode()
         {
             // Arrange, Act
-            var actual = CodeGenerator.GenerateForModel<MyModelGettersOnlyChild1>(GenerateFor.ModelImplementationPartialClass);
+            var actual1 = CodeGenerator.GenerateForModel<MyModelGettersOnlyParent>(GenerateFor.ModelImplementationPartialClass);
+            var actual2 = CodeGenerator.GenerateForModel<MyModelGettersOnlyChild1>(GenerateFor.ModelImplementationPartialClass);
 
             // Assert
-            this.testOutputHelper.WriteLine(actual);
+            this.testOutputHelper.WriteLine(actual1);
+            this.testOutputHelper.WriteLine(actual2);
         }
 
         [Fact]
         public void GenerateModel___Should_generate_the_model___When_called()
         {
             // Arrange
+            var modelName = "MyModel";
+            var childIdentifier1 = "1";
+            var childIdentifier2 = "2";
             var typesToWrap = TypesToWrap;
-            var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
             var additionalTypes = AdditionalTypes;
+            var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
 
-            // Act
-            var actual = GenerateModel("MyModel", SetterKind.GettersOnly, typesToWrap, typeWrapperKinds, additionalTypes);
+            // Act, Assert
+            var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
+            foreach (var setterKind in setterKinds)
+            {
+                var directoryPath = SourceRoot.AppendMissing("\\") + $"OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\{setterKind}\\";
 
-            // Assert
-            this.testOutputHelper.WriteLine(actual);
-        }
+                var parentFilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Abstract) + ".cs";
+                var child1FilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Derivative, childIdentifier1) + ".cs";
+                var child2FilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Derivative, childIdentifier2) + ".cs";
 
-        private static string GenerateModel(
-            string modelName,
-            SetterKind setterKind,
-            IReadOnlyCollection<Type> typesToWrap,
-            IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds,
-            IReadOnlyCollection<Type> additionalTypes)
-        {
-            var parentCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Abstract);
+                var parentCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Abstract);
 
-            var child1Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "1");
+                var child1Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "1");
 
-            var child2Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "2");
+                var child2Code = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, HierarchyKind.Derivative, childIdentifier: "2");
 
-            var result = Invariant($"{parentCode}{Environment.NewLine}{Environment.NewLine}{child1Code}{Environment.NewLine}{Environment.NewLine}{child2Code}");
-
-            return result;
+                File.WriteAllText(parentFilePath, parentCode);
+                File.WriteAllText(child1FilePath, child1Code);
+                File.WriteAllText(child2FilePath, child2Code);
+            }
         }
 
         private static string GenerateModel(

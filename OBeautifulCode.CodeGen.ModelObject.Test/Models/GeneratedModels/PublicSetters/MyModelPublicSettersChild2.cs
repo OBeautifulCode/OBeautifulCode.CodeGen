@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="MyModelPublicSettersChild2.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
@@ -132,6 +132,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public IReadOnlyCollection<ModelEquatableStruct?> Child2ReadOnlyCollectionOfNullableModelEquatableStructProperty { get; set; }
 
+        public IReadOnlyList<bool> Child2ReadOnlyListOfBoolProperty { get; set; }
+
+        public IReadOnlyList<int> Child2ReadOnlyListOfIntProperty { get; set; }
+
+        public IReadOnlyList<string> Child2ReadOnlyListOfStringProperty { get; set; }
+
+        public IReadOnlyList<Guid> Child2ReadOnlyListOfGuidProperty { get; set; }
+
+        public IReadOnlyList<DateTime> Child2ReadOnlyListOfDateTimeProperty { get; set; }
+
+        public IReadOnlyList<ModelEnum> Child2ReadOnlyListOfModelEnumProperty { get; set; }
+
+        public IReadOnlyList<ModelFlagsEnum> Child2ReadOnlyListOfModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyList<ModelStruct> Child2ReadOnlyListOfModelStructProperty { get; set; }
+
+        public IReadOnlyList<ModelEquatableStruct> Child2ReadOnlyListOfModelEquatableStructProperty { get; set; }
+
+        public IReadOnlyList<ModelClass> Child2ReadOnlyListOfModelClassProperty { get; set; }
+
+        public IReadOnlyList<ModelEquatableClass> Child2ReadOnlyListOfModelEquatableClassProperty { get; set; }
+
+        public IReadOnlyList<bool?> Child2ReadOnlyListOfNullableBoolProperty { get; set; }
+
+        public IReadOnlyList<int?> Child2ReadOnlyListOfNullableIntProperty { get; set; }
+
+        public IReadOnlyList<Guid?> Child2ReadOnlyListOfNullableGuidProperty { get; set; }
+
+        public IReadOnlyList<DateTime?> Child2ReadOnlyListOfNullableDateTimeProperty { get; set; }
+
+        public IReadOnlyList<ModelEnum?> Child2ReadOnlyListOfNullableModelEnumProperty { get; set; }
+
+        public IReadOnlyList<ModelFlagsEnum?> Child2ReadOnlyListOfNullableModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyList<ModelStruct?> Child2ReadOnlyListOfNullableModelStructProperty { get; set; }
+
+        public IReadOnlyList<ModelEquatableStruct?> Child2ReadOnlyListOfNullableModelEquatableStructProperty { get; set; }
+
         public IReadOnlyDictionary<bool, bool> Child2ReadOnlyDictionaryOfBoolProperty { get; set; }
 
         public IReadOnlyDictionary<int, int> Child2ReadOnlyDictionaryOfIntProperty { get; set; }
@@ -169,5 +207,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public IReadOnlyDictionary<ModelStruct?, ModelStruct?> Child2ReadOnlyDictionaryOfNullableModelStructProperty { get; set; }
 
         public IReadOnlyDictionary<ModelEquatableStruct?, ModelEquatableStruct?> Child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty { get; set; }
+
+        public IReadOnlyList<IReadOnlyList<string>> Child2ReadOnlyListOfReadOnlyListOfStringProperty { get; set; }
+
+        public IReadOnlyList<ICollection<string>> Child2ReadOnlyListOfCollectionOfStringProperty { get; set; }
+
+        public ICollection<IReadOnlyList<ICollection<string>>> Child2CollectionOfReadOnlyListOfCollectionOfStringProperty { get; set; }
+
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>> Child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty { get; set; }
+
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<ICollection<string>, IReadOnlyDictionary<IList<string>, IReadOnlyList<string>>>> Child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty { get; set; }
     }
 }
