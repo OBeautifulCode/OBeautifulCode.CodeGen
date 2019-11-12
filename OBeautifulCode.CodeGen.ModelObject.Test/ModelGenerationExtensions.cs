@@ -221,5 +221,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             return result;
         }
+
+        public static string GetGeneratedModelsPath(
+            this SetterKind setterKind)
+        {
+            var result = CodeGeneratorTest.GeneratedModelsPath + setterKind + "\\";
+
+            return result;
+        }
     }
 }

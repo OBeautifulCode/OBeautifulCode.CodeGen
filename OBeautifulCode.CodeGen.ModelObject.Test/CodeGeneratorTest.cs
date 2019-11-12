@@ -24,7 +24,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
-        private const string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\";
+        public const string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\";
+
+        public static readonly string GeneratedModelsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\";
 
         private static readonly Type[] TypesToWrap =
         {
@@ -85,7 +87,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
             foreach (var setterKind in setterKinds)
             {
-                var directoryPath = SourceRoot.AppendMissing("\\") + $"OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\{setterKind}\\";
+                var directoryPath = setterKind.GetGeneratedModelsPath();
 
                 var filePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.None) + ".cs";
                 var parentFilePath = directoryPath + modelName.BuildModelName(setterKind, HierarchyKind.Abstract) + ".cs";
