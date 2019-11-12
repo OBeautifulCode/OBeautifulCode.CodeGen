@@ -55,7 +55,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateForModel___Should_generate_all_possible_code___When_parameter_generateFor_is_AllPossibleCode()
         {
             // Arrange, Act
-            var actual = CodeGenerator.GenerateForModel<MyModelGettersOnlyChild1>(GenerateFor.AllPossibleCode);
+            var actual = CodeGenerator.GenerateForModel<MyModelGettersOnlyChild1>(GenerateFor.ModelImplementationPartialClass);
 
             // Assert
             this.testOutputHelper.WriteLine(actual);
@@ -116,7 +116,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (setterKind.RequiresConstructor())
             {
-                constructorDeclarationStatement = Invariant($"        public {modelName}(");
+                var constructorAccessorModifier = hierarchyKind == HierarchyKind.Abstract ? "protected" : "public";
+
+                constructorDeclarationStatement = Invariant($"        {constructorAccessorModifier} {modelName}(");
             }
 
             var typesToAddAsProperties = new List<Type>();

@@ -45,7 +45,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "    using System.Globalization;",
                 "    using System.Linq;",
                 string.Empty,
-                "    using OBeautifulCode.Collection.Recipes;",
                 "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,

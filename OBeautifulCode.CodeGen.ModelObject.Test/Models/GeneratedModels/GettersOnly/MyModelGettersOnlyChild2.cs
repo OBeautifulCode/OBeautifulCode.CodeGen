@@ -75,6 +75,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionOfNullableModelFlagsEnumProperty,
             IReadOnlyCollection<ModelStruct?> parentReadOnlyCollectionOfNullableModelStructProperty,
             IReadOnlyCollection<ModelEquatableStruct?> parentReadOnlyCollectionOfNullableModelEquatableStructProperty,
+            IReadOnlyList<bool> parentReadOnlyListOfBoolProperty,
+            IReadOnlyList<int> parentReadOnlyListOfIntProperty,
+            IReadOnlyList<string> parentReadOnlyListOfStringProperty,
+            IReadOnlyList<Guid> parentReadOnlyListOfGuidProperty,
+            IReadOnlyList<DateTime> parentReadOnlyListOfDateTimeProperty,
+            IReadOnlyList<ModelEnum> parentReadOnlyListOfModelEnumProperty,
+            IReadOnlyList<ModelFlagsEnum> parentReadOnlyListOfModelFlagsEnumProperty,
+            IReadOnlyList<ModelStruct> parentReadOnlyListOfModelStructProperty,
+            IReadOnlyList<ModelEquatableStruct> parentReadOnlyListOfModelEquatableStructProperty,
+            IReadOnlyList<ModelClass> parentReadOnlyListOfModelClassProperty,
+            IReadOnlyList<ModelEquatableClass> parentReadOnlyListOfModelEquatableClassProperty,
+            IReadOnlyList<bool?> parentReadOnlyListOfNullableBoolProperty,
+            IReadOnlyList<int?> parentReadOnlyListOfNullableIntProperty,
+            IReadOnlyList<Guid?> parentReadOnlyListOfNullableGuidProperty,
+            IReadOnlyList<DateTime?> parentReadOnlyListOfNullableDateTimeProperty,
+            IReadOnlyList<ModelEnum?> parentReadOnlyListOfNullableModelEnumProperty,
+            IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListOfNullableModelFlagsEnumProperty,
+            IReadOnlyList<ModelStruct?> parentReadOnlyListOfNullableModelStructProperty,
+            IReadOnlyList<ModelEquatableStruct?> parentReadOnlyListOfNullableModelEquatableStructProperty,
             IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryOfBoolProperty,
             IReadOnlyDictionary<int, int> parentReadOnlyDictionaryOfIntProperty,
             IReadOnlyDictionary<string, string> parentReadOnlyDictionaryOfStringProperty,
@@ -94,6 +113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryOfNullableModelFlagsEnumProperty,
             IReadOnlyDictionary<ModelStruct?, ModelStruct?> parentReadOnlyDictionaryOfNullableModelStructProperty,
             IReadOnlyDictionary<ModelEquatableStruct?, ModelEquatableStruct?> parentReadOnlyDictionaryOfNullableModelEquatableStructProperty,
+            IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>> parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty,
             bool child2BoolProperty,
             int child2IntProperty,
             string child2StringProperty,
@@ -151,6 +171,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<ModelFlagsEnum?> child2ReadOnlyCollectionOfNullableModelFlagsEnumProperty,
             IReadOnlyCollection<ModelStruct?> child2ReadOnlyCollectionOfNullableModelStructProperty,
             IReadOnlyCollection<ModelEquatableStruct?> child2ReadOnlyCollectionOfNullableModelEquatableStructProperty,
+            IReadOnlyList<bool> child2ReadOnlyListOfBoolProperty,
+            IReadOnlyList<int> child2ReadOnlyListOfIntProperty,
+            IReadOnlyList<string> child2ReadOnlyListOfStringProperty,
+            IReadOnlyList<Guid> child2ReadOnlyListOfGuidProperty,
+            IReadOnlyList<DateTime> child2ReadOnlyListOfDateTimeProperty,
+            IReadOnlyList<ModelEnum> child2ReadOnlyListOfModelEnumProperty,
+            IReadOnlyList<ModelFlagsEnum> child2ReadOnlyListOfModelFlagsEnumProperty,
+            IReadOnlyList<ModelStruct> child2ReadOnlyListOfModelStructProperty,
+            IReadOnlyList<ModelEquatableStruct> child2ReadOnlyListOfModelEquatableStructProperty,
+            IReadOnlyList<ModelClass> child2ReadOnlyListOfModelClassProperty,
+            IReadOnlyList<ModelEquatableClass> child2ReadOnlyListOfModelEquatableClassProperty,
+            IReadOnlyList<bool?> child2ReadOnlyListOfNullableBoolProperty,
+            IReadOnlyList<int?> child2ReadOnlyListOfNullableIntProperty,
+            IReadOnlyList<Guid?> child2ReadOnlyListOfNullableGuidProperty,
+            IReadOnlyList<DateTime?> child2ReadOnlyListOfNullableDateTimeProperty,
+            IReadOnlyList<ModelEnum?> child2ReadOnlyListOfNullableModelEnumProperty,
+            IReadOnlyList<ModelFlagsEnum?> child2ReadOnlyListOfNullableModelFlagsEnumProperty,
+            IReadOnlyList<ModelStruct?> child2ReadOnlyListOfNullableModelStructProperty,
+            IReadOnlyList<ModelEquatableStruct?> child2ReadOnlyListOfNullableModelEquatableStructProperty,
             IReadOnlyDictionary<bool, bool> child2ReadOnlyDictionaryOfBoolProperty,
             IReadOnlyDictionary<int, int> child2ReadOnlyDictionaryOfIntProperty,
             IReadOnlyDictionary<string, string> child2ReadOnlyDictionaryOfStringProperty,
@@ -169,8 +208,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<ModelEnum?, ModelEnum?> child2ReadOnlyDictionaryOfNullableModelEnumProperty,
             IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> child2ReadOnlyDictionaryOfNullableModelFlagsEnumProperty,
             IReadOnlyDictionary<ModelStruct?, ModelStruct?> child2ReadOnlyDictionaryOfNullableModelStructProperty,
-            IReadOnlyDictionary<ModelEquatableStruct?, ModelEquatableStruct?> child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty)
-            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentModelEnumProperty, parentModelFlagsEnumProperty, parentModelStructProperty, parentModelEquatableStructProperty, parentModelClassProperty, parentModelEquatableClassProperty, parentNullableBoolProperty, parentNullableIntProperty, parentNullableGuidProperty, parentNullableDateTimeProperty, parentNullableModelEnumProperty, parentNullableModelFlagsEnumProperty, parentNullableModelStructProperty, parentNullableModelEquatableStructProperty, parentArrayOfBoolProperty, parentArrayOfIntProperty, parentArrayOfStringProperty, parentArrayOfGuidProperty, parentArrayOfDateTimeProperty, parentArrayOfModelEnumProperty, parentArrayOfModelFlagsEnumProperty, parentArrayOfModelStructProperty, parentArrayOfModelEquatableStructProperty, parentArrayOfModelClassProperty, parentArrayOfModelEquatableClassProperty, parentArrayOfNullableBoolProperty, parentArrayOfNullableIntProperty, parentArrayOfNullableGuidProperty, parentArrayOfNullableDateTimeProperty, parentArrayOfNullableModelEnumProperty, parentArrayOfNullableModelFlagsEnumProperty, parentArrayOfNullableModelStructProperty, parentArrayOfNullableModelEquatableStructProperty, parentReadOnlyCollectionOfBoolProperty, parentReadOnlyCollectionOfIntProperty, parentReadOnlyCollectionOfStringProperty, parentReadOnlyCollectionOfGuidProperty, parentReadOnlyCollectionOfDateTimeProperty, parentReadOnlyCollectionOfModelEnumProperty, parentReadOnlyCollectionOfModelFlagsEnumProperty, parentReadOnlyCollectionOfModelStructProperty, parentReadOnlyCollectionOfModelEquatableStructProperty, parentReadOnlyCollectionOfModelClassProperty, parentReadOnlyCollectionOfModelEquatableClassProperty, parentReadOnlyCollectionOfNullableBoolProperty, parentReadOnlyCollectionOfNullableIntProperty, parentReadOnlyCollectionOfNullableGuidProperty, parentReadOnlyCollectionOfNullableDateTimeProperty, parentReadOnlyCollectionOfNullableModelEnumProperty, parentReadOnlyCollectionOfNullableModelFlagsEnumProperty, parentReadOnlyCollectionOfNullableModelStructProperty, parentReadOnlyCollectionOfNullableModelEquatableStructProperty, parentReadOnlyDictionaryOfBoolProperty, parentReadOnlyDictionaryOfIntProperty, parentReadOnlyDictionaryOfStringProperty, parentReadOnlyDictionaryOfGuidProperty, parentReadOnlyDictionaryOfDateTimeProperty, parentReadOnlyDictionaryOfModelEnumProperty, parentReadOnlyDictionaryOfModelFlagsEnumProperty, parentReadOnlyDictionaryOfModelStructProperty, parentReadOnlyDictionaryOfModelEquatableStructProperty, parentReadOnlyDictionaryOfModelClassProperty, parentReadOnlyDictionaryOfModelEquatableClassProperty, parentReadOnlyDictionaryOfNullableBoolProperty, parentReadOnlyDictionaryOfNullableIntProperty, parentReadOnlyDictionaryOfNullableGuidProperty, parentReadOnlyDictionaryOfNullableDateTimeProperty, parentReadOnlyDictionaryOfNullableModelEnumProperty, parentReadOnlyDictionaryOfNullableModelFlagsEnumProperty, parentReadOnlyDictionaryOfNullableModelStructProperty, parentReadOnlyDictionaryOfNullableModelEquatableStructProperty)
+            IReadOnlyDictionary<ModelEquatableStruct?, ModelEquatableStruct?> child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty,
+            IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>> child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty)
+            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentModelEnumProperty, parentModelFlagsEnumProperty, parentModelStructProperty, parentModelEquatableStructProperty, parentModelClassProperty, parentModelEquatableClassProperty, parentNullableBoolProperty, parentNullableIntProperty, parentNullableGuidProperty, parentNullableDateTimeProperty, parentNullableModelEnumProperty, parentNullableModelFlagsEnumProperty, parentNullableModelStructProperty, parentNullableModelEquatableStructProperty, parentArrayOfBoolProperty, parentArrayOfIntProperty, parentArrayOfStringProperty, parentArrayOfGuidProperty, parentArrayOfDateTimeProperty, parentArrayOfModelEnumProperty, parentArrayOfModelFlagsEnumProperty, parentArrayOfModelStructProperty, parentArrayOfModelEquatableStructProperty, parentArrayOfModelClassProperty, parentArrayOfModelEquatableClassProperty, parentArrayOfNullableBoolProperty, parentArrayOfNullableIntProperty, parentArrayOfNullableGuidProperty, parentArrayOfNullableDateTimeProperty, parentArrayOfNullableModelEnumProperty, parentArrayOfNullableModelFlagsEnumProperty, parentArrayOfNullableModelStructProperty, parentArrayOfNullableModelEquatableStructProperty, parentReadOnlyCollectionOfBoolProperty, parentReadOnlyCollectionOfIntProperty, parentReadOnlyCollectionOfStringProperty, parentReadOnlyCollectionOfGuidProperty, parentReadOnlyCollectionOfDateTimeProperty, parentReadOnlyCollectionOfModelEnumProperty, parentReadOnlyCollectionOfModelFlagsEnumProperty, parentReadOnlyCollectionOfModelStructProperty, parentReadOnlyCollectionOfModelEquatableStructProperty, parentReadOnlyCollectionOfModelClassProperty, parentReadOnlyCollectionOfModelEquatableClassProperty, parentReadOnlyCollectionOfNullableBoolProperty, parentReadOnlyCollectionOfNullableIntProperty, parentReadOnlyCollectionOfNullableGuidProperty, parentReadOnlyCollectionOfNullableDateTimeProperty, parentReadOnlyCollectionOfNullableModelEnumProperty, parentReadOnlyCollectionOfNullableModelFlagsEnumProperty, parentReadOnlyCollectionOfNullableModelStructProperty, parentReadOnlyCollectionOfNullableModelEquatableStructProperty, parentReadOnlyListOfBoolProperty, parentReadOnlyListOfIntProperty, parentReadOnlyListOfStringProperty, parentReadOnlyListOfGuidProperty, parentReadOnlyListOfDateTimeProperty, parentReadOnlyListOfModelEnumProperty, parentReadOnlyListOfModelFlagsEnumProperty, parentReadOnlyListOfModelStructProperty, parentReadOnlyListOfModelEquatableStructProperty, parentReadOnlyListOfModelClassProperty, parentReadOnlyListOfModelEquatableClassProperty, parentReadOnlyListOfNullableBoolProperty, parentReadOnlyListOfNullableIntProperty, parentReadOnlyListOfNullableGuidProperty, parentReadOnlyListOfNullableDateTimeProperty, parentReadOnlyListOfNullableModelEnumProperty, parentReadOnlyListOfNullableModelFlagsEnumProperty, parentReadOnlyListOfNullableModelStructProperty, parentReadOnlyListOfNullableModelEquatableStructProperty, parentReadOnlyDictionaryOfBoolProperty, parentReadOnlyDictionaryOfIntProperty, parentReadOnlyDictionaryOfStringProperty, parentReadOnlyDictionaryOfGuidProperty, parentReadOnlyDictionaryOfDateTimeProperty, parentReadOnlyDictionaryOfModelEnumProperty, parentReadOnlyDictionaryOfModelFlagsEnumProperty, parentReadOnlyDictionaryOfModelStructProperty, parentReadOnlyDictionaryOfModelEquatableStructProperty, parentReadOnlyDictionaryOfModelClassProperty, parentReadOnlyDictionaryOfModelEquatableClassProperty, parentReadOnlyDictionaryOfNullableBoolProperty, parentReadOnlyDictionaryOfNullableIntProperty, parentReadOnlyDictionaryOfNullableGuidProperty, parentReadOnlyDictionaryOfNullableDateTimeProperty, parentReadOnlyDictionaryOfNullableModelEnumProperty, parentReadOnlyDictionaryOfNullableModelFlagsEnumProperty, parentReadOnlyDictionaryOfNullableModelStructProperty, parentReadOnlyDictionaryOfNullableModelEquatableStructProperty, parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty)
         {
             new { child2StringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { child2ModelClassProperty }.AsArg().Must().NotBeNull();
@@ -213,6 +253,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child2ReadOnlyCollectionOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyCollectionOfNullableModelStructProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyCollectionOfNullableModelEquatableStructProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfBoolProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfIntProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfStringProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfGuidProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfDateTimeProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfModelEnumProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfModelFlagsEnumProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfModelStructProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfModelEquatableStructProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfModelClassProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfModelEquatableClassProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableBoolProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableIntProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableGuidProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableDateTimeProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableModelEnumProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableModelStructProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyListOfNullableModelEquatableStructProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyDictionaryOfBoolProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyDictionaryOfIntProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyDictionaryOfStringProperty }.AsArg().Must().NotBeNull();
@@ -232,6 +291,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child2ReadOnlyDictionaryOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyDictionaryOfNullableModelStructProperty }.AsArg().Must().NotBeNull();
             new { child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty }.AsArg().Must().NotBeNull();
+            new { child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty }.AsArg().Must().NotBeNull();
 
             this.Child2BoolProperty = child2BoolProperty;
             this.Child2IntProperty = child2IntProperty;
@@ -290,6 +350,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2ReadOnlyCollectionOfNullableModelFlagsEnumProperty = child2ReadOnlyCollectionOfNullableModelFlagsEnumProperty;
             this.Child2ReadOnlyCollectionOfNullableModelStructProperty = child2ReadOnlyCollectionOfNullableModelStructProperty;
             this.Child2ReadOnlyCollectionOfNullableModelEquatableStructProperty = child2ReadOnlyCollectionOfNullableModelEquatableStructProperty;
+            this.Child2ReadOnlyListOfBoolProperty = child2ReadOnlyListOfBoolProperty;
+            this.Child2ReadOnlyListOfIntProperty = child2ReadOnlyListOfIntProperty;
+            this.Child2ReadOnlyListOfStringProperty = child2ReadOnlyListOfStringProperty;
+            this.Child2ReadOnlyListOfGuidProperty = child2ReadOnlyListOfGuidProperty;
+            this.Child2ReadOnlyListOfDateTimeProperty = child2ReadOnlyListOfDateTimeProperty;
+            this.Child2ReadOnlyListOfModelEnumProperty = child2ReadOnlyListOfModelEnumProperty;
+            this.Child2ReadOnlyListOfModelFlagsEnumProperty = child2ReadOnlyListOfModelFlagsEnumProperty;
+            this.Child2ReadOnlyListOfModelStructProperty = child2ReadOnlyListOfModelStructProperty;
+            this.Child2ReadOnlyListOfModelEquatableStructProperty = child2ReadOnlyListOfModelEquatableStructProperty;
+            this.Child2ReadOnlyListOfModelClassProperty = child2ReadOnlyListOfModelClassProperty;
+            this.Child2ReadOnlyListOfModelEquatableClassProperty = child2ReadOnlyListOfModelEquatableClassProperty;
+            this.Child2ReadOnlyListOfNullableBoolProperty = child2ReadOnlyListOfNullableBoolProperty;
+            this.Child2ReadOnlyListOfNullableIntProperty = child2ReadOnlyListOfNullableIntProperty;
+            this.Child2ReadOnlyListOfNullableGuidProperty = child2ReadOnlyListOfNullableGuidProperty;
+            this.Child2ReadOnlyListOfNullableDateTimeProperty = child2ReadOnlyListOfNullableDateTimeProperty;
+            this.Child2ReadOnlyListOfNullableModelEnumProperty = child2ReadOnlyListOfNullableModelEnumProperty;
+            this.Child2ReadOnlyListOfNullableModelFlagsEnumProperty = child2ReadOnlyListOfNullableModelFlagsEnumProperty;
+            this.Child2ReadOnlyListOfNullableModelStructProperty = child2ReadOnlyListOfNullableModelStructProperty;
+            this.Child2ReadOnlyListOfNullableModelEquatableStructProperty = child2ReadOnlyListOfNullableModelEquatableStructProperty;
             this.Child2ReadOnlyDictionaryOfBoolProperty = child2ReadOnlyDictionaryOfBoolProperty;
             this.Child2ReadOnlyDictionaryOfIntProperty = child2ReadOnlyDictionaryOfIntProperty;
             this.Child2ReadOnlyDictionaryOfStringProperty = child2ReadOnlyDictionaryOfStringProperty;
@@ -309,6 +388,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2ReadOnlyDictionaryOfNullableModelFlagsEnumProperty = child2ReadOnlyDictionaryOfNullableModelFlagsEnumProperty;
             this.Child2ReadOnlyDictionaryOfNullableModelStructProperty = child2ReadOnlyDictionaryOfNullableModelStructProperty;
             this.Child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty = child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty;
+            this.Child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty = child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty;
         }
 
         public bool Child2BoolProperty { get; }
@@ -425,6 +505,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public IReadOnlyCollection<ModelEquatableStruct?> Child2ReadOnlyCollectionOfNullableModelEquatableStructProperty { get; }
 
+        public IReadOnlyList<bool> Child2ReadOnlyListOfBoolProperty { get; }
+
+        public IReadOnlyList<int> Child2ReadOnlyListOfIntProperty { get; }
+
+        public IReadOnlyList<string> Child2ReadOnlyListOfStringProperty { get; }
+
+        public IReadOnlyList<Guid> Child2ReadOnlyListOfGuidProperty { get; }
+
+        public IReadOnlyList<DateTime> Child2ReadOnlyListOfDateTimeProperty { get; }
+
+        public IReadOnlyList<ModelEnum> Child2ReadOnlyListOfModelEnumProperty { get; }
+
+        public IReadOnlyList<ModelFlagsEnum> Child2ReadOnlyListOfModelFlagsEnumProperty { get; }
+
+        public IReadOnlyList<ModelStruct> Child2ReadOnlyListOfModelStructProperty { get; }
+
+        public IReadOnlyList<ModelEquatableStruct> Child2ReadOnlyListOfModelEquatableStructProperty { get; }
+
+        public IReadOnlyList<ModelClass> Child2ReadOnlyListOfModelClassProperty { get; }
+
+        public IReadOnlyList<ModelEquatableClass> Child2ReadOnlyListOfModelEquatableClassProperty { get; }
+
+        public IReadOnlyList<bool?> Child2ReadOnlyListOfNullableBoolProperty { get; }
+
+        public IReadOnlyList<int?> Child2ReadOnlyListOfNullableIntProperty { get; }
+
+        public IReadOnlyList<Guid?> Child2ReadOnlyListOfNullableGuidProperty { get; }
+
+        public IReadOnlyList<DateTime?> Child2ReadOnlyListOfNullableDateTimeProperty { get; }
+
+        public IReadOnlyList<ModelEnum?> Child2ReadOnlyListOfNullableModelEnumProperty { get; }
+
+        public IReadOnlyList<ModelFlagsEnum?> Child2ReadOnlyListOfNullableModelFlagsEnumProperty { get; }
+
+        public IReadOnlyList<ModelStruct?> Child2ReadOnlyListOfNullableModelStructProperty { get; }
+
+        public IReadOnlyList<ModelEquatableStruct?> Child2ReadOnlyListOfNullableModelEquatableStructProperty { get; }
+
         public IReadOnlyDictionary<bool, bool> Child2ReadOnlyDictionaryOfBoolProperty { get; }
 
         public IReadOnlyDictionary<int, int> Child2ReadOnlyDictionaryOfIntProperty { get; }
@@ -462,5 +580,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public IReadOnlyDictionary<ModelStruct?, ModelStruct?> Child2ReadOnlyDictionaryOfNullableModelStructProperty { get; }
 
         public IReadOnlyDictionary<ModelEquatableStruct?, ModelEquatableStruct?> Child2ReadOnlyDictionaryOfNullableModelEquatableStructProperty { get; }
+
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>> Child2ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfGuidProperty { get; }
     }
 }
