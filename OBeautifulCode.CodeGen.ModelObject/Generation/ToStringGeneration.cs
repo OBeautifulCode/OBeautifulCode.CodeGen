@@ -20,7 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string ToStringToken = "<<<ToStringConstructionHere>>>";
         private const string ToStringTestToken = "<<<ToStringConstructionForTestHere>>>";
 
-        private const string ToStringMethodCodeTemplate = @"
+        private const string ToStringMethodForConcreteTypeCodeTemplate = @"
         /// <inheritdoc />
         public override string ToString()
         {
@@ -28,6 +28,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }";
+
+        private const string ToStringMethodForAbstractTypeCodeTemplate = @"
+        /// <inheritdoc />
+        public abstract override string ToString();";
 
         private const string ToStringTestMethodCodeTemplate = @"
         [Fact]
@@ -55,8 +59,19 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateToStringMethod(
             this Type type)
         {
-            var toStringConstructionCode = type.GenerateToStringConstructionCode();
-            var result = ToStringMethodCodeTemplate.Replace(ToStringToken, toStringConstructionCode);
+            string result;
+
+            if (type.IsAbstract)
+            {
+                result = ToStringMethodForAbstractTypeCodeTemplate;
+            }
+            else
+            {
+                var toStringConstructionCode = type.GenerateToStringConstructionCode();
+
+                result = ToStringMethodForConcreteTypeCodeTemplate.Replace(ToStringToken, toStringConstructionCode);
+            }
+
             return result;
         }
 
@@ -71,9 +86,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             var toStringConstructionCode = type.GenerateToStringTestConstructionCode();
+
             var result = ToStringTestMethodCodeTemplate
                         .Replace(TypeNameToken, type.ToStringCompilable())
                         .Replace(ToStringTestToken, toStringConstructionCode);
+
             return result;
         }
 
@@ -81,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             var propertyNames = type.GetPropertiesOfConcernFromType().ToDictionary(_ => _.Name, _ => _);
+
             var result = "Invariant($\"{nameof("
                        + type.Namespace
                        + ")}.{nameof("

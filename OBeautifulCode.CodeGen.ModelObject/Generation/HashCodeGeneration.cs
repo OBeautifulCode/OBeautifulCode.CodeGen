@@ -21,11 +21,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
     {
         private const string HashToken = "<<<HashMethodStackHere>>>";
 
-        private const string HashMethodCodeTemplate = @"
+        private const string HashMethodForConcreteTypeCodeTemplate = @"
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
             ." + HashToken + @"
             .Value;";
+
+        private const string HashMethodForAbstractTypeCodeTemplate = @"
+        /// <inheritdoc />
+        public abstract override int GetHashCode();";
 
         /// <summary>
         /// Generate hash code method.
@@ -37,13 +41,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateGetHashCodeMethod(
             this Type type)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
+            string result;
 
-            var hashLines = properties.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
+            if (type.IsAbstract)
+            {
+                result = HashMethodForAbstractTypeCodeTemplate;
+            }
+            else
+            {
+                var properties = type.GetPropertiesOfConcernFromType();
 
-            var hashToken = string.Join(Environment.NewLine + "            .", hashLines);
+                var hashLines = properties.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
 
-            var result = HashMethodCodeTemplate.Replace(HashToken, hashToken);
+                var hashToken = string.Join(Environment.NewLine + "            .", hashLines);
+
+                result = HashMethodForConcreteTypeCodeTemplate.Replace(HashToken, hashToken);
+            }
 
             return result;
         }

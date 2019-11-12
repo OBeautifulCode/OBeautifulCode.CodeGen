@@ -26,7 +26,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
 
-        private const string EqualityMethodsCodeTemplate = @"    /// <summary>
+        private const string EqualityMethodsForConcreteTypeCodeTemplate = @"    /// <summary>
         /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
         /// </summary>
         /// <param name=""left"">The object to the left of the equality operator.</param>
@@ -62,6 +62,43 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as " + TypeNameToken + @");";
+
+        private const string EqualityMethodsForAbstractTypeCodeTemplate = @"    /// <summary>
+        /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
+        /// </summary>
+        /// <param name=""left"">The object to the left of the equality operator.</param>
+        /// <param name=""right"">The object to the right of the equality operator.</param>
+        /// <returns>true if the two items are equal; otherwise false.</returns>
+        public static bool operator ==(" + TypeNameToken + @" left, " + TypeNameToken + @" right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            var result = left.Equals((object)right);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are not equal.
+        /// </summary>
+        /// <param name=""left"">The object to the left of the equality operator.</param>
+        /// <param name=""right"">The object to the right of the equality operator.</param>
+        /// <returns>true if the two items not equal; otherwise false.</returns>
+        public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);
+
+        /// <inheritdoc />
+        public bool Equals(" + TypeNameToken + @" other) => this == other;
+
+        /// <inheritdoc />
+        public abstract override bool Equals(object obj);";
 
         private const string EqualityTestFieldsCodeTemplate = @"    private static readonly " + TypeNameToken + @" ObjectForEquatableTests = A.Dummy<" + TypeNameToken + @">();
 
@@ -337,11 +374,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityMethods(
             this Type type)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
-            var equalityLines = properties.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
-            var equalityToken = string.Join(Environment.NewLine + "                      && ", equalityLines);
-            var result = EqualityMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable())
-                                                    .Replace(EqualityToken, equalityToken);
+            string result;
+
+            if (type.IsAbstract)
+            {
+                result = EqualityMethodsForAbstractTypeCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+            }
+            else
+            {
+                var properties = type.GetPropertiesOfConcernFromType();
+
+                var equalityLines = properties.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
+
+                var equalityToken = string.Join(Environment.NewLine + "                      && ", equalityLines);
+
+                result = EqualityMethodsForConcreteTypeCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable())
+                    .Replace(EqualityToken, equalityToken);
+            }
 
             return result;
         }
