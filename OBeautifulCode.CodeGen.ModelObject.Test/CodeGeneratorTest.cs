@@ -76,7 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateModel___Should_generate_the_model___When_called()
         {
             // Arrange
-            var modelName = "MyModel";
+            var modelBaseName = "MyModel";
             var childIdentifiers = new[] { "1", "2" };
             var typesToWrap = TypesToWrap;
             var additionalTypes = AdditionalTypes;
@@ -94,9 +94,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     void GenerateAndWriteModelCodeFile(string childIdentifier = null)
                     {
-                        var modelFilePath = directoryPath + modelName.BuildModelName(setterKind, hierarchyKind, childIdentifier) + ".cs";
+                        var modelName = modelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
 
-                        var modelCode = GenerateModel(modelName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, hierarchyKind, childIdentifier);
+                        var modelFilePath = directoryPath + modelName + ".cs";
+
+                        var modelCode = GenerateModel(modelBaseName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, hierarchyKind, childIdentifier);
 
                         File.WriteAllText(modelFilePath, modelCode);
                     }
