@@ -145,6 +145,9 @@
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnly.cs" />
+    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnly.designer.cs">
+      <DependentUpon>MyModelGettersOnly.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1.cs" />
     <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1.designer.cs">
       <DependentUpon>MyModelGettersOnlyChild1.cs</DependentUpon>
@@ -158,6 +161,9 @@
       <DependentUpon>MyModelGettersOnlyParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSetters.designer.cs">
+      <DependentUpon>MyModelPrivateSetters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1.cs" />
     <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelPrivateSettersChild1.cs</DependentUpon>
@@ -171,6 +177,9 @@
       <DependentUpon>MyModelPrivateSettersParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSetters.designer.cs">
+      <DependentUpon>MyModelPublicSetters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild1.cs" />
     <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelPublicSettersChild1.cs</DependentUpon>
