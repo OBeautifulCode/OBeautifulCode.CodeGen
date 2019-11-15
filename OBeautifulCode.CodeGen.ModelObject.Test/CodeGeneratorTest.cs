@@ -18,7 +18,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Type.Recipes;
 
     using Xunit;
-    using Xunit.Abstractions;
 
     using static System.FormattableString;
 
@@ -33,6 +32,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
 
         public static readonly string GeneratedModelsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\";
+
+        public static readonly string GeneratedTestsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\ModelsTests\\GeneratedModels\\";
 
         private static readonly Type[] TypesToWrap =
         {
@@ -60,95 +61,76 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<ICollection<string>, IReadOnlyDictionary<IList<string>, IReadOnlyList<string>>>>),
         };
 
-        private readonly ITestOutputHelper testOutputHelper;
-
-        public CodeGeneratorTest(
-            ITestOutputHelper testOutputHelper)
-        {
-            this.testOutputHelper = testOutputHelper;
-        }
+        private delegate void ExecuteForModelsEventHandler(SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null);
 
         [Fact]
         public void GenerateModel___Should_generate_the_model___When_called()
         {
-            var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
-            foreach (var setterKind in setterKinds)
+            void ExecuteForModelsEventHandler(SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
             {
-                var directoryPath = setterKind.GetGeneratedModelsPath();
+                var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
 
-                var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
+                var modelFilePath = directoryPath + modelName + ".cs";
 
-                foreach (var hierarchyKind in hierarchyKinds)
+                var modelCode = GenerateModel(ModelBaseName, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, hierarchyKind, childIdentifier);
+
+                if (WriteFiles)
                 {
-                    void GenerateAndWriteModelCodeFile(string childIdentifier = null)
-                    {
-                        var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
-
-                        var modelFilePath = directoryPath + modelName + ".cs";
-
-                        var modelCode = GenerateModel(ModelBaseName, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, hierarchyKind, childIdentifier);
-
-                        if (WriteFiles)
-                        {
-                            File.WriteAllText(modelFilePath, modelCode);
-                        }
-                    }
-
-                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
-                    {
-                        foreach (var childIdentifier in ChildIdentifiers)
-                        {
-                            GenerateAndWriteModelCodeFile(childIdentifier);
-                        }
-                    }
-                    else
-                    {
-                        GenerateAndWriteModelCodeFile();
-                    }
+                    File.WriteAllText(modelFilePath, modelCode);
                 }
             }
+
+            ExecuteForModels(GenerationKind.Model, ExecuteForModelsEventHandler);
         }
 
         [Fact]
         public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
         {
+            void ExecuteForModelsEventHandler(SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
+            {
+                var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
+
+                var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
+
+                var generateForModelMethodInfo = typeof(CodeGenerator).GetMethod(nameof(CodeGenerator.GenerateForModel)).MakeGenericMethod(modelType);
+
+                var modelFilePath = directoryPath + modelName + ".designer.cs";
+
+                var modelCode = (string)generateForModelMethodInfo.Invoke(null, new object[] { GenerateFor.ModelImplementationPartialClass });
+
+                if (WriteFiles)
+                {
+                    File.WriteAllText(modelFilePath, modelCode);
+                }
+            }
+
+            ExecuteForModels(GenerationKind.Model, ExecuteForModelsEventHandler);
+        }
+
+        private static void ExecuteForModels(
+            GenerationKind generationKind,
+            ExecuteForModelsEventHandler eventHandler)
+        {
             var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
+
             foreach (var setterKind in setterKinds)
             {
-                var directoryPath = setterKind.GetGeneratedModelsPath();
+                var directoryPath = setterKind.GetGeneratedCodePath(generationKind);
 
                 var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
 
                 foreach (var hierarchyKind in hierarchyKinds)
                 {
-                    void GenerateAndWriteModelCodeFile(string childIdentifier = null)
-                    {
-                        var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
-
-                        var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
-
-                        var generateForModelMethodInfo = typeof(CodeGenerator).GetMethod(nameof(CodeGenerator.GenerateForModel)).MakeGenericMethod(modelType);
-
-                        var modelFilePath = directoryPath + modelName + ".designer.cs";
-
-                        var modelCode = (string)generateForModelMethodInfo.Invoke(null, new object[] { GenerateFor.ModelImplementationPartialClass });
-
-                        if (WriteFiles)
-                        {
-                            File.WriteAllText(modelFilePath, modelCode);
-                        }
-                    }
-
                     if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
                         foreach (var childIdentifier in ChildIdentifiers)
                         {
-                            GenerateAndWriteModelCodeFile(childIdentifier);
+                            eventHandler(setterKind, hierarchyKind, directoryPath, childIdentifier);
                         }
                     }
                     else
                     {
-                        GenerateAndWriteModelCodeFile();
+                        eventHandler(setterKind, hierarchyKind, directoryPath);
                     }
                 }
             }

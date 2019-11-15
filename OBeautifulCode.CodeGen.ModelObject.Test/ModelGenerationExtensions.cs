@@ -222,10 +222,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string GetGeneratedModelsPath(
-            this SetterKind setterKind)
+        public static string GetGeneratedCodePath(
+            this SetterKind setterKind,
+            GenerationKind generationKind)
         {
-            var result = CodeGeneratorTest.GeneratedModelsPath + setterKind + "\\";
+            string result;
+
+            switch (generationKind)
+            {
+                case GenerationKind.Model:
+                    result = CodeGeneratorTest.GeneratedModelsPath + setterKind + "\\";
+                    break;
+                case GenerationKind.Test:
+                    result = CodeGeneratorTest.GeneratedTestsPath + setterKind + "\\";
+                    break;
+                default:
+                    throw new NotSupportedException("This kind is not supported: " + generationKind);
+            }
 
             return result;
         }
