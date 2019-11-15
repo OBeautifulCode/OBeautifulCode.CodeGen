@@ -26,6 +26,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         public const string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\";
 
+        public const string ModelBaseName = "MyModel";
+
+        public static readonly bool WriteFiles = true;
+
+        public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
+
         public static readonly string GeneratedModelsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\";
 
         private static readonly Type[] TypesToWrap =
@@ -42,6 +48,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(ModelClass),
             typeof(ModelEquatableClass),
         };
+
+        private static readonly IReadOnlyList<TypeWrapperKind> TypeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>().ToList();
 
         private static readonly Type[] AdditionalTypes =
         {
@@ -61,28 +69,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         [Fact]
-        public void GenerateForModel___Should_generate_all_possible_code___When_parameter_generateFor_is_AllPossibleCode()
-        {
-            // Arrange, Act
-            var actual1 = CodeGenerator.GenerateForModel<MyModelGettersOnlyParent>(GenerateFor.ModelImplementationPartialClass);
-            var actual2 = CodeGenerator.GenerateForModel<MyModelGettersOnlyChild1>(GenerateFor.ModelImplementationPartialClass);
-
-            // Assert
-            this.testOutputHelper.WriteLine(actual1);
-            this.testOutputHelper.WriteLine(actual2);
-        }
-
-        [Fact]
         public void GenerateModel___Should_generate_the_model___When_called()
         {
-            // Arrange
-            var modelBaseName = "MyModel";
-            var childIdentifiers = new[] { "1", "2" };
-            var typesToWrap = TypesToWrap;
-            var additionalTypes = AdditionalTypes;
-            var typeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>();
-
-            // Act, Assert
             var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
             foreach (var setterKind in setterKinds)
             {
@@ -94,18 +82,66 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     void GenerateAndWriteModelCodeFile(string childIdentifier = null)
                     {
-                        var modelName = modelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
+                        var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
 
                         var modelFilePath = directoryPath + modelName + ".cs";
 
-                        var modelCode = GenerateModel(modelBaseName, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, hierarchyKind, childIdentifier);
+                        var modelCode = GenerateModel(ModelBaseName, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, hierarchyKind, childIdentifier);
 
-                        File.WriteAllText(modelFilePath, modelCode);
+                        if (WriteFiles)
+                        {
+                            File.WriteAllText(modelFilePath, modelCode);
+                        }
                     }
 
                     if (hierarchyKind == HierarchyKind.Derivative)
                     {
-                        foreach (var childIdentifier in childIdentifiers)
+                        foreach (var childIdentifier in ChildIdentifiers)
+                        {
+                            GenerateAndWriteModelCodeFile(childIdentifier);
+                        }
+                    }
+                    else
+                    {
+                        GenerateAndWriteModelCodeFile();
+                    }
+                }
+            }
+        }
+
+        [Fact]
+        public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
+        {
+            var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
+            foreach (var setterKind in setterKinds)
+            {
+                var directoryPath = setterKind.GetGeneratedModelsPath();
+
+                var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
+
+                foreach (var hierarchyKind in hierarchyKinds)
+                {
+                    void GenerateAndWriteModelCodeFile(string childIdentifier = null)
+                    {
+                        var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
+
+                        var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
+
+                        var generateForModelMethodInfo = typeof(CodeGenerator).GetMethod(nameof(CodeGenerator.GenerateForModel)).MakeGenericMethod(modelType);
+
+                        var modelFilePath = directoryPath + modelName + ".designer.cs";
+
+                        var modelCode = (string)generateForModelMethodInfo.Invoke(null, new object[] { GenerateFor.ModelImplementationPartialClass });
+
+                        if (WriteFiles)
+                        {
+                            File.WriteAllText(modelFilePath, modelCode);
+                        }
+                    }
+
+                    if (hierarchyKind == HierarchyKind.Derivative)
+                    {
+                        foreach (var childIdentifier in ChildIdentifiers)
                         {
                             GenerateAndWriteModelCodeFile(childIdentifier);
                         }

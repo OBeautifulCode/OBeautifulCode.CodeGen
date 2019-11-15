@@ -33,6 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string PropertyNameToken = "<<<PropertyNameHere>>>";
         private const string ParameterNameToken = "<<<ParameterNameHere>>>";
         private const string ParameterTypeNameToken = "<<<ParameterTypeNameHere>>>";
+        private const string BaseClassNameToken = "<<<BaseClassNameToken>>>";
 
         private const string CloningMethodsForAbstractTypeCodeTemplate = @"
         /// <inheritdoc />
@@ -40,6 +41,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         /// <inheritdoc />
         public abstract " + TypeNameToken + " DeepClone();";
+
+        private const string CloningMethodsForSubclassTypeCodeTemplate = @"
+        /// <inheritdoc />
+        public new object Clone() => this.DeepClone();
+
+        /// <inheritdoc />
+        public override " + BaseClassNameToken + @" DeepClone()
+        {
+            var result = ((IDeepCloneable<" + TypeNameToken + @">)this).DeepClone();
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        " + TypeNameToken + @" IDeepCloneable<" + TypeNameToken + @">.DeepClone()
+        {
+            var result = " + DeepCloneToken + @";
+
+            return result;
+        }" + DeepCloneWithInflationToken;
 
         private const string CloningMethodsForConcreteTypeCodeTemplate = @"
         /// <inheritdoc />
@@ -70,6 +91,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public " + TypeNameToken + @" DeepCloneWith" + PropertyNameToken + @"(" + ParameterTypeNameToken + @" " + ParameterNameToken + @")
         {
             var result = " + NewObjectForDeepCloneWithToken + @";
+            
             return result;
         }";
 
@@ -197,50 +219,55 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private static string GenerateCloningMethodsForConcreteType(
             this Type type)
         {
+            var hasBaseClass = type.BaseType != typeof(object);
+
             var properties = type.GetPropertiesOfConcernFromType();
 
             var propertyNameToCloneMethodMap = properties.ToDictionary(
-                k => k.Name,
-                v => v.PropertyType.GenerateCloningLogicCodeForType("this." + v.Name));
+                _ => _.Name,
+                _ => _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name));
 
             var deepCloneToken = type.GenerateModelInstantiation(propertyNameToCloneMethodMap);
 
-            var parameters = type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 1)?.GetParameters().ToList();
             var deepCloneWithMethods = new List<string>();
-            if (parameters != null)
+            if (properties.Any())
             {
-                // since we have parameters we'll go ahead and pad down.
                 deepCloneWithMethods.Add(string.Empty);
 
-                foreach (var parameter in parameters)
+                foreach (var property in properties)
                 {
-                    var propertyNameToSourceCodeMap = parameters.ToDictionary(
-                        k => k.Name,
-                        v =>
+                    var propertyNameToSourceCodeMap = properties.ToDictionary(
+                        _ => _.Name,
+                        _ =>
                         {
-                            var referenceObject = "this." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
-                            var referenceItemCloned = v.ParameterType.GenerateCloningLogicCodeForType(referenceObject);
-                            return v.Name == parameter.Name ? parameter.Name : referenceItemCloned;
+                            var referenceObject = "this." + _.Name;
+
+                            var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType(referenceObject);
+
+                            return _.Name == property.Name ? property.Name.ToLowerFirstCharacter() : referenceItemCloned;
                         });
 
                     var newObjectCode = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
 
                     var testMethod = DeepCloneWithMethodForConcreteTypeCodeTemplate
-                                    .Replace(TypeNameToken, type.ToStringCompilable())
-                                    .Replace(PropertyNameToken, parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
-                                    .Replace(ParameterNameToken, parameter.Name)
-                                    .Replace(NewObjectForDeepCloneWithToken, newObjectCode)
-                                    .Replace(ParameterTypeNameToken, parameter.ParameterType.ToStringCompilable());
+                        .Replace(TypeNameToken, type.ToStringCompilable())
+                        .Replace(PropertyNameToken, property.Name)
+                        .Replace(ParameterNameToken, property.Name.ToLowerFirstCharacter())
+                        .Replace(NewObjectForDeepCloneWithToken, newObjectCode)
+                        .Replace(ParameterTypeNameToken, property.PropertyType.ToStringCompilable());
                     deepCloneWithMethods.Add(testMethod);
                 }
             }
 
             var deepCloneWithInflationToken = string.Join(Environment.NewLine, deepCloneWithMethods);
 
-            var result = CloningMethodsForConcreteTypeCodeTemplate
-                .Replace(TypeNameToken, type.ToStringCompilable())
-                .Replace(DeepCloneToken, deepCloneToken)
-                .Replace(DeepCloneWithInflationToken, deepCloneWithInflationToken);
+            var result = (hasBaseClass
+                ? CloningMethodsForSubclassTypeCodeTemplate
+                : CloningMethodsForConcreteTypeCodeTemplate)
+                    .Replace(TypeNameToken, type.ToStringCompilable())
+                    .Replace(BaseClassNameToken, type.BaseType.ToStringCompilable())
+                    .Replace(DeepCloneToken, deepCloneToken)
+                    .Replace(DeepCloneWithInflationToken, deepCloneWithInflationToken);
 
             return result;
         }

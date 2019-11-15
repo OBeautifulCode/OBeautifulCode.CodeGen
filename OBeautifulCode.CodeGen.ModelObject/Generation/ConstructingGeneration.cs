@@ -114,33 +114,47 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// </returns>
         public static string GenerateModelInstantiation(
             this Type type,
-            Dictionary<string, string> propertyNameToSourceCodeMap)
+            IReadOnlyDictionary<string, string> propertyNameToSourceCodeMap)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
             propertyNameToSourceCodeMap.AsArg(nameof(propertyNameToSourceCodeMap)).Must().NotBeNull();
 
-            if (type.GetConstructors()
-                    .Any(
-                         _ =>
-                         {
-                             var parameters = _.GetParameters();
-                             var nonMatchingParameters = parameters.Select(p => p.Name)
-                                                                   .SymmetricDifference(propertyNameToSourceCodeMap.Keys.Select(k => k.ToLowerFirstCharacter(CultureInfo.InvariantCulture)))
-                                                                   .ToList();
+            string result;
 
-                             return nonMatchingParameters.Count == 0;
-                         }))
+            var parameterPadding = "                                 ";
+
+            var constructorInfo = type
+                .GetConstructors()
+                .SingleOrDefault(
+                    _ =>
+                    {
+                        var parameters = _.GetParameters();
+                        var nonMatchingParameters = parameters
+                            .Select(p => p.Name)
+                            .SymmetricDifference(propertyNameToSourceCodeMap
+                                .Keys
+                                .Select(
+                                    k => k.ToLowerFirstCharacter(CultureInfo.InvariantCulture)))
+                            .ToList();
+
+                        return nonMatchingParameters.Count == 0;
+                    });
+
+            if (constructorInfo != null)
             {
-                var parameterPadding = "                                 ";
-                return "new " + type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + string.Join("," + Environment.NewLine + parameterPadding, propertyNameToSourceCodeMap.Values) + ")";
+                var parameterCode = constructorInfo.GetParameters().Select(_ => propertyNameToSourceCodeMap[_.Name.ToUpperFirstCharacter()]).ToDelimitedString("," + Environment.NewLine + parameterPadding);
+
+                result = "new " + type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + parameterCode + ")";
             }
             else if (type.GetPropertiesOfConcernFromType().All(_ => _.CanWrite))
             {
-                return "new "
-                     + type.ToStringCompilable()
-                     + "{"
-                     + string.Join(", ", propertyNameToSourceCodeMap.Select(_ => Invariant($"{_.Key} = {_.Value}")))
-                     + "}";
+                var curlyBracketPadding = "                             ";
+
+                var maxCharsInAnyPropertyName = propertyNameToSourceCodeMap.Keys.Select(_ => _.Length).Max();
+
+                var propertyCode = propertyNameToSourceCodeMap.Select(_ => Invariant($"{_.Key.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Value}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
+
+                result = "new " + type.ToStringCompilable() + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyCode + Environment.NewLine + curlyBracketPadding + "}";
             }
             else
             {
@@ -148,6 +162,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 throw new NotSupportedException("Could not find a constructor to take properties of concern and they are not all settable: " + propertiesAddIn);
             }
+
+            return result;
         }
 
         /// <summary>
