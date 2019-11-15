@@ -195,10 +195,6 @@
     </Compile>
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
-    <Compile Include="InnerModelTest.cs" />
-    <Compile Include="InnerModelTest.designer.cs">
-      <DependentUpon>InnerModelTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModelGenerationExtensions.cs" />
     <Compile Include="Models\CustomModels\ModelEquatableClass.cs" />
     <Compile Include="Models\CustomModels\ModelClass.cs" />
@@ -206,6 +202,54 @@
     <Compile Include="Models\CustomModels\ModelFlagsEnum.cs" />
     <Compile Include="Models\CustomModels\ModelEquatableStruct.cs" />
     <Compile Include="Models\CustomModels\ModelStruct.cs" />
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.designer.cs">
+      <DependentUpon>MyModelGettersOnlyParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2Test.designer.cs">
+      <DependentUpon>MyModelGettersOnlyChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1Test.designer.cs">
+      <DependentUpon>MyModelGettersOnlyChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyTest.designer.cs">
+      <DependentUpon>MyModelGettersOnlyTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersParentTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelPublicSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelPublicSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersParentTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetterKind.cs" />
     <Compile Include="TypeWrapperKind.cs" />
@@ -229,11 +273,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ModelTests\GeneratedModels\GettersOnly\" />
-    <Folder Include="ModelTests\GeneratedModels\PrivateSetters\" />
-    <Folder Include="ModelTests\GeneratedModels\PublicSetters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

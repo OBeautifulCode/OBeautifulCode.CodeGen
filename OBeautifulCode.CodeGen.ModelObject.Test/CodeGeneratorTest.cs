@@ -61,12 +61,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<ICollection<string>, IReadOnlyDictionary<IList<string>, IReadOnlyList<string>>>>),
         };
 
-        private delegate void ExecuteForModelsEventHandler(SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null);
+        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null);
 
         [Fact]
         public void GenerateModel___Should_generate_the_model___When_called()
         {
-            void ExecuteForModelsEventHandler(SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
+            void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
             {
                 var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
 
@@ -86,25 +86,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [Fact]
         public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
         {
-            void ExecuteForModelsEventHandler(SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
-            {
-                var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
+            var executeForModelsEventHandler = BuildExecuteForModelsEventHandlerForGenerateForModel();
 
-                var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
+            ExecuteForModels(GenerationKind.Model, executeForModelsEventHandler);
+        }
 
-                var generateForModelMethodInfo = typeof(CodeGenerator).GetMethod(nameof(CodeGenerator.GenerateForModel)).MakeGenericMethod(modelType);
+        [Fact]
+        public void GenerateForModel___Should_generate_model_test_partial_class___When_parameter_generateFor_is_ModelImplementationTestsPartialClassWithSerialization()
+        {
+            var executeForModelsEventHandler = BuildExecuteForModelsEventHandlerForGenerateForModel();
 
-                var modelFilePath = directoryPath + modelName + ".designer.cs";
-
-                var modelCode = (string)generateForModelMethodInfo.Invoke(null, new object[] { GenerateFor.ModelImplementationPartialClass });
-
-                if (WriteFiles)
-                {
-                    File.WriteAllText(modelFilePath, modelCode);
-                }
-            }
-
-            ExecuteForModels(GenerationKind.Model, ExecuteForModelsEventHandler);
+            ExecuteForModels(GenerationKind.Test, executeForModelsEventHandler);
         }
 
         private static void ExecuteForModels(
@@ -125,15 +117,53 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         foreach (var childIdentifier in ChildIdentifiers)
                         {
-                            eventHandler(setterKind, hierarchyKind, directoryPath, childIdentifier);
+                            eventHandler(generationKind, setterKind, hierarchyKind, directoryPath, childIdentifier);
                         }
                     }
                     else
                     {
-                        eventHandler(setterKind, hierarchyKind, directoryPath);
+                        eventHandler(generationKind, setterKind, hierarchyKind, directoryPath);
                     }
                 }
             }
+        }
+
+        private static ExecuteForModelsEventHandler BuildExecuteForModelsEventHandlerForGenerateForModel()
+        {
+            void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
+            {
+                var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
+
+                var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
+
+                var generateForModelMethodInfo = typeof(CodeGenerator).GetMethod(nameof(CodeGenerator.GenerateForModel)).MakeGenericMethod(modelType);
+
+                var testToken = generationKind == GenerationKind.Test ? "Test" : null;
+
+                var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
+
+                GenerateFor generateFor;
+                switch (generationKind)
+                {
+                    case GenerationKind.Model:
+                        generateFor = GenerateFor.ModelImplementationPartialClass;
+                        break;
+                    case GenerationKind.Test:
+                        generateFor = GenerateFor.ModelImplementationTestsPartialClassWithSerialization;
+                        break;
+                    default:
+                        throw new NotSupportedException("This kind is not supported: " + generationKind);
+                }
+
+                var modelCode = (string)generateForModelMethodInfo.Invoke(null, new object[] { generateFor });
+
+                if (WriteFiles)
+                {
+                    File.WriteAllText(modelFilePath, modelCode);
+                }
+            }
+
+            return ExecuteForModelsEventHandler;
         }
 
         private static string GenerateModel(
