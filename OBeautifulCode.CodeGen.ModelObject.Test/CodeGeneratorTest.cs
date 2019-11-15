@@ -33,7 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly string GeneratedModelsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\Models\\GeneratedModels\\";
 
-        public static readonly string GeneratedTestsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\ModelsTests\\GeneratedModels\\";
+        public static readonly string GeneratedTestsPath = SourceRoot.AppendMissing("\\") + "OBeautifulCode.CodeGen.ModelObject.Test\\ModelTests\\GeneratedModels\\";
 
         private static readonly Type[] TypesToWrap =
         {
