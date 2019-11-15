@@ -156,10 +156,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 case HierarchyKind.None:
                     result = string.Empty;
                     break;
-                case HierarchyKind.Abstract:
+                case HierarchyKind.AbstractBase:
                     result = "Parent";
                     break;
-                case HierarchyKind.Derivative:
+                case HierarchyKind.ConcreteInherited:
                     result = "Child";
                     break;
                 default:

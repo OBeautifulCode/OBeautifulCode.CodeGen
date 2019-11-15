@@ -108,41 +108,42 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Generates code that instantiates a model object.
         /// </summary>
         /// <param name="type">The model type.</param>
-        /// <param name="propertyNameToSourceCodeMap">A map of property name to source code for that property.</param>
+        /// <param name="memberCode">The code for the members.</param>
         /// <returns>
         /// Generated code that instantiates a model object.
         /// </returns>
         public static string GenerateModelInstantiation(
             this Type type,
-            IReadOnlyDictionary<string, string> propertyNameToSourceCodeMap)
+            IReadOnlyList<MemberCode> memberCode)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
-            propertyNameToSourceCodeMap.AsArg(nameof(propertyNameToSourceCodeMap)).Must().NotBeNull();
+            memberCode.AsArg(nameof(memberCode)).Must().NotBeNull().And().NotContainAnyNullElements();
 
             string result;
 
             var parameterPadding = "                                 ";
+
+            var memberNames = memberCode.Select(_ => _.Name).ToList();
 
             var constructorInfo = type
                 .GetConstructors()
                 .SingleOrDefault(
                     _ =>
                     {
-                        var parameters = _.GetParameters();
-                        var nonMatchingParameters = parameters
-                            .Select(p => p.Name)
-                            .SymmetricDifference(propertyNameToSourceCodeMap
-                                .Keys
-                                .Select(
-                                    k => k.ToLowerFirstCharacter(CultureInfo.InvariantCulture)))
-                            .ToList();
+                        var parameterNames = _.GetParameters().Select(p => p.Name).ToList();
 
-                        return nonMatchingParameters.Count == 0;
+                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(memberNames.Select(m => m.ToLowerFirstCharacter(CultureInfo.InvariantCulture))).Any();
+
+                        return foundMatchingConstructor;
                     });
 
             if (constructorInfo != null)
             {
-                var parameterCode = constructorInfo.GetParameters().Select(_ => propertyNameToSourceCodeMap[_.Name.ToUpperFirstCharacter()]).ToDelimitedString("," + Environment.NewLine + parameterPadding);
+                var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code);
+
+                var parameterCode = constructorInfo.GetParameters()
+                    .Select(_ => propertyNameToCodeMap[_.Name.ToUpperFirstCharacter()])
+                    .ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
                 result = "new " + type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + parameterCode + ")";
             }
@@ -150,11 +151,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var curlyBracketPadding = "                             ";
 
-                var maxCharsInAnyPropertyName = propertyNameToSourceCodeMap.Keys.Select(_ => _.Length).Max();
+                var maxCharsInAnyPropertyName = memberNames.Select(_ => _.Length).Max();
 
-                var propertyCode = propertyNameToSourceCodeMap.Select(_ => Invariant($"{_.Key.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Value}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
+                var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + type.ToStringCompilable() + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyCode + Environment.NewLine + curlyBracketPadding + "}";
+                result = "new " + type.ToStringCompilable() + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + Environment.NewLine + curlyBracketPadding + "}";
             }
             else
             {
@@ -188,15 +189,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var parameters = constructorWithParameters.GetParameters();
                 foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType || _.ParameterType == typeof(string)))
                 {
-                    var propertyNameToSourceCodeMap = parameters.ToDictionary(
-                        k => k.Name,
-                        v =>
-                        {
-                            var referenceObject = "referenceObject." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
-                            return v.Name == parameter.Name ? "null" : referenceObject;
-                        });
+                    var parametersSourceCode = parameters.Select(_ =>
+                    {
+                        var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                    var newObjectCode = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
+                        return new MemberCode(_.Name, _.Name == parameter.Name ? "null" : referenceObject);
+                    }).ToList();
+
+                    var newObjectCode = type.GenerateModelInstantiation(parametersSourceCode);
 
                     var testMethod = ConstructorTestMethodForArgumentCodeTemplate
                                     .Replace(TypeNameToken,             type.ToStringCompilable())
@@ -206,15 +206,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     if (parameter.ParameterType == typeof(string))
                     {
-                        var stringPropertyNameToSourceCodeMap = parameters.ToDictionary(
-                            k => k.Name,
-                            v =>
-                            {
-                                var referenceObject = "referenceObject." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
-                                return v.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject;
-                            });
+                        var stringParameterSourceCode = parameters.Select(_ =>
+                        {
+                            var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                        var stringNewObjectCode = type.GenerateModelInstantiation(stringPropertyNameToSourceCodeMap);
+                            return new MemberCode(_.Name, _.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject);
+                        }).ToList();
+
+                        var stringNewObjectCode = type.GenerateModelInstantiation(stringParameterSourceCode);
 
                         var stringTestMethod = ConstructorTestMethodForStringArgumentCodeTemplate
                                               .Replace(TypeNameToken,                     type.ToStringCompilable())
@@ -227,11 +226,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 foreach (var parameter in parameters)
                 {
-                    var propertyNameToSourceCodeMap = parameters.ToDictionary(
-                        k => k.Name,
-                        v => "referenceObject." + v.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture));
+                    var parametersSourceCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
 
-                    var newObjectCode = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
+                    var newObjectCode = type.GenerateModelInstantiation(parametersSourceCode);
 
                     var assertPropertyGetterToken = parameter.ParameterType.GenerateFluentAssertionsEqualityStatement(
                         "actual",

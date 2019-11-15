@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         }
                     }
 
-                    if (hierarchyKind == HierarchyKind.Derivative)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
                         foreach (var childIdentifier in ChildIdentifiers)
                         {
@@ -139,7 +139,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         }
                     }
 
-                    if (hierarchyKind == HierarchyKind.Derivative)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
                         foreach (var childIdentifier in ChildIdentifiers)
                         {
@@ -176,7 +176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (setterKind.RequiresConstructor())
             {
-                var constructorAccessorModifier = hierarchyKind == HierarchyKind.Abstract ? "protected" : "public";
+                var constructorAccessorModifier = hierarchyKind == HierarchyKind.AbstractBase ? "protected" : "public";
 
                 constructorDeclarationStatement = Invariant($"        {constructorAccessorModifier} {modelName}(");
             }
@@ -203,9 +203,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     var constructorParameterName = propertyName.ToLowerFirstCharacter();
                     constructorParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParameterName},"));
 
-                    if (hierarchyKind == HierarchyKind.Derivative)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
-                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.Abstract, null).ToLowerFirstCharacter();
+                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBase, null).ToLowerFirstCharacter();
                         constructorParentParameterNames.Add(constructorParentParameterName);
 
                         constructorParentParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParentParameterName},"));
@@ -221,9 +221,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
             }
 
-            var abstractStatement = hierarchyKind == HierarchyKind.Abstract ? "abstract " : string.Empty;
+            var abstractStatement = hierarchyKind == HierarchyKind.AbstractBase ? "abstract " : string.Empty;
 
-            var derivativeStatement = hierarchyKind == HierarchyKind.Derivative ? $"{baseName.BuildModelName(setterKind, HierarchyKind.Abstract)}, " : string.Empty;
+            var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildModelName(setterKind, HierarchyKind.AbstractBase)}, " : string.Empty;
 
             var headerStatements = new List<string>
             {
@@ -264,7 +264,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 constructorParameterStatements[constructorParameterStatements.Count - 1] = constructorParameterStatements.Last().TrimEnd(',') + ")";
                 constructorStatements.AddRange(constructorParameterStatements);
 
-                if (hierarchyKind == HierarchyKind.Derivative)
+                if (hierarchyKind == HierarchyKind.ConcreteInherited)
                 {
                     constructorStatements.Add(Invariant($"            : base({constructorParentParameterNames.ToDelimitedString(", ")})"));
                 }

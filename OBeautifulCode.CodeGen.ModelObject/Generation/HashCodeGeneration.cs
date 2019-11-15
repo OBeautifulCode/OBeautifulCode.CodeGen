@@ -27,7 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             ." + HashToken + @"
             .Value;";
 
-        private const string HashMethodForAbstractTypeCodeTemplate = @"
+        private const string HashMethodForAbstractBaseTypeCodeTemplate = @"
         /// <inheritdoc />
         public abstract override int GetHashCode();";
 
@@ -43,9 +43,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             string result;
 
-            if (type.IsAbstract)
+            var hierarchyKind = type.GetHierarchyKind();
+
+            if (hierarchyKind == HierarchyKind.AbstractBase)
             {
-                result = HashMethodForAbstractTypeCodeTemplate;
+                result = HashMethodForAbstractBaseTypeCodeTemplate;
             }
             else
             {

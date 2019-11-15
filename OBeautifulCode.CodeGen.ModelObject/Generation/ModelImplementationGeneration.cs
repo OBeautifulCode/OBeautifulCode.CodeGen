@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -28,6 +29,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateCodeForModelImplementation(
             this Type type)
         {
+            new { type }.AsArg().Must().NotBeNull();
+
             var items = new[]
             {
                 "// --------------------------------------------------------------------------------------------------------------------",

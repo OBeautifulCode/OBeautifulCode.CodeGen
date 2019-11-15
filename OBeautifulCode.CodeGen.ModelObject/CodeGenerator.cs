@@ -27,6 +27,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var type = typeof(T);
 
+            type.ThrowIfNotSupported();
+
             var generatedCode = new List<string>();
 
             if (kind.HasFlag(GenerateFor.ModelImplementationPartialClass))

@@ -63,7 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as " + TypeNameToken + @");";
 
-        private const string EqualityMethodsForAbstractTypeCodeTemplate = @"    /// <summary>
+        private const string EqualityMethodsForAbstractBaseTypeCodeTemplate = @"    /// <summary>
         /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
         /// </summary>
         /// <param name=""left"">The object to the left of the equality operator.</param>
@@ -376,9 +376,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             string result;
 
-            if (type.IsAbstract)
+            var hierarchyKind = type.GetHierarchyKind();
+
+            if (hierarchyKind == HierarchyKind.AbstractBase)
             {
-                result = EqualityMethodsForAbstractTypeCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
             }
             else
             {
@@ -388,7 +390,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var equalityToken = string.Join(Environment.NewLine + "                      && ", equalityLines);
 
-                result = EqualityMethodsForConcreteTypeCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable())
+                result = EqualityMethodsForConcreteTypeCodeTemplate
+                    .Replace(TypeNameToken, type.ToStringCompilable())
                     .Replace(EqualityToken, equalityToken);
             }
 
@@ -409,27 +412,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var unequalSet = new List<string>();
             foreach (var property in properties)
             {
-                var propertyNameToSourceCodeMap = properties.ToDictionary(
-                    k => k.Name,
-                    v =>
-                    {
-                        var referenceObject = "ObjectForEquatableTests." + v.Name;
-                        return v.Name == property.Name ? referenceObject : v.PropertyType.GenerateDummyConstructionCodeForType(referenceObject);
-                    });
+                var propertiesSourceCode = properties.Select(_ =>
+                {
+                    var referenceObject = "ObjectForEquatableTests." + _.Name;
 
-                var code = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
+                    var sourceCode = _.Name == property.Name
+                        ? referenceObject
+                        : _.PropertyType.GenerateDummyConstructionCodeForType(referenceObject);
+
+                    return new MemberCode(_.Name, sourceCode);
+                }).ToList();
+
+                var code = type.GenerateModelInstantiation(propertiesSourceCode);
+
                 unequalSet.Add(code);
             }
 
             var unequalObjectsToken = string.Join("," + Environment.NewLine + "            ", unequalSet) + ",";
 
-            var propertyNameToSourceCodeMapForNewForEquatable = properties.ToDictionary(k => k.Name, v =>
-            {
-                var referenceObject = "ObjectForEquatableTests." + v.Name;
-                return referenceObject;
-            });
+            var newEquatablePropertiesSourceCode = properties.Select(_ => new MemberCode(_.Name, "ObjectForEquatableTests." + _.Name)).ToList();
 
-            var newObjectFromEquatableToken = type.GenerateModelInstantiation(propertyNameToSourceCodeMapForNewForEquatable);
+            var newObjectFromEquatableToken = type.GenerateModelInstantiation(newEquatablePropertiesSourceCode);
 
             var result = EqualityTestFieldsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable())
                 .Replace(UnequalObjectsToken, unequalObjectsToken)

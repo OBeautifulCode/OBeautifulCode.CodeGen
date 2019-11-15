@@ -81,6 +81,9 @@
     <Compile Include=".recipes\OBeautifulCode.Equality\HashCodeHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\ReadOnlyDictionaryEqualityComparer.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\SuppressBecause.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\AssemblyHelper.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\AssemblyLoader.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\CompressionMethod.cs" />
     <Compile Include=".recipes\OBeautifulCode.String\StringExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
@@ -93,7 +96,9 @@
     <Compile Include="Generation\DummyGeneration.cs" />
     <Compile Include="Generation\EqualityLogicGeneration.cs" />
     <Compile Include="Generation\HashCodeGeneration.cs" />
+    <Compile Include="Generation\HierarchyKind.cs" />
     <Compile Include="Generation\ModelImplementationGeneration.cs" />
+    <Compile Include="Generation\MemberCode.cs" />
     <Compile Include="Generation\TestGeneration.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

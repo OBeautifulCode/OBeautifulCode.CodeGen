@@ -29,7 +29,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }";
 
-        private const string ToStringMethodForAbstractTypeCodeTemplate = @"
+        private const string ToStringMethodForAbstractBaseTypeCodeTemplate = @"
         /// <inheritdoc />
         public abstract override string ToString();";
 
@@ -61,9 +61,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             string result;
 
-            if (type.IsAbstract)
+            var hierarchyKind = type.GetHierarchyKind();
+
+            if (hierarchyKind == HierarchyKind.AbstractBase)
             {
-                result = ToStringMethodForAbstractTypeCodeTemplate;
+                result = ToStringMethodForAbstractBaseTypeCodeTemplate;
             }
             else
             {

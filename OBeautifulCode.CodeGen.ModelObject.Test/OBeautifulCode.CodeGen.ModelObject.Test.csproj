@@ -207,7 +207,6 @@
     <Compile Include="Models\CustomModels\ModelStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetterKind.cs" />
-    <Compile Include="HierarchyKind.cs" />
     <Compile Include="TypeWrapperKind.cs" />
   </ItemGroup>
   <ItemGroup>

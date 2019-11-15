@@ -35,7 +35,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var properties = type.GetPropertiesOfConcernFromType();
 
-            var propertyNameToSourceCodeMap = properties.ToDictionary(k => k.Name, v => v.PropertyType.GenerateDummyConstructionCodeForType());
+            var propertyNameToSourceCodeMap = properties.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
 
             var newDummyToken = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
 
