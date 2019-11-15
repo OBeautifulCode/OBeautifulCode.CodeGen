@@ -117,6 +117,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 result = nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace);
             }
+            else if (type.IsSystemDictionaryType())
+            {
+                result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
+            }
+            else if (type.IsSystemCollectionType() || type.IsArray)
+            {
+                result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
+            }
             else
             {
                 result = nameof(Assertion.Recipes.Verifications.NotBeNull);
