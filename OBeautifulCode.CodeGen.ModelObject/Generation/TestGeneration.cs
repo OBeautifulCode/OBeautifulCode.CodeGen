@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using OBeautifulCode.Type.Recipes;
 
@@ -52,13 +53,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 string.Empty,
                 "    using FluentAssertions;",
                 string.Empty,
-                "    using Naos.Serialization.Bson;",
-                "    using Naos.Serialization.Domain;",
-                "    using Naos.Serialization.Json;",
-                string.Empty,
                 "    using OBeautifulCode.AutoFakeItEasy;",
                 "    using OBeautifulCode.Collection.Recipes;",
                 "    using OBeautifulCode.Representation.System;",
+                "    using OBeautifulCode.Serialization;",
+                "    using OBeautifulCode.Serialization.Bson;",
+                "    using OBeautifulCode.Serialization.Json;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,
                 "    using Xunit;",
@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = string.Join(
                 Environment.NewLine,
-                items);
+                items.Where(_ => (_ == string.Empty) || !string.IsNullOrWhiteSpace(_)).ToArray());
 
             return result;
         }

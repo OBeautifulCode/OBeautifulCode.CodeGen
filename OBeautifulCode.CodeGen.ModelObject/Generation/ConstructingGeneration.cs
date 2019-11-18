@@ -65,7 +65,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var referenceObject = A.Dummy<" + TypeNameToken + @">();
 
                 // Act
-                var actual = Record.Exception(() => " + NewObjectForArgumentNullTestToken + @");
+                var actual = Record.Exception(
+                    () => " + NewObjectForArgumentNullTestToken + @");
 
                 // Assert
                 actual.Should().BeOfType<ArgumentNullException>();
@@ -80,7 +81,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var referenceObject = A.Dummy<" + TypeNameToken + @">();
 
                 // Act
-                var actual = Record.Exception(() => " + NewObjectForArgumentWhiteSpaceTestToken + @");
+                var actual = Record.Exception(
+                    () => " + NewObjectForArgumentWhiteSpaceTestToken + @");
 
                 // Assert
                 actual.Should().BeOfType<ArgumentException>();
@@ -94,7 +96,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 // Arrange,
                 var referenceObject = A.Dummy<" + TypeNameToken + @">();
+
                 var systemUnderTest = " + NewObjectForGetterTestToken + @";
+
                 var expected = referenceObject." + PropertyNameToken + @";
                 
                 // Act
@@ -109,21 +113,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// </summary>
         /// <param name="type">The model type.</param>
         /// <param name="memberCode">The code for the members.</param>
+        /// <param name="parameterPaddingLength">The length of the padding to use for constructor or object initializer parameters.</param>
         /// <returns>
         /// Generated code that instantiates a model object.
         /// </returns>
         public static string GenerateModelInstantiation(
             this Type type,
-            IReadOnlyList<MemberCode> memberCode)
+            IReadOnlyList<MemberCode> memberCode,
+            int parameterPaddingLength)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
             memberCode.AsArg(nameof(memberCode)).Must().NotBeNull().And().NotContainAnyNullElements();
 
             string result;
 
-            var parameterPadding = "                                 ";
-
             var memberNames = memberCode.Select(_ => _.Name).ToList();
+
+            var parameterPadding = new string(' ', parameterPaddingLength);
 
             var constructorInfo = type
                 .GetConstructors()
@@ -132,24 +138,24 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         var parameterNames = _.GetParameters().Select(p => p.Name).ToList();
 
-                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(memberNames.Select(m => m.ToLowerFirstCharacter(CultureInfo.InvariantCulture))).Any();
+                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(memberNames, StringComparer.OrdinalIgnoreCase).Any();
 
                         return foundMatchingConstructor;
                     });
 
             if (constructorInfo != null)
             {
-                var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code);
+                var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code, StringComparer.OrdinalIgnoreCase);
 
                 var parameterCode = constructorInfo.GetParameters()
-                    .Select(_ => propertyNameToCodeMap[_.Name.ToUpperFirstCharacter()])
+                    .Select(_ => propertyNameToCodeMap[_.Name])
                     .ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
                 result = "new " + type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + parameterCode + ")";
             }
             else if (type.GetPropertiesOfConcernFromType().All(_ => _.CanWrite))
             {
-                var curlyBracketPadding = "                             ";
+                var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
 
                 var maxCharsInAnyPropertyName = memberNames.Select(_ => _.Length).Max();
 
@@ -180,45 +186,48 @@ namespace OBeautifulCode.CodeGen.ModelObject
             type.AsArg(nameof(type)).Must().NotBeNull();
 
             var constructorWithParameters = type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
+
             var testMethods = new List<string>();
+
             if (constructorWithParameters != null)
             {
                 // since we have parameters we'll go ahead and pad down.
                 testMethods.Add(string.Empty);
 
                 var parameters = constructorWithParameters.GetParameters();
-                foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType || _.ParameterType == typeof(string)))
+                foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
                 {
-                    var parametersSourceCode = parameters.Select(_ =>
+                    var parametersCode = parameters.Select(_ =>
                     {
                         var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
                         return new MemberCode(_.Name, _.Name == parameter.Name ? "null" : referenceObject);
                     }).ToList();
 
-                    var newObjectCode = type.GenerateModelInstantiation(parametersSourceCode);
+                    var objectInstantiationCode = type.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
 
                     var testMethod = ConstructorTestMethodForArgumentCodeTemplate
-                                    .Replace(TypeNameToken,             type.ToStringCompilable())
-                                    .Replace(ConstructorParameterToken, parameter.Name)
-                                    .Replace(NewObjectForArgumentNullTestToken, newObjectCode);
+                                    .Replace(TypeNameToken,                     type.ToStringCompilable())
+                                    .Replace(ConstructorParameterToken,         parameter.Name)
+                                    .Replace(NewObjectForArgumentNullTestToken, objectInstantiationCode);
+
                     testMethods.Add(testMethod);
 
                     if (parameter.ParameterType == typeof(string))
                     {
-                        var stringParameterSourceCode = parameters.Select(_ =>
+                        var stringParameterCode = parameters.Select(_ =>
                         {
                             var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
                             return new MemberCode(_.Name, _.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject);
                         }).ToList();
 
-                        var stringNewObjectCode = type.GenerateModelInstantiation(stringParameterSourceCode);
+                        objectInstantiationCode = type.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
 
                         var stringTestMethod = ConstructorTestMethodForStringArgumentCodeTemplate
-                                              .Replace(TypeNameToken,                     type.ToStringCompilable())
-                                              .Replace(ConstructorParameterToken,         parameter.Name)
-                                              .Replace(NewObjectForArgumentWhiteSpaceTestToken, stringNewObjectCode);
+                                              .Replace(TypeNameToken,                           type.ToStringCompilable())
+                                              .Replace(ConstructorParameterToken,               parameter.Name)
+                                              .Replace(NewObjectForArgumentWhiteSpaceTestToken, objectInstantiationCode);
 
                         testMethods.Add(stringTestMethod);
                     }
@@ -226,20 +235,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 foreach (var parameter in parameters)
                 {
-                    var parametersSourceCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
+                    var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
 
-                    var newObjectCode = type.GenerateModelInstantiation(parametersSourceCode);
+                    var newObjectCode = type.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 46);
 
                     var assertPropertyGetterToken = parameter.ParameterType.GenerateFluentAssertionsEqualityStatement(
                         "actual",
                         "expected");
 
                     var testMethod = PropertyGetterTestMethodTemplate
-                                    .Replace(TypeNameToken,               type.ToStringCompilable())
-                                    .Replace(PropertyNameToken,           parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
+                                    .Replace(TypeNameToken,              type.ToStringCompilable())
+                                    .Replace(PropertyNameToken,          parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(ConstructorParameterToken,  parameter.Name)
                                     .Replace(AssertPropertyGetterToken,  assertPropertyGetterToken)
                                     .Replace(NewObjectForGetterTestToken, newObjectCode);
+
                     testMethods.Add(testMethod);
                 }
             }
@@ -249,6 +259,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = ConstructingTestMethodsCodeTemplate
                         .Replace(TypeNameToken,                 type.ToStringCompilable())
                         .Replace(ConstructorTestInflationToken, constructorTestInflationToken);
+
             return result;
         }
     }

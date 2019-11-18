@@ -181,7 +181,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     .Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name)))
                     .ToList();
 
-                var deepCloneCode = type.GenerateModelInstantiation(deepCloneCodeForEachProperty);
+                var deepCloneCode = type.GenerateModelInstantiation(deepCloneCodeForEachProperty, parameterPaddingLength: 33);
 
                 result = result.Replace(DeepCloneToken, deepCloneCode);
             }
@@ -218,7 +218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     if (hierarchyKind != HierarchyKind.AbstractBase)
                     {
-                        var propertiesSourceCode = properties.Select(_ =>
+                        var propertiesCode = properties.Select(_ =>
                         {
                             var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name);
 
@@ -229,7 +229,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             return new MemberCode(_.Name, code);
                         }).ToList();
 
-                        var modelInstantiationCode = type.GenerateModelInstantiation(propertiesSourceCode);
+                        var modelInstantiationCode = type.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 33);
 
                         deepCloneWithMethod = deepCloneWithMethod.Replace(DeepCloneWithModelInstantiationToken, modelInstantiationCode);
                     }
@@ -308,7 +308,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private static string GenerateCloningLogicCodeForType(
             this Type type,
-            string cloneSourceCode,
+            string cloneCode,
             int recursionDepth = 0)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
@@ -321,11 +321,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 if (type.IsValueType)
                 {
-                    result = Invariant($"{cloneSourceCode}.DeepClone()");
+                    result = Invariant($"{cloneCode}.DeepClone()");
                 }
                 else
                 {
-                    result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                    result = Invariant($"{cloneCode}?.DeepClone()");
                 }
             }
             else if (type.IsSystemDictionaryType())
@@ -348,7 +348,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     cast = "(" + type.ToStringReadable() + ")";
                 }
 
-                result = Invariant($"{cast}{cloneSourceCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
+                result = Invariant($"{cast}{cloneCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
             }
             else if (type.IsSystemCollectionType())
             {
@@ -369,9 +369,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // note: List<T> is assignable to all System collection types except Collection<T> and ReadOnlyCollection<T>.
                 // In general no properties of a model should use those types.  If we do want to support this in the future,
                 // we need to wrap the List<T>:
-                // - cloneSourceCode == null ? null : new Collection<T>(cloneSourceCode.Select(...).ToList())
-                // - cloneSourceCode == null ? null : new ReadOnlyCollection<T>(cloneSourceCode.Select(...).ToList())
-                result = Invariant($"{cast}{cloneSourceCode}?.Select({expressionParameter} => {valueClone}).ToList()");
+                // - cloneCode == null ? null : new Collection<T>(cloneCode.Select(...).ToList())
+                // - cloneCode == null ? null : new ReadOnlyCollection<T>(cloneCode.Select(...).ToList())
+                result = Invariant($"{cast}{cloneCode}?.Select({expressionParameter} => {valueClone}).ToList()");
             }
             else if (type.IsArray)
             {
@@ -381,12 +381,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var valueClone = valueType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
 
-                result = Invariant($"{cloneSourceCode}?.Select({expressionParameter} => {valueClone}).ToArray()");
+                result = Invariant($"{cloneCode}?.Select({expressionParameter} => {valueClone}).ToArray()");
             }
             else if (type == typeof(string))
             {
                 // string should be cloned using it's existing interface.
-                result = Invariant($"{cloneSourceCode}?.Clone().ToString()");
+                result = Invariant($"{cloneCode}?.Clone().ToString()");
             }
             else
             {
@@ -398,22 +398,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     if (underlyingType.IsAssignableTo(deepCloneableUnderlyingType))
                     {
-                        result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                        result = Invariant($"{cloneCode}?.DeepClone()");
                     }
                     else
                     {
-                        result = cloneSourceCode;
+                        result = cloneCode;
                     }
                 }
                 else if (type.IsValueType)
                 {
                     // this is just a copy of the item anyway (like bool, int, Enumerations, structs like DateTime, etc.).
-                    result = cloneSourceCode;
+                    result = cloneCode;
                 }
                 else
                 {
                     // assume that we are driving the DeepClone convention and it exists.
-                    result = Invariant($"{cloneSourceCode}?.DeepClone()");
+                    result = Invariant($"{cloneCode}?.DeepClone()");
                 }
             }
 

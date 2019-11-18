@@ -22,9 +22,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private const string SerializationConfigurationPrefixToken = "<<<SerializationConfigurationPrefixHere>>>";
 
-        private const string SerializationFieldsCodeTemplate = @"private static readonly ISerializeAndDeserialize BsonSerializer = new NaosBsonSerializer<" + SerializationConfigurationPrefixToken + @"BsonConfiguration>();
+        private const string SerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer<" + SerializationConfigurationPrefixToken + @"BsonConfiguration>();
         
-        private static readonly ISerializeAndDeserialize JsonSerializer = new NaosJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
+        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
 
         private const string SerializationTestMethodsCodeTemplate = @"
         [SuppressMessage(""Microsoft.Naming"", ""CA1724:TypeNamesShouldNotMatchNamespaces"", Justification = ""Name is correct."")]
@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static class Serialization
         {
             [Fact]
-            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_NaosJsonSerializer()
+            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
             {
                 // Arrange
                 var expected = A.Dummy<" + TypeNameToken + @">();
@@ -49,7 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
 
             [Fact]
-            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_NaosBsonSerializer()
+            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange
                 var expected = A.Dummy<" + TypeNameToken + @">();

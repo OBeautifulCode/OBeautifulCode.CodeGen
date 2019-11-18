@@ -23,7 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string code)
         {
             new { name }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { sourceCode = code }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { code }.AsArg().Must().NotBeNullNorWhiteSpace();
 
             this.Name = name;
 

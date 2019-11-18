@@ -22,6 +22,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class EqualityLogicGeneration
     {
         private const string TypeNameToken = "<<<TypeNameHere>>>";
+        private const string PropertyNameToken = "<<<PropertyNameHere>>>";
+        private const string PropertyTypeNameToken = "<<<PropertyTypeNameHere>>>";
         private const string EqualityToken = "<<<EqualityLogicHere>>>";
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
@@ -100,7 +102,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <inheritdoc />
         public abstract override bool Equals(object obj);";
 
-        private const string EqualityTestFieldsCodeTemplate = @"    private static readonly " + TypeNameToken + @" ObjectForEquatableTests = A.Dummy<" + TypeNameToken + @">();
+        private const string EqualityTestFieldsForAbstractBaseTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ObjectForEquatableTests = A.Dummy<" + TypeNameToken + @">();
+
+        private static readonly " + TypeNameToken + @" ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests = ObjectForEquatableTests.DeepClone();
+
+        private static readonly " + TypeNameToken + @"[] ObjectsThatAreNotEqualToObjectForEquatableTests =
+        {
+            " + UnequalObjectsToken + @"
+        };
+
+        private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();";
+
+        private const string UnequalObjectTokenForAbstractBaseTypeCodeTemplate = @"ObjectForEquatableTests.DeepCloneWith" + PropertyNameToken + @"(A.Dummy<" + PropertyTypeNameToken + @">().ThatIsNot(ObjectForEquatableTests." + PropertyNameToken + @"))";
+
+        private const string EqualityTestFieldsForConcreteTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ObjectForEquatableTests = A.Dummy<" + TypeNameToken + @">();
 
         private static readonly " + TypeNameToken + @" ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests =
             " + NewObjectForEquatableToken + @";
@@ -409,34 +424,69 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             var properties = type.GetPropertiesOfConcernFromType();
-            var unequalSet = new List<string>();
-            foreach (var property in properties)
+
+            var hierarchyKind = type.GetHierarchyKind();
+
+            string codeTemplate;
+            switch (hierarchyKind)
             {
-                var propertiesSourceCode = properties.Select(_ =>
-                {
-                    var referenceObject = "ObjectForEquatableTests." + _.Name;
-
-                    var sourceCode = _.Name == property.Name
-                        ? referenceObject
-                        : _.PropertyType.GenerateDummyConstructionCodeForType(referenceObject);
-
-                    return new MemberCode(_.Name, sourceCode);
-                }).ToList();
-
-                var code = type.GenerateModelInstantiation(propertiesSourceCode);
-
-                unequalSet.Add(code);
+                case HierarchyKind.AbstractBase:
+                    codeTemplate = EqualityTestFieldsForAbstractBaseTypeCodeTemplate;
+                    break;
+                case HierarchyKind.None:
+                case HierarchyKind.ConcreteInherited:
+                    codeTemplate = EqualityTestFieldsForConcreteTypeCodeTemplate;
+                    break;
+                default:
+                    throw new NotSupportedException("This kind is not supported: " + hierarchyKind);
             }
 
-            var unequalObjectsToken = string.Join("," + Environment.NewLine + "            ", unequalSet) + ",";
+            var unequalSet = new List<string>();
 
-            var newEquatablePropertiesSourceCode = properties.Select(_ => new MemberCode(_.Name, "ObjectForEquatableTests." + _.Name)).ToList();
+            var result = codeTemplate
+                .Replace(TypeNameToken, type.ToStringCompilable());
 
-            var newObjectFromEquatableToken = type.GenerateModelInstantiation(newEquatablePropertiesSourceCode);
+            if (hierarchyKind == HierarchyKind.AbstractBase)
+            {
+                foreach (var property in properties)
+                {
+                    var code = UnequalObjectTokenForAbstractBaseTypeCodeTemplate
+                        .Replace(PropertyNameToken, property.Name)
+                        .Replace(PropertyTypeNameToken, property.PropertyType.ToStringCompilable());
 
-            var result = EqualityTestFieldsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable())
-                .Replace(UnequalObjectsToken, unequalObjectsToken)
-                .Replace(NewObjectForEquatableToken, newObjectFromEquatableToken);
+                    unequalSet.Add(code);
+                }
+            }
+            else
+            {
+                foreach (var property in properties)
+                {
+                    var propertiesCode = properties.Select(_ =>
+                    {
+                        var referenceObject = "ObjectForEquatableTests." + _.Name;
+
+                        var memberCode = _.Name != property.Name
+                            ? referenceObject
+                            : _.PropertyType.GenerateDummyConstructionCodeForType(referenceObject);
+
+                        return new MemberCode(_.Name, memberCode);
+                    }).ToList();
+
+                    var code = type.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 20);
+
+                    unequalSet.Add(code);
+                }
+
+                var newEquatablePropertiesCode = properties.Select(_ => new MemberCode(_.Name, "ObjectForEquatableTests." + _.Name)).ToList();
+
+                var newObjectFromEquatableToken = type.GenerateModelInstantiation(newEquatablePropertiesCode, parameterPaddingLength: 20);
+
+                result = result.Replace(NewObjectForEquatableToken, newObjectFromEquatableToken);
+            }
+
+            var unequalObjectsCode = string.Join("," + Environment.NewLine + "            ", unequalSet) + ",";
+
+            result = result.Replace(UnequalObjectsToken, unequalObjectsCode);
 
             return result;
         }

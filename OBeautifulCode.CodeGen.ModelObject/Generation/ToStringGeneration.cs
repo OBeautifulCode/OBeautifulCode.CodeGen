@@ -87,11 +87,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateToStringTestMethod(
             this Type type)
         {
-            var toStringConstructionCode = type.GenerateToStringTestConstructionCode();
+            var hierarchyKind = type.GetHierarchyKind();
 
-            var result = ToStringTestMethodCodeTemplate
-                        .Replace(TypeNameToken, type.ToStringCompilable())
-                        .Replace(ToStringTestToken, toStringConstructionCode);
+            string result = null;
+            if (hierarchyKind != HierarchyKind.AbstractBase)
+            {
+                var toStringConstructionCode = type.GenerateToStringTestConstructionCode();
+
+                result = ToStringTestMethodCodeTemplate
+                    .Replace(TypeNameToken, type.ToStringCompilable())
+                    .Replace(ToStringTestToken, toStringConstructionCode);
+            }
 
             return result;
         }

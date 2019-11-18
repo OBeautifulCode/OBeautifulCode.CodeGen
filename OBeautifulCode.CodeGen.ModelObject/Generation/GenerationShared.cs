@@ -205,6 +205,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string actual,
             string expected)
         {
+            // NOTE: doesn't handle arrays - need to fix up
             var result = Invariant($"{actual}.Should().{(type.IsSystemDictionaryType() || type.IsSystemCollectionType() ? "Equal" : "Be")}({expected});");
 
             return result;

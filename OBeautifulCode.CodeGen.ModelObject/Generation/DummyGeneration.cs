@@ -35,9 +35,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var properties = type.GetPropertiesOfConcernFromType();
 
-            var propertyNameToSourceCodeMap = properties.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
+            var propertyNameToCodeMap = properties.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
 
-            var newDummyToken = type.GenerateModelInstantiation(propertyNameToSourceCodeMap);
+            var newDummyToken = type.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 
             var result = DummyFactoryCode.Replace(NewDummyToken, newDummyToken);
 
