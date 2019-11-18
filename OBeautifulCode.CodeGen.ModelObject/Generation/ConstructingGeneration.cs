@@ -52,8 +52,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actualModeMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.Should().Contain(typeof(IModel<" + TypeNameToken + @">));
-                actualModeMethodHashes.Should().Contain(expectedModelMethodHashes);
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<" + TypeNameToken + @">));
+                actualModeMethodHashes.AsTest().Must().ContainElement(expectedModelMethodHashes);
             }" + ConstructorTestInflationToken + @"
         }";
 
@@ -69,8 +69,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     () => " + NewObjectForArgumentNullTestToken + @");
 
                 // Assert
-                actual.Should().BeOfType<ArgumentNullException>();
-                actual.Message.Should().Contain(""" + ConstructorParameterToken + @""");
+                actual.AsTest().Must().BeOfType<ArgumentNullException>();
+                actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
             }";
 
         private const string ConstructorTestMethodForStringArgumentCodeTemplate = @"
@@ -85,9 +85,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     () => " + NewObjectForArgumentWhiteSpaceTestToken + @");
 
                 // Assert
-                actual.Should().BeOfType<ArgumentException>();
-                actual.Message.Should().Contain(""" + ConstructorParameterToken + @""");
-                actual.Message.Should().Contain(""white space"");
+                actual.AsTest().Must().BeOfType<ArgumentException>();
+                actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
+                actual.Message.AsTest().Must().ContainString(""white space"");
             }";
 
         private const string PropertyGetterTestMethodTemplate = @"
@@ -239,9 +239,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var newObjectCode = type.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 46);
 
-                    var assertPropertyGetterToken = parameter.ParameterType.GenerateFluentAssertionsEqualityStatement(
+                    var assertPropertyGetterToken = parameter.ParameterType.GenerateObcAssertionsEqualityStatement(
                         "actual",
-                        "expected");
+                        "expected",
+                        sameReferenceExpected: true);
 
                     var testMethod = PropertyGetterTestMethodTemplate
                                     .Replace(TypeNameToken,              type.ToStringCompilable())

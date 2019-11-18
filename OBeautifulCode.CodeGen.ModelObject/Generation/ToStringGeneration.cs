@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var actual = systemUnderTest.ToString();
 
             // Assert
-            actual.Should().Be(expected);
+            actual.AsTest().Must().BeEqualTo(expected);
         }";
 
         /// <summary>

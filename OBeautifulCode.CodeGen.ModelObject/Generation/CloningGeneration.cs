@@ -121,8 +121,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actual = systemUnderTest.DeepClone();
 
                 // Assert
-               actual.Should().Be(systemUnderTest);
-               actual.Should().NotBeSameAs(systemUnderTest);" + AssertDeepCloneToken + @"
+                actual.AsTest().Must().BeEqualTo(systemUnderTest);
+                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);" + AssertDeepCloneToken + @"
             }" + DeepCloneWithTestInflationToken + @"
         }";
 
@@ -256,11 +256,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             var properties = type.GetPropertiesOfConcernFromType();
-            var assertDeepCloneSet = properties.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.Should().NotBeSameAs(systemUnderTest.{_.Name});")).ToList();
-            var assertDeepCloneToken = assertDeepCloneSet.Any() ? Environment.NewLine + "               " + string.Join(Environment.NewLine + "               ", assertDeepCloneSet) : string.Empty;
+
+            var assertDeepCloneSet = properties.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
+
+            var assertDeepCloneToken = assertDeepCloneSet.Any() ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneSet) : string.Empty;
 
             var parameters = type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 1)?.GetParameters().ToList();
+
             var deepCloneWithTestMethods = new List<string>();
+
             if (parameters != null)
             {
                 // since we have parameters we'll go ahead and pad down.
@@ -268,31 +272,34 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 foreach (var parameter in parameters)
                 {
-                    var assertDeepCloneWithSet = parameters.Select(
-                                                                _ =>
-                                                                {
-                                                                    var sourceName = _.Name == parameter.Name ? "referenceObject" : "systemUnderTest";
-                                                                    var resultAssert = _.ParameterType.GenerateFluentAssertionsEqualityStatement(
-                                                                        Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
-                                                                        Invariant($"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"));
-                                                                    if (_.Name != parameter.Name && !_.ParameterType.IsValueType && _.ParameterType != typeof(string))
-                                                                    {
-                                                                        resultAssert +=
-                                                                            Environment.NewLine
-                                                                          + Invariant(
-                                                                                $"               actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.Should().NotBeSameAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
-                                                                    }
+                    var assertDeepCloneWithSet =
+                        parameters.Select(
+                                _ =>
+                                {
+                                    var sourceName = _.Name == parameter.Name ? "referenceObject" : "systemUnderTest";
 
-                                                                    return resultAssert;
-                                                                })
-                                                           .ToList();
-                    var assertDeepCloneWithToken = string.Join(Environment.NewLine + "               ", assertDeepCloneWithSet);
+                                    var resultAssert = _.ParameterType.GenerateObcAssertionsEqualityStatement(
+                                        Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
+                                        Invariant($"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
+                                        sameReferenceExpected: false);
+
+                                    if (_.Name != parameter.Name && !_.ParameterType.IsValueType && _.ParameterType != typeof(string))
+                                    {
+                                        resultAssert += Environment.NewLine + Invariant($"                actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.AsTest().Must().NotBeSameReferenceAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
+                                    }
+
+                                    return resultAssert;
+                                })
+                            .ToList();
+
+                    var assertDeepCloneWithToken = string.Join(Environment.NewLine + "                ", assertDeepCloneWithSet);
 
                     var testMethod = DeepCloneWithTestMethodCodeTemplate
-                                    .Replace(TypeNameToken,                  type.ToStringCompilable())
-                                    .Replace(PropertyNameToken,              parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
-                                    .Replace(ParameterNameToken,             parameter.Name)
+                                    .Replace(TypeNameToken,                     type.ToStringCompilable())
+                                    .Replace(PropertyNameToken,                 parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
+                                    .Replace(ParameterNameToken,                parameter.Name)
                                     .Replace(DeepCloneWithTestAssertLogicToken, assertDeepCloneWithToken);
+
                     deepCloneWithTestMethods.Add(testMethod);
                 }
             }

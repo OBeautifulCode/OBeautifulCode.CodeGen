@@ -142,7 +142,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = systemUnderTest1 == systemUnderTest2;
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -156,8 +156,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result2 = ObjectForEquatableTests == systemUnderTest;
 
                 // Assert
-                result1.Should().BeFalse();
-                result2.Should().BeFalse();
+                result1.AsTest().Must().BeFalse();
+                result2.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -169,7 +169,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     #pragma warning restore CS1718 // Comparison made to same variable
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -180,8 +180,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=>_ .First() == _.Last()).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.ForEach(_ => _.Should().BeFalse());
-                actualCheckAgainstOthersInUnequalSet.ForEach(_ => _.Should().BeFalse());
+                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeFalse();
+                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -191,7 +191,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests == ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests;
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -205,7 +205,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = systemUnderTest1 != systemUnderTest2;
 
                 // Assert
-                result.Should().BeFalse();
+                result.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -219,8 +219,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result2 = ObjectForEquatableTests != systemUnderTest;
 
                 // Assert
-                result1.Should().BeTrue();
-                result2.Should().BeTrue();
+                result1.AsTest().Must().BeTrue();
+                result2.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -232,7 +232,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     #pragma warning restore CS1718 // Comparison made to same variable
 
                 // Assert
-                result.Should().BeFalse();
+                result.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -243,8 +243,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=>_ .First() != _.Last()).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.ForEach(_ => _.Should().BeTrue());
-                actualCheckAgainstOthersInUnequalSet.ForEach(_ => _.Should().BeTrue());
+                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeTrue();
+                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeTrue();
             }
 
             [Fact]
@@ -254,7 +254,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests != ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests;
 
                 // Assert
-                result.Should().BeFalse();
+                result.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -267,7 +267,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals(systemUnderTest);
 
                 // Assert
-                result.Should().BeFalse();
+                result.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -277,7 +277,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -288,8 +288,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=> _.First().Equals(_.Last())).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.ForEach(_ => _.Should().BeFalse());
-                actualCheckAgainstOthersInUnequalSet.ForEach(_ => _.Should().BeFalse());
+                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeFalse();
+                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -299,7 +299,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals(ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests);
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -309,7 +309,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals(null);
 
                 // Assert
-                result.Should().BeFalse();
+                result.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -319,7 +319,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals((object)ObjectThatIsNotTheSameTypeAsObjectForEquatableTests);
 
                 // Assert
-                result.Should().BeFalse();
+                result.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -329,7 +329,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals((object)ObjectForEquatableTests);
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -340,8 +340,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=>_ .First().Equals((object)_.Last())).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.ForEach(_ => _.Should().BeFalse());
-                actualCheckAgainstOthersInUnequalSet.ForEach(_ => _.Should().BeFalse());
+                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeFalse();
+                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -351,7 +351,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var result = ObjectForEquatableTests.Equals((object)ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests);
 
                 // Assert
-                result.Should().BeTrue();
+                result.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -363,8 +363,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select(_ => _.First().GetHashCode() == _.Last().GetHashCode()).ToList();
 
                 // Assert
-                actualHashCodesInNotEqualSet.Should().NotContain(actualHashCodeOfReference);
-                actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet.ForEach(_ => _.Should().BeFalse());
+                actualHashCodesInNotEqualSet.AsTest().Must().NotContainElement(actualHashCodeOfReference);
+                actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -375,7 +375,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var hash2 = ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests.GetHashCode();
 
                 // Assert
-                hash1.Should().Be(hash2);
+                hash1.AsTest().Must().BeEqualTo(hash2);
             }
         }";
 

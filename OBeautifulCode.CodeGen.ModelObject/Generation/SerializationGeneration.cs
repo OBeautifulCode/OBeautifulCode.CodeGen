@@ -45,7 +45,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actual = serializer.Deserialize<" + TypeNameToken + @">(serializedJson);
 
                 // Assert
-                actual.Should().Be(expected);
+                actual.AsTest().Must().BeEqualTo(expected);
             }
 
             [Fact]
@@ -62,7 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var actual = serializer.Deserialize<" + TypeNameToken + @">(serializedBson);
 
                 // Assert
-                actual.Should().Be(expected);
+                actual.AsTest().Must().BeEqualTo(expected);
             }
         }";
 

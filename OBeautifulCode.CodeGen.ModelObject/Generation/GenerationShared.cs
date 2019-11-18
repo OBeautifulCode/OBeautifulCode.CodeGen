@@ -192,21 +192,31 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
-        /// Generates a FluentAssertions equality statement.
+        /// Generates an assertion equality statement.
         /// </summary>
         /// <param name="type">The type.</param>
         /// <param name="actual">The actual value.</param>
         /// <param name="expected">The expected value.</param>
+        /// <param name="sameReferenceExpected">A value indicating whether the same reference expected for reference types.</param>
         /// <returns>
-        /// Generated FluentAssertions equality statement.
+        /// Generated assertion equality statement.
         /// </returns>
-        public static string GenerateFluentAssertionsEqualityStatement(
+        public static string GenerateObcAssertionsEqualityStatement(
             this Type type,
             string actual,
-            string expected)
+            string expected,
+            bool sameReferenceExpected)
         {
-            // NOTE: doesn't handle arrays - need to fix up
-            var result = Invariant($"{actual}.Should().{(type.IsSystemDictionaryType() || type.IsSystemCollectionType() ? "Equal" : "Be")}({expected});");
+            string result;
+
+            if ((!type.IsValueType) && sameReferenceExpected)
+            {
+                result = Invariant($"{actual}.AsTest().Must().BeSameReferenceAs({expected});");
+            }
+            else
+            {
+                result = Invariant($"{actual}.AsTest().Must().BeEqualTo({expected});");
+            }
 
             return result;
         }
