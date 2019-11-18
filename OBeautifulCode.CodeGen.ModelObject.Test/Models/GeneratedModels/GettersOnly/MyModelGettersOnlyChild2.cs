@@ -34,7 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { child2StringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { child2ModelEquatableClassProperty }.AsArg().Must().NotBeNull();
-            new { child2ReadOnlyListOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { child2ReadOnlyListOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ReadOnlyListOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { child2ReadOnlyListOfModelEquatableClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 

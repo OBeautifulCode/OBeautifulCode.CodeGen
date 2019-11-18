@@ -119,11 +119,42 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else if (type.IsSystemDictionaryType())
             {
-                result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
+                var valueType = type.GetGenericArguments()[1];
+
+                if (valueType.IsValueType)
+                {
+                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionary);
+                }
+                else
+                {
+                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
+                }
             }
-            else if (type.IsSystemCollectionType() || type.IsArray)
+            else if (type.IsSystemCollectionType())
             {
-                result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
+                var elementType = type.GetGenericArguments()[0];
+
+                if (elementType.IsValueType)
+                {
+                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable);
+                }
+                else
+                {
+                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
+                }
+            }
+            else if (type.IsArray)
+            {
+                var elementType = type.GetElementType();
+
+                if (elementType.IsValueType)
+                {
+                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable);
+                }
+                else
+                {
+                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
+                }
             }
             else
             {

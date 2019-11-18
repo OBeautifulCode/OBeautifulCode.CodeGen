@@ -107,7 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }";
 
-        private const string CloningTestMethodsCodeTemplate = @"
+        private const string CloningTestMethodsForNonInheritedTypeCodeTemplate = @"
         [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Cloning
         {
@@ -119,6 +119,39 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(systemUnderTest);
+                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);" + AssertDeepCloneToken + @"
+            }" + DeepCloneWithTestInflationToken + @"
+        }";
+
+        private const string CloningTestMethodsForConcreteInheritedTypeCodeTemplate = @"
+        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
+        public static class Cloning
+        {
+            [Fact]
+            public static void DeepClone_override___Should_deep_clone_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = (" + TypeNameToken + @")systemUnderTest.DeepClone();
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(systemUnderTest);
+                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);" + AssertDeepCloneToken + @"
+            }
+
+            [Fact]
+            public static void DeepClone_explicit_interface___Should_deep_clone_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = ((IDeepCloneable<" + TypeNameToken + @">)systemUnderTest).DeepClone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -261,29 +294,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var assertDeepCloneToken = assertDeepCloneSet.Any() ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneSet) : string.Empty;
 
-            var parameters = type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 1)?.GetParameters().ToList();
-
             var deepCloneWithTestMethods = new List<string>();
 
-            if (parameters != null)
+            if (properties.Any())
             {
                 // since we have parameters we'll go ahead and pad down.
                 deepCloneWithTestMethods.Add(string.Empty);
 
-                foreach (var parameter in parameters)
+                foreach (var property in properties)
                 {
                     var assertDeepCloneWithSet =
-                        parameters.Select(
+                        properties.Select(
                                 _ =>
                                 {
-                                    var sourceName = _.Name == parameter.Name ? "referenceObject" : "systemUnderTest";
+                                    var sourceName = _.Name == property.Name ? "referenceObject" : "systemUnderTest";
 
-                                    var resultAssert = _.ParameterType.GenerateObcAssertionsEqualityStatement(
+                                    var resultAssert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
                                         Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
                                         Invariant($"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
                                         sameReferenceExpected: false);
 
-                                    if (_.Name != parameter.Name && !_.ParameterType.IsValueType && _.ParameterType != typeof(string))
+                                    if (_.Name != property.Name && !_.PropertyType.IsValueType && _.PropertyType != typeof(string))
                                     {
                                         resultAssert += Environment.NewLine + Invariant($"                actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.AsTest().Must().NotBeSameReferenceAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
                                     }
@@ -296,8 +327,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var testMethod = DeepCloneWithTestMethodCodeTemplate
                                     .Replace(TypeNameToken,                     type.ToStringCompilable())
-                                    .Replace(PropertyNameToken,                 parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
-                                    .Replace(ParameterNameToken,                parameter.Name)
+                                    .Replace(PropertyNameToken,                 property.Name)
+                                    .Replace(ParameterNameToken,                property.Name.ToLowerFirstCharacter())
                                     .Replace(DeepCloneWithTestAssertLogicToken, assertDeepCloneWithToken);
 
                     deepCloneWithTestMethods.Add(testMethod);
@@ -306,9 +337,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var deepCloneWithTestInflationToken = string.Join(Environment.NewLine, deepCloneWithTestMethods);
 
-            var result = CloningTestMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable())
-                                                       .Replace(AssertDeepCloneToken, assertDeepCloneToken)
-                                                       .Replace(DeepCloneWithTestInflationToken, deepCloneWithTestInflationToken);
+            string cloningTestMethodsCodeTemplate;
+
+            var hierarchyKind = type.GetHierarchyKind();
+            switch (hierarchyKind)
+            {
+                case HierarchyKind.None:
+                case HierarchyKind.AbstractBase:
+                    cloningTestMethodsCodeTemplate = CloningTestMethodsForNonInheritedTypeCodeTemplate;
+                    break;
+                case HierarchyKind.ConcreteInherited:
+                    cloningTestMethodsCodeTemplate = CloningTestMethodsForConcreteInheritedTypeCodeTemplate;
+                    break;
+                default:
+                    throw new NotSupportedException("This kind is not supported: " + hierarchyKind);
+            }
+
+            var result = cloningTestMethodsCodeTemplate
+                .Replace(TypeNameToken,                   type.ToStringCompilable())
+                .Replace(AssertDeepCloneToken,            assertDeepCloneToken)
+                .Replace(DeepCloneWithTestInflationToken, deepCloneWithTestInflationToken);
 
             return result;
         }
