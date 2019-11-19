@@ -105,6 +105,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var code = GenerateDummyFactory(types);
 
+            Directory.CreateDirectory(DummyFactoryPath);
+
             File.WriteAllText(DummyFactoryPath, code);
         }
 
