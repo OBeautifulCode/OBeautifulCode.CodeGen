@@ -8,7 +8,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
 
     using OBeautifulCode.String.Recipes;
@@ -278,8 +277,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 default:
                     throw new NotSupportedException("This kind is not supported: " + generationKind);
             }
-
-            Directory.CreateDirectory(result);
 
             return result;
         }

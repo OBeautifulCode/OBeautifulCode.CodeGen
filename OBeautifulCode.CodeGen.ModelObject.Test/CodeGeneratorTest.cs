@@ -31,16 +31,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly bool WriteFiles = true;
 
-        public static readonly string SourceRoot = Environment.GetEnvironmentVariable("APPVEYOR") != null ? Directory.GetCurrentDirectory() : "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
+        public static readonly string SourceRoot = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
 
-        public static readonly string GeneratedModelsPath = SourceRoot.AppendMissing("\\") + "Models\\GeneratedModels\\";
+        public static readonly string GeneratedModelsPath = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : SourceRoot.AppendMissing("\\") + "Models\\GeneratedModels\\";
 
-        public static readonly string GeneratedTestsPath = SourceRoot.AppendMissing("\\") + "ModelTests\\GeneratedModels\\";
+        public static readonly string GeneratedTestsPath = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : SourceRoot.AppendMissing("\\") + "ModelTests\\GeneratedModels\\";
 
-        public static readonly string DummyFactoryPath = SourceRoot.AppendMissing("\\") + "DummyFactory.cs";
+        public static readonly string DummyFactoryPath = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : SourceRoot.AppendMissing("\\") + "DummyFactory.cs";
 
         private static readonly Type[] TypesToWrap =
         {
@@ -104,8 +104,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(ModelBaseName, StringComparison.Ordinal)).Where(_ => !_.Name.EndsWith(TestNameSuffix, StringComparison.Ordinal)).ToList();
 
             var code = GenerateDummyFactory(types);
-
-            Directory.CreateDirectory(DummyFactoryPath);
 
             File.WriteAllText(DummyFactoryPath, code);
         }
@@ -370,6 +368,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = statements
                     .ToNewLineDelimited()
                     .Replace(snippetsToken, snippets);
+
+            return result;
+        }
+
+        private static bool IsRunningInAppVeyor()
+        {
+            var result = Environment.GetEnvironmentVariable("APPVEYOR") != null;
 
             return result;
         }
