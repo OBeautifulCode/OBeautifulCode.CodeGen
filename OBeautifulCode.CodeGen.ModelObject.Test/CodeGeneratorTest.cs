@@ -25,13 +25,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
-        public const string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
-
         public const string ModelBaseName = "MyModel";
 
         public const string TestNameSuffix = "Test";
 
         public static readonly bool WriteFiles = true;
+
+        public static readonly string SourceRoot = Environment.GetEnvironmentVariable("APPVEYOR") != null ? Directory.GetCurrentDirectory() : "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
