@@ -60,7 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void Constructor___Should_throw_ArgumentNullException___When_parameter_" + ConstructorParameterToken + @"_is_null()
             {
-                // Arrange,
+                // Arrange
                 var referenceObject = A.Dummy<" + TypeNameToken + @">();
 
                 // Act
@@ -76,7 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void Constructor___Should_throw_ArgumentException___When_parameter_" + ConstructorParameterToken + @"_is_white_space()
             {
-                // Arrange,
+                // Arrange
                 var referenceObject = A.Dummy<" + TypeNameToken + @">();
 
                 // Act
@@ -93,7 +93,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void " + PropertyNameToken + @"___Should_return_same_" + ConstructorParameterToken + @"_parameter_passed_to_constructor___When_getting()
             {
-                // Arrange,
+                // Arrange
                 var referenceObject = A.Dummy<" + TypeNameToken + @">();
 
                 var systemUnderTest = " + NewObjectForGetterTestToken + @";

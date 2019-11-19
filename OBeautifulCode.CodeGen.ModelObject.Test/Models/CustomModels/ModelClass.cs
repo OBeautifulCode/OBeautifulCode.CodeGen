@@ -6,9 +6,12 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System;
+
+    using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
-    public class ModelClass : IDeepCloneable<ModelClass>
+    public class ModelClass : IEquatable<ModelClass>, IDeepCloneable<ModelClass>
     {
         public ModelClass(
             int item1,
@@ -21,6 +24,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public int Item1 { get; }
 
         public string Item2 { get; }
+
+        public static bool operator ==(
+            ModelClass left,
+            ModelClass right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            var result =
+                (left.Item1 == right.Item1) &&
+                (left.Item2 == right.Item2);
+            return result;
+        }
+
+        public static bool operator !=(
+            ModelClass left,
+            ModelClass right)
+            => !(left == right);
+
+        /// <inheritdoc />
+        public bool Equals(ModelClass other) => this == other;
+
+        /// <inheritdoc />
+        public override bool Equals(object obj) => this == (obj as ModelClass);
+
+        /// <inheritdoc />
+        public override int GetHashCode() =>
+            HashCodeHelper.Initialize()
+                .Hash(this.Item1)
+                .Hash(this.Item2)
+                .Value;
 
         public ModelClass DeepClone()
         {

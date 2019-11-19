@@ -197,11 +197,9 @@
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="ModelGenerationExtensions.cs" />
-    <Compile Include="Models\CustomModels\ModelEquatableClass.cs" />
     <Compile Include="Models\CustomModels\ModelClass.cs" />
     <Compile Include="Models\CustomModels\ModelEnum.cs" />
     <Compile Include="Models\CustomModels\ModelFlagsEnum.cs" />
-    <Compile Include="Models\CustomModels\ModelEquatableStruct.cs" />
     <Compile Include="Models\CustomModels\ModelStruct.cs" />
     <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.cs" />
     <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.designer.cs">

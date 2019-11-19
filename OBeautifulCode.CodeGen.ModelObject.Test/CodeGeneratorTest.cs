@@ -52,9 +52,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(ModelEnum),
             typeof(ModelFlagsEnum),
             typeof(ModelStruct),
-            typeof(ModelEquatableStruct),
             typeof(ModelClass),
-            typeof(ModelEquatableClass),
         };
 
         private static readonly IReadOnlyList<TypeWrapperKind> TypeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>().ToList();
@@ -73,7 +71,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [Fact]
         public void GenerateModel___Should_generate_the_model___When_called()
         {
-            void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
+            void GenerateModelEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
             {
                 var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
 
@@ -87,20 +85,39 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
             }
 
-            ExecuteForModels(GenerationKind.Model, ExecuteForModelsEventHandler);
+            var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
+
+            // blank out downstream files
+            ExecuteForModels(GenerationKind.Model, createBlankFilesEventHandler);
+            ExecuteForModels(GenerationKind.Test, createBlankFilesEventHandler);
+            File.WriteAllText(DummyFactoryFilePath, string.Empty);
+
+            // generate new files
+            ExecuteForModels(GenerationKind.Model, GenerateModelEventHandler);
         }
 
         [Fact]
         public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
         {
-            var executeForModelsEventHandler = BuildExecuteForModelsEventHandlerForGenerateForModel();
+            // blank out downstream files
+            var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
+            ExecuteForModels(GenerationKind.Test, createBlankFilesEventHandler);
+            File.WriteAllText(DummyFactoryFilePath, string.Empty);
 
-            ExecuteForModels(GenerationKind.Model, executeForModelsEventHandler);
+            // generate new files
+            var generateForModelEventHandler = BuildGenerateForModelEventHandler();
+
+            ExecuteForModels(GenerationKind.Model, generateForModelEventHandler);
         }
 
         [Fact]
         public void GenerateForModel___Should_generate_dummy_factory___When_parameter_generateFor_is_ModelDummyFactorySnippet()
         {
+            // blank out downstream files
+            var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
+            ExecuteForModels(GenerationKind.Test, createBlankFilesEventHandler);
+
+            // generate new files
             var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(ModelBaseName, StringComparison.Ordinal)).Where(_ => !_.Name.EndsWith(TestNameSuffix, StringComparison.Ordinal)).ToList();
 
             var code = GenerateDummyFactory(types);
@@ -111,9 +128,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [Fact]
         public void GenerateForModel___Should_generate_model_test_partial_class___When_parameter_generateFor_is_ModelImplementationTestsPartialClassWithSerialization()
         {
-            var executeForModelsEventHandler = BuildExecuteForModelsEventHandlerForGenerateForModel();
+            var generateForModelEventHandler = BuildGenerateForModelEventHandler();
 
-            ExecuteForModels(GenerationKind.Test, executeForModelsEventHandler);
+            ExecuteForModels(GenerationKind.Test, generateForModelEventHandler);
         }
 
         private static void ExecuteForModels(
@@ -147,7 +164,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
         }
 
-        private static ExecuteForModelsEventHandler BuildExecuteForModelsEventHandlerForGenerateForModel()
+        private static ExecuteForModelsEventHandler BuildCreateBlankFilesEventHandler()
+        {
+            void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
+            {
+                var modelName = ModelBaseName.BuildModelName(setterKind, hierarchyKind, childIdentifier);
+
+                var testToken = generationKind == GenerationKind.Test ? TestNameSuffix : null;
+
+                var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
+
+                if (WriteFiles)
+                {
+                    File.WriteAllText(modelFilePath, string.Empty);
+                }
+            }
+
+            return ExecuteForModelsEventHandler;
+        }
+
+        private static ExecuteForModelsEventHandler BuildGenerateForModelEventHandler()
         {
             void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null)
             {

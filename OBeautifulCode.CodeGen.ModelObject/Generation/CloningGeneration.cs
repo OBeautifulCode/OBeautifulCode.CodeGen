@@ -161,7 +161,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void DeepCloneWith" + PropertyNameToken + @"___Should_deep_clone_object_and_replace_" + PropertyNameToken + @"_with_the_provided_" + ParameterNameToken + @"___When_called()
             {
-                // Arrange,
+                // Arrange
                 var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
 
                 var referenceObject = A.Dummy<" + TypeNameToken + @">().ThatIsNot(systemUnderTest);
@@ -177,7 +177,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void DeepCloneWith" + PropertyNameToken + @"___Should_deep_clone_object_and_replace_" + PropertyNameToken + @"_with_the_provided_" + ParameterNameToken + @"___When_called()
             {
-                // Arrange,
+                // Arrange
                 var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
 
                 var referenceObject = A.Dummy<" + TypeNameToken + @">().ThatIsNot(systemUnderTest);

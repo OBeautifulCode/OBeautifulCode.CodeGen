@@ -6,13 +6,12 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
-    using System.Diagnostics.CodeAnalysis;
+    using System;
 
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+    using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
-    [SuppressMessage("Microsoft.Performance", "CA1815:OverrideEqualsAndOperatorEqualsOnValueTypes", Justification = ObcSuppressBecause.CA1815_OverrideEqualsAndOperatorEqualsOnValueTypes_TypeUsedForTestsThatRequireTypeToNotBeEquatable)]
-    public struct ModelStruct : IDeepCloneable<ModelStruct>
+    public struct ModelStruct : IEquatable<ModelStruct>, IDeepCloneable<ModelStruct>
     {
         public ModelStruct(
             int item1,
@@ -25,6 +24,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public int Item1 { get; }
 
         public string Item2 { get; }
+
+        public static bool operator ==(
+            ModelStruct left,
+            ModelStruct right)
+        {
+            var result =
+                (left.Item1 == right.Item1) &&
+                (left.Item2 == right.Item2);
+
+            return result;
+        }
+
+        public static bool operator !=(
+            ModelStruct left,
+            ModelStruct right)
+            => !(left == right);
+
+        /// <inheritdoc />
+        public bool Equals(ModelStruct other) => this == other;
+
+        /// <inheritdoc />
+        public override bool Equals(object obj) => (obj is ModelStruct other) && this.Equals(other);
+
+        /// <inheritdoc />
+        public override int GetHashCode() =>
+            HashCodeHelper.Initialize()
+                .Hash(this.Item1)
+                .Hash(this.Item2)
+                .Value;
 
         public ModelStruct DeepClone()
         {
