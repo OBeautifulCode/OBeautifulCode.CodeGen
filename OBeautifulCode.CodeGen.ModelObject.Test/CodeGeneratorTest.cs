@@ -31,16 +31,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly bool WriteFiles = true;
 
-        public static readonly string SourceRoot = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
+        public static readonly string SourceRoot = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory().AppendMissing("\\") : "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
 
-        public static readonly string GeneratedModelsPath = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : SourceRoot.AppendMissing("\\") + "Models\\GeneratedModels\\";
+        public static readonly string GeneratedModelsPath = IsRunningInAppVeyor() ? SourceRoot : (SourceRoot + "Models\\GeneratedModels\\");
 
-        public static readonly string GeneratedTestsPath = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : SourceRoot.AppendMissing("\\") + "ModelTests\\GeneratedModels\\";
+        public static readonly string GeneratedTestsPath = IsRunningInAppVeyor() ? SourceRoot : (SourceRoot + "ModelTests\\GeneratedModels\\");
 
-        public static readonly string DummyFactoryPath = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory() : SourceRoot.AppendMissing("\\") + "DummyFactory.cs";
+        public static readonly string DummyFactoryFilePath = SourceRoot + "DummyFactory.cs";
 
         private static readonly Type[] TypesToWrap =
         {
@@ -105,7 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var code = GenerateDummyFactory(types);
 
-            File.WriteAllText(DummyFactoryPath, code);
+            File.WriteAllText(DummyFactoryFilePath, code);
         }
 
         [Fact]
