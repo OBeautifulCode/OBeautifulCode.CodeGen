@@ -124,7 +124,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             foreach (var setterKind in setterKinds)
             {
-                var directoryPath = setterKind.GetGeneratedCodePath(generationKind);
+                var directoryPath = IsRunningInAppVeyor()
+                    ? SourceRoot
+                    : setterKind.GetGeneratedCodePath(generationKind);
 
                 var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
 
