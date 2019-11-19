@@ -168,7 +168,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this string baseName,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
-            string childIdentifier = null)
+            string childIdentifier)
         {
             var result = Invariant($"{baseName}{setterKind}{hierarchyKind.BuildNameToken()}{childIdentifier}");
 
@@ -223,8 +223,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else if (type.IsAssignableTo(typeof(IReadOnlyDictionary<,>), treatUnboundGenericAsAssignableTo: true))
             {
-                var keyType = type.GetGenericArguments().First();
-
+                // var keyType = type.GetGenericArguments().First();
                 var valueType = type.GetGenericArguments().Last();
 
                 result = "ReadOnlyDictionaryOf" + valueType.BuildNameToken();

@@ -8,10 +8,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
 
     using OBeautifulCode.CodeGen.ModelObject;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.String.Recipes;
@@ -31,6 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly bool WriteFiles = true;
 
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
 
         public static readonly string GeneratedModelsPath = SourceRoot.AppendMissing("\\") + "Models\\GeneratedModels\\";
@@ -98,7 +101,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [Fact]
         public void GenerateForModel___Should_generate_dummy_factory___When_parameter_generateFor_is_ModelDummyFactorySnippet()
         {
-            var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(ModelBaseName)).Where(_ => !_.Name.EndsWith(TestNameSuffix)).ToList();
+            var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(ModelBaseName, StringComparison.Ordinal)).Where(_ => !_.Name.EndsWith(TestNameSuffix, StringComparison.Ordinal)).ToList();
 
             var code = GenerateDummyFactory(types);
 
@@ -247,7 +250,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var abstractStatement = hierarchyKind == HierarchyKind.AbstractBase ? "abstract " : string.Empty;
 
-            var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildModelName(setterKind, HierarchyKind.AbstractBase)}, " : string.Empty;
+            var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildModelName(setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}, " : string.Empty;
 
             var headerStatements = new List<string>
             {

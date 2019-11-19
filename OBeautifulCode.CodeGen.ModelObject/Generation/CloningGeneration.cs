@@ -263,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Replace(TypeNameToken, type.ToStringCompilable())
                         .Replace(BaseTypeNameToken, type.BaseType.ToStringCompilable())
                         .Replace(PropertyNameToken, property.Name)
-                        .Replace(ParameterNameToken, property.Name.ToLowerFirstCharacter())
+                        .Replace(ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
                         .Replace(ParameterTypeNameToken, property.PropertyType.ToStringCompilable());
 
                     if (hierarchyKind != HierarchyKind.AbstractBase)
@@ -273,7 +273,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name);
 
                             var code = _.Name == property.Name
-                                ? property.Name.ToLowerFirstCharacter()
+                                ? property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture)
                                 : referenceItemCloned;
 
                             return new MemberCode(_.Name, code);
@@ -350,7 +350,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     var testMethod = deepCloneWithTestMethodCodeTemplate
                                     .Replace(TypeNameToken,                     type.ToStringCompilable())
                                     .Replace(PropertyNameToken,                 property.Name)
-                                    .Replace(ParameterNameToken,                property.Name.ToLowerFirstCharacter())
+                                    .Replace(ParameterNameToken,                property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(DeepCloneWithTestAssertLogicToken, assertDeepCloneWithToken);
 
                     deepCloneWithTestMethods.Add(testMethod);
@@ -508,7 +508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                result = expressionParameter + recursionDepth;
+                result = expressionParameter + recursionDepth.ToString(CultureInfo.InvariantCulture);
             }
 
             return result;

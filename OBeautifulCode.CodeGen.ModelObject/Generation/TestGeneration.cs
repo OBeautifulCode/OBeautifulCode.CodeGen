@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     using OBeautifulCode.Type.Recipes;
@@ -93,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = string.Join(
                 Environment.NewLine,
-                items.Where(_ => (_ == string.Empty) || !string.IsNullOrWhiteSpace(_)).ToArray());
+                items.Where(_ => (_.Length == 0) || !string.IsNullOrWhiteSpace(_)).ToArray());
 
             return result;
         }
