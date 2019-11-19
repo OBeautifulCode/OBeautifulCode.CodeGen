@@ -159,16 +159,33 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }" + DeepCloneWithTestInflationToken + @"
         }";
 
-        private const string DeepCloneWithTestMethodCodeTemplate = @"
+        private const string DeepCloneWithTestMethodForDeclaredPropertyCodeTemplate = @"
             [Fact]
             public static void DeepCloneWith" + PropertyNameToken + @"___Should_deep_clone_object_and_replace_" + PropertyNameToken + @"_with_the_provided_" + ParameterNameToken + @"___When_called()
             {
                 // Arrange,
                 var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+
                 var referenceObject = A.Dummy<" + TypeNameToken + @">().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWith" + PropertyNameToken + @"(referenceObject." + PropertyNameToken + @");
+
+                // Assert
+                " + DeepCloneWithTestAssertLogicToken + @"
+            }";
+
+        private const string DeepCloneWithTestMethodForNonDeclaredPropertyCodeTemplate = @"
+            [Fact]
+            public static void DeepCloneWith" + PropertyNameToken + @"___Should_deep_clone_object_and_replace_" + PropertyNameToken + @"_with_the_provided_" + ParameterNameToken + @"___When_called()
+            {
+                // Arrange,
+                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+
+                var referenceObject = A.Dummy<" + TypeNameToken + @">().ThatIsNot(systemUnderTest);
+                
+                // Act
+                var actual = (" + TypeNameToken + @")systemUnderTest.DeepCloneWith" + PropertyNameToken + @"(referenceObject." + PropertyNameToken + @");
 
                 // Assert
                 " + DeepCloneWithTestAssertLogicToken + @"
@@ -289,6 +306,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             var properties = type.GetPropertiesOfConcernFromType();
+            var declaredPropertyNames = new HashSet<string>(type.GetPropertiesOfConcernFromType(declaredOnly: true).Select(_ => _.Name));
 
             var assertDeepCloneSet = properties.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
 
@@ -325,7 +343,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var assertDeepCloneWithToken = string.Join(Environment.NewLine + "                ", assertDeepCloneWithSet);
 
-                    var testMethod = DeepCloneWithTestMethodCodeTemplate
+                    var deepCloneWithTestMethodCodeTemplate = declaredPropertyNames.Contains(property.Name)
+                        ? DeepCloneWithTestMethodForDeclaredPropertyCodeTemplate
+                        : DeepCloneWithTestMethodForNonDeclaredPropertyCodeTemplate;
+
+                    var testMethod = deepCloneWithTestMethodCodeTemplate
                                     .Replace(TypeNameToken,                     type.ToStringCompilable())
                                     .Replace(PropertyNameToken,                 property.Name)
                                     .Replace(ParameterNameToken,                property.Name.ToLowerFirstCharacter())

@@ -49,11 +49,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // Act
                 var actualInterfaces = type.GetInterfaces();
                 var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
-                var actualModeMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
+                var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
                 actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<" + TypeNameToken + @">));
-                actualModeMethodHashes.AsTest().Must().ContainElement(expectedModelMethodHashes);
+                expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }" + ConstructorTestInflationToken + @"
         }";
 

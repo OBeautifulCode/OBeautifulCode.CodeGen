@@ -22,11 +22,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private const string SerializationConfigurationPrefixToken = "<<<SerializationConfigurationPrefixHere>>>";
 
-        private const string SerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer<" + SerializationConfigurationPrefixToken + @"BsonConfiguration>();
+        private const string JsonOnlySerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
+
+        private const string BsonAndJsonSerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer<" + SerializationConfigurationPrefixToken + @"BsonConfiguration>();
         
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
 
-        private const string SerializationTestMethodsCodeTemplate = @"
+        private const string JsonOnlySerializationTestMethodsCodeTemplate = @"
         [SuppressMessage(""Microsoft.Naming"", ""CA1724:TypeNamesShouldNotMatchNamespaces"", Justification = ""Name is correct."")]
         [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Serialization
@@ -47,7 +49,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
             }
+        }";
 
+        private const string BsonAndJsonSerializationTestMethodsCodeTemplate = @"
+        [SuppressMessage(""Microsoft.Naming"", ""CA1724:TypeNamesShouldNotMatchNamespaces"", Justification = ""Name is correct."")]
+        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
+        public static class Serialization
+        {
             [Fact]
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
@@ -60,6 +68,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 // Act
                 var actual = serializer.Deserialize<" + TypeNameToken + @">(serializedBson);
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(expected);
+            }
+
+            [Fact]
+            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
+            {
+                // Arrange
+                var expected = A.Dummy<" + TypeNameToken + @">();
+
+                var serializer = JsonSerializer;
+
+                var serializedJson = serializer.SerializeToString(expected);
+
+                // Act
+                var actual = serializer.Deserialize<" + TypeNameToken + @">(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -87,7 +112,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Where(_ => _ != "Json")
                 .ToDelimitedString(string.Empty);
 
-            var result = SerializationFieldsCodeTemplate
+            var serializationFieldsCodeTemplate = type.HasAnyGetterOnlyProperties()
+                ? JsonOnlySerializationFieldsCodeTemplate
+                : BsonAndJsonSerializationFieldsCodeTemplate;
+
+            var result = serializationFieldsCodeTemplate
                         .Replace(TypeNameToken, type.ToStringCompilable())
                         .Replace(SerializationConfigurationPrefixToken, prefix);
 
@@ -105,7 +134,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
-            var result = SerializationTestMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+
+            var serializationTestMethodsCodeTemplate = type.HasAnyGetterOnlyProperties()
+                ? JsonOnlySerializationTestMethodsCodeTemplate
+                : BsonAndJsonSerializationTestMethodsCodeTemplate;
+
+            var result = serializationTestMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+
+            return result;
+        }
+
+        private static bool HasAnyGetterOnlyProperties(
+            this Type type)
+        {
+            var properties = type.GetPropertiesOfConcernFromType();
+
+            var result = properties.Any(_ => _.GetSetMethod(true) == null);
+
             return result;
         }
     }

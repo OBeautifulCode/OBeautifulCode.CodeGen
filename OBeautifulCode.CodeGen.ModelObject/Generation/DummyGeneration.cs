@@ -18,10 +18,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class DummyGeneration
     {
         private const string NewDummyToken = "<<<NEWDUMMYLOGICHERE>>>";
+        private const string TypeNameToken = "<<<TYPENAMEHERE>>>";
 
-        private const string DummyFactoryCode = @"
-            AutoFixtureBackedDummyFactory.AddDummyCreator(
+        private const string AddDummyCreatorCodeTemplate = @"            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => " + NewDummyToken + @");";
+
+        private const string UseRandomConcreteSubclassCodeTemplate = @"
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<" + TypeNameToken + @">();";
 
         /// <summary>
         /// Generates code for a dummy factory.
@@ -33,13 +36,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateCodeForDummyFactory(
             this Type type)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
+            var hierarchyKind = type.GetHierarchyKind();
 
-            var propertyNameToCodeMap = properties.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
+            string result;
+            if (hierarchyKind == HierarchyKind.AbstractBase)
+            {
+                result = UseRandomConcreteSubclassCodeTemplate.Replace(TypeNameToken, type.Name);
+            }
+            else
+            {
+                var properties = type.GetPropertiesOfConcernFromType();
 
-            var newDummyToken = type.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
+                var propertyNameToCodeMap = properties.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
 
-            var result = DummyFactoryCode.Replace(NewDummyToken, newDummyToken);
+                var newDummyToken = type.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
+
+                result = AddDummyCreatorCodeTemplate.Replace(NewDummyToken, newDummyToken);
+            }
 
             return result;
         }

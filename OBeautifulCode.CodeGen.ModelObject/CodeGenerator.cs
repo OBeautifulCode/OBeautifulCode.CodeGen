@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using OBeautifulCode.Assertion.Recipes;
 
     /// <summary>
     /// Generates code.
@@ -26,6 +27,25 @@ namespace OBeautifulCode.CodeGen.ModelObject
             GenerateFor kind)
         {
             var type = typeof(T);
+
+            var result = type.GenerateForModel(kind);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates code associated with a model object.
+        /// </summary>
+        /// <param name="type">The type of the model object.</param>
+        /// <param name="kind">Specifies the kind of code to generate.</param>
+        /// <returns>
+        /// The generated code.
+        /// </returns>
+        public static string GenerateForModel(
+            this Type type,
+            GenerateFor kind)
+        {
+            new { type }.AsArg().Must().NotBeNull();
 
             type.ThrowIfNotSupported();
 
