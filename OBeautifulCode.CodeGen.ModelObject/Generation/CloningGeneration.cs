@@ -108,7 +108,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         private const string CloningTestMethodsForNonInheritedTypeCodeTemplate = @"
-        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Cloning
         {
             [Fact]
@@ -127,7 +126,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         private const string CloningTestMethodsForConcreteInheritedTypeCodeTemplate = @"
-        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Cloning
         {
             [Fact]

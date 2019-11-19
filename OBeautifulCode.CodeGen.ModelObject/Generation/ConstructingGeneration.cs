@@ -33,7 +33,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string NewObjectForGetterTestToken = "<<<NewObjectWithOneArgumentFromOtherHere>>>";
 
         private const string ConstructingTestMethodsCodeTemplate = @"
-        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Constructing
         {
             [Fact]

@@ -29,8 +29,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
 
         private const string JsonOnlySerializationTestMethodsCodeTemplate = @"
-        [SuppressMessage(""Microsoft.Naming"", ""CA1724:TypeNamesShouldNotMatchNamespaces"", Justification = ""Name is correct."")]
-        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Serialization
         {
             [Fact]
@@ -52,8 +50,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         private const string BsonAndJsonSerializationTestMethodsCodeTemplate = @"
-        [SuppressMessage(""Microsoft.Naming"", ""CA1724:TypeNamesShouldNotMatchNamespaces"", Justification = ""Name is correct."")]
-        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Serialization
         {
             [Fact]

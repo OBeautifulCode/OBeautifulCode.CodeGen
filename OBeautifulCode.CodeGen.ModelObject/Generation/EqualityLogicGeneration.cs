@@ -128,7 +128,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();";
 
         private const string EqualityTestMethodsCodeTemplate = @"
-        [SuppressMessage(""Microsoft.Design"", ""CA1034:NestedTypesShouldNotBeVisible"", Justification = ""Grouping construct for unit test runner."")]
         public static class Equality
         {
             [Fact]

@@ -228,7 +228,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             actual.AsTest().Must().BeEqualTo(expected);
         }
     
-        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Grouping construct for unit test runner.")]
         public static class Constructing
         {
             [Fact]
@@ -926,7 +925,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
     
-        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Grouping construct for unit test runner.")]
         public static class Cloning
         {
             [Fact]
@@ -1374,8 +1372,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
     
-        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Justification = "Name is correct.")]
-        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Grouping construct for unit test runner.")]
         public static class Serialization
         {
             [Fact]
@@ -1396,7 +1392,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
     
-        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "Grouping construct for unit test runner.")]
         public static class Equality
         {
             [Fact]
