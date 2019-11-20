@@ -63,7 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(IReadOnlyList<ICollection<string>>),
             typeof(ICollection<IReadOnlyList<ICollection<string>>>),
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyList<Guid>>>),
-            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<ICollection<string>, IReadOnlyDictionary<IList<string>, IReadOnlyList<string>>>>),
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<DateTime, IReadOnlyDictionary<ModelClass, IReadOnlyList<string>>>>),
         };
 
         private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null);
