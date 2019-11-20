@@ -15,7 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public class CodeGenModelObjectTestBsonConfiguration : BsonConfigurationBase
     {
         /// <inheritdoc />
-        protected override IReadOnlyCollection<Type> TypesToAutoRegister => new[]
+        protected override IReadOnlyCollection<Type> TypesToAutoRegister => new Type[]
         {
             typeof(MyModelGettersOnly),
             typeof(MyModelGettersOnlyParent),
