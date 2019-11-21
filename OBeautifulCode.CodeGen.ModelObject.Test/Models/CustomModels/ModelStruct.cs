@@ -21,9 +21,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Item2 = item2;
         }
 
-        public int Item1 { get; }
+        public int Item1 { get; private set; }
 
-        public string Item2 { get; }
+        public string Item2 { get; private set; }
 
         public static bool operator ==(
             ModelStruct left,

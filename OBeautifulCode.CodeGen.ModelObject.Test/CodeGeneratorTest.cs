@@ -51,8 +51,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(DateTime),
             typeof(ModelEnum),
             typeof(ModelFlagsEnum),
-            typeof(ModelStruct),
             typeof(ModelClass),
+
+            // OBC.Serialization doesn't support structs
+            // typeof(ModelStruct),
         };
 
         private static readonly IReadOnlyList<TypeWrapperKind> TypeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>().ToList();
