@@ -8,8 +8,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Linq;
+    using System.Reflection;
 
     using OBeautifulCode.Type.Recipes;
+
+    using static System.FormattableString;
 
     /// <summary>
     /// Generates code related to string representation of model types.
@@ -69,7 +72,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                var toStringConstructionCode = type.GenerateToStringConstructionCode();
+                var toStringConstructionCode = type.GenerateToStringConstructionCode(useSystemUnderTest: false);
 
                 result = ToStringMethodForConcreteTypeCodeTemplate.Replace(ToStringToken, toStringConstructionCode);
             }
@@ -92,7 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string result = null;
             if (hierarchyKind != HierarchyKind.AbstractBase)
             {
-                var toStringConstructionCode = type.GenerateToStringTestConstructionCode();
+                var toStringConstructionCode = type.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
                 result = ToStringTestMethodCodeTemplate
                     .Replace(TypeNameToken, type.ToStringCompilable())
@@ -103,52 +106,28 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         private static string GenerateToStringConstructionCode(
-            this Type type)
+            this Type type,
+            bool useSystemUnderTest)
         {
-            var propertyNames = type.GetPropertiesOfConcernFromType().ToDictionary(_ => _.Name, _ => _);
+            var properties = type.GetPropertiesOfConcernFromType();
 
-            var result = "Invariant($\"{nameof("
-                       + type.Namespace
-                       + ")}.{nameof("
-                       + type.ToStringCompilable()
-                       + ")}: "
-                       + string.Join(
-                             ", ",
-                             propertyNames.Select(
-                                 _ =>
-                                 {
-                                     var localResult = _.Key
-                                                     + " = {this."
-                                                     + _.Key
-                                                     + (!_.Value.PropertyType.IsValueType || _.Value.PropertyType == typeof(string)
-                                                           ? "?"
-                                                           : string.Empty)
-                                                     + ".ToString("
-                                                     + (_.Value.PropertyType == typeof(int) || _.Value.PropertyType == typeof(bool)
-                                                           ? "CultureInfo.InvariantCulture"
-                                                           : string.Empty)
-                                                     + ") ?? \"<null>\"}";
+            var propertyToStrings = properties.Select(_ => _.GenerateToStringForProperty(useSystemUnderTest)).ToList();
 
-                                     return localResult;
-                                 }))
-                       + ".\")";
+            var result = Invariant($"Invariant($\"{{nameof({type.Namespace})}}.{{nameof({type.ToStringCompilable()})}}: {string.Join(", ", propertyToStrings)}.\")");
 
             return result;
         }
 
-        private static string GenerateToStringTestConstructionCode(
-            this Type type)
+        private static string GenerateToStringForProperty(
+            this PropertyInfo propertyInfo,
+            bool useSystemUnderTest)
         {
-            var propertyNames = type.GetPropertiesOfConcernFromType().Select(_ => _.Name).ToList();
-            var result = "Invariant($\""
-                       + type.Namespace?.Split('.').Last()
-                       + "."
-                       + type.ToStringCompilable()
-                       + ": "
-                       + string.Join(
-                             ", ",
-                             propertyNames.Select(_ => _ + " = {systemUnderTest." + _ + "}"))
-                       + ".\")";
+            var name = propertyInfo.Name;
+            var type = propertyInfo.PropertyType;
+
+            var takesFormatProvider = type.GetMethods().Where(_ => _.Name == "ToString").Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
+
+            var result = name + " = {" + (useSystemUnderTest ? "systemUnderTest" : "this") + "." + name + (type.IsAssignableToNull() ? "?" : string.Empty) + ".ToString(" + (takesFormatProvider ? "CultureInfo.InvariantCulture" : string.Empty) + ") ?? \"<null>\"}";
 
             return result;
         }

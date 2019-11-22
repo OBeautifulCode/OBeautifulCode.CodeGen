@@ -47,6 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "    using System.CodeDom.Compiler;",
                 "    using System.Collections.Generic;",
                 "    using System.Diagnostics.CodeAnalysis;",
+                "    using System.Globalization;",
                 "    using System.Linq;",
                 "    using System.Reflection;",
                 string.Empty,
