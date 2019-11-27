@@ -61,11 +61,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static readonly Type[] AdditionalTypes =
         {
-            typeof(IReadOnlyList<IReadOnlyList<DateTime>>),
+            typeof(ICollection<IReadOnlyList<DateTime>>),
             typeof(IReadOnlyList<ICollection<string>>),
-            typeof(ICollection<IReadOnlyList<ICollection<string>>>),
-            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<DateTime, IReadOnlyDictionary<ModelClass, IReadOnlyList<string>>>>),
-            typeof(IReadOnlyList<IReadOnlyDictionary<DateTime, IReadOnlyList<string>>>),
+            typeof(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>),
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
         };
 
         private static readonly Type[] BlacklistTypes =
