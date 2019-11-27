@@ -54,6 +54,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 throw new NotSupportedException(Invariant($"This type is not supported; it is a constructed generic type: {type}."));
             }
 
+            if (type.IsGenericType)
+            {
+                throw new NotSupportedException(Invariant($"This type is not supported; it is a generic type: {type}."));
+            }
+
             var allTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
 
             var inheritedTypes = allTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
