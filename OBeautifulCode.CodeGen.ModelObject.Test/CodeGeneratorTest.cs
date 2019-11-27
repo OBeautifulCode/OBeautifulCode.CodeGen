@@ -61,11 +61,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static readonly Type[] AdditionalTypes =
         {
-            typeof(IReadOnlyList<IReadOnlyList<string>>),
+            typeof(IReadOnlyList<IReadOnlyList<DateTime>>),
             typeof(IReadOnlyList<ICollection<string>>),
             typeof(ICollection<IReadOnlyList<ICollection<string>>>),
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<DateTime, IReadOnlyDictionary<ModelClass, IReadOnlyList<string>>>>),
             typeof(IReadOnlyList<IReadOnlyDictionary<DateTime, IReadOnlyList<string>>>),
+        };
+
+        private static readonly Type[] BlacklistTypes =
+        {
+            typeof(IReadOnlyDictionary<DateTime, DateTime>),
+            typeof(IReadOnlyDictionary<DateTime?, DateTime?>),
         };
 
         private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string directoryPath, string childIdentifier = null);
@@ -79,7 +85,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var modelFilePath = directoryPath + modelName + ".cs";
 
-                var modelCode = GenerateModel(ModelBaseName, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, hierarchyKind, childIdentifier);
+                var modelCode = GenerateModel(ModelBaseName, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, BlacklistTypes, hierarchyKind, childIdentifier);
 
                 if (WriteFiles)
                 {
@@ -227,6 +233,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<Type> typesToWrap,
             IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds,
             IReadOnlyCollection<Type> additionalTypes,
+            IReadOnlyCollection<Type> blacklistTypes,
             HierarchyKind hierarchyKind,
             string childIdentifier = null)
         {
@@ -255,6 +262,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
 
             typesToAddAsProperties.AddRange(additionalTypes);
+
+            typesToAddAsProperties = typesToAddAsProperties.Where(_ => !blacklistTypes.Contains(_)).ToList();
 
             foreach (var typeToAddAsProperty in typesToAddAsProperties)
             {
