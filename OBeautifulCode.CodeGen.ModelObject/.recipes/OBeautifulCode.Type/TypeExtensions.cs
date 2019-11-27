@@ -58,6 +58,13 @@ namespace OBeautifulCode.Type.Recipes
                 typeof(IReadOnlyList<>)
             });
 
+        private static readonly HashSet<Type> UnorderedCollectionTypes =
+            new HashSet<Type>(new[]
+            {
+                typeof(ICollection<>),
+                typeof(IReadOnlyCollection<>),
+            });
+
         private static readonly HashSet<Type> DictionaryTypes =
             new HashSet<Type>(new[]
             {
@@ -408,12 +415,12 @@ namespace OBeautifulCode.Type.Recipes
         }
 
         /// <summary>
-        /// Determines if the specified type is a <see cref="System"/> ordered <see cref="IEnumerable{T}"/>:
-        /// Either an <see cref="Array"/> or one of these types: <see cref="OrderedCollectionTypes"/>.
+        /// Determines if the specified type is one of the following <see cref="System"/>
+        /// ordered collection types: <see cref="OrderedCollectionTypes"/>.
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>
-        /// true if the specified type is a <see cref="System"/> ordered <see cref="IEnumerable{T}"/>.
+        /// true if the specified type is an ordered <see cref="System"/> collection type; otherwise false.
         /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
         public static bool IsSystemOrderedCollectionType(
@@ -424,9 +431,33 @@ namespace OBeautifulCode.Type.Recipes
                 throw new ArgumentNullException(nameof(type));
             }
 
-            if (type.IsArray)
+            if (!type.IsGenericType)
             {
-                return true;
+                return false;
+            }
+
+            var genericType = type.GetGenericTypeDefinition();
+
+            var result = OrderedCollectionTypes.Contains(genericType);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified type is one of the following <see cref="System"/>
+        /// unordered collection types: <see cref="UnorderedCollectionTypes"/>.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>
+        /// true if the specified type is an unordered <see cref="System"/> collection type; otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
+        public static bool IsSystemUnorderedCollectionType(
+            this Type type)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
             }
 
             if (!type.IsGenericType)
@@ -436,7 +467,7 @@ namespace OBeautifulCode.Type.Recipes
 
             var genericType = type.GetGenericTypeDefinition();
 
-            var result = OrderedCollectionTypes.Contains(genericType);
+            var result = UnorderedCollectionTypes.Contains(genericType);
 
             return result;
         }
