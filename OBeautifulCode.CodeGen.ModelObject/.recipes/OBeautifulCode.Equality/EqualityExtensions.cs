@@ -57,13 +57,6 @@ namespace OBeautifulCode.Equality.Recipes
 
             var result = equalityComparerToUse.Equals(item1, item2);
 
-            // We need to special-case DateTime because two DateTimes, representing the same moment
-            // are considered equal even if they have a different Kind.
-            if (typeof(T) == typeof(DateTime))
-            {
-                result = result && (Convert.ToDateTime(item1, CultureInfo.InvariantCulture).Kind == Convert.ToDateTime(item2, CultureInfo.InvariantCulture).Kind);
-            }
-
             return result;
         }
 
@@ -118,6 +111,11 @@ namespace OBeautifulCode.Equality.Recipes
                 // they are equal, but if their List<string> keys are different references, then the dictionaries
                 // cannot be substituted.  Looking-up values using the keys of one dictionary with the other
                 // dictionary would fail.
+                //
+                // Note that two dictionaries keyed on DateTime, having the keys with the same number of Ticks
+                // but with different DateTime.Kind, will be considered equal because here we are using .NET's
+                // default equality comparer and not our own.  There is no way to use our own while solving for
+                // the comments above (the reason why we use the comparer embedded in the dictionary in the first place).
                 if (!item2.ContainsKey(key))
                 {
                     return false;
@@ -221,6 +219,11 @@ namespace OBeautifulCode.Equality.Recipes
                 // they are equal, but if their List<string> keys are different references, then the dictionaries
                 // cannot be substituted.  Looking-up values using the keys of one dictionary with the other
                 // dictionary would fail.
+                //
+                // Note that two dictionaries keyed on DateTime, having the keys with the same number of Ticks
+                // but with different DateTime.Kind, will be considered equal because here we are using .NET's
+                // default equality comparer and not our own.  There is no way to use our own while solving for
+                // the comments above (the reason why we use the comparer embedded in the dictionary in the first place).
                 if (!item2.ContainsKey(key))
                 {
                     return false;
