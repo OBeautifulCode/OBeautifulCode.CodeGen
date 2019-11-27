@@ -29,16 +29,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public const string TestNameSuffix = "Test";
 
-        public static readonly bool WriteFiles = true;
+        public static readonly bool WriteFiles = false;
 
-        public static readonly string SourceRoot = IsRunningInAppVeyor() ? Directory.GetCurrentDirectory().AppendMissing("\\") : "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
+        public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
+        // ReSharper disable once InconsistentNaming
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
 
-        public static readonly string GeneratedModelsPath = IsRunningInAppVeyor() ? SourceRoot : (SourceRoot + "Models\\GeneratedModels\\");
+        public static readonly string GeneratedModelsPath = SourceRoot + "Models\\GeneratedModels\\";
 
-        public static readonly string GeneratedTestsPath = IsRunningInAppVeyor() ? SourceRoot : (SourceRoot + "ModelTests\\GeneratedModels\\");
+        public static readonly string GeneratedTestsPath = SourceRoot + "ModelTests\\GeneratedModels\\";
 
         public static readonly string DummyFactoryFilePath = SourceRoot + "DummyFactory.cs";
 
@@ -148,9 +149,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             foreach (var setterKind in setterKinds)
             {
-                var directoryPath = IsRunningInAppVeyor()
-                    ? SourceRoot
-                    : setterKind.GetGeneratedCodePath(generationKind);
+                var directoryPath = setterKind.GetGeneratedCodePath(generationKind);
 
                 var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
 
@@ -416,13 +415,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = statements
                     .ToNewLineDelimited()
                     .Replace(snippetsToken, snippets);
-
-            return result;
-        }
-
-        private static bool IsRunningInAppVeyor()
-        {
-            var result = Environment.GetEnvironmentVariable("APPVEYOR") != null;
 
             return result;
         }
