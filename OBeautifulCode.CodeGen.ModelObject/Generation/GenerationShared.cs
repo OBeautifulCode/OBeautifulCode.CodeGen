@@ -77,6 +77,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     throw new NotSupportedException(Invariant($"This type is not supported; inherited classes cannot also be base classes: {type}."));
                 }
             }
+
+            var properties = type.GetPropertiesOfConcernFromType();
+
+            if (properties.Select(_ => _.PropertyType.IsOrContainsDictionaryKeyedOnDateTime()).Any())
+            {
+                throw new NotSupportedException(Invariant($"This type contains a property that is OR has within its generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {type}."));
+            }
         }
 
         /// <summary>
@@ -88,8 +95,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type)
         {
             new { type }.AsArg().Must().NotBeNull();
-
-            type.ThrowIfNotSupported();
 
             HierarchyKind result;
             if (type.IsAbstract)
@@ -219,6 +224,32 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
 
             return result;
+        }
+
+        private static bool IsOrContainsDictionaryKeyedOnDateTime(
+            this Type type)
+        {
+            if (type.IsSystemDictionaryType())
+            {
+                var keyType = type.GenericTypeArguments.First();
+
+                if ((keyType == typeof(DateTime)) || (keyType == typeof(DateTime?)))
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsGenericType)
+            {
+                var genericTypeArguments = type.GenericTypeArguments;
+
+                if (genericTypeArguments.Any(_ => _.IsOrContainsDictionaryKeyedOnDateTime()))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
