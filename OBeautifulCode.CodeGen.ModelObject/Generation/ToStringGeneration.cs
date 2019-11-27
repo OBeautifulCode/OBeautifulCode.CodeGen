@@ -125,9 +125,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var name = propertyInfo.Name;
             var type = propertyInfo.PropertyType;
 
-            var takesFormatProvider = type.GetMethods().Where(_ => _.Name == "ToString").Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
+            var takesFormatProvider = type.GetMethods().Where(_ => _.Name == "ToString").Where(_ => !_.IsObsolete()).Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
 
             var result = name + " = {" + (useSystemUnderTest ? "systemUnderTest" : "this") + "." + name + (type.IsAssignableToNull() ? "?" : string.Empty) + ".ToString(" + (takesFormatProvider ? "CultureInfo.InvariantCulture" : string.Empty) + ") ?? \"<null>\"}";
+
+            return result;
+        }
+
+        private static bool IsObsolete(
+            this MethodInfo methodInfo)
+        {
+            var result = methodInfo.GetCustomAttributes(false).OfType<ObsoleteAttribute>().Any();
 
             return result;
         }
