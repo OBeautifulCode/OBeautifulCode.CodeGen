@@ -50,13 +50,50 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ModelClass right)
             => !(left == right);
 
+        public static bool operator <(
+            ModelClass left,
+            ModelClass right)
+        {
+            var result = Compare(left, right) < 0;
+
+            return result;
+        }
+
+        public static bool operator >(
+            ModelClass left,
+            ModelClass right)
+        {
+            var result = Compare(left, right) > 0;
+
+            return result;
+        }
+
+        public static int Compare(
+            ModelClass left,
+            ModelClass right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return 0;
+            }
+
+            if (ReferenceEquals(left, null))
+            {
+                return -1;
+            }
+
+            var result = left.CompareTo(right);
+
+            return result;
+        }
+
         /// <inheritdoc />
         public bool Equals(ModelClass other) => this == other;
 
         public int CompareTo(
             ModelClass other)
         {
-            if (other == null)
+            if (ReferenceEquals(other, null))
             {
                 return 1;
             }
