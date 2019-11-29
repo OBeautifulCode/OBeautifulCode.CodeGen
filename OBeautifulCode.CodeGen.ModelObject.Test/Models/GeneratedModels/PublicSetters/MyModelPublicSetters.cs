@@ -18,28 +18,146 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public partial class MyModelPublicSetters : IModelViaCodeGen
     {
 
+        public bool BoolProperty { get; set; }
+
+        public int IntProperty { get; set; }
+
+        public string StringProperty { get; set; }
+
+        public Guid GuidProperty { get; set; }
+
         public DateTime DateTimeProperty { get; set; }
+
+        public ModelEnum ModelEnumProperty { get; set; }
+
+        public ModelFlagsEnum ModelFlagsEnumProperty { get; set; }
+
+        public ModelClass ModelClassProperty { get; set; }
+
+        public bool? NullableBoolProperty { get; set; }
+
+        public int? NullableIntProperty { get; set; }
+
+        public Guid? NullableGuidProperty { get; set; }
 
         public DateTime? NullableDateTimeProperty { get; set; }
 
+        public ModelEnum? NullableModelEnumProperty { get; set; }
+
+        public ModelFlagsEnum? NullableModelFlagsEnumProperty { get; set; }
+
+        public bool[] ArrayOfBoolProperty { get; set; }
+
+        public int[] ArrayOfIntProperty { get; set; }
+
+        public string[] ArrayOfStringProperty { get; set; }
+
+        public Guid[] ArrayOfGuidProperty { get; set; }
+
         public DateTime[] ArrayOfDateTimeProperty { get; set; }
+
+        public ModelEnum[] ArrayOfModelEnumProperty { get; set; }
+
+        public ModelFlagsEnum[] ArrayOfModelFlagsEnumProperty { get; set; }
+
+        public ModelClass[] ArrayOfModelClassProperty { get; set; }
+
+        public bool?[] ArrayOfNullableBoolProperty { get; set; }
+
+        public int?[] ArrayOfNullableIntProperty { get; set; }
+
+        public Guid?[] ArrayOfNullableGuidProperty { get; set; }
 
         public DateTime?[] ArrayOfNullableDateTimeProperty { get; set; }
 
+        public ModelEnum?[] ArrayOfNullableModelEnumProperty { get; set; }
+
+        public ModelFlagsEnum?[] ArrayOfNullableModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyCollection<bool> ReadOnlyCollectionOfBoolProperty { get; set; }
+
+        public IReadOnlyCollection<int> ReadOnlyCollectionOfIntProperty { get; set; }
+
+        public IReadOnlyCollection<string> ReadOnlyCollectionOfStringProperty { get; set; }
+
+        public IReadOnlyCollection<Guid> ReadOnlyCollectionOfGuidProperty { get; set; }
+
         public IReadOnlyCollection<DateTime> ReadOnlyCollectionOfDateTimeProperty { get; set; }
+
+        public IReadOnlyCollection<ModelEnum> ReadOnlyCollectionOfModelEnumProperty { get; set; }
+
+        public IReadOnlyCollection<ModelFlagsEnum> ReadOnlyCollectionOfModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyCollection<ModelClass> ReadOnlyCollectionOfModelClassProperty { get; set; }
+
+        public IReadOnlyCollection<bool?> ReadOnlyCollectionOfNullableBoolProperty { get; set; }
+
+        public IReadOnlyCollection<int?> ReadOnlyCollectionOfNullableIntProperty { get; set; }
+
+        public IReadOnlyCollection<Guid?> ReadOnlyCollectionOfNullableGuidProperty { get; set; }
 
         public IReadOnlyCollection<DateTime?> ReadOnlyCollectionOfNullableDateTimeProperty { get; set; }
 
+        public IReadOnlyCollection<ModelEnum?> ReadOnlyCollectionOfNullableModelEnumProperty { get; set; }
+
+        public IReadOnlyCollection<ModelFlagsEnum?> ReadOnlyCollectionOfNullableModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyList<bool> ReadOnlyListOfBoolProperty { get; set; }
+
+        public IReadOnlyList<int> ReadOnlyListOfIntProperty { get; set; }
+
+        public IReadOnlyList<string> ReadOnlyListOfStringProperty { get; set; }
+
+        public IReadOnlyList<Guid> ReadOnlyListOfGuidProperty { get; set; }
+
         public IReadOnlyList<DateTime> ReadOnlyListOfDateTimeProperty { get; set; }
+
+        public IReadOnlyList<ModelEnum> ReadOnlyListOfModelEnumProperty { get; set; }
+
+        public IReadOnlyList<ModelFlagsEnum> ReadOnlyListOfModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyList<ModelClass> ReadOnlyListOfModelClassProperty { get; set; }
+
+        public IReadOnlyList<bool?> ReadOnlyListOfNullableBoolProperty { get; set; }
+
+        public IReadOnlyList<int?> ReadOnlyListOfNullableIntProperty { get; set; }
+
+        public IReadOnlyList<Guid?> ReadOnlyListOfNullableGuidProperty { get; set; }
 
         public IReadOnlyList<DateTime?> ReadOnlyListOfNullableDateTimeProperty { get; set; }
 
-        public IReadOnlyDictionary<DateTime, DateTime> ReadOnlyDictionaryOfDateTimeProperty { get; set; }
+        public IReadOnlyList<ModelEnum?> ReadOnlyListOfNullableModelEnumProperty { get; set; }
 
-        public IReadOnlyDictionary<DateTime?, DateTime?> ReadOnlyDictionaryOfNullableDateTimeProperty { get; set; }
+        public IReadOnlyList<ModelFlagsEnum?> ReadOnlyListOfNullableModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyDictionary<string, IReadOnlyDictionary<DateTime, IReadOnlyDictionary<ModelClass, IReadOnlyList<string>>>> ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty { get; set; }
+        public IReadOnlyDictionary<bool, bool> ReadOnlyDictionaryOfBoolProperty { get; set; }
 
-        public IReadOnlyList<IReadOnlyDictionary<DateTime, IReadOnlyList<string>>> ReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfStringProperty { get; set; }
+        public IReadOnlyDictionary<int, int> ReadOnlyDictionaryOfIntProperty { get; set; }
+
+        public IReadOnlyDictionary<string, string> ReadOnlyDictionaryOfStringProperty { get; set; }
+
+        public IReadOnlyDictionary<Guid, Guid> ReadOnlyDictionaryOfGuidProperty { get; set; }
+
+        public IReadOnlyDictionary<ModelEnum, ModelEnum> ReadOnlyDictionaryOfModelEnumProperty { get; set; }
+
+        public IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> ReadOnlyDictionaryOfModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyDictionary<ModelClass, ModelClass> ReadOnlyDictionaryOfModelClassProperty { get; set; }
+
+        public IReadOnlyDictionary<bool?, bool?> ReadOnlyDictionaryOfNullableBoolProperty { get; set; }
+
+        public IReadOnlyDictionary<int?, int?> ReadOnlyDictionaryOfNullableIntProperty { get; set; }
+
+        public IReadOnlyDictionary<Guid?, Guid?> ReadOnlyDictionaryOfNullableGuidProperty { get; set; }
+
+        public IReadOnlyDictionary<ModelEnum?, ModelEnum?> ReadOnlyDictionaryOfNullableModelEnumProperty { get; set; }
+
+        public IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> ReadOnlyDictionaryOfNullableModelFlagsEnumProperty { get; set; }
+
+        public IReadOnlyList<ICollection<string>> ReadOnlyListOfCollectionOfStringProperty { get; set; }
+
+        public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> ReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty { get; set; }
+
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty { get; set; }
     }
 }

@@ -18,66 +18,351 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public abstract partial class MyModelPrivateSettersParent : IModelViaCodeGen
     {
         protected MyModelPrivateSettersParent(
+            bool parentBoolProperty,
+            int parentIntProperty,
+            string parentStringProperty,
+            Guid parentGuidProperty,
             DateTime parentDateTimeProperty,
+            ModelEnum parentModelEnumProperty,
+            ModelFlagsEnum parentModelFlagsEnumProperty,
+            ModelClass parentModelClassProperty,
+            bool? parentNullableBoolProperty,
+            int? parentNullableIntProperty,
+            Guid? parentNullableGuidProperty,
             DateTime? parentNullableDateTimeProperty,
+            ModelEnum? parentNullableModelEnumProperty,
+            ModelFlagsEnum? parentNullableModelFlagsEnumProperty,
+            bool[] parentArrayOfBoolProperty,
+            int[] parentArrayOfIntProperty,
+            string[] parentArrayOfStringProperty,
+            Guid[] parentArrayOfGuidProperty,
             DateTime[] parentArrayOfDateTimeProperty,
+            ModelEnum[] parentArrayOfModelEnumProperty,
+            ModelFlagsEnum[] parentArrayOfModelFlagsEnumProperty,
+            ModelClass[] parentArrayOfModelClassProperty,
+            bool?[] parentArrayOfNullableBoolProperty,
+            int?[] parentArrayOfNullableIntProperty,
+            Guid?[] parentArrayOfNullableGuidProperty,
             DateTime?[] parentArrayOfNullableDateTimeProperty,
+            ModelEnum?[] parentArrayOfNullableModelEnumProperty,
+            ModelFlagsEnum?[] parentArrayOfNullableModelFlagsEnumProperty,
+            IReadOnlyCollection<bool> parentReadOnlyCollectionOfBoolProperty,
+            IReadOnlyCollection<int> parentReadOnlyCollectionOfIntProperty,
+            IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty,
+            IReadOnlyCollection<Guid> parentReadOnlyCollectionOfGuidProperty,
             IReadOnlyCollection<DateTime> parentReadOnlyCollectionOfDateTimeProperty,
+            IReadOnlyCollection<ModelEnum> parentReadOnlyCollectionOfModelEnumProperty,
+            IReadOnlyCollection<ModelFlagsEnum> parentReadOnlyCollectionOfModelFlagsEnumProperty,
+            IReadOnlyCollection<ModelClass> parentReadOnlyCollectionOfModelClassProperty,
+            IReadOnlyCollection<bool?> parentReadOnlyCollectionOfNullableBoolProperty,
+            IReadOnlyCollection<int?> parentReadOnlyCollectionOfNullableIntProperty,
+            IReadOnlyCollection<Guid?> parentReadOnlyCollectionOfNullableGuidProperty,
             IReadOnlyCollection<DateTime?> parentReadOnlyCollectionOfNullableDateTimeProperty,
+            IReadOnlyCollection<ModelEnum?> parentReadOnlyCollectionOfNullableModelEnumProperty,
+            IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionOfNullableModelFlagsEnumProperty,
+            IReadOnlyList<bool> parentReadOnlyListOfBoolProperty,
+            IReadOnlyList<int> parentReadOnlyListOfIntProperty,
+            IReadOnlyList<string> parentReadOnlyListOfStringProperty,
+            IReadOnlyList<Guid> parentReadOnlyListOfGuidProperty,
             IReadOnlyList<DateTime> parentReadOnlyListOfDateTimeProperty,
+            IReadOnlyList<ModelEnum> parentReadOnlyListOfModelEnumProperty,
+            IReadOnlyList<ModelFlagsEnum> parentReadOnlyListOfModelFlagsEnumProperty,
+            IReadOnlyList<ModelClass> parentReadOnlyListOfModelClassProperty,
+            IReadOnlyList<bool?> parentReadOnlyListOfNullableBoolProperty,
+            IReadOnlyList<int?> parentReadOnlyListOfNullableIntProperty,
+            IReadOnlyList<Guid?> parentReadOnlyListOfNullableGuidProperty,
             IReadOnlyList<DateTime?> parentReadOnlyListOfNullableDateTimeProperty,
-            IReadOnlyDictionary<DateTime, DateTime> parentReadOnlyDictionaryOfDateTimeProperty,
-            IReadOnlyDictionary<DateTime?, DateTime?> parentReadOnlyDictionaryOfNullableDateTimeProperty,
-            IReadOnlyDictionary<string, IReadOnlyDictionary<DateTime, IReadOnlyDictionary<ModelClass, IReadOnlyList<string>>>> parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty,
-            IReadOnlyList<IReadOnlyDictionary<DateTime, IReadOnlyList<string>>> parentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfStringProperty)
+            IReadOnlyList<ModelEnum?> parentReadOnlyListOfNullableModelEnumProperty,
+            IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListOfNullableModelFlagsEnumProperty,
+            IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryOfBoolProperty,
+            IReadOnlyDictionary<int, int> parentReadOnlyDictionaryOfIntProperty,
+            IReadOnlyDictionary<string, string> parentReadOnlyDictionaryOfStringProperty,
+            IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryOfGuidProperty,
+            IReadOnlyDictionary<ModelEnum, ModelEnum> parentReadOnlyDictionaryOfModelEnumProperty,
+            IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> parentReadOnlyDictionaryOfModelFlagsEnumProperty,
+            IReadOnlyDictionary<ModelClass, ModelClass> parentReadOnlyDictionaryOfModelClassProperty,
+            IReadOnlyDictionary<bool?, bool?> parentReadOnlyDictionaryOfNullableBoolProperty,
+            IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryOfNullableIntProperty,
+            IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryOfNullableGuidProperty,
+            IReadOnlyDictionary<ModelEnum?, ModelEnum?> parentReadOnlyDictionaryOfNullableModelEnumProperty,
+            IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryOfNullableModelFlagsEnumProperty,
+            IReadOnlyList<ICollection<string>> parentReadOnlyListOfCollectionOfStringProperty,
+            IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> parentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty,
+            IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty)
         {
+            new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { parentModelClassProperty }.AsArg().Must().NotBeNull();
+            new { parentArrayOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentArrayOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfModelClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentArrayOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfNullableModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfModelClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfNullableModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyListOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyListOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfModelClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyListOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyListOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
-            new { parentReadOnlyDictionaryOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
-            new { parentReadOnlyDictionaryOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
-            new { parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
-            new { parentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyListOfNullableModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyListOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyDictionaryOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfStringProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { parentReadOnlyDictionaryOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfModelClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { parentReadOnlyDictionaryOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfNullableModelEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryOfNullableModelFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyListOfCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
 
+            this.ParentBoolProperty = parentBoolProperty;
+            this.ParentIntProperty = parentIntProperty;
+            this.ParentStringProperty = parentStringProperty;
+            this.ParentGuidProperty = parentGuidProperty;
             this.ParentDateTimeProperty = parentDateTimeProperty;
+            this.ParentModelEnumProperty = parentModelEnumProperty;
+            this.ParentModelFlagsEnumProperty = parentModelFlagsEnumProperty;
+            this.ParentModelClassProperty = parentModelClassProperty;
+            this.ParentNullableBoolProperty = parentNullableBoolProperty;
+            this.ParentNullableIntProperty = parentNullableIntProperty;
+            this.ParentNullableGuidProperty = parentNullableGuidProperty;
             this.ParentNullableDateTimeProperty = parentNullableDateTimeProperty;
+            this.ParentNullableModelEnumProperty = parentNullableModelEnumProperty;
+            this.ParentNullableModelFlagsEnumProperty = parentNullableModelFlagsEnumProperty;
+            this.ParentArrayOfBoolProperty = parentArrayOfBoolProperty;
+            this.ParentArrayOfIntProperty = parentArrayOfIntProperty;
+            this.ParentArrayOfStringProperty = parentArrayOfStringProperty;
+            this.ParentArrayOfGuidProperty = parentArrayOfGuidProperty;
             this.ParentArrayOfDateTimeProperty = parentArrayOfDateTimeProperty;
+            this.ParentArrayOfModelEnumProperty = parentArrayOfModelEnumProperty;
+            this.ParentArrayOfModelFlagsEnumProperty = parentArrayOfModelFlagsEnumProperty;
+            this.ParentArrayOfModelClassProperty = parentArrayOfModelClassProperty;
+            this.ParentArrayOfNullableBoolProperty = parentArrayOfNullableBoolProperty;
+            this.ParentArrayOfNullableIntProperty = parentArrayOfNullableIntProperty;
+            this.ParentArrayOfNullableGuidProperty = parentArrayOfNullableGuidProperty;
             this.ParentArrayOfNullableDateTimeProperty = parentArrayOfNullableDateTimeProperty;
+            this.ParentArrayOfNullableModelEnumProperty = parentArrayOfNullableModelEnumProperty;
+            this.ParentArrayOfNullableModelFlagsEnumProperty = parentArrayOfNullableModelFlagsEnumProperty;
+            this.ParentReadOnlyCollectionOfBoolProperty = parentReadOnlyCollectionOfBoolProperty;
+            this.ParentReadOnlyCollectionOfIntProperty = parentReadOnlyCollectionOfIntProperty;
+            this.ParentReadOnlyCollectionOfStringProperty = parentReadOnlyCollectionOfStringProperty;
+            this.ParentReadOnlyCollectionOfGuidProperty = parentReadOnlyCollectionOfGuidProperty;
             this.ParentReadOnlyCollectionOfDateTimeProperty = parentReadOnlyCollectionOfDateTimeProperty;
+            this.ParentReadOnlyCollectionOfModelEnumProperty = parentReadOnlyCollectionOfModelEnumProperty;
+            this.ParentReadOnlyCollectionOfModelFlagsEnumProperty = parentReadOnlyCollectionOfModelFlagsEnumProperty;
+            this.ParentReadOnlyCollectionOfModelClassProperty = parentReadOnlyCollectionOfModelClassProperty;
+            this.ParentReadOnlyCollectionOfNullableBoolProperty = parentReadOnlyCollectionOfNullableBoolProperty;
+            this.ParentReadOnlyCollectionOfNullableIntProperty = parentReadOnlyCollectionOfNullableIntProperty;
+            this.ParentReadOnlyCollectionOfNullableGuidProperty = parentReadOnlyCollectionOfNullableGuidProperty;
             this.ParentReadOnlyCollectionOfNullableDateTimeProperty = parentReadOnlyCollectionOfNullableDateTimeProperty;
+            this.ParentReadOnlyCollectionOfNullableModelEnumProperty = parentReadOnlyCollectionOfNullableModelEnumProperty;
+            this.ParentReadOnlyCollectionOfNullableModelFlagsEnumProperty = parentReadOnlyCollectionOfNullableModelFlagsEnumProperty;
+            this.ParentReadOnlyListOfBoolProperty = parentReadOnlyListOfBoolProperty;
+            this.ParentReadOnlyListOfIntProperty = parentReadOnlyListOfIntProperty;
+            this.ParentReadOnlyListOfStringProperty = parentReadOnlyListOfStringProperty;
+            this.ParentReadOnlyListOfGuidProperty = parentReadOnlyListOfGuidProperty;
             this.ParentReadOnlyListOfDateTimeProperty = parentReadOnlyListOfDateTimeProperty;
+            this.ParentReadOnlyListOfModelEnumProperty = parentReadOnlyListOfModelEnumProperty;
+            this.ParentReadOnlyListOfModelFlagsEnumProperty = parentReadOnlyListOfModelFlagsEnumProperty;
+            this.ParentReadOnlyListOfModelClassProperty = parentReadOnlyListOfModelClassProperty;
+            this.ParentReadOnlyListOfNullableBoolProperty = parentReadOnlyListOfNullableBoolProperty;
+            this.ParentReadOnlyListOfNullableIntProperty = parentReadOnlyListOfNullableIntProperty;
+            this.ParentReadOnlyListOfNullableGuidProperty = parentReadOnlyListOfNullableGuidProperty;
             this.ParentReadOnlyListOfNullableDateTimeProperty = parentReadOnlyListOfNullableDateTimeProperty;
-            this.ParentReadOnlyDictionaryOfDateTimeProperty = parentReadOnlyDictionaryOfDateTimeProperty;
-            this.ParentReadOnlyDictionaryOfNullableDateTimeProperty = parentReadOnlyDictionaryOfNullableDateTimeProperty;
-            this.ParentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty = parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty;
-            this.ParentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfStringProperty = parentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfStringProperty;
+            this.ParentReadOnlyListOfNullableModelEnumProperty = parentReadOnlyListOfNullableModelEnumProperty;
+            this.ParentReadOnlyListOfNullableModelFlagsEnumProperty = parentReadOnlyListOfNullableModelFlagsEnumProperty;
+            this.ParentReadOnlyDictionaryOfBoolProperty = parentReadOnlyDictionaryOfBoolProperty;
+            this.ParentReadOnlyDictionaryOfIntProperty = parentReadOnlyDictionaryOfIntProperty;
+            this.ParentReadOnlyDictionaryOfStringProperty = parentReadOnlyDictionaryOfStringProperty;
+            this.ParentReadOnlyDictionaryOfGuidProperty = parentReadOnlyDictionaryOfGuidProperty;
+            this.ParentReadOnlyDictionaryOfModelEnumProperty = parentReadOnlyDictionaryOfModelEnumProperty;
+            this.ParentReadOnlyDictionaryOfModelFlagsEnumProperty = parentReadOnlyDictionaryOfModelFlagsEnumProperty;
+            this.ParentReadOnlyDictionaryOfModelClassProperty = parentReadOnlyDictionaryOfModelClassProperty;
+            this.ParentReadOnlyDictionaryOfNullableBoolProperty = parentReadOnlyDictionaryOfNullableBoolProperty;
+            this.ParentReadOnlyDictionaryOfNullableIntProperty = parentReadOnlyDictionaryOfNullableIntProperty;
+            this.ParentReadOnlyDictionaryOfNullableGuidProperty = parentReadOnlyDictionaryOfNullableGuidProperty;
+            this.ParentReadOnlyDictionaryOfNullableModelEnumProperty = parentReadOnlyDictionaryOfNullableModelEnumProperty;
+            this.ParentReadOnlyDictionaryOfNullableModelFlagsEnumProperty = parentReadOnlyDictionaryOfNullableModelFlagsEnumProperty;
+            this.ParentReadOnlyListOfCollectionOfStringProperty = parentReadOnlyListOfCollectionOfStringProperty;
+            this.ParentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty = parentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty;
+            this.ParentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty = parentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty;
         }
+
+        public bool ParentBoolProperty { get; private set; }
+
+        public int ParentIntProperty { get; private set; }
+
+        public string ParentStringProperty { get; private set; }
+
+        public Guid ParentGuidProperty { get; private set; }
 
         public DateTime ParentDateTimeProperty { get; private set; }
 
+        public ModelEnum ParentModelEnumProperty { get; private set; }
+
+        public ModelFlagsEnum ParentModelFlagsEnumProperty { get; private set; }
+
+        public ModelClass ParentModelClassProperty { get; private set; }
+
+        public bool? ParentNullableBoolProperty { get; private set; }
+
+        public int? ParentNullableIntProperty { get; private set; }
+
+        public Guid? ParentNullableGuidProperty { get; private set; }
+
         public DateTime? ParentNullableDateTimeProperty { get; private set; }
+
+        public ModelEnum? ParentNullableModelEnumProperty { get; private set; }
+
+        public ModelFlagsEnum? ParentNullableModelFlagsEnumProperty { get; private set; }
+
+        public bool[] ParentArrayOfBoolProperty { get; private set; }
+
+        public int[] ParentArrayOfIntProperty { get; private set; }
+
+        public string[] ParentArrayOfStringProperty { get; private set; }
+
+        public Guid[] ParentArrayOfGuidProperty { get; private set; }
 
         public DateTime[] ParentArrayOfDateTimeProperty { get; private set; }
 
+        public ModelEnum[] ParentArrayOfModelEnumProperty { get; private set; }
+
+        public ModelFlagsEnum[] ParentArrayOfModelFlagsEnumProperty { get; private set; }
+
+        public ModelClass[] ParentArrayOfModelClassProperty { get; private set; }
+
+        public bool?[] ParentArrayOfNullableBoolProperty { get; private set; }
+
+        public int?[] ParentArrayOfNullableIntProperty { get; private set; }
+
+        public Guid?[] ParentArrayOfNullableGuidProperty { get; private set; }
+
         public DateTime?[] ParentArrayOfNullableDateTimeProperty { get; private set; }
+
+        public ModelEnum?[] ParentArrayOfNullableModelEnumProperty { get; private set; }
+
+        public ModelFlagsEnum?[] ParentArrayOfNullableModelFlagsEnumProperty { get; private set; }
+
+        public IReadOnlyCollection<bool> ParentReadOnlyCollectionOfBoolProperty { get; private set; }
+
+        public IReadOnlyCollection<int> ParentReadOnlyCollectionOfIntProperty { get; private set; }
+
+        public IReadOnlyCollection<string> ParentReadOnlyCollectionOfStringProperty { get; private set; }
+
+        public IReadOnlyCollection<Guid> ParentReadOnlyCollectionOfGuidProperty { get; private set; }
 
         public IReadOnlyCollection<DateTime> ParentReadOnlyCollectionOfDateTimeProperty { get; private set; }
 
+        public IReadOnlyCollection<ModelEnum> ParentReadOnlyCollectionOfModelEnumProperty { get; private set; }
+
+        public IReadOnlyCollection<ModelFlagsEnum> ParentReadOnlyCollectionOfModelFlagsEnumProperty { get; private set; }
+
+        public IReadOnlyCollection<ModelClass> ParentReadOnlyCollectionOfModelClassProperty { get; private set; }
+
+        public IReadOnlyCollection<bool?> ParentReadOnlyCollectionOfNullableBoolProperty { get; private set; }
+
+        public IReadOnlyCollection<int?> ParentReadOnlyCollectionOfNullableIntProperty { get; private set; }
+
+        public IReadOnlyCollection<Guid?> ParentReadOnlyCollectionOfNullableGuidProperty { get; private set; }
+
         public IReadOnlyCollection<DateTime?> ParentReadOnlyCollectionOfNullableDateTimeProperty { get; private set; }
+
+        public IReadOnlyCollection<ModelEnum?> ParentReadOnlyCollectionOfNullableModelEnumProperty { get; private set; }
+
+        public IReadOnlyCollection<ModelFlagsEnum?> ParentReadOnlyCollectionOfNullableModelFlagsEnumProperty { get; private set; }
+
+        public IReadOnlyList<bool> ParentReadOnlyListOfBoolProperty { get; private set; }
+
+        public IReadOnlyList<int> ParentReadOnlyListOfIntProperty { get; private set; }
+
+        public IReadOnlyList<string> ParentReadOnlyListOfStringProperty { get; private set; }
+
+        public IReadOnlyList<Guid> ParentReadOnlyListOfGuidProperty { get; private set; }
 
         public IReadOnlyList<DateTime> ParentReadOnlyListOfDateTimeProperty { get; private set; }
 
+        public IReadOnlyList<ModelEnum> ParentReadOnlyListOfModelEnumProperty { get; private set; }
+
+        public IReadOnlyList<ModelFlagsEnum> ParentReadOnlyListOfModelFlagsEnumProperty { get; private set; }
+
+        public IReadOnlyList<ModelClass> ParentReadOnlyListOfModelClassProperty { get; private set; }
+
+        public IReadOnlyList<bool?> ParentReadOnlyListOfNullableBoolProperty { get; private set; }
+
+        public IReadOnlyList<int?> ParentReadOnlyListOfNullableIntProperty { get; private set; }
+
+        public IReadOnlyList<Guid?> ParentReadOnlyListOfNullableGuidProperty { get; private set; }
+
         public IReadOnlyList<DateTime?> ParentReadOnlyListOfNullableDateTimeProperty { get; private set; }
 
-        public IReadOnlyDictionary<DateTime, DateTime> ParentReadOnlyDictionaryOfDateTimeProperty { get; private set; }
+        public IReadOnlyList<ModelEnum?> ParentReadOnlyListOfNullableModelEnumProperty { get; private set; }
 
-        public IReadOnlyDictionary<DateTime?, DateTime?> ParentReadOnlyDictionaryOfNullableDateTimeProperty { get; private set; }
+        public IReadOnlyList<ModelFlagsEnum?> ParentReadOnlyListOfNullableModelFlagsEnumProperty { get; private set; }
 
-        public IReadOnlyDictionary<string, IReadOnlyDictionary<DateTime, IReadOnlyDictionary<ModelClass, IReadOnlyList<string>>>> ParentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfStringProperty { get; private set; }
+        public IReadOnlyDictionary<bool, bool> ParentReadOnlyDictionaryOfBoolProperty { get; private set; }
 
-        public IReadOnlyList<IReadOnlyDictionary<DateTime, IReadOnlyList<string>>> ParentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfStringProperty { get; private set; }
+        public IReadOnlyDictionary<int, int> ParentReadOnlyDictionaryOfIntProperty { get; private set; }
+
+        public IReadOnlyDictionary<string, string> ParentReadOnlyDictionaryOfStringProperty { get; private set; }
+
+        public IReadOnlyDictionary<Guid, Guid> ParentReadOnlyDictionaryOfGuidProperty { get; private set; }
+
+        public IReadOnlyDictionary<ModelEnum, ModelEnum> ParentReadOnlyDictionaryOfModelEnumProperty { get; private set; }
+
+        public IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> ParentReadOnlyDictionaryOfModelFlagsEnumProperty { get; private set; }
+
+        public IReadOnlyDictionary<ModelClass, ModelClass> ParentReadOnlyDictionaryOfModelClassProperty { get; private set; }
+
+        public IReadOnlyDictionary<bool?, bool?> ParentReadOnlyDictionaryOfNullableBoolProperty { get; private set; }
+
+        public IReadOnlyDictionary<int?, int?> ParentReadOnlyDictionaryOfNullableIntProperty { get; private set; }
+
+        public IReadOnlyDictionary<Guid?, Guid?> ParentReadOnlyDictionaryOfNullableGuidProperty { get; private set; }
+
+        public IReadOnlyDictionary<ModelEnum?, ModelEnum?> ParentReadOnlyDictionaryOfNullableModelEnumProperty { get; private set; }
+
+        public IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> ParentReadOnlyDictionaryOfNullableModelFlagsEnumProperty { get; private set; }
+
+        public IReadOnlyList<ICollection<string>> ParentReadOnlyListOfCollectionOfStringProperty { get; private set; }
+
+        public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> ParentReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty { get; private set; }
+
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> ParentReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty { get; private set; }
     }
 }
