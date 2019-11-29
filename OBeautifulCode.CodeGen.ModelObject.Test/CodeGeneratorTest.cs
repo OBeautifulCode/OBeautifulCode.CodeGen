@@ -62,7 +62,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static readonly Type[] AdditionalTypes =
         {
-            typeof(ICollection<IReadOnlyList<DateTime>>),
             typeof(IReadOnlyList<ICollection<string>>),
             typeof(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>),
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
