@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Reflection.Recipes;
+    using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -83,9 +84,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
             }
 
-            var properties = type.GetPropertiesOfConcernFromType();
-
-            if (properties.Any(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType)))
+            if (type.ContainsDictionaryKeyedOnDateTime())
             {
                 throw new NotSupportedException(Invariant($"This type contains a property that is OR has within its generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {type}."));
             }
@@ -231,6 +230,42 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }
 
+        /// <summary>
+        /// Determines if the model type contains a dictionary keyed on DateTime.
+        /// </summary>
+        /// <param name="type">The model type.</param>
+        /// <returns>
+        /// true if the model type contains a dictionary keyed on DateTime, otherwise false.
+        /// </returns>
+        public static bool ContainsDictionaryKeyedOnDateTime(
+            this Type type)
+        {
+            var properties = type.GetPropertiesOfConcernFromType();
+
+            var result = properties.Any(_ => _.PropertyType.IsOrContainsDictionaryKeyedOnDateTime());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if two dummies of the specified type can not be equal but
+        /// result in the same hash code.
+        /// </summary>
+        /// <param name="type">The model type.</param>
+        /// <returns>
+        /// true if two dummies can be created of the specified type, not be equal, but
+        /// result in the same hash code, otherwise false.
+        /// </returns>
+        public static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode(
+            this Type type)
+        {
+            var properties = type.GetPropertiesOfConcernFromType();
+
+            var result = properties.Any(_ => _.PropertyType.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal());
+
+            return result;
+        }
+
         private static bool IsOrContainsDictionaryKeyedOnDateTime(
             this Type type)
         {
@@ -248,7 +283,61 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var genericTypeArguments = type.GenericTypeArguments;
 
-                if (genericTypeArguments.Any(_ => _.IsOrContainsDictionaryKeyedOnDateTime()))
+                if (genericTypeArguments.Any(_ => _.IsAssignableTo(typeof(IModel)) ? _.ContainsDictionaryKeyedOnDateTime() : _.IsOrContainsDictionaryKeyedOnDateTime()))
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsAssignableTo(typeof(IModel)))
+            {
+                if (type.ContainsDictionaryKeyedOnDateTime())
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
+            this Type type)
+        {
+            // see scenarios in HashCodeHelper where we are forced to hash the
+            // enumerable count instead of the elements.
+            if (type.IsSystemDictionaryType())
+            {
+                var keyType = type.GenericTypeArguments.First();
+
+                if (!keyType.IsComparableType())
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsSystemUnorderedCollectionType())
+            {
+                var elementType = type.GenericTypeArguments.First();
+
+                if (!elementType.IsComparableType())
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsGenericType)
+            {
+                var genericTypeArguments = type.GenericTypeArguments;
+
+                if (genericTypeArguments.Any(_ => _.IsAssignableTo(typeof(IModel)) ? _.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode() : _.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal()))
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsAssignableTo(typeof(IModel)))
+            {
+                if (type.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode())
                 {
                     return true;
                 }

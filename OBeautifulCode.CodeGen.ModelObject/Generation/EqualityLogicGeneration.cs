@@ -27,6 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string EqualityToken = "<<<EqualityLogicHere>>>";
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
+        private const string UnequalHashCodeToken = "<<<UnequalHashCodeHere>>>";
 
         private const string EqualityMethodsForConcreteTypeCodeTemplate = @"    /// <summary>
         /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
@@ -353,7 +354,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 result.AsTest().Must().BeTrue();
             }
 
-            [Fact]
+            [Fact" + UnequalHashCodeToken + @"]
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
                 // Arrange, Act
@@ -500,7 +501,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestMethods(
             this Type type)
         {
-            var result = EqualityTestMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+            var skipUnequalHashCodeTestCode = string.Empty;
+            if (type.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode())
+            {
+                skipUnequalHashCodeTestCode = "(Skip = \"It's possible (and even probable after a few runs of this test) that two dummy, unequal models will have the same hash code.  The model being tested contains at least one property who's type (or a type nested within the generic type, or a property of the IModel type) is a dictionary with keys that are not comparable or an unordered collection with elements that are not comparable.  In these cases the hashing method cannot hash the elements and must resort to hashing the element count.  Two dummies could easily have the same element count for such a type.\")";
+            }
+
+            var result = EqualityTestMethodsCodeTemplate
+                .Replace(TypeNameToken, type.ToStringCompilable())
+                .Replace(UnequalHashCodeToken, skipUnequalHashCodeTestCode);
 
             return result;
         }

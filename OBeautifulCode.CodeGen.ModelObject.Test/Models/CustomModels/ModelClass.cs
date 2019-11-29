@@ -11,7 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
-    public class ModelClass : IEquatable<ModelClass>, IDeepCloneable<ModelClass>
+    public class ModelClass : IEquatable<ModelClass>, IDeepCloneable<ModelClass>, IComparable<ModelClass>
     {
         public ModelClass(
             int item1,
@@ -52,6 +52,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public bool Equals(ModelClass other) => this == other;
+
+        public int CompareTo(
+            ModelClass other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+
+            var thisString = this.Item1 + this.Item2;
+            var otherString = other.Item1 + other.Item2;
+
+            var result = string.Compare(thisString, otherString, StringComparison.Ordinal);
+
+            return result;
+        }
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as ModelClass);
