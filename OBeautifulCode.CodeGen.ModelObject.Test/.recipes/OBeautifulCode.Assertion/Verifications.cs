@@ -2261,6 +2261,300 @@ namespace OBeautifulCode.Assertion.Recipes
         }
 
         /// <summary>
+        /// Verifies that the subject is of the specified type.
+        /// </summary>
+        /// <param name="assertionTracker">The assertion tracker.</param>
+        /// <param name="expectedType">The expected type.</param>
+        /// <param name="because">Optional rationale for the verification, used in the exception message if the subject fails this verification.  The default is use the framework-generated exception message as-is.</param>
+        /// <param name="applyBecause">Optional value that determines how to apply the <paramref name="because"/>, when specified.  The default is to prefix the framework-generated exception message with <paramref name="because"/>.</param>
+        /// <param name="data">Optional collection of key/value pairs that provide additional user-defined information that is added to the exception's <see cref="Exception.Data"/> property, if thrown.  The default is no user-defined information.</param>
+        /// <returns>
+        /// The assertion tracker.
+        /// </returns>
+        public static AssertionTracker BeOfType(
+            [ValidatedNotNull] this AssertionTracker assertionTracker,
+            Type expectedType,
+            string because = null,
+            ApplyBecause applyBecause = ApplyBecause.PrefixedToDefaultMessage,
+            IDictionary data = null)
+        {
+            if (expectedType == null)
+            {
+                var errorMessage = string.Format(CultureInfo.InvariantCulture, VerificationParameterIsNullErrorMessage, nameof(BeOfType), nameof(expectedType));
+
+                WorkflowExtensions.ThrowImproperUseOfFramework(errorMessage);
+            }
+
+            var verification = new Verification
+            {
+                Because = because,
+                ApplyBecause = applyBecause,
+                Handler = BeOfTypeInternal,
+                Name = nameof(BeOfType),
+                Data = data,
+                VerificationParameters = new[]
+                {
+                    new VerificationParameter
+                    {
+                        Name = nameof(expectedType),
+                        Value = expectedType,
+                        ParameterType = typeof(Type),
+                        ValueToStringFunc = () => "'" + expectedType.ToStringReadable() + "'",
+                    },
+                },
+            };
+
+            assertionTracker.ExecuteVerification(verification);
+
+            return assertionTracker;
+        }
+
+        /// <summary>
+        /// Verifies that the subject is not of the specified type.
+        /// </summary>
+        /// <param name="assertionTracker">The assertion tracker.</param>
+        /// <param name="unexpectedType">The unexpected type.</param>
+        /// <param name="because">Optional rationale for the verification, used in the exception message if the subject fails this verification.  The default is use the framework-generated exception message as-is.</param>
+        /// <param name="applyBecause">Optional value that determines how to apply the <paramref name="because"/>, when specified.  The default is to prefix the framework-generated exception message with <paramref name="because"/>.</param>
+        /// <param name="data">Optional collection of key/value pairs that provide additional user-defined information that is added to the exception's <see cref="Exception.Data"/> property, if thrown.  The default is no user-defined information.</param>
+        /// <returns>
+        /// The assertion tracker.
+        /// </returns>
+        public static AssertionTracker NotBeOfType(
+            [ValidatedNotNull] this AssertionTracker assertionTracker,
+            Type unexpectedType,
+            string because = null,
+            ApplyBecause applyBecause = ApplyBecause.PrefixedToDefaultMessage,
+            IDictionary data = null)
+        {
+            if (unexpectedType == null)
+            {
+                var errorMessage = string.Format(CultureInfo.InvariantCulture, VerificationParameterIsNullErrorMessage, nameof(NotBeOfType), nameof(unexpectedType));
+
+                WorkflowExtensions.ThrowImproperUseOfFramework(errorMessage);
+            }
+
+            var verification = new Verification
+            {
+                Because = because,
+                ApplyBecause = applyBecause,
+                Handler = NotBeOfTypeInternal,
+                Name = nameof(NotBeOfType),
+                Data = data,
+                VerificationParameters = new[]
+                {
+                    new VerificationParameter
+                    {
+                        Name = nameof(unexpectedType),
+                        Value = unexpectedType,
+                        ParameterType = typeof(Type),
+                        ValueToStringFunc = () => "'" + unexpectedType.ToStringReadable() + "'",
+                    },
+                },
+            };
+
+            assertionTracker.ExecuteVerification(verification);
+
+            return assertionTracker;
+        }
+
+        /// <summary>
+        /// Verifies that the subject is assignable to the specified type.
+        /// </summary>
+        /// <typeparam name="TAssignable">The the assignable type.</typeparam>
+        /// <param name="assertionTracker">The assertion tracker.</param>
+        /// <param name="because">Optional rationale for the verification, used in the exception message if the subject fails this verification.  The default is use the framework-generated exception message as-is.</param>
+        /// <param name="applyBecause">Optional value that determines how to apply the <paramref name="because"/>, when specified.  The default is to prefix the framework-generated exception message with <paramref name="because"/>.</param>
+        /// <param name="data">Optional collection of key/value pairs that provide additional user-defined information that is added to the exception's <see cref="Exception.Data"/> property, if thrown.  The default is no user-defined information.</param>
+        /// <returns>
+        /// The assertion tracker.
+        /// </returns>
+        public static AssertionTracker BeAssignableToType<TAssignable>(
+            [ValidatedNotNull] this AssertionTracker assertionTracker,
+            string because = null,
+            ApplyBecause applyBecause = ApplyBecause.PrefixedToDefaultMessage,
+            IDictionary data = null)
+        {
+            var verification = new Verification
+            {
+                Because = because,
+                ApplyBecause = applyBecause,
+                Handler = BeAssignableToTypeInternal,
+                Name = nameof(BeAssignableToType),
+                Data = data,
+                VerificationParameters = new[]
+                {
+                    new VerificationParameter
+                    {
+                        Name = nameof(TAssignable),
+                        Value = typeof(TAssignable),
+                        ParameterType = typeof(Type),
+                        ValueToStringFunc = () => "'" + typeof(TAssignable).ToStringReadable() + "'",
+                    },
+                },
+            };
+
+            assertionTracker.ExecuteVerification(verification);
+
+            return assertionTracker;
+        }
+
+        /// <summary>
+        /// Verifies that the subject is not assignable to the specified type.
+        /// </summary>
+        /// <typeparam name="TUnassignable">The unassignable type.</typeparam>
+        /// <param name="assertionTracker">The assertion tracker.</param>
+        /// <param name="because">Optional rationale for the verification, used in the exception message if the subject fails this verification.  The default is use the framework-generated exception message as-is.</param>
+        /// <param name="applyBecause">Optional value that determines how to apply the <paramref name="because"/>, when specified.  The default is to prefix the framework-generated exception message with <paramref name="because"/>.</param>
+        /// <param name="data">Optional collection of key/value pairs that provide additional user-defined information that is added to the exception's <see cref="Exception.Data"/> property, if thrown.  The default is no user-defined information.</param>
+        /// <returns>
+        /// The assertion tracker.
+        /// </returns>
+        public static AssertionTracker NotBeAssignableToType<TUnassignable>(
+            [ValidatedNotNull] this AssertionTracker assertionTracker,
+            string because = null,
+            ApplyBecause applyBecause = ApplyBecause.PrefixedToDefaultMessage,
+            IDictionary data = null)
+        {
+            var verification = new Verification
+            {
+                Because = because,
+                ApplyBecause = applyBecause,
+                Handler = NotBeAssignableToTypeInternal,
+                Name = nameof(NotBeAssignableToType),
+                Data = data,
+                VerificationParameters = new[]
+                {
+                    new VerificationParameter
+                    {
+                        Name = nameof(TUnassignable),
+                        Value = typeof(TUnassignable),
+                        ParameterType = typeof(Type),
+                        ValueToStringFunc = () => "'" + typeof(TUnassignable).ToStringReadable() + "'",
+                    },
+                },
+            };
+
+            assertionTracker.ExecuteVerification(verification);
+
+            return assertionTracker;
+        }
+
+        /// <summary>
+        /// Verifies that the subject is assignable to the specified type.
+        /// </summary>
+        /// <param name="assertionTracker">The assertion tracker.</param>
+        /// <param name="assignableType">The assignable type.</param>
+        /// <param name="treatUnboundGenericAsAssignableTo">Treats an unbound generic as a type that can be assigned to (e.g. IsAssignableTo(List&lt;int&gt;, List&lt;&gt;)).</param>
+        /// <param name="because">Optional rationale for the verification, used in the exception message if the subject fails this verification.  The default is use the framework-generated exception message as-is.</param>
+        /// <param name="applyBecause">Optional value that determines how to apply the <paramref name="because"/>, when specified.  The default is to prefix the framework-generated exception message with <paramref name="because"/>.</param>
+        /// <param name="data">Optional collection of key/value pairs that provide additional user-defined information that is added to the exception's <see cref="Exception.Data"/> property, if thrown.  The default is no user-defined information.</param>
+        /// <returns>
+        /// The assertion tracker.
+        /// </returns>
+        public static AssertionTracker BeAssignableToType(
+            [ValidatedNotNull] this AssertionTracker assertionTracker,
+            Type assignableType,
+            bool treatUnboundGenericAsAssignableTo = false,
+            string because = null,
+            ApplyBecause applyBecause = ApplyBecause.PrefixedToDefaultMessage,
+            IDictionary data = null)
+        {
+            if (assignableType == null)
+            {
+                var errorMessage = string.Format(CultureInfo.InvariantCulture, VerificationParameterIsNullErrorMessage, nameof(BeAssignableToType), nameof(assignableType));
+
+                WorkflowExtensions.ThrowImproperUseOfFramework(errorMessage);
+            }
+
+            var verification = new Verification
+            {
+                Because = because,
+                ApplyBecause = applyBecause,
+                Handler = BeAssignableToTypeInternal,
+                Name = nameof(BeAssignableToType),
+                Data = data,
+                VerificationParameters = new[]
+                {
+                    new VerificationParameter
+                    {
+                        Name = nameof(assignableType),
+                        Value = assignableType,
+                        ParameterType = typeof(Type),
+                        ValueToStringFunc = () => "'" + assignableType.ToStringReadable() + "'",
+                    },
+                    new VerificationParameter
+                    {
+                        Name = nameof(treatUnboundGenericAsAssignableTo),
+                        Value = treatUnboundGenericAsAssignableTo,
+                        ParameterType = typeof(bool),
+                    },
+                },
+            };
+
+            assertionTracker.ExecuteVerification(verification);
+
+            return assertionTracker;
+        }
+
+        /// <summary>
+        /// Verifies that the subject is not assignable to the specified type.
+        /// </summary>
+        /// <param name="assertionTracker">The assertion tracker.</param>
+        /// <param name="unassignableType">The unassignable type.</param>
+        /// <param name="treatUnboundGenericAsAssignableTo">Treats an unbound generic as a type that can be assigned to (e.g. IsAssignableTo(List&lt;int&gt;, List&lt;&gt;)).</param>
+        /// <param name="because">Optional rationale for the verification, used in the exception message if the subject fails this verification.  The default is use the framework-generated exception message as-is.</param>
+        /// <param name="applyBecause">Optional value that determines how to apply the <paramref name="because"/>, when specified.  The default is to prefix the framework-generated exception message with <paramref name="because"/>.</param>
+        /// <param name="data">Optional collection of key/value pairs that provide additional user-defined information that is added to the exception's <see cref="Exception.Data"/> property, if thrown.  The default is no user-defined information.</param>
+        /// <returns>
+        /// The assertion tracker.
+        /// </returns>
+        public static AssertionTracker NotBeAssignableToType(
+            [ValidatedNotNull] this AssertionTracker assertionTracker,
+            Type unassignableType,
+            bool treatUnboundGenericAsAssignableTo = false,
+            string because = null,
+            ApplyBecause applyBecause = ApplyBecause.PrefixedToDefaultMessage,
+            IDictionary data = null)
+        {
+            if (unassignableType == null)
+            {
+                var errorMessage = string.Format(CultureInfo.InvariantCulture, VerificationParameterIsNullErrorMessage, nameof(NotBeAssignableToType), nameof(unassignableType));
+
+                WorkflowExtensions.ThrowImproperUseOfFramework(errorMessage);
+            }
+
+            var verification = new Verification
+            {
+                Because = because,
+                ApplyBecause = applyBecause,
+                Handler = NotBeAssignableToTypeInternal,
+                Name = nameof(NotBeAssignableToType),
+                Data = data,
+                VerificationParameters = new[]
+                {
+                    new VerificationParameter
+                    {
+                        Name = nameof(unassignableType),
+                        Value = unassignableType,
+                        ParameterType = typeof(Type),
+                        ValueToStringFunc = () => "'" + unassignableType.ToStringReadable() + "'",
+                    },
+                    new VerificationParameter
+                    {
+                        Name = nameof(treatUnboundGenericAsAssignableTo),
+                        Value = treatUnboundGenericAsAssignableTo,
+                        ParameterType = typeof(bool),
+                    },
+                },
+            };
+
+            assertionTracker.ExecuteVerification(verification);
+
+            return assertionTracker;
+        }
+
+        /// <summary>
         /// Always throws.
         /// </summary>
         /// <param name="assertionTracker">The assertion tracker.</param>

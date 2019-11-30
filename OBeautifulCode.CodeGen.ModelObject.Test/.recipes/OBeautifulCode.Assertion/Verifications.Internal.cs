@@ -1218,5 +1218,64 @@ namespace OBeautifulCode.Assertion.Recipes
                 throw exception;
             }
         }
+
+        private static void BeAssignableToTypeInternal(
+            AssertionTracker assertionTracker,
+            Verification verification,
+            VerifiableItem verifiableItem)
+        {
+            NotBeNullInternal(assertionTracker, verification, verifiableItem);
+
+            var assignableType = (Type)verification.VerificationParameters[0].Value;
+
+            var treatUnboundGenericAsAssignableTo = (verification.VerificationParameters.Count == 2) && (bool)verification.VerificationParameters[1].Value;
+
+            // Note that we are NOT using verifiableItem.ValueType, which is the declared type.
+            // In this case we need the actual type of the value.
+            var actualType = verifiableItem.Value.GetType();
+
+            var shouldThrow = !actualType.IsAssignableTo(assignableType, treatUnboundGenericAsAssignableTo);
+
+            if (shouldThrow)
+            {
+                var contextualInfo = string.Format(CultureInfo.InvariantCulture, verifiableItem.IsElementInEnumerable ? ElementTypeContextualInfo : SubjectTypeContextualInfo, actualType.ToStringReadable());
+
+                var exceptionMessage = BuildVerificationFailedExceptionMessage(assertionTracker, verification, verifiableItem, BeAssignableToTypeExceptionMessageSuffix, contextualInfo: contextualInfo);
+
+                var exception = BuildException(assertionTracker, verification, exceptionMessage, ArgumentExceptionKind.ArgumentException);
+
+                throw exception;
+            }
+        }
+
+        private static void NotBeAssignableToTypeInternal(
+            AssertionTracker assertionTracker,
+            Verification verification,
+            VerifiableItem verifiableItem)
+        {
+            NotBeNullInternal(assertionTracker, verification, verifiableItem);
+
+            var unassignableType = (Type)verification.VerificationParameters[0].Value;
+
+            var treatUnboundGenericAsAssignableTo = (verification.VerificationParameters.Count == 2) && (bool)verification.VerificationParameters[1].Value;
+
+            // Note that we are NOT using verifiableItem.ValueType, which is the declared type.
+            // In this case we need the actual type of the value.
+            var actualType = verifiableItem.Value.GetType();
+
+            var shouldThrow = actualType.IsAssignableTo(unassignableType, treatUnboundGenericAsAssignableTo);
+
+            if (shouldThrow)
+            {
+                var contextualInfo = string.Format(CultureInfo.InvariantCulture, verifiableItem.IsElementInEnumerable ? ElementTypeContextualInfo : SubjectTypeContextualInfo, actualType.ToStringReadable());
+
+                var exceptionMessage = BuildVerificationFailedExceptionMessage(assertionTracker, verification, verifiableItem, NotBeAssignableToTypeExceptionMessageSuffix, contextualInfo: contextualInfo);
+
+                var exception = BuildException(assertionTracker, verification, exceptionMessage, ArgumentExceptionKind.ArgumentException);
+
+                throw exception;
+            }
+        }
+
     }
 }

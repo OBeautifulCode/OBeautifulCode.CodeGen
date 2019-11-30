@@ -185,6 +185,10 @@ namespace OBeautifulCode.Assertion.Recipes
 
         public const string NotBeOfTypeExceptionMessageSuffix = "is of the unexpected type";
 
+        public const string BeAssignableToTypeExceptionMessageSuffix = "is not assignable to the specified type";
+
+        public const string NotBeAssignableToTypeExceptionMessageSuffix = "is assignable to the specified type";
+
         public static readonly string SubjectAndOperationSequencingErrorMessage = Invariant($"There is an issue with sequencing of the provided value and the supported assertion operators: {nameof(WorkflowExtensions.AsArg)}, {nameof(WorkflowExtensions.AsOp)}, {nameof(WorkflowExtensions.AsTest)}, {nameof(WorkflowExtensions.Must)}, {nameof(WorkflowExtensions.MustForArg)}, {nameof(WorkflowExtensions.MustForOp)}, {nameof(WorkflowExtensions.MustForTest)}, {nameof(WorkflowExtensions.And)}, {nameof(WorkflowExtensions.Each)}.");
 
 #pragma warning restore SA1600
