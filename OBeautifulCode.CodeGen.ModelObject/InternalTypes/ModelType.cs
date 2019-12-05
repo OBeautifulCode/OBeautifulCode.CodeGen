@@ -21,7 +21,7 @@ namespace OBeautifulCode.CodeGen
     /// <summary>
     /// Represents a type that is a Model type.
     /// </summary>
-    public class ModelType
+    internal class ModelType
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelType"/> class.
