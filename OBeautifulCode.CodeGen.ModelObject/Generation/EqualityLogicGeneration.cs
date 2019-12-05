@@ -382,31 +382,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates equality methods.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated equality methods.
         /// </returns>
         public static string GenerateEqualityMethods(
-            this Type type)
+            this ModelType modelType)
         {
             string result;
 
-            var hierarchyKind = type.GetHierarchyKind();
-
-            if (hierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
-                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.Type.ToStringCompilable());
             }
             else
             {
-                var properties = type.GetPropertiesOfConcernFromType();
-
-                var equalityLines = properties.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
+                var equalityLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
 
                 var equalityToken = string.Join(Environment.NewLine + "                      && ", equalityLines);
 
                 result = EqualityMethodsForConcreteTypeCodeTemplate
-                    .Replace(TypeNameToken, type.ToStringCompilable())
+                    .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                     .Replace(EqualityToken, equalityToken);
             }
 
@@ -416,19 +412,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates fields required to test equality.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated fields required to test equality.
         /// </returns>
         public static string GenerateEqualityTestFields(
-            this Type type)
+            this ModelType modelType)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
-
-            var hierarchyKind = type.GetHierarchyKind();
-
             string codeTemplate;
-            switch (hierarchyKind)
+            switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.AbstractBase:
                     codeTemplate = EqualityTestFieldsForAbstractBaseTypeCodeTemplate;
@@ -438,17 +430,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     codeTemplate = EqualityTestFieldsForConcreteTypeCodeTemplate;
                     break;
                 default:
-                    throw new NotSupportedException("This kind is not supported: " + hierarchyKind);
+                    throw new NotSupportedException("This kind is not supported: " + modelType.HierarchyKind);
             }
 
             var unequalSet = new List<string>();
 
             var result = codeTemplate
-                .Replace(TypeNameToken, type.ToStringCompilable());
+                .Replace(TypeNameToken, modelType.Type.ToStringCompilable());
 
-            if (hierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
-                foreach (var property in properties)
+                foreach (var property in modelType.PropertiesOfConcern)
                 {
                     var code = UnequalObjectTokenForAbstractBaseTypeCodeTemplate
                         .Replace(PropertyNameToken, property.Name)
@@ -459,9 +451,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                foreach (var property in properties)
+                foreach (var property in modelType.PropertiesOfConcern)
                 {
-                    var propertiesCode = properties.Select(_ =>
+                    var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
                     {
                         var referenceObject = "ObjectForEquatableTests." + _.Name;
 
@@ -472,14 +464,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         return new MemberCode(_.Name, memberCode);
                     }).ToList();
 
-                    var code = type.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 20);
+                    var code = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 20);
 
                     unequalSet.Add(code);
                 }
 
-                var newEquatablePropertiesCode = properties.Select(_ => new MemberCode(_.Name, "ObjectForEquatableTests." + _.Name)).ToList();
+                var newEquatablePropertiesCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ObjectForEquatableTests." + _.Name)).ToList();
 
-                var newObjectFromEquatableToken = type.GenerateModelInstantiation(newEquatablePropertiesCode, parameterPaddingLength: 20);
+                var newObjectFromEquatableToken = modelType.GenerateModelInstantiation(newEquatablePropertiesCode, parameterPaddingLength: 20);
 
                 result = result.Replace(NewObjectForEquatableToken, newObjectFromEquatableToken);
             }
@@ -494,21 +486,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates test methods that test equality.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated test methods that test equality.
         /// </returns>
         public static string GenerateEqualityTestMethods(
-            this Type type)
+            this ModelType modelType)
         {
             var skipUnequalHashCodeTestCode = string.Empty;
-            if (type.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode())
+            if (modelType.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode())
             {
                 skipUnequalHashCodeTestCode = "(Skip = \"It's possible (and even probable after a few runs of this test) that two dummy, unequal models will have the same hash code.  The model being tested contains at least one property who's type (or a type nested within the generic type, or a property of the IModel type) is a dictionary with keys that are not comparable or an unordered collection with elements that are not comparable.  In these cases the hashing method cannot hash the elements and must resort to hashing the element count.  Two dummies could easily have the same element count for such a type.\")";
             }
 
             var result = EqualityTestMethodsCodeTemplate
-                .Replace(TypeNameToken, type.ToStringCompilable())
+                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                 .Replace(UnequalHashCodeToken, skipUnequalHashCodeTestCode);
 
             return result;

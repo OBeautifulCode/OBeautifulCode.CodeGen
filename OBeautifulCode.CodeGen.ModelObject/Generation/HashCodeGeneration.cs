@@ -34,26 +34,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generate hash code method.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// The generated hash code method.
         /// </returns>
         public static string GenerateGetHashCodeMethod(
-            this Type type)
+            this ModelType modelType)
         {
             string result;
 
-            var hierarchyKind = type.GetHierarchyKind();
-
-            if (hierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
                 result = HashMethodForAbstractBaseTypeCodeTemplate;
             }
             else
             {
-                var properties = type.GetPropertiesOfConcernFromType();
-
-                var hashLines = properties.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
+                var hashLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
 
                 var hashToken = string.Join(Environment.NewLine + "            .", hashLines);
 

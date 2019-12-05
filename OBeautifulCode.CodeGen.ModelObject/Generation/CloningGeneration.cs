@@ -192,17 +192,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates cloning methods.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated cloning methods.
         /// </returns>
         public static string GenerateCloningMethods(
-            this Type type)
+            this ModelType modelType)
         {
-            var hierarchyKind = type.GetHierarchyKind();
-
             string cloningMethodsTemplate;
-            switch (hierarchyKind)
+            switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.None:
                     cloningMethodsTemplate = CloningMethodsForNonHierarchicalTypeCodeTemplate;
@@ -214,37 +212,36 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     cloningMethodsTemplate = CloningMethodsForConcreteInheritedTypeCodeTemplate;
                     break;
                 default:
-                    throw new NotSupportedException("This kind is not supported: " + hierarchyKind);
+                    throw new NotSupportedException("This kind is not supported: " + modelType.HierarchyKind);
             }
 
             var result = cloningMethodsTemplate
-                .Replace(TypeNameToken, type.ToStringCompilable())
-                .Replace(BaseTypeNameToken, type.BaseType.ToStringCompilable());
+                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                .Replace(BaseTypeNameToken, modelType.Type.BaseType.ToStringCompilable());
 
-            var properties = type.GetPropertiesOfConcernFromType();
-
-            if (hierarchyKind != HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind != HierarchyKind.AbstractBase)
             {
-                var deepCloneCodeForEachProperty = properties
+                var deepCloneCodeForEachProperty = modelType
+                    .PropertiesOfConcern
                     .Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name)))
                     .ToList();
 
-                var deepCloneCode = type.GenerateModelInstantiation(deepCloneCodeForEachProperty, parameterPaddingLength: 33);
+                var deepCloneCode = modelType.GenerateModelInstantiation(deepCloneCodeForEachProperty, parameterPaddingLength: 33);
 
                 result = result.Replace(DeepCloneToken, deepCloneCode);
             }
 
             var deepCloneWithMethods = new List<string>();
-            if (properties.Any())
+            if (modelType.PropertiesOfConcern.Any())
             {
                 deepCloneWithMethods.Add(string.Empty);
 
-                var declaredProperties = type.GetPropertiesOfConcernFromType(declaredOnly: true);
+                var declaredProperties = modelType.DeclaredOnlyPropertiesOfConcern;
 
-                foreach (var property in properties)
+                foreach (var property in modelType.PropertiesOfConcern)
                 {
                     string deepCloneWithMethodTemplate;
-                    if (hierarchyKind == HierarchyKind.AbstractBase)
+                    if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
                     {
                         deepCloneWithMethodTemplate = DeepCloneWithMethodForAbstractBaseTypeCodeTemplate;
                     }
@@ -258,15 +255,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     }
 
                     var deepCloneWithMethod = deepCloneWithMethodTemplate
-                        .Replace(TypeNameToken, type.ToStringCompilable())
-                        .Replace(BaseTypeNameToken, type.BaseType.ToStringCompilable())
+                        .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                        .Replace(BaseTypeNameToken, modelType.Type.BaseType.ToStringCompilable())
                         .Replace(PropertyNameToken, property.Name)
                         .Replace(ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
                         .Replace(ParameterTypeNameToken, property.PropertyType.ToStringCompilable());
 
-                    if (hierarchyKind != HierarchyKind.AbstractBase)
+                    if (modelType.HierarchyKind != HierarchyKind.AbstractBase)
                     {
-                        var propertiesCode = properties.Select(_ =>
+                        var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
                         {
                             var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name);
 
@@ -277,7 +274,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             return new MemberCode(_.Name, code);
                         }).ToList();
 
-                        var modelInstantiationCode = type.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 33);
+                        var modelInstantiationCode = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 33);
 
                         deepCloneWithMethod = deepCloneWithMethod.Replace(DeepCloneWithModelInstantiationToken, modelInstantiationCode);
                     }
@@ -296,31 +293,32 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates test methods that test cloning.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated test methods that test cloning.
         /// </returns>
         public static string GenerateCloningTestMethods(
-            this Type type)
+            this ModelType modelType)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
-            var declaredPropertyNames = new HashSet<string>(type.GetPropertiesOfConcernFromType(declaredOnly: true).Select(_ => _.Name));
+            var declaredPropertyNames = new HashSet<string>(modelType.DeclaredOnlyPropertiesOfConcern.Select(_ => _.Name));
 
-            var assertDeepCloneSet = properties.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
+            var assertDeepCloneSet = modelType.PropertiesOfConcern.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
 
             var assertDeepCloneToken = assertDeepCloneSet.Any() ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneSet) : string.Empty;
 
             var deepCloneWithTestMethods = new List<string>();
 
-            if (properties.Any())
+            if (modelType.PropertiesOfConcern.Any())
             {
                 // since we have parameters we'll go ahead and pad down.
                 deepCloneWithTestMethods.Add(string.Empty);
 
-                foreach (var property in properties)
+                foreach (var property in modelType.PropertiesOfConcern)
                 {
                     var assertDeepCloneWithSet =
-                        properties.Select(
+                        modelType
+                            .PropertiesOfConcern
+                            .Select(
                                 _ =>
                                 {
                                     var sourceName = _.Name == property.Name ? "referenceObject" : "systemUnderTest";
@@ -346,7 +344,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         : DeepCloneWithTestMethodForNonDeclaredPropertyCodeTemplate;
 
                     var testMethod = deepCloneWithTestMethodCodeTemplate
-                                    .Replace(TypeNameToken,                     type.ToStringCompilable())
+                                    .Replace(TypeNameToken,                     modelType.Type.ToStringCompilable())
                                     .Replace(PropertyNameToken,                 property.Name)
                                     .Replace(ParameterNameToken,                property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(DeepCloneWithTestAssertLogicToken, assertDeepCloneWithToken);
@@ -359,8 +357,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             string cloningTestMethodsCodeTemplate;
 
-            var hierarchyKind = type.GetHierarchyKind();
-            switch (hierarchyKind)
+            switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.None:
                 case HierarchyKind.AbstractBase:
@@ -370,11 +367,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     cloningTestMethodsCodeTemplate = CloningTestMethodsForConcreteInheritedTypeCodeTemplate;
                     break;
                 default:
-                    throw new NotSupportedException("This kind is not supported: " + hierarchyKind);
+                    throw new NotSupportedException("This kind is not supported: " + modelType.HierarchyKind);
             }
 
             var result = cloningTestMethodsCodeTemplate
-                .Replace(TypeNameToken,                   type.ToStringCompilable())
+                .Replace(TypeNameToken,                   modelType.Type.ToStringCompilable())
                 .Replace(AssertDeepCloneToken,            assertDeepCloneToken)
                 .Replace(DeepCloneWithTestInflationToken, deepCloneWithTestInflationToken);
 

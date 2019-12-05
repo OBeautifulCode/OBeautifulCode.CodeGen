@@ -22,14 +22,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Generates code that implements standard features of a model, including
         /// equality checks, hash code generation, cloning methods, and a friendly ToString().
         /// </summary>
-        /// <param name="type">The type of model.</param>
+        /// <param name="modelType">The type of model.</param>
         /// <returns>
         /// Generated code that implements the standard features for the specified model type.
         /// </returns>
         public static string GenerateCodeForModelImplementation(
-            this Type type)
+            this ModelType modelType)
         {
-            new { type }.AsArg().Must().NotBeNull();
+            new { modelType }.AsArg().Must().NotBeNull();
 
             var items = new[]
             {
@@ -39,7 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "// </auto-generated>",
                 "// --------------------------------------------------------------------------------------------------------------------",
                 string.Empty,
-                Invariant($"namespace {type.Namespace}"),
+                Invariant($"namespace {modelType.Type.Namespace}"),
                 "{",
                 "    using System;",
                 "    using System.CodeDom.Compiler;",
@@ -55,12 +55,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 string.Empty,
                 "    [ExcludeFromCodeCoverage]",
                 Invariant($"    [GeneratedCode(\"{GenerationShared.GetCodeGenAssemblyName()}\", \"{GenerationShared.GetCodeGenAssemblyVersion()}\")]"),
-                Invariant($"    public partial class {type.ToStringReadable()} : IModel<{type.ToStringReadable()}>"),
+                Invariant($"    public partial class {modelType.Type.ToStringReadable()} : IModel<{modelType.Type.ToStringReadable()}>"),
                 "    {",
-                "    " + type.GenerateEqualityMethods(),
-                "    " + type.GenerateGetHashCodeMethod(),
-                "    " + type.GenerateCloningMethods(),
-                "    " + type.GenerateToStringMethod(),
+                "    " + modelType.GenerateEqualityMethods(),
+                "    " + modelType.GenerateGetHashCodeMethod(),
+                "    " + modelType.GenerateCloningMethods(),
+                "    " + modelType.GenerateToStringMethod(),
                 "    }",
                 "}",
             };

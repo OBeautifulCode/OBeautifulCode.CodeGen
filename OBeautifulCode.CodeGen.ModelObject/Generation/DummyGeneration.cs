@@ -29,27 +29,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates code for a dummy factory.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated code for a dummy factory.
         /// </returns>
         public static string GenerateCodeForDummyFactory(
-            this Type type)
+            this ModelType modelType)
         {
-            var hierarchyKind = type.GetHierarchyKind();
-
             string result;
-            if (hierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
-                result = UseRandomConcreteSubclassCodeTemplate.Replace(TypeNameToken, type.Name);
+                result = UseRandomConcreteSubclassCodeTemplate.Replace(TypeNameToken, modelType.Type.Name);
             }
             else
             {
-                var properties = type.GetPropertiesOfConcernFromType();
+                var propertyNameToCodeMap = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
 
-                var propertyNameToCodeMap = properties.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
-
-                var newDummyToken = type.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
+                var newDummyToken = modelType.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 
                 result = AddDummyCreatorCodeTemplate.Replace(NewDummyToken, newDummyToken);
             }
@@ -60,7 +56,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates code that constructs a dummy model.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="type">The type.</param>
         /// <param name="thatIsNot">Code to inject into a ThatIsNot qualification.</param>
         /// <returns>
         /// Generated code that constructs a dummy model.

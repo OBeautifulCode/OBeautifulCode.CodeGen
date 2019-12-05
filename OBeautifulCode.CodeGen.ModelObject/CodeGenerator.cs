@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+
     using OBeautifulCode.Assertion.Recipes;
 
     /// <summary>
@@ -47,27 +48,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { type }.AsArg().Must().NotBeNull();
 
-            type.ThrowIfNotSupported();
+            var modelType = new ModelType(type);
 
             var generatedCode = new List<string>();
 
             if (kind.HasFlag(GenerateFor.ModelImplementationPartialClass))
             {
-                var modelMethods = type.GenerateCodeForModelImplementation();
+                var modelMethods = modelType.GenerateCodeForModelImplementation();
 
                 generatedCode.Add(modelMethods);
             }
 
             if (kind.HasFlag(GenerateFor.ModelDummyFactorySnippet))
             {
-                var dummyFactorySnippet = type.GenerateCodeForDummyFactory();
+                var dummyFactorySnippet = modelType.GenerateCodeForDummyFactory();
 
                 generatedCode.Add(dummyFactorySnippet);
             }
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) || kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization))
             {
-                var tests = type.GenerateCodeForTests(kind);
+                var tests = modelType.GenerateCodeForTests(kind);
 
                 generatedCode.Add(tests);
             }

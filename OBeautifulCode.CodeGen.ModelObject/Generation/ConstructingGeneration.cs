@@ -110,19 +110,19 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates code that instantiates a model object.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <param name="memberCode">The code for the members.</param>
         /// <param name="parameterPaddingLength">The length of the padding to use for constructor or object initializer parameters.</param>
         /// <returns>
         /// Generated code that instantiates a model object.
         /// </returns>
         public static string GenerateModelInstantiation(
-            this Type type,
+            this ModelType modelType,
             IReadOnlyList<MemberCode> memberCode,
             int parameterPaddingLength)
         {
-            type.AsArg(nameof(type)).Must().NotBeNull();
-            memberCode.AsArg(nameof(memberCode)).Must().NotBeNull().And().NotContainAnyNullElements();
+            new { modelType }.AsArg().Must().NotBeNull();
+            new { memberCode }.AsArg().Must().NotBeNull().And().NotContainAnyNullElements();
 
             string result;
 
@@ -130,7 +130,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var parameterPadding = new string(' ', parameterPaddingLength);
 
-            var constructorInfo = type
+            var constructorInfo = modelType
+                .Type
                 .GetConstructors()
                 .SingleOrDefault(
                     _ =>
@@ -150,9 +151,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     .Select(_ => propertyNameToCodeMap[_.Name])
                     .ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + parameterCode + ")";
+                result = "new " + modelType.Type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + parameterCode + ")";
             }
-            else if (type.GetPropertiesOfConcernFromType().All(_ => _.CanWrite))
+            else if (modelType.PropertiesOfConcern.All(_ => _.CanWrite))
             {
                 var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
 
@@ -160,11 +161,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + type.ToStringCompilable() + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + Environment.NewLine + curlyBracketPadding + "}";
+                result = "new " + modelType.Type.ToStringCompilable() + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + Environment.NewLine + curlyBracketPadding + "}";
             }
             else
             {
-                var propertiesAddIn = string.Join(",", type.GetPropertiesOfConcernFromType().Select(_ => _.Name));
+                var propertiesAddIn = string.Join(",", modelType.PropertiesOfConcern.Select(_ => _.Name));
 
                 throw new NotSupportedException("Could not find a constructor to take properties of concern and they are not all settable: " + propertiesAddIn);
             }
@@ -175,16 +176,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates test methods that test a model's constructor.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated test methods that test a model's constructor.
         /// </returns>
         public static string GenerateConstructorTestMethods(
-            this Type type)
+            this ModelType modelType)
         {
-            type.AsArg(nameof(type)).Must().NotBeNull();
+            new { modelType }.AsArg().Must().NotBeNull();
 
-            var constructorWithParameters = type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
+            var constructorWithParameters = modelType.Type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
 
             var testMethods = new List<string>();
 
@@ -203,10 +204,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         return new MemberCode(_.Name, _.Name == parameter.Name ? "null" : referenceObject);
                     }).ToList();
 
-                    var objectInstantiationCode = type.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
+                    var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
 
                     var testMethod = ConstructorTestMethodForArgumentCodeTemplate
-                                    .Replace(TypeNameToken,                     type.ToStringCompilable())
+                                    .Replace(TypeNameToken,                     modelType.Type.ToStringCompilable())
                                     .Replace(ConstructorParameterToken,         parameter.Name)
                                     .Replace(NewObjectForArgumentNullTestToken, objectInstantiationCode);
 
@@ -221,10 +222,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             return new MemberCode(_.Name, _.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject);
                         }).ToList();
 
-                        objectInstantiationCode = type.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
+                        objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
 
                         var stringTestMethod = ConstructorTestMethodForStringArgumentCodeTemplate
-                                              .Replace(TypeNameToken,                           type.ToStringCompilable())
+                                              .Replace(TypeNameToken,                           modelType.Type.ToStringCompilable())
                                               .Replace(ConstructorParameterToken,               parameter.Name)
                                               .Replace(NewObjectForArgumentWhiteSpaceTestToken, objectInstantiationCode);
 
@@ -236,7 +237,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 {
                     var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
 
-                    var newObjectCode = type.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 46);
+                    var newObjectCode = modelType.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 46);
 
                     var assertPropertyGetterToken = parameter.ParameterType.GenerateObcAssertionsEqualityStatement(
                         "actual",
@@ -244,7 +245,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         sameReferenceExpected: true);
 
                     var testMethod = PropertyGetterTestMethodTemplate
-                                    .Replace(TypeNameToken,              type.ToStringCompilable())
+                                    .Replace(TypeNameToken,              modelType.Type.ToStringCompilable())
                                     .Replace(PropertyNameToken,          parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(ConstructorParameterToken,  parameter.Name)
                                     .Replace(AssertPropertyGetterToken,  assertPropertyGetterToken)
@@ -257,7 +258,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var constructorTestInflationToken = string.Join(Environment.NewLine, testMethods);
 
             var result = ConstructingTestMethodsCodeTemplate
-                        .Replace(TypeNameToken,                 type.ToStringCompilable())
+                        .Replace(TypeNameToken,                 modelType.Type.ToStringCompilable())
                         .Replace(ConstructorTestInflationToken, constructorTestInflationToken);
 
             return result;

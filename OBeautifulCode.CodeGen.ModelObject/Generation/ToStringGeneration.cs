@@ -55,24 +55,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates the <see cref="object.ToString"/> method override.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated <see cref="object.ToString"/> method override.
         /// </returns>
         public static string GenerateToStringMethod(
-            this Type type)
+            this ModelType modelType)
         {
             string result;
 
-            var hierarchyKind = type.GetHierarchyKind();
-
-            if (hierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
                 result = ToStringMethodForAbstractBaseTypeCodeTemplate;
             }
             else
             {
-                var toStringConstructionCode = type.GenerateToStringConstructionCode(useSystemUnderTest: false);
+                var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false);
 
                 result = ToStringMethodForConcreteTypeCodeTemplate.Replace(ToStringToken, toStringConstructionCode);
             }
@@ -83,22 +81,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates test methods that test the <see cref="object.ToString"/> method override.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated test methods that test the <see cref="object.ToString"/> method override.
         /// </returns>
         public static string GenerateToStringTestMethod(
-            this Type type)
+            this ModelType modelType)
         {
-            var hierarchyKind = type.GetHierarchyKind();
-
             string result = null;
-            if (hierarchyKind != HierarchyKind.AbstractBase)
+
+            if (modelType.HierarchyKind != HierarchyKind.AbstractBase)
             {
-                var toStringConstructionCode = type.GenerateToStringConstructionCode(useSystemUnderTest: true);
+                var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
                 result = ToStringTestMethodCodeTemplate
-                    .Replace(TypeNameToken, type.ToStringCompilable())
+                    .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                     .Replace(ToStringTestToken, toStringConstructionCode);
             }
 
@@ -106,14 +103,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         private static string GenerateToStringConstructionCode(
-            this Type type,
+            this ModelType modelType,
             bool useSystemUnderTest)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
+            var propertyToStrings = modelType.PropertiesOfConcern.Select(_ => _.GenerateToStringForProperty(useSystemUnderTest)).ToList();
 
-            var propertyToStrings = properties.Select(_ => _.GenerateToStringForProperty(useSystemUnderTest)).ToList();
-
-            var result = Invariant($"Invariant($\"{{nameof({type.Namespace})}}.{{nameof({type.ToStringCompilable()})}}: {string.Join(", ", propertyToStrings)}.\")");
+            var result = Invariant($"Invariant($\"{{nameof({modelType.Type.Namespace})}}.{{nameof({modelType.Type.ToStringCompilable()})}}: {string.Join(", ", propertyToStrings)}.\")");
 
             return result;
         }

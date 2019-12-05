@@ -6,7 +6,6 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
-    using System;
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
@@ -90,16 +89,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates fields required for serialization tests.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated fields required for serialization tests.
         /// </returns>
         public static string GenerateSerializationTestFields(
-            this Type type)
+            this ModelType modelType)
         {
-            type.AsArg(nameof(type)).Must().NotBeNull();
+            modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
-            var prefix = type
+            var prefix = modelType
+                .Type
                 .Namespace?
                 .Split('.')
                 .Skip(1)
@@ -108,12 +108,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Where(_ => _ != "Json")
                 .ToDelimitedString(string.Empty);
 
-            var serializationFieldsCodeTemplate = type.HasAnyGetterOnlyProperties()
+            var serializationFieldsCodeTemplate = modelType.HasAnyGetterOnlyProperties()
                 ? JsonOnlySerializationFieldsCodeTemplate
                 : BsonAndJsonSerializationFieldsCodeTemplate;
 
             var result = serializationFieldsCodeTemplate
-                        .Replace(TypeNameToken, type.ToStringCompilable())
+                        .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                         .Replace(SerializationConfigurationPrefixToken, prefix);
 
             return result;
@@ -122,30 +122,28 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates test methods to test serialization.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <returns>
         /// Generated test methods to test serialization.
         /// </returns>
         public static string GenerateSerializationTestMethods(
-            this Type type)
+            this ModelType modelType)
         {
-            type.AsArg(nameof(type)).Must().NotBeNull();
+            modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
-            var serializationTestMethodsCodeTemplate = type.HasAnyGetterOnlyProperties()
+            var serializationTestMethodsCodeTemplate = modelType.HasAnyGetterOnlyProperties()
                 ? JsonOnlySerializationTestMethodsCodeTemplate
                 : BsonAndJsonSerializationTestMethodsCodeTemplate;
 
-            var result = serializationTestMethodsCodeTemplate.Replace(TypeNameToken, type.ToStringCompilable());
+            var result = serializationTestMethodsCodeTemplate.Replace(TypeNameToken, modelType.Type.ToStringCompilable());
 
             return result;
         }
 
         private static bool HasAnyGetterOnlyProperties(
-            this Type type)
+            this ModelType modelType)
         {
-            var properties = type.GetPropertiesOfConcernFromType();
-
-            var result = properties.Any(_ => _.GetSetMethod(true) == null);
+            var result = modelType.PropertiesOfConcern.Any(_ => _.GetSetMethod(true) == null);
 
             return result;
         }

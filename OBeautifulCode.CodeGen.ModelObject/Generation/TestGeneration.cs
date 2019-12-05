@@ -23,13 +23,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates unit test code.
         /// </summary>
-        /// <param name="type">The model type.</param>
+        /// <param name="modelType">The model type.</param>
         /// <param name="kind">Specifies the kind of code to generate.</param>
         /// <returns>
         /// Generated equality methods.
         /// </returns>
         public static string GenerateCodeForTests(
-            this Type type,
+            this ModelType modelType,
             GenerateFor kind)
         {
             // ReSharper disable once UseObjectOrCollectionInitializer
@@ -41,7 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "// </auto-generated>",
                 "// --------------------------------------------------------------------------------------------------------------------",
                 string.Empty,
-                Invariant($"namespace {type.Namespace}.Test"),
+                Invariant($"namespace {modelType.Type.Namespace}.Test"),
                 "{",
                 "    using System;",
                 "    using System.CodeDom.Compiler;",
@@ -70,26 +70,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 Invariant($"    [GeneratedCode(\"{GenerationShared.GetCodeGenAssemblyName()}\", \"{GenerationShared.GetCodeGenAssemblyVersion()}\")]"),
             };
 
-            items.Add(Invariant($"    public partial class {type.ToStringCompilable()}Test"));
+            items.Add(Invariant($"    public partial class {modelType.Type.ToStringCompilable()}Test"));
             items.Add("    {");
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization))
             {
-                items.Add("    " + type.GenerateSerializationTestFields());
+                items.Add("    " + modelType.GenerateSerializationTestFields());
             }
 
             items.Add(string.Empty);
-            items.Add("    " + type.GenerateEqualityTestFields());
-            items.Add("    " + type.GenerateToStringTestMethod());
-            items.Add("    " + type.GenerateConstructorTestMethods());
-            items.Add("    " + type.GenerateCloningTestMethods());
+            items.Add("    " + modelType.GenerateEqualityTestFields());
+            items.Add("    " + modelType.GenerateToStringTestMethod());
+            items.Add("    " + modelType.GenerateConstructorTestMethods());
+            items.Add("    " + modelType.GenerateCloningTestMethods());
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization))
             {
-                items.Add("    " + type.GenerateSerializationTestMethods());
+                items.Add("    " + modelType.GenerateSerializationTestMethods());
             }
 
-            items.Add("    " + type.GenerateEqualityTestMethods());
+            items.Add("    " + modelType.GenerateEqualityTestMethods());
             items.Add("    }");
             items.Add("}");
 
