@@ -494,7 +494,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this ModelType modelType)
         {
             var skipUnequalHashCodeTestCode = string.Empty;
-            if (modelType.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode())
+            if (modelType.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode)
             {
                 skipUnequalHashCodeTestCode = "(Skip = \"It's possible (and even probable after a few runs of this test) that two dummy, unequal models will have the same hash code.  The model being tested contains at least one property who's type (or a type nested within the generic type, or a property of the IModel type) is a dictionary with keys that are not comparable or an unordered collection with elements that are not comparable.  In these cases the hashing method cannot hash the elements and must resort to hashing the element count.  Two dummies could easily have the same element count for such a type.\")";
             }
@@ -502,6 +502,36 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = EqualityTestMethodsCodeTemplate
                 .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                 .Replace(UnequalHashCodeToken, skipUnequalHashCodeTestCode);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates an assertion equality statement.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="actual">The actual value.</param>
+        /// <param name="expected">The expected value.</param>
+        /// <param name="sameReferenceExpected">A value indicating whether the same reference expected for reference types.</param>
+        /// <returns>
+        /// Generated assertion equality statement.
+        /// </returns>
+        public static string GenerateObcAssertionsEqualityStatement(
+            this Type type,
+            string actual,
+            string expected,
+            bool sameReferenceExpected)
+        {
+            string result;
+
+            if ((!type.IsValueType) && sameReferenceExpected)
+            {
+                result = Invariant($"{actual}.AsTest().Must().BeSameReferenceAs({expected});");
+            }
+            else
+            {
+                result = Invariant($"{actual}.AsTest().Must().BeEqualTo({expected});");
+            }
 
             return result;
         }

@@ -37,6 +37,7 @@ namespace OBeautifulCode.CodeGen
             var hierarchyKind = GetHierarchyKind(type);
             var propertiesOfConcern = GetPropertiesOfConcernFromType(type, hierarchyKind, declaredOnly: false);
             var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, hierarchyKind, declaredOnly: true);
+            var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern);
 
             ThrowIfNotSupported(type, propertiesOfConcern);
 
@@ -44,6 +45,7 @@ namespace OBeautifulCode.CodeGen
             this.HierarchyKind = hierarchyKind;
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
+            this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
         }
 
         /// <summary>
@@ -55,6 +57,12 @@ namespace OBeautifulCode.CodeGen
         /// Gets the <see cref="HierarchyKind"/> of the model type.
         /// </summary>
         public HierarchyKind HierarchyKind { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether two dummies of this model type
+        /// can not be equal but result in the same hash code.
+        /// </summary>
+        public bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode { get; }
 
         /// <summary>
         /// Gets the properties of concern for the model type.
@@ -217,6 +225,81 @@ namespace OBeautifulCode.CodeGen
                     {
                         return true;
                     }
+                }
+            }
+
+            return false;
+        }
+
+        private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
+            IReadOnlyList<PropertyInfo> propertiesOfConcern)
+        {
+            var result = propertiesOfConcern.Any(_ => CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(_.PropertyType));
+
+            return result;
+        }
+
+        private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
+            Type type)
+        {
+            // see scenarios in HashCodeHelper where we are forced to hash the
+            // enumerable count instead of the elements.
+            if (type.IsSystemDictionaryType())
+            {
+                var keyType = type.GenericTypeArguments.First();
+
+                if (!keyType.IsComparableType())
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsSystemUnorderedCollectionType())
+            {
+                var elementType = type.GenericTypeArguments.First();
+
+                if (!elementType.IsComparableType())
+                {
+                    return true;
+                }
+            }
+
+            if (type.IsGenericType)
+            {
+                var genericTypeArguments = type.GenericTypeArguments;
+
+                foreach (var genericTypeArgument in genericTypeArguments)
+                {
+                    if (genericTypeArgument.IsModelType())
+                    {
+                        var hierarchyKind = GetHierarchyKind(genericTypeArgument);
+
+                        var propertiesOfConcern = GetPropertiesOfConcernFromType(genericTypeArgument, hierarchyKind, declaredOnly: false);
+
+                        if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern))
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(genericTypeArgument))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            if (type.IsModelType())
+            {
+                var hierarchyKind = GetHierarchyKind(type);
+
+                var propertiesOfConcern = GetPropertiesOfConcernFromType(type, hierarchyKind, declaredOnly: false);
+
+                if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern))
+                {
+                    return true;
                 }
             }
 
