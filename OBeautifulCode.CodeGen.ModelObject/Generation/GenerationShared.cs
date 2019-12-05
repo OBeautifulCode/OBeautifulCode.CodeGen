@@ -6,14 +6,6 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
-    using System;
-    using System.Linq;
-
-    using OBeautifulCode.Type;
-    using OBeautifulCode.Type.Recipes;
-
-    using static System.FormattableString;
-
     /// <summary>
     /// Shared methods for generation.
     /// </summary>
@@ -41,21 +33,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GetCodeGenAssemblyVersion()
         {
             var result = typeof(GenerationShared).Assembly.GetName().Version.ToString();
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines if the specified type is a model type.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <returns>
-        /// true if the specified type is a model type, otherwise false.
-        /// </returns>
-        public static bool IsModelType(
-            this Type type)
-        {
-            var result = type.IsAssignableTo(typeof(IModel)) || type.IsAssignableTo(typeof(IModelViaCodeGen));
 
             return result;
         }

@@ -221,7 +221,7 @@ namespace OBeautifulCode.CodeGen
                 {
                     // if the argument is a model type then move on;
                     // it will be validated when code gen is run for that model
-                    if ((!genericTypeArgument.IsModelType()) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument))
+                    if ((!IsModelType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument))
                     {
                         return true;
                     }
@@ -270,7 +270,7 @@ namespace OBeautifulCode.CodeGen
 
                 foreach (var genericTypeArgument in genericTypeArguments)
                 {
-                    if (genericTypeArgument.IsModelType())
+                    if (IsModelType(genericTypeArgument))
                     {
                         var hierarchyKind = GetHierarchyKind(genericTypeArgument);
 
@@ -291,7 +291,7 @@ namespace OBeautifulCode.CodeGen
                 }
             }
 
-            if (type.IsModelType())
+            if (IsModelType(type))
             {
                 var hierarchyKind = GetHierarchyKind(type);
 
@@ -304,6 +304,14 @@ namespace OBeautifulCode.CodeGen
             }
 
             return false;
+        }
+
+        private static bool IsModelType(
+            Type type)
+        {
+            var result = type.IsAssignableTo(typeof(IModel)) || type.IsAssignableTo(typeof(IModelViaCodeGen));
+
+            return result;
         }
     }
 }

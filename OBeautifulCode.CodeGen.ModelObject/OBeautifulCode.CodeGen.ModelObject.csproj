@@ -89,7 +89,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
-    <Compile Include="GenerateFor.cs" />
+    <Compile Include="ExternalTypes\GenerateFor.cs" />
     <Compile Include="Generation\CloningGeneration.cs" />
     <Compile Include="Generation\GenerationShared.cs" />
     <Compile Include="CodeGenerator.cs" />
@@ -97,7 +97,7 @@
     <Compile Include="Generation\DummyGeneration.cs" />
     <Compile Include="Generation\EqualityLogicGeneration.cs" />
     <Compile Include="Generation\HashCodeGeneration.cs" />
-    <Compile Include="HierarchyKind.cs" />
+    <Compile Include="ExternalTypes\HierarchyKind.cs" />
     <Compile Include="Generation\ModelImplementationGeneration.cs" />
     <Compile Include="InternalTypes\MemberCode.cs" />
     <Compile Include="Generation\TestGeneration.cs" />
