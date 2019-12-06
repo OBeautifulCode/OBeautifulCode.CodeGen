@@ -89,6 +89,40 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 actual.Message.AsTest().Must().ContainString(""white space"");
             }";
 
+        private const string ConstructorTestMethodForCollectionArgumentThatIsEmptyCodeTemplate = @"
+            [Fact]
+            public static void Constructor___Should_throw_ArgumentException___When_parameter_" + ConstructorParameterToken + @"_is_empty()
+            {
+                // Arrange
+                var referenceObject = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = Record.Exception(
+                    () => " + NewObjectTestToken + @");
+
+                // Assert
+                actual.AsTest().Must().BeOfType<ArgumentException>();
+                actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
+                actual.Message.AsTest().Must().ContainString(""is an empty enumerable"");
+            }";
+
+        private const string ConstructorTestMethodForCollectionArgumentThatContainsNullElementCodeTemplate = @"
+            [Fact]
+            public static void Constructor___Should_throw_ArgumentException___When_parameter_" + ConstructorParameterToken + @"_contains_a_null_element()
+            {
+                // Arrange
+                var referenceObject = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = Record.Exception(
+                    () => " + NewObjectTestToken + @");
+
+                // Assert
+                actual.AsTest().Must().BeOfType<ArgumentException>();
+                actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
+                actual.Message.AsTest().Must().ContainString(""contains at least one null element"");
+            }";
+
         private const string PropertyGetterTestMethodTemplate = @"
             [Fact]
             public static void " + PropertyNameToken + @"___Should_return_same_" + ConstructorParameterToken + @"_parameter_passed_to_constructor___When_getting()
@@ -230,6 +264,66 @@ namespace OBeautifulCode.CodeGen.ModelObject
                                               .Replace(NewObjectTestToken,        objectInstantiationCode);
 
                         testMethods.Add(stringTestMethod);
+                    }
+
+                    if (parameter.ParameterType.IsSystemCollectionType() || parameter.ParameterType.IsArray)
+                    {
+                        // add test for empty collection or array
+                        var collectionParameterCode = parameters.Select(_ =>
+                        {
+                            var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                            return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                        }).ToList();
+
+                        objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
+
+                        var collectionTestMethod = ConstructorTestMethodForCollectionArgumentThatIsEmptyCodeTemplate
+                            .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                            .Replace(ConstructorParameterToken, parameter.Name)
+                            .Replace(NewObjectTestToken, objectInstantiationCode);
+
+                        testMethods.Add(collectionTestMethod);
+
+                        // add test for collection or array containing null element
+                        // we are specifically EXCLUDING nullable types here
+                        var elementType = parameter.ParameterType.IsArray
+                            ? parameter.ParameterType.GetElementType()
+                            : parameter.ParameterType.GenericTypeArguments[0];
+
+                        // ReSharper disable once PossibleNullReferenceException
+                        if (!elementType.IsValueType)
+                        {
+                            collectionParameterCode = parameters.Select(_ =>
+                            {
+                                var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                                if (_.Name == parameter.Name)
+                                {
+                                    referenceObject = Invariant($"new {elementType.ToStringCompilable()}[0].Concat({referenceObject}).Concat(new {elementType.ToStringCompilable()}[] {{ null }}).Concat({referenceObject})");
+
+                                    referenceObject = parameter.ParameterType.IsArray
+                                        ? referenceObject + ".ToArray()"
+                                        : referenceObject + ".ToList()";
+
+                                    if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
+                                    {
+                                        referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
+                                    }
+                                }
+
+                                return new MemberCode(_.Name, referenceObject);
+                            }).ToList();
+
+                            objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
+
+                            collectionTestMethod = ConstructorTestMethodForCollectionArgumentThatContainsNullElementCodeTemplate
+                                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                                .Replace(ConstructorParameterToken, parameter.Name)
+                                .Replace(NewObjectTestToken, objectInstantiationCode);
+
+                            testMethods.Add(collectionTestMethod);
+                        }
                     }
                 }
 
