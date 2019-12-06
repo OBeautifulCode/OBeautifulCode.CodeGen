@@ -57,6 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "    using OBeautifulCode.Assertion.Recipes;",
                 "    using OBeautifulCode.AutoFakeItEasy;",
                 "    using OBeautifulCode.Collection.Recipes;",
+                "    using OBeautifulCode.Math.Recipes;",
                 "    using OBeautifulCode.Representation.System;",
                 "    using OBeautifulCode.Serialization;",
                 "    using OBeautifulCode.Serialization.Bson;",

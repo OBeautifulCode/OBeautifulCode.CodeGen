@@ -7,6 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Globalization;
@@ -422,6 +423,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
 
                 result = Invariant($"{cast}{cloneCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
+
+                if ((type.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (type.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>)))
+                {
+                    result = type.GenerateSystemTypeInstantiationCode(result);
+                }
             }
             else if (type.IsSystemCollectionType())
             {

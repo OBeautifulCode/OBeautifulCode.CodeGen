@@ -7,6 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Globalization;
@@ -31,6 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string PropertyNameToken = "<<<PropertyNameHere>>>";
         private const string AssertPropertyGetterToken = "<<<AssertPropertyGetterHere>>>";
         private const string NewObjectForGetterTestToken = "<<<NewObjectWithOneArgumentFromOtherHere>>>";
+        private const string SetDictionaryValueToNullToken = "<<<SetDictionaryValueToNullHere>>>";
 
         private const string ConstructingTestMethodsCodeTemplate = @"
         public static class Constructing
@@ -121,6 +123,44 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 actual.AsTest().Must().BeOfType<ArgumentException>();
                 actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
                 actual.Message.AsTest().Must().ContainString(""contains at least one null element"");
+            }";
+
+        private const string ConstructorTestMethodForDictionaryArgumentThatIsEmptyCodeTemplate = @"
+            [Fact]
+            public static void Constructor___Should_throw_ArgumentException___When_parameter_" + ConstructorParameterToken + @"_is_empty()
+            {
+                // Arrange
+                var referenceObject = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = Record.Exception(
+                    () => " + NewObjectTestToken + @");
+
+                // Assert
+                actual.AsTest().Must().BeOfType<ArgumentException>();
+                actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
+                actual.Message.AsTest().Must().ContainString(""is an empty dictionary"");
+            }";
+
+        private const string ConstructorTestMethodForDictionaryArgumentThatContainsNullValueCodeTemplate = @"
+            [Fact]
+            public static void Constructor___Should_throw_ArgumentException___When_parameter_" + ConstructorParameterToken + @"_contains_a_null_value()
+            {
+                // Arrange
+                var referenceObject = A.Dummy<" + TypeNameToken + @">();
+
+                " + SetDictionaryValueToNullToken + @"
+                var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
+                dictionaryWithNullValue[randomKey] = null;
+
+                // Act
+                var actual = Record.Exception(
+                    () => " + NewObjectTestToken + @");
+
+                // Assert
+                actual.AsTest().Must().BeOfType<ArgumentException>();
+                actual.Message.AsTest().Must().ContainString(""" + ConstructorParameterToken + @""");
+                actual.Message.AsTest().Must().ContainString(""contains at least one key-value pair with a null value"");
             }";
 
         private const string PropertyGetterTestMethodTemplate = @"
@@ -291,7 +331,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             ? parameter.ParameterType.GetElementType()
                             : parameter.ParameterType.GenericTypeArguments[0];
 
-                        // ReSharper disable once PossibleNullReferenceException
                         if (!elementType.IsValueType)
                         {
                             collectionParameterCode = parameters.Select(_ =>
@@ -323,6 +362,62 @@ namespace OBeautifulCode.CodeGen.ModelObject
                                 .Replace(NewObjectTestToken, objectInstantiationCode);
 
                             testMethods.Add(collectionTestMethod);
+                        }
+                    }
+
+                    if (parameter.ParameterType.IsSystemDictionaryType())
+                    {
+                        // add test for empty dictionary
+                        var dictionaryParameterCode = parameters.Select(_ =>
+                        {
+                            var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                            return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                        }).ToList();
+
+                        objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
+
+                        var dictionaryTestMethod = ConstructorTestMethodForDictionaryArgumentThatIsEmptyCodeTemplate
+                            .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                            .Replace(ConstructorParameterToken, parameter.Name)
+                            .Replace(NewObjectTestToken, objectInstantiationCode);
+
+                        testMethods.Add(dictionaryTestMethod);
+
+                        // add test for dictionary containing null value
+                        // we are specifically EXCLUDING nullable types here
+                        var valueType = parameter.ParameterType.GenericTypeArguments[1];
+
+                        if (!valueType.IsValueType)
+                        {
+                            dictionaryParameterCode = parameters.Select(_ =>
+                            {
+                                var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                                if (_.Name == parameter.Name)
+                                {
+                                    referenceObject = "dictionaryWithNullValue";
+
+                                    if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))))
+                                    {
+                                        referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
+                                    }
+                                }
+
+                                return new MemberCode(_.Name, referenceObject);
+                            }).ToList();
+
+                            var setDictionaryValueToNullCode = Invariant($"var dictionaryWithNullValue = referenceObject.{parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.ToDictionary(_ => _.Key, _ => _.Value);");
+
+                            objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
+
+                            dictionaryTestMethod = ConstructorTestMethodForDictionaryArgumentThatContainsNullValueCodeTemplate
+                                .Replace(SetDictionaryValueToNullToken, setDictionaryValueToNullCode)
+                                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                                .Replace(ConstructorParameterToken, parameter.Name)
+                                .Replace(NewObjectTestToken, objectInstantiationCode);
+
+                            testMethods.Add(dictionaryTestMethod);
                         }
                     }
                 }
@@ -399,6 +494,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 else
                 {
                     throw new NotSupportedException("This System Collection type is not supported: " + type);
+                }
+            }
+            else if (type.IsSystemDictionaryType())
+            {
+                var keyType = type.GenericTypeArguments[0];
+
+                var valueType = type.GenericTypeArguments[1];
+
+                result = Invariant($"new Dictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
+
+                if (type.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>))
+                {
+                    constructorParameterCode = constructorParameterCode ?? result;
+
+                    result = Invariant($"new ReadOnlyDictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
+                }
+                else if (type.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))
+                {
+                    constructorParameterCode = constructorParameterCode ?? result;
+
+                    result = Invariant($"new ConcurrentDictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
                 }
             }
             else
