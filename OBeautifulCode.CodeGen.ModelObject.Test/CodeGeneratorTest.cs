@@ -64,9 +64,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static readonly Type[] AdditionalTypes =
         {
-            typeof(IReadOnlyList<ICollection<string>>),
+            typeof(ICollection<string>), // elements must be comparable for generated hashing unequal test to NOT be skipped
+            typeof(Collection<ICollection<string>>),
+            typeof(IList<ICollection<string>>),
+            typeof(List<ICollection<string>>),
+            typeof(ReadOnlyCollection<ICollection<string>>),
+            typeof(IDictionary<string, IReadOnlyList<DateTime>>),
+            typeof(Dictionary<string, IReadOnlyList<DateTime>>),
+            typeof(ReadOnlyDictionary<string, IReadOnlyList<DateTime>>),
+            typeof(ConcurrentDictionary<string, IReadOnlyList<DateTime>>),
             typeof(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>),
-            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
         };
 
         private static readonly Type[] BlacklistTypes =

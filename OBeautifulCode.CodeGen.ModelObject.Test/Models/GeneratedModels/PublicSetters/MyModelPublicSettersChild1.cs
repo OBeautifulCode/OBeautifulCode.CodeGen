@@ -10,7 +10,9 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type;
@@ -74,90 +76,106 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public ModelFlagsEnum?[] Child1ArrayOfNullableModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyCollection<bool> Child1ReadOnlyCollectionOfBoolProperty { get; set; }
+        public IReadOnlyCollection<bool> Child1ReadOnlyCollectionInterfaceOfBoolProperty { get; set; }
 
-        public IReadOnlyCollection<int> Child1ReadOnlyCollectionOfIntProperty { get; set; }
+        public IReadOnlyCollection<int> Child1ReadOnlyCollectionInterfaceOfIntProperty { get; set; }
 
-        public IReadOnlyCollection<string> Child1ReadOnlyCollectionOfStringProperty { get; set; }
+        public IReadOnlyCollection<string> Child1ReadOnlyCollectionInterfaceOfStringProperty { get; set; }
 
-        public IReadOnlyCollection<Guid> Child1ReadOnlyCollectionOfGuidProperty { get; set; }
+        public IReadOnlyCollection<Guid> Child1ReadOnlyCollectionInterfaceOfGuidProperty { get; set; }
 
-        public IReadOnlyCollection<DateTime> Child1ReadOnlyCollectionOfDateTimeProperty { get; set; }
+        public IReadOnlyCollection<DateTime> Child1ReadOnlyCollectionInterfaceOfDateTimeProperty { get; set; }
 
-        public IReadOnlyCollection<ModelEnum> Child1ReadOnlyCollectionOfModelEnumProperty { get; set; }
+        public IReadOnlyCollection<ModelEnum> Child1ReadOnlyCollectionInterfaceOfModelEnumProperty { get; set; }
 
-        public IReadOnlyCollection<ModelFlagsEnum> Child1ReadOnlyCollectionOfModelFlagsEnumProperty { get; set; }
+        public IReadOnlyCollection<ModelFlagsEnum> Child1ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyCollection<ModelClass> Child1ReadOnlyCollectionOfModelClassProperty { get; set; }
+        public IReadOnlyCollection<ModelClass> Child1ReadOnlyCollectionInterfaceOfModelClassProperty { get; set; }
 
-        public IReadOnlyCollection<bool?> Child1ReadOnlyCollectionOfNullableBoolProperty { get; set; }
+        public IReadOnlyCollection<bool?> Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty { get; set; }
 
-        public IReadOnlyCollection<int?> Child1ReadOnlyCollectionOfNullableIntProperty { get; set; }
+        public IReadOnlyCollection<int?> Child1ReadOnlyCollectionInterfaceOfNullableIntProperty { get; set; }
 
-        public IReadOnlyCollection<Guid?> Child1ReadOnlyCollectionOfNullableGuidProperty { get; set; }
+        public IReadOnlyCollection<Guid?> Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty { get; set; }
 
-        public IReadOnlyCollection<DateTime?> Child1ReadOnlyCollectionOfNullableDateTimeProperty { get; set; }
+        public IReadOnlyCollection<DateTime?> Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty { get; set; }
 
-        public IReadOnlyCollection<ModelEnum?> Child1ReadOnlyCollectionOfNullableModelEnumProperty { get; set; }
+        public IReadOnlyCollection<ModelEnum?> Child1ReadOnlyCollectionInterfaceOfNullableModelEnumProperty { get; set; }
 
-        public IReadOnlyCollection<ModelFlagsEnum?> Child1ReadOnlyCollectionOfNullableModelFlagsEnumProperty { get; set; }
+        public IReadOnlyCollection<ModelFlagsEnum?> Child1ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyList<bool> Child1ReadOnlyListOfBoolProperty { get; set; }
+        public IReadOnlyList<bool> Child1ReadOnlyListInterfaceOfBoolProperty { get; set; }
 
-        public IReadOnlyList<int> Child1ReadOnlyListOfIntProperty { get; set; }
+        public IReadOnlyList<int> Child1ReadOnlyListInterfaceOfIntProperty { get; set; }
 
-        public IReadOnlyList<string> Child1ReadOnlyListOfStringProperty { get; set; }
+        public IReadOnlyList<string> Child1ReadOnlyListInterfaceOfStringProperty { get; set; }
 
-        public IReadOnlyList<Guid> Child1ReadOnlyListOfGuidProperty { get; set; }
+        public IReadOnlyList<Guid> Child1ReadOnlyListInterfaceOfGuidProperty { get; set; }
 
-        public IReadOnlyList<DateTime> Child1ReadOnlyListOfDateTimeProperty { get; set; }
+        public IReadOnlyList<DateTime> Child1ReadOnlyListInterfaceOfDateTimeProperty { get; set; }
 
-        public IReadOnlyList<ModelEnum> Child1ReadOnlyListOfModelEnumProperty { get; set; }
+        public IReadOnlyList<ModelEnum> Child1ReadOnlyListInterfaceOfModelEnumProperty { get; set; }
 
-        public IReadOnlyList<ModelFlagsEnum> Child1ReadOnlyListOfModelFlagsEnumProperty { get; set; }
+        public IReadOnlyList<ModelFlagsEnum> Child1ReadOnlyListInterfaceOfModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyList<ModelClass> Child1ReadOnlyListOfModelClassProperty { get; set; }
+        public IReadOnlyList<ModelClass> Child1ReadOnlyListInterfaceOfModelClassProperty { get; set; }
 
-        public IReadOnlyList<bool?> Child1ReadOnlyListOfNullableBoolProperty { get; set; }
+        public IReadOnlyList<bool?> Child1ReadOnlyListInterfaceOfNullableBoolProperty { get; set; }
 
-        public IReadOnlyList<int?> Child1ReadOnlyListOfNullableIntProperty { get; set; }
+        public IReadOnlyList<int?> Child1ReadOnlyListInterfaceOfNullableIntProperty { get; set; }
 
-        public IReadOnlyList<Guid?> Child1ReadOnlyListOfNullableGuidProperty { get; set; }
+        public IReadOnlyList<Guid?> Child1ReadOnlyListInterfaceOfNullableGuidProperty { get; set; }
 
-        public IReadOnlyList<DateTime?> Child1ReadOnlyListOfNullableDateTimeProperty { get; set; }
+        public IReadOnlyList<DateTime?> Child1ReadOnlyListInterfaceOfNullableDateTimeProperty { get; set; }
 
-        public IReadOnlyList<ModelEnum?> Child1ReadOnlyListOfNullableModelEnumProperty { get; set; }
+        public IReadOnlyList<ModelEnum?> Child1ReadOnlyListInterfaceOfNullableModelEnumProperty { get; set; }
 
-        public IReadOnlyList<ModelFlagsEnum?> Child1ReadOnlyListOfNullableModelFlagsEnumProperty { get; set; }
+        public IReadOnlyList<ModelFlagsEnum?> Child1ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyDictionary<bool, bool> Child1ReadOnlyDictionaryOfBoolProperty { get; set; }
+        public IReadOnlyDictionary<bool, bool> Child1ReadOnlyDictionaryInterfaceOfBoolProperty { get; set; }
 
-        public IReadOnlyDictionary<int, int> Child1ReadOnlyDictionaryOfIntProperty { get; set; }
+        public IReadOnlyDictionary<int, int> Child1ReadOnlyDictionaryInterfaceOfIntProperty { get; set; }
 
-        public IReadOnlyDictionary<string, string> Child1ReadOnlyDictionaryOfStringProperty { get; set; }
+        public IReadOnlyDictionary<string, string> Child1ReadOnlyDictionaryInterfaceOfStringProperty { get; set; }
 
-        public IReadOnlyDictionary<Guid, Guid> Child1ReadOnlyDictionaryOfGuidProperty { get; set; }
+        public IReadOnlyDictionary<Guid, Guid> Child1ReadOnlyDictionaryInterfaceOfGuidProperty { get; set; }
 
-        public IReadOnlyDictionary<ModelEnum, ModelEnum> Child1ReadOnlyDictionaryOfModelEnumProperty { get; set; }
+        public IReadOnlyDictionary<ModelEnum, ModelEnum> Child1ReadOnlyDictionaryInterfaceOfModelEnumProperty { get; set; }
 
-        public IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> Child1ReadOnlyDictionaryOfModelFlagsEnumProperty { get; set; }
+        public IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> Child1ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyDictionary<ModelClass, ModelClass> Child1ReadOnlyDictionaryOfModelClassProperty { get; set; }
+        public IReadOnlyDictionary<ModelClass, ModelClass> Child1ReadOnlyDictionaryInterfaceOfModelClassProperty { get; set; }
 
-        public IReadOnlyDictionary<bool?, bool?> Child1ReadOnlyDictionaryOfNullableBoolProperty { get; set; }
+        public IReadOnlyDictionary<bool?, bool?> Child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty { get; set; }
 
-        public IReadOnlyDictionary<int?, int?> Child1ReadOnlyDictionaryOfNullableIntProperty { get; set; }
+        public IReadOnlyDictionary<int?, int?> Child1ReadOnlyDictionaryInterfaceOfNullableIntProperty { get; set; }
 
-        public IReadOnlyDictionary<Guid?, Guid?> Child1ReadOnlyDictionaryOfNullableGuidProperty { get; set; }
+        public IReadOnlyDictionary<Guid?, Guid?> Child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty { get; set; }
 
-        public IReadOnlyDictionary<ModelEnum?, ModelEnum?> Child1ReadOnlyDictionaryOfNullableModelEnumProperty { get; set; }
+        public IReadOnlyDictionary<ModelEnum?, ModelEnum?> Child1ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty { get; set; }
 
-        public IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> Child1ReadOnlyDictionaryOfNullableModelFlagsEnumProperty { get; set; }
+        public IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> Child1ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty { get; set; }
 
-        public IReadOnlyList<ICollection<string>> Child1ReadOnlyListOfCollectionOfStringProperty { get; set; }
+        public ICollection<string> Child1CollectionInterfaceOfStringProperty { get; set; }
 
-        public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> Child1ReadOnlyListOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty { get; set; }
+        public Collection<ICollection<string>> Child1CollectionOfCollectionInterfaceOfStringProperty { get; set; }
 
-        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, IReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> Child1ReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyDictionaryOfReadOnlyListOfDateTimeProperty { get; set; }
+        public IList<ICollection<string>> Child1ListInterfaceOfCollectionInterfaceOfStringProperty { get; set; }
+
+        public List<ICollection<string>> Child1ListOfCollectionInterfaceOfStringProperty { get; set; }
+
+        public ReadOnlyCollection<ICollection<string>> Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty { get; set; }
+
+        public IDictionary<string, IReadOnlyList<DateTime>> Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+
+        public Dictionary<string, IReadOnlyList<DateTime>> Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+
+        public ReadOnlyDictionary<string, IReadOnlyList<DateTime>> Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+
+        public ConcurrentDictionary<string, IReadOnlyList<DateTime>> Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+
+        public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
     }
 }
