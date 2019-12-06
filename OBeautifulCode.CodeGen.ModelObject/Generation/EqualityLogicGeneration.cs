@@ -543,24 +543,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var propertyType = propertyInfo.PropertyType;
 
-            string result;
-            if (propertyType == typeof(string))
-            {
-                result = Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name}, StringComparison.Ordinal)");
-            }
-            else
-            {
-                var equatableType = typeof(IEquatable<>).MakeGenericType(propertyType);
-
-                if (propertyType.IsAssignableTo(equatableType) || propertyType.IsEnum)
-                {
-                    result = Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name})");
-                }
-                else
-                {
-                    result = Invariant($"left.{propertyInfo.Name}.IsEqualTo(right.{propertyInfo.Name})");
-                }
-            }
+            var result = (propertyType == typeof(string))
+                ? Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name}, StringComparison.Ordinal)")
+                : Invariant($"left.{propertyInfo.Name}.IsEqualTo(right.{propertyInfo.Name})");
 
             return result;
         }
