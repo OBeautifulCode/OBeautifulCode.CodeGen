@@ -139,7 +139,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var code = GenerateDummyFactory(types);
 
-            File.WriteAllText(DummyFactoryFilePath, code);
+            if (WriteFiles)
+            {
+                File.WriteAllText(DummyFactoryFilePath, code);
+            }
         }
 
         [Fact]
