@@ -8,8 +8,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     public enum SetterKind
     {
-        GettersOnly,
-
+        // not supported:
+        // GettersOnly,
         PublicSetters,
 
         PrivateSetters,
