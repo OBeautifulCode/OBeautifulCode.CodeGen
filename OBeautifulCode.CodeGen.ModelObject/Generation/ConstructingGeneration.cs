@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Globalization;
     using System.Linq;
 
@@ -26,8 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string TypeNameToken = "<<<TypeNameHere>>>";
         private const string ConstructorParameterToken = "<<<ConstructorParameterUnderTest>>>";
         private const string ConstructorTestInflationToken = "<<<ConstructorTestMethodsInflatedGoesHere>>>";
-        private const string NewObjectForArgumentNullTestToken = "<<<NewObjectWithOneArgumentNullHere>>>";
-        private const string NewObjectForArgumentWhiteSpaceTestToken = "<<<NewObjectWithOneArgumentWhiteSpaceHere>>>";
+        private const string NewObjectTestToken = "<<<NewObjectHere>>>";
         private const string PropertyNameToken = "<<<PropertyNameHere>>>";
         private const string AssertPropertyGetterToken = "<<<AssertPropertyGetterHere>>>";
         private const string NewObjectForGetterTestToken = "<<<NewObjectWithOneArgumentFromOtherHere>>>";
@@ -65,7 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 // Act
                 var actual = Record.Exception(
-                    () => " + NewObjectForArgumentNullTestToken + @");
+                    () => " + NewObjectTestToken + @");
 
                 // Assert
                 actual.AsTest().Must().BeOfType<ArgumentNullException>();
@@ -81,7 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 // Act
                 var actual = Record.Exception(
-                    () => " + NewObjectForArgumentWhiteSpaceTestToken + @");
+                    () => " + NewObjectTestToken + @");
 
                 // Assert
                 actual.AsTest().Must().BeOfType<ArgumentException>();
@@ -207,9 +207,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
 
                     var testMethod = ConstructorTestMethodForArgumentCodeTemplate
-                                    .Replace(TypeNameToken,                     modelType.Type.ToStringCompilable())
-                                    .Replace(ConstructorParameterToken,         parameter.Name)
-                                    .Replace(NewObjectForArgumentNullTestToken, objectInstantiationCode);
+                                    .Replace(TypeNameToken,             modelType.Type.ToStringCompilable())
+                                    .Replace(ConstructorParameterToken, parameter.Name)
+                                    .Replace(NewObjectTestToken,        objectInstantiationCode);
 
                     testMethods.Add(testMethod);
 
@@ -225,9 +225,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
 
                         var stringTestMethod = ConstructorTestMethodForStringArgumentCodeTemplate
-                                              .Replace(TypeNameToken,                           modelType.Type.ToStringCompilable())
-                                              .Replace(ConstructorParameterToken,               parameter.Name)
-                                              .Replace(NewObjectForArgumentWhiteSpaceTestToken, objectInstantiationCode);
+                                              .Replace(TypeNameToken,             modelType.Type.ToStringCompilable())
+                                              .Replace(ConstructorParameterToken, parameter.Name)
+                                              .Replace(NewObjectTestToken,        objectInstantiationCode);
 
                         testMethods.Add(stringTestMethod);
                     }
@@ -260,6 +260,57 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = ConstructingTestMethodsCodeTemplate
                         .Replace(TypeNameToken,                 modelType.Type.ToStringCompilable())
                         .Replace(ConstructorTestInflationToken, constructorTestInflationToken);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates the code to instantiate a System type.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="constructorParameterCode">The code to inject into the constructor.</param>
+        /// <returns>
+        /// The code to instantiate a System type.
+        /// </returns>
+        public static string GenerateSystemTypeInstantiationCode(
+            this Type type,
+            string constructorParameterCode = null)
+        {
+            string result;
+
+            if (type.IsArray)
+            {
+                var elementType = type.GetElementType();
+
+                result = Invariant($"new {elementType.ToStringCompilable()}[0]");
+            }
+            else if (type.IsSystemCollectionType())
+            {
+                var elementType = type.GenericTypeArguments[0];
+
+                if (type.IsInterface || (type.GetGenericTypeDefinition() == typeof(List<>)))
+                {
+                    result = Invariant($"new List<{elementType.ToStringCompilable()}>({constructorParameterCode})");
+                }
+                else if (type.GetGenericTypeDefinition() == typeof(Collection<>))
+                {
+                    result = Invariant($"new Collection<{elementType.ToStringCompilable()}>({constructorParameterCode})");
+                }
+                else if (type.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))
+                {
+                    constructorParameterCode = constructorParameterCode ?? Invariant($"new List<{elementType.ToStringCompilable()}>()");
+
+                    result = Invariant($"new ReadOnlyCollection<{elementType.ToStringCompilable()}>({constructorParameterCode})");
+                }
+                else
+                {
+                    throw new NotSupportedException("This System Collection type is not supported: " + type);
+                }
+            }
+            else
+            {
+                throw new NotSupportedException("This System type is not supported: " + type);
+            }
 
             return result;
         }

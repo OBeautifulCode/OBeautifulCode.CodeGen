@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Globalization;
     using System.Linq;
 
@@ -424,13 +425,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else if (type.IsSystemCollectionType())
             {
-                var genericArguments = type.GetGenericArguments();
-
-                var valueType = genericArguments.Single();
+                var elementType = type.GenericTypeArguments[0];
 
                 var expressionParameter = "i".ToExpressionParameter(recursionDepth);
 
-                var valueClone = valueType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
+                var valueClone = elementType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
 
                 string cast = null;
                 if (recursionDepth > 1)
@@ -444,14 +443,19 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // - cloneCode == null ? null : new Collection<T>(cloneCode.Select(...).ToList())
                 // - cloneCode == null ? null : new ReadOnlyCollection<T>(cloneCode.Select(...).ToList())
                 result = Invariant($"{cast}{cloneCode}?.Select({expressionParameter} => {valueClone}).ToList()");
+
+                if ((type.GetGenericTypeDefinition() == typeof(Collection<>)) || (type.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>)))
+                {
+                    result = type.GenerateSystemTypeInstantiationCode(result);
+                }
             }
             else if (type.IsArray)
             {
-                var valueType = type.GetElementType();
+                var elementType = type.GetElementType();
 
                 var expressionParameter = "i".ToExpressionParameter(recursionDepth);
 
-                var valueClone = valueType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
+                var valueClone = elementType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
 
                 result = Invariant($"{cloneCode}?.Select({expressionParameter} => {valueClone}).ToArray()");
             }

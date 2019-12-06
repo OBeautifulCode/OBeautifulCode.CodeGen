@@ -7,7 +7,9 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Linq;
 
     using OBeautifulCode.String.Recipes;
@@ -221,36 +223,75 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 result = "Nullable" + Nullable.GetUnderlyingType(type).BuildNameToken();
             }
-            else if (type.IsAssignableTo(typeof(IReadOnlyDictionary<,>), treatUnboundGenericAsAssignableTo: true))
+            else if (type.IsSystemCollectionType())
             {
-                // var keyType = type.GetGenericArguments().First();
-                var valueType = type.GetGenericArguments().Last();
+                var elementType = type.GenericTypeArguments[0];
 
-                result = "ReadOnlyDictionaryOf" + valueType.BuildNameToken();
+                var genericTypeDefinition = type.GetGenericTypeDefinition();
+
+                if (genericTypeDefinition == typeof(ICollection<>))
+                {
+                    result = "CollectionInterfaceOf" + elementType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(IReadOnlyCollection<>))
+                {
+                    result = "ReadOnlyCollectionInterfaceOf" + elementType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(IList<>))
+                {
+                    result = "ListInterfaceOf" + elementType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(IReadOnlyList<>))
+                {
+                    result = "ReadOnlyListInterfaceOf" + elementType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(Collection<>))
+                {
+                    result = "CollectionOf" + elementType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(ReadOnlyCollection<>))
+                {
+                    result = "ReadOnlyCollectionOf" + elementType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(List<>))
+                {
+                    result = "ListOf" + elementType.BuildNameToken();
+                }
+                else
+                {
+                    throw new NotSupportedException("This kind of system collection is not supported: " + type);
+                }
             }
-            else if (type.IsAssignableTo(typeof(IReadOnlyList<>), treatUnboundGenericAsAssignableTo: true))
+            else if (type.IsSystemDictionaryType())
             {
-                var genericType = type.GetGenericArguments().First();
+                var valueType = type.GenericTypeArguments[1];
 
-                result = "ReadOnlyListOf" + genericType.BuildNameToken();
-            }
-            else if (type.IsAssignableTo(typeof(IList<>), treatUnboundGenericAsAssignableTo: true))
-            {
-                var genericType = type.GetGenericArguments().First();
+                var genericTypeDefinition = type.GetGenericTypeDefinition();
 
-                result = "ListOf" + genericType.BuildNameToken();
-            }
-            else if (type.IsAssignableTo(typeof(IReadOnlyCollection<>), treatUnboundGenericAsAssignableTo: true))
-            {
-                var genericType = type.GetGenericArguments().First();
-
-                result = "ReadOnlyCollectionOf" + genericType.BuildNameToken();
-            }
-            else if (type.IsAssignableTo(typeof(ICollection<>), treatUnboundGenericAsAssignableTo: true))
-            {
-                var genericType = type.GetGenericArguments().First();
-
-                result = "CollectionOf" + genericType.BuildNameToken();
+                if (genericTypeDefinition == typeof(IDictionary<,>))
+                {
+                    result = "DictionaryInterfaceOf" + valueType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(IReadOnlyDictionary<,>))
+                {
+                    result = "ReadOnlyDictionaryInterfaceOf" + valueType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(Dictionary<,>))
+                {
+                    result = "DictionaryOf" + valueType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(ReadOnlyDictionary<,>))
+                {
+                    result = "ReadOnlyDictionaryOf" + valueType.BuildNameToken();
+                }
+                else if (genericTypeDefinition == typeof(ConcurrentDictionary<,>))
+                {
+                    result = "ConcurrentDictionaryOf" + valueType.BuildNameToken();
+                }
+                else
+                {
+                    throw new NotSupportedException("This kind of system dictionary is not supported: " + type);
+                }
             }
             else
             {
