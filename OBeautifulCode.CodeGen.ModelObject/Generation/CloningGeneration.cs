@@ -422,11 +422,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     cast = "(" + type.ToStringReadable() + ")";
                 }
 
-                result = Invariant($"{cast}{cloneCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
+                result = Invariant($"{cloneCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
 
                 if ((type.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (type.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>)))
                 {
                     result = type.GenerateSystemTypeInstantiationCode(result);
+                }
+                else
+                {
+                    result = cast + result;
                 }
             }
             else if (type.IsSystemCollectionType())
@@ -448,11 +452,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // we need to wrap the List<T>:
                 // - cloneCode == null ? null : new Collection<T>(cloneCode.Select(...).ToList())
                 // - cloneCode == null ? null : new ReadOnlyCollection<T>(cloneCode.Select(...).ToList())
-                result = Invariant($"{cast}{cloneCode}?.Select({expressionParameter} => {valueClone}).ToList()");
+                result = Invariant($"{cloneCode}?.Select({expressionParameter} => {valueClone}).ToList()");
 
                 if ((type.GetGenericTypeDefinition() == typeof(Collection<>)) || (type.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>)))
                 {
                     result = type.GenerateSystemTypeInstantiationCode(result);
+                }
+                else
+                {
+                    result = cast + result;
                 }
             }
             else if (type.IsArray)
