@@ -219,13 +219,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 result = "ArrayOf" + type.GetElementType().BuildNameToken();
             }
-            else if (type.IsNullableType())
+            else if (type.IsClosedNullableType())
             {
                 result = "Nullable" + Nullable.GetUnderlyingType(type).BuildNameToken();
             }
-            else if (type.IsSystemCollectionType())
+            else if (type.IsClosedSystemCollectionType())
             {
-                var elementType = type.GenericTypeArguments[0];
+                var elementType = type.GetClosedSystemCollectionElementType();
 
                 var genericTypeDefinition = type.GetGenericTypeDefinition();
 
@@ -262,9 +262,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     throw new NotSupportedException("This kind of system collection is not supported: " + type);
                 }
             }
-            else if (type.IsSystemDictionaryType())
+            else if (type.IsClosedSystemDictionaryType())
             {
-                var valueType = type.GenericTypeArguments[1];
+                var valueType = type.GetClosedDictionaryValueType();
 
                 var genericTypeDefinition = type.GetGenericTypeDefinition();
 
