@@ -10,10 +10,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeGen.ModelObject.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
@@ -254,6 +256,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <returns>
         /// Generated test methods that test a model's constructor.
         /// </returns>
+        [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         public static string GenerateConstructorTestMethods(
             this ModelType modelType)
         {
