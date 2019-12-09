@@ -306,7 +306,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         testMethods.Add(stringTestMethod);
                     }
 
-                    if (parameter.ParameterType.IsSystemCollectionType() || parameter.ParameterType.IsArray)
+                    if (parameter.ParameterType.IsClosedSystemCollectionType() || parameter.ParameterType.IsArray)
                     {
                         // add test for empty collection or array
                         var collectionParameterCode = parameters.Select(_ =>
@@ -329,7 +329,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         // we are specifically EXCLUDING nullable types here
                         var elementType = parameter.ParameterType.IsArray
                             ? parameter.ParameterType.GetElementType()
-                            : parameter.ParameterType.GenericTypeArguments[0];
+                            : parameter.ParameterType.GetClosedSystemCollectionElementType();
 
                         if (!elementType.IsValueType)
                         {
@@ -365,7 +365,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         }
                     }
 
-                    if (parameter.ParameterType.IsSystemDictionaryType())
+                    if (parameter.ParameterType.IsClosedSystemDictionaryType())
                     {
                         // add test for empty dictionary
                         var dictionaryParameterCode = parameters.Select(_ =>
@@ -386,7 +386,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         // add test for dictionary containing null value
                         // we are specifically EXCLUDING nullable types here
-                        var valueType = parameter.ParameterType.GenericTypeArguments[1];
+                        var valueType = parameter.ParameterType.GetClosedSystemDictionaryValueType();
 
                         if (!valueType.IsValueType)
                         {
@@ -473,9 +473,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 result = Invariant($"new {elementType.ToStringCompilable()}[0]");
             }
-            else if (type.IsSystemCollectionType())
+            else if (type.IsClosedSystemCollectionType())
             {
-                var elementType = type.GenericTypeArguments[0];
+                var elementType = type.GetClosedSystemCollectionElementType();
 
                 if (type.IsInterface || (type.GetGenericTypeDefinition() == typeof(List<>)))
                 {
@@ -496,11 +496,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     throw new NotSupportedException("This System Collection type is not supported: " + type);
                 }
             }
-            else if (type.IsSystemDictionaryType())
+            else if (type.IsClosedSystemDictionaryType())
             {
-                var keyType = type.GenericTypeArguments[0];
+                var keyType = type.GetClosedSystemDictionaryKeyType();
 
-                var valueType = type.GenericTypeArguments[1];
+                var valueType = type.GetClosedSystemDictionaryValueType();
 
                 result = Invariant($"new Dictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
 

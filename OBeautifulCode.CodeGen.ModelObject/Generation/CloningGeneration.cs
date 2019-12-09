@@ -402,13 +402,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     result = Invariant($"{cloneCode}?.DeepClone()");
                 }
             }
-            else if (type.IsSystemDictionaryType())
+            else if (type.IsClosedSystemDictionaryType())
             {
-                var genericArguments = type.GetGenericArguments();
-                genericArguments.Length.AsOp(Invariant($"Number{nameof(genericArguments)}Of{nameof(type)}.{nameof(type)}For{type.Name}")).Must().BeEqualTo(2);
-
-                var keyType = genericArguments.First();
-                var valueType = genericArguments.Last();
+                var keyType = type.GetClosedSystemDictionaryKeyType();
+                var valueType = type.GetClosedSystemDictionaryValueType();
 
                 var keyExpressionParameter = "k".ToExpressionParameter(recursionDepth);
                 var valueExpressionParameter = "v".ToExpressionParameter(recursionDepth);
@@ -433,9 +430,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     result = cast + result;
                 }
             }
-            else if (type.IsSystemCollectionType())
+            else if (type.IsClosedSystemCollectionType())
             {
-                var elementType = type.GenericTypeArguments[0];
+                var elementType = type.GetClosedSystemCollectionElementType();
 
                 var expressionParameter = "i".ToExpressionParameter(recursionDepth);
 
@@ -480,7 +477,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                if (type.IsNullableType())
+                if (type.IsClosedNullableType())
                 {
                     var underlyingType = Nullable.GetUnderlyingType(type);
 

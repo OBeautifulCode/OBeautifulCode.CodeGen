@@ -208,9 +208,9 @@ namespace OBeautifulCode.CodeGen
         private static bool IsOrContainsDictionaryKeyedOnDateTime(
             Type type)
         {
-            if (type.IsSystemDictionaryType())
+            if (type.IsClosedSystemDictionaryType())
             {
-                var keyType = type.GenericTypeArguments.First();
+                var keyType = type.GetClosedSystemDictionaryKeyType();
 
                 if ((keyType == typeof(DateTime)) || (keyType == typeof(DateTime?)))
                 {
@@ -249,21 +249,21 @@ namespace OBeautifulCode.CodeGen
         {
             // see scenarios in HashCodeHelper where we are forced to hash the
             // enumerable count instead of the elements.
-            if (type.IsSystemDictionaryType())
+            if (type.IsClosedSystemDictionaryType())
             {
-                var keyType = type.GenericTypeArguments.First();
+                var keyType = type.GetClosedSystemDictionaryKeyType();
 
-                if (!keyType.IsComparableType())
+                if (!keyType.HasWorkingDefaultComparer())
                 {
                     return true;
                 }
             }
 
-            if (type.IsSystemUnorderedCollectionType())
+            if (type.IsClosedSystemUnorderedCollectionType())
             {
-                var elementType = type.GenericTypeArguments.First();
+                var elementType = type.GetClosedSystemCollectionElementType();
 
-                if (!elementType.IsComparableType())
+                if (!elementType.HasWorkingDefaultComparer())
                 {
                     return true;
                 }
