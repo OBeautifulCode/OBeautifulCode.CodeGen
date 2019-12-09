@@ -107,7 +107,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // blank out downstream files
             ExecuteForModels(GenerationKind.Model, createBlankFilesEventHandler);
             ExecuteForModels(GenerationKind.Test, createBlankFilesEventHandler);
-            File.WriteAllText(DummyFactoryFilePath, string.Empty);
+            if (WriteFiles)
+            {
+                File.WriteAllText(DummyFactoryFilePath, string.Empty);
+            }
 
             // generate new files
             ExecuteForModels(GenerationKind.Model, GenerateModelEventHandler);
@@ -119,7 +122,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // blank out downstream files
             var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
             ExecuteForModels(GenerationKind.Test, createBlankFilesEventHandler);
-            File.WriteAllText(DummyFactoryFilePath, string.Empty);
+
+            if (WriteFiles)
+            {
+                File.WriteAllText(DummyFactoryFilePath, string.Empty);
+            }
 
             // generate new files
             var generateForModelEventHandler = BuildGenerateForModelEventHandler();
