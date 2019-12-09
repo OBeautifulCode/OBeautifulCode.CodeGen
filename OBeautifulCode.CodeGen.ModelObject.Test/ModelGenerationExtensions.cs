@@ -119,9 +119,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 result = nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace);
             }
-            else if (type.IsSystemDictionaryType())
+            else if (type.IsClosedSystemDictionaryType())
             {
-                var valueType = type.GetGenericArguments()[1];
+                var valueType = type.GetClosedDictionaryValueType();
 
                 if (valueType.IsValueType)
                 {
@@ -132,9 +132,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
                 }
             }
-            else if (type.IsSystemCollectionType())
+            else if (type.IsClosedSystemCollectionType())
             {
-                var elementType = type.GetGenericArguments()[0];
+                var elementType = type.GetClosedSystemCollectionElementType();
 
                 if (elementType.IsValueType)
                 {
