@@ -326,6 +326,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                          + "            return null;"
                          + Environment.NewLine
                          + "        }"
+                         + Environment.NewLine
                          + "    }"
                          + Environment.NewLine
                          + "}";
