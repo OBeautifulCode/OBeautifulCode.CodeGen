@@ -82,8 +82,10 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type is not supported; it is an open type: {type}."));
             }
 
-            if (!type.IsAssignableTo(typeof(IModelViaCodeGen)))
+            if (type.GetInterface(nameof(IModelViaCodeGen)) == null)
             {
+                // this really should be checked via: (!type.IsAssignableTo(typeof(IModelViaCodeGen))) but since this can be called using reflected types
+                //    we are using a less strict check which does not require it to be truly assignable but instead merely the presence of a version of the interface
                 throw new NotSupportedException(Invariant($"The type does not implement {nameof(IModelViaCodeGen)}."));
             }
 
