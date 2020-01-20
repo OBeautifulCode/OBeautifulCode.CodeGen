@@ -21,11 +21,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private const string SerializationConfigurationPrefixToken = "<<<SerializationConfigurationPrefixHere>>>";
 
-        private const string JsonOnlySerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
+        private const string JsonOnlySerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(" + SerializationConfigurationPrefixToken + @"SerializationConfigurationTypes.JsonConfigurationType);";
 
-        private const string BsonAndJsonSerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer<" + SerializationConfigurationPrefixToken + @"BsonConfiguration>();
+        private const string BsonAndJsonSerializationFieldsCodeTemplate = @"    private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(" + SerializationConfigurationPrefixToken + @"SerializationConfigurationTypes.BsonConfigurationType);
         
-        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer<" + SerializationConfigurationPrefixToken + @"JsonConfiguration>();";
+        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(" + SerializationConfigurationPrefixToken + @"SerializationConfigurationTypes.JsonConfigurationType);";
 
         private const string JsonOnlySerializationTestMethodsCodeTemplate = @"
         public static class Serialization
