@@ -217,6 +217,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
         {
             var dummyFactoryFileContents = fileHeader
                                          + Environment.NewLine
+                                         + Environment.NewLine
                                          + "namespace "
                                          + typeNamespace
                                          + Environment.NewLine
@@ -341,6 +342,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
         {
             var dummyFactoryFileContents = fileHeader
                                          + Environment.NewLine
+                                         + Environment.NewLine
                                          + "namespace "
                                          + typeNamespace
                                          + Environment.NewLine
@@ -386,6 +388,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
               + "// --------------------------------------------------------------------------------------------------------------------";
 
             var contents = autoGenerateHeader
+                         + Environment.NewLine
                          + Environment.NewLine
                          + "namespace "
                          + typeNamespace
@@ -521,6 +524,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
             string typeName)
         {
             var modelTestFileContents = fileHeader
+                                 + Environment.NewLine
                                  + Environment.NewLine
                                  + "namespace " + typeNamespace
                                  + Environment.NewLine
