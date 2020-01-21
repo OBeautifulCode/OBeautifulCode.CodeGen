@@ -223,11 +223,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code, StringComparer.OrdinalIgnoreCase);
 
-                var parameterCode = constructorInfo.GetParameters()
+                var parameters = constructorInfo.GetParameters();
+
+                var parameterCode =
+                    parameters
                     .Select(_ => propertyNameToCodeMap[_.Name])
                     .ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + modelType.Type.ToStringCompilable() + "(" + Environment.NewLine + parameterPadding + parameterCode + ")";
+                result = "new " + modelType.Type.ToStringCompilable() + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
             }
             else if (modelType.PropertiesOfConcern.All(_ => _.CanWrite))
             {

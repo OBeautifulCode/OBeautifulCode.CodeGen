@@ -23,8 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private const string HashMethodForConcreteTypeCodeTemplate = @"
         /// <inheritdoc />
-        public override int GetHashCode() => HashCodeHelper.Initialize()
-            ." + HashToken + @"
+        public override int GetHashCode() => HashCodeHelper.Initialize()" + HashToken + @"
             .Value;";
 
         private const string HashMethodForAbstractBaseTypeCodeTemplate = @"
@@ -51,7 +50,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var hashLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
 
-                var hashToken = string.Join(Environment.NewLine + "            .", hashLines);
+                string hashToken = null;
+
+                if (hashLines.Any())
+                {
+                    hashLines = new string[0].Concat(new[] { string.Empty }).Concat(hashLines).ToList();
+
+                    hashToken = string.Join(Environment.NewLine + "            .", hashLines);
+                }
 
                 result = HashMethodForConcreteTypeCodeTemplate.Replace(HashToken, hashToken);
             }

@@ -166,7 +166,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string BuildModelName(
+        public static string BuildEmptyModelName(
+            this string baseName,
+            SetterKind setterKind,
+            string modelNameSuffix)
+        {
+            var result = Invariant($"{baseName}{setterKind}{modelNameSuffix}");
+
+            return result;
+        }
+
+        public static string BuildGeneratedModelName(
             this string baseName,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
@@ -301,7 +311,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string GetGeneratedCodePath(
+        public static string GetGeneratedModelsDirectoryPath(
             this SetterKind setterKind,
             GenerationKind generationKind)
         {
@@ -313,7 +323,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     result = CodeGeneratorTest.GeneratedModelsPath + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = CodeGeneratorTest.GeneratedTestsPath + setterKind + "\\";
+                    result = CodeGeneratorTest.GeneratedModelsTestsPath + setterKind + "\\";
+                    break;
+                default:
+                    throw new NotSupportedException("This kind is not supported: " + generationKind);
+            }
+
+            return result;
+        }
+
+        public static string GetEmptyModelsDirectoryPath(
+            this SetterKind setterKind,
+            GenerationKind generationKind)
+        {
+            string result;
+
+            switch (generationKind)
+            {
+                case GenerationKind.Model:
+                    result = CodeGeneratorTest.EmptyModelsPath + setterKind + "\\";
+                    break;
+                case GenerationKind.Test:
+                    result = CodeGeneratorTest.EmptyModelsTestsPath + setterKind + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This kind is not supported: " + generationKind);

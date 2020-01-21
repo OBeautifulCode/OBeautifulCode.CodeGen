@@ -108,8 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private static readonly " + TypeNameToken + @" ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests = ObjectForEquatableTests.DeepClone();
 
         private static readonly " + TypeNameToken + @"[] ObjectsThatAreNotEqualToObjectForEquatableTests =
-        {
-            " + UnequalObjectsToken + @"
+        {" + UnequalObjectsToken + @"
         };
 
         private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();";
@@ -122,8 +121,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             " + NewObjectForEquatableToken + @";
 
         private static readonly " + TypeNameToken + @"[] ObjectsThatAreNotEqualToObjectForEquatableTests =
-        {
-            " + UnequalObjectsToken + @"
+        {" + UnequalObjectsToken + @"
         };
 
         private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();";
@@ -399,7 +397,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var equalityLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
 
-                var equalityToken = string.Join(Environment.NewLine + "                      && ", equalityLines);
+                var equalityToken = modelType.PropertiesOfConcern.Any()
+                    ? string.Join(Environment.NewLine + "                      && ", equalityLines)
+                    : "true";
 
                 result = EqualityMethodsForConcreteTypeCodeTemplate
                     .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
@@ -476,7 +476,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 result = result.Replace(NewObjectForEquatableToken, newObjectFromEquatableToken);
             }
 
-            var unequalObjectsCode = string.Join("," + Environment.NewLine + "            ", unequalSet) + ",";
+            var unequalObjectsCode = unequalSet.Any()
+                ? Environment.NewLine + "            " + string.Join("," + Environment.NewLine + "            ", unequalSet) + ","
+                : string.Empty;
 
             result = result.Replace(UnequalObjectsToken, unequalObjectsCode);
 

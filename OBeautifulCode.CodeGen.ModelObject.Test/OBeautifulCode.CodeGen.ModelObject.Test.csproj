@@ -152,6 +152,54 @@
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="DummyFactory.cs" />
     <Compile Include="GenerationKind.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChild.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChild.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyParentEmptyChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChild.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChild.designer.cs">
+      <DependentUpon>MyModelPrivateSettersNotEmptyParentEmptyChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChild.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChild.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyParentNotEmptyChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParent.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParent.designer.cs">
+      <DependentUpon>MyModelPrivateSettersNotEmptyParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParent.cs" />
+    <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParent.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmpty.cs" />
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmpty.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParent.cs" />
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParent.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentEmptyChild.cs" />
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentEmptyChild.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyParentEmptyChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChild.cs" />
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChild.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyParentNotEmptyChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParent.cs" />
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParent.designer.cs">
+      <DependentUpon>MyModelPublicSettersNotEmptyParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.cs" />
+    <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
+      <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnly.cs" />
     <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnly.designer.cs">
       <DependentUpon>MyModelGettersOnly.cs</DependentUpon>
@@ -207,6 +255,55 @@
     <Compile Include="Models\CustomModels\ModelEnum.cs" />
     <Compile Include="Models\CustomModels\ModelFlagsEnum.cs" />
     <Compile Include="Models\CustomModels\ModelStruct.cs" />
+    <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChildTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChildTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyParentEmptyChildTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChildTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChildTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersEmptyParentNotEmptyChildTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParentTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParentTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersNotEmptyParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChildTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChildTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersNotEmptyParentEmptyChildTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentEmptyChildTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentEmptyChildTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyParentEmptyChildTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChildTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChildTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyParentNotEmptyChildTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyParentTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersEmptyTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersEmptyTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChildTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChildTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChildTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentTest.cs" />
+    <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersNotEmptyParentTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.cs" />
     <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.designer.cs">
       <DependentUpon>MyModelGettersOnlyParentTest.cs</DependentUpon>
@@ -279,6 +376,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

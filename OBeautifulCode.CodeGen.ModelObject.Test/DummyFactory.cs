@@ -23,6 +23,50 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DummyFactory()
         {
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersEmpty());
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersEmptyParentEmptyChild());
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersNotEmptyParentEmptyChild(
+                                 A.Dummy<IReadOnlyDictionary<string, string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersEmptyParentNotEmptyChild(
+                                 A.Dummy<IReadOnlyDictionary<string, string>>()));
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersNotEmptyParent>();
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersEmptyParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersEmpty());
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersEmptyParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersEmptyParentEmptyChild());
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersEmptyParentNotEmptyChild
+                             {
+                                 ChildReadOnlyDictionaryOfStringString = A.Dummy<IReadOnlyDictionary<string, string>>()
+                             });
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersNotEmptyParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersNotEmptyParentEmptyChild
+                             {
+                                 ParentReadOnlyDictionaryOfStringString = A.Dummy<IReadOnlyDictionary<string, string>>()
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new MyModelPrivateSetters(
                                  A.Dummy<bool>(),
                                  A.Dummy<int>(),

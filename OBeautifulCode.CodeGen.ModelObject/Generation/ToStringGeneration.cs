@@ -108,7 +108,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var propertyToStrings = modelType.PropertiesOfConcern.Select(_ => _.GenerateToStringForProperty(useSystemUnderTest)).ToList();
 
-            var result = Invariant($"Invariant($\"{{nameof({modelType.Type.Namespace})}}.{{nameof({modelType.Type.ToStringCompilable()})}}: {string.Join(", ", propertyToStrings)}.\")");
+            var propertyToString = propertyToStrings.Any()
+                ? string.Join(", ", propertyToStrings)
+                : "<no properties>";
+
+            var result = Invariant($"Invariant($\"{{nameof({modelType.Type.Namespace})}}.{{nameof({modelType.Type.ToStringCompilable()})}}: {propertyToString}.\")");
 
             return result;
         }

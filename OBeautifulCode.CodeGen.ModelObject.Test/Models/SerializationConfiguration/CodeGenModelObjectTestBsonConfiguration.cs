@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using OBeautifulCode.Serialization.Bson;
 
@@ -15,16 +16,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public class CodeGenModelObjectTestBsonConfiguration : BsonConfigurationBase
     {
         /// <inheritdoc />
-        protected override IReadOnlyCollection<Type> TypesToAutoRegister => new Type[]
-        {
-            ////typeof(MyModelGettersOnly),
-            ////typeof(MyModelGettersOnlyParent),
-
-            typeof(MyModelPrivateSetters),
-            typeof(MyModelPrivateSettersParent),
-
-            typeof(MyModelPublicSetters),
-            typeof(MyModelPublicSettersParent),
-        };
+        protected override IReadOnlyCollection<Type> TypesToAutoRegister =>
+            typeof(CodeGeneratorTest)
+                .Assembly
+                .GetTypes()
+                .Where(_ => _.Name.StartsWith(CodeGeneratorTest.ModelBaseName, StringComparison.Ordinal))
+                .Where(_ => !_.Name.EndsWith(CodeGeneratorTest.TestNameSuffix, StringComparison.Ordinal))
+                .ToList();
     }
 }
