@@ -1,14 +1,13 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ConsoleAbstraction.cs" company="OBeautifulCode">
+// <copyright file="ProjectCodeGenerator.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace OBeautifulCode.CodeGen.Generator.Console
+namespace OBeautifulCode.CodeGen.Console
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
     using System.IO;
@@ -16,55 +15,31 @@ namespace OBeautifulCode.CodeGen.Generator.Console
     using System.Reflection;
     using System.Text;
 
-    using CLAP;
-
     using Newtonsoft.Json.Linq;
 
-    using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.CodeGen.Generator.Console.Internal;
+    using OBeautifulCode.CodeGen.Console.Internal;
     using OBeautifulCode.CodeGen.ModelObject;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
-    using OBeautifulCode.Representation.System;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
-    using static System.FormattableString;
-
     /// <summary>
-    /// Instance for use in CLAP.
+    /// Generates code for a project.
     /// </summary>
-    public sealed class ConsoleAbstraction
+    public static class ProjectCodeGenerator
     {
         private const string TempDirectoryPrefix = "OBC.CodeGen";
-
-        private ConsoleAbstraction()
-        {
-        }
-
-        /// <summary>
-        /// Gets the exception type descriptions to only print message.
-        /// </summary>
-        /// <value>The exception type descriptions to only print message.</value>
-        public static IReadOnlyCollection<TypeRepresentation> ExceptionTypeDescriptionsToOnlyPrintMessage => null;
 
         /// <summary>
         /// Generate logic for models.
         /// </summary>
-        /// <param name="debug">Optional indication to launch the debugger from inside the application (default is false).</param>
         /// <param name="projectDirectory">Directory of the project to work on.</param>
         /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
-        [Verb(Aliases = "model", IsDefault = false, Description = "Runs the generation logic for specified project.")]
-        public static void Model(
-            [Aliases("")] [Description("Launches the debugger.")] [DefaultValue(false)] bool debug,
-            [Aliases("")] [Required] [Description("Directory of the project to work on.")] string projectDirectory,
-            [Aliases("")] [Required] [Description("Directory of the test project associated with the project to work on.")] string testProjectDirectory)
+        public static void GenerateCodeForProject(
+            string projectDirectory,
+            string testProjectDirectory)
         {
-            if (debug)
-            {
-                Debugger.Launch();
-            }
-
             if (!Directory.Exists(projectDirectory))
             {
                 throw new ArgumentException("Could not find provided directory: " + projectDirectory);
@@ -110,7 +85,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                         {
                             var modelTestTypeName = type.Name + "Test";
                             modelTestFilePath = Path.Combine(testProjectDirectory, modelTestTypeName + ".cs");
-                            var modelTestFileHeader   = fileHeaderBuilder(modelTestTypeName);
+                            var modelTestFileHeader = fileHeaderBuilder(modelTestTypeName);
                             var modelTestFileContents = GenerateModelTestFileContents(modelTestFileHeader, testNamespace, modelTestTypeName);
 
                             File.WriteAllText(modelTestFilePath, modelTestFileContents);
@@ -158,67 +133,6 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                 var dummyFactoryTestDesignerFileContents = GenerateDummyFactoryTestDesignerFileContents(testNamespace, dummyFactoryTestTypeName, dummyFactoryTypeName);
                 File.WriteAllText(dummyFactoryTestDesignerFilePath, dummyFactoryTestDesignerFileContents);
             }
-        }
-
-        /// <summary>
-        /// Error method to call from CLAP; a 1 will be returned as the exit code if this is entered since an exception was thrown.
-        /// </summary>
-        /// <param name="context">Context provided with details.</param>
-        [Error]
-#pragma warning disable CS3001 // Argument type is not CLS-compliant - needed for CLAP
-        public static void Error(ExceptionContext context)
-#pragma warning restore CS3001 // Argument type is not CLS-compliant
-        {
-            new { context }.Must().NotBeNull();
-            var typeDescriptionComparer = new TypeComparer(TypeMatchStrategy.NamespaceAndName);
-
-            // change color to red
-            var originalColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            // parser exception or
-            if (context.Exception is CommandLineParserException)
-            {
-                Console.WriteLine("Failure parsing command line arguments.  Run the exe with the 'help' command for usage.");
-                Console.WriteLine("   " + context.Exception.Message);
-            }
-            else if ((ExceptionTypeDescriptionsToOnlyPrintMessage ?? new TypeRepresentation[0]).Any(_ => typeDescriptionComparer.Equals(_, context.Exception.GetType().ToRepresentation())))
-            {
-                Console.WriteLine("Failure during execution; configured to omit stack trace.");
-                Console.WriteLine(string.Empty);
-                Console.WriteLine("   " + context.Exception.Message);
-            }
-            else
-            {
-                Console.WriteLine("Failure during execution.");
-                Console.WriteLine("   " + context.Exception.Message);
-                Console.WriteLine(string.Empty);
-                Console.WriteLine("   " + context.Exception);
-            }
-
-            // restore color
-            Console.WriteLine();
-            Console.ForegroundColor = originalColor;
-        }
-
-        /// <summary>
-        /// Help method to call from CLAP.
-        /// </summary>
-        /// <param name="helpText">Generated help text to display.</param>
-        [Empty]
-        [Help(Aliases = "h,?,-h,-help")]
-        [Verb(Aliases = "Help", IsDefault = true)]
-        public static void ShowUsage(string helpText)
-        {
-            new { helpText }.Must().NotBeNull();
-
-            Console.WriteLine("   Usage");
-            Console.Write("   -----");
-
-            // strip out the usage info about help, it's confusing
-            helpText = helpText.Split(new[] { Environment.NewLine }, StringSplitOptions.None).Skip(3).ToNewLineDelimited();
-            Console.WriteLine(helpText);
-            Console.WriteLine();
         }
 
         private static string GenerateDummyFactoryFileContents(
@@ -444,9 +358,9 @@ namespace OBeautifulCode.CodeGen.Generator.Console
         private static Func<string, string> GetFileHeaderBuilder(
             string projectDirectory)
         {
-            var packagesDirectoryPath    = Path.Combine(projectDirectory, "../packages");
-            var projectDirectoryName     = new DirectoryInfo(projectDirectory).Name;
-            var buildPackagePrefix       = projectDirectoryName.Split('.').FirstOrDefault();
+            var packagesDirectoryPath = Path.Combine(projectDirectory, "../packages");
+            var projectDirectoryName = new DirectoryInfo(projectDirectory).Name;
+            var buildPackagePrefix = projectDirectoryName.Split('.').FirstOrDefault();
             var buildAnalyzerPackageName = buildPackagePrefix == null ? null : buildPackagePrefix + ".Build.Analyzers";
             var analyzerCandidates = buildAnalyzerPackageName == null
                 ? null
@@ -460,31 +374,31 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                 return typeName => string.Empty;
             }
 
-            var     styleCopJsonContents = File.ReadAllText(styleCopJsonFilePath);
-            dynamic styleCopJson         = JObject.Parse(styleCopJsonContents);
-            var     companyName          = styleCopJson.settings.documentationRules.companyName.ToString();
-            var     copyrightText        = styleCopJson.settings.documentationRules.copyrightText.ToString().Replace("{companyName}", companyName);
+            var styleCopJsonContents = File.ReadAllText(styleCopJsonFilePath);
+            dynamic styleCopJson = JObject.Parse(styleCopJsonContents);
+            var companyName = styleCopJson.settings.documentationRules.companyName.ToString();
+            var copyrightText = styleCopJson.settings.documentationRules.copyrightText.ToString().Replace("{companyName}", companyName);
 
             return typeName =>
-                   {
-                       fileHeader =
-                           "// --------------------------------------------------------------------------------------------------------------------"
-                         + Environment.NewLine
-                         + "// <copyright file=\""
-                         + typeName
-                         + ".cs\" company=\""
-                         + companyName
-                         + "\">"
-                         + Environment.NewLine
-                         + "// "
-                         + copyrightText
-                         + Environment.NewLine
-                         + "// </copyright>"
-                         + Environment.NewLine
-                         + "// --------------------------------------------------------------------------------------------------------------------";
+            {
+                fileHeader =
+                    "// --------------------------------------------------------------------------------------------------------------------"
+                  + Environment.NewLine
+                  + "// <copyright file=\""
+                  + typeName
+                  + ".cs\" company=\""
+                  + companyName
+                  + "\">"
+                  + Environment.NewLine
+                  + "// "
+                  + copyrightText
+                  + Environment.NewLine
+                  + "// </copyright>"
+                  + Environment.NewLine
+                  + "// --------------------------------------------------------------------------------------------------------------------";
 
-                       return fileHeader;
-                   };
+                return fileHeader;
+            };
         }
 
         [SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.Reflection.Assembly.LoadFrom", Justification = "Required to achieve desired functionality.")]
@@ -492,7 +406,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
             string projectDirectory,
             string tempDirectoryRootPath)
         {
-            var tempDirectoryName = TempDirectoryPrefix   + DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
+            var tempDirectoryName = TempDirectoryPrefix + DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             var tempDirectoryPath = tempDirectoryRootPath + tempDirectoryName;
 
             if (!Directory.Exists(tempDirectoryPath))
@@ -501,12 +415,12 @@ namespace OBeautifulCode.CodeGen.Generator.Console
             }
 
             var projectBinDebugFiles = GetProjectBinDebugFiles(projectDirectory);
-            var assembliesToLoad     = new List<string>();
+            var assembliesToLoad = new List<string>();
             foreach (var fileToConsiderLoading in projectBinDebugFiles)
             {
                 if (fileToConsiderLoading.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || fileToConsiderLoading.EndsWith(".dll", StringComparison.OrdinalIgnoreCase) || fileToConsiderLoading.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase))
                 {
-                    var fileName    = Path.GetFileName(fileToConsiderLoading);
+                    var fileName = Path.GetFileName(fileToConsiderLoading);
                     var newFilePath = Path.Combine(tempDirectoryPath, fileName);
                     File.Copy(fileToConsiderLoading, newFilePath);
 

@@ -19,22 +19,24 @@ namespace OBeautifulCode.CodeGen.Console
     internal class ConsoleAbstraction : ConsoleAbstractionBase
     {
         /// <summary>
-        /// Does some work.
+        /// Generate logic for models.
         /// </summary>
-        /// <param name="debug">Optional value indicating whether to launch the debugger from inside the application (default is false).</param>
-        /// <param name="requiredParameter">A required parameter to the operation.</param>
-        [Verb(Aliases = "do", IsDefault = false, Description = "Does some work.")]
+        /// <param name="debug">Optional indication to launch the debugger from inside the application (default is false).</param>
+        /// <param name="projectDirectory">Directory of the project to work on.</param>
+        /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
+        [Verb(Aliases = "model", IsDefault = false, Description = "Runs the generation logic for specified project.")]
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_MethodIsWiredIntoClapAsVerb)]
-        public static void DoSomeWork(
+        public static void Model(
             [Aliases("")] [Description("Launches the debugger.")] [DefaultValue(false)] bool debug,
-            [Aliases("")] [Required] [Description("A required parameter to the operation.")] string requiredParameter)
+            [Aliases("")] [Required] [Description("Directory of the project to work on.")] string projectDirectory,
+            [Aliases("")] [Required] [Description("Directory of the test project associated with the project to work on.")] string testProjectDirectory)
         {
             if (debug)
             {
                 Debugger.Launch();
             }
 
-            System.Console.WriteLine(requiredParameter);
+            ProjectCodeGenerator.GenerateCodeForProject(projectDirectory, testProjectDirectory);
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <package>
   <metadata>
-    <description>DESCRIPTION_HERE</description>
-    <tags>TAG1_HERE TAG2_HERE</tags>
+    <description>Generates code for a specified project.</description>
+    <tags>codegen</tags>
     <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen.Console/nuget-icon.png</iconUrl>
   </metadata>
 </package>
