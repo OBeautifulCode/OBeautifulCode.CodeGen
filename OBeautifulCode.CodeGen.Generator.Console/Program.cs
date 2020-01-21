@@ -12,7 +12,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
     /// <summary>
     /// Main console entry point class.
     /// </summary>
-    public class Program
+    public static class Program
     {
         /// <summary>
         /// Main console entry point method; downstream is managed by CLAP.

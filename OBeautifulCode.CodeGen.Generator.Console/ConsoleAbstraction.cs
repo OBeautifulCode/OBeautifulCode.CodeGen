@@ -9,33 +9,44 @@ namespace OBeautifulCode.CodeGen.Generator.Console
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Reflection;
     using System.Text;
+
     using CLAP;
+
     using Newtonsoft.Json.Linq;
+
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeGen.Generator.Console.Internal;
     using OBeautifulCode.CodeGen.ModelObject;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Representation.System;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
+
     using static System.FormattableString;
 
     /// <summary>
     /// Instance for use in CLAP.
     /// </summary>
-    public class ConsoleAbstraction
+    public sealed class ConsoleAbstraction
     {
-        private static readonly string TempDirectoryPrefix = "OBC.CodeGen";
+        private const string TempDirectoryPrefix = "OBC.CodeGen";
+
+        private ConsoleAbstraction()
+        {
+        }
 
         /// <summary>
         /// Gets the exception type descriptions to only print message.
         /// </summary>
         /// <value>The exception type descriptions to only print message.</value>
-        public static TypeRepresentation[] ExceptionTypeDescriptionsToOnlyPrintMessage => null;
+        public static IReadOnlyCollection<TypeRepresentation> ExceptionTypeDescriptionsToOnlyPrintMessage => null;
 
         /// <summary>
         /// Generate logic for models.
@@ -81,7 +92,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                     var dummyFactorySnippet = type.GenerateForModel(GenerateFor.ModelDummyFactorySnippet);
 
                     // find file
-                    var modelFilePath = allProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(type.Name + ".cs"));
+                    var modelFilePath = allProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(type.Name + ".cs", StringComparison.OrdinalIgnoreCase));
                     if (modelFilePath == null)
                     {
                         throw new FileNotFoundException("Expected a source file for type: " + type.ToStringReadable());
@@ -94,7 +105,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                     if (hasTestProject)
                     {
                         dummyFactorySnippets.Add(dummyFactorySnippet);
-                        var modelTestFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(type.Name + "Test.cs"));
+                        var modelTestFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(type.Name + "Test.cs", StringComparison.OrdinalIgnoreCase));
                         if (modelTestFilePath == null)
                         {
                             var modelTestTypeName = type.Name + "Test";
@@ -113,7 +124,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
 
             if (hasTestProject && dummyFactorySnippets.Any())
             {
-                var dummyFactoryFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => !_.Contains(".recipes") && _.EndsWith("DummyFactory.cs"))
+                var dummyFactoryFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => !_.Contains(".recipes") && _.EndsWith("DummyFactory.cs", StringComparison.OrdinalIgnoreCase))
                                         ?? Path.Combine(testProjectDirectory, "DummyFactory.cs");
 
                 var dummyFactoryDesignerFilePath = dummyFactoryFilePath.Replace(".cs", ".designer.cs");
@@ -134,7 +145,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                 File.WriteAllText(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents);
 
                 var dummyFactoryTestTypeName = dummyFactoryTypeName + "Test";
-                var dummyFactoryTestFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(dummyFactoryTypeName + "Test.cs"))
+                var dummyFactoryTestFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(dummyFactoryTypeName + "Test.cs", StringComparison.OrdinalIgnoreCase))
                                             ?? Path.Combine(testProjectDirectory, dummyFactoryTestTypeName + ".cs");
                 var dummyFactoryTestDesignerFilePath = dummyFactoryTestFilePath.Replace(".cs", ".designer.cs");
                 if (!File.Exists(dummyFactoryTestFilePath))
@@ -429,6 +440,7 @@ namespace OBeautifulCode.CodeGen.Generator.Console
             return contents;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static Func<string, string> GetFileHeaderBuilder(
             string projectDirectory)
         {
@@ -475,11 +487,12 @@ namespace OBeautifulCode.CodeGen.Generator.Console
                    };
         }
 
+        [SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.Reflection.Assembly.LoadFrom", Justification = "Required to achieve desired functionality.")]
         private static IReadOnlyCollection<Type> ShadowCopyAssembliesLoadAndGetTypesToCheck(
             string projectDirectory,
             string tempDirectoryRootPath)
         {
-            var tempDirectoryName = TempDirectoryPrefix   + DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ");
+            var tempDirectoryName = TempDirectoryPrefix   + DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
             var tempDirectoryPath = tempDirectoryRootPath + tempDirectoryName;
 
             if (!Directory.Exists(tempDirectoryPath))
@@ -491,13 +504,13 @@ namespace OBeautifulCode.CodeGen.Generator.Console
             var assembliesToLoad     = new List<string>();
             foreach (var fileToConsiderLoading in projectBinDebugFiles)
             {
-                if (fileToConsiderLoading.EndsWith(".exe") || fileToConsiderLoading.EndsWith(".dll") || fileToConsiderLoading.EndsWith(".pdb"))
+                if (fileToConsiderLoading.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || fileToConsiderLoading.EndsWith(".dll", StringComparison.OrdinalIgnoreCase) || fileToConsiderLoading.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase))
                 {
                     var fileName    = Path.GetFileName(fileToConsiderLoading);
                     var newFilePath = Path.Combine(tempDirectoryPath, fileName);
                     File.Copy(fileToConsiderLoading, newFilePath);
 
-                    if (!newFilePath.EndsWith(".pdb"))
+                    if (!newFilePath.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase))
                     {
                         assembliesToLoad.Add(newFilePath);
                     }
