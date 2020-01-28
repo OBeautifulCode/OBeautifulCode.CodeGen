@@ -201,52 +201,68 @@
     <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnly.cs" />
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnly.designer.cs">
-      <DependentUpon>MyModelGettersOnly.cs</DependentUpon>
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSetters.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSetters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1.cs" />
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1.designer.cs">
-      <DependentUpon>MyModelGettersOnlyChild1.cs</DependentUpon>
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersChild1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2.cs" />
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2.designer.cs">
-      <DependentUpon>MyModelGettersOnlyChild2.cs</DependentUpon>
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersChild2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyParent.cs" />
-    <Compile Include="Models\GeneratedModels\GettersOnly\MyModelGettersOnlyParent.designer.cs">
-      <DependentUpon>MyModelGettersOnlyParent.cs</DependentUpon>
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParent.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSetters.cs" />
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSetters.designer.cs">
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSetters.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParent.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSetters.designer.cs">
       <DependentUpon>MyModelPrivateSetters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1.cs" />
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelPrivateSettersChild1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2.cs" />
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelPrivateSettersChild2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersParent.cs" />
-    <Compile Include="Models\GeneratedModels\PrivateSetters\MyModelPrivateSettersParent.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSetters.cs" />
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSetters.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSetters.designer.cs">
       <DependentUpon>MyModelPublicSetters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild1.cs" />
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild1.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelPublicSettersChild1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild2.cs" />
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersChild2.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelPublicSettersChild2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersParent.cs" />
-    <Compile Include="Models\GeneratedModels\PublicSetters\MyModelPublicSettersParent.designer.cs">
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelPublicSettersParent.designer.cs">
       <DependentUpon>MyModelPublicSettersParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
@@ -377,6 +393,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
