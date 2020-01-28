@@ -321,52 +321,68 @@
     <Compile Include="ModelTests\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentTest.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.cs" />
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyParentTest.designer.cs">
-      <DependentUpon>MyModelGettersOnlyParentTest.cs</DependentUpon>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersChild1Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2Test.cs" />
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild2Test.designer.cs">
-      <DependentUpon>MyModelGettersOnlyChild2Test.cs</DependentUpon>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1Test.cs" />
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyChild1Test.designer.cs">
-      <DependentUpon>MyModelGettersOnlyChild1Test.cs</DependentUpon>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParentTest.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyTest.cs" />
-    <Compile Include="ModelTests\GeneratedModels\GettersOnly\MyModelGettersOnlyTest.designer.cs">
-      <DependentUpon>MyModelGettersOnlyTest.cs</DependentUpon>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersTest.designer.cs">
+      <DependentUpon>MyModelEqualityPrivateSettersTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1Test.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild1Test.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParentTest.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersTest.designer.cs">
+      <DependentUpon>MyModelEqualityPublicSettersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersChild1Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2Test.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersChild2Test.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersParentTest.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersParentTest.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersTest.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PrivateSetters\MyModelPrivateSettersTest.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild1Test.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild1Test.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelPublicSettersChild1Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild2Test.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersChild2Test.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelPublicSettersChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersParentTest.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersParentTest.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelPublicSettersParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersTest.cs" />
-    <Compile Include="ModelTests\GeneratedModels\PublicSetters\MyModelPublicSettersTest.designer.cs">
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelPublicSettersTest.designer.cs">
       <DependentUpon>MyModelPublicSettersTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
