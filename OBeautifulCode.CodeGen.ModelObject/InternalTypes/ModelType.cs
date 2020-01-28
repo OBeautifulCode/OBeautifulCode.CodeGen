@@ -10,8 +10,10 @@ namespace OBeautifulCode.CodeGen
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
@@ -82,11 +84,11 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type is not supported; it is an open type: {type}."));
             }
 
-            if (type.GetInterface(nameof(IModelViaCodeGen)) == null)
+            if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.All(_ => type.GetInterface(_.Name) == null))
             {
                 // this really should be checked via: (!type.IsAssignableTo(typeof(IModelViaCodeGen))) but since this can be called using reflected types
                 //    we are using a less strict check which does not require it to be truly assignable but instead merely the presence of a version of the interface
-                throw new NotSupportedException(Invariant($"The type does not implement {nameof(IModelViaCodeGen)}."));
+                throw new NotSupportedException(Invariant($"The type does not implement one of the following interfaces: {CodeGenerator.TypesThatIndicateCodeGenIsRequired.Select(_ => _.ToStringReadable()).ToCsv()}."));
             }
 
             // checks if not a class - but still could be a delegate, or a type parameter in the definition of a generic type or generic method.
@@ -228,7 +230,7 @@ namespace OBeautifulCode.CodeGen
                 {
                     // if the argument is a model type then move on;
                     // it will be validated when code gen is run for that model
-                    if ((!IsModelType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument))
+                    if ((!IsEquatableType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument))
                     {
                         return true;
                     }
@@ -277,7 +279,7 @@ namespace OBeautifulCode.CodeGen
 
                 foreach (var genericTypeArgument in genericTypeArguments)
                 {
-                    if (IsModelType(genericTypeArgument))
+                    if (IsHashableType(genericTypeArgument))
                     {
                         var hierarchyKind = GetHierarchyKind(genericTypeArgument);
 
@@ -298,7 +300,7 @@ namespace OBeautifulCode.CodeGen
                 }
             }
 
-            if (IsModelType(type))
+            if (IsHashableType(type))
             {
                 var hierarchyKind = GetHierarchyKind(type);
 
@@ -313,10 +315,18 @@ namespace OBeautifulCode.CodeGen
             return false;
         }
 
-        private static bool IsModelType(
+        private static bool IsHashableType(
             Type type)
         {
-            var result = type.IsAssignableTo(typeof(IModel)) || type.IsAssignableTo(typeof(IModelViaCodeGen));
+            var result = type.IsAssignableTo(typeof(IHashable)) || type.IsAssignableTo(typeof(IHashableViaCodeGen));
+
+            return result;
+        }
+
+        private static bool IsEquatableType(
+            Type type)
+        {
+            var result = type.IsAssignableTo(typeof(IEquatable<>), treatGenericTypeDefinitionAsAssignableTo: true) || type.IsAssignableTo(typeof(IEquatableViaCodeGen));
 
             return result;
         }

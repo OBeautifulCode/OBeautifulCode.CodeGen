@@ -151,6 +151,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="DummyFactory.cs" />
+    <Compile Include="GeneratedModelKind.cs" />
     <Compile Include="GenerationKind.cs" />
     <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
     <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">

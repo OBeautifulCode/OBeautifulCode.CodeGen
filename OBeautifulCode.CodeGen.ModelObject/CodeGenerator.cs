@@ -10,12 +10,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Generic;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type;
 
     /// <summary>
     /// Generates code.
     /// </summary>
     public static class CodeGenerator
     {
+        /// <summary>
+        /// Gets the types that indicate that coded gen is required.
+        /// </summary>
+        public static readonly IReadOnlyCollection<Type> TypesThatIndicateCodeGenIsRequired = new[]
+        {
+            typeof(IComparableViaCodeGen),
+            typeof(IDeepCloneableViaCodeGen),
+            typeof(IEquatableViaCodeGen),
+            typeof(IHashableViaCodeGen),
+            typeof(IModelViaCodeGen),
+            typeof(IStringRepresentableViaCodeGen),
+        };
+
         /// <summary>
         /// Generates code associated with a model object.
         /// </summary>

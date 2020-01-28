@@ -12,6 +12,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Reflection;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -24,10 +25,30 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string TypeNameToken = "<<<TypeNameHere>>>";
         private const string PropertyNameToken = "<<<PropertyNameHere>>>";
         private const string PropertyTypeNameToken = "<<<PropertyTypeNameHere>>>";
+        private const string EqualsMethodToken = "<<<EqualsMethodHere>>>";
         private const string EqualityToken = "<<<EqualityLogicHere>>>";
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
         private const string UnequalHashCodeToken = "<<<UnequalHashCodeHere>>>";
+
+        private const string EqualsMethodForConcreteTypeCodeTemplate = @"
+        /// <inheritdoc />
+        public bool Equals(" + TypeNameToken + @" other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = " + EqualityToken + @";
+
+            return result;
+        }";
 
         private const string EqualityMethodsForConcreteTypeCodeTemplate = @"    /// <summary>
         /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
@@ -47,7 +68,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return false;
             }
 
-            var result = " + EqualityToken + @";
+            var result = left.Equals(right);
 
             return result;
         }
@@ -59,9 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name=""right"">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
         public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);
-
-        /// <inheritdoc />
-        public bool Equals(" + TypeNameToken + @" other) => this == other;
+        " + EqualsMethodToken + @"
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as " + TypeNameToken + @");";
@@ -401,7 +420,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     ? string.Join(Environment.NewLine + "                      && ", equalityLines)
                     : "true";
 
+                var equalsMethodCode = modelType.Type.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(modelType.Type))
+                    ? string.Empty
+                    : EqualsMethodForConcreteTypeCodeTemplate;
+
                 result = EqualityMethodsForConcreteTypeCodeTemplate
+                    .Replace(EqualsMethodToken, equalsMethodCode)
                     .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                     .Replace(EqualityToken, equalityToken);
             }
@@ -546,8 +570,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var propertyType = propertyInfo.PropertyType;
 
             var result = (propertyType == typeof(string))
-                ? Invariant($"left.{propertyInfo.Name}.Equals(right.{propertyInfo.Name}, StringComparison.Ordinal)")
-                : Invariant($"left.{propertyInfo.Name}.IsEqualTo(right.{propertyInfo.Name})");
+                ? Invariant($"this.{propertyInfo.Name}.Equals(other.{propertyInfo.Name}, StringComparison.Ordinal)")
+                : Invariant($"this.{propertyInfo.Name}.IsEqualTo(other.{propertyInfo.Name})");
 
             return result;
         }

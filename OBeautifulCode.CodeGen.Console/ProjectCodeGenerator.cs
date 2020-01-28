@@ -60,7 +60,7 @@ namespace OBeautifulCode.CodeGen.Console
             foreach (var type in typesToCheck)
             {
                 Console.WriteLine("Checking type: " + type.ToStringReadable());
-                if (type.GetInterface(nameof(IModelViaCodeGen)) != null)
+                if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.GetInterface(_.Name) != null))
                 {
                     var modelDesignerFileContents = type.GenerateForModel(GenerateFor.ModelImplementationPartialClass);
                     var modelTestDesignerFileContents = type.GenerateForModel(GenerateFor.ModelImplementationTestsPartialClassWithSerialization);
