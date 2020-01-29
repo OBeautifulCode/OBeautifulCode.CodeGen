@@ -22,15 +22,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPrivateSettersChild2 : IModel<MyModelPrivateSettersChild2>
+    public partial class MyModelAllPrivateSettersChild2 : IModel<MyModelAllPrivateSettersChild2>
     {
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPrivateSettersChild2"/> are equal.
+        /// Determines whether two objects of type <see cref="MyModelAllPrivateSettersChild2"/> are equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(MyModelPrivateSettersChild2 left, MyModelPrivateSettersChild2 right)
+        public static bool operator ==(MyModelAllPrivateSettersChild2 left, MyModelAllPrivateSettersChild2 right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -42,181 +42,196 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return false;
             }
 
-            var result = left.ParentBoolProperty.IsEqualTo(right.ParentBoolProperty)
-                      && left.ParentIntProperty.IsEqualTo(right.ParentIntProperty)
-                      && left.ParentStringProperty.Equals(right.ParentStringProperty, StringComparison.Ordinal)
-                      && left.ParentGuidProperty.IsEqualTo(right.ParentGuidProperty)
-                      && left.ParentDateTimeProperty.IsEqualTo(right.ParentDateTimeProperty)
-                      && left.ParentModelEnumProperty.IsEqualTo(right.ParentModelEnumProperty)
-                      && left.ParentModelFlagsEnumProperty.IsEqualTo(right.ParentModelFlagsEnumProperty)
-                      && left.ParentModelClassProperty.IsEqualTo(right.ParentModelClassProperty)
-                      && left.ParentNullableBoolProperty.IsEqualTo(right.ParentNullableBoolProperty)
-                      && left.ParentNullableIntProperty.IsEqualTo(right.ParentNullableIntProperty)
-                      && left.ParentNullableGuidProperty.IsEqualTo(right.ParentNullableGuidProperty)
-                      && left.ParentNullableDateTimeProperty.IsEqualTo(right.ParentNullableDateTimeProperty)
-                      && left.ParentNullableModelEnumProperty.IsEqualTo(right.ParentNullableModelEnumProperty)
-                      && left.ParentNullableModelFlagsEnumProperty.IsEqualTo(right.ParentNullableModelFlagsEnumProperty)
-                      && left.ParentArrayOfBoolProperty.IsEqualTo(right.ParentArrayOfBoolProperty)
-                      && left.ParentArrayOfIntProperty.IsEqualTo(right.ParentArrayOfIntProperty)
-                      && left.ParentArrayOfStringProperty.IsEqualTo(right.ParentArrayOfStringProperty)
-                      && left.ParentArrayOfGuidProperty.IsEqualTo(right.ParentArrayOfGuidProperty)
-                      && left.ParentArrayOfDateTimeProperty.IsEqualTo(right.ParentArrayOfDateTimeProperty)
-                      && left.ParentArrayOfModelEnumProperty.IsEqualTo(right.ParentArrayOfModelEnumProperty)
-                      && left.ParentArrayOfModelFlagsEnumProperty.IsEqualTo(right.ParentArrayOfModelFlagsEnumProperty)
-                      && left.ParentArrayOfModelClassProperty.IsEqualTo(right.ParentArrayOfModelClassProperty)
-                      && left.ParentArrayOfNullableBoolProperty.IsEqualTo(right.ParentArrayOfNullableBoolProperty)
-                      && left.ParentArrayOfNullableIntProperty.IsEqualTo(right.ParentArrayOfNullableIntProperty)
-                      && left.ParentArrayOfNullableGuidProperty.IsEqualTo(right.ParentArrayOfNullableGuidProperty)
-                      && left.ParentArrayOfNullableDateTimeProperty.IsEqualTo(right.ParentArrayOfNullableDateTimeProperty)
-                      && left.ParentArrayOfNullableModelEnumProperty.IsEqualTo(right.ParentArrayOfNullableModelEnumProperty)
-                      && left.ParentArrayOfNullableModelFlagsEnumProperty.IsEqualTo(right.ParentArrayOfNullableModelFlagsEnumProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfBoolProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfIntProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfStringProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfGuidProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfDateTimeProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfModelEnumProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfModelClassProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfNullableIntProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
-                      && left.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.ParentReadOnlyListInterfaceOfBoolProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfBoolProperty)
-                      && left.ParentReadOnlyListInterfaceOfIntProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfIntProperty)
-                      && left.ParentReadOnlyListInterfaceOfStringProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfStringProperty)
-                      && left.ParentReadOnlyListInterfaceOfGuidProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfGuidProperty)
-                      && left.ParentReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ParentReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfModelEnumProperty)
-                      && left.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty)
-                      && left.ParentReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfModelClassProperty)
-                      && left.ParentReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfNullableBoolProperty)
-                      && left.ParentReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfNullableIntProperty)
-                      && left.ParentReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfNullableGuidProperty)
-                      && left.ParentReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfNullableDateTimeProperty)
-                      && left.ParentReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfNullableModelEnumProperty)
-                      && left.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfBoolProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfIntProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfStringProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfGuidProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfModelClassProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.ParentCollectionInterfaceOfStringProperty.IsEqualTo(right.ParentCollectionInterfaceOfStringProperty)
-                      && left.ParentCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ParentCollectionOfCollectionInterfaceOfStringProperty)
-                      && left.ParentListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ParentListInterfaceOfCollectionInterfaceOfStringProperty)
-                      && left.ParentListOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ParentListOfCollectionInterfaceOfStringProperty)
-                      && left.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
-                      && left.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2BoolProperty.IsEqualTo(right.Child2BoolProperty)
-                      && left.Child2IntProperty.IsEqualTo(right.Child2IntProperty)
-                      && left.Child2StringProperty.Equals(right.Child2StringProperty, StringComparison.Ordinal)
-                      && left.Child2GuidProperty.IsEqualTo(right.Child2GuidProperty)
-                      && left.Child2DateTimeProperty.IsEqualTo(right.Child2DateTimeProperty)
-                      && left.Child2ModelEnumProperty.IsEqualTo(right.Child2ModelEnumProperty)
-                      && left.Child2ModelFlagsEnumProperty.IsEqualTo(right.Child2ModelFlagsEnumProperty)
-                      && left.Child2ModelClassProperty.IsEqualTo(right.Child2ModelClassProperty)
-                      && left.Child2NullableBoolProperty.IsEqualTo(right.Child2NullableBoolProperty)
-                      && left.Child2NullableIntProperty.IsEqualTo(right.Child2NullableIntProperty)
-                      && left.Child2NullableGuidProperty.IsEqualTo(right.Child2NullableGuidProperty)
-                      && left.Child2NullableDateTimeProperty.IsEqualTo(right.Child2NullableDateTimeProperty)
-                      && left.Child2NullableModelEnumProperty.IsEqualTo(right.Child2NullableModelEnumProperty)
-                      && left.Child2NullableModelFlagsEnumProperty.IsEqualTo(right.Child2NullableModelFlagsEnumProperty)
-                      && left.Child2ArrayOfBoolProperty.IsEqualTo(right.Child2ArrayOfBoolProperty)
-                      && left.Child2ArrayOfIntProperty.IsEqualTo(right.Child2ArrayOfIntProperty)
-                      && left.Child2ArrayOfStringProperty.IsEqualTo(right.Child2ArrayOfStringProperty)
-                      && left.Child2ArrayOfGuidProperty.IsEqualTo(right.Child2ArrayOfGuidProperty)
-                      && left.Child2ArrayOfDateTimeProperty.IsEqualTo(right.Child2ArrayOfDateTimeProperty)
-                      && left.Child2ArrayOfModelEnumProperty.IsEqualTo(right.Child2ArrayOfModelEnumProperty)
-                      && left.Child2ArrayOfModelFlagsEnumProperty.IsEqualTo(right.Child2ArrayOfModelFlagsEnumProperty)
-                      && left.Child2ArrayOfModelClassProperty.IsEqualTo(right.Child2ArrayOfModelClassProperty)
-                      && left.Child2ArrayOfNullableBoolProperty.IsEqualTo(right.Child2ArrayOfNullableBoolProperty)
-                      && left.Child2ArrayOfNullableIntProperty.IsEqualTo(right.Child2ArrayOfNullableIntProperty)
-                      && left.Child2ArrayOfNullableGuidProperty.IsEqualTo(right.Child2ArrayOfNullableGuidProperty)
-                      && left.Child2ArrayOfNullableDateTimeProperty.IsEqualTo(right.Child2ArrayOfNullableDateTimeProperty)
-                      && left.Child2ArrayOfNullableModelEnumProperty.IsEqualTo(right.Child2ArrayOfNullableModelEnumProperty)
-                      && left.Child2ArrayOfNullableModelFlagsEnumProperty.IsEqualTo(right.Child2ArrayOfNullableModelFlagsEnumProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfBoolProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfIntProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfStringProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfGuidProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfModelEnumProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfModelClassProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
-                      && left.Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.Child2ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfBoolProperty)
-                      && left.Child2ReadOnlyListInterfaceOfIntProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfIntProperty)
-                      && left.Child2ReadOnlyListInterfaceOfStringProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfStringProperty)
-                      && left.Child2ReadOnlyListInterfaceOfGuidProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfGuidProperty)
-                      && left.Child2ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2ReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfModelEnumProperty)
-                      && left.Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty)
-                      && left.Child2ReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfModelClassProperty)
-                      && left.Child2ReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfNullableBoolProperty)
-                      && left.Child2ReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfNullableIntProperty)
-                      && left.Child2ReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfNullableGuidProperty)
-                      && left.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty)
-                      && left.Child2ReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfNullableModelEnumProperty)
-                      && left.Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfBoolProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfIntProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfStringProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfGuidProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfModelClassProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.Child2CollectionInterfaceOfStringProperty.IsEqualTo(right.Child2CollectionInterfaceOfStringProperty)
-                      && left.Child2CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(right.Child2CollectionOfCollectionInterfaceOfStringProperty)
-                      && left.Child2ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(right.Child2ListInterfaceOfCollectionInterfaceOfStringProperty)
-                      && left.Child2ListOfCollectionInterfaceOfStringProperty.IsEqualTo(right.Child2ListOfCollectionInterfaceOfStringProperty)
-                      && left.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(right.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
-                      && left.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+            var result = left.Equals(right);
 
             return result;
         }
 
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPrivateSettersChild2"/> are not equal.
+        /// Determines whether two objects of type <see cref="MyModelAllPrivateSettersChild2"/> are not equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(MyModelPrivateSettersChild2 left, MyModelPrivateSettersChild2 right) => !(left == right);
+        public static bool operator !=(MyModelAllPrivateSettersChild2 left, MyModelAllPrivateSettersChild2 right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPrivateSettersChild2 other) => this == other;
+        public bool Equals(MyModelAllPrivateSettersChild2 other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = this.ParentBoolProperty.IsEqualTo(other.ParentBoolProperty)
+                      && this.ParentIntProperty.IsEqualTo(other.ParentIntProperty)
+                      && this.ParentStringProperty.Equals(other.ParentStringProperty, StringComparison.Ordinal)
+                      && this.ParentGuidProperty.IsEqualTo(other.ParentGuidProperty)
+                      && this.ParentDateTimeProperty.IsEqualTo(other.ParentDateTimeProperty)
+                      && this.ParentModelEnumProperty.IsEqualTo(other.ParentModelEnumProperty)
+                      && this.ParentModelFlagsEnumProperty.IsEqualTo(other.ParentModelFlagsEnumProperty)
+                      && this.ParentModelClassProperty.IsEqualTo(other.ParentModelClassProperty)
+                      && this.ParentNullableBoolProperty.IsEqualTo(other.ParentNullableBoolProperty)
+                      && this.ParentNullableIntProperty.IsEqualTo(other.ParentNullableIntProperty)
+                      && this.ParentNullableGuidProperty.IsEqualTo(other.ParentNullableGuidProperty)
+                      && this.ParentNullableDateTimeProperty.IsEqualTo(other.ParentNullableDateTimeProperty)
+                      && this.ParentNullableModelEnumProperty.IsEqualTo(other.ParentNullableModelEnumProperty)
+                      && this.ParentNullableModelFlagsEnumProperty.IsEqualTo(other.ParentNullableModelFlagsEnumProperty)
+                      && this.ParentArrayOfBoolProperty.IsEqualTo(other.ParentArrayOfBoolProperty)
+                      && this.ParentArrayOfIntProperty.IsEqualTo(other.ParentArrayOfIntProperty)
+                      && this.ParentArrayOfStringProperty.IsEqualTo(other.ParentArrayOfStringProperty)
+                      && this.ParentArrayOfGuidProperty.IsEqualTo(other.ParentArrayOfGuidProperty)
+                      && this.ParentArrayOfDateTimeProperty.IsEqualTo(other.ParentArrayOfDateTimeProperty)
+                      && this.ParentArrayOfModelEnumProperty.IsEqualTo(other.ParentArrayOfModelEnumProperty)
+                      && this.ParentArrayOfModelFlagsEnumProperty.IsEqualTo(other.ParentArrayOfModelFlagsEnumProperty)
+                      && this.ParentArrayOfModelClassProperty.IsEqualTo(other.ParentArrayOfModelClassProperty)
+                      && this.ParentArrayOfNullableBoolProperty.IsEqualTo(other.ParentArrayOfNullableBoolProperty)
+                      && this.ParentArrayOfNullableIntProperty.IsEqualTo(other.ParentArrayOfNullableIntProperty)
+                      && this.ParentArrayOfNullableGuidProperty.IsEqualTo(other.ParentArrayOfNullableGuidProperty)
+                      && this.ParentArrayOfNullableDateTimeProperty.IsEqualTo(other.ParentArrayOfNullableDateTimeProperty)
+                      && this.ParentArrayOfNullableModelEnumProperty.IsEqualTo(other.ParentArrayOfNullableModelEnumProperty)
+                      && this.ParentArrayOfNullableModelFlagsEnumProperty.IsEqualTo(other.ParentArrayOfNullableModelFlagsEnumProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfBoolProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfIntProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfStringProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfGuidProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfDateTimeProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfModelEnumProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfModelClassProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableIntProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.ParentReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfBoolProperty)
+                      && this.ParentReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfIntProperty)
+                      && this.ParentReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfStringProperty)
+                      && this.ParentReadOnlyListInterfaceOfGuidProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfGuidProperty)
+                      && this.ParentReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ParentReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfModelEnumProperty)
+                      && this.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty)
+                      && this.ParentReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfModelClassProperty)
+                      && this.ParentReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableBoolProperty)
+                      && this.ParentReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableIntProperty)
+                      && this.ParentReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableGuidProperty)
+                      && this.ParentReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableDateTimeProperty)
+                      && this.ParentReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableModelEnumProperty)
+                      && this.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfBoolProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfIntProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfStringProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfGuidProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfModelClassProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.ParentCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentCollectionInterfaceOfStringProperty)
+                      && this.ParentCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentCollectionOfCollectionInterfaceOfStringProperty)
+                      && this.ParentListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentListInterfaceOfCollectionInterfaceOfStringProperty)
+                      && this.ParentListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentListOfCollectionInterfaceOfStringProperty)
+                      && this.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+                      && this.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2BoolProperty.IsEqualTo(other.Child2BoolProperty)
+                      && this.Child2IntProperty.IsEqualTo(other.Child2IntProperty)
+                      && this.Child2StringProperty.Equals(other.Child2StringProperty, StringComparison.Ordinal)
+                      && this.Child2GuidProperty.IsEqualTo(other.Child2GuidProperty)
+                      && this.Child2DateTimeProperty.IsEqualTo(other.Child2DateTimeProperty)
+                      && this.Child2ModelEnumProperty.IsEqualTo(other.Child2ModelEnumProperty)
+                      && this.Child2ModelFlagsEnumProperty.IsEqualTo(other.Child2ModelFlagsEnumProperty)
+                      && this.Child2ModelClassProperty.IsEqualTo(other.Child2ModelClassProperty)
+                      && this.Child2NullableBoolProperty.IsEqualTo(other.Child2NullableBoolProperty)
+                      && this.Child2NullableIntProperty.IsEqualTo(other.Child2NullableIntProperty)
+                      && this.Child2NullableGuidProperty.IsEqualTo(other.Child2NullableGuidProperty)
+                      && this.Child2NullableDateTimeProperty.IsEqualTo(other.Child2NullableDateTimeProperty)
+                      && this.Child2NullableModelEnumProperty.IsEqualTo(other.Child2NullableModelEnumProperty)
+                      && this.Child2NullableModelFlagsEnumProperty.IsEqualTo(other.Child2NullableModelFlagsEnumProperty)
+                      && this.Child2ArrayOfBoolProperty.IsEqualTo(other.Child2ArrayOfBoolProperty)
+                      && this.Child2ArrayOfIntProperty.IsEqualTo(other.Child2ArrayOfIntProperty)
+                      && this.Child2ArrayOfStringProperty.IsEqualTo(other.Child2ArrayOfStringProperty)
+                      && this.Child2ArrayOfGuidProperty.IsEqualTo(other.Child2ArrayOfGuidProperty)
+                      && this.Child2ArrayOfDateTimeProperty.IsEqualTo(other.Child2ArrayOfDateTimeProperty)
+                      && this.Child2ArrayOfModelEnumProperty.IsEqualTo(other.Child2ArrayOfModelEnumProperty)
+                      && this.Child2ArrayOfModelFlagsEnumProperty.IsEqualTo(other.Child2ArrayOfModelFlagsEnumProperty)
+                      && this.Child2ArrayOfModelClassProperty.IsEqualTo(other.Child2ArrayOfModelClassProperty)
+                      && this.Child2ArrayOfNullableBoolProperty.IsEqualTo(other.Child2ArrayOfNullableBoolProperty)
+                      && this.Child2ArrayOfNullableIntProperty.IsEqualTo(other.Child2ArrayOfNullableIntProperty)
+                      && this.Child2ArrayOfNullableGuidProperty.IsEqualTo(other.Child2ArrayOfNullableGuidProperty)
+                      && this.Child2ArrayOfNullableDateTimeProperty.IsEqualTo(other.Child2ArrayOfNullableDateTimeProperty)
+                      && this.Child2ArrayOfNullableModelEnumProperty.IsEqualTo(other.Child2ArrayOfNullableModelEnumProperty)
+                      && this.Child2ArrayOfNullableModelFlagsEnumProperty.IsEqualTo(other.Child2ArrayOfNullableModelFlagsEnumProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfBoolProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfIntProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfStringProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfGuidProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfModelEnumProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfModelClassProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.Child2ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfBoolProperty)
+                      && this.Child2ReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfIntProperty)
+                      && this.Child2ReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfStringProperty)
+                      && this.Child2ReadOnlyListInterfaceOfGuidProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfGuidProperty)
+                      && this.Child2ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2ReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfModelEnumProperty)
+                      && this.Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty)
+                      && this.Child2ReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfModelClassProperty)
+                      && this.Child2ReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableBoolProperty)
+                      && this.Child2ReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableIntProperty)
+                      && this.Child2ReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableGuidProperty)
+                      && this.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty)
+                      && this.Child2ReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableModelEnumProperty)
+                      && this.Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfBoolProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfIntProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfStringProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfGuidProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfModelClassProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.Child2CollectionInterfaceOfStringProperty.IsEqualTo(other.Child2CollectionInterfaceOfStringProperty)
+                      && this.Child2CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2CollectionOfCollectionInterfaceOfStringProperty)
+                      && this.Child2ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ListInterfaceOfCollectionInterfaceOfStringProperty)
+                      && this.Child2ListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ListOfCollectionInterfaceOfStringProperty)
+                      && this.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+                      && this.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+
+            return result;
+        }
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => this == (obj as MyModelPrivateSettersChild2);
+        public override bool Equals(object obj) => this == (obj as MyModelAllPrivateSettersChild2);
     
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
@@ -384,17 +399,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public new object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepClone()
+        public override MyModelAllPrivateSettersParent DeepClone()
         {
-            var result = ((IDeepCloneable<MyModelPrivateSettersChild2>)this).DeepClone();
+            var result = ((IDeepCloneable<MyModelAllPrivateSettersChild2>)this).DeepClone();
 
             return result;
         }
 
         /// <inheritdoc />
-        MyModelPrivateSettersChild2 IDeepCloneable<MyModelPrivateSettersChild2>.DeepClone()
+        MyModelAllPrivateSettersChild2 IDeepCloneable<MyModelAllPrivateSettersChild2>.DeepClone()
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -558,9 +573,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentBoolProperty(bool parentBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentBoolProperty(bool parentBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  parentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -724,9 +739,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentIntProperty(int parentIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentIntProperty(int parentIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  parentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -890,9 +905,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentStringProperty(string parentStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentStringProperty(string parentStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  parentStringProperty,
@@ -1056,9 +1071,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentGuidProperty(Guid parentGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentGuidProperty(Guid parentGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -1222,9 +1237,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentDateTimeProperty(DateTime parentDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentDateTimeProperty(DateTime parentDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -1388,9 +1403,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentModelEnumProperty(ModelEnum parentModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentModelEnumProperty(ModelEnum parentModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -1554,9 +1569,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentModelFlagsEnumProperty(ModelFlagsEnum parentModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentModelFlagsEnumProperty(ModelFlagsEnum parentModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -1720,9 +1735,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentModelClassProperty(ModelClass parentModelClassProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentModelClassProperty(ModelClass parentModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -1886,9 +1901,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentNullableBoolProperty(bool? parentNullableBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentNullableBoolProperty(bool? parentNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -2052,9 +2067,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentNullableIntProperty(int? parentNullableIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentNullableIntProperty(int? parentNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -2218,9 +2233,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentNullableGuidProperty(Guid? parentNullableGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentNullableGuidProperty(Guid? parentNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -2384,9 +2399,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentNullableDateTimeProperty(DateTime? parentNullableDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentNullableDateTimeProperty(DateTime? parentNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -2550,9 +2565,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentNullableModelEnumProperty(ModelEnum? parentNullableModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentNullableModelEnumProperty(ModelEnum? parentNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -2716,9 +2731,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentNullableModelFlagsEnumProperty(ModelFlagsEnum? parentNullableModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentNullableModelFlagsEnumProperty(ModelFlagsEnum? parentNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -2882,9 +2897,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfBoolProperty(bool[] parentArrayOfBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfBoolProperty(bool[] parentArrayOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -3048,9 +3063,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfIntProperty(int[] parentArrayOfIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfIntProperty(int[] parentArrayOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -3214,9 +3229,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfStringProperty(string[] parentArrayOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfStringProperty(string[] parentArrayOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -3380,9 +3395,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfGuidProperty(Guid[] parentArrayOfGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfGuidProperty(Guid[] parentArrayOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -3546,9 +3561,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfDateTimeProperty(DateTime[] parentArrayOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfDateTimeProperty(DateTime[] parentArrayOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -3712,9 +3727,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfModelEnumProperty(ModelEnum[] parentArrayOfModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfModelEnumProperty(ModelEnum[] parentArrayOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -3878,9 +3893,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] parentArrayOfModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] parentArrayOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -4044,9 +4059,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfModelClassProperty(ModelClass[] parentArrayOfModelClassProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfModelClassProperty(ModelClass[] parentArrayOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -4210,9 +4225,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfNullableBoolProperty(bool?[] parentArrayOfNullableBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfNullableBoolProperty(bool?[] parentArrayOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -4376,9 +4391,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfNullableIntProperty(int?[] parentArrayOfNullableIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfNullableIntProperty(int?[] parentArrayOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -4542,9 +4557,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfNullableGuidProperty(Guid?[] parentArrayOfNullableGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfNullableGuidProperty(Guid?[] parentArrayOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -4708,9 +4723,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfNullableDateTimeProperty(DateTime?[] parentArrayOfNullableDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfNullableDateTimeProperty(DateTime?[] parentArrayOfNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -4874,9 +4889,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfNullableModelEnumProperty(ModelEnum?[] parentArrayOfNullableModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfNullableModelEnumProperty(ModelEnum?[] parentArrayOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -5040,9 +5055,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] parentArrayOfNullableModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] parentArrayOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -5206,9 +5221,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> parentReadOnlyCollectionInterfaceOfBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> parentReadOnlyCollectionInterfaceOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -5372,9 +5387,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> parentReadOnlyCollectionInterfaceOfIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> parentReadOnlyCollectionInterfaceOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -5538,9 +5553,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> parentReadOnlyCollectionInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> parentReadOnlyCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -5704,9 +5719,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> parentReadOnlyCollectionInterfaceOfGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> parentReadOnlyCollectionInterfaceOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -5870,9 +5885,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> parentReadOnlyCollectionInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> parentReadOnlyCollectionInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -6036,9 +6051,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> parentReadOnlyCollectionInterfaceOfModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> parentReadOnlyCollectionInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -6202,9 +6217,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -6368,9 +6383,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> parentReadOnlyCollectionInterfaceOfModelClassProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> parentReadOnlyCollectionInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -6534,9 +6549,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> parentReadOnlyCollectionInterfaceOfNullableBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> parentReadOnlyCollectionInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -6700,9 +6715,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> parentReadOnlyCollectionInterfaceOfNullableIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> parentReadOnlyCollectionInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -6866,9 +6881,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> parentReadOnlyCollectionInterfaceOfNullableGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> parentReadOnlyCollectionInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -7032,9 +7047,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -7198,9 +7213,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -7364,9 +7379,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -7530,9 +7545,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -7696,9 +7711,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -7862,9 +7877,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -8028,9 +8043,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -8194,9 +8209,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -8360,9 +8375,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> parentReadOnlyListInterfaceOfModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> parentReadOnlyListInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -8526,9 +8541,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> parentReadOnlyListInterfaceOfModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> parentReadOnlyListInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -8692,9 +8707,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> parentReadOnlyListInterfaceOfModelClassProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> parentReadOnlyListInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -8858,9 +8873,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> parentReadOnlyListInterfaceOfNullableBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> parentReadOnlyListInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -9024,9 +9039,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> parentReadOnlyListInterfaceOfNullableIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> parentReadOnlyListInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -9190,9 +9205,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> parentReadOnlyListInterfaceOfNullableGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> parentReadOnlyListInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -9356,9 +9371,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> parentReadOnlyListInterfaceOfNullableDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> parentReadOnlyListInterfaceOfNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -9522,9 +9537,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> parentReadOnlyListInterfaceOfNullableModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> parentReadOnlyListInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -9688,9 +9703,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -9854,9 +9869,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryInterfaceOfBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryInterfaceOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -10020,9 +10035,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> parentReadOnlyDictionaryInterfaceOfIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> parentReadOnlyDictionaryInterfaceOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -10186,9 +10201,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -10352,9 +10367,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -10518,9 +10533,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> parentReadOnlyDictionaryInterfaceOfModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> parentReadOnlyDictionaryInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -10684,9 +10699,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -10850,9 +10865,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> parentReadOnlyDictionaryInterfaceOfModelClassProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> parentReadOnlyDictionaryInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -11016,9 +11031,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> parentReadOnlyDictionaryInterfaceOfNullableBoolProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> parentReadOnlyDictionaryInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -11182,9 +11197,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryInterfaceOfNullableIntProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -11348,9 +11363,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryInterfaceOfNullableGuidProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -11514,9 +11529,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -11680,9 +11695,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -11846,9 +11861,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentCollectionInterfaceOfStringProperty(ICollection<string> parentCollectionInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentCollectionInterfaceOfStringProperty(ICollection<string> parentCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -12012,9 +12027,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> parentCollectionOfCollectionInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> parentCollectionOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -12178,9 +12193,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> parentListInterfaceOfCollectionInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> parentListInterfaceOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -12344,9 +12359,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> parentListOfCollectionInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> parentListOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -12510,9 +12525,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -12676,9 +12691,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -12842,9 +12857,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -13008,9 +13023,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -13174,9 +13189,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -13340,9 +13355,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -13506,9 +13521,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        public override MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -13675,10 +13690,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2BoolProperty" />.
         /// </summary>
         /// <param name="child2BoolProperty">The new <see cref="Child2BoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2BoolProperty" /> for <see cref="Child2BoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2BoolProperty(bool child2BoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2BoolProperty" /> for <see cref="Child2BoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2BoolProperty(bool child2BoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -13845,10 +13860,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2IntProperty" />.
         /// </summary>
         /// <param name="child2IntProperty">The new <see cref="Child2IntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2IntProperty" /> for <see cref="Child2IntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2IntProperty(int child2IntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2IntProperty" /> for <see cref="Child2IntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2IntProperty(int child2IntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -14015,10 +14030,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2StringProperty" />.
         /// </summary>
         /// <param name="child2StringProperty">The new <see cref="Child2StringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2StringProperty" /> for <see cref="Child2StringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2StringProperty(string child2StringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2StringProperty" /> for <see cref="Child2StringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2StringProperty(string child2StringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -14185,10 +14200,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2GuidProperty" />.
         /// </summary>
         /// <param name="child2GuidProperty">The new <see cref="Child2GuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2GuidProperty" /> for <see cref="Child2GuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2GuidProperty(Guid child2GuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2GuidProperty" /> for <see cref="Child2GuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2GuidProperty(Guid child2GuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -14355,10 +14370,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2DateTimeProperty" />.
         /// </summary>
         /// <param name="child2DateTimeProperty">The new <see cref="Child2DateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2DateTimeProperty" /> for <see cref="Child2DateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2DateTimeProperty(DateTime child2DateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2DateTimeProperty" /> for <see cref="Child2DateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2DateTimeProperty(DateTime child2DateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -14525,10 +14540,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ModelEnumProperty">The new <see cref="Child2ModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ModelEnumProperty" /> for <see cref="Child2ModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ModelEnumProperty(ModelEnum child2ModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ModelEnumProperty" /> for <see cref="Child2ModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ModelEnumProperty(ModelEnum child2ModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -14695,10 +14710,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ModelFlagsEnumProperty">The new <see cref="Child2ModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ModelFlagsEnumProperty" /> for <see cref="Child2ModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ModelFlagsEnumProperty(ModelFlagsEnum child2ModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ModelFlagsEnumProperty" /> for <see cref="Child2ModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ModelFlagsEnumProperty(ModelFlagsEnum child2ModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -14865,10 +14880,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ModelClassProperty" />.
         /// </summary>
         /// <param name="child2ModelClassProperty">The new <see cref="Child2ModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ModelClassProperty" /> for <see cref="Child2ModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ModelClassProperty(ModelClass child2ModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ModelClassProperty" /> for <see cref="Child2ModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ModelClassProperty(ModelClass child2ModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -15035,10 +15050,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2NullableBoolProperty" />.
         /// </summary>
         /// <param name="child2NullableBoolProperty">The new <see cref="Child2NullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2NullableBoolProperty" /> for <see cref="Child2NullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2NullableBoolProperty(bool? child2NullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2NullableBoolProperty" /> for <see cref="Child2NullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2NullableBoolProperty(bool? child2NullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -15205,10 +15220,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2NullableIntProperty" />.
         /// </summary>
         /// <param name="child2NullableIntProperty">The new <see cref="Child2NullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2NullableIntProperty" /> for <see cref="Child2NullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2NullableIntProperty(int? child2NullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2NullableIntProperty" /> for <see cref="Child2NullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2NullableIntProperty(int? child2NullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -15375,10 +15390,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2NullableGuidProperty" />.
         /// </summary>
         /// <param name="child2NullableGuidProperty">The new <see cref="Child2NullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2NullableGuidProperty" /> for <see cref="Child2NullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2NullableGuidProperty(Guid? child2NullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2NullableGuidProperty" /> for <see cref="Child2NullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2NullableGuidProperty(Guid? child2NullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -15545,10 +15560,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2NullableDateTimeProperty" />.
         /// </summary>
         /// <param name="child2NullableDateTimeProperty">The new <see cref="Child2NullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2NullableDateTimeProperty" /> for <see cref="Child2NullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2NullableDateTimeProperty(DateTime? child2NullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2NullableDateTimeProperty" /> for <see cref="Child2NullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2NullableDateTimeProperty(DateTime? child2NullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -15715,10 +15730,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2NullableModelEnumProperty" />.
         /// </summary>
         /// <param name="child2NullableModelEnumProperty">The new <see cref="Child2NullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2NullableModelEnumProperty" /> for <see cref="Child2NullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2NullableModelEnumProperty(ModelEnum? child2NullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2NullableModelEnumProperty" /> for <see cref="Child2NullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2NullableModelEnumProperty(ModelEnum? child2NullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -15885,10 +15900,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2NullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2NullableModelFlagsEnumProperty">The new <see cref="Child2NullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2NullableModelFlagsEnumProperty" /> for <see cref="Child2NullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2NullableModelFlagsEnumProperty(ModelFlagsEnum? child2NullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2NullableModelFlagsEnumProperty" /> for <see cref="Child2NullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2NullableModelFlagsEnumProperty(ModelFlagsEnum? child2NullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -16055,10 +16070,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfBoolProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfBoolProperty">The new <see cref="Child2ArrayOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfBoolProperty" /> for <see cref="Child2ArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfBoolProperty(bool[] child2ArrayOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfBoolProperty" /> for <see cref="Child2ArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfBoolProperty(bool[] child2ArrayOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -16225,10 +16240,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfIntProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfIntProperty">The new <see cref="Child2ArrayOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfIntProperty" /> for <see cref="Child2ArrayOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfIntProperty(int[] child2ArrayOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfIntProperty" /> for <see cref="Child2ArrayOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfIntProperty(int[] child2ArrayOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -16395,10 +16410,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfStringProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfStringProperty">The new <see cref="Child2ArrayOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfStringProperty" /> for <see cref="Child2ArrayOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfStringProperty(string[] child2ArrayOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfStringProperty" /> for <see cref="Child2ArrayOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfStringProperty(string[] child2ArrayOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -16565,10 +16580,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfGuidProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfGuidProperty">The new <see cref="Child2ArrayOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfGuidProperty" /> for <see cref="Child2ArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfGuidProperty(Guid[] child2ArrayOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfGuidProperty" /> for <see cref="Child2ArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfGuidProperty(Guid[] child2ArrayOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -16735,10 +16750,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfDateTimeProperty">The new <see cref="Child2ArrayOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfDateTimeProperty" /> for <see cref="Child2ArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfDateTimeProperty(DateTime[] child2ArrayOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfDateTimeProperty" /> for <see cref="Child2ArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfDateTimeProperty(DateTime[] child2ArrayOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -16905,10 +16920,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfModelEnumProperty">The new <see cref="Child2ArrayOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfModelEnumProperty" /> for <see cref="Child2ArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfModelEnumProperty(ModelEnum[] child2ArrayOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfModelEnumProperty" /> for <see cref="Child2ArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfModelEnumProperty(ModelEnum[] child2ArrayOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -17075,10 +17090,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfModelFlagsEnumProperty">The new <see cref="Child2ArrayOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfModelFlagsEnumProperty" /> for <see cref="Child2ArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] child2ArrayOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfModelFlagsEnumProperty" /> for <see cref="Child2ArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] child2ArrayOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -17245,10 +17260,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfModelClassProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfModelClassProperty">The new <see cref="Child2ArrayOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfModelClassProperty" /> for <see cref="Child2ArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfModelClassProperty(ModelClass[] child2ArrayOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfModelClassProperty" /> for <see cref="Child2ArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfModelClassProperty(ModelClass[] child2ArrayOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -17415,10 +17430,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfNullableBoolProperty">The new <see cref="Child2ArrayOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableBoolProperty" /> for <see cref="Child2ArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableBoolProperty(bool?[] child2ArrayOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableBoolProperty" /> for <see cref="Child2ArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableBoolProperty(bool?[] child2ArrayOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -17585,10 +17600,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfNullableIntProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfNullableIntProperty">The new <see cref="Child2ArrayOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableIntProperty" /> for <see cref="Child2ArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableIntProperty(int?[] child2ArrayOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableIntProperty" /> for <see cref="Child2ArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableIntProperty(int?[] child2ArrayOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -17755,10 +17770,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfNullableGuidProperty">The new <see cref="Child2ArrayOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableGuidProperty" /> for <see cref="Child2ArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableGuidProperty(Guid?[] child2ArrayOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableGuidProperty" /> for <see cref="Child2ArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableGuidProperty(Guid?[] child2ArrayOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -17925,10 +17940,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfNullableDateTimeProperty">The new <see cref="Child2ArrayOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableDateTimeProperty" /> for <see cref="Child2ArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableDateTimeProperty(DateTime?[] child2ArrayOfNullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableDateTimeProperty" /> for <see cref="Child2ArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableDateTimeProperty(DateTime?[] child2ArrayOfNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -18095,10 +18110,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfNullableModelEnumProperty">The new <see cref="Child2ArrayOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableModelEnumProperty" /> for <see cref="Child2ArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableModelEnumProperty(ModelEnum?[] child2ArrayOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableModelEnumProperty" /> for <see cref="Child2ArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableModelEnumProperty(ModelEnum?[] child2ArrayOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -18265,10 +18280,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ArrayOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ArrayOfNullableModelFlagsEnumProperty">The new <see cref="Child2ArrayOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] child2ArrayOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ArrayOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] child2ArrayOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -18435,10 +18450,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfBoolProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> child2ReadOnlyCollectionInterfaceOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> child2ReadOnlyCollectionInterfaceOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -18605,10 +18620,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfIntProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfIntProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> child2ReadOnlyCollectionInterfaceOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfIntProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> child2ReadOnlyCollectionInterfaceOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -18775,10 +18790,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfStringProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> child2ReadOnlyCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> child2ReadOnlyCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -18945,10 +18960,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfGuidProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> child2ReadOnlyCollectionInterfaceOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> child2ReadOnlyCollectionInterfaceOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -19115,10 +19130,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfDateTimeProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> child2ReadOnlyCollectionInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> child2ReadOnlyCollectionInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -19285,10 +19300,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfModelEnumProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> child2ReadOnlyCollectionInterfaceOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> child2ReadOnlyCollectionInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -19455,10 +19470,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -19625,10 +19640,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfModelClassProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> child2ReadOnlyCollectionInterfaceOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> child2ReadOnlyCollectionInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -19795,10 +19810,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfNullableBoolProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -19965,10 +19980,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfNullableIntProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> child2ReadOnlyCollectionInterfaceOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> child2ReadOnlyCollectionInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -20135,10 +20150,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfNullableGuidProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -20305,10 +20320,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -20475,10 +20490,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -20645,10 +20660,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -20815,10 +20830,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfBoolProperty">The new <see cref="Child2ReadOnlyListInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfBoolProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> child2ReadOnlyListInterfaceOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfBoolProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> child2ReadOnlyListInterfaceOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -20985,10 +21000,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfIntProperty">The new <see cref="Child2ReadOnlyListInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfIntProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> child2ReadOnlyListInterfaceOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfIntProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> child2ReadOnlyListInterfaceOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -21155,10 +21170,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfStringProperty">The new <see cref="Child2ReadOnlyListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> child2ReadOnlyListInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> child2ReadOnlyListInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -21325,10 +21340,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfGuidProperty">The new <see cref="Child2ReadOnlyListInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfGuidProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> child2ReadOnlyListInterfaceOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfGuidProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> child2ReadOnlyListInterfaceOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -21495,10 +21510,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2ReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> child2ReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> child2ReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -21665,10 +21680,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfModelEnumProperty">The new <see cref="Child2ReadOnlyListInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfModelEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> child2ReadOnlyListInterfaceOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfModelEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> child2ReadOnlyListInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -21835,10 +21850,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfModelFlagsEnumProperty">The new <see cref="Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> child2ReadOnlyListInterfaceOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> child2ReadOnlyListInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -22005,10 +22020,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfModelClassProperty">The new <see cref="Child2ReadOnlyListInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfModelClassProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> child2ReadOnlyListInterfaceOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfModelClassProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> child2ReadOnlyListInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -22175,10 +22190,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfNullableBoolProperty">The new <see cref="Child2ReadOnlyListInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> child2ReadOnlyListInterfaceOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> child2ReadOnlyListInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -22345,10 +22360,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfNullableIntProperty">The new <see cref="Child2ReadOnlyListInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableIntProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> child2ReadOnlyListInterfaceOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableIntProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> child2ReadOnlyListInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -22515,10 +22530,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfNullableGuidProperty">The new <see cref="Child2ReadOnlyListInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> child2ReadOnlyListInterfaceOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> child2ReadOnlyListInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -22685,10 +22700,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfNullableDateTimeProperty">The new <see cref="Child2ReadOnlyListInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> child2ReadOnlyListInterfaceOfNullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> child2ReadOnlyListInterfaceOfNullableDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -22855,10 +22870,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfNullableModelEnumProperty">The new <see cref="Child2ReadOnlyListInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> child2ReadOnlyListInterfaceOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> child2ReadOnlyListInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -23025,10 +23040,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -23195,10 +23210,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfBoolProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> child2ReadOnlyDictionaryInterfaceOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> child2ReadOnlyDictionaryInterfaceOfBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -23365,10 +23380,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfIntProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> child2ReadOnlyDictionaryInterfaceOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> child2ReadOnlyDictionaryInterfaceOfIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -23535,10 +23550,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfStringProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> child2ReadOnlyDictionaryInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> child2ReadOnlyDictionaryInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -23705,10 +23720,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfGuidProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> child2ReadOnlyDictionaryInterfaceOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> child2ReadOnlyDictionaryInterfaceOfGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -23875,10 +23890,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfModelEnumProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> child2ReadOnlyDictionaryInterfaceOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> child2ReadOnlyDictionaryInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -24045,10 +24060,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -24215,10 +24230,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfModelClassProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> child2ReadOnlyDictionaryInterfaceOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> child2ReadOnlyDictionaryInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -24385,10 +24400,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -24555,10 +24570,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfNullableIntProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> child2ReadOnlyDictionaryInterfaceOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> child2ReadOnlyDictionaryInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -24725,10 +24740,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -24895,10 +24910,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -25065,10 +25080,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -25235,10 +25250,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2CollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2CollectionInterfaceOfStringProperty">The new <see cref="Child2CollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2CollectionInterfaceOfStringProperty" /> for <see cref="Child2CollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2CollectionInterfaceOfStringProperty(ICollection<string> child2CollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2CollectionInterfaceOfStringProperty" /> for <see cref="Child2CollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2CollectionInterfaceOfStringProperty(ICollection<string> child2CollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -25405,10 +25420,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2CollectionOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2CollectionOfCollectionInterfaceOfStringProperty">The new <see cref="Child2CollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2CollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2CollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2CollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> child2CollectionOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2CollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2CollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2CollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> child2CollectionOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -25575,10 +25590,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ListInterfaceOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2ListInterfaceOfCollectionInterfaceOfStringProperty">The new <see cref="Child2ListInterfaceOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ListInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2ListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> child2ListInterfaceOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ListInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2ListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> child2ListInterfaceOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -25745,10 +25760,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ListOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2ListOfCollectionInterfaceOfStringProperty">The new <see cref="Child2ListOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ListOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2ListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> child2ListOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ListOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2ListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> child2ListOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -25915,10 +25930,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -26085,10 +26100,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -26255,10 +26270,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -26425,10 +26440,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -26595,10 +26610,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -26765,10 +26780,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -26935,10 +26950,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPrivateSettersChild2" /> using the specified <paramref name="child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPrivateSettersChild2 DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPrivateSettersChild2(
+            var result = new MyModelAllPrivateSettersChild2(
                                  this.ParentBoolProperty,
                                  this.ParentIntProperty,
                                  this.ParentStringProperty?.Clone().ToString(),
@@ -27104,7 +27119,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersChild2)}: ParentBoolProperty = {this.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {this.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {this.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {this.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {this.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentModelEnumProperty = {this.ParentModelEnumProperty.ToString() ?? "<null>"}, ParentModelFlagsEnumProperty = {this.ParentModelFlagsEnumProperty.ToString() ?? "<null>"}, ParentModelClassProperty = {this.ParentModelClassProperty?.ToString() ?? "<null>"}, ParentNullableBoolProperty = {this.ParentNullableBoolProperty?.ToString() ?? "<null>"}, ParentNullableIntProperty = {this.ParentNullableIntProperty?.ToString() ?? "<null>"}, ParentNullableGuidProperty = {this.ParentNullableGuidProperty?.ToString() ?? "<null>"}, ParentNullableDateTimeProperty = {this.ParentNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentNullableModelEnumProperty = {this.ParentNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentNullableModelFlagsEnumProperty = {this.ParentNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfBoolProperty = {this.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {this.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {this.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {this.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {this.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfModelEnumProperty = {this.ParentArrayOfModelEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfModelFlagsEnumProperty = {this.ParentArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfModelClassProperty = {this.ParentArrayOfModelClassProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableBoolProperty = {this.ParentArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableIntProperty = {this.ParentArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableGuidProperty = {this.ParentArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableDateTimeProperty = {this.ParentArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableModelEnumProperty = {this.ParentArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableModelFlagsEnumProperty = {this.ParentArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfBoolProperty = {this.ParentReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfIntProperty = {this.ParentReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfStringProperty = {this.ParentReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfGuidProperty = {this.ParentReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfDateTimeProperty = {this.ParentReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfModelEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfModelClassProperty = {this.ParentReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableIntProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfBoolProperty = {this.ParentReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfIntProperty = {this.ParentReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfStringProperty = {this.ParentReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfGuidProperty = {this.ParentReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfModelEnumProperty = {this.ParentReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfModelFlagsEnumProperty = {this.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfModelClassProperty = {this.ParentReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableBoolProperty = {this.ParentReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableIntProperty = {this.ParentReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableGuidProperty = {this.ParentReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableDateTimeProperty = {this.ParentReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableModelEnumProperty = {this.ParentReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {this.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfBoolProperty = {this.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfIntProperty = {this.ParentReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfStringProperty = {this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfGuidProperty = {this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfModelEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfModelClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentCollectionInterfaceOfStringProperty = {this.ParentCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentCollectionOfCollectionInterfaceOfStringProperty = {this.ParentCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListInterfaceOfCollectionInterfaceOfStringProperty = {this.ParentListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListOfCollectionInterfaceOfStringProperty = {this.ParentListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2BoolProperty = {this.Child2BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2IntProperty = {this.Child2IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2StringProperty = {this.Child2StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2GuidProperty = {this.Child2GuidProperty.ToString() ?? "<null>"}, Child2DateTimeProperty = {this.Child2DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2ModelEnumProperty = {this.Child2ModelEnumProperty.ToString() ?? "<null>"}, Child2ModelFlagsEnumProperty = {this.Child2ModelFlagsEnumProperty.ToString() ?? "<null>"}, Child2ModelClassProperty = {this.Child2ModelClassProperty?.ToString() ?? "<null>"}, Child2NullableBoolProperty = {this.Child2NullableBoolProperty?.ToString() ?? "<null>"}, Child2NullableIntProperty = {this.Child2NullableIntProperty?.ToString() ?? "<null>"}, Child2NullableGuidProperty = {this.Child2NullableGuidProperty?.ToString() ?? "<null>"}, Child2NullableDateTimeProperty = {this.Child2NullableDateTimeProperty?.ToString() ?? "<null>"}, Child2NullableModelEnumProperty = {this.Child2NullableModelEnumProperty?.ToString() ?? "<null>"}, Child2NullableModelFlagsEnumProperty = {this.Child2NullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {this.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {this.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {this.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {this.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {this.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfModelEnumProperty = {this.Child2ArrayOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfModelFlagsEnumProperty = {this.Child2ArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfModelClassProperty = {this.Child2ArrayOfModelClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableBoolProperty = {this.Child2ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableIntProperty = {this.Child2ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableGuidProperty = {this.Child2ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableDateTimeProperty = {this.Child2ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableModelEnumProperty = {this.Child2ArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableModelFlagsEnumProperty = {this.Child2ArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfBoolProperty = {this.Child2ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfIntProperty = {this.Child2ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfStringProperty = {this.Child2ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfGuidProperty = {this.Child2ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfDateTimeProperty = {this.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfModelEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfModelClassProperty = {this.Child2ReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableIntProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfBoolProperty = {this.Child2ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfIntProperty = {this.Child2ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfStringProperty = {this.Child2ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfGuidProperty = {this.Child2ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfModelEnumProperty = {this.Child2ReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty = {this.Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfModelClassProperty = {this.Child2ReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableIntProperty = {this.Child2ReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableModelEnumProperty = {this.Child2ReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {this.Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfBoolProperty = {this.Child2ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfIntProperty = {this.Child2ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfStringProperty = {this.Child2ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfGuidProperty = {this.Child2ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfModelClassProperty = {this.Child2ReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2CollectionInterfaceOfStringProperty = {this.Child2CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2CollectionOfCollectionInterfaceOfStringProperty = {this.Child2CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ListInterfaceOfCollectionInterfaceOfStringProperty = {this.Child2ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ListOfCollectionInterfaceOfStringProperty = {this.Child2ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelAllPrivateSettersChild2)}: ParentBoolProperty = {this.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {this.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {this.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {this.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {this.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentModelEnumProperty = {this.ParentModelEnumProperty.ToString() ?? "<null>"}, ParentModelFlagsEnumProperty = {this.ParentModelFlagsEnumProperty.ToString() ?? "<null>"}, ParentModelClassProperty = {this.ParentModelClassProperty?.ToString() ?? "<null>"}, ParentNullableBoolProperty = {this.ParentNullableBoolProperty?.ToString() ?? "<null>"}, ParentNullableIntProperty = {this.ParentNullableIntProperty?.ToString() ?? "<null>"}, ParentNullableGuidProperty = {this.ParentNullableGuidProperty?.ToString() ?? "<null>"}, ParentNullableDateTimeProperty = {this.ParentNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentNullableModelEnumProperty = {this.ParentNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentNullableModelFlagsEnumProperty = {this.ParentNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfBoolProperty = {this.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {this.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {this.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {this.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {this.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfModelEnumProperty = {this.ParentArrayOfModelEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfModelFlagsEnumProperty = {this.ParentArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfModelClassProperty = {this.ParentArrayOfModelClassProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableBoolProperty = {this.ParentArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableIntProperty = {this.ParentArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableGuidProperty = {this.ParentArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableDateTimeProperty = {this.ParentArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableModelEnumProperty = {this.ParentArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableModelFlagsEnumProperty = {this.ParentArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfBoolProperty = {this.ParentReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfIntProperty = {this.ParentReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfStringProperty = {this.ParentReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfGuidProperty = {this.ParentReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfDateTimeProperty = {this.ParentReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfModelEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfModelClassProperty = {this.ParentReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableIntProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfBoolProperty = {this.ParentReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfIntProperty = {this.ParentReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfStringProperty = {this.ParentReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfGuidProperty = {this.ParentReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfModelEnumProperty = {this.ParentReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfModelFlagsEnumProperty = {this.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfModelClassProperty = {this.ParentReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableBoolProperty = {this.ParentReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableIntProperty = {this.ParentReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableGuidProperty = {this.ParentReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableDateTimeProperty = {this.ParentReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableModelEnumProperty = {this.ParentReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {this.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfBoolProperty = {this.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfIntProperty = {this.ParentReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfStringProperty = {this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfGuidProperty = {this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfModelEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfModelClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ParentCollectionInterfaceOfStringProperty = {this.ParentCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentCollectionOfCollectionInterfaceOfStringProperty = {this.ParentCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListInterfaceOfCollectionInterfaceOfStringProperty = {this.ParentListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListOfCollectionInterfaceOfStringProperty = {this.ParentListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2BoolProperty = {this.Child2BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2IntProperty = {this.Child2IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2StringProperty = {this.Child2StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2GuidProperty = {this.Child2GuidProperty.ToString() ?? "<null>"}, Child2DateTimeProperty = {this.Child2DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2ModelEnumProperty = {this.Child2ModelEnumProperty.ToString() ?? "<null>"}, Child2ModelFlagsEnumProperty = {this.Child2ModelFlagsEnumProperty.ToString() ?? "<null>"}, Child2ModelClassProperty = {this.Child2ModelClassProperty?.ToString() ?? "<null>"}, Child2NullableBoolProperty = {this.Child2NullableBoolProperty?.ToString() ?? "<null>"}, Child2NullableIntProperty = {this.Child2NullableIntProperty?.ToString() ?? "<null>"}, Child2NullableGuidProperty = {this.Child2NullableGuidProperty?.ToString() ?? "<null>"}, Child2NullableDateTimeProperty = {this.Child2NullableDateTimeProperty?.ToString() ?? "<null>"}, Child2NullableModelEnumProperty = {this.Child2NullableModelEnumProperty?.ToString() ?? "<null>"}, Child2NullableModelFlagsEnumProperty = {this.Child2NullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {this.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {this.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {this.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {this.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {this.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfModelEnumProperty = {this.Child2ArrayOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfModelFlagsEnumProperty = {this.Child2ArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfModelClassProperty = {this.Child2ArrayOfModelClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableBoolProperty = {this.Child2ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableIntProperty = {this.Child2ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableGuidProperty = {this.Child2ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableDateTimeProperty = {this.Child2ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableModelEnumProperty = {this.Child2ArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfNullableModelFlagsEnumProperty = {this.Child2ArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfBoolProperty = {this.Child2ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfIntProperty = {this.Child2ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfStringProperty = {this.Child2ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfGuidProperty = {this.Child2ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfDateTimeProperty = {this.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfModelEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfModelClassProperty = {this.Child2ReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableIntProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfBoolProperty = {this.Child2ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfIntProperty = {this.Child2ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfStringProperty = {this.Child2ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfGuidProperty = {this.Child2ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfModelEnumProperty = {this.Child2ReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty = {this.Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfModelClassProperty = {this.Child2ReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableIntProperty = {this.Child2ReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableModelEnumProperty = {this.Child2ReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {this.Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfBoolProperty = {this.Child2ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfIntProperty = {this.Child2ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfStringProperty = {this.Child2ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfGuidProperty = {this.Child2ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfModelClassProperty = {this.Child2ReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {this.Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, Child2CollectionInterfaceOfStringProperty = {this.Child2CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2CollectionOfCollectionInterfaceOfStringProperty = {this.Child2CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ListInterfaceOfCollectionInterfaceOfStringProperty = {this.Child2ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ListOfCollectionInterfaceOfStringProperty = {this.Child2ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

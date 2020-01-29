@@ -42,7 +42,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return false;
             }
 
-            var result = true;
+            var result = left.Equals(right);
 
             return result;
         }
@@ -56,7 +56,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static bool operator !=(MyModelPublicSettersEmpty left, MyModelPublicSettersEmpty right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPublicSettersEmpty other) => this == other;
+        public bool Equals(MyModelPublicSettersEmpty other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = true;
+
+            return result;
+        }
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as MyModelPublicSettersEmpty);

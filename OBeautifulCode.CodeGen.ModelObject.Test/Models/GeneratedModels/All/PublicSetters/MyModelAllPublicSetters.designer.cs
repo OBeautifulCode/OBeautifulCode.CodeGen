@@ -22,15 +22,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPublicSetters : IModel<MyModelPublicSetters>
+    public partial class MyModelAllPublicSetters : IModel<MyModelAllPublicSetters>
     {
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPublicSetters"/> are equal.
+        /// Determines whether two objects of type <see cref="MyModelAllPublicSetters"/> are equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(MyModelPublicSetters left, MyModelPublicSetters right)
+        public static bool operator ==(MyModelAllPublicSetters left, MyModelAllPublicSetters right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -42,102 +42,117 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return false;
             }
 
-            var result = left.BoolProperty.IsEqualTo(right.BoolProperty)
-                      && left.IntProperty.IsEqualTo(right.IntProperty)
-                      && left.StringProperty.Equals(right.StringProperty, StringComparison.Ordinal)
-                      && left.GuidProperty.IsEqualTo(right.GuidProperty)
-                      && left.DateTimeProperty.IsEqualTo(right.DateTimeProperty)
-                      && left.ModelEnumProperty.IsEqualTo(right.ModelEnumProperty)
-                      && left.ModelFlagsEnumProperty.IsEqualTo(right.ModelFlagsEnumProperty)
-                      && left.ModelClassProperty.IsEqualTo(right.ModelClassProperty)
-                      && left.NullableBoolProperty.IsEqualTo(right.NullableBoolProperty)
-                      && left.NullableIntProperty.IsEqualTo(right.NullableIntProperty)
-                      && left.NullableGuidProperty.IsEqualTo(right.NullableGuidProperty)
-                      && left.NullableDateTimeProperty.IsEqualTo(right.NullableDateTimeProperty)
-                      && left.NullableModelEnumProperty.IsEqualTo(right.NullableModelEnumProperty)
-                      && left.NullableModelFlagsEnumProperty.IsEqualTo(right.NullableModelFlagsEnumProperty)
-                      && left.ArrayOfBoolProperty.IsEqualTo(right.ArrayOfBoolProperty)
-                      && left.ArrayOfIntProperty.IsEqualTo(right.ArrayOfIntProperty)
-                      && left.ArrayOfStringProperty.IsEqualTo(right.ArrayOfStringProperty)
-                      && left.ArrayOfGuidProperty.IsEqualTo(right.ArrayOfGuidProperty)
-                      && left.ArrayOfDateTimeProperty.IsEqualTo(right.ArrayOfDateTimeProperty)
-                      && left.ArrayOfModelEnumProperty.IsEqualTo(right.ArrayOfModelEnumProperty)
-                      && left.ArrayOfModelFlagsEnumProperty.IsEqualTo(right.ArrayOfModelFlagsEnumProperty)
-                      && left.ArrayOfModelClassProperty.IsEqualTo(right.ArrayOfModelClassProperty)
-                      && left.ArrayOfNullableBoolProperty.IsEqualTo(right.ArrayOfNullableBoolProperty)
-                      && left.ArrayOfNullableIntProperty.IsEqualTo(right.ArrayOfNullableIntProperty)
-                      && left.ArrayOfNullableGuidProperty.IsEqualTo(right.ArrayOfNullableGuidProperty)
-                      && left.ArrayOfNullableDateTimeProperty.IsEqualTo(right.ArrayOfNullableDateTimeProperty)
-                      && left.ArrayOfNullableModelEnumProperty.IsEqualTo(right.ArrayOfNullableModelEnumProperty)
-                      && left.ArrayOfNullableModelFlagsEnumProperty.IsEqualTo(right.ArrayOfNullableModelFlagsEnumProperty)
-                      && left.ReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfBoolProperty)
-                      && left.ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfIntProperty)
-                      && left.ReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfStringProperty)
-                      && left.ReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfGuidProperty)
-                      && left.ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfDateTimeProperty)
-                      && left.ReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfModelEnumProperty)
-                      && left.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
-                      && left.ReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfModelClassProperty)
-                      && left.ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfNullableBoolProperty)
-                      && left.ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfNullableIntProperty)
-                      && left.ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfNullableGuidProperty)
-                      && left.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
-                      && left.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
-                      && left.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(right.ReadOnlyListInterfaceOfBoolProperty)
-                      && left.ReadOnlyListInterfaceOfIntProperty.IsEqualTo(right.ReadOnlyListInterfaceOfIntProperty)
-                      && left.ReadOnlyListInterfaceOfStringProperty.IsEqualTo(right.ReadOnlyListInterfaceOfStringProperty)
-                      && left.ReadOnlyListInterfaceOfGuidProperty.IsEqualTo(right.ReadOnlyListInterfaceOfGuidProperty)
-                      && left.ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(right.ReadOnlyListInterfaceOfModelEnumProperty)
-                      && left.ReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.ReadOnlyListInterfaceOfModelFlagsEnumProperty)
-                      && left.ReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(right.ReadOnlyListInterfaceOfModelClassProperty)
-                      && left.ReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(right.ReadOnlyListInterfaceOfNullableBoolProperty)
-                      && left.ReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(right.ReadOnlyListInterfaceOfNullableIntProperty)
-                      && left.ReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(right.ReadOnlyListInterfaceOfNullableGuidProperty)
-                      && left.ReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(right.ReadOnlyListInterfaceOfNullableDateTimeProperty)
-                      && left.ReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(right.ReadOnlyListInterfaceOfNullableModelEnumProperty)
-                      && left.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfBoolProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfIntProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfStringProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfGuidProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfModelEnumProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfModelClassProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfNullableIntProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
-                      && left.CollectionInterfaceOfStringProperty.IsEqualTo(right.CollectionInterfaceOfStringProperty)
-                      && left.CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(right.CollectionOfCollectionInterfaceOfStringProperty)
-                      && left.ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ListInterfaceOfCollectionInterfaceOfStringProperty)
-                      && left.ListOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ListOfCollectionInterfaceOfStringProperty)
-                      && left.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(right.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
-                      && left.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && left.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(right.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+            var result = left.Equals(right);
 
             return result;
         }
 
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPublicSetters"/> are not equal.
+        /// Determines whether two objects of type <see cref="MyModelAllPublicSetters"/> are not equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(MyModelPublicSetters left, MyModelPublicSetters right) => !(left == right);
+        public static bool operator !=(MyModelAllPublicSetters left, MyModelAllPublicSetters right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPublicSetters other) => this == other;
+        public bool Equals(MyModelAllPublicSetters other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = this.BoolProperty.IsEqualTo(other.BoolProperty)
+                      && this.IntProperty.IsEqualTo(other.IntProperty)
+                      && this.StringProperty.Equals(other.StringProperty, StringComparison.Ordinal)
+                      && this.GuidProperty.IsEqualTo(other.GuidProperty)
+                      && this.DateTimeProperty.IsEqualTo(other.DateTimeProperty)
+                      && this.ModelEnumProperty.IsEqualTo(other.ModelEnumProperty)
+                      && this.ModelFlagsEnumProperty.IsEqualTo(other.ModelFlagsEnumProperty)
+                      && this.ModelClassProperty.IsEqualTo(other.ModelClassProperty)
+                      && this.NullableBoolProperty.IsEqualTo(other.NullableBoolProperty)
+                      && this.NullableIntProperty.IsEqualTo(other.NullableIntProperty)
+                      && this.NullableGuidProperty.IsEqualTo(other.NullableGuidProperty)
+                      && this.NullableDateTimeProperty.IsEqualTo(other.NullableDateTimeProperty)
+                      && this.NullableModelEnumProperty.IsEqualTo(other.NullableModelEnumProperty)
+                      && this.NullableModelFlagsEnumProperty.IsEqualTo(other.NullableModelFlagsEnumProperty)
+                      && this.ArrayOfBoolProperty.IsEqualTo(other.ArrayOfBoolProperty)
+                      && this.ArrayOfIntProperty.IsEqualTo(other.ArrayOfIntProperty)
+                      && this.ArrayOfStringProperty.IsEqualTo(other.ArrayOfStringProperty)
+                      && this.ArrayOfGuidProperty.IsEqualTo(other.ArrayOfGuidProperty)
+                      && this.ArrayOfDateTimeProperty.IsEqualTo(other.ArrayOfDateTimeProperty)
+                      && this.ArrayOfModelEnumProperty.IsEqualTo(other.ArrayOfModelEnumProperty)
+                      && this.ArrayOfModelFlagsEnumProperty.IsEqualTo(other.ArrayOfModelFlagsEnumProperty)
+                      && this.ArrayOfModelClassProperty.IsEqualTo(other.ArrayOfModelClassProperty)
+                      && this.ArrayOfNullableBoolProperty.IsEqualTo(other.ArrayOfNullableBoolProperty)
+                      && this.ArrayOfNullableIntProperty.IsEqualTo(other.ArrayOfNullableIntProperty)
+                      && this.ArrayOfNullableGuidProperty.IsEqualTo(other.ArrayOfNullableGuidProperty)
+                      && this.ArrayOfNullableDateTimeProperty.IsEqualTo(other.ArrayOfNullableDateTimeProperty)
+                      && this.ArrayOfNullableModelEnumProperty.IsEqualTo(other.ArrayOfNullableModelEnumProperty)
+                      && this.ArrayOfNullableModelFlagsEnumProperty.IsEqualTo(other.ArrayOfNullableModelFlagsEnumProperty)
+                      && this.ReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfBoolProperty)
+                      && this.ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfIntProperty)
+                      && this.ReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfStringProperty)
+                      && this.ReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfGuidProperty)
+                      && this.ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfDateTimeProperty)
+                      && this.ReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfModelEnumProperty)
+                      && this.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)
+                      && this.ReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfModelClassProperty)
+                      && this.ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableBoolProperty)
+                      && this.ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableIntProperty)
+                      && this.ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableGuidProperty)
+                      && this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
+                      && this.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty)
+                      && this.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.ReadOnlyListInterfaceOfBoolProperty)
+                      && this.ReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.ReadOnlyListInterfaceOfIntProperty)
+                      && this.ReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyListInterfaceOfStringProperty)
+                      && this.ReadOnlyListInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyListInterfaceOfGuidProperty)
+                      && this.ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfModelEnumProperty)
+                      && this.ReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfModelFlagsEnumProperty)
+                      && this.ReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(other.ReadOnlyListInterfaceOfModelClassProperty)
+                      && this.ReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableBoolProperty)
+                      && this.ReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableIntProperty)
+                      && this.ReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableGuidProperty)
+                      && this.ReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableDateTimeProperty)
+                      && this.ReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableModelEnumProperty)
+                      && this.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfBoolProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfIntProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfStringProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfGuidProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfModelEnumProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfModelClassProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableIntProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
+                      && this.CollectionInterfaceOfStringProperty.IsEqualTo(other.CollectionInterfaceOfStringProperty)
+                      && this.CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.CollectionOfCollectionInterfaceOfStringProperty)
+                      && this.ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ListInterfaceOfCollectionInterfaceOfStringProperty)
+                      && this.ListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ListOfCollectionInterfaceOfStringProperty)
+                      && this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+                      && this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+
+            return result;
+        }
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => this == (obj as MyModelPublicSetters);
+        public override bool Equals(object obj) => this == (obj as MyModelAllPublicSetters);
     
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
@@ -226,9 +241,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public MyModelPublicSetters DeepClone()
+        public MyModelAllPublicSetters DeepClone()
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -318,10 +333,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="BoolProperty" />.
         /// </summary>
         /// <param name="boolProperty">The new <see cref="BoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="boolProperty" /> for <see cref="BoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithBoolProperty(bool boolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="boolProperty" /> for <see cref="BoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithBoolProperty(bool boolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = boolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -411,10 +426,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="IntProperty" />.
         /// </summary>
         /// <param name="intProperty">The new <see cref="IntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="intProperty" /> for <see cref="IntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithIntProperty(int intProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="intProperty" /> for <see cref="IntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithIntProperty(int intProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = intProperty,
@@ -504,10 +519,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="StringProperty" />.
         /// </summary>
         /// <param name="stringProperty">The new <see cref="StringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="stringProperty" /> for <see cref="StringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithStringProperty(string stringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="stringProperty" /> for <see cref="StringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithStringProperty(string stringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -597,10 +612,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="GuidProperty" />.
         /// </summary>
         /// <param name="guidProperty">The new <see cref="GuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="guidProperty" /> for <see cref="GuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithGuidProperty(Guid guidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="guidProperty" /> for <see cref="GuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithGuidProperty(Guid guidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -690,10 +705,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="DateTimeProperty" />.
         /// </summary>
         /// <param name="dateTimeProperty">The new <see cref="DateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="dateTimeProperty" /> for <see cref="DateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithDateTimeProperty(DateTime dateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="dateTimeProperty" /> for <see cref="DateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithDateTimeProperty(DateTime dateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -783,10 +798,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ModelEnumProperty" />.
         /// </summary>
         /// <param name="modelEnumProperty">The new <see cref="ModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="modelEnumProperty" /> for <see cref="ModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithModelEnumProperty(ModelEnum modelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="modelEnumProperty" /> for <see cref="ModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithModelEnumProperty(ModelEnum modelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -876,10 +891,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="modelFlagsEnumProperty">The new <see cref="ModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="modelFlagsEnumProperty" /> for <see cref="ModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithModelFlagsEnumProperty(ModelFlagsEnum modelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="modelFlagsEnumProperty" /> for <see cref="ModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithModelFlagsEnumProperty(ModelFlagsEnum modelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -969,10 +984,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ModelClassProperty" />.
         /// </summary>
         /// <param name="modelClassProperty">The new <see cref="ModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="modelClassProperty" /> for <see cref="ModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithModelClassProperty(ModelClass modelClassProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="modelClassProperty" /> for <see cref="ModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithModelClassProperty(ModelClass modelClassProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1062,10 +1077,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="NullableBoolProperty" />.
         /// </summary>
         /// <param name="nullableBoolProperty">The new <see cref="NullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="nullableBoolProperty" /> for <see cref="NullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithNullableBoolProperty(bool? nullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="nullableBoolProperty" /> for <see cref="NullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithNullableBoolProperty(bool? nullableBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1155,10 +1170,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="NullableIntProperty" />.
         /// </summary>
         /// <param name="nullableIntProperty">The new <see cref="NullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="nullableIntProperty" /> for <see cref="NullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithNullableIntProperty(int? nullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="nullableIntProperty" /> for <see cref="NullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithNullableIntProperty(int? nullableIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1248,10 +1263,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="NullableGuidProperty" />.
         /// </summary>
         /// <param name="nullableGuidProperty">The new <see cref="NullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="nullableGuidProperty" /> for <see cref="NullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithNullableGuidProperty(Guid? nullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="nullableGuidProperty" /> for <see cref="NullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithNullableGuidProperty(Guid? nullableGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1341,10 +1356,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="NullableDateTimeProperty" />.
         /// </summary>
         /// <param name="nullableDateTimeProperty">The new <see cref="NullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="nullableDateTimeProperty" /> for <see cref="NullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithNullableDateTimeProperty(DateTime? nullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="nullableDateTimeProperty" /> for <see cref="NullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithNullableDateTimeProperty(DateTime? nullableDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1434,10 +1449,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="NullableModelEnumProperty" />.
         /// </summary>
         /// <param name="nullableModelEnumProperty">The new <see cref="NullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="nullableModelEnumProperty" /> for <see cref="NullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithNullableModelEnumProperty(ModelEnum? nullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="nullableModelEnumProperty" /> for <see cref="NullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithNullableModelEnumProperty(ModelEnum? nullableModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1527,10 +1542,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="NullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="nullableModelFlagsEnumProperty">The new <see cref="NullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="nullableModelFlagsEnumProperty" /> for <see cref="NullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithNullableModelFlagsEnumProperty(ModelFlagsEnum? nullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="nullableModelFlagsEnumProperty" /> for <see cref="NullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithNullableModelFlagsEnumProperty(ModelFlagsEnum? nullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1620,10 +1635,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfBoolProperty" />.
         /// </summary>
         /// <param name="arrayOfBoolProperty">The new <see cref="ArrayOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfBoolProperty" /> for <see cref="ArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfBoolProperty(bool[] arrayOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfBoolProperty" /> for <see cref="ArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfBoolProperty(bool[] arrayOfBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1713,10 +1728,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfIntProperty" />.
         /// </summary>
         /// <param name="arrayOfIntProperty">The new <see cref="ArrayOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfIntProperty" /> for <see cref="ArrayOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfIntProperty(int[] arrayOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfIntProperty" /> for <see cref="ArrayOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfIntProperty(int[] arrayOfIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1806,10 +1821,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfStringProperty" />.
         /// </summary>
         /// <param name="arrayOfStringProperty">The new <see cref="ArrayOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfStringProperty" /> for <see cref="ArrayOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfStringProperty(string[] arrayOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfStringProperty" /> for <see cref="ArrayOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfStringProperty(string[] arrayOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1899,10 +1914,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfGuidProperty" />.
         /// </summary>
         /// <param name="arrayOfGuidProperty">The new <see cref="ArrayOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfGuidProperty" /> for <see cref="ArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfGuidProperty(Guid[] arrayOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfGuidProperty" /> for <see cref="ArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfGuidProperty(Guid[] arrayOfGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -1992,10 +2007,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfDateTimeProperty" />.
         /// </summary>
         /// <param name="arrayOfDateTimeProperty">The new <see cref="ArrayOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfDateTimeProperty" /> for <see cref="ArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfDateTimeProperty(DateTime[] arrayOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfDateTimeProperty" /> for <see cref="ArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfDateTimeProperty(DateTime[] arrayOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2085,10 +2100,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfModelEnumProperty" />.
         /// </summary>
         /// <param name="arrayOfModelEnumProperty">The new <see cref="ArrayOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfModelEnumProperty" /> for <see cref="ArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfModelEnumProperty(ModelEnum[] arrayOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfModelEnumProperty" /> for <see cref="ArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfModelEnumProperty(ModelEnum[] arrayOfModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2178,10 +2193,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="arrayOfModelFlagsEnumProperty">The new <see cref="ArrayOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfModelFlagsEnumProperty" /> for <see cref="ArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] arrayOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfModelFlagsEnumProperty" /> for <see cref="ArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] arrayOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2271,10 +2286,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfModelClassProperty" />.
         /// </summary>
         /// <param name="arrayOfModelClassProperty">The new <see cref="ArrayOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfModelClassProperty" /> for <see cref="ArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfModelClassProperty(ModelClass[] arrayOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfModelClassProperty" /> for <see cref="ArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfModelClassProperty(ModelClass[] arrayOfModelClassProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2364,10 +2379,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="arrayOfNullableBoolProperty">The new <see cref="ArrayOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfNullableBoolProperty" /> for <see cref="ArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfNullableBoolProperty(bool?[] arrayOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfNullableBoolProperty" /> for <see cref="ArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfNullableBoolProperty(bool?[] arrayOfNullableBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2457,10 +2472,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfNullableIntProperty" />.
         /// </summary>
         /// <param name="arrayOfNullableIntProperty">The new <see cref="ArrayOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfNullableIntProperty" /> for <see cref="ArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfNullableIntProperty(int?[] arrayOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfNullableIntProperty" /> for <see cref="ArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfNullableIntProperty(int?[] arrayOfNullableIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2550,10 +2565,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="arrayOfNullableGuidProperty">The new <see cref="ArrayOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfNullableGuidProperty" /> for <see cref="ArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfNullableGuidProperty(Guid?[] arrayOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfNullableGuidProperty" /> for <see cref="ArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfNullableGuidProperty(Guid?[] arrayOfNullableGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2643,10 +2658,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="arrayOfNullableDateTimeProperty">The new <see cref="ArrayOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfNullableDateTimeProperty" /> for <see cref="ArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfNullableDateTimeProperty(DateTime?[] arrayOfNullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfNullableDateTimeProperty" /> for <see cref="ArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfNullableDateTimeProperty(DateTime?[] arrayOfNullableDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2736,10 +2751,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="arrayOfNullableModelEnumProperty">The new <see cref="ArrayOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfNullableModelEnumProperty" /> for <see cref="ArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfNullableModelEnumProperty(ModelEnum?[] arrayOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfNullableModelEnumProperty" /> for <see cref="ArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfNullableModelEnumProperty(ModelEnum?[] arrayOfNullableModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2829,10 +2844,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ArrayOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="arrayOfNullableModelFlagsEnumProperty">The new <see cref="ArrayOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="arrayOfNullableModelFlagsEnumProperty" /> for <see cref="ArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] arrayOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="arrayOfNullableModelFlagsEnumProperty" /> for <see cref="ArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] arrayOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -2922,10 +2937,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfBoolProperty">The new <see cref="ReadOnlyCollectionInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> readOnlyCollectionInterfaceOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> readOnlyCollectionInterfaceOfBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3015,10 +3030,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfIntProperty">The new <see cref="ReadOnlyCollectionInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfIntProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> readOnlyCollectionInterfaceOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfIntProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> readOnlyCollectionInterfaceOfIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3108,10 +3123,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfStringProperty">The new <see cref="ReadOnlyCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfStringProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> readOnlyCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfStringProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> readOnlyCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3201,10 +3216,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfGuidProperty">The new <see cref="ReadOnlyCollectionInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> readOnlyCollectionInterfaceOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> readOnlyCollectionInterfaceOfGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3294,10 +3309,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyCollectionInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> readOnlyCollectionInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> readOnlyCollectionInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3387,10 +3402,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfModelEnumProperty">The new <see cref="ReadOnlyCollectionInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> readOnlyCollectionInterfaceOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> readOnlyCollectionInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3480,10 +3495,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfModelFlagsEnumProperty">The new <see cref="ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> readOnlyCollectionInterfaceOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> readOnlyCollectionInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3573,10 +3588,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfModelClassProperty">The new <see cref="ReadOnlyCollectionInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> readOnlyCollectionInterfaceOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> readOnlyCollectionInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3666,10 +3681,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfNullableBoolProperty">The new <see cref="ReadOnlyCollectionInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> readOnlyCollectionInterfaceOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> readOnlyCollectionInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3759,10 +3774,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfNullableIntProperty">The new <see cref="ReadOnlyCollectionInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> readOnlyCollectionInterfaceOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> readOnlyCollectionInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3852,10 +3867,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfNullableGuidProperty">The new <see cref="ReadOnlyCollectionInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> readOnlyCollectionInterfaceOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> readOnlyCollectionInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -3945,10 +3960,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfNullableDateTimeProperty">The new <see cref="ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> readOnlyCollectionInterfaceOfNullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> readOnlyCollectionInterfaceOfNullableDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4038,10 +4053,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfNullableModelEnumProperty">The new <see cref="ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> readOnlyCollectionInterfaceOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> readOnlyCollectionInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4131,10 +4146,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4224,10 +4239,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfBoolProperty">The new <see cref="ReadOnlyListInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfBoolProperty" /> for <see cref="ReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> readOnlyListInterfaceOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfBoolProperty" /> for <see cref="ReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> readOnlyListInterfaceOfBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4317,10 +4332,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfIntProperty">The new <see cref="ReadOnlyListInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfIntProperty" /> for <see cref="ReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> readOnlyListInterfaceOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfIntProperty" /> for <see cref="ReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> readOnlyListInterfaceOfIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4410,10 +4425,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfStringProperty">The new <see cref="ReadOnlyListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfStringProperty" /> for <see cref="ReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> readOnlyListInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfStringProperty" /> for <see cref="ReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> readOnlyListInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4503,10 +4518,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfGuidProperty">The new <see cref="ReadOnlyListInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfGuidProperty" /> for <see cref="ReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> readOnlyListInterfaceOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfGuidProperty" /> for <see cref="ReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> readOnlyListInterfaceOfGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4596,10 +4611,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> readOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> readOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4689,10 +4704,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfModelEnumProperty">The new <see cref="ReadOnlyListInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfModelEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> readOnlyListInterfaceOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfModelEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> readOnlyListInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4782,10 +4797,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfModelFlagsEnumProperty">The new <see cref="ReadOnlyListInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> readOnlyListInterfaceOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> readOnlyListInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4875,10 +4890,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfModelClassProperty">The new <see cref="ReadOnlyListInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfModelClassProperty" /> for <see cref="ReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> readOnlyListInterfaceOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfModelClassProperty" /> for <see cref="ReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> readOnlyListInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -4968,10 +4983,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfNullableBoolProperty">The new <see cref="ReadOnlyListInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> readOnlyListInterfaceOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> readOnlyListInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5061,10 +5076,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfNullableIntProperty">The new <see cref="ReadOnlyListInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableIntProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> readOnlyListInterfaceOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableIntProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> readOnlyListInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5154,10 +5169,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfNullableGuidProperty">The new <see cref="ReadOnlyListInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> readOnlyListInterfaceOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> readOnlyListInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5247,10 +5262,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfNullableDateTimeProperty">The new <see cref="ReadOnlyListInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> readOnlyListInterfaceOfNullableDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> readOnlyListInterfaceOfNullableDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5340,10 +5355,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfNullableModelEnumProperty">The new <see cref="ReadOnlyListInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> readOnlyListInterfaceOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> readOnlyListInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5433,10 +5448,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> readOnlyListInterfaceOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> readOnlyListInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5526,10 +5541,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfBoolProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> readOnlyDictionaryInterfaceOfBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> readOnlyDictionaryInterfaceOfBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5619,10 +5634,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfIntProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> readOnlyDictionaryInterfaceOfIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> readOnlyDictionaryInterfaceOfIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5712,10 +5727,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfStringProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> readOnlyDictionaryInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> readOnlyDictionaryInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5805,10 +5820,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfGuidProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> readOnlyDictionaryInterfaceOfGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> readOnlyDictionaryInterfaceOfGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5898,10 +5913,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfModelEnumProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> readOnlyDictionaryInterfaceOfModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> readOnlyDictionaryInterfaceOfModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -5991,10 +6006,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfModelFlagsEnumProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> readOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> readOnlyDictionaryInterfaceOfModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6084,10 +6099,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfModelClassProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> readOnlyDictionaryInterfaceOfModelClassProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> readOnlyDictionaryInterfaceOfModelClassProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6177,10 +6192,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfNullableBoolProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> readOnlyDictionaryInterfaceOfNullableBoolProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> readOnlyDictionaryInterfaceOfNullableBoolProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6270,10 +6285,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfNullableIntProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> readOnlyDictionaryInterfaceOfNullableIntProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> readOnlyDictionaryInterfaceOfNullableIntProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6363,10 +6378,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfNullableGuidProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> readOnlyDictionaryInterfaceOfNullableGuidProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> readOnlyDictionaryInterfaceOfNullableGuidProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6456,10 +6471,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfNullableModelEnumProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> readOnlyDictionaryInterfaceOfNullableModelEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> readOnlyDictionaryInterfaceOfNullableModelEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6549,10 +6564,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6642,10 +6657,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="CollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="collectionInterfaceOfStringProperty">The new <see cref="CollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="collectionInterfaceOfStringProperty" /> for <see cref="CollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithCollectionInterfaceOfStringProperty(ICollection<string> collectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="collectionInterfaceOfStringProperty" /> for <see cref="CollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithCollectionInterfaceOfStringProperty(ICollection<string> collectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6735,10 +6750,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="CollectionOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="collectionOfCollectionInterfaceOfStringProperty">The new <see cref="CollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="collectionOfCollectionInterfaceOfStringProperty" /> for <see cref="CollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> collectionOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="collectionOfCollectionInterfaceOfStringProperty" /> for <see cref="CollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> collectionOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6828,10 +6843,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ListInterfaceOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="listInterfaceOfCollectionInterfaceOfStringProperty">The new <see cref="ListInterfaceOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="listInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="ListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> listInterfaceOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="listInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="ListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> listInterfaceOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -6921,10 +6936,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ListOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="listOfCollectionInterfaceOfStringProperty">The new <see cref="ListOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="listOfCollectionInterfaceOfStringProperty" /> for <see cref="ListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> listOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="listOfCollectionInterfaceOfStringProperty" /> for <see cref="ListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> listOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7014,10 +7029,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="readOnlyCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> readOnlyCollectionOfCollectionInterfaceOfStringProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> readOnlyCollectionOfCollectionInterfaceOfStringProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7107,10 +7122,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7200,10 +7215,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="dictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="dictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> dictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="dictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> dictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7293,10 +7308,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7386,10 +7401,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7479,10 +7494,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7572,10 +7587,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public MyModelPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        /// <returns>New <see cref="MyModelAllPublicSetters" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public MyModelAllPublicSetters DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            var result = new MyModelPublicSetters
+            var result = new MyModelAllPublicSetters
                              {
                                  BoolProperty                                                                                                          = this.BoolProperty,
                                  IntProperty                                                                                                           = this.IntProperty,
@@ -7664,7 +7679,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSetters)}: BoolProperty = {this.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {this.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {this.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ModelEnumProperty = {this.ModelEnumProperty.ToString() ?? "<null>"}, ModelFlagsEnumProperty = {this.ModelFlagsEnumProperty.ToString() ?? "<null>"}, ModelClassProperty = {this.ModelClassProperty?.ToString() ?? "<null>"}, NullableBoolProperty = {this.NullableBoolProperty?.ToString() ?? "<null>"}, NullableIntProperty = {this.NullableIntProperty?.ToString() ?? "<null>"}, NullableGuidProperty = {this.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {this.NullableDateTimeProperty?.ToString() ?? "<null>"}, NullableModelEnumProperty = {this.NullableModelEnumProperty?.ToString() ?? "<null>"}, NullableModelFlagsEnumProperty = {this.NullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfBoolProperty = {this.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {this.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {this.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {this.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {this.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfModelEnumProperty = {this.ArrayOfModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelFlagsEnumProperty = {this.ArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelClassProperty = {this.ArrayOfModelClassProperty?.ToString() ?? "<null>"}, ArrayOfNullableBoolProperty = {this.ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ArrayOfNullableIntProperty = {this.ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ArrayOfNullableGuidProperty = {this.ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ArrayOfNullableDateTimeProperty = {this.ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelEnumProperty = {this.ArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelFlagsEnumProperty = {this.ArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfBoolProperty = {this.ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfIntProperty = {this.ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfStringProperty = {this.ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfGuidProperty = {this.ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfDateTimeProperty = {this.ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelEnumProperty = {this.ReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {this.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelClassProperty = {this.ReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableIntProperty = {this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {this.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {this.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfBoolProperty = {this.ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfIntProperty = {this.ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfStringProperty = {this.ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfGuidProperty = {this.ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelEnumProperty = {this.ReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelFlagsEnumProperty = {this.ReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelClassProperty = {this.ReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableBoolProperty = {this.ReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableIntProperty = {this.ReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableGuidProperty = {this.ReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableDateTimeProperty = {this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelEnumProperty = {this.ReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {this.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfBoolProperty = {this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfIntProperty = {this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfStringProperty = {this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfGuidProperty = {this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelEnumProperty = {this.ReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {this.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelClassProperty = {this.ReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {this.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {this.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, CollectionInterfaceOfStringProperty = {this.CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, CollectionOfCollectionInterfaceOfStringProperty = {this.CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfCollectionInterfaceOfStringProperty = {this.ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListOfCollectionInterfaceOfStringProperty = {this.ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelAllPublicSetters)}: BoolProperty = {this.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {this.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {this.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ModelEnumProperty = {this.ModelEnumProperty.ToString() ?? "<null>"}, ModelFlagsEnumProperty = {this.ModelFlagsEnumProperty.ToString() ?? "<null>"}, ModelClassProperty = {this.ModelClassProperty?.ToString() ?? "<null>"}, NullableBoolProperty = {this.NullableBoolProperty?.ToString() ?? "<null>"}, NullableIntProperty = {this.NullableIntProperty?.ToString() ?? "<null>"}, NullableGuidProperty = {this.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {this.NullableDateTimeProperty?.ToString() ?? "<null>"}, NullableModelEnumProperty = {this.NullableModelEnumProperty?.ToString() ?? "<null>"}, NullableModelFlagsEnumProperty = {this.NullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfBoolProperty = {this.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {this.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {this.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {this.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {this.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfModelEnumProperty = {this.ArrayOfModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelFlagsEnumProperty = {this.ArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelClassProperty = {this.ArrayOfModelClassProperty?.ToString() ?? "<null>"}, ArrayOfNullableBoolProperty = {this.ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ArrayOfNullableIntProperty = {this.ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ArrayOfNullableGuidProperty = {this.ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ArrayOfNullableDateTimeProperty = {this.ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelEnumProperty = {this.ArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelFlagsEnumProperty = {this.ArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfBoolProperty = {this.ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfIntProperty = {this.ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfStringProperty = {this.ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfGuidProperty = {this.ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfDateTimeProperty = {this.ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelEnumProperty = {this.ReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {this.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelClassProperty = {this.ReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableIntProperty = {this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {this.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {this.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfBoolProperty = {this.ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfIntProperty = {this.ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfStringProperty = {this.ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfGuidProperty = {this.ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelEnumProperty = {this.ReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelFlagsEnumProperty = {this.ReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelClassProperty = {this.ReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableBoolProperty = {this.ReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableIntProperty = {this.ReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableGuidProperty = {this.ReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableDateTimeProperty = {this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelEnumProperty = {this.ReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {this.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfBoolProperty = {this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfIntProperty = {this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfStringProperty = {this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfGuidProperty = {this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelEnumProperty = {this.ReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {this.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelClassProperty = {this.ReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {this.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {this.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, CollectionInterfaceOfStringProperty = {this.CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, CollectionOfCollectionInterfaceOfStringProperty = {this.CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfCollectionInterfaceOfStringProperty = {this.ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListOfCollectionInterfaceOfStringProperty = {this.ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

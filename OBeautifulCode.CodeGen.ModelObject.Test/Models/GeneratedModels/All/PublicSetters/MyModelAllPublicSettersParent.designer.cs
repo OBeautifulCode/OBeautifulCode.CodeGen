@@ -22,15 +22,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPublicSettersParent : IModel<MyModelPublicSettersParent>
+    public partial class MyModelAllPublicSettersParent : IModel<MyModelAllPublicSettersParent>
     {
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPublicSettersParent"/> are equal.
+        /// Determines whether two objects of type <see cref="MyModelAllPublicSettersParent"/> are equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(MyModelPublicSettersParent left, MyModelPublicSettersParent right)
+        public static bool operator ==(MyModelAllPublicSettersParent left, MyModelAllPublicSettersParent right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -48,15 +48,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPublicSettersParent"/> are not equal.
+        /// Determines whether two objects of type <see cref="MyModelAllPublicSettersParent"/> are not equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(MyModelPublicSettersParent left, MyModelPublicSettersParent right) => !(left == right);
+        public static bool operator !=(MyModelAllPublicSettersParent left, MyModelAllPublicSettersParent right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPublicSettersParent other) => this == other;
+        public bool Equals(MyModelAllPublicSettersParent other) => this == other;
 
         /// <inheritdoc />
         public abstract override bool Equals(object obj);
@@ -68,560 +68,560 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public abstract MyModelPublicSettersParent DeepClone();
+        public abstract MyModelAllPublicSettersParent DeepClone();
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentBoolProperty" />.
         /// </summary>
         /// <param name="parentBoolProperty">The new <see cref="ParentBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentBoolProperty" /> for <see cref="ParentBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentBoolProperty(bool parentBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentBoolProperty" /> for <see cref="ParentBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentBoolProperty(bool parentBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentIntProperty" />.
         /// </summary>
         /// <param name="parentIntProperty">The new <see cref="ParentIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentIntProperty" /> for <see cref="ParentIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentIntProperty(int parentIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentIntProperty" /> for <see cref="ParentIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentIntProperty(int parentIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentStringProperty" />.
         /// </summary>
         /// <param name="parentStringProperty">The new <see cref="ParentStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentStringProperty" /> for <see cref="ParentStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentStringProperty(string parentStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentStringProperty" /> for <see cref="ParentStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentStringProperty(string parentStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGuidProperty" />.
         /// </summary>
         /// <param name="parentGuidProperty">The new <see cref="ParentGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentGuidProperty" /> for <see cref="ParentGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentGuidProperty(Guid parentGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentGuidProperty" /> for <see cref="ParentGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentGuidProperty(Guid parentGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentDateTimeProperty" />.
         /// </summary>
         /// <param name="parentDateTimeProperty">The new <see cref="ParentDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentDateTimeProperty" /> for <see cref="ParentDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentDateTimeProperty(DateTime parentDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentDateTimeProperty" /> for <see cref="ParentDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentDateTimeProperty(DateTime parentDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentModelEnumProperty" />.
         /// </summary>
         /// <param name="parentModelEnumProperty">The new <see cref="ParentModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentModelEnumProperty" /> for <see cref="ParentModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentModelEnumProperty(ModelEnum parentModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentModelEnumProperty" /> for <see cref="ParentModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentModelEnumProperty(ModelEnum parentModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentModelFlagsEnumProperty">The new <see cref="ParentModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentModelFlagsEnumProperty" /> for <see cref="ParentModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentModelFlagsEnumProperty(ModelFlagsEnum parentModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentModelFlagsEnumProperty" /> for <see cref="ParentModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentModelFlagsEnumProperty(ModelFlagsEnum parentModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentModelClassProperty" />.
         /// </summary>
         /// <param name="parentModelClassProperty">The new <see cref="ParentModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentModelClassProperty" /> for <see cref="ParentModelClassProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentModelClassProperty(ModelClass parentModelClassProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentModelClassProperty" /> for <see cref="ParentModelClassProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentModelClassProperty(ModelClass parentModelClassProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentNullableBoolProperty" />.
         /// </summary>
         /// <param name="parentNullableBoolProperty">The new <see cref="ParentNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentNullableBoolProperty" /> for <see cref="ParentNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentNullableBoolProperty(bool? parentNullableBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableBoolProperty" /> for <see cref="ParentNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableBoolProperty(bool? parentNullableBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentNullableIntProperty" />.
         /// </summary>
         /// <param name="parentNullableIntProperty">The new <see cref="ParentNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentNullableIntProperty" /> for <see cref="ParentNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentNullableIntProperty(int? parentNullableIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableIntProperty" /> for <see cref="ParentNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableIntProperty(int? parentNullableIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentNullableGuidProperty" />.
         /// </summary>
         /// <param name="parentNullableGuidProperty">The new <see cref="ParentNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentNullableGuidProperty" /> for <see cref="ParentNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentNullableGuidProperty(Guid? parentNullableGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableGuidProperty" /> for <see cref="ParentNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableGuidProperty(Guid? parentNullableGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="parentNullableDateTimeProperty">The new <see cref="ParentNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentNullableDateTimeProperty" /> for <see cref="ParentNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentNullableDateTimeProperty(DateTime? parentNullableDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableDateTimeProperty" /> for <see cref="ParentNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableDateTimeProperty(DateTime? parentNullableDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="parentNullableModelEnumProperty">The new <see cref="ParentNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentNullableModelEnumProperty" /> for <see cref="ParentNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentNullableModelEnumProperty(ModelEnum? parentNullableModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableModelEnumProperty" /> for <see cref="ParentNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableModelEnumProperty(ModelEnum? parentNullableModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentNullableModelFlagsEnumProperty">The new <see cref="ParentNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentNullableModelFlagsEnumProperty" /> for <see cref="ParentNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentNullableModelFlagsEnumProperty(ModelFlagsEnum? parentNullableModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableModelFlagsEnumProperty" /> for <see cref="ParentNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableModelFlagsEnumProperty(ModelFlagsEnum? parentNullableModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfBoolProperty" />.
         /// </summary>
         /// <param name="parentArrayOfBoolProperty">The new <see cref="ParentArrayOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfBoolProperty" /> for <see cref="ParentArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfBoolProperty(bool[] parentArrayOfBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfBoolProperty" /> for <see cref="ParentArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfBoolProperty(bool[] parentArrayOfBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfIntProperty" />.
         /// </summary>
         /// <param name="parentArrayOfIntProperty">The new <see cref="ParentArrayOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfIntProperty" /> for <see cref="ParentArrayOfIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfIntProperty(int[] parentArrayOfIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfIntProperty" /> for <see cref="ParentArrayOfIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfIntProperty(int[] parentArrayOfIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfStringProperty" />.
         /// </summary>
         /// <param name="parentArrayOfStringProperty">The new <see cref="ParentArrayOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfStringProperty" /> for <see cref="ParentArrayOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfStringProperty(string[] parentArrayOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfStringProperty" /> for <see cref="ParentArrayOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfStringProperty(string[] parentArrayOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfGuidProperty" />.
         /// </summary>
         /// <param name="parentArrayOfGuidProperty">The new <see cref="ParentArrayOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfGuidProperty" /> for <see cref="ParentArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfGuidProperty(Guid[] parentArrayOfGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfGuidProperty" /> for <see cref="ParentArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfGuidProperty(Guid[] parentArrayOfGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentArrayOfDateTimeProperty">The new <see cref="ParentArrayOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfDateTimeProperty" /> for <see cref="ParentArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfDateTimeProperty(DateTime[] parentArrayOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfDateTimeProperty" /> for <see cref="ParentArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfDateTimeProperty(DateTime[] parentArrayOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfModelEnumProperty" />.
         /// </summary>
         /// <param name="parentArrayOfModelEnumProperty">The new <see cref="ParentArrayOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelEnumProperty" /> for <see cref="ParentArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfModelEnumProperty(ModelEnum[] parentArrayOfModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelEnumProperty" /> for <see cref="ParentArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfModelEnumProperty(ModelEnum[] parentArrayOfModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentArrayOfModelFlagsEnumProperty">The new <see cref="ParentArrayOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelFlagsEnumProperty" /> for <see cref="ParentArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] parentArrayOfModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelFlagsEnumProperty" /> for <see cref="ParentArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] parentArrayOfModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfModelClassProperty" />.
         /// </summary>
         /// <param name="parentArrayOfModelClassProperty">The new <see cref="ParentArrayOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelClassProperty" /> for <see cref="ParentArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfModelClassProperty(ModelClass[] parentArrayOfModelClassProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelClassProperty" /> for <see cref="ParentArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfModelClassProperty(ModelClass[] parentArrayOfModelClassProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableBoolProperty">The new <see cref="ParentArrayOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableBoolProperty" /> for <see cref="ParentArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfNullableBoolProperty(bool?[] parentArrayOfNullableBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableBoolProperty" /> for <see cref="ParentArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableBoolProperty(bool?[] parentArrayOfNullableBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableIntProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableIntProperty">The new <see cref="ParentArrayOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableIntProperty" /> for <see cref="ParentArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfNullableIntProperty(int?[] parentArrayOfNullableIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableIntProperty" /> for <see cref="ParentArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableIntProperty(int?[] parentArrayOfNullableIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableGuidProperty">The new <see cref="ParentArrayOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableGuidProperty" /> for <see cref="ParentArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfNullableGuidProperty(Guid?[] parentArrayOfNullableGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableGuidProperty" /> for <see cref="ParentArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableGuidProperty(Guid?[] parentArrayOfNullableGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableDateTimeProperty">The new <see cref="ParentArrayOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableDateTimeProperty" /> for <see cref="ParentArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfNullableDateTimeProperty(DateTime?[] parentArrayOfNullableDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableDateTimeProperty" /> for <see cref="ParentArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableDateTimeProperty(DateTime?[] parentArrayOfNullableDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableModelEnumProperty">The new <see cref="ParentArrayOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableModelEnumProperty" /> for <see cref="ParentArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfNullableModelEnumProperty(ModelEnum?[] parentArrayOfNullableModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableModelEnumProperty" /> for <see cref="ParentArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableModelEnumProperty(ModelEnum?[] parentArrayOfNullableModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableModelFlagsEnumProperty">The new <see cref="ParentArrayOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableModelFlagsEnumProperty" /> for <see cref="ParentArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] parentArrayOfNullableModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableModelFlagsEnumProperty" /> for <see cref="ParentArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] parentArrayOfNullableModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfBoolProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> parentReadOnlyCollectionInterfaceOfBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> parentReadOnlyCollectionInterfaceOfBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfIntProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> parentReadOnlyCollectionInterfaceOfIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> parentReadOnlyCollectionInterfaceOfIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfStringProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> parentReadOnlyCollectionInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> parentReadOnlyCollectionInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfGuidProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> parentReadOnlyCollectionInterfaceOfGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> parentReadOnlyCollectionInterfaceOfGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> parentReadOnlyCollectionInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> parentReadOnlyCollectionInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfModelEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> parentReadOnlyCollectionInterfaceOfModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> parentReadOnlyCollectionInterfaceOfModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfModelClassProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> parentReadOnlyCollectionInterfaceOfModelClassProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> parentReadOnlyCollectionInterfaceOfModelClassProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> parentReadOnlyCollectionInterfaceOfNullableBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> parentReadOnlyCollectionInterfaceOfNullableBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> parentReadOnlyCollectionInterfaceOfNullableIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> parentReadOnlyCollectionInterfaceOfNullableIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> parentReadOnlyCollectionInterfaceOfNullableGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> parentReadOnlyCollectionInterfaceOfNullableGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfBoolProperty">The new <see cref="ParentReadOnlyListInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfIntProperty">The new <see cref="ParentReadOnlyListInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfStringProperty">The new <see cref="ParentReadOnlyListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfGuidProperty">The new <see cref="ParentReadOnlyListInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfModelEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> parentReadOnlyListInterfaceOfModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> parentReadOnlyListInterfaceOfModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfModelFlagsEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> parentReadOnlyListInterfaceOfModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> parentReadOnlyListInterfaceOfModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfModelClassProperty">The new <see cref="ParentReadOnlyListInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> parentReadOnlyListInterfaceOfModelClassProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> parentReadOnlyListInterfaceOfModelClassProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> parentReadOnlyListInterfaceOfNullableBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> parentReadOnlyListInterfaceOfNullableBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> parentReadOnlyListInterfaceOfNullableIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> parentReadOnlyListInterfaceOfNullableIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> parentReadOnlyListInterfaceOfNullableGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> parentReadOnlyListInterfaceOfNullableGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> parentReadOnlyListInterfaceOfNullableDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> parentReadOnlyListInterfaceOfNullableDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableModelEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> parentReadOnlyListInterfaceOfNullableModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> parentReadOnlyListInterfaceOfNullableModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfBoolProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfBoolProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryInterfaceOfBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryInterfaceOfBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfIntProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfIntProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> parentReadOnlyDictionaryInterfaceOfIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> parentReadOnlyDictionaryInterfaceOfIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfStringProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfGuidProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfGuidProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfModelEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfModelEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> parentReadOnlyDictionaryInterfaceOfModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> parentReadOnlyDictionaryInterfaceOfModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfModelClassProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfModelClassProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> parentReadOnlyDictionaryInterfaceOfModelClassProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> parentReadOnlyDictionaryInterfaceOfModelClassProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> parentReadOnlyDictionaryInterfaceOfNullableBoolProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> parentReadOnlyDictionaryInterfaceOfNullableBoolProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableIntProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryInterfaceOfNullableIntProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryInterfaceOfNullableIntProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryInterfaceOfNullableGuidProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryInterfaceOfNullableGuidProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentCollectionInterfaceOfStringProperty">The new <see cref="ParentCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentCollectionInterfaceOfStringProperty" /> for <see cref="ParentCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentCollectionInterfaceOfStringProperty(ICollection<string> parentCollectionInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentCollectionInterfaceOfStringProperty" /> for <see cref="ParentCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentCollectionInterfaceOfStringProperty(ICollection<string> parentCollectionInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentCollectionOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="ParentCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> parentCollectionOfCollectionInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> parentCollectionOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentListInterfaceOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentListInterfaceOfCollectionInterfaceOfStringProperty">The new <see cref="ParentListInterfaceOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentListInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> parentListInterfaceOfCollectionInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentListInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> parentListInterfaceOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentListOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentListOfCollectionInterfaceOfStringProperty">The new <see cref="ParentListOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentListOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> parentListOfCollectionInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentListOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> parentListOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+        /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
     
         /// <inheritdoc />
         public abstract override string ToString();

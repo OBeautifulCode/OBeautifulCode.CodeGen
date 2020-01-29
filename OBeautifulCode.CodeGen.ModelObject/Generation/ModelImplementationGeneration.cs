@@ -37,34 +37,34 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var interfaces = new List<Type>();
 
-            if (modelType.Type.IsAssignableTo(typeof(IModelViaCodeGen)))
+            if (modelType.RequiresModel)
             {
                 interfaces.Add(typeof(IModel<>).MakeGenericType(modelType.Type));
             }
             else
             {
-                if (modelType.Type.IsAssignableTo(typeof(IDeepCloneableViaCodeGen)))
+                if (modelType.RequiresDeepCloning)
                 {
                     interfaces.Add(typeof(IDeepCloneable<>).MakeGenericType(modelType.Type));
                 }
 
-                if (modelType.Type.IsAssignableTo(typeof(IEquatableViaCodeGen)))
+                if (modelType.RequiresEquality)
                 {
                     interfaces.Add(typeof(IEquatable<>).MakeGenericType(modelType.Type));
                 }
 
-                if (modelType.Type.IsAssignableTo(typeof(IHashableViaCodeGen)))
+                if (modelType.RequiresHashing)
                 {
                     interfaces.Add(typeof(IHashable));
                 }
 
-                if (modelType.Type.IsAssignableTo(typeof(IStringRepresentableViaCodeGen)))
+                if (modelType.RequiresStringRepresentation)
                 {
                     interfaces.Add(typeof(IStringRepresentable));
                 }
             }
 
-            if (modelType.Type.IsAssignableTo(typeof(IComparableViaCodeGen)))
+            if (modelType.RequiresComparability)
             {
                 interfaces.Add(typeof(IComparableForRelativeSortOrder<>).MakeGenericType(modelType.Type));
             }
@@ -97,17 +97,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 Invariant($"    [GeneratedCode(\"{GenerationShared.GetCodeGenAssemblyName()}\", \"{GenerationShared.GetCodeGenAssemblyVersion()}\")]"),
                 Invariant($"    public partial class {modelType.Type.ToStringReadable()} : {interfaces.Select(_ => _.ToStringReadable()).ToDelimitedString(", ")}"),
                 "    {",
-                "    " + modelType.GenerateEqualityMethods(),
-                "    " + modelType.GenerateGetHashCodeMethod(),
-                "    " + modelType.GenerateCloningMethods(),
-                "    " + modelType.GenerateToStringMethod(),
+                (modelType.RequiresEquality ? "    " + modelType.GenerateEqualityMethods() : null),
+                (modelType.RequiresHashing ? "    " + modelType.GenerateGetHashCodeMethod() : null),
+                (modelType.RequiresDeepCloning ? "    " + modelType.GenerateCloningMethods() : null),
+                (modelType.RequiresStringRepresentation ? "    " + modelType.GenerateToStringMethod() : null),
                 "    }",
                 "}",
             };
 
-            var result = string.Join(
-                Environment.NewLine,
-                items);
+            var result = items.Where(_ => _ != null).ToNewLineDelimited();
 
             return result;
         }

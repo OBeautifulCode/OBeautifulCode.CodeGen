@@ -19,6 +19,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.String.Recipes;
+    using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
     using Xunit;
@@ -31,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public const string TestNameSuffix = "Test";
 
-        public static readonly bool WriteFiles = false;
+        public static readonly bool WriteFiles = true;
 
         public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
@@ -98,16 +99,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
         };
 
-        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
+        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
 
         [Fact]
         public void GenerateModel___Should_generate_models___When_called()
         {
-            void GenerateModelEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
+            void GenerateModelEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
             {
                 var modelFilePath = directoryPath + modelName + ".cs";
 
-                var modelCode = GenerateModel(ModelBaseName, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, BlacklistTypes, hierarchyKind, childIdentifier, modelName);
+                var modelCode = GenerateModel(ModelBaseName, (GeneratedModelKind)generatedModelKind, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, BlacklistTypes, hierarchyKind, childIdentifier, modelName);
 
                 if (WriteFiles)
                 {
@@ -118,12 +119,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
 
             // blank out downstream files
+            ExecuteForEmptyModels(GenerationKind.Test, createBlankFilesEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Model, createBlankFilesEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
-            if (WriteFiles)
-            {
-                File.WriteAllText(DummyFactoryFilePath, string.Empty);
-            }
+            WriteDummyFactory(string.Empty);
 
             // generate new files
             ExecuteForGeneratedModels(GenerationKind.Model, GenerateModelEventHandler);
@@ -157,13 +156,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             // generate new files
             var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(ModelBaseName, StringComparison.Ordinal)).Where(_ => !_.Name.EndsWith(TestNameSuffix, StringComparison.Ordinal)).ToList();
-
-            var code = GenerateDummyFactory(types);
-
-            if (WriteFiles)
-            {
-                File.WriteAllText(DummyFactoryFilePath, code);
-            }
+            var dummyFactoryCode = GenerateDummyFactory(types);
+            WriteDummyFactory(dummyFactoryCode);
         }
 
         [Fact]
@@ -195,7 +189,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         var modelName = ModelBaseName.BuildEmptyModelName(setterKind, emptyModelNameSuffix);
 
-                        eventHandler(generationKind, setterKind, hierarchyKind, null, modelName, directoryPath);
+                        eventHandler(generationKind, null, setterKind, hierarchyKind, null, modelName, directoryPath);
                     }
                 }
             }
@@ -209,26 +203,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             foreach (var setterKind in setterKinds)
             {
-                var directoryPath = setterKind.GetGeneratedModelsDirectoryPath(generationKind);
+                var generatedModelKinds = EnumExtensions.GetDefinedEnumValues<GeneratedModelKind>();
 
-                var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
-
-                foreach (var hierarchyKind in hierarchyKinds)
+                foreach (var generatedModelKind in generatedModelKinds)
                 {
-                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
+                    var directoryPath = generationKind.GetGeneratedModelsDirectoryPath(generatedModelKind, setterKind);
+
+                    var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
+
+                    foreach (var hierarchyKind in hierarchyKinds)
                     {
-                        foreach (var childIdentifier in ChildIdentifiers)
+                        if (hierarchyKind == HierarchyKind.ConcreteInherited)
                         {
-                            var modelName = ModelBaseName.BuildGeneratedModelName(setterKind, hierarchyKind, childIdentifier);
+                            foreach (var childIdentifier in ChildIdentifiers)
+                            {
+                                var modelName = ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, childIdentifier);
 
-                            eventHandler(generationKind, setterKind, hierarchyKind, childIdentifier, modelName, directoryPath);
+                                eventHandler(generationKind, generatedModelKind, setterKind, hierarchyKind, childIdentifier, modelName, directoryPath);
+                            }
                         }
-                    }
-                    else
-                    {
-                        var modelName = ModelBaseName.BuildGeneratedModelName(setterKind, hierarchyKind, null);
+                        else
+                        {
+                            var modelName = ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, null);
 
-                        eventHandler(generationKind, setterKind, hierarchyKind, null, modelName, directoryPath);
+                            eventHandler(generationKind, generatedModelKind, setterKind, hierarchyKind, null, modelName, directoryPath);
+                        }
                     }
                 }
             }
@@ -236,7 +235,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static ExecuteForModelsEventHandler BuildCreateBlankFilesEventHandler()
         {
-            void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
+            void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
             {
                 var testToken = generationKind == GenerationKind.Test ? TestNameSuffix : null;
 
@@ -253,7 +252,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static ExecuteForModelsEventHandler BuildGenerateForModelEventHandler()
         {
-            void ExecuteForModelsEventHandler(GenerationKind generationKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
+            void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
             {
                 var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
 
@@ -287,6 +286,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static string GenerateModel(
             string baseName,
+            GeneratedModelKind generatedModelKind,
             SetterKind setterKind,
             IReadOnlyCollection<Type> typesToWrap,
             IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds,
@@ -302,6 +302,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var constructorParameterStatements = new List<string>();
             var constructorValidationStatements = new List<string>();
             var constructorPropertySettingStatements = new List<string>();
+            var equalityStatements = new List<string>();
+            var equalityParentStatements = new List<string>();
 
             var propertyStatements = new List<string>();
 
@@ -328,8 +330,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var propertyName = typeToAddAsProperty.BuildPropertyName(hierarchyKind, childIdentifier);
 
-                propertyStatements.Add(string.Empty);
                 propertyStatements.Add(Invariant($"        public {typeCompilableString} {propertyName} {{ get; {setterKind.ToSetterString()}}}"));
+                propertyStatements.Add(string.Empty);
 
                 if (setterKind.RequiresConstructor())
                 {
@@ -352,11 +354,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}();"));
                     }
                 }
+
+                equalityStatements.Add(Invariant($"                this.{propertyName}.IsEqualTo(other.{propertyName}) &&"));
+                if (hierarchyKind == HierarchyKind.ConcreteInherited)
+                {
+                    var parentPropertyName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBase, null);
+                    equalityParentStatements.Add(Invariant($"                this.{parentPropertyName}.IsEqualTo(other.{parentPropertyName}) &&"));
+                }
             }
+
+            propertyStatements.RemoveAt(propertyStatements.Count - 1);
 
             var abstractStatement = hierarchyKind == HierarchyKind.AbstractBase ? "abstract " : string.Empty;
 
-            var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildGeneratedModelName(setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}, " : string.Empty;
+            var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildGeneratedModelName(generatedModelKind, setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}, " : string.Empty;
+
+            string interfaceStatement;
+            switch (generatedModelKind)
+            {
+                case GeneratedModelKind.All:
+                    interfaceStatement = nameof(IModelViaCodeGen);
+                    break;
+                case GeneratedModelKind.Equality:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                        ? Invariant($"IEquatableViaCodeGen")
+                        : Invariant($"IEquatableViaCodeGen, IDeclareEqualsMethod<{modelName}>");
+                    break;
+                default:
+                    throw new NotSupportedException("This generated model kind is not supported: " + generatedModelKind);
+            }
 
             var headerStatements = new List<string>
             {
@@ -377,9 +403,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using System.Collections.ObjectModel;",
                 string.Empty,
                 "    using OBeautifulCode.Assertion.Recipes;",
+                "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,
-                Invariant($"    public {abstractStatement}partial class {modelName} : {derivativeStatement}IModelViaCodeGen"),
+                Invariant($"    public {abstractStatement}partial class {modelName} : {derivativeStatement}{interfaceStatement}"),
                 "    {",
             };
 
@@ -388,6 +415,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    }",
                 "}",
             };
+
+            var methodStatements = new List<string>();
+            if ((generatedModelKind == GeneratedModelKind.Equality) && (hierarchyKind != HierarchyKind.AbstractBase))
+            {
+                var equalityCode = new string[0].Concat(equalityParentStatements).Concat(equalityStatements).ToNewLineDelimited().TrimEnd('&', ' ') + ";";
+
+                methodStatements.Add(string.Empty);
+                methodStatements.Add("        /// <inheritdoc />");
+                methodStatements.Add(Invariant($"        public bool Equals({modelName} other)"));
+                methodStatements.Add("        {");
+                methodStatements.Add(@"            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }");
+                methodStatements.Add(string.Empty);
+                methodStatements.Add("            var result = ");
+                methodStatements.Add(equalityCode);
+                methodStatements.Add(string.Empty);
+                methodStatements.Add("            return result;");
+                methodStatements.Add("        }");
+            }
 
             var constructorStatements = new List<string>();
             if (setterKind.RequiresConstructor())
@@ -409,12 +462,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 constructorStatements.Add(string.Empty);
                 constructorStatements.AddRange(constructorPropertySettingStatements);
                 constructorStatements.Add("        }");
+                constructorStatements.Add(string.Empty);
             }
 
             var result = new string[0]
                 .Concat(headerStatements)
                 .Concat(constructorStatements)
                 .Concat(propertyStatements)
+                .Concat(methodStatements)
                 .Concat(footerStatements)
                 .ToNewLineDelimited();
 

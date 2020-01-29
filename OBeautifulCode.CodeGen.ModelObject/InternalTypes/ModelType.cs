@@ -43,11 +43,35 @@ namespace OBeautifulCode.CodeGen
 
             ThrowIfNotSupported(type, propertiesOfConcern);
 
+            var requiresComparability = type.IsAssignableTo(typeof(IComparableViaCodeGen));
+            var requiresDeepCloning = type.IsAssignableTo(typeof(IDeepCloneableViaCodeGen));
+            var requiresEquality = type.IsAssignableTo(typeof(IEquatableViaCodeGen));
+            var requiresHashing = type.IsAssignableTo(typeof(IHashableViaCodeGen));
+            var requiresModel = type.IsAssignableTo(typeof(IModelViaCodeGen));
+            var requiresStringRepresentation = type.IsAssignableTo(typeof(IStringRepresentableViaCodeGen));
+
+            var declaresCompareToMethod = type.IsAssignableTo(typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type));
+            var declaresDeepCloneMethod = type.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type));
+            var declaresEqualsMethod = type.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(type));
+            var declaresGetHashCodeMethod = type.IsAssignableTo(typeof(IDeclareGetHashCodeMethod));
+            var declaresToStringMethod = type.IsAssignableTo(typeof(IDeclareToStringMethod));
+
             this.Type = type;
             this.HierarchyKind = hierarchyKind;
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
+            this.RequiresComparability = requiresComparability;
+            this.RequiresDeepCloning = requiresDeepCloning;
+            this.RequiresEquality = requiresEquality;
+            this.RequiresHashing = requiresHashing;
+            this.RequiresModel = requiresModel;
+            this.RequiresStringRepresentation = requiresStringRepresentation;
+            this.DeclaresCompareToMethod = declaresCompareToMethod;
+            this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
+            this.DeclaresEqualsMethod = declaresEqualsMethod;
+            this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
+            this.DeclaresToStringMethod = declaresToStringMethod;
         }
 
         /// <summary>
@@ -75,6 +99,61 @@ namespace OBeautifulCode.CodeGen
         /// Gets the declared only properties of concern for the model type.
         /// </summary>
         public IReadOnlyList<PropertyInfo> DeclaredOnlyPropertiesOfConcern { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model requires generated code for comparability.
+        /// </summary>
+        public bool RequiresComparability { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model requires generated code for deep cloning.
+        /// </summary>
+        public bool RequiresDeepCloning { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model requires generated code for equality.
+        /// </summary>
+        public bool RequiresEquality { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model requires generated code for hashing.
+        /// </summary>
+        public bool RequiresHashing { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model requires generated code for the entire model.
+        /// </summary>
+        public bool RequiresModel { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model requires generated code for string representation.
+        /// </summary>
+        public bool RequiresStringRepresentation { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareCompareToForRelativeSortOrderMethod{T}.CompareToForRelativeSortOrder(T)"/> method.
+        /// </summary>
+        public bool DeclaresCompareToMethod { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method.
+        /// </summary>
+        public bool DeclaresDeepCloneMethod { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareEqualsMethod{T}.Equals(T)"/> method.
+        /// </summary>
+        public bool DeclaresEqualsMethod { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareGetHashCodeMethod.GetHashCode"/> method.
+        /// </summary>
+        public bool DeclaresGetHashCodeMethod { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method.
+        /// </summary>
+        public bool DeclaresToStringMethod { get; }
 
         private static void ThrowIfNotSupported(
             Type type)

@@ -42,7 +42,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return false;
             }
 
-            var result = left.ChildReadOnlyDictionaryOfStringString.IsEqualTo(right.ChildReadOnlyDictionaryOfStringString);
+            var result = left.Equals(right);
 
             return result;
         }
@@ -56,7 +56,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static bool operator !=(MyModelPrivateSettersEmptyParentNotEmptyChild left, MyModelPrivateSettersEmptyParentNotEmptyChild right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPrivateSettersEmptyParentNotEmptyChild other) => this == other;
+        public bool Equals(MyModelPrivateSettersEmptyParentNotEmptyChild other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = this.ChildReadOnlyDictionaryOfStringString.IsEqualTo(other.ChildReadOnlyDictionaryOfStringString);
+
+            return result;
+        }
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as MyModelPrivateSettersEmptyParentNotEmptyChild);

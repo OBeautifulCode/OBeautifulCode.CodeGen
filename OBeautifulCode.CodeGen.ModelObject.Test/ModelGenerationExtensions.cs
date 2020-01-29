@@ -178,11 +178,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static string BuildGeneratedModelName(
             this string baseName,
+            GeneratedModelKind generatedModelKind,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
             string childIdentifier)
         {
-            var result = Invariant($"{baseName}{setterKind}{hierarchyKind.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{baseName}{generatedModelKind}{setterKind}{hierarchyKind.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
@@ -312,21 +313,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string GetGeneratedModelsDirectoryPath(
-            this SetterKind setterKind,
-            GenerationKind generationKind)
+            this GenerationKind generationKind,
+            GeneratedModelKind generatedModelKind,
+            SetterKind setterKind)
         {
             string result;
 
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = CodeGeneratorTest.GeneratedModelsPath + setterKind + "\\";
+                    result = CodeGeneratorTest.GeneratedModelsPath + generatedModelKind + "\\" + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = CodeGeneratorTest.GeneratedModelsTestsPath + setterKind + "\\";
+                    result = CodeGeneratorTest.GeneratedModelsTestsPath + generatedModelKind + "\\" + setterKind + "\\";
                     break;
                 default:
-                    throw new NotSupportedException("This kind is not supported: " + generationKind);
+                    throw new NotSupportedException("This generation kind is not supported: " + generationKind);
             }
 
             return result;

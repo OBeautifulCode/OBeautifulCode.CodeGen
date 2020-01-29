@@ -32,6 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string UnequalHashCodeToken = "<<<UnequalHashCodeHere>>>";
 
         private const string EqualsMethodForConcreteTypeCodeTemplate = @"
+
         /// <inheritdoc />
         public bool Equals(" + TypeNameToken + @" other)
         {
@@ -79,8 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name=""left"">The object to the left of the equality operator.</param>
         /// <param name=""right"">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);
-        " + EqualsMethodToken + @"
+        public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);" + EqualsMethodToken + @"
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as " + TypeNameToken + @");";
@@ -410,6 +410,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
+                if (modelType.DeclaresEqualsMethod)
+                {
+                    throw new NotSupportedException(Invariant($"Abstract type {modelType.Type.ToStringReadable()} cannot declare an Equals method."));
+                }
+
                 result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.Type.ToStringCompilable());
             }
             else
@@ -420,7 +425,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     ? string.Join(Environment.NewLine + "                      && ", equalityLines)
                     : "true";
 
-                var equalsMethodCode = modelType.Type.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(modelType.Type))
+                var equalsMethodCode = modelType.DeclaresEqualsMethod
                     ? string.Empty
                     : EqualsMethodForConcreteTypeCodeTemplate;
 
