@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="EqualityLogicGeneration.cs" company="OBeautifulCode">
+// <copyright file="EqualityGeneration.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// <summary>
     /// Generates code related to equality.
     /// </summary>
-    internal static class EqualityLogicGeneration
+    internal static class EqualityGeneration
     {
         private const string TypeNameToken = "<<<TypeNameHere>>>";
         private const string PropertyNameToken = "<<<PropertyNameHere>>>";
