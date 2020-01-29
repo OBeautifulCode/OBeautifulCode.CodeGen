@@ -34,16 +34,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPublicSettersTest
+    public partial class MyModelAllPublicSettersTest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.BsonConfigurationType);
         
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPublicSetters ObjectForEquatableTests = A.Dummy<MyModelPublicSetters>();
+        private static readonly MyModelAllPublicSetters ObjectForEquatableTests = A.Dummy<MyModelAllPublicSetters>();
 
-        private static readonly MyModelPublicSetters ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests =
-            new MyModelPublicSetters
+        private static readonly MyModelAllPublicSetters ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests =
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -126,9 +126,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 };
 
-        private static readonly MyModelPublicSetters[] ObjectsThatAreNotEqualToObjectForEquatableTests =
+        private static readonly MyModelAllPublicSetters[] ObjectsThatAreNotEqualToObjectForEquatableTests =
         {
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = A.Dummy<bool>().ThatIsNot(ObjectForEquatableTests.BoolProperty),
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -210,7 +210,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = A.Dummy<int>().ThatIsNot(ObjectForEquatableTests.IntProperty),
@@ -292,7 +292,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -374,7 +374,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -456,7 +456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -538,7 +538,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -620,7 +620,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -702,7 +702,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -784,7 +784,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -866,7 +866,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -948,7 +948,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1030,7 +1030,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1112,7 +1112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1194,7 +1194,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1276,7 +1276,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1358,7 +1358,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1440,7 +1440,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1522,7 +1522,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1604,7 +1604,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1686,7 +1686,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1768,7 +1768,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1850,7 +1850,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -1932,7 +1932,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2014,7 +2014,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2096,7 +2096,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2178,7 +2178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2260,7 +2260,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2342,7 +2342,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2424,7 +2424,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2506,7 +2506,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2588,7 +2588,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2670,7 +2670,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2752,7 +2752,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2834,7 +2834,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2916,7 +2916,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -2998,7 +2998,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3080,7 +3080,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3162,7 +3162,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3244,7 +3244,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3326,7 +3326,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3408,7 +3408,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3490,7 +3490,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3572,7 +3572,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3654,7 +3654,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3736,7 +3736,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3818,7 +3818,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3900,7 +3900,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -3982,7 +3982,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4064,7 +4064,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4146,7 +4146,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4228,7 +4228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4310,7 +4310,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4392,7 +4392,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4474,7 +4474,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4556,7 +4556,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4638,7 +4638,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4720,7 +4720,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4802,7 +4802,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4884,7 +4884,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -4966,7 +4966,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5048,7 +5048,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5130,7 +5130,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5212,7 +5212,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5294,7 +5294,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5376,7 +5376,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5458,7 +5458,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5540,7 +5540,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5622,7 +5622,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5704,7 +5704,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5786,7 +5786,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5868,7 +5868,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -5950,7 +5950,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6032,7 +6032,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6114,7 +6114,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6196,7 +6196,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6278,7 +6278,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6360,7 +6360,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6442,7 +6442,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6524,7 +6524,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>().ThatIsNot(ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                     ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
                 },
-            new MyModelPublicSetters
+            new MyModelAllPublicSetters
                 {
                     BoolProperty                                                                                                          = ObjectForEquatableTests.BoolProperty,
                     IntProperty                                                                                                           = ObjectForEquatableTests.IntProperty,
@@ -6614,9 +6614,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
         {
             // Arrange
-            var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+            var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-            var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSetters)}: BoolProperty = {systemUnderTest.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {systemUnderTest.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {systemUnderTest.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {systemUnderTest.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {systemUnderTest.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ModelEnumProperty = {systemUnderTest.ModelEnumProperty.ToString() ?? "<null>"}, ModelFlagsEnumProperty = {systemUnderTest.ModelFlagsEnumProperty.ToString() ?? "<null>"}, ModelClassProperty = {systemUnderTest.ModelClassProperty?.ToString() ?? "<null>"}, NullableBoolProperty = {systemUnderTest.NullableBoolProperty?.ToString() ?? "<null>"}, NullableIntProperty = {systemUnderTest.NullableIntProperty?.ToString() ?? "<null>"}, NullableGuidProperty = {systemUnderTest.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {systemUnderTest.NullableDateTimeProperty?.ToString() ?? "<null>"}, NullableModelEnumProperty = {systemUnderTest.NullableModelEnumProperty?.ToString() ?? "<null>"}, NullableModelFlagsEnumProperty = {systemUnderTest.NullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfBoolProperty = {systemUnderTest.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {systemUnderTest.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {systemUnderTest.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {systemUnderTest.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {systemUnderTest.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfModelEnumProperty = {systemUnderTest.ArrayOfModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelFlagsEnumProperty = {systemUnderTest.ArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelClassProperty = {systemUnderTest.ArrayOfModelClassProperty?.ToString() ?? "<null>"}, ArrayOfNullableBoolProperty = {systemUnderTest.ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ArrayOfNullableIntProperty = {systemUnderTest.ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ArrayOfNullableGuidProperty = {systemUnderTest.ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ArrayOfNullableDateTimeProperty = {systemUnderTest.ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelEnumProperty = {systemUnderTest.ArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelFlagsEnumProperty = {systemUnderTest.ArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfIntProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfStringProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfIntProperty = {systemUnderTest.ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfStringProperty = {systemUnderTest.ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelFlagsEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelClassProperty = {systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableDateTimeProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfIntProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfStringProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelClassProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, CollectionInterfaceOfStringProperty = {systemUnderTest.CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, CollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListOfCollectionInterfaceOfStringProperty = {systemUnderTest.ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
+            var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelAllPublicSetters)}: BoolProperty = {systemUnderTest.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {systemUnderTest.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {systemUnderTest.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {systemUnderTest.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {systemUnderTest.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ModelEnumProperty = {systemUnderTest.ModelEnumProperty.ToString() ?? "<null>"}, ModelFlagsEnumProperty = {systemUnderTest.ModelFlagsEnumProperty.ToString() ?? "<null>"}, ModelClassProperty = {systemUnderTest.ModelClassProperty?.ToString() ?? "<null>"}, NullableBoolProperty = {systemUnderTest.NullableBoolProperty?.ToString() ?? "<null>"}, NullableIntProperty = {systemUnderTest.NullableIntProperty?.ToString() ?? "<null>"}, NullableGuidProperty = {systemUnderTest.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {systemUnderTest.NullableDateTimeProperty?.ToString() ?? "<null>"}, NullableModelEnumProperty = {systemUnderTest.NullableModelEnumProperty?.ToString() ?? "<null>"}, NullableModelFlagsEnumProperty = {systemUnderTest.NullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfBoolProperty = {systemUnderTest.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {systemUnderTest.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {systemUnderTest.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {systemUnderTest.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {systemUnderTest.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfModelEnumProperty = {systemUnderTest.ArrayOfModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelFlagsEnumProperty = {systemUnderTest.ArrayOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfModelClassProperty = {systemUnderTest.ArrayOfModelClassProperty?.ToString() ?? "<null>"}, ArrayOfNullableBoolProperty = {systemUnderTest.ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ArrayOfNullableIntProperty = {systemUnderTest.ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ArrayOfNullableGuidProperty = {systemUnderTest.ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ArrayOfNullableDateTimeProperty = {systemUnderTest.ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelEnumProperty = {systemUnderTest.ArrayOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ArrayOfNullableModelFlagsEnumProperty = {systemUnderTest.ArrayOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfIntProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfStringProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfModelClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfIntProperty = {systemUnderTest.ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfStringProperty = {systemUnderTest.ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelFlagsEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfModelClassProperty = {systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableDateTimeProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty = {systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfIntProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfStringProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfModelClassProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty?.ToString() ?? "<null>"}, CollectionInterfaceOfStringProperty = {systemUnderTest.CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, CollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListOfCollectionInterfaceOfStringProperty = {systemUnderTest.ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
 
             // Act
             var actual = systemUnderTest.ToString();
@@ -6628,11 +6628,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         public static class Constructing
         {
             [Fact]
-            public static void MyModelPublicSetters___Should_implement_IModel___When_reflecting()
+            public static void MyModelAllPublicSetters___Should_implement_IModel___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSetters);
-                var expectedModelMethods = typeof(IModel<MyModelPublicSetters>)
+                var type = typeof(MyModelAllPublicSetters);
+                var expectedModelMethods = typeof(IModel<MyModelAllPublicSetters>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
@@ -6643,7 +6643,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSetters>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelAllPublicSetters>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
         }
@@ -6654,7 +6654,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
@@ -6734,9 +6734,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithBoolProperty___Should_deep_clone_object_and_replace_BoolProperty_with_the_provided_boolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithBoolProperty(referenceObject.BoolProperty);
@@ -6893,9 +6893,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithIntProperty___Should_deep_clone_object_and_replace_IntProperty_with_the_provided_intProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithIntProperty(referenceObject.IntProperty);
@@ -7052,9 +7052,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithStringProperty___Should_deep_clone_object_and_replace_StringProperty_with_the_provided_stringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithStringProperty(referenceObject.StringProperty);
@@ -7211,9 +7211,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithGuidProperty___Should_deep_clone_object_and_replace_GuidProperty_with_the_provided_guidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithGuidProperty(referenceObject.GuidProperty);
@@ -7370,9 +7370,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithDateTimeProperty___Should_deep_clone_object_and_replace_DateTimeProperty_with_the_provided_dateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithDateTimeProperty(referenceObject.DateTimeProperty);
@@ -7529,9 +7529,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithModelEnumProperty___Should_deep_clone_object_and_replace_ModelEnumProperty_with_the_provided_modelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithModelEnumProperty(referenceObject.ModelEnumProperty);
@@ -7688,9 +7688,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ModelFlagsEnumProperty_with_the_provided_modelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithModelFlagsEnumProperty(referenceObject.ModelFlagsEnumProperty);
@@ -7847,9 +7847,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithModelClassProperty___Should_deep_clone_object_and_replace_ModelClassProperty_with_the_provided_modelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithModelClassProperty(referenceObject.ModelClassProperty);
@@ -8005,9 +8005,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithNullableBoolProperty___Should_deep_clone_object_and_replace_NullableBoolProperty_with_the_provided_nullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableBoolProperty(referenceObject.NullableBoolProperty);
@@ -8164,9 +8164,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithNullableIntProperty___Should_deep_clone_object_and_replace_NullableIntProperty_with_the_provided_nullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableIntProperty(referenceObject.NullableIntProperty);
@@ -8323,9 +8323,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithNullableGuidProperty___Should_deep_clone_object_and_replace_NullableGuidProperty_with_the_provided_nullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableGuidProperty(referenceObject.NullableGuidProperty);
@@ -8482,9 +8482,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithNullableDateTimeProperty___Should_deep_clone_object_and_replace_NullableDateTimeProperty_with_the_provided_nullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableDateTimeProperty(referenceObject.NullableDateTimeProperty);
@@ -8641,9 +8641,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithNullableModelEnumProperty___Should_deep_clone_object_and_replace_NullableModelEnumProperty_with_the_provided_nullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableModelEnumProperty(referenceObject.NullableModelEnumProperty);
@@ -8800,9 +8800,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_NullableModelFlagsEnumProperty_with_the_provided_nullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableModelFlagsEnumProperty(referenceObject.NullableModelFlagsEnumProperty);
@@ -8959,9 +8959,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfBoolProperty___Should_deep_clone_object_and_replace_ArrayOfBoolProperty_with_the_provided_arrayOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfBoolProperty(referenceObject.ArrayOfBoolProperty);
@@ -9117,9 +9117,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfIntProperty___Should_deep_clone_object_and_replace_ArrayOfIntProperty_with_the_provided_arrayOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfIntProperty(referenceObject.ArrayOfIntProperty);
@@ -9275,9 +9275,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfStringProperty___Should_deep_clone_object_and_replace_ArrayOfStringProperty_with_the_provided_arrayOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfStringProperty(referenceObject.ArrayOfStringProperty);
@@ -9433,9 +9433,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfGuidProperty___Should_deep_clone_object_and_replace_ArrayOfGuidProperty_with_the_provided_arrayOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfGuidProperty(referenceObject.ArrayOfGuidProperty);
@@ -9591,9 +9591,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfDateTimeProperty___Should_deep_clone_object_and_replace_ArrayOfDateTimeProperty_with_the_provided_arrayOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfDateTimeProperty(referenceObject.ArrayOfDateTimeProperty);
@@ -9749,9 +9749,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfModelEnumProperty___Should_deep_clone_object_and_replace_ArrayOfModelEnumProperty_with_the_provided_arrayOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfModelEnumProperty(referenceObject.ArrayOfModelEnumProperty);
@@ -9907,9 +9907,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ArrayOfModelFlagsEnumProperty_with_the_provided_arrayOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfModelFlagsEnumProperty(referenceObject.ArrayOfModelFlagsEnumProperty);
@@ -10065,9 +10065,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfModelClassProperty___Should_deep_clone_object_and_replace_ArrayOfModelClassProperty_with_the_provided_arrayOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfModelClassProperty(referenceObject.ArrayOfModelClassProperty);
@@ -10223,9 +10223,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfNullableBoolProperty___Should_deep_clone_object_and_replace_ArrayOfNullableBoolProperty_with_the_provided_arrayOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableBoolProperty(referenceObject.ArrayOfNullableBoolProperty);
@@ -10381,9 +10381,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfNullableIntProperty___Should_deep_clone_object_and_replace_ArrayOfNullableIntProperty_with_the_provided_arrayOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableIntProperty(referenceObject.ArrayOfNullableIntProperty);
@@ -10539,9 +10539,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfNullableGuidProperty___Should_deep_clone_object_and_replace_ArrayOfNullableGuidProperty_with_the_provided_arrayOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableGuidProperty(referenceObject.ArrayOfNullableGuidProperty);
@@ -10697,9 +10697,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ArrayOfNullableDateTimeProperty_with_the_provided_arrayOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableDateTimeProperty(referenceObject.ArrayOfNullableDateTimeProperty);
@@ -10855,9 +10855,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ArrayOfNullableModelEnumProperty_with_the_provided_arrayOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableModelEnumProperty(referenceObject.ArrayOfNullableModelEnumProperty);
@@ -11013,9 +11013,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithArrayOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ArrayOfNullableModelFlagsEnumProperty_with_the_provided_arrayOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableModelFlagsEnumProperty(referenceObject.ArrayOfNullableModelFlagsEnumProperty);
@@ -11171,9 +11171,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfBoolProperty_with_the_provided_readOnlyCollectionInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfBoolProperty(referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty);
@@ -11329,9 +11329,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfIntProperty_with_the_provided_readOnlyCollectionInterfaceOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfIntProperty(referenceObject.ReadOnlyCollectionInterfaceOfIntProperty);
@@ -11487,9 +11487,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfStringProperty_with_the_provided_readOnlyCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfStringProperty(referenceObject.ReadOnlyCollectionInterfaceOfStringProperty);
@@ -11645,9 +11645,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfGuidProperty_with_the_provided_readOnlyCollectionInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfGuidProperty(referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty);
@@ -11803,9 +11803,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfDateTimeProperty_with_the_provided_readOnlyCollectionInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfDateTimeProperty(referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty);
@@ -11961,9 +11961,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfModelEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfModelEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfModelEnumProperty);
@@ -12119,9 +12119,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
@@ -12277,9 +12277,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfModelClassProperty_with_the_provided_readOnlyCollectionInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfModelClassProperty(referenceObject.ReadOnlyCollectionInterfaceOfModelClassProperty);
@@ -12435,9 +12435,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableBoolProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
@@ -12593,9 +12593,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableIntProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableIntProperty);
@@ -12751,9 +12751,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableGuidProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
@@ -12909,9 +12909,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableDateTimeProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
@@ -13067,9 +13067,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableModelEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
@@ -13225,9 +13225,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
@@ -13383,9 +13383,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfBoolProperty_with_the_provided_readOnlyListInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfBoolProperty(referenceObject.ReadOnlyListInterfaceOfBoolProperty);
@@ -13541,9 +13541,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfIntProperty_with_the_provided_readOnlyListInterfaceOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfIntProperty(referenceObject.ReadOnlyListInterfaceOfIntProperty);
@@ -13699,9 +13699,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfStringProperty_with_the_provided_readOnlyListInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfStringProperty(referenceObject.ReadOnlyListInterfaceOfStringProperty);
@@ -13857,9 +13857,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfGuidProperty_with_the_provided_readOnlyListInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfGuidProperty(referenceObject.ReadOnlyListInterfaceOfGuidProperty);
@@ -14015,9 +14015,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyListInterfaceOfDateTimeProperty);
@@ -14173,9 +14173,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfModelEnumProperty_with_the_provided_readOnlyListInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfModelEnumProperty(referenceObject.ReadOnlyListInterfaceOfModelEnumProperty);
@@ -14331,9 +14331,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfModelFlagsEnumProperty_with_the_provided_readOnlyListInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfModelFlagsEnumProperty(referenceObject.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
@@ -14489,9 +14489,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfModelClassProperty_with_the_provided_readOnlyListInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfModelClassProperty(referenceObject.ReadOnlyListInterfaceOfModelClassProperty);
@@ -14647,9 +14647,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableBoolProperty_with_the_provided_readOnlyListInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty(referenceObject.ReadOnlyListInterfaceOfNullableBoolProperty);
@@ -14805,9 +14805,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableIntProperty_with_the_provided_readOnlyListInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty(referenceObject.ReadOnlyListInterfaceOfNullableIntProperty);
@@ -14963,9 +14963,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableGuidProperty_with_the_provided_readOnlyListInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty(referenceObject.ReadOnlyListInterfaceOfNullableGuidProperty);
@@ -15121,9 +15121,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableDateTimeProperty_with_the_provided_readOnlyListInterfaceOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty(referenceObject.ReadOnlyListInterfaceOfNullableDateTimeProperty);
@@ -15279,9 +15279,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableModelEnumProperty_with_the_provided_readOnlyListInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableModelEnumProperty(referenceObject.ReadOnlyListInterfaceOfNullableModelEnumProperty);
@@ -15437,9 +15437,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_readOnlyListInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
@@ -15595,9 +15595,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfBoolProperty_with_the_provided_readOnlyDictionaryInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfBoolProperty(referenceObject.ReadOnlyDictionaryInterfaceOfBoolProperty);
@@ -15753,9 +15753,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfIntProperty_with_the_provided_readOnlyDictionaryInterfaceOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfIntProperty(referenceObject.ReadOnlyDictionaryInterfaceOfIntProperty);
@@ -15911,9 +15911,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfStringProperty_with_the_provided_readOnlyDictionaryInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfStringProperty(referenceObject.ReadOnlyDictionaryInterfaceOfStringProperty);
@@ -16069,9 +16069,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfGuidProperty_with_the_provided_readOnlyDictionaryInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfGuidProperty(referenceObject.ReadOnlyDictionaryInterfaceOfGuidProperty);
@@ -16227,9 +16227,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfModelEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfModelEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
@@ -16385,9 +16385,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
@@ -16543,9 +16543,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfModelClassProperty_with_the_provided_readOnlyDictionaryInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfModelClassProperty(referenceObject.ReadOnlyDictionaryInterfaceOfModelClassProperty);
@@ -16701,9 +16701,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableBoolProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
@@ -16859,9 +16859,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableIntProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
@@ -17017,9 +17017,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableGuidProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
@@ -17175,9 +17175,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
@@ -17333,9 +17333,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
@@ -17491,9 +17491,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_CollectionInterfaceOfStringProperty_with_the_provided_collectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithCollectionInterfaceOfStringProperty(referenceObject.CollectionInterfaceOfStringProperty);
@@ -17649,9 +17649,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_CollectionOfCollectionInterfaceOfStringProperty_with_the_provided_collectionOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty(referenceObject.CollectionOfCollectionInterfaceOfStringProperty);
@@ -17807,9 +17807,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithListInterfaceOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ListInterfaceOfCollectionInterfaceOfStringProperty_with_the_provided_listInterfaceOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithListInterfaceOfCollectionInterfaceOfStringProperty(referenceObject.ListInterfaceOfCollectionInterfaceOfStringProperty);
@@ -17965,9 +17965,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithListOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ListOfCollectionInterfaceOfStringProperty_with_the_provided_listOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithListOfCollectionInterfaceOfStringProperty(referenceObject.ListOfCollectionInterfaceOfStringProperty);
@@ -18123,9 +18123,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionOfCollectionInterfaceOfStringProperty_with_the_provided_readOnlyCollectionOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty(referenceObject.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
@@ -18281,9 +18281,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18439,9 +18439,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_DictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_dictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18597,9 +18597,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18755,9 +18755,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18913,9 +18913,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -19071,9 +19071,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSetters>();
+                var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
-                var referenceObject = A.Dummy<MyModelPublicSetters>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -19232,14 +19232,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSetters>();
+                var expected = A.Dummy<MyModelAllPublicSetters>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSetters>(serializedBson);
+                var actual = serializer.Deserialize<MyModelAllPublicSetters>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -19249,14 +19249,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSetters>();
+                var expected = A.Dummy<MyModelAllPublicSetters>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSetters>(serializedJson);
+                var actual = serializer.Deserialize<MyModelAllPublicSetters>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -19269,8 +19269,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSetters systemUnderTest1 = null;
-                MyModelPublicSetters systemUnderTest2 = null;
+                MyModelAllPublicSetters systemUnderTest1 = null;
+                MyModelAllPublicSetters systemUnderTest2 = null;
 
                 // Act
                 var result = systemUnderTest1 == systemUnderTest2;
@@ -19283,7 +19283,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_false___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
                 // Arrange
-                MyModelPublicSetters systemUnderTest = null;
+                MyModelAllPublicSetters systemUnderTest = null;
 
                 // Act
                 var result1 = systemUnderTest == ObjectForEquatableTests;
@@ -19332,8 +19332,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSetters systemUnderTest1 = null;
-                MyModelPublicSetters systemUnderTest2 = null;
+                MyModelAllPublicSetters systemUnderTest1 = null;
+                MyModelAllPublicSetters systemUnderTest2 = null;
 
                 // Act
                 var result = systemUnderTest1 != systemUnderTest2;
@@ -19346,7 +19346,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_true___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
                 // Arrange
-                MyModelPublicSetters systemUnderTest = null;
+                MyModelAllPublicSetters systemUnderTest = null;
 
                 // Act
                 var result1 = systemUnderTest != ObjectForEquatableTests;
@@ -19392,10 +19392,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSetters___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_MyModelAllPublicSetters___Should_return_false___When_parameter_other_is_null()
             {
                 // Arrange
-                MyModelPublicSetters systemUnderTest = null;
+                MyModelAllPublicSetters systemUnderTest = null;
 
                 // Act
                 var result = ObjectForEquatableTests.Equals(systemUnderTest);
@@ -19405,7 +19405,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSetters___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_MyModelAllPublicSetters___Should_return_true___When_parameter_other_is_same_object()
             {
                 // Arrange, Act
                 var result = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
@@ -19415,7 +19415,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSetters___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_MyModelAllPublicSetters___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 // Arrange, Act
                 var actualCheckReferenceAgainstUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
@@ -19427,7 +19427,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSetters___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_MyModelAllPublicSetters___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
                 var result = ObjectForEquatableTests.Equals(ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests);

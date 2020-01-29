@@ -34,17 +34,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPrivateSettersParentTest
+    public partial class MyModelAllPrivateSettersParentTest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.BsonConfigurationType);
         
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPrivateSettersParent ObjectForEquatableTests = A.Dummy<MyModelPrivateSettersParent>();
+        private static readonly MyModelAllPrivateSettersParent ObjectForEquatableTests = A.Dummy<MyModelAllPrivateSettersParent>();
 
-        private static readonly MyModelPrivateSettersParent ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests = ObjectForEquatableTests.DeepClone();
+        private static readonly MyModelAllPrivateSettersParent ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests = ObjectForEquatableTests.DeepClone();
 
-        private static readonly MyModelPrivateSettersParent[] ObjectsThatAreNotEqualToObjectForEquatableTests =
+        private static readonly MyModelAllPrivateSettersParent[] ObjectsThatAreNotEqualToObjectForEquatableTests =
         {
             ObjectForEquatableTests.DeepCloneWithParentBoolProperty(A.Dummy<bool>().ThatIsNot(ObjectForEquatableTests.ParentBoolProperty)),
             ObjectForEquatableTests.DeepCloneWithParentIntProperty(A.Dummy<int>().ThatIsNot(ObjectForEquatableTests.ParentIntProperty)),
@@ -132,11 +132,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         public static class Constructing
         {
             [Fact]
-            public static void MyModelPrivateSettersParent___Should_implement_IModel___When_reflecting()
+            public static void MyModelAllPrivateSettersParent___Should_implement_IModel___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPrivateSettersParent);
-                var expectedModelMethods = typeof(IModel<MyModelPrivateSettersParent>)
+                var type = typeof(MyModelAllPrivateSettersParent);
+                var expectedModelMethods = typeof(IModel<MyModelAllPrivateSettersParent>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
@@ -147,7 +147,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPrivateSettersParent>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelAllPrivateSettersParent>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
         }
@@ -158,7 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
@@ -238,9 +238,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentBoolProperty___Should_deep_clone_object_and_replace_ParentBoolProperty_with_the_provided_parentBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentBoolProperty(referenceObject.ParentBoolProperty);
@@ -397,9 +397,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentIntProperty___Should_deep_clone_object_and_replace_ParentIntProperty_with_the_provided_parentIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentIntProperty(referenceObject.ParentIntProperty);
@@ -556,9 +556,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentStringProperty___Should_deep_clone_object_and_replace_ParentStringProperty_with_the_provided_parentStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentStringProperty(referenceObject.ParentStringProperty);
@@ -715,9 +715,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentGuidProperty___Should_deep_clone_object_and_replace_ParentGuidProperty_with_the_provided_parentGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentGuidProperty(referenceObject.ParentGuidProperty);
@@ -874,9 +874,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentDateTimeProperty___Should_deep_clone_object_and_replace_ParentDateTimeProperty_with_the_provided_parentDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentDateTimeProperty(referenceObject.ParentDateTimeProperty);
@@ -1033,9 +1033,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentModelEnumProperty___Should_deep_clone_object_and_replace_ParentModelEnumProperty_with_the_provided_parentModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentModelEnumProperty(referenceObject.ParentModelEnumProperty);
@@ -1192,9 +1192,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentModelFlagsEnumProperty_with_the_provided_parentModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentModelFlagsEnumProperty(referenceObject.ParentModelFlagsEnumProperty);
@@ -1351,9 +1351,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentModelClassProperty___Should_deep_clone_object_and_replace_ParentModelClassProperty_with_the_provided_parentModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentModelClassProperty(referenceObject.ParentModelClassProperty);
@@ -1509,9 +1509,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentNullableBoolProperty___Should_deep_clone_object_and_replace_ParentNullableBoolProperty_with_the_provided_parentNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentNullableBoolProperty(referenceObject.ParentNullableBoolProperty);
@@ -1668,9 +1668,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentNullableIntProperty___Should_deep_clone_object_and_replace_ParentNullableIntProperty_with_the_provided_parentNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentNullableIntProperty(referenceObject.ParentNullableIntProperty);
@@ -1827,9 +1827,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentNullableGuidProperty___Should_deep_clone_object_and_replace_ParentNullableGuidProperty_with_the_provided_parentNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentNullableGuidProperty(referenceObject.ParentNullableGuidProperty);
@@ -1986,9 +1986,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentNullableDateTimeProperty___Should_deep_clone_object_and_replace_ParentNullableDateTimeProperty_with_the_provided_parentNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentNullableDateTimeProperty(referenceObject.ParentNullableDateTimeProperty);
@@ -2145,9 +2145,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentNullableModelEnumProperty___Should_deep_clone_object_and_replace_ParentNullableModelEnumProperty_with_the_provided_parentNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentNullableModelEnumProperty(referenceObject.ParentNullableModelEnumProperty);
@@ -2304,9 +2304,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentNullableModelFlagsEnumProperty_with_the_provided_parentNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentNullableModelFlagsEnumProperty(referenceObject.ParentNullableModelFlagsEnumProperty);
@@ -2463,9 +2463,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfBoolProperty___Should_deep_clone_object_and_replace_ParentArrayOfBoolProperty_with_the_provided_parentArrayOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfBoolProperty(referenceObject.ParentArrayOfBoolProperty);
@@ -2621,9 +2621,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfIntProperty___Should_deep_clone_object_and_replace_ParentArrayOfIntProperty_with_the_provided_parentArrayOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfIntProperty(referenceObject.ParentArrayOfIntProperty);
@@ -2779,9 +2779,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfStringProperty___Should_deep_clone_object_and_replace_ParentArrayOfStringProperty_with_the_provided_parentArrayOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfStringProperty(referenceObject.ParentArrayOfStringProperty);
@@ -2937,9 +2937,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfGuidProperty___Should_deep_clone_object_and_replace_ParentArrayOfGuidProperty_with_the_provided_parentArrayOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfGuidProperty(referenceObject.ParentArrayOfGuidProperty);
@@ -3095,9 +3095,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentArrayOfDateTimeProperty_with_the_provided_parentArrayOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfDateTimeProperty(referenceObject.ParentArrayOfDateTimeProperty);
@@ -3253,9 +3253,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfModelEnumProperty___Should_deep_clone_object_and_replace_ParentArrayOfModelEnumProperty_with_the_provided_parentArrayOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfModelEnumProperty(referenceObject.ParentArrayOfModelEnumProperty);
@@ -3411,9 +3411,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentArrayOfModelFlagsEnumProperty_with_the_provided_parentArrayOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfModelFlagsEnumProperty(referenceObject.ParentArrayOfModelFlagsEnumProperty);
@@ -3569,9 +3569,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfModelClassProperty___Should_deep_clone_object_and_replace_ParentArrayOfModelClassProperty_with_the_provided_parentArrayOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfModelClassProperty(referenceObject.ParentArrayOfModelClassProperty);
@@ -3727,9 +3727,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfNullableBoolProperty___Should_deep_clone_object_and_replace_ParentArrayOfNullableBoolProperty_with_the_provided_parentArrayOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfNullableBoolProperty(referenceObject.ParentArrayOfNullableBoolProperty);
@@ -3885,9 +3885,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfNullableIntProperty___Should_deep_clone_object_and_replace_ParentArrayOfNullableIntProperty_with_the_provided_parentArrayOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfNullableIntProperty(referenceObject.ParentArrayOfNullableIntProperty);
@@ -4043,9 +4043,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfNullableGuidProperty___Should_deep_clone_object_and_replace_ParentArrayOfNullableGuidProperty_with_the_provided_parentArrayOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfNullableGuidProperty(referenceObject.ParentArrayOfNullableGuidProperty);
@@ -4201,9 +4201,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ParentArrayOfNullableDateTimeProperty_with_the_provided_parentArrayOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfNullableDateTimeProperty(referenceObject.ParentArrayOfNullableDateTimeProperty);
@@ -4359,9 +4359,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ParentArrayOfNullableModelEnumProperty_with_the_provided_parentArrayOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfNullableModelEnumProperty(referenceObject.ParentArrayOfNullableModelEnumProperty);
@@ -4517,9 +4517,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentArrayOfNullableModelFlagsEnumProperty_with_the_provided_parentArrayOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(referenceObject.ParentArrayOfNullableModelFlagsEnumProperty);
@@ -4675,9 +4675,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfBoolProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfBoolProperty);
@@ -4833,9 +4833,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfIntProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfIntProperty);
@@ -4991,9 +4991,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfStringProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfStringProperty);
@@ -5149,9 +5149,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfGuidProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfGuidProperty);
@@ -5307,9 +5307,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfDateTimeProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfDateTimeProperty);
@@ -5465,9 +5465,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfModelEnumProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfModelEnumProperty);
@@ -5623,9 +5623,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
@@ -5781,9 +5781,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfModelClassProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfModelClassProperty);
@@ -5939,9 +5939,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfNullableBoolProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty);
@@ -6097,9 +6097,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfNullableIntProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfNullableIntProperty);
@@ -6255,9 +6255,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfNullableGuidProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty);
@@ -6413,9 +6413,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
@@ -6571,9 +6571,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
@@ -6729,9 +6729,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
@@ -6887,9 +6887,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfBoolProperty_with_the_provided_parentReadOnlyListInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(referenceObject.ParentReadOnlyListInterfaceOfBoolProperty);
@@ -7045,9 +7045,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfIntProperty_with_the_provided_parentReadOnlyListInterfaceOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(referenceObject.ParentReadOnlyListInterfaceOfIntProperty);
@@ -7203,9 +7203,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfStringProperty_with_the_provided_parentReadOnlyListInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(referenceObject.ParentReadOnlyListInterfaceOfStringProperty);
@@ -7361,9 +7361,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfGuidProperty_with_the_provided_parentReadOnlyListInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(referenceObject.ParentReadOnlyListInterfaceOfGuidProperty);
@@ -7519,9 +7519,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentReadOnlyListInterfaceOfDateTimeProperty);
@@ -7677,9 +7677,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfModelEnumProperty_with_the_provided_parentReadOnlyListInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(referenceObject.ParentReadOnlyListInterfaceOfModelEnumProperty);
@@ -7835,9 +7835,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfModelFlagsEnumProperty_with_the_provided_parentReadOnlyListInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(referenceObject.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty);
@@ -7993,9 +7993,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfModelClassProperty_with_the_provided_parentReadOnlyListInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(referenceObject.ParentReadOnlyListInterfaceOfModelClassProperty);
@@ -8151,9 +8151,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfNullableBoolProperty_with_the_provided_parentReadOnlyListInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(referenceObject.ParentReadOnlyListInterfaceOfNullableBoolProperty);
@@ -8309,9 +8309,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfNullableIntProperty_with_the_provided_parentReadOnlyListInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(referenceObject.ParentReadOnlyListInterfaceOfNullableIntProperty);
@@ -8467,9 +8467,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfNullableGuidProperty_with_the_provided_parentReadOnlyListInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(referenceObject.ParentReadOnlyListInterfaceOfNullableGuidProperty);
@@ -8625,9 +8625,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfNullableDateTimeProperty_with_the_provided_parentReadOnlyListInterfaceOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(referenceObject.ParentReadOnlyListInterfaceOfNullableDateTimeProperty);
@@ -8783,9 +8783,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfNullableModelEnumProperty_with_the_provided_parentReadOnlyListInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(referenceObject.ParentReadOnlyListInterfaceOfNullableModelEnumProperty);
@@ -8941,9 +8941,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
@@ -9099,9 +9099,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfBoolProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty);
@@ -9257,9 +9257,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfIntProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty);
@@ -9415,9 +9415,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfStringProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty);
@@ -9573,9 +9573,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfGuidProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty);
@@ -9731,9 +9731,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfModelEnumProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty);
@@ -9889,9 +9889,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
@@ -10047,9 +10047,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfModelClassProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfModelClassProperty);
@@ -10205,9 +10205,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty);
@@ -10363,9 +10363,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfNullableIntProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty);
@@ -10521,9 +10521,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty);
@@ -10679,9 +10679,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
@@ -10837,9 +10837,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
@@ -10995,9 +10995,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentCollectionInterfaceOfStringProperty_with_the_provided_parentCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentCollectionInterfaceOfStringProperty(referenceObject.ParentCollectionInterfaceOfStringProperty);
@@ -11153,9 +11153,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentCollectionOfCollectionInterfaceOfStringProperty_with_the_provided_parentCollectionOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty);
@@ -11311,9 +11311,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentListInterfaceOfCollectionInterfaceOfStringProperty_with_the_provided_parentListInterfaceOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty);
@@ -11469,9 +11469,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentListOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentListOfCollectionInterfaceOfStringProperty_with_the_provided_parentListOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(referenceObject.ParentListOfCollectionInterfaceOfStringProperty);
@@ -11627,9 +11627,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty_with_the_provided_parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
@@ -11785,9 +11785,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -11943,9 +11943,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -12101,9 +12101,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -12259,9 +12259,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -12417,9 +12417,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -12575,9 +12575,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersParent>();
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
 
-                var referenceObject = A.Dummy<MyModelPrivateSettersParent>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelAllPrivateSettersParent>().ThatIsNot(systemUnderTest);
                 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -12736,14 +12736,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPrivateSettersParent>();
+                var expected = A.Dummy<MyModelAllPrivateSettersParent>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPrivateSettersParent>(serializedBson);
+                var actual = serializer.Deserialize<MyModelAllPrivateSettersParent>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -12753,14 +12753,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPrivateSettersParent>();
+                var expected = A.Dummy<MyModelAllPrivateSettersParent>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPrivateSettersParent>(serializedJson);
+                var actual = serializer.Deserialize<MyModelAllPrivateSettersParent>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -12773,8 +12773,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPrivateSettersParent systemUnderTest1 = null;
-                MyModelPrivateSettersParent systemUnderTest2 = null;
+                MyModelAllPrivateSettersParent systemUnderTest1 = null;
+                MyModelAllPrivateSettersParent systemUnderTest2 = null;
 
                 // Act
                 var result = systemUnderTest1 == systemUnderTest2;
@@ -12787,7 +12787,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_false___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
                 // Arrange
-                MyModelPrivateSettersParent systemUnderTest = null;
+                MyModelAllPrivateSettersParent systemUnderTest = null;
 
                 // Act
                 var result1 = systemUnderTest == ObjectForEquatableTests;
@@ -12836,8 +12836,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPrivateSettersParent systemUnderTest1 = null;
-                MyModelPrivateSettersParent systemUnderTest2 = null;
+                MyModelAllPrivateSettersParent systemUnderTest1 = null;
+                MyModelAllPrivateSettersParent systemUnderTest2 = null;
 
                 // Act
                 var result = systemUnderTest1 != systemUnderTest2;
@@ -12850,7 +12850,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_true___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
                 // Arrange
-                MyModelPrivateSettersParent systemUnderTest = null;
+                MyModelAllPrivateSettersParent systemUnderTest = null;
 
                 // Act
                 var result1 = systemUnderTest != ObjectForEquatableTests;
@@ -12896,10 +12896,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPrivateSettersParent___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_false___When_parameter_other_is_null()
             {
                 // Arrange
-                MyModelPrivateSettersParent systemUnderTest = null;
+                MyModelAllPrivateSettersParent systemUnderTest = null;
 
                 // Act
                 var result = ObjectForEquatableTests.Equals(systemUnderTest);
@@ -12909,7 +12909,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPrivateSettersParent___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_true___When_parameter_other_is_same_object()
             {
                 // Arrange, Act
                 var result = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
@@ -12919,7 +12919,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPrivateSettersParent___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 // Arrange, Act
                 var actualCheckReferenceAgainstUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
@@ -12931,7 +12931,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPrivateSettersParent___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
                 var result = ObjectForEquatableTests.Equals(ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests);
