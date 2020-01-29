@@ -370,6 +370,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildGeneratedModelName(generatedModelKind, setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}, " : string.Empty;
 
             string interfaceStatement;
+            var pragmaDisableStatements = new List<string>();
+            var pragmaRestoreStatements = new List<string>();
             switch (generatedModelKind)
             {
                 case GeneratedModelKind.All:
@@ -379,6 +381,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
                         ? Invariant($"IEquatableViaCodeGen")
                         : Invariant($"IEquatableViaCodeGen, IDeclareEqualsMethod<{modelName}>");
+
+                    pragmaDisableStatements.Add("#pragma warning disable CS0659");
+                    pragmaDisableStatements.Add("#pragma warning disable CS0661");
+                    pragmaRestoreStatements.Add("#pragma warning disable CS0661");
+                    pragmaRestoreStatements.Add("#pragma warning disable CS0659");
+
                     break;
                 default:
                     throw new NotSupportedException("This generated model kind is not supported: " + generatedModelKind);
@@ -406,7 +414,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,
+                pragmaDisableStatements.Any() ? pragmaDisableStatements.ToNewLineDelimited() : null,
                 Invariant($"    public {abstractStatement}partial class {modelName} : {derivativeStatement}{interfaceStatement}"),
+                pragmaRestoreStatements.Any() ? pragmaDisableStatements.ToNewLineDelimited() : null,
                 "    {",
             };
 
@@ -471,6 +481,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Concat(propertyStatements)
                 .Concat(methodStatements)
                 .Concat(footerStatements)
+                .Where(_ => _ != null)
                 .ToNewLineDelimited();
 
             return result;
