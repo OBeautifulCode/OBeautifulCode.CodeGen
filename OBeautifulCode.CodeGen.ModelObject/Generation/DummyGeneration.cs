@@ -39,7 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string result;
             if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
-                result = UseRandomConcreteSubclassCodeTemplate.Replace(TypeNameToken, modelType.Type.Name);
+                result = UseRandomConcreteSubclassCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
             }
             else
             {

@@ -41,7 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "// </auto-generated>",
                 "// --------------------------------------------------------------------------------------------------------------------",
                 string.Empty,
-                Invariant($"namespace {modelType.Type.Namespace}.Test"),
+                Invariant($"namespace {modelType.TypeNamespace}.Test"),
                 "{",
                 "    using System;",
                 "    using System.CodeDom.Compiler;",

@@ -251,7 +251,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(TypeNameToken, modelType.TypeCompilableString)
                 .Replace(BaseTypeNameToken, modelType.BaseTypeCompilableString);
 
-            if (!modelType.ShouldGenerateDeepCloneWith())
+            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative)
             {
                 result = result
                     .Replace(DeepCloneWithInflationToken, string.Empty);
@@ -348,7 +348,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var deepCloneWithTestInflationToken = string.Empty;
 
-            if (modelType.ShouldGenerateDeepCloneWith())
+            if (!modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative)
             {
                 var deepCloneWithTestMethods = new List<string>();
 
@@ -563,23 +563,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 result = expressionParameter + recursionDepth.ToString(CultureInfo.InvariantCulture);
             }
-
-            return result;
-        }
-
-        private static bool ShouldGenerateDeepCloneWith(
-            this ModelType modelType)
-        {
-            var declaresDeepCloneMethod = modelType.DeclaresDeepCloneMethod;
-
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
-            {
-                declaresDeepCloneMethod = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
-                    (_.BaseType == modelType.Type) &&
-                    _.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(_)));
-            }
-
-            var result = !declaresDeepCloneMethod;
 
             return result;
         }

@@ -97,8 +97,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
             var prefix = modelType
-                .Type
-                .Namespace?
+                .TypeNamespace
                 .Split('.')
                 .Skip(1)
                 .Where(_ => _ != "Serialization")

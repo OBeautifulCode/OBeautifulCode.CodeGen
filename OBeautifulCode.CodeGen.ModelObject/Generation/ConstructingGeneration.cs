@@ -187,8 +187,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var parameterPadding = new string(' ', parameterPaddingLength);
 
             var constructorInfo = modelType
-                .Type
-                .GetConstructors()
+                .Constructors
                 .SingleOrDefault(
                     _ =>
                     {
@@ -248,7 +247,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             string result = null;
 
-            var constructorWithParameters = modelType.Type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
+            var constructorWithParameters = modelType.Constructors.SingleOrDefault(_ => _.GetParameters().Length > 0);
 
             if (constructorWithParameters != null)
             {

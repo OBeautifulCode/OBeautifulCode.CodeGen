@@ -112,7 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? string.Join(", ", propertyToStrings)
                 : "<no properties>";
 
-            var result = Invariant($"Invariant($\"{{nameof({modelType.Type.Namespace})}}.{{nameof({modelType.TypeCompilableString})}}: {propertyToString}.\")");
+            var result = Invariant($"Invariant($\"{{nameof({modelType.TypeNamespace})}}.{{nameof({modelType.TypeCompilableString})}}: {propertyToString}.\")");
 
             return result;
         }

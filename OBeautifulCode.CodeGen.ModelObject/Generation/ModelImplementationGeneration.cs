@@ -35,40 +35,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            var interfaces = new List<Type>();
-
-            if (modelType.RequiresModel)
-            {
-                interfaces.Add(typeof(IModel<>).MakeGenericType(modelType.Type));
-            }
-            else
-            {
-                if (modelType.RequiresDeepCloning)
-                {
-                    interfaces.Add(typeof(IDeepCloneable<>).MakeGenericType(modelType.Type));
-                }
-
-                if (modelType.RequiresEquality)
-                {
-                    interfaces.Add(typeof(IEquatable<>).MakeGenericType(modelType.Type));
-                }
-
-                if (modelType.RequiresHashing)
-                {
-                    interfaces.Add(typeof(IHashable));
-                }
-
-                if (modelType.RequiresStringRepresentation)
-                {
-                    interfaces.Add(typeof(IStringRepresentable));
-                }
-            }
-
-            if (modelType.RequiresComparability)
-            {
-                interfaces.Add(typeof(IComparableForRelativeSortOrder<>).MakeGenericType(modelType.Type));
-            }
-
             var items = new List<string>
             {
                 "// --------------------------------------------------------------------------------------------------------------------",
@@ -77,7 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "// </auto-generated>",
                 "// --------------------------------------------------------------------------------------------------------------------",
                 string.Empty,
-                Invariant($"namespace {modelType.Type.Namespace}"),
+                Invariant($"namespace {modelType.TypeNamespace}"),
                 "{",
                 "    using System;",
                 "    using System.CodeDom.Compiler;",
@@ -95,7 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 string.Empty,
                 "    [ExcludeFromCodeCoverage]",
                 Invariant($"    [GeneratedCode(\"{GenerationShared.GetCodeGenAssemblyName()}\", \"{GenerationShared.GetCodeGenAssemblyVersion()}\")]"),
-                Invariant($"    public partial class {modelType.TypeReadableString} : {interfaces.Select(_ => _.ToStringReadable()).ToDelimitedString(", ")}"),
+                Invariant($"    public partial class {modelType.TypeReadableString} : {modelType.RequiredInterfaces.Select(_ => _.ToStringCompilable()).ToDelimitedString(", ")}"),
                 "    {",
             };
 

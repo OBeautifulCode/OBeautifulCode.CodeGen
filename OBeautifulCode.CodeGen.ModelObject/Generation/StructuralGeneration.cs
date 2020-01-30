@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
@@ -61,39 +62,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            var expectedInterfaceTestMethods = new List<string>();
-
-            if (modelType.RequiresModel)
-            {
-                expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IModel<>)));
-            }
-            else
-            {
-                if (modelType.RequiresComparability)
-                {
-                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IComparableForRelativeSortOrder<>)));
-                }
-
-                if (modelType.RequiresDeepCloning)
-                {
-                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IDeepCloneable<>)));
-                }
-
-                if (modelType.RequiresEquality)
-                {
-                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IEquatable<>)));
-                }
-
-                if (modelType.RequiresHashing)
-                {
-                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IHashable)));
-                }
-
-                if (modelType.RequiresStringRepresentation)
-                {
-                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IStringRepresentable)));
-                }
-            }
+            var expectedInterfaceTestMethods = modelType
+                .RequiredInterfaces
+                .Select(modelType.GetExpectedInterfaceTestMethodCode).ToList();
 
             var result = StructuralTestMethodsCodeTemplate
                         .Replace(ExpectedInterfaceImplementationsInflationToken, expectedInterfaceTestMethods.ToDelimitedString(Environment.NewLine + Environment.NewLine));
@@ -105,18 +76,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this ModelType modelType,
             Type expectedInterfaceType)
         {
-            var expectedInterfaceTypeCompilableString = expectedInterfaceType.IsGenericTypeDefinition
-                ? expectedInterfaceType.MakeGenericType(modelType.Type).ToStringCompilable()
-                : expectedInterfaceType.ToStringCompilable();
-
-            var expectedInterfaceTypeInTestMethodString = expectedInterfaceType.IsGenericTypeDefinition
+            var expectedInterfaceTypeInTestMethodString = expectedInterfaceType.IsGenericType
                 ? expectedInterfaceType.ToStringWithoutGenericComponent() + "_of_" + modelType.TypeReadableString
                 : expectedInterfaceType.ToStringReadable();
 
             var result =
                 ExpectedImplementationTestMethodCodeTemplate
                 .Replace(TypeNameToken, modelType.TypeCompilableString)
-                .Replace(ExpectedInterfaceToken, expectedInterfaceTypeCompilableString)
+                .Replace(ExpectedInterfaceToken, expectedInterfaceType.ToStringCompilable())
                 .Replace(ExpectedInterfaceInTestMethodNameToken, expectedInterfaceTypeInTestMethodString);
 
             return result;
