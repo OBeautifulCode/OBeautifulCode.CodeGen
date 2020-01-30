@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ToStringGeneration.cs" company="OBeautifulCode">
+// <copyright file="StringRepresentationGeneration.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// <summary>
     /// Generates code related to string representation of model types.
     /// </summary>
-    internal static class ToStringGeneration
+    internal static class StringRepresentationGeneration
     {
         private const string TypeNameToken = "<<<TypeNameHere>>>";
         private const string ToStringToken = "<<<ToStringConstructionHere>>>";
