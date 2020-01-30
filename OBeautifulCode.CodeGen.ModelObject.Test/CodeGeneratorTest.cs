@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public const string TestNameSuffix = "Test";
 
-        public static readonly bool WriteFiles = true;
+        public static readonly bool WriteFiles = false;
 
         public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
