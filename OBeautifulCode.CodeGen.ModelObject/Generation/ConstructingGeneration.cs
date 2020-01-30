@@ -210,7 +210,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     .Select(_ => propertyNameToCodeMap[_.Name])
                     .ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + modelType.Type.ToStringCompilable() + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
+                result = "new " + modelType.TypeCompilableString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
             }
             else if (modelType.PropertiesOfConcern.All(_ => _.CanWrite))
             {
@@ -220,7 +220,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + modelType.Type.ToStringCompilable() + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + Environment.NewLine + curlyBracketPadding + "}";
+                result = "new " + modelType.TypeCompilableString + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + Environment.NewLine + curlyBracketPadding + "}";
             }
             else
             {
@@ -267,7 +267,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
 
                     var testMethod = ConstructorTestMethodForArgumentCodeTemplate
-                                    .Replace(TypeNameToken,             modelType.Type.ToStringCompilable())
+                                    .Replace(TypeNameToken,             modelType.TypeCompilableString)
                                     .Replace(ConstructorParameterToken, parameter.Name)
                                     .Replace(NewObjectTestToken,        objectInstantiationCode);
 
@@ -285,7 +285,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
 
                         var stringTestMethod = ConstructorTestMethodForStringArgumentCodeTemplate
-                                              .Replace(TypeNameToken,             modelType.Type.ToStringCompilable())
+                                              .Replace(TypeNameToken,             modelType.TypeCompilableString)
                                               .Replace(ConstructorParameterToken, parameter.Name)
                                               .Replace(NewObjectTestToken,        objectInstantiationCode);
 
@@ -305,7 +305,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
 
                         var collectionTestMethod = ConstructorTestMethodForCollectionArgumentThatIsEmptyCodeTemplate
-                            .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                            .Replace(TypeNameToken, modelType.TypeCompilableString)
                             .Replace(ConstructorParameterToken, parameter.Name)
                             .Replace(NewObjectTestToken, objectInstantiationCode);
 
@@ -343,7 +343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
 
                             collectionTestMethod = ConstructorTestMethodForCollectionArgumentThatContainsNullElementCodeTemplate
-                                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                                .Replace(TypeNameToken, modelType.TypeCompilableString)
                                 .Replace(ConstructorParameterToken, parameter.Name)
                                 .Replace(NewObjectTestToken, objectInstantiationCode);
 
@@ -364,7 +364,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
 
                         var dictionaryTestMethod = ConstructorTestMethodForDictionaryArgumentThatIsEmptyCodeTemplate
-                            .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                            .Replace(TypeNameToken, modelType.TypeCompilableString)
                             .Replace(ConstructorParameterToken, parameter.Name)
                             .Replace(NewObjectTestToken, objectInstantiationCode);
 
@@ -399,7 +399,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                             dictionaryTestMethod = ConstructorTestMethodForDictionaryArgumentThatContainsNullValueCodeTemplate
                                 .Replace(SetDictionaryValueToNullToken, setDictionaryValueToNullCode)
-                                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                                .Replace(TypeNameToken, modelType.TypeCompilableString)
                                 .Replace(ConstructorParameterToken, parameter.Name)
                                 .Replace(NewObjectTestToken, objectInstantiationCode);
 
@@ -420,7 +420,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         sameReferenceExpected: true);
 
                     var testMethod = PropertyGetterTestMethodTemplate
-                                    .Replace(TypeNameToken,              modelType.Type.ToStringCompilable())
+                                    .Replace(TypeNameToken,              modelType.TypeCompilableString)
                                     .Replace(PropertyNameToken,          parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(ConstructorParameterToken,  parameter.Name)
                                     .Replace(AssertPropertyGetterToken,  assertPropertyGetterToken)
@@ -432,7 +432,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var constructorTestInflationToken = string.Join(Environment.NewLine, testMethods);
 
                 result = ConstructingTestMethodsCodeTemplate
-                    .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                    .Replace(TypeNameToken, modelType.TypeCompilableString)
                     .Replace(ConstructorTestInflationToken, constructorTestInflationToken);
             }
 

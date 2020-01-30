@@ -386,10 +386,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 if (modelType.DeclaresEqualsMethod)
                 {
-                    throw new NotSupportedException(Invariant($"Abstract type {modelType.Type.ToStringReadable()} cannot declare an Equals method."));
+                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare an Equals method."));
                 }
 
-                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.Type.ToStringCompilable());
+                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
             }
             else
             {
@@ -405,7 +405,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 result = EqualityMethodsForConcreteTypeCodeTemplate
                     .Replace(EqualsMethodToken, equalsMethodCode)
-                    .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                    .Replace(TypeNameToken, modelType.TypeCompilableString)
                     .Replace(EqualityToken, equalityToken);
             }
 
@@ -444,7 +444,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var unequalSet = new List<string>();
 
             var result = codeTemplate
-                .Replace(TypeNameToken, modelType.Type.ToStringCompilable());
+                .Replace(TypeNameToken, modelType.TypeCompilableString);
 
             if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
@@ -504,7 +504,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this ModelType modelType)
         {
             var result = EqualityTestMethodsCodeTemplate
-                .Replace(TypeNameToken, modelType.Type.ToStringCompilable());
+                .Replace(TypeNameToken, modelType.TypeCompilableString);
 
             return result;
         }

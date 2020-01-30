@@ -78,8 +78,8 @@
     <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.13\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Type, Version=1.0.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Type.1.0.36\lib\net462\OBeautifulCode.Type.dll</HintPath>
+    <Reference Include="OBeautifulCode.Type, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Type.1.0.38\lib\net462\OBeautifulCode.Type.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -201,6 +201,38 @@
     <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSetters.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParent.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSetters.designer.cs">
+      <DependentUpon>MyModelCloningPublicSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParent.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSetters.cs" />
     <Compile Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSetters.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSetters.cs</DependentUpon>
@@ -264,6 +296,38 @@
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.cs" />
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParentTest.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersTest.designer.cs">
+      <DependentUpon>MyModelCloningPrivateSettersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParentTest.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersTest.designer.cs">
+      <DependentUpon>MyModelCloningPublicSettersTest.cs</DependentUpon>
     </Compile>
     <Compile Include="SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
     <Compile Include="SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />

@@ -23,8 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string ToStringToken = "<<<ToStringConstructionHere>>>";
         private const string ToStringTestToken = "<<<ToStringConstructionForTestHere>>>";
 
-        private const string ToStringMethodForConcreteTypeCodeTemplate = @"
-        /// <inheritdoc />
+        private const string ToStringMethodForConcreteTypeCodeTemplate = @"    /// <inheritdoc />
         public override string ToString()
         {
             var result = " + ToStringToken + @";
@@ -32,8 +31,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }";
 
-        private const string ToStringMethodForAbstractBaseTypeCodeTemplate = @"
-        /// <inheritdoc />
+        private const string ToStringMethodForAbstractBaseTypeCodeTemplate = @"    /// <inheritdoc />
         public abstract override string ToString();";
 
         private const string StringRepresentationTestsCodeTemplate = @"    public static class StringRepresentation
@@ -97,7 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
                 result = StringRepresentationTestsCodeTemplate
-                    .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                    .Replace(TypeNameToken, modelType.TypeCompilableString)
                     .Replace(ToStringTestToken, toStringConstructionCode);
             }
 
@@ -114,7 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? string.Join(", ", propertyToStrings)
                 : "<no properties>";
 
-            var result = Invariant($"Invariant($\"{{nameof({modelType.Type.Namespace})}}.{{nameof({modelType.Type.ToStringCompilable()})}}: {propertyToString}.\")");
+            var result = Invariant($"Invariant($\"{{nameof({modelType.Type.Namespace})}}.{{nameof({modelType.TypeCompilableString})}}: {propertyToString}.\")");
 
             return result;
         }

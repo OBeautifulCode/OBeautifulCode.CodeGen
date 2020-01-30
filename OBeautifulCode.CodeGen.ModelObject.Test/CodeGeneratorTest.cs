@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public const string TestNameSuffix = "Test";
 
-        public static readonly bool WriteFiles = false;
+        public static readonly bool WriteFiles = true;
 
         public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
@@ -367,7 +367,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var abstractStatement = hierarchyKind == HierarchyKind.AbstractBase ? "abstract " : string.Empty;
 
-            var derivativeStatement = hierarchyKind == HierarchyKind.ConcreteInherited ? $"{baseName.BuildGeneratedModelName(generatedModelKind, setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}, " : string.Empty;
+            string baseClassName = null;
+            if (hierarchyKind == HierarchyKind.ConcreteInherited)
+            {
+                baseClassName = $"{baseName.BuildGeneratedModelName(generatedModelKind, setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}";
+            }
+
+            var derivativeStatement = baseClassName == null ? string.Empty : baseClassName + ", ";
 
             string interfaceStatement;
             var pragmaDisableStatements = new List<string>();
@@ -379,14 +385,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     break;
                 case GeneratedModelKind.Equality:
                     interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
-                        ? Invariant($"IEquatableViaCodeGen")
-                        : Invariant($"IEquatableViaCodeGen, IDeclareEqualsMethod<{modelName}>");
-
+                        ? nameof(IEquatableViaCodeGen)
+                        : Invariant($"{nameof(IEquatableViaCodeGen)}, {typeof(IDeclareEqualsMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
                     pragmaDisableStatements.Add("#pragma warning disable CS0659");
                     pragmaDisableStatements.Add("#pragma warning disable CS0661");
                     pragmaRestoreStatements.Add("#pragma warning disable CS0661");
                     pragmaRestoreStatements.Add("#pragma warning disable CS0659");
 
+                    break;
+                case GeneratedModelKind.Cloning:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                        ? nameof(IDeepCloneableViaCodeGen)
+                        : Invariant($"{nameof(IDeepCloneableViaCodeGen)}, {typeof(IDeclareDeepCloneMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
                     break;
                 default:
                     throw new NotSupportedException("This generated model kind is not supported: " + generatedModelKind);
@@ -410,6 +420,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using System.Collections.Generic;",
                 "    using System.Collections.ObjectModel;",
                 string.Empty,
+                "    using FakeItEasy;",
+                string.Empty,
                 "    using OBeautifulCode.Assertion.Recipes;",
                 "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
@@ -427,29 +439,77 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             };
 
             var methodStatements = new List<string>();
-            if ((generatedModelKind == GeneratedModelKind.Equality) && (hierarchyKind != HierarchyKind.AbstractBase))
+
+            var generatedModelKindAllName = modelName.Replace(generatedModelKind.ToString(), nameof(GeneratedModelKind.All));
+
+            var getEquivalentAllModelMethodStatements = new List<string>
+            {
+                string.Empty,
+                Invariant($"        private {modelName} DeepCloneInternal()"),
+                Invariant($"        {{"),
+                Invariant($"            var referenceModel = A.Dummy<{generatedModelKindAllName}>();"),
+                string.Empty,
+                Invariant($"            var referenceModelProperties = referenceModel.GetType().GetProperties();"),
+                string.Empty,
+                Invariant($"            foreach (var referenceModelProperty in referenceModelProperties)"),
+                Invariant($"            {{"),
+                Invariant($"                referenceModelProperty.DeclaringType.GetProperty(referenceModelProperty.Name).SetValue(referenceModel, this.GetType().GetProperty(referenceModelProperty.Name).GetValue(this));"),
+                Invariant($"            }}"),
+                string.Empty,
+                Invariant($"            referenceModel = ({generatedModelKindAllName})referenceModel.GetType().GetMethod(\"DeepClone\").Invoke(referenceModel, new object[0]);"),
+                string.Empty,
+                Invariant($"            var thisModelProperties = this.GetType().GetProperties();"),
+                string.Empty,
+                Invariant($"            var result = A.Dummy<{modelName}>();"),
+                string.Empty,
+                Invariant($"            foreach (var thisModelProperty in thisModelProperties)"),
+                Invariant($"            {{"),
+                Invariant($"                thisModelProperty.DeclaringType.GetProperty(thisModelProperty.Name).SetValue(result, referenceModel.GetType().GetProperty(thisModelProperty.Name).GetValue(referenceModel));"),
+                Invariant($"            }}"),
+                string.Empty,
+                Invariant($"            return result;"),
+                Invariant($"        }}"),
+            };
+
+            if ((generatedModelKind == GeneratedModelKind.Cloning) && (hierarchyKind != HierarchyKind.AbstractBase))
+            {
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+                methodStatements.Add(
+                    hierarchyKind == HierarchyKind.None
+                        ? Invariant($"        public {modelName} DeepClone()")
+                        : Invariant($"        {modelName} {typeof(IDeclareDeepCloneMethod<>).ToStringWithoutGenericComponent()}<{modelName}>.DeepClone()"));
+                methodStatements.Add(Invariant($"        {{"));
+                methodStatements.Add(Invariant($"            var result = this.DeepCloneInternal();"));
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"            return result;"));
+                methodStatements.Add(Invariant($"        }}"));
+
+                methodStatements.AddRange(getEquivalentAllModelMethodStatements);
+            }
+            else if ((generatedModelKind == GeneratedModelKind.Equality) && (hierarchyKind != HierarchyKind.AbstractBase))
             {
                 var equalityCode = new string[0].Concat(equalityParentStatements).Concat(equalityStatements).ToNewLineDelimited().TrimEnd('&', ' ') + ";";
 
                 methodStatements.Add(string.Empty);
-                methodStatements.Add("        /// <inheritdoc />");
+                methodStatements.Add(Invariant($"        /// <inheritdoc />"));
                 methodStatements.Add(Invariant($"        public bool Equals({modelName} other)"));
-                methodStatements.Add("        {");
-                methodStatements.Add(@"            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            if (ReferenceEquals(other, null))
-            {
-                return false;
-            }");
+                methodStatements.Add(Invariant($"        {{"));
+                methodStatements.Add(Invariant($"            if (ReferenceEquals(this, other))"));
+                methodStatements.Add(Invariant($"            {{"));
+                methodStatements.Add(Invariant($"                return true;"));
+                methodStatements.Add(Invariant($"            }}"));
                 methodStatements.Add(string.Empty);
-                methodStatements.Add("            var result = ");
+                methodStatements.Add(Invariant($"            if (ReferenceEquals(other, null))"));
+                methodStatements.Add(Invariant($"            {{"));
+                methodStatements.Add(Invariant($"                return false;"));
+                methodStatements.Add(Invariant($"            }}"));
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"            var result = "));
                 methodStatements.Add(equalityCode);
                 methodStatements.Add(string.Empty);
-                methodStatements.Add("            return result;");
-                methodStatements.Add("        }");
+                methodStatements.Add(Invariant($"            return result;"));
+                methodStatements.Add(Invariant($"        }}"));
             }
 
             var constructorStatements = new List<string>();

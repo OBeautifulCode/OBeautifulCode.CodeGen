@@ -75,11 +75,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as MyModelPrivateSettersEmpty);
-    
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
             .Value;
-    
+
         /// <inheritdoc />
         public object Clone() => this.DeepClone();
 
@@ -90,7 +90,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             return result;
         }
-    
+
         /// <inheritdoc />
         public override string ToString()
         {

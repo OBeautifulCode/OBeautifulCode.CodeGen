@@ -60,10 +60,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public abstract override bool Equals(object obj);
-    
+
         /// <inheritdoc />
         public abstract override int GetHashCode();
-    
+
         /// <inheritdoc />
         public object Clone() => this.DeepClone();
 
@@ -76,7 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <param name="parentReadOnlyDictionaryOfStringString">The new <see cref="ParentReadOnlyDictionaryOfStringString" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelPrivateSettersNotEmptyParent" /> using the specified <paramref name="parentReadOnlyDictionaryOfStringString" /> for <see cref="ParentReadOnlyDictionaryOfStringString" /> and a deep clone of every other property.</returns>
         public abstract MyModelPrivateSettersNotEmptyParent DeepCloneWithParentReadOnlyDictionaryOfStringString(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryOfStringString);
-    
+
         /// <inheritdoc />
         public abstract override string ToString();
     }

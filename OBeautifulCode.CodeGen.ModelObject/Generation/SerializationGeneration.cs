@@ -111,7 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 : BsonAndJsonSerializationFieldsCodeTemplate;
 
             var result = serializationFieldsCodeTemplate
-                        .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                        .Replace(TypeNameToken, modelType.TypeCompilableString)
                         .Replace(SerializationConfigurationPrefixToken, prefix);
 
             return result;
@@ -133,7 +133,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? JsonOnlySerializationTestMethodsCodeTemplate
                 : BsonAndJsonSerializationTestMethodsCodeTemplate;
 
-            var result = serializationTestMethodsCodeTemplate.Replace(TypeNameToken, modelType.Type.ToStringCompilable());
+            var result = serializationTestMethodsCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
 
             return result;
         }

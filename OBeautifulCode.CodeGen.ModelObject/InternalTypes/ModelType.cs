@@ -57,6 +57,8 @@ namespace OBeautifulCode.CodeGen
             var declaresToStringMethod = type.IsAssignableTo(typeof(IDeclareToStringMethod));
 
             this.Type = type;
+            this.TypeCompilableString = type.ToStringCompilable();
+            this.TypeReadableString = type.ToStringReadable();
             this.HierarchyKind = hierarchyKind;
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
@@ -78,6 +80,16 @@ namespace OBeautifulCode.CodeGen
         /// Gets the type.
         /// </summary>
         public Type Type { get; }
+
+        /// <summary>
+        /// Gets a compilable string representation of the type.
+        /// </summary>
+        public string TypeCompilableString { get; }
+
+        /// <summary>
+        /// Gets a readability-optimized string representation of the type.
+        /// </summary>
+        public string TypeReadableString { get; }
 
         /// <summary>
         /// Gets the <see cref="HierarchyKind"/> of the model type.

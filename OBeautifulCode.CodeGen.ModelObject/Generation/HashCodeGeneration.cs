@@ -22,13 +22,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string HashToken = "<<<HashMethodStackHere>>>";
         private const string UnequalHashCodeToken = "<<<UnequalHashCodeHere>>>";
 
-        private const string HashMethodForConcreteTypeCodeTemplate = @"
-        /// <inheritdoc />
+        private const string HashMethodForConcreteTypeCodeTemplate = @"    /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()" + HashToken + @"
             .Value;";
 
-        private const string HashMethodForAbstractBaseTypeCodeTemplate = @"
-        /// <inheritdoc />
+        private const string HashMethodForAbstractBaseTypeCodeTemplate = @"    /// <inheritdoc />
         public abstract override int GetHashCode();";
 
         private const string HashingTestMethodsCodeTemplate = @"    public static class Hashing

@@ -232,7 +232,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public override bool Equals(object obj) => this == (obj as MyModelAllPrivateSettersChild2);
-    
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
             .Hash(this.ParentBoolProperty)
@@ -394,7 +394,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
             .Hash(this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
             .Value;
-    
+
         /// <inheritdoc />
         public new object Clone() => this.DeepClone();
 
@@ -27115,7 +27115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             
             return result;
         }
-    
+
         /// <inheritdoc />
         public override string ToString()
         {

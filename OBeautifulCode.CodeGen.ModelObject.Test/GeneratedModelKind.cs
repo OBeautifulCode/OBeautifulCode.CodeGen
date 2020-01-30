@@ -11,5 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         All,
 
         Equality,
+
+        Cloning,
     }
 }

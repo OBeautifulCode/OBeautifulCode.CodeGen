@@ -60,16 +60,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public abstract override bool Equals(object obj);
-    
+
         /// <inheritdoc />
         public abstract override int GetHashCode();
-    
+
         /// <inheritdoc />
         public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
         public abstract MyModelPrivateSettersEmptyParent DeepClone();
-    
+
         /// <inheritdoc />
         public abstract override string ToString();
     }

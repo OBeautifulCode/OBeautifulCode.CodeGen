@@ -110,12 +110,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 : expectedInterfaceType.ToStringCompilable();
 
             var expectedInterfaceTypeInTestMethodString = expectedInterfaceType.IsGenericTypeDefinition
-                ? expectedInterfaceType.ToStringCompilable().Replace("<>", string.Empty) + "_of_" + modelType.Type.ToStringReadable()
+                ? expectedInterfaceType.ToStringWithoutGenericComponent() + "_of_" + modelType.TypeReadableString
                 : expectedInterfaceType.ToStringReadable();
 
             var result =
                 ExpectedImplementationTestMethodCodeTemplate
-                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                .Replace(TypeNameToken, modelType.TypeCompilableString)
                 .Replace(ExpectedInterfaceToken, expectedInterfaceTypeCompilableString)
                 .Replace(ExpectedInterfaceInTestMethodNameToken, expectedInterfaceTypeInTestMethodString);
 
