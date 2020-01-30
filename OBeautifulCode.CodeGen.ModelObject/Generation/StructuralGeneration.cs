@@ -1,0 +1,125 @@
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StructuralGeneration.cs" company="OBeautifulCode">
+//   Copyright (c) OBeautifulCode 2018. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace OBeautifulCode.CodeGen.ModelObject
+{
+    using System;
+    using System.Collections.Generic;
+
+    using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Collection.Recipes;
+    using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
+
+    /// <summary>
+    /// Generates code related to structural checks.
+    /// </summary>
+    internal static class StructuralGeneration
+    {
+        private const string TypeNameToken = "<<<TypeNameHere>>>";
+        private const string ExpectedInterfaceToken = "<<<ExpectedInterfaceHere>>>";
+        private const string ExpectedInterfaceInTestMethodNameToken = "<<<ExpectedInterfaceInTestMethodNameHere>>>";
+        private const string ExpectedInterfaceImplementationsInflationToken = "<<<ExpectedInterfaceImplementationsInflationHere>>>";
+
+        private const string StructuralTestMethodsCodeTemplate = @"    public static class Structural
+        {" + ExpectedInterfaceImplementationsInflationToken + @"
+        }";
+
+        private const string ExpectedImplementationTestMethodCodeTemplate = @"
+            [Fact]
+            public static void " + TypeNameToken + @"___Should_implement_" + ExpectedInterfaceInTestMethodNameToken + @"___When_reflecting()
+            {
+                // Arrange
+                var type = typeof(" + TypeNameToken + @");
+                var expectedModelMethods = typeof(" + ExpectedInterfaceToken + @")
+                                          .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
+                                          .ToList();
+                var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
+
+                // Act
+                var actualInterfaces = type.GetInterfaces();
+                var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
+                var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
+
+                // Assert
+                actualInterfaces.AsTest().Must().ContainElement(typeof(" + ExpectedInterfaceToken + @"));
+                expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
+            }";
+
+        /// <summary>
+        /// Generates test methods that test a model's structure.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated test methods that test a model's structure.
+        /// </returns>
+        public static string GenerateStructuralTestMethods(
+            this ModelType modelType)
+        {
+            new { modelType }.AsArg().Must().NotBeNull();
+
+            var expectedInterfaceTestMethods = new List<string>();
+
+            if (modelType.RequiresModel)
+            {
+                expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IModel<>)));
+            }
+            else
+            {
+                if (modelType.RequiresComparability)
+                {
+                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IComparableForRelativeSortOrder<>)));
+                }
+
+                if (modelType.RequiresDeepCloning)
+                {
+                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IDeepCloneable<>)));
+                }
+
+                if (modelType.RequiresEquality)
+                {
+                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IEquatable<>)));
+                }
+
+                if (modelType.RequiresHashing)
+                {
+                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IHashable)));
+                }
+
+                if (modelType.RequiresStringRepresentation)
+                {
+                    expectedInterfaceTestMethods.Add(modelType.GetExpectedInterfaceTestMethodCode(typeof(IStringRepresentable)));
+                }
+            }
+
+            var result = StructuralTestMethodsCodeTemplate
+                        .Replace(ExpectedInterfaceImplementationsInflationToken, expectedInterfaceTestMethods.ToDelimitedString(Environment.NewLine + Environment.NewLine));
+
+            return result;
+        }
+
+        private static string GetExpectedInterfaceTestMethodCode(
+            this ModelType modelType,
+            Type expectedInterfaceType)
+        {
+            var expectedInterfaceTypeCompilableString = expectedInterfaceType.IsGenericTypeDefinition
+                ? expectedInterfaceType.MakeGenericType(modelType.Type).ToStringCompilable()
+                : expectedInterfaceType.ToStringCompilable();
+
+            var expectedInterfaceTypeInTestMethodString = expectedInterfaceType.IsGenericTypeDefinition
+                ? expectedInterfaceType.ToStringCompilable().Replace("<>", string.Empty) + "_of_" + modelType.Type.ToStringReadable()
+                : expectedInterfaceType.ToStringReadable();
+
+            var result =
+                ExpectedImplementationTestMethodCodeTemplate
+                .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                .Replace(ExpectedInterfaceToken, expectedInterfaceTypeCompilableString)
+                .Replace(ExpectedInterfaceInTestMethodNameToken, expectedInterfaceTypeInTestMethodString);
+
+            return result;
+        }
+    }
+}

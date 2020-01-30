@@ -36,28 +36,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string NewObjectForGetterTestToken = "<<<NewObjectWithOneArgumentFromOtherHere>>>";
         private const string SetDictionaryValueToNullToken = "<<<SetDictionaryValueToNullHere>>>";
 
-        private const string ConstructingTestMethodsCodeTemplate = @"
-        public static class Constructing
-        {
-            [Fact]
-            public static void " + TypeNameToken + @"___Should_implement_IModel___When_reflecting()
-            {
-                // Arrange
-                var type = typeof(" + TypeNameToken + @");
-                var expectedModelMethods = typeof(IModel<" + TypeNameToken + @">)
-                                          .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
-                                          .ToList();
-                var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
-
-                // Act
-                var actualInterfaces = type.GetInterfaces();
-                var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
-                var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
-
-                // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<" + TypeNameToken + @">));
-                expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
-            }" + ConstructorTestInflationToken + @"
+        private const string ConstructingTestMethodsCodeTemplate = @"    public static class Constructing
+        {" + ConstructorTestInflationToken + @"
         }";
 
         private const string ConstructorTestMethodForArgumentCodeTemplate = @"
@@ -266,14 +246,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            var constructorWithParameters = modelType.Type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
+            string result = null;
 
-            var testMethods = new List<string>();
+            var constructorWithParameters = modelType.Type.GetConstructors().SingleOrDefault(_ => _.GetParameters().Length > 0);
 
             if (constructorWithParameters != null)
             {
-                // since we have parameters we'll go ahead and pad down.
-                testMethods.Add(string.Empty);
+                var testMethods = new List<string>();
 
                 var parameters = constructorWithParameters.GetParameters();
                 foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
@@ -449,13 +428,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     testMethods.Add(testMethod);
                 }
+
+                var constructorTestInflationToken = string.Join(Environment.NewLine, testMethods);
+
+                result = ConstructingTestMethodsCodeTemplate
+                    .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
+                    .Replace(ConstructorTestInflationToken, constructorTestInflationToken);
             }
-
-            var constructorTestInflationToken = string.Join(Environment.NewLine, testMethods);
-
-            var result = ConstructingTestMethodsCodeTemplate
-                        .Replace(TypeNameToken,                 modelType.Type.ToStringCompilable())
-                        .Replace(ConstructorTestInflationToken, constructorTestInflationToken);
 
             return result;
         }

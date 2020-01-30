@@ -36,20 +36,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <inheritdoc />
         public abstract override string ToString();";
 
-        private const string ToStringTestMethodCodeTemplate = @"
-        [Fact]
-        public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
+        private const string StringRepresentationTestsCodeTemplate = @"    public static class StringRepresentation
         {
-            // Arrange
-            var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+            [Fact]
+            public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
 
-            var expected = " + ToStringTestToken + @";
+                var expected = " + ToStringTestToken + @";
 
-            // Act
-            var actual = systemUnderTest.ToString();
+                // Act
+                var actual = systemUnderTest.ToString();
 
-            // Assert
-            actual.AsTest().Must().BeEqualTo(expected);
+                // Assert
+                actual.AsTest().Must().BeEqualTo(expected);
+            }
         }";
 
         /// <summary>
@@ -94,7 +96,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
-                result = ToStringTestMethodCodeTemplate
+                result = StringRepresentationTestsCodeTemplate
                     .Replace(TypeNameToken, modelType.Type.ToStringCompilable())
                     .Replace(ToStringTestToken, toStringConstructionCode);
             }

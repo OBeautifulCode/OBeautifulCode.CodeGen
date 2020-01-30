@@ -102,6 +102,7 @@
     <Compile Include="Generation\HashCodeGeneration.cs" />
     <Compile Include="ExternalTypes\HierarchyKind.cs" />
     <Compile Include="Generation\ModelImplementationGeneration.cs" />
+    <Compile Include="Generation\StructuralGeneration.cs" />
     <Compile Include="InternalTypes\MemberCode.cs" />
     <Compile Include="Generation\TestGeneration.cs" />
     <Compile Include="GlobalSuppressions.cs" />

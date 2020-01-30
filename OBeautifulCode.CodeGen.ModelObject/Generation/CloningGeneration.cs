@@ -109,8 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }";
 
-        private const string CloningTestMethodsForNonInheritedTypeCodeTemplate = @"
-        public static class Cloning
+        private const string CloningTestMethodsForNonInheritedTypeCodeTemplate = @"    public static class Cloning
         {
             [Fact]
             public static void DeepClone___Should_deep_clone_object___When_called()
@@ -127,8 +126,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }" + DeepCloneWithTestInflationToken + @"
         }";
 
-        private const string CloningTestMethodsForConcreteInheritedTypeCodeTemplate = @"
-        public static class Cloning
+        private const string CloningTestMethodsForConcreteInheritedTypeCodeTemplate = @"    public static class Cloning
         {
             [Fact]
             public static void DeepClone_override___Should_deep_clone_object___When_called()

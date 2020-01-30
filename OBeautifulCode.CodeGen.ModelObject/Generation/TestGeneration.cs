@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Generic;
     using System.Linq;
 
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -75,29 +76,77 @@ namespace OBeautifulCode.CodeGen.ModelObject
             items.Add(Invariant($"    public partial class {modelType.Type.ToStringCompilable()}Test"));
             items.Add("    {");
 
-            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization))
+            var firstNewlineInsideClassIndex = items.Count;
+
+            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
             {
+                items.Add(string.Empty);
                 items.Add("    " + modelType.GenerateSerializationTestFields());
             }
 
-            items.Add(string.Empty);
-            items.Add("    " + modelType.GenerateEqualityTestFields());
-            items.Add("    " + modelType.GenerateToStringTestMethod());
-            items.Add("    " + modelType.GenerateConstructorTestMethods());
-            items.Add("    " + modelType.GenerateCloningTestMethods());
-
-            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization))
+            if (modelType.RequiresEquality || modelType.RequiresHashing)
             {
+                var equalityFieldsCode = modelType.GenerateEqualityTestFields();
+                if (equalityFieldsCode != null)
+                {
+                    items.Add(string.Empty);
+                    items.Add("    " + equalityFieldsCode);
+                }
+            }
+
+            items.Add(string.Empty);
+            items.Add("    " + modelType.GenerateStructuralTestMethods());
+
+            if (modelType.RequiresStringRepresentation)
+            {
+                var stringTestMethodsCode = modelType.GenerateToStringTestMethod();
+                if (stringTestMethodsCode != null)
+                {
+                    items.Add(string.Empty);
+                    items.Add("    " + stringTestMethodsCode);
+                }
+            }
+
+            if (modelType.RequiresModel)
+            {
+                var constructorTestMethodsCode = modelType.GenerateConstructorTestMethods();
+                if (constructorTestMethodsCode != null)
+                {
+                    items.Add(string.Empty);
+                    items.Add("    " + constructorTestMethodsCode);
+                }
+            }
+
+            if (modelType.RequiresDeepCloning)
+            {
+                items.Add(string.Empty);
+                items.Add("    " + modelType.GenerateCloningTestMethods());
+            }
+
+            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
+            {
+                items.Add(string.Empty);
                 items.Add("    " + modelType.GenerateSerializationTestMethods());
             }
 
-            items.Add("    " + modelType.GenerateEqualityTestMethods());
+            if (modelType.RequiresEquality)
+            {
+                items.Add(string.Empty);
+                items.Add("    " + modelType.GenerateEqualityTestMethods());
+            }
+
+            if (modelType.RequiresHashing)
+            {
+                items.Add(string.Empty);
+                items.Add("    " + modelType.GenerateHashingTestMethods());
+            }
+
             items.Add("    }");
             items.Add("}");
 
-            var result = string.Join(
-                Environment.NewLine,
-                items.Where(_ => (_.Length == 0) || !string.IsNullOrWhiteSpace(_)).ToArray());
+            items.RemoveAt(firstNewlineInsideClassIndex);
+
+            var result = items.Where(_ => _ != null).ToNewLineDelimited();
 
             return result;
         }

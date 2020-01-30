@@ -27,8 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(" + SerializationConfigurationPrefixToken + @"SerializationConfigurationTypes.JsonConfigurationType);";
 
-        private const string JsonOnlySerializationTestMethodsCodeTemplate = @"
-        public static class Serialization
+        private const string JsonOnlySerializationTestMethodsCodeTemplate = @"        public static class Serialization
         {
             [Fact]
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
@@ -48,8 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
         }";
 
-        private const string BsonAndJsonSerializationTestMethodsCodeTemplate = @"
-        public static class Serialization
+        private const string BsonAndJsonSerializationTestMethodsCodeTemplate = @"    public static class Serialization
         {
             [Fact]
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()

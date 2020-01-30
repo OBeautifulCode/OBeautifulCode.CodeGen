@@ -57,26 +57,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         };
 
         private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();
-    
-        [Fact]
-        public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
-        {
-            // Arrange
-            var systemUnderTest = A.Dummy<MyModelPublicSettersNotEmptyParentEmptyChild>();
 
-            var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersNotEmptyParentEmptyChild)}: ParentReadOnlyDictionaryOfStringString = {systemUnderTest.ParentReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}.");
-
-            // Act
-            var actual = systemUnderTest.ToString();
-
-            // Assert
-            actual.AsTest().Must().BeEqualTo(expected);
-        }
-    
-        public static class Constructing
+        public static class Structural
         {
             [Fact]
-            public static void MyModelPublicSettersNotEmptyParentEmptyChild___Should_implement_IModel___When_reflecting()
+            public static void MyModelPublicSettersNotEmptyParentEmptyChild___Should_implement_IModel_of_MyModelPublicSettersNotEmptyParentEmptyChild___When_reflecting()
             {
                 // Arrange
                 var type = typeof(MyModelPublicSettersNotEmptyParentEmptyChild);
@@ -95,7 +80,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
         }
-    
+
+        public static class StringRepresentation
+        {
+            [Fact]
+            public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<MyModelPublicSettersNotEmptyParentEmptyChild>();
+
+                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersNotEmptyParentEmptyChild)}: ParentReadOnlyDictionaryOfStringString = {systemUnderTest.ParentReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}.");
+
+                // Act
+                var actual = systemUnderTest.ToString();
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(expected);
+            }
+        }
+
         public static class Cloning
         {
             [Fact]
@@ -143,7 +146,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ParentReadOnlyDictionaryOfStringString.AsTest().Must().BeEqualTo(referenceObject.ParentReadOnlyDictionaryOfStringString);
             }
         }
-    
+
         public static class Serialization
         {
             [Fact]
@@ -180,7 +183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.AsTest().Must().BeEqualTo(expected);
             }
         }
-    
+
         public static class Equality
         {
             [Fact]
@@ -405,7 +408,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 result.AsTest().Must().BeTrue();
             }
+        }
 
+        public static class Hashing
+        {
             [Fact]
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
