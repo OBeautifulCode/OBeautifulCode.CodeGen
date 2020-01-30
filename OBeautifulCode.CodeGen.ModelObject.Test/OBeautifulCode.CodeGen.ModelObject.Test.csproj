@@ -265,14 +265,14 @@
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
-    <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
+    <Compile Include="SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
+    <Compile Include="SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="ModelGenerationExtensions.cs" />
     <Compile Include="Models\CustomModels\ModelClass.cs" />
     <Compile Include="Models\CustomModels\ModelEnum.cs" />
     <Compile Include="Models\CustomModels\ModelFlagsEnum.cs" />
     <Compile Include="Models\CustomModels\ModelStruct.cs" />
-    <Compile Include="Models\SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
+    <Compile Include="SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
     <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
     <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyTest.cs</DependentUpon>
