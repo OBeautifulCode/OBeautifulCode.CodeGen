@@ -369,9 +369,9 @@
     <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.cs" />
-    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.designer.cs">
-      <DependentUpon>MyModelStringRepresentationPrivateSettersParent.cs</DependentUpon>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParentTest.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersParentTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.cs" />
     <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.designer.cs">
