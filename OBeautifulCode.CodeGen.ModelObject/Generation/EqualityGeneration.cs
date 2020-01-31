@@ -432,7 +432,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestFields(
             this ModelType modelType)
         {
-            if (modelType.DeclaresEqualsMethodDirectlyOrInDerivative)
+            if (modelType.DeclaresEqualsMethodDirectlyOrInDerivative || modelType.DeclaresGetHashCodeMethodDirectlyOrInDerivative)
             {
                 return null;
             }

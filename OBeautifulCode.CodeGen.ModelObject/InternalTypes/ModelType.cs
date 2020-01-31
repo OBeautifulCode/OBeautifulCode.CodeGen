@@ -69,6 +69,7 @@ namespace OBeautifulCode.CodeGen
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
             this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresDeepCloneMethodDirectlyOrInDerivative(hierarchyKind, type);
             this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresEqualsMethodDirectlyOrInDerivative(hierarchyKind, type);
+            this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = this.DetermineIfDeclaresGetHashCodeMethodDirectlyOrInDerivative(hierarchyKind, type);
         }
 
         /// <summary>
@@ -193,6 +194,12 @@ namespace OBeautifulCode.CodeGen
         /// or has a derivative that does.
         /// </summary>
         public bool DeclaresEqualsMethodDirectlyOrInDerivative { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareGetHashCodeMethod.GetHashCode"/> method
+        /// or has a derivative that does.
+        /// </summary>
+        public bool DeclaresGetHashCodeMethodDirectlyOrInDerivative { get; }
 
         private static void ThrowIfNotSupported(
             Type type)
@@ -544,6 +551,22 @@ namespace OBeautifulCode.CodeGen
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
                     _.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(_)));
+            }
+
+            return result;
+        }
+
+        private bool DetermineIfDeclaresGetHashCodeMethodDirectlyOrInDerivative(
+            HierarchyKind hierarchyKind,
+            Type type)
+        {
+            var result = this.DeclaresGetHashCodeMethod;
+
+            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            {
+                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
+                    (_.BaseType == type) &&
+                    _.IsAssignableTo(typeof(IDeclareGetHashCodeMethod)));
             }
 
             return result;
