@@ -98,7 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateStringRepresentationTestMethods(
             this ModelType modelType)
         {
-            if (modelType.DeclaresGetHashCodeMethodDirectlyOrInDerivative)
+            if (modelType.DeclaresToStringMethodDirectlyOrInDerivative)
             {
                 return null;
             }
