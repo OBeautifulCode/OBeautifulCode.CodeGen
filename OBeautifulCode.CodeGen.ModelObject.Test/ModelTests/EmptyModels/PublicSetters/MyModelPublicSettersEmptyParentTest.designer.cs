@@ -42,13 +42,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly MyModelPublicSettersEmptyParent ObjectForEquatableTests = A.Dummy<MyModelPublicSettersEmptyParent>();
 
-        private static readonly MyModelPublicSettersEmptyParent ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests = ObjectForEquatableTests.DeepClone();
+        private static readonly IReadOnlyCollection<MyModelPublicSettersEmptyParent> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new MyModelPublicSettersEmptyParent[]
+        {
+            ObjectForEquatableTests.DeepClone(),
+        };
 
-        private static readonly MyModelPublicSettersEmptyParent[] ObjectsThatAreNotEqualToObjectForEquatableTests =
+        private static readonly IReadOnlyCollection<MyModelPublicSettersEmptyParent> ObjectsThatAreNotEqualToObjectForEquatableTests = new MyModelPublicSettersEmptyParent[]
         {
         };
 
-        private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();
+        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new object[]
+        {
+            A.Dummy<string>(),
+        };
 
         public static class Structural
         {
@@ -200,10 +206,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests == ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests;
+                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                result.AsTest().Must().Each().BeTrue();
             }
 
             [Fact]
@@ -263,10 +269,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests != ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests;
+                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
 
                 // Assert
-                result.AsTest().Must().BeFalse();
+                result.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -308,10 +314,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests.Equals(ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests);
+                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                result.AsTest().Must().Each().BeTrue();
             }
 
             [Fact]
@@ -328,10 +334,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_not_of_the_same_type()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests.Equals((object)ObjectThatIsNotTheSameTypeAsObjectForEquatableTests);
+                var result = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
 
                 // Assert
-                result.AsTest().Must().BeFalse();
+                result.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -360,10 +366,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Equals_with_Object___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests.Equals((object)ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests);
+                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                result.AsTest().Must().Each().BeTrue();
             }
         }
 
@@ -386,11 +392,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
                 // Arrange, Act
-                var hash1 = ObjectForEquatableTests.GetHashCode();
-                var hash2 = ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests.GetHashCode();
+                var actualHashCodeOfReference = ObjectForEquatableTests.GetHashCode();
+
+                var actualHashCodesInEqualSet = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
 
                 // Assert
-                hash1.AsTest().Must().BeEqualTo(hash2);
+                actualHashCodesInEqualSet.AsTest().Must().Each().BeEqualTo(actualHashCodeOfReference);
             }
         }
     }

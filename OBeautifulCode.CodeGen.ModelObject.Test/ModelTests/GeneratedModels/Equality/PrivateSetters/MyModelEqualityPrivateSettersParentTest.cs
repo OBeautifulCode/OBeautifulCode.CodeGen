@@ -27,14 +27,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly MyModelEqualityPrivateSettersParent ObjectForEquatableTests = ReferenceObject;
 
-        private static readonly MyModelEqualityPrivateSettersParent ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests =
-            (MyModelEqualityPrivateSettersParent)ReferenceTypeConstructorInfo.Invoke(ReferenceTypeProperties.Select(_ => _.GetValue(ReferenceObject)).ToArray());
+        private static readonly IReadOnlyCollection<MyModelEqualityPrivateSettersParent> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new[]
+        {
+            (MyModelEqualityPrivateSettersParent)ReferenceTypeConstructorInfo.Invoke(ReferenceTypeProperties.Select(_ => _.GetValue(ReferenceObject)).ToArray()),
+        };
 
         private static readonly MyModelEqualityPrivateSettersParent[] ObjectsThatAreNotEqualToObjectForEquatableTests =
         {
             A.Dummy<MyModelEqualityPrivateSettersParent>(),
         };
 
-        private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();
+        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new[]
+        {
+            A.Dummy<string>(),
+        };
     }
 }

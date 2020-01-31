@@ -6,7 +6,7 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
-    using System.Reflection;
+    using System.Collections.Generic;
 
     using FakeItEasy;
 
@@ -14,25 +14,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     {
         private static readonly MyModelEqualityPublicSettersParent ObjectForEquatableTests = A.Dummy<MyModelEqualityPublicSettersChild1>();
 
-        private static readonly MyModelEqualityPublicSettersParent ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests;
+        private static readonly IReadOnlyCollection<MyModelEqualityPublicSettersParent> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests;
 
-        private static readonly MyModelEqualityPublicSettersParent[] ObjectsThatAreNotEqualToObjectForEquatableTests =
+        private static readonly IReadOnlyCollection<MyModelEqualityPublicSettersParent> ObjectsThatAreNotEqualToObjectForEquatableTests = new[]
         {
             A.Dummy<MyModelEqualityPublicSettersParent>(),
         };
 
-        private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();
+        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new[]
+        {
+            A.Dummy<string>(),
+        };
 
         static MyModelEqualityPublicSettersParentTest()
         {
-            ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests = new MyModelEqualityPublicSettersChild1();
+            var objectThatIsEqualToButNotTheSameAsObjectForEquatableTests = new MyModelEqualityPublicSettersChild1();
 
             var properties = typeof(MyModelEqualityPublicSettersChild1).GetProperties();
 
             foreach (var property in properties)
             {
-                property.SetValue(ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests, property.GetValue(ObjectForEquatableTests));
+                property.SetValue(objectThatIsEqualToButNotTheSameAsObjectForEquatableTests, property.GetValue(ObjectForEquatableTests));
             }
+
+            ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new[]
+            {
+                objectThatIsEqualToButNotTheSameAsObjectForEquatableTests,
+            };
         }
     }
 }

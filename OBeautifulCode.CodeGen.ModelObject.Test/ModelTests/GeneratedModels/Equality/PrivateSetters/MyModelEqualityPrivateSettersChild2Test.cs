@@ -34,7 +34,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     {
         private static readonly MyModelEqualityPrivateSettersChild2 ObjectForEquatableTests = A.Dummy<MyModelEqualityPrivateSettersChild2>();
 
-        private static readonly MyModelEqualityPrivateSettersChild2 ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests =
+        private static readonly IReadOnlyCollection<MyModelEqualityPrivateSettersChild2> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new[]
+        {
             new MyModelEqualityPrivateSettersChild2(
                     ObjectForEquatableTests.ParentBoolProperty,
                     ObjectForEquatableTests.ParentIntProperty,
@@ -193,9 +194,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ObjectForEquatableTests.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ObjectForEquatableTests.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ObjectForEquatableTests.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ObjectForEquatableTests.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    ObjectForEquatableTests.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+        };
 
-        private static readonly MyModelEqualityPrivateSettersChild2[] ObjectsThatAreNotEqualToObjectForEquatableTests =
+        private static readonly IReadOnlyCollection<MyModelEqualityPrivateSettersChild2> ObjectsThatAreNotEqualToObjectForEquatableTests = new[]
         {
             new MyModelEqualityPrivateSettersChild2(
                     A.Dummy<bool>().ThatIsNot(ObjectForEquatableTests.ParentBoolProperty),
@@ -25321,6 +25323,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>>().ThatIsNot(ObjectForEquatableTests.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
         };
 
-        private static readonly string ObjectThatIsNotTheSameTypeAsObjectForEquatableTests = A.Dummy<string>();
+        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new[]
+        {
+            A.Dummy<string>(),
+        };
     }
 }
