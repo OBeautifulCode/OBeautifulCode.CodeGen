@@ -422,15 +422,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestFields(
             this ModelType modelType)
         {
+            if (modelType.DeclaresEqualsMethodDirectlyOrInDerivative)
+            {
+                return null;
+            }
+
             string codeTemplate;
             switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.AbstractBase:
-                    if (!modelType.RequiresDeepCloning)
-                    {
-                        return null;
-                    }
-
                     codeTemplate = EqualityTestFieldsForAbstractBaseTypeCodeTemplate;
                     break;
                 case HierarchyKind.None:

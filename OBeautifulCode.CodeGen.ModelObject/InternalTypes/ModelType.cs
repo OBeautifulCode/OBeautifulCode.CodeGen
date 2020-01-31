@@ -68,6 +68,7 @@ namespace OBeautifulCode.CodeGen
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
             this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresDeepCloneMethodDirectlyOrInDerivative(hierarchyKind, type);
+            this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresEqualsMethodDirectlyOrInDerivative(hierarchyKind, type);
         }
 
         /// <summary>
@@ -186,6 +187,12 @@ namespace OBeautifulCode.CodeGen
         /// or has a derivative that does.
         /// </summary>
         public bool DeclaresDeepCloneMethodDirectlyOrInDerivative { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareEqualsMethod{T}.Equals(T)"/> method
+        /// or has a derivative that does.
+        /// </summary>
+        public bool DeclaresEqualsMethodDirectlyOrInDerivative { get; }
 
         private static void ThrowIfNotSupported(
             Type type)
@@ -521,6 +528,22 @@ namespace OBeautifulCode.CodeGen
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
                     _.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(_)));
+            }
+
+            return result;
+        }
+
+        private bool DetermineIfDeclaresEqualsMethodDirectlyOrInDerivative(
+            HierarchyKind hierarchyKind,
+            Type type)
+        {
+            var result = this.DeclaresEqualsMethod;
+
+            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            {
+                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
+                    (_.BaseType == type) &&
+                    _.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(_)));
             }
 
             return result;
