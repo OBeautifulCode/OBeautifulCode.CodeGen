@@ -6,12 +6,10 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     using OBeautifulCode.Collection.Recipes;
-    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 

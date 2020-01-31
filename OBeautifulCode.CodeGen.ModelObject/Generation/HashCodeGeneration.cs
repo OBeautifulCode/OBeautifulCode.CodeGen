@@ -48,11 +48,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
                 // Arrange, Act
-                var hash1 = ObjectForEquatableTests.GetHashCode();
-                var hash2 = ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests.GetHashCode();
+                var actualHashCodeOfReference = ObjectForEquatableTests.GetHashCode();
+
+                var actualHashCodesInEqualSet = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
 
                 // Assert
-                hash1.AsTest().Must().BeEqualTo(hash2);
+                actualHashCodesInEqualSet.AsTest().Must().Each().BeEqualTo(actualHashCodeOfReference);
             }
         }";
 
