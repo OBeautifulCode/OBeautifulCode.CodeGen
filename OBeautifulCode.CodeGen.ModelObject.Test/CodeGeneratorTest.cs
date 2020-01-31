@@ -304,6 +304,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var constructorPropertySettingStatements = new List<string>();
             var equalityStatements = new List<string>();
             var equalityParentStatements = new List<string>();
+            var hashingStatements = new List<string>();
+            var hashingParentStatements = new List<string>();
 
             var propertyStatements = new List<string>();
 
@@ -356,10 +358,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 equalityStatements.Add(Invariant($"                this.{propertyName}.IsEqualTo(other.{propertyName}) &&"));
+                hashingStatements.Add(Invariant($"                .Hash(this.{propertyName})"));
+
                 if (hierarchyKind == HierarchyKind.ConcreteInherited)
                 {
                     var parentPropertyName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBase, null);
                     equalityParentStatements.Add(Invariant($"                this.{parentPropertyName}.IsEqualTo(other.{parentPropertyName}) &&"));
+                    hashingParentStatements.Add(Invariant($"                .Hash(this.{parentPropertyName})"));
                 }
             }
 
@@ -405,6 +410,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     pragmaRestoreStatements.Add("#pragma warning disable CS0661");
                     pragmaRestoreStatements.Add("#pragma warning disable CS0659");
 
+                    break;
+                case GeneratedModelKind.Hashing:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                        ? nameof(IHashableViaCodeGen)
+                        : Invariant($"{nameof(IHashableViaCodeGen)}, {nameof(IDeclareGetHashCodeMethod)}");
                     break;
                 default:
                     throw new NotSupportedException("This generated model kind is not supported: " + generatedModelKind);
@@ -546,6 +556,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             else if ((generatedModelKind == GeneratedModelKind.Equality) && (hierarchyKind != HierarchyKind.AbstractBase))
             {
                 methodStatements.Add(equalsMethodCode);
+            }
+            else if ((generatedModelKind == GeneratedModelKind.Hashing) && (hierarchyKind != HierarchyKind.AbstractBase))
+            {
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+                methodStatements.Add(Invariant($"        public override int GetHashCode() => HashCodeHelper.Initialize()"));
+                methodStatements.Add(new string[0].Concat(hashingParentStatements).Concat(hashingStatements).ToNewLineDelimited());
+                methodStatements.Add("                .Value;");
             }
 
             var constructorStatements = new List<string>();

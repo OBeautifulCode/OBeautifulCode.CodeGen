@@ -58,23 +58,33 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         /// <summary>
-        /// Generate hash code method.
+        /// Generate hashing methods.
         /// </summary>
         /// <param name="modelType">The model type.</param>
         /// <returns>
-        /// The generated hash code method.
+        /// The generated hashing methods.
         /// </returns>
-        public static string GenerateGetHashCodeMethod(
+        public static string GenerateHashingMethods(
             this ModelType modelType)
         {
             string result;
 
             if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
+                if (modelType.DeclaresGetHashCodeMethod)
+                {
+                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare a GetHashCode method."));
+                }
+
                 result = HashMethodForAbstractBaseTypeCodeTemplate;
             }
             else
             {
+                if (modelType.DeclaresGetHashCodeMethod)
+                {
+                    return null;
+                }
+
                 var hashLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
 
                 string hashToken = null;

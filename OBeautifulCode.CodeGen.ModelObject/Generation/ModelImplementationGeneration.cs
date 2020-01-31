@@ -73,8 +73,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.RequiresHashing)
             {
-                items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateGetHashCodeMethod());
+                var hashingMethods = modelType.GenerateHashingMethods();
+
+                if (hashingMethods != null)
+                {
+                    items.Add(string.Empty);
+                    items.Add("    " + hashingMethods);
+                }
             }
 
             if (modelType.RequiresDeepCloning)
@@ -92,7 +97,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             items.Add("    }");
             items.Add("}");
 
-            items.RemoveAt(firstNewlineInsideClassIndex);
+            if (items[firstNewlineInsideClassIndex] == string.Empty)
+            {
+                items.RemoveAt(firstNewlineInsideClassIndex);
+            }
 
             var result = items.Where(_ => _ != null).ToNewLineDelimited();
 
