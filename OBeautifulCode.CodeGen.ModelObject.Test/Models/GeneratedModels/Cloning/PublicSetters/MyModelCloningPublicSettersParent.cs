@@ -20,7 +20,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
-    public abstract partial class MyModelCloningPublicSettersParent : IDeepCloneableViaCodeGen
+#pragma warning disable CS0659
+#pragma warning disable CS0661
+    public abstract partial class MyModelCloningPublicSettersParent : IDeepCloneableViaCodeGen, IEquatable<MyModelCloningPublicSettersParent>
+#pragma warning disable CS0659
+#pragma warning disable CS0661
     {
         public bool ParentBoolProperty { get; set; }
 
@@ -179,5 +183,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
 
         public IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+
+        /// <inheritdoc />
+        public abstract bool Equals(MyModelCloningPublicSettersParent other);
     }
 }

@@ -20,7 +20,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
-    public partial class MyModelCloningPrivateSetters : IDeepCloneableViaCodeGen, IDeclareDeepCloneMethod<MyModelCloningPrivateSetters>
+#pragma warning disable CS0659
+#pragma warning disable CS0661
+    public partial class MyModelCloningPrivateSetters : IDeepCloneableViaCodeGen, IDeclareDeepCloneMethod<MyModelCloningPrivateSetters>, IEquatable<MyModelCloningPrivateSetters>
+#pragma warning disable CS0659
+#pragma warning disable CS0661
     {
         public MyModelCloningPrivateSetters(
             bool boolProperty,
@@ -409,6 +413,103 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
         public IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
+
+        /// <inheritdoc />
+        public bool Equals(MyModelCloningPrivateSetters other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = 
+                this.BoolProperty.IsEqualTo(other.BoolProperty) &&
+                this.IntProperty.IsEqualTo(other.IntProperty) &&
+                this.StringProperty.IsEqualTo(other.StringProperty) &&
+                this.GuidProperty.IsEqualTo(other.GuidProperty) &&
+                this.DateTimeProperty.IsEqualTo(other.DateTimeProperty) &&
+                this.ModelEnumProperty.IsEqualTo(other.ModelEnumProperty) &&
+                this.ModelFlagsEnumProperty.IsEqualTo(other.ModelFlagsEnumProperty) &&
+                this.ModelClassProperty.IsEqualTo(other.ModelClassProperty) &&
+                this.NullableBoolProperty.IsEqualTo(other.NullableBoolProperty) &&
+                this.NullableIntProperty.IsEqualTo(other.NullableIntProperty) &&
+                this.NullableGuidProperty.IsEqualTo(other.NullableGuidProperty) &&
+                this.NullableDateTimeProperty.IsEqualTo(other.NullableDateTimeProperty) &&
+                this.NullableModelEnumProperty.IsEqualTo(other.NullableModelEnumProperty) &&
+                this.NullableModelFlagsEnumProperty.IsEqualTo(other.NullableModelFlagsEnumProperty) &&
+                this.ArrayOfBoolProperty.IsEqualTo(other.ArrayOfBoolProperty) &&
+                this.ArrayOfIntProperty.IsEqualTo(other.ArrayOfIntProperty) &&
+                this.ArrayOfStringProperty.IsEqualTo(other.ArrayOfStringProperty) &&
+                this.ArrayOfGuidProperty.IsEqualTo(other.ArrayOfGuidProperty) &&
+                this.ArrayOfDateTimeProperty.IsEqualTo(other.ArrayOfDateTimeProperty) &&
+                this.ArrayOfModelEnumProperty.IsEqualTo(other.ArrayOfModelEnumProperty) &&
+                this.ArrayOfModelFlagsEnumProperty.IsEqualTo(other.ArrayOfModelFlagsEnumProperty) &&
+                this.ArrayOfModelClassProperty.IsEqualTo(other.ArrayOfModelClassProperty) &&
+                this.ArrayOfNullableBoolProperty.IsEqualTo(other.ArrayOfNullableBoolProperty) &&
+                this.ArrayOfNullableIntProperty.IsEqualTo(other.ArrayOfNullableIntProperty) &&
+                this.ArrayOfNullableGuidProperty.IsEqualTo(other.ArrayOfNullableGuidProperty) &&
+                this.ArrayOfNullableDateTimeProperty.IsEqualTo(other.ArrayOfNullableDateTimeProperty) &&
+                this.ArrayOfNullableModelEnumProperty.IsEqualTo(other.ArrayOfNullableModelEnumProperty) &&
+                this.ArrayOfNullableModelFlagsEnumProperty.IsEqualTo(other.ArrayOfNullableModelFlagsEnumProperty) &&
+                this.ReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfBoolProperty) &&
+                this.ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfIntProperty) &&
+                this.ReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfStringProperty) &&
+                this.ReadOnlyCollectionInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfGuidProperty) &&
+                this.ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfDateTimeProperty) &&
+                this.ReadOnlyCollectionInterfaceOfModelEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfModelEnumProperty) &&
+                this.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty) &&
+                this.ReadOnlyCollectionInterfaceOfModelClassProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfModelClassProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableBoolProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableIntProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableGuidProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty) &&
+                this.ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.ReadOnlyListInterfaceOfBoolProperty) &&
+                this.ReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.ReadOnlyListInterfaceOfIntProperty) &&
+                this.ReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyListInterfaceOfStringProperty) &&
+                this.ReadOnlyListInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyListInterfaceOfGuidProperty) &&
+                this.ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ReadOnlyListInterfaceOfModelEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfModelEnumProperty) &&
+                this.ReadOnlyListInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfModelFlagsEnumProperty) &&
+                this.ReadOnlyListInterfaceOfModelClassProperty.IsEqualTo(other.ReadOnlyListInterfaceOfModelClassProperty) &&
+                this.ReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableBoolProperty) &&
+                this.ReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableIntProperty) &&
+                this.ReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableGuidProperty) &&
+                this.ReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableDateTimeProperty) &&
+                this.ReadOnlyListInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableModelEnumProperty) &&
+                this.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfBoolProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfIntProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfStringProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfGuidProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfModelEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfModelEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfModelClassProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfModelClassProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableBoolProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableIntProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableGuidProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty) &&
+                this.CollectionInterfaceOfStringProperty.IsEqualTo(other.CollectionInterfaceOfStringProperty) &&
+                this.CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.CollectionOfCollectionInterfaceOfStringProperty) &&
+                this.ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ListInterfaceOfCollectionInterfaceOfStringProperty) &&
+                this.ListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ListOfCollectionInterfaceOfStringProperty) &&
+                this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty) &&
+                this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+
+            return result;
+        }
 
         /// <inheritdoc />
         public MyModelCloningPrivateSetters DeepClone()
