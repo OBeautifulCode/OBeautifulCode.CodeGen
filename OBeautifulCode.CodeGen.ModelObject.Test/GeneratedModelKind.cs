@@ -15,5 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         Cloning,
 
         Hashing,
+
+        StringRepresentation,
     }
 }

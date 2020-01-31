@@ -89,15 +89,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
-        /// Generates test methods that test the <see cref="object.ToString"/> method override.
+        /// Generates tests for the string representation methods.
         /// </summary>
         /// <param name="modelType">The model type.</param>
         /// <returns>
-        /// Generated test methods that test the <see cref="object.ToString"/> method override.
+        /// Generated tests for the string representation methods.
         /// </returns>
-        public static string GenerateToStringTestMethod(
+        public static string GenerateStringRepresentationTestMethods(
             this ModelType modelType)
         {
+            if (modelType.DeclaresGetHashCodeMethodDirectlyOrInDerivative)
+            {
+                return null;
+            }
+
             string result = null;
 
             if (modelType.HierarchyKind != HierarchyKind.AbstractBase)

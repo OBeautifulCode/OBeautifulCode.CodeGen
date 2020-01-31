@@ -70,6 +70,7 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresDeepCloneMethodDirectlyOrInDerivative(hierarchyKind, type);
             this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresEqualsMethodDirectlyOrInDerivative(hierarchyKind, type);
             this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = this.DetermineIfDeclaresGetHashCodeMethodDirectlyOrInDerivative(hierarchyKind, type);
+            this.DeclaresToStringMethodDirectlyOrInDerivative = this.DetermineIfDeclaresToStringMethodDirectlyOrInDerivative(hierarchyKind, type);
         }
 
         /// <summary>
@@ -200,6 +201,12 @@ namespace OBeautifulCode.CodeGen
         /// or has a derivative that does.
         /// </summary>
         public bool DeclaresGetHashCodeMethodDirectlyOrInDerivative { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method
+        /// or has a derivative that does.
+        /// </summary>
+        public bool DeclaresToStringMethodDirectlyOrInDerivative { get; }
 
         private static void ThrowIfNotSupported(
             Type type)
@@ -567,6 +574,22 @@ namespace OBeautifulCode.CodeGen
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
                     _.IsAssignableTo(typeof(IDeclareGetHashCodeMethod)));
+            }
+
+            return result;
+        }
+
+        private bool DetermineIfDeclaresToStringMethodDirectlyOrInDerivative(
+            HierarchyKind hierarchyKind,
+            Type type)
+        {
+            var result = this.DeclaresToStringMethod;
+
+            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            {
+                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
+                    (_.BaseType == type) &&
+                    _.IsAssignableTo(typeof(IDeclareToStringMethod)));
             }
 
             return result;

@@ -97,7 +97,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.RequiresStringRepresentation)
             {
-                var stringTestMethodsCode = modelType.GenerateToStringTestMethod();
+                var stringTestMethodsCode = modelType.GenerateStringRepresentationTestMethods();
                 if (stringTestMethodsCode != null)
                 {
                     items.Add(string.Empty);

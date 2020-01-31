@@ -416,6 +416,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         ? nameof(IHashableViaCodeGen)
                         : Invariant($"{nameof(IHashableViaCodeGen)}, {nameof(IDeclareGetHashCodeMethod)}");
                     break;
+                case GeneratedModelKind.StringRepresentation:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                        ? nameof(IStringRepresentableViaCodeGen)
+                        : Invariant($"{nameof(IStringRepresentableViaCodeGen)}, {nameof(IDeclareToStringMethod)}");
+                    break;
                 default:
                     throw new NotSupportedException("This generated model kind is not supported: " + generatedModelKind);
             }
@@ -564,6 +569,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(Invariant($"        public override int GetHashCode() => HashCodeHelper.Initialize()"));
                 methodStatements.Add(new string[0].Concat(hashingParentStatements).Concat(hashingStatements).ToNewLineDelimited());
                 methodStatements.Add("                .Value;");
+            }
+            else if ((generatedModelKind == GeneratedModelKind.StringRepresentation) && (hierarchyKind != HierarchyKind.AbstractBase))
+            {
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+                methodStatements.Add(Invariant($"        public override string ToString()"));
+                methodStatements.Add(Invariant($"        {{"));
+                methodStatements.Add(Invariant($"            var result = \"not being tested\";"));
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"            return result;"));
+                methodStatements.Add(Invariant($"        }}"));
             }
 
             var constructorStatements = new List<string>();
