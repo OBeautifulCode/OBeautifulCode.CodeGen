@@ -97,7 +97,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new MyModelPublicSettersEmptyParentNotEmptyChild
                              {
-                                 ChildReadOnlyDictionaryOfStringString = this.ChildReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString())
+                                 ChildReadOnlyDictionaryOfStringString = this.ChildReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
@@ -112,7 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new MyModelPublicSettersEmptyParentNotEmptyChild
                              {
-                                 ChildReadOnlyDictionaryOfStringString = childReadOnlyDictionaryOfStringString
+                                 ChildReadOnlyDictionaryOfStringString = childReadOnlyDictionaryOfStringString,
                              };
             
             return result;

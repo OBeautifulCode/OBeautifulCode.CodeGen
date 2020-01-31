@@ -45,14 +45,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         private static readonly MyModelPublicSettersEmptyParentNotEmptyChild ObjectThatIsEqualToButNotTheSameAsObjectForEquatableTests =
             new MyModelPublicSettersEmptyParentNotEmptyChild
                 {
-                    ChildReadOnlyDictionaryOfStringString = ObjectForEquatableTests.ChildReadOnlyDictionaryOfStringString
+                    ChildReadOnlyDictionaryOfStringString = ObjectForEquatableTests.ChildReadOnlyDictionaryOfStringString,
                 };
 
         private static readonly MyModelPublicSettersEmptyParentNotEmptyChild[] ObjectsThatAreNotEqualToObjectForEquatableTests =
         {
             new MyModelPublicSettersEmptyParentNotEmptyChild
                 {
-                    ChildReadOnlyDictionaryOfStringString = A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ObjectForEquatableTests.ChildReadOnlyDictionaryOfStringString)
+                    ChildReadOnlyDictionaryOfStringString = A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ObjectForEquatableTests.ChildReadOnlyDictionaryOfStringString),
                 },
         };
 

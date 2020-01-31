@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 };
 
         private static readonly MyModelAllPublicSetters[] ObjectsThatAreNotEqualToObjectForEquatableTests =
@@ -208,7 +208,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -290,7 +290,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -372,7 +372,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -454,7 +454,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -536,7 +536,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -618,7 +618,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -700,7 +700,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -782,7 +782,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -864,7 +864,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -946,7 +946,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1028,7 +1028,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1110,7 +1110,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1192,7 +1192,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1274,7 +1274,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1356,7 +1356,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1438,7 +1438,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1520,7 +1520,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1602,7 +1602,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1684,7 +1684,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1766,7 +1766,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1848,7 +1848,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -1930,7 +1930,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2012,7 +2012,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2094,7 +2094,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2176,7 +2176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2258,7 +2258,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2340,7 +2340,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2422,7 +2422,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2504,7 +2504,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2586,7 +2586,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2668,7 +2668,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2750,7 +2750,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2832,7 +2832,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2914,7 +2914,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -2996,7 +2996,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3078,7 +3078,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3160,7 +3160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3242,7 +3242,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3324,7 +3324,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3406,7 +3406,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3488,7 +3488,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3570,7 +3570,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3652,7 +3652,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3734,7 +3734,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3816,7 +3816,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3898,7 +3898,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -3980,7 +3980,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4062,7 +4062,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4144,7 +4144,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4226,7 +4226,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4308,7 +4308,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4390,7 +4390,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4472,7 +4472,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4554,7 +4554,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4636,7 +4636,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4718,7 +4718,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4800,7 +4800,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4882,7 +4882,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -4964,7 +4964,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5046,7 +5046,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5128,7 +5128,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5210,7 +5210,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5292,7 +5292,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5374,7 +5374,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5456,7 +5456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5538,7 +5538,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5620,7 +5620,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5702,7 +5702,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5784,7 +5784,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5866,7 +5866,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -5948,7 +5948,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6030,7 +6030,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6112,7 +6112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6194,7 +6194,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6276,7 +6276,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6358,7 +6358,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = A.Dummy<ReadOnlyDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6440,7 +6440,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = A.Dummy<ConcurrentDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6522,7 +6522,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>().ThatIsNot(ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                 },
             new MyModelAllPublicSetters
                 {
@@ -6604,7 +6604,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                           = ObjectForEquatableTests.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty                                                         = ObjectForEquatableTests.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                     ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                           = ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>>().ThatIsNot(ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                    ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>>().ThatIsNot(ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
                 },
         };
 
