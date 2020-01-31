@@ -6660,7 +6660,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 // Act
-                var actual = systemUnderTest.Clone();
+                var actual = (MyModelAllPublicSetters)systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);

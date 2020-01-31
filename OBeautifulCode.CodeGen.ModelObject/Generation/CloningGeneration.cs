@@ -138,7 +138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
 
                 // Act
-                var actual = systemUnderTest.Clone();
+                var actual = (" + TypeNameToken + @")systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -169,7 +169,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
 
                 // Act
-                var actual = systemUnderTest.Clone();
+                var actual = (" + TypeNameToken + @")systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);

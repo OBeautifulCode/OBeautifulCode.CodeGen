@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>();
 
                 // Act
-                var actual = systemUnderTest.Clone();
+                var actual = (MyModelPublicSettersEmptyParentNotEmptyChild)systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
