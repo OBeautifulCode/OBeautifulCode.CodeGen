@@ -201,6 +201,38 @@
     <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSetters.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParent.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSetters.cs" />
     <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSetters.designer.cs">
       <DependentUpon>MyModelHashingPrivateSetters.cs</DependentUpon>
@@ -328,6 +360,38 @@
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.cs" />
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationSettersParentTest.designer.cs">
+      <DependentUpon>MyModelStringRepresentationSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPrivateSettersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParentTest.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersTest.designer.cs">
+      <DependentUpon>MyModelStringRepresentationPublicSettersTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.cs" />
     <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.designer.cs">
