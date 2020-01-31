@@ -48,6 +48,34 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }";
 
+        private const string ShouldDeclareGetHashCodeMethodCodeTemplate = @"
+            [Fact]
+            public static void " + TypeNameToken + @"___Should_declare_GetHashCode_method___When_reflecting()
+            {
+                // Arrange
+                var type = typeof(" + TypeNameToken + @");
+
+                // Act
+                var method = type.GetMethod(nameof(GetHashCode));
+
+                // Assert
+                method.DeclaringType.AsTest().Must().BeEqualTo(type);
+            }";
+
+        private const string ShouldDeclareToStringMethodCodeTemplate = @"
+            [Fact]
+            public static void " + TypeNameToken + @"___Should_declare_ToString_method___When_reflecting()
+            {
+                // Arrange
+                var type = typeof(" + TypeNameToken + @");
+
+                // Act
+                var method = type.GetMethod(nameof(ToString));
+
+                // Assert
+                method.DeclaringType.AsTest().Must().BeEqualTo(type);
+            }";
+
         /// <summary>
         /// Generates test methods that test a model's structure.
         /// </summary>
@@ -64,8 +92,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .RequiredInterfaces
                 .Select(modelType.GetExpectedInterfaceTestMethodCode).ToList();
 
+            var inflationCode = expectedInterfaceTestMethods.ToDelimitedString(Environment.NewLine + Environment.NewLine);
+
+            if (modelType.DeclaresGetHashCodeMethod)
+            {
+                inflationCode = inflationCode + Environment.NewLine + ShouldDeclareGetHashCodeMethodCodeTemplate
+                                    .Replace(TypeNameToken, modelType.TypeCompilableString);
+            }
+
+            if (modelType.DeclaresToStringMethod)
+            {
+                inflationCode = inflationCode + Environment.NewLine + ShouldDeclareToStringMethodCodeTemplate
+                                    .Replace(TypeNameToken, modelType.TypeCompilableString);
+            }
+
             var result = StructuralTestMethodsCodeTemplate
-                        .Replace(ExpectedInterfaceImplementationsInflationToken, expectedInterfaceTestMethods.ToDelimitedString(Environment.NewLine + Environment.NewLine));
+                        .Replace(ExpectedInterfaceImplementationsInflationToken, inflationCode);
 
             return result;
         }

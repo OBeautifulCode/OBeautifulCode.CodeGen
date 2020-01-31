@@ -57,6 +57,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actualInterfaces.AsTest().Must().ContainElement(typeof(IHashable));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
+
+            [Fact]
+            public static void MyModelHashingPublicSetters___Should_declare_GetHashCode_method___When_reflecting()
+            {
+                // Arrange
+                var type = typeof(MyModelHashingPublicSetters);
+
+                // Act
+                var method = type.GetMethod(nameof(GetHashCode));
+
+                // Assert
+                method.DeclaringType.AsTest().Must().BeEqualTo(type);
+            }
         }
 
         public static class Hashing
