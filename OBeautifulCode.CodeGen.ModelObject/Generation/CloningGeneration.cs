@@ -132,6 +132,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string CloningTestMethodsForNonInheritedTypeCodeTemplate = @"    public static class Cloning
         {
             [Fact]
+            public static void Clone___Should_clone_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = systemUnderTest.Clone();
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(systemUnderTest);
+                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
+            }
+
+            [Fact]
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
@@ -148,6 +162,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private const string CloningTestMethodsForConcreteInheritedTypeCodeTemplate = @"    public static class Cloning
         {
+            [Fact]
+            public static void Clone___Should_clone_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
+
+                // Act
+                var actual = systemUnderTest.Clone();
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(systemUnderTest);
+                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
+            }
+
             [Fact]
             public static void DeepClone_override___Should_deep_clone_object___When_called()
             {

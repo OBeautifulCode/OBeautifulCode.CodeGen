@@ -155,6 +155,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         public static class Cloning
         {
             [Fact]
+            public static void Clone___Should_clone_object___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<MyModelAllPrivateSettersParent>();
+
+                // Act
+                var actual = systemUnderTest.Clone();
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(systemUnderTest);
+                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
+            }
+
+            [Fact]
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
