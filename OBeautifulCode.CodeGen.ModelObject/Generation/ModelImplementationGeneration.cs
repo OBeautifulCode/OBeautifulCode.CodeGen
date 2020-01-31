@@ -90,8 +90,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.RequiresStringRepresentation)
             {
-                items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateToStringMethod());
+                var stringRepresentationMethods = modelType.GenerateStringRepresentationMethods();
+
+                if (stringRepresentationMethods != null)
+                {
+                    items.Add(string.Empty);
+                    items.Add("    " + stringRepresentationMethods);
+                }
             }
 
             items.Add("    }");

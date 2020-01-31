@@ -53,23 +53,33 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         /// <summary>
-        /// Generates the <see cref="object.ToString"/> method override.
+        /// Generates the string representation methods.
         /// </summary>
         /// <param name="modelType">The model type.</param>
         /// <returns>
-        /// Generated <see cref="object.ToString"/> method override.
+        /// Generated string representation methods.
         /// </returns>
-        public static string GenerateToStringMethod(
+        public static string GenerateStringRepresentationMethods(
             this ModelType modelType)
         {
             string result;
 
             if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
             {
+                if (modelType.DeclaresToStringMethod)
+                {
+                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare an ToString method."));
+                }
+
                 result = ToStringMethodForAbstractBaseTypeCodeTemplate;
             }
             else
             {
+                if (modelType.DeclaresToStringMethod)
+                {
+                    return null;
+                }
+
                 var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false);
 
                 result = ToStringMethodForConcreteTypeCodeTemplate.Replace(ToStringToken, toStringConstructionCode);
