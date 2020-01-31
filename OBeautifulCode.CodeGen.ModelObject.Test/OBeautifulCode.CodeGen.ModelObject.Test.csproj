@@ -201,6 +201,38 @@
     <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSetters.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParent.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSetters.designer.cs">
+      <DependentUpon>MyModelHashingPublicSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParent.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSetters.cs" />
     <Compile Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSetters.designer.cs">
       <DependentUpon>MyModelCloningPrivateSetters.cs</DependentUpon>
@@ -296,6 +328,38 @@
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.cs" />
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParentTest.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersTest.designer.cs">
+      <DependentUpon>MyModelHashingPrivateSettersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParentTest.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersTest.designer.cs">
+      <DependentUpon>MyModelHashingPublicSettersTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.cs" />
     <Compile Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.designer.cs">
