@@ -151,8 +151,8 @@
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="DummyFactory.cs" />
-    <Compile Include="GeneratedModelKind.cs" />
-    <Compile Include="GenerationKind.cs" />
+    <Compile Include="CodeGeneratorTest\GeneratedModelKind.cs" />
+    <Compile Include="CodeGeneratorTest\GenerationKind.cs" />
     <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
     <Compile Include="Models\EmptyModels\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmpty.cs</DependentUpon>
@@ -459,11 +459,11 @@
     </Compile>
     <Compile Include="SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
     <Compile Include="SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
-    <Compile Include="ModelGenerationExtensions.cs" />
-    <Compile Include="Models\CustomModels\ModelClass.cs" />
-    <Compile Include="Models\CustomModels\ModelEnum.cs" />
-    <Compile Include="Models\CustomModels\ModelFlagsEnum.cs" />
-    <Compile Include="Models\CustomModels\ModelStruct.cs" />
+    <Compile Include="CodeGeneratorTest\ModelGenerationExtensions.cs" />
+    <Compile Include="CodeGeneratorTest\CustomModels\ModelClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomModels\ModelEnum.cs" />
+    <Compile Include="CodeGeneratorTest\CustomModels\ModelFlagsEnum.cs" />
+    <Compile Include="CodeGeneratorTest\CustomModels\ModelStruct.cs" />
     <Compile Include="SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
     <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
     <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
@@ -578,8 +578,8 @@
       <DependentUpon>MyModelAllPublicSettersTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetterKind.cs" />
-    <Compile Include="TypeWrapperKind.cs" />
+    <Compile Include="CodeGeneratorTest\SetterKind.cs" />
+    <Compile Include="CodeGeneratorTest\TypeWrapperKind.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject\OBeautifulCode.CodeGen.ModelObject.csproj">
