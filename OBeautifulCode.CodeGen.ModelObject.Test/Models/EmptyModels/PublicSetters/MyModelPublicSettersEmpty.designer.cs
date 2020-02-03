@@ -17,6 +17,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
