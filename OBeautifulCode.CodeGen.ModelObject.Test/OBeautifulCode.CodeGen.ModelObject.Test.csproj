@@ -201,6 +201,38 @@
     <Compile Include="Models\EmptyModels\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSetters.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParent.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSetters.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSetters.designer.cs">
+      <DependentUpon>MyModelComparingPublicSetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParent.cs" />
+    <Compile Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParent.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.cs" />
     <Compile Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSetters.cs</DependentUpon>
