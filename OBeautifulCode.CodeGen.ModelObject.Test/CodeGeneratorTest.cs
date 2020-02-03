@@ -69,6 +69,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // typeof(ModelStruct),
         };
 
+        private static readonly Type[] ComparabilityTypes =
+        {
+            typeof(int),
+        };
+
         private static readonly IReadOnlyList<TypeWrapperKind> TypeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>().ToList();
 
         private static readonly Type[] AdditionalTypes =
@@ -108,7 +113,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 var modelFilePath = directoryPath + modelName + ".cs";
 
-                var modelCode = GenerateModel(ModelBaseName, (GeneratedModelKind)generatedModelKind, setterKind, TypesToWrap, TypeWrapperKinds, AdditionalTypes, BlacklistTypes, hierarchyKind, childIdentifier, modelName);
+                var typesToWrap = generatedModelKind == GeneratedModelKind.Comparing ? ComparabilityTypes : TypesToWrap;
+
+                var typeWrapperKinds = generatedModelKind == GeneratedModelKind.Comparing ? new[] { TypeWrapperKind.None } : TypeWrapperKinds;
+
+                var additionalTypes = generatedModelKind == GeneratedModelKind.Comparing ? new Type[0] : AdditionalTypes;
+
+                var modelCode = GenerateModel(ModelBaseName, (GeneratedModelKind)generatedModelKind, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, BlacklistTypes, hierarchyKind, childIdentifier, modelName);
 
                 if (WriteFiles)
                 {
@@ -421,6 +432,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         ? nameof(IStringRepresentableViaCodeGen)
                         : Invariant($"{nameof(IStringRepresentableViaCodeGen)}, {nameof(IDeclareToStringMethod)}");
                     break;
+                case GeneratedModelKind.Comparing:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                        ? nameof(IComparableViaCodeGen)
+                        : Invariant($"{nameof(IComparableViaCodeGen)}, {typeof(IDeclareCompareToForRelativeSortOrderMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
+                    break;
                 default:
                     throw new NotSupportedException("This generated model kind is not supported: " + generatedModelKind);
             }
@@ -580,6 +596,70 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(string.Empty);
                 methodStatements.Add(Invariant($"            return result;"));
                 methodStatements.Add(Invariant($"        }}"));
+            }
+            else if ((generatedModelKind == GeneratedModelKind.Comparing) && (hierarchyKind != HierarchyKind.AbstractBase))
+            {
+                if (hierarchyKind == HierarchyKind.None)
+                {
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+                    methodStatements.Add(Invariant($"        public RelativeSortOrder CompareToForRelativeSortOrder({modelName} other)"));
+                    methodStatements.Add(Invariant($"        {{"));
+                    methodStatements.Add(Invariant($"            if (other == null)"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            if (this.IntProperty > other.IntProperty)"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            else if (this.IntProperty < other.IntProperty)"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            else"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(Invariant($"        }}"));
+                }
+                else if (hierarchyKind == HierarchyKind.ConcreteInherited)
+                {
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+                    methodStatements.Add(Invariant($"        public RelativeSortOrder CompareToForRelativeSortOrder({modelName} other)"));
+                    methodStatements.Add(Invariant($"        {{"));
+                    methodStatements.Add(Invariant($"            if (other == null)"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            var thisSum = this.Child{childIdentifier}IntProperty + this.ParentIntProperty;"));
+                    methodStatements.Add(Invariant($"            var otherSum = other.Child{childIdentifier}IntProperty + other.ParentIntProperty;"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            if (thisSum > otherSum)"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            else if (thisSum < otherSum)"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(string.Empty);
+                    methodStatements.Add(Invariant($"            else"));
+                    methodStatements.Add(Invariant($"            {{"));
+                    methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance;"));
+                    methodStatements.Add(Invariant($"            }}"));
+                    methodStatements.Add(Invariant($"        }}"));
+                }
+                else
+                {
+                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
+                }
             }
 
             var constructorStatements = new List<string>();
