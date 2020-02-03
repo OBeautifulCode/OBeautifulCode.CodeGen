@@ -457,14 +457,14 @@
     <Compile Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersTest.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
-    <Compile Include="SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
+    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
+    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="CodeGeneratorTest\ModelGenerationExtensions.cs" />
     <Compile Include="CodeGeneratorTest\CustomModels\ModelClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomModels\ModelEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomModels\ModelFlagsEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomModels\ModelStruct.cs" />
-    <Compile Include="SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
+    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
     <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
     <Compile Include="ModelTests\EmptyModels\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyTest.cs</DependentUpon>
