@@ -393,6 +393,38 @@
     <Compile Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParentTest.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersTest.designer.cs">
+      <DependentUpon>MyModelComparingPrivateSettersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1Test.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2Test.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2Test.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParentTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParentTest.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersTest.cs" />
+    <Compile Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersTest.designer.cs">
+      <DependentUpon>MyModelComparingPublicSettersTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.cs" />
     <Compile Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersChild1Test.cs</DependentUpon>
