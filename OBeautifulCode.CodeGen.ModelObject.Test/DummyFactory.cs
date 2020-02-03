@@ -67,6 +67,46 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelComparingPrivateSetters(
+                                 A.Dummy<int>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelComparingPrivateSettersChild1(
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelComparingPrivateSettersChild2(
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>()));
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelComparingPrivateSettersParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelComparingPublicSetters
+                             {
+                                 IntProperty = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelComparingPublicSettersChild1
+                             {
+                                 ParentIntProperty = A.Dummy<int>(),
+                                 Child1IntProperty = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelComparingPublicSettersChild2
+                             {
+                                 ParentIntProperty = A.Dummy<int>(),
+                                 Child2IntProperty = A.Dummy<int>(),
+                             });
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelComparingPublicSettersParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new MyModelStringRepresentationPrivateSetters(
                                  A.Dummy<bool>(),
                                  A.Dummy<int>(),
