@@ -54,6 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 string.Empty,
                 "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
+                "    using OBeautifulCode.Type.Recipes;",
                 string.Empty,
                 "    using static System.FormattableString;",
                 string.Empty,
@@ -69,6 +70,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 items.Add(string.Empty);
                 items.Add("    " + modelType.GenerateEqualityMethods());
+            }
+
+            if (modelType.RequiresComparability)
+            {
+                items.Add(string.Empty);
+                items.Add("    " + modelType.GenerateComparableMethods());
             }
 
             if (modelType.RequiresHashing)

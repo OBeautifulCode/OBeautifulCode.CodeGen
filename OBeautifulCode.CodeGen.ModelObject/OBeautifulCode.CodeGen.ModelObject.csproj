@@ -94,6 +94,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="ExternalTypes\GenerateFor.cs" />
     <Compile Include="Generation\CloningGeneration.cs" />
+    <Compile Include="Generation\ComparisonGeneration.cs" />
     <Compile Include="Generation\GenerationShared.cs" />
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="Generation\ConstructingGeneration.cs" />
