@@ -195,5 +195,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Generates test methods that test comparability.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated test methods that test comparability.
+        /// </returns>
+        public static string GenerateComparabilityTestMethods(
+            this ModelType modelType)
+        {
+            var result = ComparableTestMethodsCodeTemplate
+                .Replace(TypeNameToken, modelType.TypeCompilableString);
+
+            return result;
+        }
     }
 }

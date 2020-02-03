@@ -139,6 +139,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 items.Add("    " + modelType.GenerateHashingTestMethods());
             }
 
+            if (modelType.RequiresComparability)
+            {
+                items.Add(string.Empty);
+                items.Add("    " + modelType.GenerateComparabilityTestMethods());
+            }
+
             items.Add("    }");
             items.Add("}");
 
