@@ -11,6 +11,7 @@
   </metadata>
   <files>
     <file src=".analyzers\SuppressBecause.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SuppressBecause.cs" />
-    <file src="Class1.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Class1.cs" />
+    <file src="EquatableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\EquatableTestScenario{T}.cs" />
+    <file src="EquatableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\EquatableTestScenarios{T}.cs" />
   </files>
 </package>
