@@ -609,17 +609,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     methodStatements.Add(Invariant($"            {{"));
                     methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;"));
                     methodStatements.Add(Invariant($"            }}"));
-                    methodStatements.Add(string.Empty);
-                    methodStatements.Add(Invariant($"            if (this.IntProperty > other.IntProperty)"));
+                    methodStatements.Add(Invariant($"            else if (this.IntProperty > other.IntProperty)"));
                     methodStatements.Add(Invariant($"            {{"));
                     methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;"));
                     methodStatements.Add(Invariant($"            }}"));
-                    methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"            else if (this.IntProperty < other.IntProperty)"));
                     methodStatements.Add(Invariant($"            {{"));
                     methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;"));
                     methodStatements.Add(Invariant($"            }}"));
-                    methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"            else"));
                     methodStatements.Add(Invariant($"            {{"));
                     methodStatements.Add(Invariant($"                return RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance;"));
