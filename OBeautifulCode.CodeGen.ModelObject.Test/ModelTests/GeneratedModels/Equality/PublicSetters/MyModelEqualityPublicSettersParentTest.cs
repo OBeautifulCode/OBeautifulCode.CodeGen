@@ -10,7 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using FakeItEasy;
 
-    public partial class MyModelEqualityPublicSettersParentTest
+    public static partial class MyModelEqualityPublicSettersParentTest
     {
         private static readonly MyModelEqualityPublicSettersParent ObjectForEquatableTests = A.Dummy<MyModelEqualityPublicSettersChild1>();
 

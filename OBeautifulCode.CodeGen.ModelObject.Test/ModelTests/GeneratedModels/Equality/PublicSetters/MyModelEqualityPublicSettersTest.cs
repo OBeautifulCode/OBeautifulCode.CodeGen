@@ -30,7 +30,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using Xunit;
 
-    public partial class MyModelEqualityPublicSettersTest
+    public static partial class MyModelEqualityPublicSettersTest
     {
         private static readonly MyModelEqualityPublicSetters ObjectForEquatableTests = A.Dummy<MyModelEqualityPublicSetters>();
 

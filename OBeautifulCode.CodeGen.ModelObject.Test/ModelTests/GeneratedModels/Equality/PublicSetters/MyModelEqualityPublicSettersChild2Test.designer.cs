@@ -34,7 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelEqualityPublicSettersChild2Test
+    public static partial class MyModelEqualityPublicSettersChild2Test
     {
         public static class Structural
         {

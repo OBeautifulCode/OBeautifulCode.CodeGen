@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static System.FormattableString;
 
-    public partial class MyModelHashingPrivateSettersTest
+    public static partial class MyModelHashingPrivateSettersTest
     {
         private static readonly MyModelHashingPrivateSetters ObjectForEquatableTests = A.Dummy<MyModelHashingPrivateSetters>();
 

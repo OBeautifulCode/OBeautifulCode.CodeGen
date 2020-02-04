@@ -71,7 +71,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 Invariant($"    [GeneratedCode(\"{GenerationShared.GetCodeGenAssemblyName()}\", \"{GenerationShared.GetCodeGenAssemblyVersion()}\")]"),
             };
 
-            items.Add(Invariant($"    public partial class {modelType.TypeCompilableString}Test"));
+            items.Add(Invariant($"    public static partial class {modelType.TypeCompilableString}Test"));
             items.Add("    {");
 
             var firstNewlineInsideClassIndex = items.Count;

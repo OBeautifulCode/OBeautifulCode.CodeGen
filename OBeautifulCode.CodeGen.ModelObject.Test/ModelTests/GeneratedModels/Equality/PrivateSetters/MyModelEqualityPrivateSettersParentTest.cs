@@ -15,7 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using OBeautifulCode.String.Recipes;
 
-    public partial class MyModelEqualityPrivateSettersParentTest
+    public static partial class MyModelEqualityPrivateSettersParentTest
     {
         private static readonly Type ReferenceType = typeof(MyModelEqualityPrivateSettersChild1);
 
