@@ -43,9 +43,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 // Arrange
                 var type = typeof(MyModelCloningPrivateSetters);
+
                 var expectedModelMethods = typeof(IDeepCloneable<MyModelCloningPrivateSetters>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
+
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act

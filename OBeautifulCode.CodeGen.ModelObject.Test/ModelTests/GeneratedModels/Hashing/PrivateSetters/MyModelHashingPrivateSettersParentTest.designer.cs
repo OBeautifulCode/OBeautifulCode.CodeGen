@@ -43,9 +43,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 // Arrange
                 var type = typeof(MyModelHashingPrivateSettersParent);
+
                 var expectedModelMethods = typeof(IHashable)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
+
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
@@ -65,25 +67,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
                 // Arrange, Act
-                var actualHashCodeOfReference = ObjectForEquatableTests.GetHashCode();
-                var actualHashCodesInNotEqualSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
-                var actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select(_ => _.First().GetHashCode() == _.Last().GetHashCode()).ToList();
+                var unexpected = ObjectForEquatableTests.GetHashCode();
+
+                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
 
                 // Assert
-                actualHashCodesInNotEqualSet.AsTest().Must().NotContainElement(actualHashCodeOfReference);
-                actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().NotContainElement(unexpected);
             }
 
             [Fact]
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
                 // Arrange, Act
-                var actualHashCodeOfReference = ObjectForEquatableTests.GetHashCode();
+                var expected = ObjectForEquatableTests.GetHashCode();
 
-                var actualHashCodesInEqualSet = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
 
                 // Assert
-                actualHashCodesInEqualSet.AsTest().Must().Each().BeEqualTo(actualHashCodeOfReference);
+                actuals.AsTest().Must().Each().BeEqualTo(expected);
             }
         }
     }

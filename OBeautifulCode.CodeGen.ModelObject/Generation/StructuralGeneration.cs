@@ -33,9 +33,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 // Arrange
                 var type = typeof(" + TypeNameToken + @");
+
                 var expectedModelMethods = typeof(" + ExpectedInterfaceToken + @")
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
+
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
@@ -53,13 +55,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
             public static void " + TypeNameToken + @"___Should_declare_GetHashCode_method___When_reflecting()
             {
                 // Arrange
-                var type = typeof(" + TypeNameToken + @");
+                var expected = typeof(" + TypeNameToken + @");
 
                 // Act
-                var method = type.GetMethod(nameof(GetHashCode));
+                var actual = expected.GetMethod(nameof(GetHashCode));
 
                 // Assert
-                method.DeclaringType.AsTest().Must().BeEqualTo(type);
+                actual.DeclaringType.AsTest().Must().BeEqualTo(expected);
             }";
 
         private const string ShouldDeclareToStringMethodCodeTemplate = @"
@@ -67,13 +69,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
             public static void " + TypeNameToken + @"___Should_declare_ToString_method___When_reflecting()
             {
                 // Arrange
-                var type = typeof(" + TypeNameToken + @");
+                var expected = typeof(" + TypeNameToken + @");
 
                 // Act
-                var method = type.GetMethod(nameof(ToString));
+                var actual = expected.GetMethod(nameof(ToString));
 
                 // Assert
-                method.DeclaringType.AsTest().Must().BeEqualTo(type);
+                actual.DeclaringType.AsTest().Must().BeEqualTo(expected);
             }";
 
         /// <summary>

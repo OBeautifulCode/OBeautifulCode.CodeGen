@@ -43,9 +43,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 // Arrange
                 var type = typeof(MyModelStringRepresentationPublicSetters);
+
                 var expectedModelMethods = typeof(IStringRepresentable)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
+
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
@@ -62,13 +64,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void MyModelStringRepresentationPublicSetters___Should_declare_ToString_method___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelStringRepresentationPublicSetters);
+                var expected = typeof(MyModelStringRepresentationPublicSetters);
 
                 // Act
-                var method = type.GetMethod(nameof(ToString));
+                var actual = expected.GetMethod(nameof(ToString));
 
                 // Assert
-                method.DeclaringType.AsTest().Must().BeEqualTo(type);
+                actual.DeclaringType.AsTest().Must().BeEqualTo(expected);
             }
         }
     }

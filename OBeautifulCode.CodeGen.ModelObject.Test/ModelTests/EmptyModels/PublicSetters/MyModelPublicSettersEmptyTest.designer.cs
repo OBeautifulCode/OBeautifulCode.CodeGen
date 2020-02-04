@@ -63,9 +63,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 // Arrange
                 var type = typeof(MyModelPublicSettersEmpty);
+
                 var expectedModelMethods = typeof(IModel<MyModelPublicSettersEmpty>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
+
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
@@ -175,10 +177,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 MyModelPublicSettersEmpty systemUnderTest2 = null;
 
                 // Act
-                var result = systemUnderTest1 == systemUnderTest2;
+                var actual = systemUnderTest1 == systemUnderTest2;
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                actual.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -188,12 +190,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 MyModelPublicSettersEmpty systemUnderTest = null;
 
                 // Act
-                var result1 = systemUnderTest == ObjectForEquatableTests;
-                var result2 = ObjectForEquatableTests == systemUnderTest;
+                var actual1 = systemUnderTest == ObjectForEquatableTests;
+                var actual2 = ObjectForEquatableTests == systemUnderTest;
 
                 // Assert
-                result1.AsTest().Must().BeFalse();
-                result2.AsTest().Must().BeFalse();
+                actual1.AsTest().Must().BeFalse();
+                actual2.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -201,33 +203,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 // Arrange, Act
     #pragma warning disable CS1718 // Comparison made to same variable
-                var result = ObjectForEquatableTests == ObjectForEquatableTests;
+                var actual = ObjectForEquatableTests == ObjectForEquatableTests;
     #pragma warning restore CS1718 // Comparison made to same variable
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                actual.AsTest().Must().BeTrue();
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 // Arrange, Act
-                var actualCheckReferenceAgainstUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
-                var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=>_ .First() == _.Last()).ToList();
+                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeFalse();
-                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
 
                 // Assert
-                result.AsTest().Must().Each().BeTrue();
+                actuals.AsTest().Must().Each().BeTrue();
             }
 
             [Fact]
@@ -238,10 +238,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 MyModelPublicSettersEmpty systemUnderTest2 = null;
 
                 // Act
-                var result = systemUnderTest1 != systemUnderTest2;
+                var actual = systemUnderTest1 != systemUnderTest2;
 
                 // Assert
-                result.AsTest().Must().BeFalse();
+                actual.AsTest().Must().BeFalse();
             }
 
             [Fact]
@@ -251,12 +251,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 MyModelPublicSettersEmpty systemUnderTest = null;
 
                 // Act
-                var result1 = systemUnderTest != ObjectForEquatableTests;
-                var result2 = ObjectForEquatableTests != systemUnderTest;
+                var actual1 = systemUnderTest != ObjectForEquatableTests;
+                var actual2 = ObjectForEquatableTests != systemUnderTest;
 
                 // Assert
-                result1.AsTest().Must().BeTrue();
-                result2.AsTest().Must().BeTrue();
+                actual1.AsTest().Must().BeTrue();
+                actual2.AsTest().Must().BeTrue();
             }
 
             [Fact]
@@ -264,33 +264,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 // Arrange, Act
     #pragma warning disable CS1718 // Comparison made to same variable
-                var result = ObjectForEquatableTests != ObjectForEquatableTests;
+                var actual = ObjectForEquatableTests != ObjectForEquatableTests;
     #pragma warning restore CS1718 // Comparison made to same variable
 
                 // Assert
-                result.AsTest().Must().BeFalse();
+                actual.AsTest().Must().BeFalse();
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_have_different_property_values()
             {
                 // Arrange, Act
-                var actualCheckReferenceAgainstUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
-                var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=>_ .First() != _.Last()).ToList();
+                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeTrue();
-                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeTrue();
+                actuals.AsTest().Must().Each().BeTrue();
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
 
                 // Assert
-                result.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
@@ -300,94 +298,90 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 MyModelPublicSettersEmpty systemUnderTest = null;
 
                 // Act
-                var result = ObjectForEquatableTests.Equals(systemUnderTest);
+                var actual = ObjectForEquatableTests.Equals(systemUnderTest);
 
                 // Assert
-                result.AsTest().Must().BeFalse();
+                actual.AsTest().Must().BeFalse();
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersEmpty___Should_return_true___When_parameter_other_is_same_object()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
+                var actual = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                actual.AsTest().Must().BeTrue();
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersEmpty___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 // Arrange, Act
-                var actualCheckReferenceAgainstUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
-                var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=> _.First().Equals(_.Last())).ToList();
+                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeFalse();
-                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersEmpty___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
 
                 // Assert
-                result.AsTest().Must().Each().BeTrue();
+                actuals.AsTest().Must().Each().BeTrue();
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_null()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests.Equals(null);
+                var actual = ObjectForEquatableTests.Equals(null);
 
                 // Assert
-                result.AsTest().Must().BeFalse();
+                actual.AsTest().Must().BeFalse();
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_not_of_the_same_type()
             {
                 // Arrange, Act
-                var result = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var actuals = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
 
                 // Assert
-                result.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_parameter_other_is_same_object()
             {
                 // Arrange, Act
-                var result = ObjectForEquatableTests.Equals((object)ObjectForEquatableTests);
+                var actual = ObjectForEquatableTests.Equals((object)ObjectForEquatableTests);
 
                 // Assert
-                result.AsTest().Must().BeTrue();
+                actual.AsTest().Must().BeTrue();
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 // Arrange, Act
-                var actualCheckReferenceAgainstUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
-                var actualCheckAgainstOthersInUnequalSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select( _=>_ .First().Equals((object)_.Last())).ToList();
+                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
 
                 // Assert
-                actualCheckReferenceAgainstUnequalSet.AsTest().Must().Each().BeFalse();
-                actualCheckAgainstOthersInUnequalSet.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().Each().BeFalse();
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 // Arrange, Act
-                var result = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
 
                 // Assert
-                result.AsTest().Must().Each().BeTrue();
+                actuals.AsTest().Must().Each().BeTrue();
             }
         }
 
@@ -397,25 +391,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
                 // Arrange, Act
-                var actualHashCodeOfReference = ObjectForEquatableTests.GetHashCode();
-                var actualHashCodesInNotEqualSet = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
-                var actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet = ObjectsThatAreNotEqualToObjectForEquatableTests.GetCombinations(2, 2).Select(_ => _.First().GetHashCode() == _.Last().GetHashCode()).ToList();
+                var unexpected = ObjectForEquatableTests.GetHashCode();
+
+                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
 
                 // Assert
-                actualHashCodesInNotEqualSet.AsTest().Must().NotContainElement(actualHashCodeOfReference);
-                actualEqualityCheckOfHashCodesAgainstOthersInNotEqualSet.AsTest().Must().Each().BeFalse();
+                actuals.AsTest().Must().NotContainElement(unexpected);
             }
 
             [Fact]
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
                 // Arrange, Act
-                var actualHashCodeOfReference = ObjectForEquatableTests.GetHashCode();
+                var expected = ObjectForEquatableTests.GetHashCode();
 
-                var actualHashCodesInEqualSet = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
 
                 // Assert
-                actualHashCodesInEqualSet.AsTest().Must().Each().BeEqualTo(actualHashCodeOfReference);
+                actuals.AsTest().Must().Each().BeEqualTo(expected);
             }
         }
     }
