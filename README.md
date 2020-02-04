@@ -5,4 +5,6 @@ Code generation library to automate the creation of boilerplate code.
 
 [![Nuget status](https://img.shields.io/nuget/v/OBeautifulCode.CodeGen.ModelObject.svg)](https://www.nuget.org/packages/OBeautifulCode.CodeGen.ModelObject)  OBeautifulCode.CodeGen.ModelObject
 
+[![Nuget status](https://img.shields.io/nuget/v/OBeautifulCode.CodeGen.ModelObject.Recipes.TestScenarios.svg)](https://www.nuget.org/packages/OBeautifulCode.CodeGen.ModelObject.Recipes.TestScenarios)  OBeautifulCode.CodeGen.ModelObject.Recipes.TestScenarios
+
 [![Nuget status](https://img.shields.io/nuget/v/OBeautifulCode.CodeGen.Console.svg)](https://www.nuget.org/packages/OBeautifulCode.CodeGen.Console)  OBeautifulCode.CodeGen.Console

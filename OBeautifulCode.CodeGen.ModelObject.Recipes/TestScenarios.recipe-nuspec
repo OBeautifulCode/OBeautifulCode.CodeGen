@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OBeautifulCode.CodeGen.ModelObject.Recipes.TestScenarios</id>
+    <description>Specifies scenarios for code generated tests.</description>
+    <tags>code gen test scenario</tags>
+    <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen.ModelObject.Recipes/nuget-icon.png</iconUrl>
+    <dependencies>
+      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.12" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".analyzers\SuppressBecause.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SuppressBecause.cs" />
+    <file src="Class1.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Class1.cs" />
+  </files>
+</package>
