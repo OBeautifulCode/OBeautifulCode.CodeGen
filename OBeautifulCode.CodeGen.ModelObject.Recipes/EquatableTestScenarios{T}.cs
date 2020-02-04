@@ -84,11 +84,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Validates the scenarios and prepares them for testing.
         /// </summary>
-        public void ValidateAndPrepareForTesting()
+        /// <returns>
+        /// The validated/prepared scenarios.
+        /// </returns>
+        public IReadOnlyList<ValidatedEquatableTestScenario<T>> ValidateAndPrepareForTesting()
         {
             lock (this.lockObject)
             {
                 new { this.Scenarios }.AsTest().Must().NotBeEmptyEnumerable();
+
+                var result = new List<ValidatedEquatableTestScenario<T>>();
 
                 var scenariosCount = this.scenarios.Count;
 
@@ -98,37 +103,38 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioNumber = x + 1;
 
-                    var because = scenario.GetFriendlyIdentifier(scenarioNumber, scenariosCount);
+                    var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    new { scenario.ReferenceObject }.AsTest().Must().NotBeNull(because);
+                    var scenarioId = Invariant($"{scenarioName} (equatable test scenario #{scenarioNumber} of {scenariosCount})");
 
-                    if (scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject == null)
+                    new { scenario.ReferenceObject }.AsTest().Must().NotBeNull(scenarioId);
+
+                    if (scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject != null)
                     {
-                        scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new List<T>();
-                    }
-                    else
-                    {
-                        new { scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(because);
+                        new { scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
                     }
 
-                    if (scenario.ObjectsThatAreNotEqualToReferenceObject == null)
+                    if (scenario.ObjectsThatAreNotEqualToReferenceObject != null)
                     {
-                        scenario.ObjectsThatAreNotEqualToReferenceObject = new List<T>();
-                    }
-                    else
-                    {
-                        new { scenario.ObjectsThatAreNotEqualToReferenceObject }.AsTest().Must().NotContainAnyNullElements(because);
+                        new { scenario.ObjectsThatAreNotEqualToReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
                     }
 
-                    if (scenario.ObjectsThatAreNotTheSameTypeAsReferenceObject == null)
+                    if (scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject != null)
                     {
-                        scenario.ObjectsThatAreNotTheSameTypeAsReferenceObject = new List<object>();
+                        new { scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
                     }
-                    else
-                    {
-                        new { scenario.ObjectsThatAreNotTheSameTypeAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(because);
-                    }
+
+                    var validatedScenario = new ValidatedEquatableTestScenario<T>(
+                        scenarioId,
+                        scenario.ReferenceObject,
+                        scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject?.ToList() ?? new List<T>(),
+                        scenario.ObjectsThatAreNotEqualToReferenceObject?.ToList() ?? new List<T>(),
+                        scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject?.ToList() ?? new List<object>());
+
+                    result.Add(validatedScenario);
                 }
+
+                return result;
             }
         }
     }

@@ -38,7 +38,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public T ReferenceObject { get; set; }
 
         /// <summary>
-        /// Gets or sets objects that are equal to but not object in-memory as the <see cref="ReferenceObject"/>.
+        /// Gets or sets objects that are equal to but not the same object in-memory as the <see cref="ReferenceObject"/>.
         /// </summary>
         public IReadOnlyList<T> ObjectsThatAreEqualToButNotTheSameAsReferenceObject { get; set; }
 
@@ -50,25 +50,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Gets or sets objects that are not the same type as the <see cref="ReferenceObject"/>.
         /// </summary>
-        public IReadOnlyList<object> ObjectsThatAreNotTheSameTypeAsReferenceObject { get; set; }
-
-        /// <summary>
-        /// Gets a friendly string that identifies this scenario among the rest of the scenarios.
-        /// </summary>
-        /// <param name="scenarioNumber">The position of this scenario in the list of scenarios.</param>
-        /// <param name="scenariosCount">The total number of scenarios.</param>
-        /// <returns>
-        /// A friendly string that identifies this scenario among the rest of the scenarios.
-        /// </returns>
-        public string GetFriendlyIdentifier(
-            int scenarioNumber,
-            int scenariosCount)
-        {
-            var name = string.IsNullOrWhiteSpace(this.Name) ? "<Unnamed Scenario>" : this.Name;
-
-            var result = Invariant($"{name} (equatable test scenario #{scenarioNumber} of {scenariosCount})");
-
-            return result;
-        }
+        public IReadOnlyList<object> ObjectsThatAreNotOfTheSameTypeAsReferenceObject { get; set; }
     }
 }
