@@ -34,25 +34,35 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact" + UnequalHashCodeToken + @"]
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
-                // Arrange, Act
-                var unexpected = ObjectForEquatableTests.GetHashCode();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var unexpected = scenario.ReferenceObject.GetHashCode();
 
-                // Assert
-                actuals.AsTest().Must().NotContainElement(unexpected);
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => _.GetHashCode()).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().NotContainElement(unexpected, because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
-                // Arrange, Act
-                var expected = ObjectForEquatableTests.GetHashCode();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var expected = scenario.ReferenceObject.GetHashCode();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeEqualTo(expected);
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _.GetHashCode()).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(expected, because: scenario.Id);
+                }
             }
         }";
 

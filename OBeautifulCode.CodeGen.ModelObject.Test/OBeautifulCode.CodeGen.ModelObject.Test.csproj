@@ -646,6 +646,10 @@
     <Compile Include="CodeGeneratorTest\TypeWrapperKind.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject.Recipes\OBeautifulCode.CodeGen.ModelObject.Recipes.csproj">
+      <Project>{77043ecb-56af-4151-aab7-de97b6b9caae}</Project>
+      <Name>OBeautifulCode.CodeGen.ModelObject.Recipes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject\OBeautifulCode.CodeGen.ModelObject.csproj">
       <Project>{3fede36e-3fff-4112-8223-c19301ba33ae}</Project>
       <Name>OBeautifulCode.CodeGen.ModelObject</Name>

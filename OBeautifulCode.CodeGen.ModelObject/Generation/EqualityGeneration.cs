@@ -29,6 +29,52 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
 
+        private const string EqualityTestFieldsForDeclaredTypeCodeTemplate = @"    private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">();";
+
+        private const string EqualityTestFieldsForAbstractBaseTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ReferenceObjectForEquatableTestScenarios = A.Dummy<" + TypeNameToken + @">();
+            
+        private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">()
+            .AddScenario(
+                new EquatableTestScenario<" + TypeNameToken + @">
+                {
+                    Name = ""Code Generated Scenario"",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new " + TypeNameToken + @"[]
+                    {
+                        ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new " + TypeNameToken + @"[]
+                    {" + UnequalObjectsToken + @"
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<string>(),
+                    },
+                });";
+
+        private const string EqualityTestFieldsForConcreteTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ReferenceObjectForEquatableTestScenarios = A.Dummy<" + TypeNameToken + @">();
+        
+        private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">()
+            .AddScenario(
+                new EquatableTestScenario<" + TypeNameToken + @">
+                {
+                    Name = ""Code Generated Scenario"",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new " + TypeNameToken + @"[]
+                    {
+                        " + NewObjectForEquatableToken + @",
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new " + TypeNameToken + @"[]
+                    {" + UnequalObjectsToken + @"
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<string>(),
+                    },
+                });";
+
+        private const string UnequalObjectTokenForAbstractBaseTypeCodeTemplate = @"ReferenceObjectForEquatableTestScenarios.DeepCloneWith" + PropertyNameToken + @"(A.Dummy<" + PropertyTypeNameToken + @">().ThatIsNot(ReferenceObjectForEquatableTestScenarios." + PropertyNameToken + @"))";
+
         private const string EqualsMethodForConcreteTypeCodeTemplate = @"
 
         /// <inheritdoc />
@@ -120,40 +166,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <inheritdoc />
         public abstract override bool Equals(object obj);";
 
-        private const string EqualityTestFieldsForAbstractBaseTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ObjectForEquatableTests = A.Dummy<" + TypeNameToken + @">();
-
-        private static readonly IReadOnlyCollection<" + TypeNameToken + @"> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new " + TypeNameToken + @"[]
-        {
-            ObjectForEquatableTests.DeepClone(),
-        };
-
-        private static readonly IReadOnlyCollection<" + TypeNameToken + @"> ObjectsThatAreNotEqualToObjectForEquatableTests = new " + TypeNameToken + @"[]
-        {" + UnequalObjectsToken + @"
-        };
-
-        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new object[]
-        {
-            A.Dummy<string>(),
-        };";
-
-        private const string UnequalObjectTokenForAbstractBaseTypeCodeTemplate = @"ObjectForEquatableTests.DeepCloneWith" + PropertyNameToken + @"(A.Dummy<" + PropertyTypeNameToken + @">().ThatIsNot(ObjectForEquatableTests." + PropertyNameToken + @"))";
-
-        private const string EqualityTestFieldsForConcreteTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ObjectForEquatableTests = A.Dummy<" + TypeNameToken + @">();
-
-        private static readonly IReadOnlyCollection<" + TypeNameToken + @"> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new " + TypeNameToken + @"[]
-        {
-            " + NewObjectForEquatableToken + @",
-        };
-
-        private static readonly IReadOnlyCollection<" + TypeNameToken + @"> ObjectsThatAreNotEqualToObjectForEquatableTests = new " + TypeNameToken + @"[]
-        {" + UnequalObjectsToken + @"
-        };
-
-        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new object[]
-        {
-            A.Dummy<string>(),
-        };";
-
         private const string EqualityTestMethodsCodeTemplate = @"    public static class Equality
         {
             [Fact]
@@ -173,48 +185,68 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void EqualsOperator___Should_return_false___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
-                // Arrange
-                " + TypeNameToken + @" systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual1 = systemUnderTest == ObjectForEquatableTests;
-                var actual2 = ObjectForEquatableTests == systemUnderTest;
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    " + TypeNameToken + @" systemUnderTest = null;
 
-                // Assert
-                actual1.AsTest().Must().BeFalse();
-                actual2.AsTest().Must().BeFalse();
+                    // Act
+                    var actual1 = systemUnderTest == scenario.ReferenceObject;
+                    var actual2 = scenario.ReferenceObject == systemUnderTest;
+
+                    // Assert
+                    actual1.AsTest().Must().BeFalse(because: scenario.Id);
+                    actual2.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
             {
-                // Arrange, Act
-    #pragma warning disable CS1718 // Comparison made to same variable
-                var actual = ObjectForEquatableTests == ObjectForEquatableTests;
-    #pragma warning restore CS1718 // Comparison made to same variable
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject == scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
@@ -234,141 +266,206 @@ namespace OBeautifulCode.CodeGen.ModelObject
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
-                // Arrange
-                " + TypeNameToken + @" systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual1 = systemUnderTest != ObjectForEquatableTests;
-                var actual2 = ObjectForEquatableTests != systemUnderTest;
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    " + TypeNameToken + @" systemUnderTest = null;
 
-                // Assert
-                actual1.AsTest().Must().BeTrue();
-                actual2.AsTest().Must().BeTrue();
+                    // Act
+                    var actual1 = systemUnderTest != scenario.ReferenceObject;
+                    var actual2 = scenario.ReferenceObject != systemUnderTest;
+
+                    // Assert
+                    actual1.AsTest().Must().BeTrue(because: scenario.Id);
+                    actual2.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
             {
-                // Arrange, Act
-    #pragma warning disable CS1718 // Comparison made to same variable
-                var actual = ObjectForEquatableTests != ObjectForEquatableTests;
-    #pragma warning restore CS1718 // Comparison made to same variable
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject != scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_" + TypeNameToken + @"___Should_return_false___When_parameter_other_is_null()
             {
-                // Arrange
-                " + TypeNameToken + @" systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual = ObjectForEquatableTests.Equals(systemUnderTest);
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    " + TypeNameToken + @" systemUnderTest = null;
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                    // Act
+                    var actual = scenario.ReferenceObject.Equals(systemUnderTest);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_" + TypeNameToken + @"___Should_return_true___When_parameter_other_is_same_object()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals(scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_" + TypeNameToken + @"___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_" + TypeNameToken + @"___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_null()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals(null);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals(null);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_not_of_the_same_type()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_parameter_other_is_same_object()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals((object)ObjectForEquatableTests);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals((object)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
         }";
 
@@ -424,9 +521,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestFields(
             this ModelType modelType)
         {
+            string result;
+
             if (modelType.DeclaresEqualsMethodDirectlyOrInDerivative || modelType.DeclaresGetHashCodeMethodDirectlyOrInDerivative)
             {
-                return null;
+                result = EqualityTestFieldsForDeclaredTypeCodeTemplate
+                    .Replace(TypeNameToken, modelType.TypeCompilableString);
+
+                return result;
             }
 
             string codeTemplate;
@@ -445,7 +547,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var unequalSet = new List<string>();
 
-            var result = codeTemplate
+            result = codeTemplate
                 .Replace(TypeNameToken, modelType.TypeCompilableString);
 
             if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
@@ -465,7 +567,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 {
                     var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
                     {
-                        var referenceObject = "ObjectForEquatableTests." + _.Name;
+                        var referenceObject = "ReferenceObjectForEquatableTestScenarios." + _.Name;
 
                         var memberCode = _.Name != property.Name
                             ? referenceObject
@@ -474,20 +576,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         return new MemberCode(_.Name, memberCode);
                     }).ToList();
 
-                    var code = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 20);
+                    var code = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 32);
 
                     unequalSet.Add(code);
                 }
 
-                var newEquatablePropertiesCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ObjectForEquatableTests." + _.Name)).ToList();
+                var newEquatablePropertiesCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ReferenceObjectForEquatableTestScenarios." + _.Name)).ToList();
 
-                var newObjectFromEquatableToken = modelType.GenerateModelInstantiation(newEquatablePropertiesCode, parameterPaddingLength: 20);
+                var newObjectFromEquatableToken = modelType.GenerateModelInstantiation(newEquatablePropertiesCode, parameterPaddingLength: 32);
 
                 result = result.Replace(NewObjectForEquatableToken, newObjectFromEquatableToken);
             }
 
             var unequalObjectsCode = unequalSet.Any()
-                ? Environment.NewLine + "            " + string.Join("," + Environment.NewLine + "            ", unequalSet) + ","
+                ? Environment.NewLine + "                        " + string.Join("," + Environment.NewLine + "                        ", unequalSet) + ","
                 : string.Empty;
 
             result = result.Replace(UnequalObjectsToken, unequalObjectsCode);
