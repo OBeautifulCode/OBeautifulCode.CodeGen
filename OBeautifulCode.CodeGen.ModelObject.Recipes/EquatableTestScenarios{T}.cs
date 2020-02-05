@@ -105,7 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    var scenarioId = Invariant($"{scenarioName} (equatable test scenario #{scenarioNumber} of {scenariosCount})");
+                    var scenarioId = Invariant($"{scenarioName} (equatable test scenario #{scenarioNumber} of {scenariosCount}):");
 
                     new { scenario.ReferenceObject }.AsTest().Must().NotBeNull(scenarioId);
 
