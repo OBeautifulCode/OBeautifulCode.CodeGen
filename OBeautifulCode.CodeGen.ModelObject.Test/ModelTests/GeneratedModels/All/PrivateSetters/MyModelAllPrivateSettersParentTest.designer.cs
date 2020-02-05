@@ -20,6 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.AutoFakeItEasy;
+    using OBeautifulCode.CodeGen.ModelObject.Recipes;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Math.Recipes;
     using OBeautifulCode.Representation.System;
@@ -40,100 +41,105 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelAllPrivateSettersParent ObjectForEquatableTests = A.Dummy<MyModelAllPrivateSettersParent>();
-
-        private static readonly IReadOnlyCollection<MyModelAllPrivateSettersParent> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new MyModelAllPrivateSettersParent[]
-        {
-            ObjectForEquatableTests.DeepClone(),
-        };
-
-        private static readonly IReadOnlyCollection<MyModelAllPrivateSettersParent> ObjectsThatAreNotEqualToObjectForEquatableTests = new MyModelAllPrivateSettersParent[]
-        {
-            ObjectForEquatableTests.DeepCloneWithParentBoolProperty(A.Dummy<bool>().ThatIsNot(ObjectForEquatableTests.ParentBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentIntProperty(A.Dummy<int>().ThatIsNot(ObjectForEquatableTests.ParentIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentStringProperty(A.Dummy<string>().ThatIsNot(ObjectForEquatableTests.ParentStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentGuidProperty(A.Dummy<Guid>().ThatIsNot(ObjectForEquatableTests.ParentGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentDateTimeProperty(A.Dummy<DateTime>().ThatIsNot(ObjectForEquatableTests.ParentDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentModelEnumProperty(A.Dummy<ModelEnum>().ThatIsNot(ObjectForEquatableTests.ParentModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum>().ThatIsNot(ObjectForEquatableTests.ParentModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentModelClassProperty(A.Dummy<ModelClass>().ThatIsNot(ObjectForEquatableTests.ParentModelClassProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentNullableBoolProperty(A.Dummy<bool?>().ThatIsNot(ObjectForEquatableTests.ParentNullableBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentNullableIntProperty(A.Dummy<int?>().ThatIsNot(ObjectForEquatableTests.ParentNullableIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentNullableGuidProperty(A.Dummy<Guid?>().ThatIsNot(ObjectForEquatableTests.ParentNullableGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentNullableDateTimeProperty(A.Dummy<DateTime?>().ThatIsNot(ObjectForEquatableTests.ParentNullableDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentNullableModelEnumProperty(A.Dummy<ModelEnum?>().ThatIsNot(ObjectForEquatableTests.ParentNullableModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentNullableModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum?>().ThatIsNot(ObjectForEquatableTests.ParentNullableModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfBoolProperty(A.Dummy<bool[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfIntProperty(A.Dummy<int[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfStringProperty(A.Dummy<string[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfGuidProperty(A.Dummy<Guid[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfDateTimeProperty(A.Dummy<DateTime[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfModelEnumProperty(A.Dummy<ModelEnum[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfModelClassProperty(A.Dummy<ModelClass[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfModelClassProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfNullableBoolProperty(A.Dummy<bool?[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfNullableBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfNullableIntProperty(A.Dummy<int?[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfNullableIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfNullableGuidProperty(A.Dummy<Guid?[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfNullableGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfNullableDateTimeProperty(A.Dummy<DateTime?[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfNullableDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfNullableModelEnumProperty(A.Dummy<ModelEnum?[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfNullableModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum?[]>().ThatIsNot(ObjectForEquatableTests.ParentArrayOfNullableModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(A.Dummy<IReadOnlyCollection<bool>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(A.Dummy<IReadOnlyCollection<int>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(A.Dummy<IReadOnlyCollection<string>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(A.Dummy<IReadOnlyCollection<Guid>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyCollection<DateTime>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(A.Dummy<IReadOnlyCollection<ModelEnum>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(A.Dummy<IReadOnlyCollection<ModelFlagsEnum>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(A.Dummy<IReadOnlyCollection<ModelClass>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfModelClassProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(A.Dummy<IReadOnlyCollection<bool?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(A.Dummy<IReadOnlyCollection<int?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfNullableIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(A.Dummy<IReadOnlyCollection<Guid?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(A.Dummy<IReadOnlyCollection<DateTime?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(A.Dummy<IReadOnlyCollection<ModelEnum?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(A.Dummy<IReadOnlyCollection<ModelFlagsEnum?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(A.Dummy<IReadOnlyList<bool>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(A.Dummy<IReadOnlyList<int>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(A.Dummy<IReadOnlyList<string>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(A.Dummy<IReadOnlyList<Guid>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyList<DateTime>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(A.Dummy<IReadOnlyList<ModelEnum>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(A.Dummy<IReadOnlyList<ModelFlagsEnum>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(A.Dummy<IReadOnlyList<ModelClass>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfModelClassProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(A.Dummy<IReadOnlyList<bool?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfNullableBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(A.Dummy<IReadOnlyList<int?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfNullableIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(A.Dummy<IReadOnlyList<Guid?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfNullableGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(A.Dummy<IReadOnlyList<DateTime?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfNullableDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(A.Dummy<IReadOnlyList<ModelEnum?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfNullableModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(A.Dummy<IReadOnlyList<ModelFlagsEnum?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(A.Dummy<IReadOnlyDictionary<bool, bool>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(A.Dummy<IReadOnlyDictionary<int, int>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(A.Dummy<IReadOnlyDictionary<Guid, Guid>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(A.Dummy<IReadOnlyDictionary<ModelEnum, ModelEnum>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(A.Dummy<IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(A.Dummy<IReadOnlyDictionary<ModelClass, ModelClass>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfModelClassProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(A.Dummy<IReadOnlyDictionary<bool?, bool?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(A.Dummy<IReadOnlyDictionary<int?, int?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(A.Dummy<IReadOnlyDictionary<ModelEnum?, ModelEnum?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(A.Dummy<IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentCollectionInterfaceOfStringProperty(A.Dummy<ICollection<string>>().ThatIsNot(ObjectForEquatableTests.ParentCollectionInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(A.Dummy<Collection<ICollection<string>>>().ThatIsNot(ObjectForEquatableTests.ParentCollectionOfCollectionInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(A.Dummy<IList<ICollection<string>>>().ThatIsNot(ObjectForEquatableTests.ParentListInterfaceOfCollectionInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(A.Dummy<List<ICollection<string>>>().ThatIsNot(ObjectForEquatableTests.ParentListOfCollectionInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(A.Dummy<ReadOnlyCollection<ICollection<string>>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ObjectForEquatableTests.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<Dictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ObjectForEquatableTests.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ReadOnlyDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ConcurrentDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ObjectForEquatableTests.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)),
-            ObjectForEquatableTests.DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
-        };
-
-        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new object[]
-        {
-            A.Dummy<string>(),
-        };
+        private static readonly MyModelAllPrivateSettersParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelAllPrivateSettersParent>();
+            
+        private static readonly EquatableTestScenarios<MyModelAllPrivateSettersParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelAllPrivateSettersParent>()
+            .AddScenario(
+                new EquatableTestScenario<MyModelAllPrivateSettersParent>
+                {
+                    Name = "Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelAllPrivateSettersParent[]
+                    {
+                        ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new MyModelAllPrivateSettersParent[]
+                    {
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentBoolProperty(A.Dummy<bool>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentIntProperty(A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentStringProperty(A.Dummy<string>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentGuidProperty(A.Dummy<Guid>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentDateTimeProperty(A.Dummy<DateTime>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentModelEnumProperty(A.Dummy<ModelEnum>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentModelClassProperty(A.Dummy<ModelClass>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentModelClassProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableBoolProperty(A.Dummy<bool?>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentNullableBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableIntProperty(A.Dummy<int?>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentNullableIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableGuidProperty(A.Dummy<Guid?>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentNullableGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableDateTimeProperty(A.Dummy<DateTime?>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentNullableDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableModelEnumProperty(A.Dummy<ModelEnum?>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentNullableModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum?>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentNullableModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfBoolProperty(A.Dummy<bool[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfIntProperty(A.Dummy<int[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfStringProperty(A.Dummy<string[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfGuidProperty(A.Dummy<Guid[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfDateTimeProperty(A.Dummy<DateTime[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfModelEnumProperty(A.Dummy<ModelEnum[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfModelClassProperty(A.Dummy<ModelClass[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfModelClassProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableBoolProperty(A.Dummy<bool?[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableIntProperty(A.Dummy<int?[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableGuidProperty(A.Dummy<Guid?[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableDateTimeProperty(A.Dummy<DateTime?[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableModelEnumProperty(A.Dummy<ModelEnum?[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(A.Dummy<ModelFlagsEnum?[]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(A.Dummy<IReadOnlyCollection<bool>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(A.Dummy<IReadOnlyCollection<int>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(A.Dummy<IReadOnlyCollection<string>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(A.Dummy<IReadOnlyCollection<Guid>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyCollection<DateTime>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(A.Dummy<IReadOnlyCollection<ModelEnum>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(A.Dummy<IReadOnlyCollection<ModelFlagsEnum>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(A.Dummy<IReadOnlyCollection<ModelClass>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfModelClassProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(A.Dummy<IReadOnlyCollection<bool?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(A.Dummy<IReadOnlyCollection<int?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(A.Dummy<IReadOnlyCollection<Guid?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(A.Dummy<IReadOnlyCollection<DateTime?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(A.Dummy<IReadOnlyCollection<ModelEnum?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(A.Dummy<IReadOnlyCollection<ModelFlagsEnum?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(A.Dummy<IReadOnlyList<bool>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(A.Dummy<IReadOnlyList<int>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(A.Dummy<IReadOnlyList<string>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(A.Dummy<IReadOnlyList<Guid>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyList<DateTime>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(A.Dummy<IReadOnlyList<ModelEnum>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(A.Dummy<IReadOnlyList<ModelFlagsEnum>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(A.Dummy<IReadOnlyList<ModelClass>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfModelClassProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(A.Dummy<IReadOnlyList<bool?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfNullableBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(A.Dummy<IReadOnlyList<int?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfNullableIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(A.Dummy<IReadOnlyList<Guid?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfNullableGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(A.Dummy<IReadOnlyList<DateTime?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfNullableDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(A.Dummy<IReadOnlyList<ModelEnum?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfNullableModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(A.Dummy<IReadOnlyList<ModelFlagsEnum?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(A.Dummy<IReadOnlyDictionary<bool, bool>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(A.Dummy<IReadOnlyDictionary<int, int>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(A.Dummy<IReadOnlyDictionary<Guid, Guid>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(A.Dummy<IReadOnlyDictionary<ModelEnum, ModelEnum>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(A.Dummy<IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(A.Dummy<IReadOnlyDictionary<ModelClass, ModelClass>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfModelClassProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(A.Dummy<IReadOnlyDictionary<bool?, bool?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(A.Dummy<IReadOnlyDictionary<int?, int?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(A.Dummy<IReadOnlyDictionary<ModelEnum?, ModelEnum?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(A.Dummy<IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCollectionInterfaceOfStringProperty(A.Dummy<ICollection<string>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(A.Dummy<Collection<ICollection<string>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(A.Dummy<IList<ICollection<string>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(A.Dummy<List<ICollection<string>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(A.Dummy<ReadOnlyCollection<ICollection<string>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<Dictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ReadOnlyDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ConcurrentDictionary<string, IReadOnlyList<DateTime>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<string>(),
+                    },
+                });
 
         public static class Structural
         {
@@ -12808,48 +12814,68 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [Fact]
             public static void EqualsOperator___Should_return_false___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
-                // Arrange
-                MyModelAllPrivateSettersParent systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual1 = systemUnderTest == ObjectForEquatableTests;
-                var actual2 = ObjectForEquatableTests == systemUnderTest;
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelAllPrivateSettersParent systemUnderTest = null;
 
-                // Assert
-                actual1.AsTest().Must().BeFalse();
-                actual2.AsTest().Must().BeFalse();
+                    // Act
+                    var actual1 = systemUnderTest == scenario.ReferenceObject;
+                    var actual2 = scenario.ReferenceObject == systemUnderTest;
+
+                    // Assert
+                    actual1.AsTest().Must().BeFalse(because: scenario.Id);
+                    actual2.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
             {
-                // Arrange, Act
-    #pragma warning disable CS1718 // Comparison made to same variable
-                var actual = ObjectForEquatableTests == ObjectForEquatableTests;
-    #pragma warning restore CS1718 // Comparison made to same variable
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject == scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
@@ -12869,141 +12895,206 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
-                // Arrange
-                MyModelAllPrivateSettersParent systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual1 = systemUnderTest != ObjectForEquatableTests;
-                var actual2 = ObjectForEquatableTests != systemUnderTest;
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelAllPrivateSettersParent systemUnderTest = null;
 
-                // Assert
-                actual1.AsTest().Must().BeTrue();
-                actual2.AsTest().Must().BeTrue();
+                    // Act
+                    var actual1 = systemUnderTest != scenario.ReferenceObject;
+                    var actual2 = scenario.ReferenceObject != systemUnderTest;
+
+                    // Assert
+                    actual1.AsTest().Must().BeTrue(because: scenario.Id);
+                    actual2.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
             {
-                // Arrange, Act
-    #pragma warning disable CS1718 // Comparison made to same variable
-                var actual = ObjectForEquatableTests != ObjectForEquatableTests;
-    #pragma warning restore CS1718 // Comparison made to same variable
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject != scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_false___When_parameter_other_is_null()
             {
-                // Arrange
-                MyModelAllPrivateSettersParent systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual = ObjectForEquatableTests.Equals(systemUnderTest);
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelAllPrivateSettersParent systemUnderTest = null;
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                    // Act
+                    var actual = scenario.ReferenceObject.Equals(systemUnderTest);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_true___When_parameter_other_is_same_object()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals(scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelAllPrivateSettersParent___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_null()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals(null);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals(null);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_not_of_the_same_type()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_parameter_other_is_same_object()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals((object)ObjectForEquatableTests);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals((object)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
         }
 
@@ -13012,25 +13103,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [Fact]
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
-                // Arrange, Act
-                var unexpected = ObjectForEquatableTests.GetHashCode();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var unexpected = scenario.ReferenceObject.GetHashCode();
 
-                // Assert
-                actuals.AsTest().Must().NotContainElement(unexpected);
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => _.GetHashCode()).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().NotContainElement(unexpected, because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
-                // Arrange, Act
-                var expected = ObjectForEquatableTests.GetHashCode();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var expected = scenario.ReferenceObject.GetHashCode();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeEqualTo(expected);
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _.GetHashCode()).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(expected, because: scenario.Id);
+                }
             }
         }
     }

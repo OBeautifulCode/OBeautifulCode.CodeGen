@@ -36,5 +36,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         {
             A.Dummy<MyModelHashingPrivateSettersParent>(),
         };
+
+        static MyModelHashingPrivateSettersParentTest()
+        {
+            EquatableTestScenarios.AddScenario(new Recipes.EquatableTestScenario<MyModelHashingPrivateSettersParent>
+            {
+                Name = "Scenario 1",
+                ReferenceObject = ObjectForEquatableTests,
+                ObjectsThatAreEqualToButNotTheSameAsReferenceObject = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.ToList(),
+                ObjectsThatAreNotEqualToReferenceObject = ObjectsThatAreNotEqualToObjectForEquatableTests.ToList(),
+            });
+        }
     }
 }

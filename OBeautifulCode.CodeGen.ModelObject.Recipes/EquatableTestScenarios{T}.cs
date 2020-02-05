@@ -30,7 +30,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     class EquatableTestScenarios<T>
         where T : class
     {
-        private readonly object lockObject = new object();
+        private readonly object lockScenarios = new object();
 
         private readonly List<EquatableTestScenario<T>> scenarios = new List<EquatableTestScenario<T>>();
 
@@ -41,7 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             get
             {
-                lock (this.lockObject)
+                lock (this.lockScenarios)
                 {
                     return this.scenarios.ToList();
                 }
@@ -60,7 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             new { scenario }.AsTest().Must().NotBeNull();
 
-            lock (this.lockObject)
+            lock (this.lockScenarios)
             {
                 new { this.Scenarios }.AsTest().Must().NotContainElement(scenario);
 
@@ -75,7 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// </summary>
         public void RemoveAllScenarios()
         {
-            lock (this.lockObject)
+            lock (this.lockScenarios)
             {
                 this.scenarios.Clear();
             }
@@ -89,9 +89,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// </returns>
         public IReadOnlyList<ValidatedEquatableTestScenario<T>> ValidateAndPrepareForTesting()
         {
-            lock (this.lockObject)
+            lock (this.lockScenarios)
             {
-                new { this.Scenarios }.AsTest().Must().NotBeEmptyEnumerable();
+                this.Scenarios.AsTest("EquatableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling EquatableTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedEquatableTestScenario<T>>();
 

@@ -254,7 +254,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 if (WriteFiles)
                 {
-                    File.WriteAllText(modelFilePath, string.Empty);
+                    var content = string.Empty;
+
+                    if ((generationKind == GenerationKind.Test) && ((generatedModelKind == GeneratedModelKind.Equality) || (generatedModelKind == GeneratedModelKind.Hashing)))
+                    {
+                        // this is necessary so that the project compiles when running the unit tests prior
+                        // to code generating tests
+                        var codeLines = new List<string>
+                        {
+                            "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                            "{",
+                            "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                            Invariant($"    public static partial class {modelName}{testToken}"),
+                            "    {",
+                            Invariant($"        private static readonly EquatableTestScenarios<{modelName}> EquatableTestScenarios = new EquatableTestScenarios<{modelName}>();"),
+                            "    }",
+                            "}",
+                        };
+
+                        content = codeLines.ToNewLineDelimited();
+                    }
+
+                    File.WriteAllText(modelFilePath, content);
                 }
             }
 

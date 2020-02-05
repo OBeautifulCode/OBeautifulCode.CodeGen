@@ -6606,5 +6606,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         {
             A.Dummy<string>(),
         };
+
+        static MyModelEqualityPublicSettersTest()
+        {
+            EquatableTestScenarios.AddScenario(new Recipes.EquatableTestScenario<MyModelEqualityPublicSetters>
+            {
+                Name = "Scenario 1",
+                ReferenceObject = ObjectForEquatableTests,
+                ObjectsThatAreEqualToButNotTheSameAsReferenceObject = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.ToList(),
+                ObjectsThatAreNotEqualToReferenceObject = ObjectsThatAreNotEqualToObjectForEquatableTests.ToList(),
+                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.ToList(),
+            });
+        }
     }
 }

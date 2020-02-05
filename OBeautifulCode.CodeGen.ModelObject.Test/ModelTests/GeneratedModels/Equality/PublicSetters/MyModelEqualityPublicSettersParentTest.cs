@@ -7,6 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using FakeItEasy;
 
@@ -41,6 +42,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 objectThatIsEqualToButNotTheSameAsObjectForEquatableTests,
             };
+
+            EquatableTestScenarios.AddScenario(new Recipes.EquatableTestScenario<MyModelEqualityPublicSettersParent>
+            {
+                Name = "Scenario 1",
+                ReferenceObject = ObjectForEquatableTests,
+                ObjectsThatAreEqualToButNotTheSameAsReferenceObject = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.ToList(),
+                ObjectsThatAreNotEqualToReferenceObject = ObjectsThatAreNotEqualToObjectForEquatableTests.ToList(),
+                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.ToList(),
+            });
         }
     }
 }

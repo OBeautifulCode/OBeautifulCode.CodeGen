@@ -20,6 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.AutoFakeItEasy;
+    using OBeautifulCode.CodeGen.ModelObject.Recipes;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Math.Recipes;
     using OBeautifulCode.Representation.System;
@@ -40,28 +41,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPublicSettersNotEmptyParentEmptyChild ObjectForEquatableTests = A.Dummy<MyModelPublicSettersNotEmptyParentEmptyChild>();
-
-        private static readonly IReadOnlyCollection<MyModelPublicSettersNotEmptyParentEmptyChild> ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests = new MyModelPublicSettersNotEmptyParentEmptyChild[]
-        {
-            new MyModelPublicSettersNotEmptyParentEmptyChild
+        private static readonly MyModelPublicSettersNotEmptyParentEmptyChild ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersNotEmptyParentEmptyChild>();
+        
+        private static readonly EquatableTestScenarios<MyModelPublicSettersNotEmptyParentEmptyChild> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersNotEmptyParentEmptyChild>()
+            .AddScenario(
+                new EquatableTestScenario<MyModelPublicSettersNotEmptyParentEmptyChild>
                 {
-                    ParentReadOnlyDictionaryOfStringString = ObjectForEquatableTests.ParentReadOnlyDictionaryOfStringString,
-                },
-        };
-
-        private static readonly IReadOnlyCollection<MyModelPublicSettersNotEmptyParentEmptyChild> ObjectsThatAreNotEqualToObjectForEquatableTests = new MyModelPublicSettersNotEmptyParentEmptyChild[]
-        {
-            new MyModelPublicSettersNotEmptyParentEmptyChild
-                {
-                    ParentReadOnlyDictionaryOfStringString = A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ObjectForEquatableTests.ParentReadOnlyDictionaryOfStringString),
-                },
-        };
-
-        private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new object[]
-        {
-            A.Dummy<string>(),
-        };
+                    Name = "Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersNotEmptyParentEmptyChild[]
+                    {
+                        new MyModelPublicSettersNotEmptyParentEmptyChild
+                            {
+                                ParentReadOnlyDictionaryOfStringString = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfStringString,
+                            },
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersNotEmptyParentEmptyChild[]
+                    {
+                        new MyModelPublicSettersNotEmptyParentEmptyChild
+                            {
+                                ParentReadOnlyDictionaryOfStringString = A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfStringString),
+                            },
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<string>(),
+                    },
+                });
 
         public static class Structural
         {
@@ -224,48 +230,68 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [Fact]
             public static void EqualsOperator___Should_return_false___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
-                // Arrange
-                MyModelPublicSettersNotEmptyParentEmptyChild systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual1 = systemUnderTest == ObjectForEquatableTests;
-                var actual2 = ObjectForEquatableTests == systemUnderTest;
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersNotEmptyParentEmptyChild systemUnderTest = null;
 
-                // Assert
-                actual1.AsTest().Must().BeFalse();
-                actual2.AsTest().Must().BeFalse();
+                    // Act
+                    var actual1 = systemUnderTest == scenario.ReferenceObject;
+                    var actual2 = scenario.ReferenceObject == systemUnderTest;
+
+                    // Assert
+                    actual1.AsTest().Must().BeFalse(because: scenario.Id);
+                    actual2.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
             {
-                // Arrange, Act
-    #pragma warning disable CS1718 // Comparison made to same variable
-                var actual = ObjectForEquatableTests == ObjectForEquatableTests;
-    #pragma warning restore CS1718 // Comparison made to same variable
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject == scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void EqualsOperator___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests == _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
@@ -285,141 +311,206 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
-                // Arrange
-                MyModelPublicSettersNotEmptyParentEmptyChild systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual1 = systemUnderTest != ObjectForEquatableTests;
-                var actual2 = ObjectForEquatableTests != systemUnderTest;
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersNotEmptyParentEmptyChild systemUnderTest = null;
 
-                // Assert
-                actual1.AsTest().Must().BeTrue();
-                actual2.AsTest().Must().BeTrue();
+                    // Act
+                    var actual1 = systemUnderTest != scenario.ReferenceObject;
+                    var actual2 = scenario.ReferenceObject != systemUnderTest;
+
+                    // Assert
+                    actual1.AsTest().Must().BeTrue(because: scenario.Id);
+                    actual2.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
             {
-                // Arrange, Act
-    #pragma warning disable CS1718 // Comparison made to same variable
-                var actual = ObjectForEquatableTests != ObjectForEquatableTests;
-    #pragma warning restore CS1718 // Comparison made to same variable
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject != scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void NotEqualsOperator___Should_return_false___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests != _).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersNotEmptyParentEmptyChild___Should_return_false___When_parameter_other_is_null()
             {
-                // Arrange
-                MyModelPublicSettersNotEmptyParentEmptyChild systemUnderTest = null;
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual = ObjectForEquatableTests.Equals(systemUnderTest);
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersNotEmptyParentEmptyChild systemUnderTest = null;
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                    // Act
+                    var actual = scenario.ReferenceObject.Equals(systemUnderTest);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersNotEmptyParentEmptyChild___Should_return_true___When_parameter_other_is_same_object()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals(ObjectForEquatableTests);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals(scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersNotEmptyParentEmptyChild___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_MyModelPublicSettersNotEmptyParentEmptyChild___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals(_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_null()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals(null);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals(null);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_not_of_the_same_type()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_parameter_other_is_same_object()
             {
-                // Arrange, Act
-                var actual = ObjectForEquatableTests.Equals((object)ObjectForEquatableTests);
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actual.AsTest().Must().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals((object)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeFalse();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void Equals_with_Object___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
-                // Arrange, Act
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => ObjectForEquatableTests.Equals((object)_)).ToList();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeTrue();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
             }
         }
 
@@ -428,25 +519,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [Fact]
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
-                // Arrange, Act
-                var unexpected = ObjectForEquatableTests.GetHashCode();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                var actuals = ObjectsThatAreNotEqualToObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var unexpected = scenario.ReferenceObject.GetHashCode();
 
-                // Assert
-                actuals.AsTest().Must().NotContainElement(unexpected);
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => _.GetHashCode()).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().NotContainElement(unexpected, because: scenario.Id);
+                }
             }
 
             [Fact]
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
-                // Arrange, Act
-                var expected = ObjectForEquatableTests.GetHashCode();
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
-                var actuals = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.Select(_ => _.GetHashCode()).ToList();
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var expected = scenario.ReferenceObject.GetHashCode();
 
-                // Assert
-                actuals.AsTest().Must().Each().BeEqualTo(expected);
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _.GetHashCode()).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(expected, because: scenario.Id);
+                }
             }
         }
     }

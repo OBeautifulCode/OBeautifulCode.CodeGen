@@ -6443,5 +6443,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ObjectForEquatableTests.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                     A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>>().ThatIsNot(ObjectForEquatableTests.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)),
         };
+
+        static MyModelHashingPrivateSettersTest()
+        {
+            EquatableTestScenarios.AddScenario(new Recipes.EquatableTestScenario<MyModelHashingPrivateSetters>
+            {
+                Name = "Scenario 1",
+                ReferenceObject = ObjectForEquatableTests,
+                ObjectsThatAreEqualToButNotTheSameAsReferenceObject = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.ToList(),
+                ObjectsThatAreNotEqualToReferenceObject = ObjectsThatAreNotEqualToObjectForEquatableTests.ToList(),
+            });
+        }
     }
 }
