@@ -19354,10 +19354,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+                    var actuals1 = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+                    var actuals2 = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => _ == scenario.ReferenceObject).ToList();
 
                     // Assert
-                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
 
@@ -19369,10 +19371,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ == scenario.ReferenceObject).ToList();
 
                     // Assert
-                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
                 }
             }
 
@@ -19435,10 +19439,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+                    var actuals1 = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+                    var actuals2 = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => _ != scenario.ReferenceObject).ToList();
 
                     // Assert
-                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
                 }
             }
 
@@ -19450,10 +19456,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ != scenario.ReferenceObject).ToList();
 
                     // Assert
-                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
 
