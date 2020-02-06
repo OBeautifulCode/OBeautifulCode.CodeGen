@@ -79,7 +79,10 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="ComparableTestScenarios{T}.cs" />
     <Compile Include="EquatableTestScenarios{T}.cs" />
+    <Compile Include="ComparableTestScenario{T}.cs" />
+    <Compile Include="ValidatedComparableTestScenario{T}.cs" />
     <Compile Include="ValidatedEquatableTestScenario{T}.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EquatableTestScenario{T}.cs" />
