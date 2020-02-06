@@ -38,17 +38,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
-
-            if (this.IntProperty > other.IntProperty)
+            else if (this.IntProperty > other.IntProperty)
             {
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
-
             else if (this.IntProperty < other.IntProperty)
             {
                 return RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
             }
-
             else
             {
                 return RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance;

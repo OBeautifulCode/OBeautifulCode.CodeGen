@@ -81,7 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <param name="left">The object to the left of the less-than-or-equal-to operator.</param>
         /// <param name="right">The object to the right of the less-than-or-equal-to operator.</param>
         /// <returns>true if <paramref name="left"/> is less than or equal to <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator <=(MyModelComparingPublicSettersChild2 left, MyModelComparingPublicSettersChild2 right) => (left < right) || (!(left > right));
+        public static bool operator <=(MyModelComparingPublicSettersChild2 left, MyModelComparingPublicSettersChild2 right) => !(left > right);
 
         /// <summary>
         /// Determines whether an object of type <see cref="MyModelComparingPublicSettersChild2"/> is greater than or equal to another object of that type.
@@ -89,7 +89,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <param name="left">The object to the left of the greater-than-or-equal-to operator.</param>
         /// <param name="right">The object to the right of the greater-than-or-equal-to operator.</param>
         /// <returns>true if <paramref name="left"/> is greater than or equal to <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator >=(MyModelComparingPublicSettersChild2 left, MyModelComparingPublicSettersChild2 right) => (left > right) || (!(left < right));      
+        public static bool operator >=(MyModelComparingPublicSettersChild2 left, MyModelComparingPublicSettersChild2 right) => !(left < right);
 
         /// <inheritdoc />
         public int CompareTo(MyModelComparingPublicSettersChild2 other)
