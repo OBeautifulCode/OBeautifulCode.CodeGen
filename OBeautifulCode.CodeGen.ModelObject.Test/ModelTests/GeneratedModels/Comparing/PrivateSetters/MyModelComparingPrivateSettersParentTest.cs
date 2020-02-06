@@ -19,7 +19,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new[] { new MyModelComparingPrivateSettersChild1(4, 5), new MyModelComparingPrivateSettersChild1(0, 9), new MyModelComparingPrivateSettersChild1(5, 4) },
                 ObjectsThatAreLessThanReferenceObject = new[] { new MyModelComparingPrivateSettersChild1(8, 0), new MyModelComparingPrivateSettersChild1(-5, -4), new MyModelComparingPrivateSettersChild1(3, 4) },
                 ObjectsThatAreGreaterThanReferenceObject = new[] { new MyModelComparingPrivateSettersChild1(9, 1), new MyModelComparingPrivateSettersChild1(5, 5), new MyModelComparingPrivateSettersChild1(-50, 100) },
-                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[] { 1, "dummy-string", new MyModelComparingPrivateSettersChild2(5, 4) },
+                ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new[] { new MyModelComparingPrivateSettersChild2(5, 4) },
+                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[] { 1, "dummy-string" },
             });
         }
     }
