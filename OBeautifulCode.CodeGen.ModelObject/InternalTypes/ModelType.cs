@@ -56,6 +56,7 @@ namespace OBeautifulCode.CodeGen
             // and is compiling) to produce the same generated code as in a first pass for
             // consistency.  To that end, we contain the usage of the specified type to this
             // class, where we ensure that there are no dependencies on the added interfaces.
+            this.ConcreteDerivativeTypes = this.GetConcreteDerivativeTypes(type);
             this.TypeCompilableString = type.ToStringCompilable();
             this.TypeReadableString = type.ToStringReadable();
             this.TypeNamespace = type.Namespace;
@@ -97,6 +98,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets a readability-optimized string representation of the base type.
         /// </summary>
         public string BaseTypeReadableString { get; }
+
+        /// <summary>
+        /// Gets the concrete derivative types.
+        /// </summary>
+        public IReadOnlyCollection<Type> ConcreteDerivativeTypes { get; }
 
         /// <summary>
         /// Gets the constructors.
@@ -591,6 +597,21 @@ namespace OBeautifulCode.CodeGen
                     (_.BaseType == type) &&
                     _.IsAssignableTo(typeof(IDeclareToStringMethod)));
             }
+
+            return result;
+        }
+
+        private IReadOnlyCollection<Type> GetConcreteDerivativeTypes(
+            Type type)
+        {
+            var result = AssemblyLoader
+                .GetLoadedAssemblies()
+                .GetTypesFromAssemblies()
+                .Where(_ => _.IsClass)
+                .Where(_ => !_.IsAbstract)
+                .Where(_ => !_.ContainsGenericParameters)
+                .Where(_ => _.IsAssignableTo(type))
+                .ToList();
 
             return result;
         }

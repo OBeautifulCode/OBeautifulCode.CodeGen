@@ -119,6 +119,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
                         new { scenario.ObjectsThatAreNotEqualToReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
                     }
 
+                    if (scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject != null)
+                    {
+                        new { scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
+                    }
+
                     if (scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject != null)
                     {
                         new { scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
@@ -129,6 +134,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
                         scenario.ReferenceObject,
                         scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject?.ToList() ?? new List<T>(),
                         scenario.ObjectsThatAreNotEqualToReferenceObject?.ToList() ?? new List<T>(),
+                        scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject?.ToList() ?? new List<T>(),
                         scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject?.ToList() ?? new List<object>());
 
                     result.Add(validatedScenario);

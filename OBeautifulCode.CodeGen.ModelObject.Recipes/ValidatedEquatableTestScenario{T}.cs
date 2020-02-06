@@ -34,24 +34,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <param name="referenceObject">The reference object.</param>
         /// <param name="objectsThatAreEqualToButNotTheSameAsReferenceObject">Objects that are equal to but not the same object in-memory as the <paramref name="referenceObject"/>.</param>
         /// <param name="objectsThatAreNotEqualToReferenceObject">Objects that are not equal to the <paramref name="referenceObject"/>.</param>
-        /// <param name="objectsThatAreNotOfTheSameTypeAsReferenceObject">Objects that are not the same type as the <paramref name="referenceObject"/>.</param>
+        /// <param name="objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject">Objects that derive from <typeparamref name="T"/>, but are not of the same type as the <paramref name="referenceObject"/>.</param>
+        /// <param name="objectsThatAreNotOfTheSameTypeAsReferenceObject">Objects that are not of the same type as the <paramref name="referenceObject"/>.</param>
         public ValidatedEquatableTestScenario(
             string id,
             T referenceObject,
             IReadOnlyList<T> objectsThatAreEqualToButNotTheSameAsReferenceObject,
             IReadOnlyList<T> objectsThatAreNotEqualToReferenceObject,
+            IReadOnlyList<T> objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject,
             IReadOnlyList<object> objectsThatAreNotOfTheSameTypeAsReferenceObject)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
             new { referenceObject }.AsTest().Must().NotBeNull();
             new { objectsThatAreEqualToButNotTheSameAsReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
             new { objectsThatAreNotEqualToReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
+            new { objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
             new { objectsThatAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
 
             this.Id = id;
             this.ReferenceObject = referenceObject;
             this.ObjectsThatAreEqualToButNotTheSameAsReferenceObject = objectsThatAreEqualToButNotTheSameAsReferenceObject;
             this.ObjectsThatAreNotEqualToReferenceObject = objectsThatAreNotEqualToReferenceObject;
+            this.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject;
             this.ObjectsThatAreNotOfTheSameTypeAsReferenceObject = objectsThatAreNotOfTheSameTypeAsReferenceObject;
         }
 
@@ -76,7 +80,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public IReadOnlyList<T> ObjectsThatAreNotEqualToReferenceObject { get; }
 
         /// <summary>
-        /// Gets objects that are not the same type as the <see cref="ReferenceObject"/>.
+        /// Gets or sets objects that derive from <typeparamref name="T"/>, but are not of the same type as the <see cref="ReferenceObject"/>.
+        /// </summary>
+        public IReadOnlyList<T> ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject { get; }
+
+        /// <summary>
+        /// Gets objects that are not of the same type as the <see cref="ReferenceObject"/>.
         /// </summary>
         public IReadOnlyList<object> ObjectsThatAreNotOfTheSameTypeAsReferenceObject { get; }
     }

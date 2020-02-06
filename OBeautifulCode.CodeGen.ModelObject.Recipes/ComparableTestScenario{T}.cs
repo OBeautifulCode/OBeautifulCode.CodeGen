@@ -53,6 +53,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public IReadOnlyList<T> ObjectsThatAreGreaterThanReferenceObject { get; set; }
 
         /// <summary>
+        /// Gets or sets objects that derive from <typeparamref name="T"/>, but are not of the same type as the <see cref="ReferenceObject"/>.
+        /// </summary>
+        public IReadOnlyList<T> ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject { get; set; }
+
+        /// <summary>
         /// Gets or sets objects that are not the same type as the <see cref="ReferenceObject"/>.
         /// </summary>
         public IReadOnlyList<object> ObjectsThatAreNotOfTheSameTypeAsReferenceObject { get; set; }

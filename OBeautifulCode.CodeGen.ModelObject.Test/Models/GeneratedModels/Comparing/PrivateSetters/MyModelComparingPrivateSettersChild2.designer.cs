@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public int CompareTo(MyModelComparingPrivateSettersChild2 other)
         {
-            if (other == null)
+            if (ReferenceEquals(other, null))
             {
                 return 1;
             }
@@ -117,6 +117,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override int CompareTo(object obj)
         {
+            if (ReferenceEquals(obj, null))
+            {
+                return 1;
+            }
+
             if (!(obj is MyModelComparingPrivateSettersChild2 other))
             {
                 throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelComparingPrivateSettersChild2)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
@@ -129,6 +134,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public override RelativeSortOrder CompareToForRelativeSortOrder(MyModelComparingPrivateSettersParent other)
         {
+            if (ReferenceEquals(other, null))
+            {
+                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+            }
+
             if (!(other is MyModelComparingPrivateSettersChild2 otherAsMyModelComparingPrivateSettersChild2))
             {
                 throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelComparingPrivateSettersChild2)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));

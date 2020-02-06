@@ -11,6 +11,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using FakeItEasy;
 
+    using OBeautifulCode.AutoFakeItEasy;
+
     public static partial class MyModelEqualityPublicSettersParentTest
     {
         private static readonly MyModelEqualityPublicSettersParent ObjectForEquatableTests = A.Dummy<MyModelEqualityPublicSettersChild1>();
@@ -49,6 +51,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 ReferenceObject = ObjectForEquatableTests,
                 ObjectsThatAreEqualToButNotTheSameAsReferenceObject = ObjectsThatAreEqualToButNotTheSameAsObjectForEquatableTests.ToList(),
                 ObjectsThatAreNotEqualToReferenceObject = ObjectsThatAreNotEqualToObjectForEquatableTests.ToList(),
+                ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new[]
+                {
+                    A.Dummy<MyModelEqualityPublicSettersParent>().Whose(_ => _.GetType() != ObjectForEquatableTests.GetType()),
+                },
                 ObjectsThatAreNotOfTheSameTypeAsReferenceObject = ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests.ToList(),
             });
         }

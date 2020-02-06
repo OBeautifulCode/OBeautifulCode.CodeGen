@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public int CompareTo(MyModelComparingPrivateSetters other)
         {
-            if (other == null)
+            if (ReferenceEquals(other, null))
             {
                 return 1;
             }
@@ -117,6 +117,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public int CompareTo(object obj)
         {
+            if (ReferenceEquals(obj, null))
+            {
+                return 1;
+            }
+
             if (!(obj is MyModelComparingPrivateSetters other))
             {
                 throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelComparingPrivateSetters)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));

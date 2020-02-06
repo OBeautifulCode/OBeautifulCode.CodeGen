@@ -37,6 +37,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
     public static partial class MyModelComparingPrivateSettersChild1Test
     {
+        private static readonly ComparableTestScenarios<MyModelComparingPrivateSettersChild1> ComparableTestScenarios = new ComparableTestScenarios<MyModelComparingPrivateSettersChild1>();
+
         public static class Structural
         {
             [Fact]

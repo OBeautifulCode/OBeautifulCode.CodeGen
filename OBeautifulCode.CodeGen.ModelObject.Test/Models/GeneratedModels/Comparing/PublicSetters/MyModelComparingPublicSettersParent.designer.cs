@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public int CompareTo(MyModelComparingPublicSettersParent other)
         {
-            if (other == null)
+            if (ReferenceEquals(other, null))
             {
                 return 1;
             }

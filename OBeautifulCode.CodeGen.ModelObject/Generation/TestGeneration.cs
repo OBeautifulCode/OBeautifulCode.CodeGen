@@ -93,6 +93,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
             }
 
+            if (modelType.RequiresComparability)
+            {
+                var comparableTestFields = modelType.GenerateComparableTestFields();
+                items.Add(string.Empty);
+                items.Add("    " + comparableTestFields);
+            }
+
             items.Add(string.Empty);
             items.Add("    " + modelType.GenerateStructuralTestMethods());
 

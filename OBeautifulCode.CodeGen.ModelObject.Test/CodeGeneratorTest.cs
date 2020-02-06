@@ -256,23 +256,45 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var content = string.Empty;
 
-                    if ((generationKind == GenerationKind.Test) && ((generatedModelKind == GeneratedModelKind.Equality) || (generatedModelKind == GeneratedModelKind.Hashing)))
+                    if (generationKind == GenerationKind.Test)
                     {
-                        // this is necessary so that the project compiles when running the unit tests prior
-                        // to code generating tests
-                        var codeLines = new List<string>
+                        if ((generatedModelKind == GeneratedModelKind.Equality) ||
+                            (generatedModelKind == GeneratedModelKind.Hashing))
                         {
-                            "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
-                            "{",
-                            "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                            Invariant($"    public static partial class {modelName}{testToken}"),
-                            "    {",
-                            Invariant($"        private static readonly EquatableTestScenarios<{modelName}> EquatableTestScenarios = new EquatableTestScenarios<{modelName}>();"),
-                            "    }",
-                            "}",
-                        };
+                            // this is necessary so that the project compiles when running the unit tests prior
+                            // to code generating tests
+                            var codeLines = new List<string>
+                            {
+                                "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                                "{",
+                                "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                                Invariant($"    public static partial class {modelName}{testToken}"),
+                                "    {",
+                                Invariant($"        private static readonly EquatableTestScenarios<{modelName}> EquatableTestScenarios = new EquatableTestScenarios<{modelName}>();"),
+                                "    }",
+                                "}",
+                            };
 
-                        content = codeLines.ToNewLineDelimited();
+                            content = codeLines.ToNewLineDelimited();
+                        }
+                        else if (generatedModelKind == GeneratedModelKind.Comparing)
+                        {
+                            // this is necessary so that the project compiles when running the unit tests prior
+                            // to code generating tests
+                            var codeLines = new List<string>
+                            {
+                                "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                                "{",
+                                "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                                Invariant($"    public static partial class {modelName}{testToken}"),
+                                "    {",
+                                Invariant($"        private static readonly ComparableTestScenarios<{modelName}> ComparableTestScenarios = new ComparableTestScenarios<{modelName}>();"),
+                                "    }",
+                                "}",
+                            };
+
+                            content = codeLines.ToNewLineDelimited();
+                        }
                     }
 
                     File.WriteAllText(modelFilePath, content);

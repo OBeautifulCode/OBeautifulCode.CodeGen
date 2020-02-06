@@ -28,6 +28,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string EqualityToken = "<<<EqualityLogicHere>>>";
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
+        private const string ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectToken = "<<<ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectHere>>>";
 
         private const string EqualityTestFieldsForDeclaredTypeCodeTemplate = @"    private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">();";
 
@@ -45,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new " + TypeNameToken + @"[]
                     {" + UnequalObjectsToken + @"
-                    },
+                    }," + ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectToken + @"
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
                         A.Dummy<string>(),
@@ -74,6 +75,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 });";
 
         private const string UnequalObjectTokenForAbstractBaseTypeCodeTemplate = @"ReferenceObjectForEquatableTestScenarios.DeepCloneWith" + PropertyNameToken + @"(A.Dummy<" + PropertyTypeNameToken + @">().ThatIsNot(ReferenceObjectForEquatableTestScenarios." + PropertyNameToken + @"))";
+
+        private const string ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectCodeTemplate = @"
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new " + TypeNameToken + @"[]
+                    {
+                        A.Dummy<" + TypeNameToken + @">().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                    },";
 
         private const string EqualsMethodForConcreteTypeCodeTemplate = @"
 
@@ -220,6 +227,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
 
             [Fact]
+            public static void EqualsOperator___Should_return_false___When_objects_being_compared_derive_from_the_same_type_but_are_not_of_the_same_type()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject == _).ToList();
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => _ == scenario.ReferenceObject).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -305,6 +329,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
 
             [Fact]
+            public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_derive_from_the_same_type_but_are_not_of_the_same_type()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject != _).ToList();
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => _ != scenario.ReferenceObject).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -372,6 +413,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
 
             [Fact]
+            public static void Equals_with_" + TypeNameToken + @"___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
             public static void Equals_with_" + TypeNameToken + @"___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -424,10 +480,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((object)_)).ToList();
 
                     // Assert
-                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
 
@@ -478,48 +536,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         /// <summary>
-        /// Generates equality methods.
-        /// </summary>
-        /// <param name="modelType">The model type.</param>
-        /// <returns>
-        /// Generated equality methods.
-        /// </returns>
-        public static string GenerateEqualityMethods(
-            this ModelType modelType)
-        {
-            string result;
-
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
-            {
-                if (modelType.DeclaresEqualsMethod)
-                {
-                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare an Equals method."));
-                }
-
-                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
-            }
-            else
-            {
-                var equalityLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
-
-                var equalityToken = modelType.PropertiesOfConcern.Any()
-                    ? string.Join(Environment.NewLine + "                      && ", equalityLines)
-                    : "true";
-
-                var equalsMethodCode = modelType.DeclaresEqualsMethod
-                    ? string.Empty
-                    : EqualsMethodForConcreteTypeCodeTemplate;
-
-                result = EqualityMethodsForConcreteTypeCodeTemplate
-                    .Replace(EqualsMethodToken, equalsMethodCode)
-                    .Replace(TypeNameToken, modelType.TypeCompilableString)
-                    .Replace(EqualityToken, equalityToken);
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// Generates fields required to test equality.
         /// </summary>
         /// <param name="modelType">The model type.</param>
@@ -543,7 +559,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
             switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.AbstractBase:
-                    codeTemplate = EqualityTestFieldsForAbstractBaseTypeCodeTemplate;
+                    var objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypes.Count() >= 2)
+                        ? ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectCodeTemplate
+                        : string.Empty;
+
+                    codeTemplate = EqualityTestFieldsForAbstractBaseTypeCodeTemplate
+                        .Replace(ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectToken, objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject);
+
                     break;
                 case HierarchyKind.None:
                 case HierarchyKind.ConcreteInherited:
@@ -601,6 +623,48 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 : string.Empty;
 
             result = result.Replace(UnequalObjectsToken, unequalObjectsCode);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates equality methods.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated equality methods.
+        /// </returns>
+        public static string GenerateEqualityMethods(
+            this ModelType modelType)
+        {
+            string result;
+
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+            {
+                if (modelType.DeclaresEqualsMethod)
+                {
+                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare an Equals method."));
+                }
+
+                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
+            }
+            else
+            {
+                var equalityLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
+
+                var equalityToken = modelType.PropertiesOfConcern.Any()
+                    ? string.Join(Environment.NewLine + "                      && ", equalityLines)
+                    : "true";
+
+                var equalsMethodCode = modelType.DeclaresEqualsMethod
+                    ? string.Empty
+                    : EqualsMethodForConcreteTypeCodeTemplate;
+
+                result = EqualityMethodsForConcreteTypeCodeTemplate
+                    .Replace(EqualsMethodToken, equalsMethodCode)
+                    .Replace(TypeNameToken, modelType.TypeCompilableString)
+                    .Replace(EqualityToken, equalityToken);
+            }
 
             return result;
         }

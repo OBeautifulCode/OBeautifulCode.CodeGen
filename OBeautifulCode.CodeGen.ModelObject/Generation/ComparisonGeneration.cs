@@ -25,6 +25,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string BaseTypeNameToken = "<<<BaseTypeNameHere>>>";
         private const string OverrideModifierToken = "<<<OverrideModifierHere>>>";
 
+        private const string ComparableTestFieldsForDeclaredTypeCodeTemplate = @"    private static readonly ComparableTestScenarios<" + TypeNameToken + @"> ComparableTestScenarios = new ComparableTestScenarios<" + TypeNameToken + @">();";
+
         private const string ComparableOperatorsAndMethodsCodeTemplate = @"    /// <summary>
         /// Determines whether an object of type <see cref=""" + TypeNameToken + @"""/> is less than another object of that type.
         /// </summary>
@@ -94,7 +96,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <inheritdoc />
         public int CompareTo(" + TypeNameToken + @" other)
         {
-            if (other == null)
+            if (ReferenceEquals(other, null))
             {
                 return 1;
             }
@@ -118,6 +120,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <inheritdoc />
         public " + OverrideModifierToken + @"int CompareTo(object obj)
         {
+            if (ReferenceEquals(obj, null))
+            {
+                return 1;
+            }
+
             if (!(obj is " + TypeNameToken + @" other))
             {
                 throw new ArgumentException(Invariant($""Attempting to compare objects of different types.  This object is of type '{nameof(" + TypeNameToken + @")}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'.""));
@@ -131,6 +138,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string ComparableMethodsForInheritedTypeCodeTemplate = @"
         public override RelativeSortOrder CompareToForRelativeSortOrder(" + BaseTypeNameToken + @" other)
         {
+            if (ReferenceEquals(other, null))
+            {
+                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+            }
+
             if (!(other is " + TypeNameToken + @" otherAs" + TypeNameToken + @"))
             {
                 throw new ArgumentException(Invariant($""Attempting to compare objects of different types.  This object is of type '{nameof(" + TypeNameToken + @")}' whereas the other object is of type '{other.GetType().ToStringReadable()}'.""));
@@ -147,6 +159,137 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         /// <inheritdoc />
         public abstract RelativeSortOrder CompareToForRelativeSortOrder(" + TypeNameToken + @" other);";
+
+        private const string ComparableTestMethodsCodeTemplate = @"    public static class Comparability
+        {
+            [Fact]
+            public static void LessThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
+            {
+                // Arrange
+                " + TypeNameToken + @" systemUnderTest1 = null;
+                " + TypeNameToken + @" systemUnderTest2 = null;
+
+                // Act
+                var actual = systemUnderTest1 < systemUnderTest2;
+
+                // Assert
+                actual.AsTest().Must().BeFalse();
+            }
+
+            [Fact]
+            public static void LessThanOperator___Should_return_true___When_parameter_left_is_null_and_parameter_right_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = null < scenario.ReferenceObject;
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOperator___Should_return_false___When_parameter_right_is_null_and_parameter_left_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject < null;
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject < scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOperator___Should_return_false___When_parameter_left_and_right_are_equal_but_not_the_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ < scenario.ReferenceObject);
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject < _ );
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOperator___Should_return_true___When_parameter_left_is_less_than_paramter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ < scenario.ReferenceObject);
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject < _ );
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void LessThanOperator___Should_return_false___When_parameter_left_is_greater_than_paramter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ < scenario.ReferenceObject);
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject < _ );
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+        }";
+
+        /// <summary>
+        /// Generates fields required to test comparability.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated fields required to test comparability.
+        /// </returns>
+        public static string GenerateComparableTestFields(
+            this ModelType modelType)
+        {
+            var result = ComparableTestFieldsForDeclaredTypeCodeTemplate
+                .Replace(TypeNameToken, modelType.TypeCompilableString);
+
+            return result;
+        }
 
         /// <summary>
         /// Generates comparable methods.
