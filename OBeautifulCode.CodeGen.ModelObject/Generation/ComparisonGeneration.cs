@@ -45,6 +45,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return true;
             }
 
+            if (ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($""" + TypeMismatchOperatorArgumentExceptionMessage + @"""));
+            }
+
             var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
 
             var result = relativeSortOrder == RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
@@ -68,6 +78,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (ReferenceEquals(left, null))
             {
                 return false;
+            }
+
+            if (ReferenceEquals(right, null))
+            {
+                return true;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($""" + TypeMismatchOperatorArgumentExceptionMessage + @"""));
             }
 
             var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
@@ -127,7 +147,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (!(obj is " + TypeNameToken + @" other))
             {
-                throw new ArgumentException(Invariant($""Attempting to compare objects of different types.  This object is of type '{nameof(" + TypeNameToken + @")}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'.""));
+                throw new ArgumentException(Invariant($""" + TypeMismatchInstanceMethodArgumentExceptionMessage + @" '{obj.GetType().ToStringReadable()}'.""));
             }
 
             var result = this.CompareTo(other);
@@ -145,13 +165,19 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (!(other is " + TypeNameToken + @" otherAs" + TypeNameToken + @"))
             {
-                throw new ArgumentException(Invariant($""Attempting to compare objects of different types.  This object is of type '{nameof(" + TypeNameToken + @")}' whereas the other object is of type '{other.GetType().ToStringReadable()}'.""));
+                throw new ArgumentException(Invariant($""" + TypeMismatchInstanceMethodArgumentExceptionMessage + @" '{other.GetType().ToStringReadable()}'.""));
             }
 
             var result = this.CompareToForRelativeSortOrder(otherAs" + TypeNameToken + @");
 
             return result;
         }";
+
+        private const string TypeMismatchArgumentExceptionMessagePrefixTemplate = @"Attempting to compare objects of different types.";
+
+        private const string TypeMismatchInstanceMethodArgumentExceptionMessage = TypeMismatchArgumentExceptionMessagePrefixTemplate + @"  This object is of type '{nameof(" + TypeNameToken + @")}' whereas the other object is of type";
+
+        private const string TypeMismatchOperatorArgumentExceptionMessage = TypeMismatchArgumentExceptionMessagePrefixTemplate + @"  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'.";
 
         private const string ComparableMethodsForAbstractTypeCodeTemplate = @"    
         /// <inheritdoc />
@@ -241,7 +267,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
 
             [Fact]
-            public static void LessThanOperator___Should_return_true___When_parameter_left_is_less_than_paramter_right()
+            public static void LessThanOperator___Should_return_true___When_parameter_left_is_less_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -258,7 +284,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             
             [Fact]
-            public static void LessThanOperator___Should_return_false___When_parameter_left_is_greater_than_paramter_right()
+            public static void LessThanOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -271,6 +297,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     // Assert
                     actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
                     actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ < scenario.ReferenceObject));
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject < _ ));
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($""" + TypeMismatchArgumentExceptionMessagePrefixTemplate + @"""));
+
+                    actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($""" + TypeMismatchArgumentExceptionMessagePrefixTemplate + @"""));
                 }
             }
         }";

@@ -43,6 +43,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return true;
             }
 
+            if (ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'."));
+            }
+
             var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
 
             var result = relativeSortOrder == RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
@@ -66,6 +76,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             if (ReferenceEquals(left, null))
             {
                 return false;
+            }
+
+            if (ReferenceEquals(right, null))
+            {
+                return true;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'."));
             }
 
             var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
