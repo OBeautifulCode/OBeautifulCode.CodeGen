@@ -275,14 +275,18 @@ namespace OBeautifulCode.CodeGen
             Type type,
             IReadOnlyCollection<PropertyInfo> propertiesOfConcern)
         {
-            if (propertiesOfConcern.Any(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType)))
+            var dictionaryKeyedOnDateTimeProperties = propertiesOfConcern.Where(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType)).ToList();
+
+            if (dictionaryKeyedOnDateTimeProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type contains a property that is OR has within its generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {type}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            if (propertiesOfConcern.Any(_ => _.GetSetMethod(true) == null))
+            var getterOnlyProperties = propertiesOfConcern.Where(_ => _.GetSetMethod(true) == null).ToList();
+
+            if (getterOnlyProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type contains a getter-only property; getter-only properties are not supported: {type}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) contains the following getter-only properties; getter-only properties are not supported: {getterOnlyProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
         }
 
