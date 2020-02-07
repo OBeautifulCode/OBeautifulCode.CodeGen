@@ -14,7 +14,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
@@ -42,13 +41,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string DeepCloneWithTestInflationToken = "<<<DeepCloneWithTestInflationHere>>>";
 
         private const string CloningMethodsForAbstractBaseTypeCodeTemplate = @"    /// <inheritdoc />
-        public object Clone() => this.DeepClone();
+        public abstract object Clone();
 
         /// <inheritdoc />
         public abstract " + TypeNameToken + " DeepClone();" + DeepCloneWithInflationToken;
 
         private const string CloningMethodsForConcreteInheritedTypeWithoutDeclaredDeepCloneCodeTemplate = @"    /// <inheritdoc />
-        public new object Clone() => this.DeepClone();
+        public override object Clone() => this.DeepClone();
 
         /// <inheritdoc />
         public override " + BaseTypeNameToken + @" DeepClone()
@@ -67,7 +66,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }" + DeepCloneWithInflationToken;
 
         private const string CloningMethodsForConcreteInheritedTypeWithDeclaredDeepCloneCodeTemplate = @"    /// <inheritdoc />
-        public new object Clone() => this.DeepClone();
+        public override object Clone() => this.DeepClone();
 
         /// <inheritdoc />
         public override " + BaseTypeNameToken + @" DeepClone()

@@ -66,7 +66,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public abstract override int GetHashCode();
 
         /// <inheritdoc />
-        public object Clone() => this.DeepClone();
+        public abstract object Clone();
 
         /// <inheritdoc />
         public abstract MyModelAllPrivateSettersParent DeepClone();

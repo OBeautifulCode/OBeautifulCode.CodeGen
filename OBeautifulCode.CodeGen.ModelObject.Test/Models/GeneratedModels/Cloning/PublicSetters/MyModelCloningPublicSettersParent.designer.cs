@@ -26,7 +26,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public partial class MyModelCloningPublicSettersParent : IDeepCloneable<MyModelCloningPublicSettersParent>
     {
         /// <inheritdoc />
-        public object Clone() => this.DeepClone();
+        public abstract object Clone();
 
         /// <inheritdoc />
         public abstract MyModelCloningPublicSettersParent DeepClone();
