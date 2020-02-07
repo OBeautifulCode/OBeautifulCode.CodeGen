@@ -25325,7 +25325,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly IReadOnlyCollection<object> ObjectsThatAreNotTheSameTypeAsObjectForEquatableTests = new[]
         {
+            A.Dummy<object>(),
             A.Dummy<string>(),
+            A.Dummy<int>(),
+            A.Dummy<int?>(),
+            A.Dummy<Guid>(),
         };
 
         static MyModelEqualityPrivateSettersChild1Test()

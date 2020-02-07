@@ -141,7 +141,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
+                        A.Dummy<object>(),
                         A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
                     },
                 });
 
@@ -13091,7 +13095,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actual = scenario.ReferenceObject.Equals(null);
+                    var actual = scenario.ReferenceObject.Equals((object)null);
 
                     // Assert
                     actual.AsTest().Must().BeFalse(because: scenario.Id);

@@ -62,7 +62,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
+                        A.Dummy<object>(),
                         A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
                     },
                 });
 

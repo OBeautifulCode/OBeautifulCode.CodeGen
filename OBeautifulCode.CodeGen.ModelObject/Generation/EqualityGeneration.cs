@@ -49,7 +49,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     }," + ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectToken + @"
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
+                        A.Dummy<object>(),
                         A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
                     },
                 });";
 
@@ -70,7 +74,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
+                        A.Dummy<object>(),
                         A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
                     },
                 });";
 
