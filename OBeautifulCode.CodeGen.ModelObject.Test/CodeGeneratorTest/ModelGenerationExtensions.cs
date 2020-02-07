@@ -166,7 +166,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string BuildEmptyModelName(
+        public static string BuildSpecifiedModelName(
             this string baseName,
             SetterKind setterKind,
             string modelNameSuffix)
@@ -334,8 +334,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string GetEmptyModelsDirectoryPath(
-            this SetterKind setterKind,
+        public static string GetSpecifiedModelsDirectoryPath(
+            this SpecifiedModelKind specifiedModelKind,
+            SetterKind setterKind,
             GenerationKind generationKind)
         {
             string result;
@@ -343,10 +344,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = CodeGeneratorTest.EmptyModelsPath + setterKind + "\\";
+                    result = CodeGeneratorTest.SpecifiedModelsPath + specifiedModelKind + "\\" + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = CodeGeneratorTest.EmptyModelsTestsPath + setterKind + "\\";
+                    result = CodeGeneratorTest.SpecifiedModelsTestPath + specifiedModelKind + "\\" + setterKind + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This kind is not supported: " + generationKind);

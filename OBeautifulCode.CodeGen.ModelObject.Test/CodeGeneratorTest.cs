@@ -42,13 +42,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly string ModelsPath = SourceRoot + "Models\\";
 
-        public static readonly string EmptyModelsPath = ModelsPath + "EmptyModels\\";
+        public static readonly string SpecifiedModelsPath = ModelsPath + "SpecifiedModels\\";
 
         public static readonly string GeneratedModelsPath = ModelsPath + "GeneratedModels\\";
 
         public static readonly string TestsPath = SourceRoot + "ModelTests\\";
 
-        public static readonly string EmptyModelsTestsPath = TestsPath + "EmptyModels\\";
+        public static readonly string SpecifiedModelsTestPath = TestsPath + "SpecifiedModels\\";
 
         public static readonly string GeneratedModelsTestsPath = TestsPath + "GeneratedModels\\";
 
@@ -97,11 +97,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(IReadOnlyDictionary<DateTime?, DateTime?>),
         };
 
-        private static readonly IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>> HierarchyKindToEmptyModelNameSuffixes = new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
+        private static readonly IReadOnlyDictionary<SpecifiedModelKind, IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>>> SpecifiedModelKindToHierarchyKindToModelNameSuffixMap = new Dictionary<SpecifiedModelKind, IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>>>
         {
-            { HierarchyKind.None, new[] { "Empty" } },
-            { HierarchyKind.AbstractBase, new[] { "EmptyParent", "NotEmptyParent" } },
-            { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
+            {
+                SpecifiedModelKind.Empty,
+                new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
+                {
+                    { HierarchyKind.None, new[] { "Empty" } },
+                    { HierarchyKind.AbstractBase, new[] { "EmptyParent", "NotEmptyParent" } },
+                    { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
+                }
+            },
         };
 
         private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
@@ -130,7 +136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
 
             // blank out downstream files
-            ExecuteForEmptyModels(GenerationKind.Test, createBlankFilesEventHandler);
+            ExecuteForSpecifiedModels(GenerationKind.Test, createBlankFilesEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Model, createBlankFilesEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
             WriteDummyFactory(string.Empty);
@@ -145,14 +151,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // blank out downstream files
             var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
 
-            ExecuteForEmptyModels(GenerationKind.Test, createBlankFilesEventHandler);
+            ExecuteForSpecifiedModels(GenerationKind.Test, createBlankFilesEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
             WriteDummyFactory(string.Empty);
 
             // generate new files
             var generateForModelEventHandler = BuildGenerateForModelEventHandler();
 
-            ExecuteForEmptyModels(GenerationKind.Model, generateForModelEventHandler);
+            ExecuteForSpecifiedModels(GenerationKind.Model, generateForModelEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Model, generateForModelEventHandler);
         }
 
@@ -162,7 +168,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // blank out downstream files
             var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
 
-            ExecuteForEmptyModels(GenerationKind.Test, createBlankFilesEventHandler);
+            ExecuteForSpecifiedModels(GenerationKind.Test, createBlankFilesEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
 
             // generate new files
@@ -176,31 +182,38 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var generateForModelEventHandler = BuildGenerateForModelEventHandler();
 
-            ExecuteForEmptyModels(GenerationKind.Test, generateForModelEventHandler);
+            ExecuteForSpecifiedModels(GenerationKind.Test, generateForModelEventHandler);
             ExecuteForGeneratedModels(GenerationKind.Test, generateForModelEventHandler);
         }
 
-        private static void ExecuteForEmptyModels(
+        private static void ExecuteForSpecifiedModels(
             GenerationKind generationKind,
             ExecuteForModelsEventHandler eventHandler)
         {
-            var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
+            var specifiedModelKinds = EnumExtensions.GetDefinedEnumValues<SpecifiedModelKind>();
 
-            foreach (var setterKind in setterKinds)
+            foreach (var specifiedModelKind in specifiedModelKinds)
             {
-                var directoryPath = setterKind.GetEmptyModelsDirectoryPath(generationKind);
+                var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
 
-                var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
-
-                foreach (var hierarchyKind in hierarchyKinds)
+                foreach (var setterKind in setterKinds)
                 {
-                    var emptyModelNameSuffixes = HierarchyKindToEmptyModelNameSuffixes[hierarchyKind];
+                    var directoryPath = specifiedModelKind.GetSpecifiedModelsDirectoryPath(setterKind, generationKind);
 
-                    foreach (var emptyModelNameSuffix in emptyModelNameSuffixes)
+                    var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>();
+
+                    foreach (var hierarchyKind in hierarchyKinds)
                     {
-                        var modelName = ModelBaseName.BuildEmptyModelName(setterKind, emptyModelNameSuffix);
+                        var hierarchyKindToModelNameSuffixMap = SpecifiedModelKindToHierarchyKindToModelNameSuffixMap[specifiedModelKind];
 
-                        eventHandler(generationKind, null, setterKind, hierarchyKind, null, modelName, directoryPath);
+                        var modelNameSuffixes = hierarchyKindToModelNameSuffixMap[hierarchyKind];
+
+                        foreach (var modelNameSuffix in modelNameSuffixes)
+                        {
+                            var modelName = ModelBaseName.BuildSpecifiedModelName(setterKind, modelNameSuffix);
+
+                            eventHandler(generationKind, null, setterKind, hierarchyKind, null, modelName, directoryPath);
+                        }
                     }
                 }
             }
