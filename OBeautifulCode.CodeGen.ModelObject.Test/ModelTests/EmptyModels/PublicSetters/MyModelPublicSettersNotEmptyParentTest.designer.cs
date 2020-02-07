@@ -464,7 +464,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actual = scenario.ReferenceObject.Equals(null);
+                    var actual = scenario.ReferenceObject.Equals((object)null);
 
                     // Assert
                     actual.AsTest().Must().BeFalse(because: scenario.Id);

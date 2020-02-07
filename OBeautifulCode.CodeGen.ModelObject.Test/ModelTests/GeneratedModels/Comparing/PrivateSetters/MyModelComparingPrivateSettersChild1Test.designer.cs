@@ -135,8 +135,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ < scenario.ReferenceObject);
-                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject < _ );
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ < scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject < _ ).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
@@ -152,8 +152,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ < scenario.ReferenceObject);
-                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject < _ );
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ < scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject < _ ).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
@@ -169,8 +169,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ < scenario.ReferenceObject);
-                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject < _ );
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ < scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject < _ ).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
@@ -186,8 +186,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ < scenario.ReferenceObject));
-                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject < _ ));
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ < scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject < _ )).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
@@ -195,6 +195,697 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
                     actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
+            {
+                // Arrange
+                MyModelComparingPrivateSettersChild1 systemUnderTest1 = null;
+                MyModelComparingPrivateSettersChild1 systemUnderTest2 = null;
+
+                // Act
+                var actual = systemUnderTest1 > systemUnderTest2;
+
+                // Assert
+                actual.AsTest().Must().BeFalse();
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_return_false___When_parameter_left_is_null_and_parameter_right_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = null > scenario.ReferenceObject;
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_return_true___When_parameter_right_is_null_and_parameter_left_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject > null;
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject > scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_return_false___When_parameter_left_and_right_are_equal_but_not_the_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ > scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject > _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_return_false___When_parameter_left_is_less_than_parameter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ > scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject > _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void GreaterThanOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ > scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject > _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ > scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject > _ )).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+
+                    actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                }
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
+            {
+                // Arrange
+                MyModelComparingPrivateSettersChild1 systemUnderTest1 = null;
+                MyModelComparingPrivateSettersChild1 systemUnderTest2 = null;
+
+                // Act
+                var actual = systemUnderTest1 <= systemUnderTest2;
+
+                // Assert
+                actual.AsTest().Must().BeTrue();
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_true___When_parameter_left_is_null_and_parameter_right_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = null <= scenario.ReferenceObject;
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_false___When_parameter_right_is_null_and_parameter_left_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject <= null;
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject <= scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_true___When_parameter_left_and_right_are_equal_but_not_the_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ <= scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject <= _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_true___When_parameter_left_is_less_than_parameter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ <= scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject <= _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ <= scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject <= _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void LessThanOrEqualToOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ <= scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject <= _ )).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+
+                    actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
+            {
+                // Arrange
+                MyModelComparingPrivateSettersChild1 systemUnderTest1 = null;
+                MyModelComparingPrivateSettersChild1 systemUnderTest2 = null;
+
+                // Act
+                var actual = systemUnderTest1 >= systemUnderTest2;
+
+                // Assert
+                actual.AsTest().Must().BeTrue();
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_false___When_parameter_left_is_null_and_parameter_right_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = null >= scenario.ReferenceObject;
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_right_is_null_and_parameter_left_is_not_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject >= null;
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    #pragma warning disable CS1718 // Comparison made to same variable
+                    var actual = scenario.ReferenceObject >= scenario.ReferenceObject;
+                    #pragma warning restore CS1718 // Comparison made to same variable
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_left_and_right_are_equal_but_not_the_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ >= scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject >= _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_false___When_parameter_left_is_less_than_parameter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ >= scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject >= _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ >= scenario.ReferenceObject).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject >= _ ).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void GreaterThanOrEqualToOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ >= scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject >= _ )).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+
+                    actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_return_1___When_parameter_other_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelComparingPrivateSettersChild1 other = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.CompareTo(other);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_return_0___When_parameter_other_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareTo(scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_return_0___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_return_negative_1___When_object_is_less_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo(scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo(_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_return_1___When_object_is_greater_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo(scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo(_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo(_))).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_Object___Should_return_1___When_parameter_obj_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareTo((object)null);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_Object___Should_return_0___When_parameter_obj_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareTo((object)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_Object___Should_return_0___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((object)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_Object___Should_return_negative_1___When_object_is_less_than_parameter_obj()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo((object)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((object)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void CompareTo_with_Object___Should_return_1___When_object_is_greater_than_parameter_obj()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo((object)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((object)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_Object___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo((object)_))).ToList();
+                    var actuals2 = scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo((object)_))).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+
+                    actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelComparingPrivateSettersChild1 other = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder(_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder(scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder(_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
+                }
+            }
+            
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder(scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder(_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder(_))).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
                 }
             }
         }
