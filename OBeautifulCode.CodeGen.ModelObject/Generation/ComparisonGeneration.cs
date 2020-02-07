@@ -1036,7 +1036,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             string overrideModifier = null;
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
             {
                 if (modelType.DeclaresCompareToMethod)
                 {

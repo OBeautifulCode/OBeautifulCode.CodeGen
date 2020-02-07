@@ -193,7 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 case HierarchyKind.None:
                     result = string.Empty;
                     break;
-                case HierarchyKind.AbstractBase:
+                case HierarchyKind.AbstractBaseRoot:
                     result = "Parent";
                     break;
                 case HierarchyKind.ConcreteInherited:

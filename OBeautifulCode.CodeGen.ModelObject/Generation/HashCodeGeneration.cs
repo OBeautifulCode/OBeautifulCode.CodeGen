@@ -77,7 +77,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             string result;
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
             {
                 if (modelType.DeclaresGetHashCodeMethod)
                 {

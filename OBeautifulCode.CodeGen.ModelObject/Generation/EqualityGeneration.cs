@@ -565,7 +565,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string codeTemplate;
             switch (modelType.HierarchyKind)
             {
-                case HierarchyKind.AbstractBase:
+                case HierarchyKind.AbstractBaseRoot:
                     var objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypes.Count() >= 2)
                         ? ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectCodeTemplate
                         : string.Empty;
@@ -587,7 +587,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             result = codeTemplate
                 .Replace(TypeNameToken, modelType.TypeCompilableString);
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
             {
                 foreach (var property in modelType.PropertiesOfConcern)
                 {
@@ -646,7 +646,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             string result;
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
             {
                 if (modelType.DeclaresEqualsMethod)
                 {

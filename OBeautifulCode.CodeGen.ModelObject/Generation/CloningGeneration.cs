@@ -255,7 +255,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         ? CloningMethodsForNonHierarchicalTypeWithDeclaredDeepCloneCodeTemplate
                         : CloningMethodsForNonHierarchicalTypeWithoutDeclaredDeepCloneCodeTemplate;
                     break;
-                case HierarchyKind.AbstractBase:
+                case HierarchyKind.AbstractBaseRoot:
                     if (modelType.DeclaresDeepCloneMethod)
                     {
                         throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare a DeepClone method."));
@@ -286,7 +286,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return result;
             }
 
-            if (modelType.HierarchyKind != HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind != HierarchyKind.AbstractBaseRoot)
             {
                 var deepCloneCodeForEachProperty = modelType
                     .PropertiesOfConcern
@@ -310,7 +310,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 foreach (var property in modelType.PropertiesOfConcern)
                 {
                     string deepCloneWithMethodTemplate;
-                    if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+                    if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
                     {
                         deepCloneWithMethodTemplate = DeepCloneWithMethodForAbstractBaseTypeCodeTemplate;
                     }
@@ -330,7 +330,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Replace(ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
                         .Replace(ParameterTypeNameToken, property.PropertyType.ToStringCompilable());
 
-                    if (modelType.HierarchyKind != HierarchyKind.AbstractBase)
+                    if (modelType.HierarchyKind != HierarchyKind.AbstractBaseRoot)
                     {
                         var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
                         {
@@ -434,7 +434,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.None:
-                case HierarchyKind.AbstractBase:
+                case HierarchyKind.AbstractBaseRoot:
                     cloningTestMethodsCodeTemplate = CloningTestMethodsForNonInheritedTypeCodeTemplate;
                     break;
                 case HierarchyKind.ConcreteInherited:

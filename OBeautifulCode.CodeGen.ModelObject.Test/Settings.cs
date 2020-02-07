@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
                 {
                     { HierarchyKind.None, new[] { "Empty" } },
-                    { HierarchyKind.AbstractBase, new[] { "EmptyParent", "NotEmptyParent" } },
+                    { HierarchyKind.AbstractBaseRoot, new[] { "EmptyParent", "NotEmptyParent" } },
                     { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
                 }
             },
@@ -103,7 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
                 {
                     { HierarchyKind.None, new string[0] },
-                    { HierarchyKind.AbstractBase, new[] { "MultiLevelParent", "MultiLevelChild1", "MultiLevelChild2" } },
+                    { HierarchyKind.AbstractBaseRoot, new[] { "MultiLevelParent", "MultiLevelChild1", "MultiLevelChild2" } },
                     { HierarchyKind.ConcreteInherited, new[] { "MultiLevelGrandChild1A", "MultiLevelGrandChild1B", "MultiLevelGrandChild2A", "MultiLevelGrandChild2B" } },
                 }
             },

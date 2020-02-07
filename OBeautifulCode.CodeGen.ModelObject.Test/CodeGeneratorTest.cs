@@ -305,7 +305,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (setterKind.RequiresConstructor())
             {
-                var constructorAccessorModifier = hierarchyKind == HierarchyKind.AbstractBase ? "protected" : "public";
+                var constructorAccessorModifier = hierarchyKind == HierarchyKind.AbstractBaseRoot ? "protected" : "public";
 
                 constructorDeclarationStatement = Invariant($"        {constructorAccessorModifier} {modelName}(");
             }
@@ -336,7 +336,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
-                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBase, null).ToLowerFirstCharacter();
+                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBaseRoot, null).ToLowerFirstCharacter();
                         constructorParentParameterNames.Add(constructorParentParameterName);
 
                         constructorParentParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParentParameterName},"));
@@ -356,7 +356,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 if (hierarchyKind == HierarchyKind.ConcreteInherited)
                 {
-                    var parentPropertyName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBase, null);
+                    var parentPropertyName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBaseRoot, null);
                     equalityParentStatements.Add(Invariant($"                this.{parentPropertyName}.IsEqualTo(other.{parentPropertyName}) &&"));
                     hashingParentStatements.Add(Invariant($"                .Hash(this.{parentPropertyName})"));
                 }
@@ -364,12 +364,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             propertyStatements.RemoveAt(propertyStatements.Count - 1);
 
-            var abstractStatement = hierarchyKind == HierarchyKind.AbstractBase ? "abstract " : string.Empty;
+            var abstractStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot ? "abstract " : string.Empty;
 
             string baseClassName = null;
             if (hierarchyKind == HierarchyKind.ConcreteInherited)
             {
-                baseClassName = $"{baseName.BuildGeneratedModelName(generatedModelKind, setterKind, HierarchyKind.AbstractBase, childIdentifier: null)}";
+                baseClassName = $"{baseName.BuildGeneratedModelName(generatedModelKind, setterKind, HierarchyKind.AbstractBaseRoot, childIdentifier: null)}";
             }
 
             var derivativeStatement = baseClassName == null ? string.Empty : baseClassName + ", ";
@@ -384,7 +384,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     break;
                 case GeneratedModelKind.Cloning:
-                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? Invariant($"{nameof(IDeepCloneableViaCodeGen)}, {typeof(IEquatable<>).ToStringWithoutGenericComponent()}<{modelName}>")
                         : Invariant($"{nameof(IDeepCloneableViaCodeGen)}, {typeof(IDeclareDeepCloneMethod<>).ToStringWithoutGenericComponent()}<{modelName}>, {typeof(IEquatable<>).ToStringWithoutGenericComponent()}<{modelName}>");
 
@@ -395,7 +395,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     break;
                 case GeneratedModelKind.Equality:
-                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IEquatableViaCodeGen)
                         : Invariant($"{nameof(IEquatableViaCodeGen)}, {typeof(IDeclareEqualsMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
 
@@ -406,17 +406,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     break;
                 case GeneratedModelKind.Hashing:
-                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IHashableViaCodeGen)
                         : Invariant($"{nameof(IHashableViaCodeGen)}, {nameof(IDeclareGetHashCodeMethod)}");
                     break;
                 case GeneratedModelKind.StringRepresentation:
-                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IStringRepresentableViaCodeGen)
                         : Invariant($"{nameof(IStringRepresentableViaCodeGen)}, {nameof(IDeclareToStringMethod)}");
                     break;
                 case GeneratedModelKind.Comparing:
-                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBase
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IComparableViaCodeGen)
                         : Invariant($"{nameof(IComparableViaCodeGen)}, {typeof(IDeclareCompareToForRelativeSortOrderMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
                     break;
@@ -489,7 +489,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (generatedModelKind == GeneratedModelKind.Cloning)
             {
-                if (hierarchyKind == HierarchyKind.AbstractBase)
+                if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
                 {
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -557,11 +557,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     methodStatements.AddRange(getEquivalentAllModelMethodStatements);
                 }
             }
-            else if ((generatedModelKind == GeneratedModelKind.Equality) && (hierarchyKind != HierarchyKind.AbstractBase))
+            else if ((generatedModelKind == GeneratedModelKind.Equality) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 methodStatements.Add(equalsMethodCode);
             }
-            else if ((generatedModelKind == GeneratedModelKind.Hashing) && (hierarchyKind != HierarchyKind.AbstractBase))
+            else if ((generatedModelKind == GeneratedModelKind.Hashing) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 methodStatements.Add(string.Empty);
                 methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -569,7 +569,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(new string[0].Concat(hashingParentStatements).Concat(hashingStatements).ToNewLineDelimited());
                 methodStatements.Add("                .Value;");
             }
-            else if ((generatedModelKind == GeneratedModelKind.StringRepresentation) && (hierarchyKind != HierarchyKind.AbstractBase))
+            else if ((generatedModelKind == GeneratedModelKind.StringRepresentation) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 methodStatements.Add(string.Empty);
                 methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -580,7 +580,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(Invariant($"            return result;"));
                 methodStatements.Add(Invariant($"        }}"));
             }
-            else if ((generatedModelKind == GeneratedModelKind.Comparing) && (hierarchyKind != HierarchyKind.AbstractBase))
+            else if ((generatedModelKind == GeneratedModelKind.Comparing) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 if (hierarchyKind == HierarchyKind.None)
                 {

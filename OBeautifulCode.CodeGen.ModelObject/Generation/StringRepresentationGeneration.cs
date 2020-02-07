@@ -64,7 +64,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             string result;
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
             {
                 if (modelType.DeclaresToStringMethod)
                 {
@@ -105,7 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             string result = null;
 
-            if (modelType.HierarchyKind != HierarchyKind.AbstractBase)
+            if (modelType.HierarchyKind != HierarchyKind.AbstractBaseRoot)
             {
                 var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 

@@ -296,7 +296,7 @@ namespace OBeautifulCode.CodeGen
             HierarchyKind result;
             if (type.IsAbstract)
             {
-                result = HierarchyKind.AbstractBase;
+                result = HierarchyKind.AbstractBaseRoot;
             }
             else if (DoesInheritFromObject(type))
             {
@@ -532,7 +532,7 @@ namespace OBeautifulCode.CodeGen
         {
             var result = this.DeclaresDeepCloneMethod;
 
-            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
             {
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
@@ -548,7 +548,7 @@ namespace OBeautifulCode.CodeGen
         {
             var result = this.DeclaresEqualsMethod;
 
-            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
             {
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
@@ -564,7 +564,7 @@ namespace OBeautifulCode.CodeGen
         {
             var result = this.DeclaresGetHashCodeMethod;
 
-            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
             {
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
@@ -580,7 +580,7 @@ namespace OBeautifulCode.CodeGen
         {
             var result = this.DeclaresToStringMethod;
 
-            if ((hierarchyKind == HierarchyKind.AbstractBase) || (!result))
+            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
             {
                 result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
                     (_.BaseType == type) &&
