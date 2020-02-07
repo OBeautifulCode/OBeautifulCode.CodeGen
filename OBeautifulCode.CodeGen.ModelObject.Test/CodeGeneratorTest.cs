@@ -7,15 +7,12 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
-    using System.Collections.Concurrent;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.String.Recipes;
@@ -28,162 +25,61 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
-        public const string ModelBaseName = "MyModel";
-
-        public const string TestNameSuffix = "Test";
-
-        public static readonly bool WriteFiles = true;
-
-        public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
-
-        // ReSharper disable once InconsistentNaming
-        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
-        public static readonly IReadOnlyList<string> ChildIdentifiers = new[] { "1", "2" };
-
-        public static readonly string ModelsPath = SourceRoot + "Models\\";
-
-        public static readonly string SpecifiedModelsPath = ModelsPath + "SpecifiedModels\\";
-
-        public static readonly string GeneratedModelsPath = ModelsPath + "GeneratedModels\\";
-
-        public static readonly string TestsPath = SourceRoot + "ModelTests\\";
-
-        public static readonly string SpecifiedModelsTestPath = TestsPath + "SpecifiedModels\\";
-
-        public static readonly string GeneratedModelsTestsPath = TestsPath + "GeneratedModels\\";
-
-        public static readonly string DummyFactoryFilePath = SourceRoot + "DummyFactory.cs";
-
-        private static readonly Type[] TypesToWrap =
-        {
-            typeof(bool),
-            typeof(int),
-            typeof(string),
-            typeof(Guid),
-            typeof(DateTime),
-            typeof(ModelEnum),
-            typeof(ModelFlagsEnum),
-            typeof(ModelClass),
-
-            // OBC.Serialization doesn't support structs
-            // typeof(ModelStruct),
-        };
-
-        private static readonly Type[] ComparabilityTypes =
-        {
-            typeof(int),
-        };
-
-        private static readonly IReadOnlyList<TypeWrapperKind> TypeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>().ToList();
-
-        private static readonly Type[] AdditionalTypes =
-        {
-            typeof(ICollection<string>), // elements must be comparable for generated hashing unequal test to NOT be skipped
-            typeof(Collection<ICollection<string>>),
-            typeof(IList<ICollection<string>>),
-            typeof(List<ICollection<string>>),
-            typeof(ReadOnlyCollection<ICollection<string>>),
-            typeof(IDictionary<string, IReadOnlyList<DateTime>>),
-            typeof(Dictionary<string, IReadOnlyList<DateTime>>),
-            typeof(ReadOnlyDictionary<string, IReadOnlyList<DateTime>>),
-            typeof(ConcurrentDictionary<string, IReadOnlyList<DateTime>>),
-            typeof(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>),
-            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
-        };
-
-        private static readonly Type[] BlacklistTypes =
-        {
-            typeof(IReadOnlyDictionary<DateTime, DateTime>),
-            typeof(IReadOnlyDictionary<DateTime?, DateTime?>),
-        };
-
-        private static readonly IReadOnlyDictionary<SpecifiedModelKind, IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>>> SpecifiedModelKindToHierarchyKindToModelNameSuffixMap = new Dictionary<SpecifiedModelKind, IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>>>
-        {
-            {
-                SpecifiedModelKind.Empty,
-                new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
-                {
-                    { HierarchyKind.None, new[] { "Empty" } },
-                    { HierarchyKind.AbstractBase, new[] { "EmptyParent", "NotEmptyParent" } },
-                    { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
-                }
-            },
-        };
-
-        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
+        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
 
         [Fact]
         public void GenerateModel___Should_generate_models___When_called()
         {
-            void GenerateModelEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
-            {
-                var modelFilePath = directoryPath + modelName + ".cs";
+            // Arrange
+            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
 
-                var typesToWrap = generatedModelKind == GeneratedModelKind.Comparing ? ComparabilityTypes : TypesToWrap;
+            ExecuteForGeneratedModels(GenerationKind.Model, ResetFile);
 
-                var typeWrapperKinds = generatedModelKind == GeneratedModelKind.Comparing ? new[] { TypeWrapperKind.None } : TypeWrapperKinds;
+            ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
 
-                var additionalTypes = generatedModelKind == GeneratedModelKind.Comparing ? new Type[0] : AdditionalTypes;
-
-                var modelCode = GenerateModel(ModelBaseName, (GeneratedModelKind)generatedModelKind, setterKind, typesToWrap, typeWrapperKinds, additionalTypes, BlacklistTypes, hierarchyKind, childIdentifier, modelName);
-
-                if (WriteFiles)
-                {
-                    File.WriteAllText(modelFilePath, modelCode);
-                }
-            }
-
-            var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
-
-            // blank out downstream files
-            ExecuteForSpecifiedModels(GenerationKind.Test, createBlankFilesEventHandler);
-            ExecuteForGeneratedModels(GenerationKind.Model, createBlankFilesEventHandler);
-            ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
             WriteDummyFactory(string.Empty);
 
-            // generate new files
-            ExecuteForGeneratedModels(GenerationKind.Model, GenerateModelEventHandler);
+            // Act, Assert
+            ExecuteForGeneratedModels(GenerationKind.Model, GenerateModel);
         }
 
         [Fact]
         public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
         {
-            // blank out downstream files
-            var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
+            // Arrange
+            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
 
-            ExecuteForSpecifiedModels(GenerationKind.Test, createBlankFilesEventHandler);
-            ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
+            ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
+
             WriteDummyFactory(string.Empty);
 
-            // generate new files
-            var generateForModelEventHandler = BuildGenerateForModelEventHandler();
-
-            ExecuteForSpecifiedModels(GenerationKind.Model, generateForModelEventHandler);
-            ExecuteForGeneratedModels(GenerationKind.Model, generateForModelEventHandler);
+            // Act, Assert
+            ExecuteForSpecifiedModels(GenerationKind.Model, RunCodeGen);
+            ExecuteForGeneratedModels(GenerationKind.Model, RunCodeGen);
         }
 
         [Fact]
         public void GenerateForModel___Should_generate_dummy_factory___When_parameter_generateFor_is_ModelDummyFactorySnippet()
         {
-            // blank out downstream files
-            var createBlankFilesEventHandler = BuildCreateBlankFilesEventHandler();
+            // Arrange
+            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
 
-            ExecuteForSpecifiedModels(GenerationKind.Test, createBlankFilesEventHandler);
-            ExecuteForGeneratedModels(GenerationKind.Test, createBlankFilesEventHandler);
+            ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
 
-            // generate new files
-            var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(ModelBaseName, StringComparison.Ordinal)).Where(_ => !_.Name.EndsWith(TestNameSuffix, StringComparison.Ordinal)).ToList();
+            var types = typeof(CodeGeneratorTest).Assembly.GetTypes().Where(_ => _.Name.StartsWith(Settings.ModelBaseName, StringComparison.Ordinal)).Where(_ => !_.Name.EndsWith(Settings.TestNameSuffix, StringComparison.Ordinal)).ToList();
+
             var dummyFactoryCode = GenerateDummyFactory(types);
+
+            // Act, Assert
             WriteDummyFactory(dummyFactoryCode);
         }
 
         [Fact]
         public void GenerateForModel___Should_generate_model_test_partial_class___When_parameter_generateFor_is_ModelImplementationTestsPartialClassWithSerialization()
         {
-            var generateForModelEventHandler = BuildGenerateForModelEventHandler();
-
-            ExecuteForSpecifiedModels(GenerationKind.Test, generateForModelEventHandler);
-            ExecuteForGeneratedModels(GenerationKind.Test, generateForModelEventHandler);
+            // Arrange, Act, Assert
+            ExecuteForSpecifiedModels(GenerationKind.Test, RunCodeGen);
+            ExecuteForGeneratedModels(GenerationKind.Test, RunCodeGen);
         }
 
         private static void ExecuteForSpecifiedModels(
@@ -204,15 +100,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     foreach (var hierarchyKind in hierarchyKinds)
                     {
-                        var hierarchyKindToModelNameSuffixMap = SpecifiedModelKindToHierarchyKindToModelNameSuffixMap[specifiedModelKind];
+                        var hierarchyKindToModelNameSuffixMap = Settings.SpecifiedModelKindToHierarchyKindToModelNameSuffixMap[specifiedModelKind];
 
                         var modelNameSuffixes = hierarchyKindToModelNameSuffixMap[hierarchyKind];
 
                         foreach (var modelNameSuffix in modelNameSuffixes)
                         {
-                            var modelName = ModelBaseName.BuildSpecifiedModelName(setterKind, modelNameSuffix);
+                            var modelName = Settings.ModelBaseName.BuildSpecifiedModelName(setterKind, modelNameSuffix);
 
-                            eventHandler(generationKind, null, setterKind, hierarchyKind, null, modelName, directoryPath);
+                            eventHandler(generationKind, GeneratedModelKind.Unknown, setterKind, hierarchyKind, null, modelName, directoryPath);
                         }
                     }
                 }
@@ -239,16 +135,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         if (hierarchyKind == HierarchyKind.ConcreteInherited)
                         {
-                            foreach (var childIdentifier in ChildIdentifiers)
+                            foreach (var childIdentifier in Settings.ChildIdentifiers)
                             {
-                                var modelName = ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, childIdentifier);
+                                var modelName = Settings.ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, childIdentifier);
 
                                 eventHandler(generationKind, generatedModelKind, setterKind, hierarchyKind, childIdentifier, modelName, directoryPath);
                             }
                         }
                         else
                         {
-                            var modelName = ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, null);
+                            var modelName = Settings.ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, null);
 
                             eventHandler(generationKind, generatedModelKind, setterKind, hierarchyKind, null, modelName, directoryPath);
                         }
@@ -257,26 +153,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
         }
 
-        private static ExecuteForModelsEventHandler BuildCreateBlankFilesEventHandler()
+        private static void ResetFile(
+            GenerationKind generationKind,
+            GeneratedModelKind generatedModelKind,
+            SetterKind setterKind,
+            HierarchyKind hierarchyKind,
+            string childIdentifier,
+            string modelName,
+            string directoryPath)
         {
-            void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
+            var testToken = generationKind == GenerationKind.Test ? Settings.TestNameSuffix : null;
+
+            var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
+
+            if (Settings.WriteFiles)
             {
-                var testToken = generationKind == GenerationKind.Test ? TestNameSuffix : null;
+                var content = string.Empty;
 
-                var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
-
-                if (WriteFiles)
+                if (generationKind == GenerationKind.Test)
                 {
-                    var content = string.Empty;
-
-                    if (generationKind == GenerationKind.Test)
+                    if ((generatedModelKind == GeneratedModelKind.Equality) ||
+                        (generatedModelKind == GeneratedModelKind.Hashing))
                     {
-                        if ((generatedModelKind == GeneratedModelKind.Equality) ||
-                            (generatedModelKind == GeneratedModelKind.Hashing))
-                        {
-                            // this is necessary so that the project compiles when running the unit tests prior
-                            // to code generating tests
-                            var codeLines = new List<string>
+                        // this is necessary so that the project compiles when running the unit tests prior
+                        // to code generating tests
+                        var codeLines = new List<string>
                             {
                                 "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                                 "{",
@@ -288,13 +189,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                 "}",
                             };
 
-                            content = codeLines.ToNewLineDelimited();
-                        }
-                        else if (generatedModelKind == GeneratedModelKind.Comparing)
-                        {
-                            // this is necessary so that the project compiles when running the unit tests prior
-                            // to code generating tests
-                            var codeLines = new List<string>
+                        content = codeLines.ToNewLineDelimited();
+                    }
+                    else if (generatedModelKind == GeneratedModelKind.Comparing)
+                    {
+                        // this is necessary so that the project compiles when running the unit tests prior
+                        // to code generating tests
+                        var codeLines = new List<string>
                             {
                                 "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                                 "{",
@@ -306,63 +207,84 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                 "}",
                             };
 
-                            content = codeLines.ToNewLineDelimited();
-                        }
+                        content = codeLines.ToNewLineDelimited();
                     }
-
-                    File.WriteAllText(modelFilePath, content);
                 }
-            }
 
-            return ExecuteForModelsEventHandler;
+                File.WriteAllText(modelFilePath, content);
+            }
         }
 
-        private static ExecuteForModelsEventHandler BuildGenerateForModelEventHandler()
-        {
-            void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind? generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath)
-            {
-                var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
-
-                var testToken = generationKind == GenerationKind.Test ? TestNameSuffix : null;
-
-                var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
-
-                GenerateFor generateFor;
-                switch (generationKind)
-                {
-                    case GenerationKind.Model:
-                        generateFor = GenerateFor.ModelImplementationPartialClass;
-                        break;
-                    case GenerationKind.Test:
-                        generateFor = GenerateFor.ModelImplementationTestsPartialClassWithSerialization;
-                        break;
-                    default:
-                        throw new NotSupportedException("This kind is not supported: " + generationKind);
-                }
-
-                var modelCode = modelType.GenerateForModel(generateFor);
-
-                if (WriteFiles)
-                {
-                    File.WriteAllText(modelFilePath, modelCode);
-                }
-            }
-
-            return ExecuteForModelsEventHandler;
-        }
-
-        private static string GenerateModel(
-            string baseName,
+        private static void RunCodeGen(
+            GenerationKind generationKind,
             GeneratedModelKind generatedModelKind,
             SetterKind setterKind,
-            IReadOnlyCollection<Type> typesToWrap,
-            IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds,
-            IReadOnlyCollection<Type> additionalTypes,
-            IReadOnlyCollection<Type> blacklistTypes,
             HierarchyKind hierarchyKind,
             string childIdentifier,
-            string modelName)
+            string modelName,
+            string directoryPath)
         {
+            var modelType = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
+
+            var testToken = generationKind == GenerationKind.Test ? Settings.TestNameSuffix : null;
+
+            var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
+
+            GenerateFor generateFor;
+            switch (generationKind)
+            {
+                case GenerationKind.Model:
+                    generateFor = GenerateFor.ModelImplementationPartialClass;
+                    break;
+                case GenerationKind.Test:
+                    generateFor = GenerateFor.ModelImplementationTestsPartialClassWithSerialization;
+                    break;
+                default:
+                    throw new NotSupportedException("This kind is not supported: " + generationKind);
+            }
+
+            var modelCode = modelType.GenerateForModel(generateFor);
+
+            if (Settings.WriteFiles)
+            {
+                File.WriteAllText(modelFilePath, modelCode);
+            }
+        }
+
+        private static void GenerateModel(
+            GenerationKind generationKind,
+            GeneratedModelKind generatedModelKind,
+            SetterKind setterKind,
+            HierarchyKind hierarchyKind,
+            string childIdentifier,
+            string modelName,
+            string directoryPath)
+        {
+            new { generatedModelKind }.AsArg().Must().NotBeEqualTo(GeneratedModelKind.Unknown);
+
+            var modelFilePath = directoryPath + modelName + ".cs";
+
+            IReadOnlyCollection<Type> typesToWrap, additionalTypes, blacklistTypes;
+            IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds;
+
+            switch (generatedModelKind)
+            {
+                case GeneratedModelKind.Comparing:
+                    typesToWrap = Settings.ComparabilityTypes;
+                    typeWrapperKinds = new[] { TypeWrapperKind.None };
+                    additionalTypes = new Type[0];
+                    blacklistTypes = new Type[0];
+                    break;
+                default:
+                    typesToWrap = Settings.TypesToWrap;
+                    typeWrapperKinds = Settings.TypeWrapperKinds;
+                    additionalTypes = Settings.AdditionalTypes;
+                    blacklistTypes = Settings.BlacklistTypes;
+                    break;
+            }
+
+            var baseName = Settings.ModelBaseName;
+
             var constructorParentParameterStatements = new List<string>();
             var constructorParentParameterNames = new List<string>();
             var constructorDeclarationStatement = string.Empty;
@@ -738,7 +660,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 constructorStatements.Add(string.Empty);
             }
 
-            var result = new string[0]
+            var modelCode = new string[0]
                 .Concat(headerStatements)
                 .Concat(constructorStatements)
                 .Concat(propertyStatements)
@@ -747,7 +669,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Where(_ => _ != null)
                 .ToNewLineDelimited();
 
-            return result;
+            if (Settings.WriteFiles)
+            {
+                File.WriteAllText(modelFilePath, modelCode);
+            }
         }
 
         private static string GenerateDummyFactory(
@@ -814,9 +739,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         private static void WriteDummyFactory(
             string code)
         {
-            if (WriteFiles)
+            if (Settings.WriteFiles)
             {
-                File.WriteAllText(DummyFactoryFilePath, code);
+                File.WriteAllText(Settings.DummyFactoryFilePath, code);
             }
         }
     }

@@ -20,8 +20,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(CodeGeneratorTest)
                 .Assembly
                 .GetTypes()
-                .Where(_ => _.Name.StartsWith(CodeGeneratorTest.ModelBaseName, StringComparison.Ordinal))
-                .Where(_ => !_.Name.EndsWith(CodeGeneratorTest.TestNameSuffix, StringComparison.Ordinal))
+                .Where(_ => _.Name.StartsWith(Settings.ModelBaseName, StringComparison.Ordinal))
+                .Where(_ => !_.Name.EndsWith(Settings.TestNameSuffix, StringComparison.Ordinal))
                 .ToList();
     }
 }

@@ -10,7 +10,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq;
 
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
@@ -123,40 +122,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 var valueType = type.GetClosedDictionaryValueType();
 
-                if (valueType.IsValueType)
-                {
-                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionary);
-                }
-                else
-                {
-                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
-                }
+                result = valueType.IsValueType
+                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionary)
+                    : nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
             }
             else if (type.IsClosedSystemCollectionType())
             {
                 var elementType = type.GetClosedSystemCollectionElementType();
 
-                if (elementType.IsValueType)
-                {
-                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable);
-                }
-                else
-                {
-                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
-                }
+                result = elementType.IsValueType
+                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable)
+                    : nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
             }
             else if (type.IsArray)
             {
                 var elementType = type.GetElementType();
 
-                if (elementType.IsValueType)
-                {
-                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable);
-                }
-                else
-                {
-                    result = nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
-                }
+                // ReSharper disable once PossibleNullReferenceException
+                result = elementType.IsValueType
+                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable)
+                    : nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
             }
             else
             {
@@ -322,10 +307,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = CodeGeneratorTest.GeneratedModelsPath + generatedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsPath + generatedModelKind + "\\" + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = CodeGeneratorTest.GeneratedModelsTestsPath + generatedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsTestsPath + generatedModelKind + "\\" + setterKind + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This generation kind is not supported: " + generationKind);
@@ -344,10 +329,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = CodeGeneratorTest.SpecifiedModelsPath + specifiedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.SpecifiedModelsPath + specifiedModelKind + "\\" + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = CodeGeneratorTest.SpecifiedModelsTestPath + specifiedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.SpecifiedModelsTestPath + specifiedModelKind + "\\" + setterKind + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This kind is not supported: " + generationKind);

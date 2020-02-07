@@ -149,11 +149,12 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
-    <Compile Include="CodeGeneratorTest\SpecifiedModelKind.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\SpecifiedModelKind.cs" />
     <Compile Include="DummyFactory.cs" />
-    <Compile Include="CodeGeneratorTest\GeneratedModelKind.cs" />
-    <Compile Include="CodeGeneratorTest\GenerationKind.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\GeneratedModelKind.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\GenerationKind.cs" />
     <Compile Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
     <Compile Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmpty.cs</DependentUpon>
@@ -525,10 +526,10 @@
     <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
     <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
     <Compile Include="CodeGeneratorTest\ModelGenerationExtensions.cs" />
-    <Compile Include="CodeGeneratorTest\CustomModels\ModelClass.cs" />
-    <Compile Include="CodeGeneratorTest\CustomModels\ModelEnum.cs" />
-    <Compile Include="CodeGeneratorTest\CustomModels\ModelFlagsEnum.cs" />
-    <Compile Include="CodeGeneratorTest\CustomModels\ModelStruct.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelEnum.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelFlagsEnum.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelStruct.cs" />
     <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestSerializationConfigurationTypes.cs" />
     <Compile Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
     <Compile Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
@@ -643,8 +644,8 @@
       <DependentUpon>MyModelAllPublicSettersTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CodeGeneratorTest\SetterKind.cs" />
-    <Compile Include="CodeGeneratorTest\TypeWrapperKind.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\SetterKind.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\TypeWrapperKind.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject.Recipes\OBeautifulCode.CodeGen.ModelObject.Recipes.csproj">

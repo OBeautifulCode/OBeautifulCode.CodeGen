@@ -8,6 +8,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     public enum GeneratedModelKind
     {
+        Unknown,
+
         All,
 
         Equality,
