@@ -8,6 +8,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     public enum SpecifiedModelKind
     {
+        NotApplicable,
+
         Empty,
+
+        MultiLevel,
     }
 }

@@ -98,6 +98,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
                 }
             },
+            {
+                SpecifiedModelKind.MultiLevel,
+                new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
+                {
+                    { HierarchyKind.None, new string[0] },
+                    { HierarchyKind.AbstractBase, new[] { "MultiLevelParent", "MultiLevelChild1", "MultiLevelChild2" } },
+                    { HierarchyKind.ConcreteInherited, new[] { "MultiLevelGrandChild1A", "MultiLevelGrandChild1B", "MultiLevelGrandChild2A", "MultiLevelGrandChild2B" } },
+                }
+            },
         };
     }
 }

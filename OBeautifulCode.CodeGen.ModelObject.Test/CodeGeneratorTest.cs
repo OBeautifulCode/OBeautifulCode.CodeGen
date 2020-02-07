@@ -25,7 +25,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
-        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, GeneratedModelKind generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
+        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelKind generatedModelKind, SetterKind setterKind, HierarchyKind hierarchyKind, string childIdentifier, string modelName, string directoryPath);
 
         [Fact]
         public void GenerateModel___Should_generate_models___When_called()
@@ -86,7 +86,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             GenerationKind generationKind,
             ExecuteForModelsEventHandler eventHandler)
         {
-            var specifiedModelKinds = EnumExtensions.GetDefinedEnumValues<SpecifiedModelKind>();
+            var specifiedModelKinds = EnumExtensions.GetDefinedEnumValues<SpecifiedModelKind>().Where(_ => _ != SpecifiedModelKind.NotApplicable).ToList();
 
             foreach (var specifiedModelKind in specifiedModelKinds)
             {
@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         {
                             var modelName = Settings.ModelBaseName.BuildSpecifiedModelName(setterKind, modelNameSuffix);
 
-                            eventHandler(generationKind, GeneratedModelKind.Unknown, setterKind, hierarchyKind, null, modelName, directoryPath);
+                            eventHandler(generationKind, specifiedModelKind, GeneratedModelKind.NotApplicable, setterKind, hierarchyKind, null, modelName, directoryPath);
                         }
                     }
                 }
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             foreach (var setterKind in setterKinds)
             {
-                var generatedModelKinds = EnumExtensions.GetDefinedEnumValues<GeneratedModelKind>();
+                var generatedModelKinds = EnumExtensions.GetDefinedEnumValues<GeneratedModelKind>().Where(_ => _ != GeneratedModelKind.NotApplicable).ToList();
 
                 foreach (var generatedModelKind in generatedModelKinds)
                 {
@@ -139,14 +139,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                             {
                                 var modelName = Settings.ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, childIdentifier);
 
-                                eventHandler(generationKind, generatedModelKind, setterKind, hierarchyKind, childIdentifier, modelName, directoryPath);
+                                eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelKind, setterKind, hierarchyKind, childIdentifier, modelName, directoryPath);
                             }
                         }
                         else
                         {
                             var modelName = Settings.ModelBaseName.BuildGeneratedModelName(generatedModelKind, setterKind, hierarchyKind, null);
 
-                            eventHandler(generationKind, generatedModelKind, setterKind, hierarchyKind, null, modelName, directoryPath);
+                            eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelKind, setterKind, hierarchyKind, null, modelName, directoryPath);
                         }
                     }
                 }
@@ -155,6 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static void ResetFile(
             GenerationKind generationKind,
+            SpecifiedModelKind specifiedModelKind,
             GeneratedModelKind generatedModelKind,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
@@ -191,7 +192,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                         content = codeLines.ToNewLineDelimited();
                     }
-                    else if (generatedModelKind == GeneratedModelKind.Comparing)
+                    else if ((generatedModelKind == GeneratedModelKind.Comparing) || (specifiedModelKind == SpecifiedModelKind.MultiLevel))
                     {
                         // this is necessary so that the project compiles when running unit
                         // tests that precede the unit test that creates code generated model tests
@@ -217,6 +218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static void RunCodeGen(
             GenerationKind generationKind,
+            SpecifiedModelKind specifiedModelKind,
             GeneratedModelKind generatedModelKind,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
@@ -253,6 +255,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static void GenerateModel(
             GenerationKind generationKind,
+            SpecifiedModelKind specifiedModelKind,
             GeneratedModelKind generatedModelKind,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
@@ -260,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string modelName,
             string directoryPath)
         {
-            new { generatedModelKind }.AsArg().Must().NotBeEqualTo(GeneratedModelKind.Unknown);
+            new { generatedModelKind }.AsArg().Must().NotBeEqualTo(GeneratedModelKind.NotApplicable);
 
             var modelFilePath = directoryPath + modelName + ".cs";
 
