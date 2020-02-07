@@ -31,6 +31,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateModel___Should_generate_models___When_called()
         {
             // Arrange
+            ExecuteForSpecifiedModels(GenerationKind.Model, ResetFile);
+
             ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
 
             ExecuteForGeneratedModels(GenerationKind.Model, ResetFile);

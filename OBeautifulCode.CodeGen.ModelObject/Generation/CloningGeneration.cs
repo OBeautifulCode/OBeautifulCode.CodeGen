@@ -306,6 +306,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var declaredProperties = modelType.DeclaredOnlyPropertiesOfConcern;
 
+                var declaredPropertyNames = new HashSet<string>(declaredProperties.Select(_ => _.Name));
+
                 foreach (var property in modelType.PropertiesOfConcern)
                 {
                     string deepCloneWithMethodTemplate;
@@ -313,7 +315,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         deepCloneWithMethodTemplate = DeepCloneWithMethodForAbstractBaseTypeCodeTemplate;
                     }
-                    else if (declaredProperties.Contains(property))
+                    else if (declaredPropertyNames.Contains(property.Name))
                     {
                         deepCloneWithMethodTemplate = DeepCloneWithMethodForNonInheritedPropertyCodeTemplate;
                     }

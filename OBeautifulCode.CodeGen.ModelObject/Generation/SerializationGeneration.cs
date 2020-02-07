@@ -104,7 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Where(_ => _ != "Json")
                 .ToDelimitedString(string.Empty);
 
-            var serializationFieldsCodeTemplate = modelType.HasAnyGetterOnlyProperties()
+            var serializationFieldsCodeTemplate = modelType.PropertiesOfConcern.Any(_ => _.IsGetterOnly)
                 ? JsonOnlySerializationFieldsCodeTemplate
                 : BsonAndJsonSerializationFieldsCodeTemplate;
 
@@ -127,19 +127,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
-            var serializationTestMethodsCodeTemplate = modelType.HasAnyGetterOnlyProperties()
+            var serializationTestMethodsCodeTemplate = modelType.PropertiesOfConcern.Any(_ => _.IsGetterOnly)
                 ? JsonOnlySerializationTestMethodsCodeTemplate
                 : BsonAndJsonSerializationTestMethodsCodeTemplate;
 
             var result = serializationTestMethodsCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
-
-            return result;
-        }
-
-        private static bool HasAnyGetterOnlyProperties(
-            this ModelType modelType)
-        {
-            var result = modelType.PropertiesOfConcern.Any(_ => _.GetSetMethod(true) == null);
 
             return result;
         }

@@ -9,7 +9,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Reflection;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type.Recipes;
@@ -724,15 +723,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         private static string GenerateEqualityLogicCodeForProperty(
-            this PropertyInfo propertyInfo)
+            this PropertyOfConcern propertyOfConcern)
         {
-            propertyInfo.AsArg(nameof(propertyInfo)).Must().NotBeNull();
+            new { propertyOfConcern }.AsArg().Must().NotBeNull();
 
-            var propertyType = propertyInfo.PropertyType;
-
-            var result = (propertyType == typeof(string))
-                ? Invariant($"this.{propertyInfo.Name}.Equals(other.{propertyInfo.Name}, StringComparison.Ordinal)")
-                : Invariant($"this.{propertyInfo.Name}.IsEqualTo(other.{propertyInfo.Name})");
+            var result = (propertyOfConcern.PropertyType == typeof(string))
+                ? Invariant($"this.{propertyOfConcern.Name}.Equals(other.{propertyOfConcern.Name}, StringComparison.Ordinal)")
+                : Invariant($"this.{propertyOfConcern.Name}.IsEqualTo(other.{propertyOfConcern.Name})");
 
             return result;
         }

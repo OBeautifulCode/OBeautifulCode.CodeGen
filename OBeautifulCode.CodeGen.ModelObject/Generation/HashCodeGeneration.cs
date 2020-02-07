@@ -8,7 +8,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Linq;
-    using System.Reflection;
 
     using OBeautifulCode.Assertion.Recipes;
 
@@ -134,11 +133,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         private static string GenerateHashCodeMethodCodeForProperty(
-            this PropertyInfo propertyInfo)
+            this PropertyOfConcern propertyOfConcern)
         {
-            propertyInfo.AsArg(nameof(propertyInfo)).Must().NotBeNull();
+            new { propertyOfConcern }.AsArg().Must().NotBeNull();
 
-            var result = Invariant($"Hash(this.{propertyInfo.Name})");
+            var result = Invariant($"Hash(this.{propertyOfConcern.Name})");
 
             return result;
         }

@@ -37,8 +37,8 @@ namespace OBeautifulCode.CodeGen
             ThrowIfNotSupported(type);
 
             var hierarchyKind = GetHierarchyKind(type);
-            var propertiesOfConcern = GetPropertiesOfConcernFromType(type, hierarchyKind, declaredOnly: false);
-            var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, hierarchyKind, declaredOnly: true);
+            var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false);
+            var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: true);
             var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern);
 
             ThrowIfNotSupported(type, propertiesOfConcern);
@@ -123,12 +123,12 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets the properties of concern for the model type.
         /// </summary>
-        public IReadOnlyList<PropertyInfo> PropertiesOfConcern { get; }
+        public IReadOnlyList<PropertyOfConcern> PropertiesOfConcern { get; }
 
         /// <summary>
         /// Gets the declared only properties of concern for the model type.
         /// </summary>
-        public IReadOnlyList<PropertyInfo> DeclaredOnlyPropertiesOfConcern { get; }
+        public IReadOnlyList<PropertyOfConcern> DeclaredOnlyPropertiesOfConcern { get; }
 
         /// <summary>
         /// Gets the interfaces that must be applied to the model in generated code.
@@ -273,7 +273,7 @@ namespace OBeautifulCode.CodeGen
 
         private static void ThrowIfNotSupported(
             Type type,
-            IReadOnlyCollection<PropertyInfo> propertiesOfConcern)
+            IReadOnlyCollection<PropertyOfConcern> propertiesOfConcern)
         {
             var dictionaryKeyedOnDateTimeProperties = propertiesOfConcern.Where(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType)).ToList();
 
@@ -282,7 +282,7 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            var getterOnlyProperties = propertiesOfConcern.Where(_ => _.GetSetMethod(true) == null).ToList();
+            var getterOnlyProperties = propertiesOfConcern.Where(_ => _.IsGetterOnly).ToList();
 
             if (getterOnlyProperties.Any())
             {
@@ -318,32 +318,21 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private static IReadOnlyList<PropertyInfo> GetPropertiesOfConcernFromType(
+        private static IReadOnlyList<PropertyOfConcern> GetPropertiesOfConcernFromType(
             Type type,
-            HierarchyKind hierarchyKind,
             bool declaredOnly)
         {
-            var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty;
+            var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.DeclaredOnly;
 
-            IReadOnlyList<PropertyInfo> result;
+            var result = type.GetProperties(bindingFlags).Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, _.GetSetMethod(true) == null)).ToList();
 
-            if ((hierarchyKind == HierarchyKind.ConcreteInherited) && (!declaredOnly))
+            if ((!declaredOnly) && type.BaseType != typeof(object))
             {
-                // this is an effort to get base type properties to appear before this type's properties
-                var properties = type.GetProperties(bindingFlags);
-
-                // ReSharper disable once PossibleNullReferenceException
-                var baseTypeProperties = type.BaseType.GetProperties(bindingFlags);
-
-                var baseTypePropertyNames = new HashSet<string>(baseTypeProperties.Select(_ => _.Name));
-
-                result = baseTypeProperties.Concat(properties.Where(p => !baseTypePropertyNames.Contains(p.Name))).ToList();
-            }
-            else
-            {
-                bindingFlags = bindingFlags | BindingFlags.DeclaredOnly;
-
-                result = type.GetProperties(bindingFlags);
+                // ReSharper disable once ConditionIsAlwaysTrueOrFalse
+                result = new PropertyOfConcern[0]
+                    .Concat(GetPropertiesOfConcernFromType(type.BaseType, declaredOnly))
+                    .Concat(result)
+                    .ToList();
             }
 
             return result;
@@ -381,7 +370,7 @@ namespace OBeautifulCode.CodeGen
         }
 
         private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
-            IReadOnlyList<PropertyInfo> propertiesOfConcern)
+            IReadOnlyList<PropertyOfConcern> propertiesOfConcern)
         {
             var result = propertiesOfConcern.Any(_ => CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(_.PropertyType));
 
@@ -421,9 +410,7 @@ namespace OBeautifulCode.CodeGen
                 {
                     if (IsHashableType(genericTypeArgument))
                     {
-                        var hierarchyKind = GetHierarchyKind(genericTypeArgument);
-
-                        var propertiesOfConcern = GetPropertiesOfConcernFromType(genericTypeArgument, hierarchyKind, declaredOnly: false);
+                        var propertiesOfConcern = GetPropertiesOfConcernFromType(genericTypeArgument, declaredOnly: false);
 
                         if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern))
                         {
@@ -442,9 +429,7 @@ namespace OBeautifulCode.CodeGen
 
             if (IsHashableType(type))
             {
-                var hierarchyKind = GetHierarchyKind(type);
-
-                var propertiesOfConcern = GetPropertiesOfConcernFromType(type, hierarchyKind, declaredOnly: false);
+                var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false);
 
                 if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern))
                 {

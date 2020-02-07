@@ -133,11 +133,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         private static string GenerateToStringForProperty(
-            this PropertyInfo propertyInfo,
+            this PropertyOfConcern propertyOfConcern,
             bool useSystemUnderTest)
         {
-            var name = propertyInfo.Name;
-            var type = propertyInfo.PropertyType;
+            var name = propertyOfConcern.Name;
+            var type = propertyOfConcern.PropertyType;
 
             var takesFormatProvider = type.GetMethods().Where(_ => _.Name == "ToString").Where(_ => !_.IsObsolete()).Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
 

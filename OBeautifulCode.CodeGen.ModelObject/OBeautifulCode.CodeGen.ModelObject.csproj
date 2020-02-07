@@ -108,6 +108,7 @@
     <Compile Include="Generation\TestGeneration.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="InternalTypes\ModelType.cs" />
+    <Compile Include="InternalTypes\PropertyOfConcern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generation\SerializationGeneration.cs" />
     <Compile Include="Generation\StringRepresentationGeneration.cs" />

@@ -211,7 +211,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 result = "new " + modelType.TypeCompilableString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
             }
-            else if (modelType.PropertiesOfConcern.All(_ => _.CanWrite))
+            else if (modelType.PropertiesOfConcern.All(_ => !_.IsGetterOnly))
             {
                 var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
 
