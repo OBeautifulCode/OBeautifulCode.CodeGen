@@ -175,8 +175,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     if ((generatedModelKind == GeneratedModelKind.Equality) ||
                         (generatedModelKind == GeneratedModelKind.Hashing))
                     {
-                        // this is necessary so that the project compiles when running the unit tests prior
-                        // to code generating tests
+                        // this is necessary so that the project compiles when running unit
+                        // tests that precede the unit test that creates code generated model tests
                         var codeLines = new List<string>
                             {
                                 "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
@@ -193,8 +193,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     }
                     else if (generatedModelKind == GeneratedModelKind.Comparing)
                     {
-                        // this is necessary so that the project compiles when running the unit tests prior
-                        // to code generating tests
+                        // this is necessary so that the project compiles when running unit
+                        // tests that precede the unit test that creates code generated model tests
                         var codeLines = new List<string>
                             {
                                 "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
@@ -243,11 +243,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     throw new NotSupportedException("This kind is not supported: " + generationKind);
             }
 
-            var modelCode = modelType.GenerateForModel(generateFor);
+            var generatedCode = modelType.GenerateForModel(generateFor);
 
             if (Settings.WriteFiles)
             {
-                File.WriteAllText(modelFilePath, modelCode);
+                File.WriteAllText(modelFilePath, generatedCode);
             }
         }
 
