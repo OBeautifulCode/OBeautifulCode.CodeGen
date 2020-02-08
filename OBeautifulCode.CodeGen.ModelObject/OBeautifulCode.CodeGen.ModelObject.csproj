@@ -92,7 +92,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
-    <Compile Include="ExternalTypes\GenerateFor.cs" />
+    <Compile Include="GenerateFor.cs" />
     <Compile Include="Generation\CloningGeneration.cs" />
     <Compile Include="Generation\ComparisonGeneration.cs" />
     <Compile Include="Generation\GenerationShared.cs" />
@@ -101,7 +101,7 @@
     <Compile Include="Generation\DummyGeneration.cs" />
     <Compile Include="Generation\EqualityGeneration.cs" />
     <Compile Include="Generation\HashCodeGeneration.cs" />
-    <Compile Include="ExternalTypes\HierarchyKind.cs" />
+    <Compile Include="InternalTypes\HierarchyKind.cs" />
     <Compile Include="Generation\ModelImplementationGeneration.cs" />
     <Compile Include="Generation\StructuralGeneration.cs" />
     <Compile Include="InternalTypes\MemberCode.cs" />
@@ -127,6 +127,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\OBeautifulCode.Build.Analyzers.1.1.64\build\OBeautifulCode.Build.Analyzers.targets" Condition="Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.64\build\OBeautifulCode.Build.Analyzers.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// <summary>
     /// Determine how a user-defined class participates in a hierarchy.
     /// </summary>
-    public enum HierarchyKind
+    internal enum HierarchyKind
     {
         /// <summary>
         /// No participation in a hierarchy.
