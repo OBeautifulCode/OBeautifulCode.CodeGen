@@ -43,6 +43,21 @@ namespace OBeautifulCode.CodeGen
 
             ThrowIfNotSupported(type, propertiesOfConcern);
 
+            var requiresComparability = type.IsAssignableTo(typeof(IComparableViaCodeGen));
+            var requiresDeepCloning = type.IsAssignableTo(typeof(IDeepCloneableViaCodeGen));
+            var requiresEquality = type.IsAssignableTo(typeof(IEquatableViaCodeGen));
+            var requiresHashing = type.IsAssignableTo(typeof(IHashableViaCodeGen));
+            var requiresModel = type.IsAssignableTo(typeof(IModelViaCodeGen));
+            var requiresStringRepresentation = type.IsAssignableTo(typeof(IStringRepresentableViaCodeGen));
+
+            var declaresCompareToMethod = type.IsAssignableTo(typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type));
+            var declaresDeepCloneMethod = type.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type));
+            var declaresEqualsMethod = type.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(type));
+            var declaresGetHashCodeMethod = type.IsAssignableTo(typeof(IDeclareGetHashCodeMethod));
+            var declaresToStringMethod = type.IsAssignableTo(typeof(IDeclareToStringMethod));
+
+            ThrowIfNotSupported(type, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
+
             // note: We are explicitly NOT exposing the passed-in type to avoid some issues:
             // Before the first pass of code-gen, only user-defined model code will exist.
             // On the first pass, we will augment the model code with generated code in
@@ -62,16 +77,33 @@ namespace OBeautifulCode.CodeGen
             this.TypeNamespace = type.Namespace;
             this.BaseTypeCompilableString = type.BaseType?.ToStringCompilable();
             this.BaseTypeReadableString = type.BaseType?.ToStringReadable();
-            this.Constructors = type.GetConstructors();
-            this.DetermineRequiredAndDeclaredFeatures(type);
+
             this.HierarchyKind = hierarchyKind;
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
+            this.Constructors = type.GetConstructors();
+
+            this.RequiresComparability = requiresComparability;
+            this.RequiresDeepCloning = requiresDeepCloning;
+            this.RequiresEquality = requiresEquality;
+            this.RequiresHashing = requiresHashing;
+            this.RequiresModel = requiresModel;
+            this.RequiresStringRepresentation = requiresStringRepresentation;
+
+            this.RequiredInterfaces = this.DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
+
+            this.DeclaresCompareToMethod = declaresCompareToMethod;
+            this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
+            this.DeclaresEqualsMethod = declaresEqualsMethod;
+            this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
+            this.DeclaresToStringMethod = declaresToStringMethod;
+
+            this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareDeepCloneMethod<>));
+            this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
+            this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
+            this.DeclaresToStringMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareToStringMethod));
+
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
-            this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresDeepCloneMethodDirectlyOrInDerivative(hierarchyKind, type);
-            this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresEqualsMethodDirectlyOrInDerivative(hierarchyKind, type);
-            this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = this.DetermineIfDeclaresGetHashCodeMethodDirectlyOrInDerivative(hierarchyKind, type);
-            this.DeclaresToStringMethodDirectlyOrInDerivative = this.DetermineIfDeclaresToStringMethodDirectlyOrInDerivative(hierarchyKind, type);
         }
 
         /// <summary>
@@ -133,62 +165,62 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets the interfaces that must be applied to the model in generated code.
         /// </summary>
-        public IReadOnlyList<Type> RequiredInterfaces { get; private set; }
+        public IReadOnlyList<Type> RequiredInterfaces { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model requires generated code for comparability.
         /// </summary>
-        public bool RequiresComparability { get; private set; }
+        public bool RequiresComparability { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model requires generated code for deep cloning.
         /// </summary>
-        public bool RequiresDeepCloning { get; private set; }
+        public bool RequiresDeepCloning { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model requires generated code for equality.
         /// </summary>
-        public bool RequiresEquality { get; private set; }
+        public bool RequiresEquality { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model requires generated code for hashing.
         /// </summary>
-        public bool RequiresHashing { get; private set; }
+        public bool RequiresHashing { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model requires generated code for the entire model.
         /// </summary>
-        public bool RequiresModel { get; private set; }
+        public bool RequiresModel { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model requires generated code for string representation.
         /// </summary>
-        public bool RequiresStringRepresentation { get; private set; }
+        public bool RequiresStringRepresentation { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareCompareToForRelativeSortOrderMethod{T}.CompareToForRelativeSortOrder(T)"/> method.
         /// </summary>
-        public bool DeclaresCompareToMethod { get; private set; }
+        public bool DeclaresCompareToMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method.
         /// </summary>
-        public bool DeclaresDeepCloneMethod { get; private set; }
+        public bool DeclaresDeepCloneMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareEqualsMethod{T}.Equals(T)"/> method.
         /// </summary>
-        public bool DeclaresEqualsMethod { get; private set; }
+        public bool DeclaresEqualsMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareGetHashCodeMethod.GetHashCode"/> method.
         /// </summary>
-        public bool DeclaresGetHashCodeMethod { get; private set; }
+        public bool DeclaresGetHashCodeMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method.
         /// </summary>
-        public bool DeclaresToStringMethod { get; private set; }
+        public bool DeclaresToStringMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method
@@ -219,55 +251,40 @@ namespace OBeautifulCode.CodeGen
         {
             if (type.ContainsGenericParameters)
             {
-                throw new NotSupportedException(Invariant($"This type is not supported; it is an open type: {type}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an open type."));
             }
 
             if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.All(_ => type.GetInterface(_.Name) == null))
             {
                 // this really should be checked via: (!type.IsAssignableTo(typeof(IModelViaCodeGen))) but since this can be called using reflected types
                 //    we are using a less strict check which does not require it to be truly assignable but instead merely the presence of a version of the interface
-                throw new NotSupportedException(Invariant($"The type does not implement one of the following interfaces: {CodeGenerator.TypesThatIndicateCodeGenIsRequired.Select(_ => _.ToStringReadable()).ToCsv()}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it does not implement one of the following interfaces: {CodeGenerator.TypesThatIndicateCodeGenIsRequired.Select(_ => _.ToStringReadable()).ToCsv()}."));
             }
 
             // checks if not a class - but still could be a delegate, or a type parameter in the definition of a generic type or generic method.
             if (!type.IsClass)
             {
-                throw new NotSupportedException(Invariant($"This type is not supported; it is a value type or interface type: {type}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a value type or interface type."));
             }
 
             // check that it's not a delegate
             if (type.IsSubclassOf(typeof(Delegate)))
             {
-                throw new NotSupportedException(Invariant($"This type is not supported; it is a delegate: {type}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a delegate."));
             }
 
             if (type.IsGenericType)
             {
-                throw new NotSupportedException(Invariant($"This type is not supported; it is a generic type: {type}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a generic type."));
             }
 
             var loadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
 
-            var inheritedTypes = loadedTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
+            var directDerivativeTypes = loadedTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
 
-            if (DoesInheritFromObject(type))
+            if (directDerivativeTypes.Any() && (!type.IsAbstract))
             {
-                if (inheritedTypes.Any() && (!type.IsAbstract))
-                {
-                    throw new NotSupportedException(Invariant($"This type is not supported; base classes must be abstract: {type}."));
-                }
-            }
-            else
-            {
-                if (type.IsAbstract)
-                {
-                    throw new NotSupportedException(Invariant($"This type is not supported; inherited classes cannot be abstract: {type}."));
-                }
-
-                if (inheritedTypes.Any())
-                {
-                    throw new NotSupportedException(Invariant($"This type is not supported; inherited classes cannot also be base classes: {type}."));
-                }
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; base classes must be abstract."));
             }
         }
 
@@ -279,14 +296,31 @@ namespace OBeautifulCode.CodeGen
 
             if (dictionaryKeyedOnDateTimeProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
             var getterOnlyProperties = propertiesOfConcern.Where(_ => _.IsGetterOnly).ToList();
 
             if (getterOnlyProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) contains the following getter-only properties; getter-only properties are not supported: {getterOnlyProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following getter-only properties when flattening the hierarchy: {getterOnlyProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+            }
+        }
+
+        private static void ThrowIfNotSupported(
+            Type type,
+            bool declaresCompareToMethod,
+            bool declaresDeepCloneMethod,
+            bool declaresEqualsMethod,
+            bool declaresGetHashCodeMethod,
+            bool declaresToStringMethod)
+        {
+            if (declaresCompareToMethod || declaresDeepCloneMethod || declaresEqualsMethod || declaresGetHashCodeMethod || declaresToStringMethod)
+            {
+                if (type.IsAbstract)
+                {
+                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an abstract class that implements one or more of the IDeclare... interfaces."));
+                }
             }
         }
 
@@ -296,7 +330,9 @@ namespace OBeautifulCode.CodeGen
             HierarchyKind result;
             if (type.IsAbstract)
             {
-                result = HierarchyKind.AbstractBaseRoot;
+                result = DoesInheritFromObject(type)
+                    ? HierarchyKind.AbstractBaseRoot
+                    : HierarchyKind.AbstractBaseInherited;
             }
             else if (DoesInheritFromObject(type))
             {
@@ -460,132 +496,60 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private void DetermineRequiredAndDeclaredFeatures(
-            Type type)
+        private IReadOnlyList<Type> DetermineRequiredInterfaces(
+            Type type,
+            bool requiresModel,
+            bool requiresDeepCloning,
+            bool requiresEquality,
+            bool requiresHashing,
+            bool requiresStringRepresentation,
+            bool requiresComparability)
         {
-            var requiresComparability = type.IsAssignableTo(typeof(IComparableViaCodeGen));
-            var requiresDeepCloning = type.IsAssignableTo(typeof(IDeepCloneableViaCodeGen));
-            var requiresEquality = type.IsAssignableTo(typeof(IEquatableViaCodeGen));
-            var requiresHashing = type.IsAssignableTo(typeof(IHashableViaCodeGen));
-            var requiresModel = type.IsAssignableTo(typeof(IModelViaCodeGen));
-            var requiresStringRepresentation = type.IsAssignableTo(typeof(IStringRepresentableViaCodeGen));
-
-            var declaresCompareToMethod = type.IsAssignableTo(typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type));
-            var declaresDeepCloneMethod = type.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type));
-            var declaresEqualsMethod = type.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(type));
-            var declaresGetHashCodeMethod = type.IsAssignableTo(typeof(IDeclareGetHashCodeMethod));
-            var declaresToStringMethod = type.IsAssignableTo(typeof(IDeclareToStringMethod));
-
-            var requiredInterfaces = new List<Type>();
+            var result = new List<Type>();
 
             if (requiresModel)
             {
-                requiredInterfaces.Add(typeof(IModel<>).MakeGenericType(type));
+                result.Add(typeof(IModel<>).MakeGenericType(type));
             }
             else
             {
                 if (requiresDeepCloning)
                 {
-                    requiredInterfaces.Add(typeof(IDeepCloneable<>).MakeGenericType(type));
+                    result.Add(typeof(IDeepCloneable<>).MakeGenericType(type));
                 }
 
                 if (requiresEquality)
                 {
-                    requiredInterfaces.Add(typeof(IEquatable<>).MakeGenericType(type));
+                    result.Add(typeof(IEquatable<>).MakeGenericType(type));
                 }
 
                 if (requiresHashing)
                 {
-                    requiredInterfaces.Add(typeof(IHashable));
+                    result.Add(typeof(IHashable));
                 }
 
                 if (requiresStringRepresentation)
                 {
-                    requiredInterfaces.Add(typeof(IStringRepresentable));
+                    result.Add(typeof(IStringRepresentable));
                 }
             }
 
             if (requiresComparability)
             {
-                requiredInterfaces.Add(typeof(IComparableForRelativeSortOrder<>).MakeGenericType(type));
-            }
-
-            this.RequiresComparability = requiresComparability;
-            this.RequiresDeepCloning = requiresDeepCloning;
-            this.RequiresEquality = requiresEquality;
-            this.RequiresHashing = requiresHashing;
-            this.RequiresModel = requiresModel;
-            this.RequiresStringRepresentation = requiresStringRepresentation;
-
-            this.DeclaresCompareToMethod = declaresCompareToMethod;
-            this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
-            this.DeclaresEqualsMethod = declaresEqualsMethod;
-            this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
-            this.DeclaresToStringMethod = declaresToStringMethod;
-
-            this.RequiredInterfaces = requiredInterfaces;
-        }
-
-        private bool DetermineIfDeclaresDeepCloneMethodDirectlyOrInDerivative(
-            HierarchyKind hierarchyKind,
-            Type type)
-        {
-            var result = this.DeclaresDeepCloneMethod;
-
-            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
-            {
-                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
-                    (_.BaseType == type) &&
-                    _.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(_)));
+                result.Add(typeof(IComparableForRelativeSortOrder<>).MakeGenericType(type));
             }
 
             return result;
         }
 
-        private bool DetermineIfDeclaresEqualsMethodDirectlyOrInDerivative(
-            HierarchyKind hierarchyKind,
-            Type type)
+        private bool DetermineIfDeclaresMethodDirectlyOrInDerivative(
+            Type type,
+            Type methodInterfaceType)
         {
-            var result = this.DeclaresEqualsMethod;
-
-            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
-            {
-                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
-                    (_.BaseType == type) &&
-                    _.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(_)));
-            }
-
-            return result;
-        }
-
-        private bool DetermineIfDeclaresGetHashCodeMethodDirectlyOrInDerivative(
-            HierarchyKind hierarchyKind,
-            Type type)
-        {
-            var result = this.DeclaresGetHashCodeMethod;
-
-            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
-            {
-                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
-                    (_.BaseType == type) &&
-                    _.IsAssignableTo(typeof(IDeclareGetHashCodeMethod)));
-            }
-
-            return result;
-        }
-
-        private bool DetermineIfDeclaresToStringMethodDirectlyOrInDerivative(
-            HierarchyKind hierarchyKind,
-            Type type)
-        {
-            var result = this.DeclaresToStringMethod;
-
-            if ((hierarchyKind == HierarchyKind.AbstractBaseRoot) || (!result))
-            {
-                result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
-                    (_.BaseType == type) &&
-                    _.IsAssignableTo(typeof(IDeclareToStringMethod)));
-            }
+            var result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
+                (!_.ContainsGenericParameters) &&
+                _.IsAssignableTo(type) &&
+                _.IsAssignableTo(methodInterfaceType.IsGenericTypeDefinition ? methodInterfaceType.MakeGenericType(_) : methodInterfaceType));
 
             return result;
         }

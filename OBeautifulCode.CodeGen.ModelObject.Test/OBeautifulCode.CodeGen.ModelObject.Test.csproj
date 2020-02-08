@@ -149,6 +149,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\GeneratedModelPosition.cs" />
     <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2B.cs" />
     <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2B.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild2B.cs</DependentUpon>
@@ -265,7 +266,7 @@
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="CodeGeneratorTest\Enums\SpecifiedModelKind.cs" />
     <Compile Include="DummyFactory.cs" />
-    <Compile Include="CodeGeneratorTest\Enums\GeneratedModelKind.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\GeneratedModelScenario.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GenerationKind.cs" />
     <Compile Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
     <Compile Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">

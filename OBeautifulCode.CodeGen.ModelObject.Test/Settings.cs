@@ -87,25 +87,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(IReadOnlyDictionary<DateTime?, DateTime?>),
         };
 
-        public static readonly IReadOnlyDictionary<SpecifiedModelKind, IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>>> SpecifiedModelKindToHierarchyKindToModelNameSuffixMap = new Dictionary<SpecifiedModelKind, IReadOnlyDictionary<HierarchyKind, IReadOnlyCollection<string>>>
+        public static readonly IReadOnlyDictionary<SpecifiedModelKind, IReadOnlyCollection<string>> SpecifiedModelKindToModelNameSuffixMap = new Dictionary<SpecifiedModelKind, IReadOnlyCollection<string>>
         {
             {
                 SpecifiedModelKind.Empty,
-                new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
-                {
-                    { HierarchyKind.None, new[] { "Empty" } },
-                    { HierarchyKind.AbstractBaseRoot, new[] { "EmptyParent", "NotEmptyParent" } },
-                    { HierarchyKind.ConcreteInherited, new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "NotEmptyParentEmptyChild" } },
-                }
+                new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "EmptyParent", "Empty", "NotEmptyParentEmptyChild", "NotEmptyParent" }
             },
             {
                 SpecifiedModelKind.MultiLevel,
-                new Dictionary<HierarchyKind, IReadOnlyCollection<string>>
-                {
-                    { HierarchyKind.None, new string[0] },
-                    { HierarchyKind.AbstractBaseRoot, new[] { "MultiLevelParent", "MultiLevelChild1", "MultiLevelChild2" } },
-                    { HierarchyKind.ConcreteInherited, new[] { "MultiLevelGrandChild1A", "MultiLevelGrandChild1B", "MultiLevelGrandChild2A", "MultiLevelGrandChild2B" } },
-                }
+                new[] { "MultiLevelParent", "MultiLevelChild1", "MultiLevelChild2", "MultiLevelGrandChild1A", "MultiLevelGrandChild1B", "MultiLevelGrandChild2A", "MultiLevelGrandChild2B" }
             },
         };
     }

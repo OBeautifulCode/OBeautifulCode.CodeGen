@@ -11,6 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
 
@@ -152,56 +153,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string BuildSpecifiedModelName(
-            this string baseName,
+            this SpecifiedModelKind specifiedModelKind,
             SetterKind setterKind,
             string modelNameSuffix)
         {
-            var result = Invariant($"{baseName}{setterKind}{modelNameSuffix}");
+            var result = Invariant($"{Settings.ModelBaseName}{setterKind}{modelNameSuffix}");
 
             return result;
         }
 
         public static string BuildGeneratedModelName(
-            this string baseName,
-            GeneratedModelKind generatedModelKind,
+            this GeneratedModelScenario generatedModelScenario,
             SetterKind setterKind,
-            HierarchyKind hierarchyKind,
+            GeneratedModelPosition generatedModelPosition,
             string childIdentifier)
         {
-            var result = Invariant($"{baseName}{generatedModelKind}{setterKind}{hierarchyKind.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{Settings.ModelBaseName}{generatedModelScenario}{setterKind}{generatedModelPosition.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
 
         public static string BuildPropertyName(
             this Type type,
-            HierarchyKind hierarchyKind,
+            GeneratedModelPosition generatedModelPosition,
             string prefix)
         {
-            var result = Invariant($"{hierarchyKind.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
+            var result = Invariant($"{generatedModelPosition.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
 
             return result;
         }
 
         public static string BuildNameToken(
-            this HierarchyKind hierarchyKind)
+            this GeneratedModelPosition generatedModelPosition)
         {
-            string result;
+            new { generatedModelPosition }.AsArg().Must().NotBeEqualTo(GeneratedModelPosition.NotApplicable);
 
-            switch (hierarchyKind)
-            {
-                case HierarchyKind.None:
-                    result = string.Empty;
-                    break;
-                case HierarchyKind.AbstractBaseRoot:
-                    result = "Parent";
-                    break;
-                case HierarchyKind.ConcreteInherited:
-                    result = "Child";
-                    break;
-                default:
-                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
-            }
+            var result = generatedModelPosition == GeneratedModelPosition.Standalone
+                ? string.Empty
+                : generatedModelPosition.ToString();
 
             return result;
         }
@@ -299,7 +288,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static string GetGeneratedModelsDirectoryPath(
             this GenerationKind generationKind,
-            GeneratedModelKind generatedModelKind,
+            GeneratedModelScenario generatedModelScenario,
             SetterKind setterKind)
         {
             string result;
@@ -307,10 +296,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = Settings.GeneratedModelsPath + generatedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsPath + generatedModelScenario + "\\" + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = Settings.GeneratedModelsTestsPath + generatedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsTestsPath + generatedModelScenario + "\\" + setterKind + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This generation kind is not supported: " + generationKind);

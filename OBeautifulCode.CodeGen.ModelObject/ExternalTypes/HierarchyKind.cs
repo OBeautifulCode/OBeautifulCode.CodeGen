@@ -22,6 +22,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
         AbstractBaseRoot,
 
         /// <summary>
+        /// Is an abstract base class that inherits from
+        /// an abstract base class (root or not).
+        /// </summary>
+        AbstractBaseInherited,
+
+        /// <summary>
         /// Is a concrete, inherited class.
         /// </summary>
         ConcreteInherited,
