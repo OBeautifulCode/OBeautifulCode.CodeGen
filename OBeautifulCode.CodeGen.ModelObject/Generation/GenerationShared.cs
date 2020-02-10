@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
@@ -128,6 +129,74 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().Single(_ => _.EndsWith(resourceNameSuffix));
 
             var result = AssemblyHelper.ReadEmbeddedResourceAsString(resourceName, addCallerNamespace: false);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates code that instantiates a model object.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <param name="memberCode">The code for the members.</param>
+        /// <param name="parameterPaddingLength">The length of the padding to use for constructor or object initializer parameters.</param>
+        /// <returns>
+        /// Generated code that instantiates a model object.
+        /// </returns>
+        public static string GenerateModelInstantiation(
+            this ModelType modelType,
+            IReadOnlyList<MemberCode> memberCode,
+            int parameterPaddingLength)
+        {
+            new { modelType }.AsArg().Must().NotBeNull();
+            new { memberCode }.AsArg().Must().NotBeNull().And().NotContainAnyNullElements();
+
+            string result;
+
+            var memberNames = memberCode.Select(_ => _.Name).ToList();
+
+            var parameterPadding = new string(' ', parameterPaddingLength);
+
+            var constructorInfo = modelType
+                .Constructors
+                .SingleOrDefault(
+                    _ =>
+                    {
+                        var parameterNames = _.GetParameters().Select(p => p.Name).ToList();
+
+                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(memberNames, StringComparer.OrdinalIgnoreCase).Any();
+
+                        return foundMatchingConstructor;
+                    });
+
+            if (constructorInfo != null)
+            {
+                var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code, StringComparer.OrdinalIgnoreCase);
+
+                var parameters = constructorInfo.GetParameters();
+
+                var parameterCode =
+                    parameters
+                    .Select(_ => propertyNameToCodeMap[_.Name])
+                    .ToDelimitedString("," + Environment.NewLine + parameterPadding);
+
+                result = "new " + modelType.TypeCompilableString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
+            }
+            else if (modelType.PropertiesOfConcern.All(_ => !_.IsGetterOnly))
+            {
+                var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
+
+                var maxCharsInAnyPropertyName = memberNames.Any() ? memberNames.Select(_ => _.Length).Max() : 0;
+
+                var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
+
+                result = "new " + modelType.TypeCompilableString + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + "," + Environment.NewLine + curlyBracketPadding + "}";
+            }
+            else
+            {
+                var propertiesAddIn = string.Join(",", modelType.PropertiesOfConcern.Select(_ => _.Name));
+
+                throw new NotSupportedException("Could not find a constructor to take properties of concern and they are not all settable: " + propertiesAddIn);
+            }
 
             return result;
         }
