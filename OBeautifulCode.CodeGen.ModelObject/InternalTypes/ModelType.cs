@@ -25,6 +25,8 @@ namespace OBeautifulCode.CodeGen
     /// </summary>
     internal class ModelType
     {
+        private readonly Type underlyingType;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelType"/> class.
         /// </summary>
@@ -71,6 +73,8 @@ namespace OBeautifulCode.CodeGen
             // and is compiling) to produce the same generated code as in a first pass for
             // consistency.  To that end, we contain the usage of the specified type to this
             // class, where we ensure that there are no dependencies on the added interfaces.
+            this.underlyingType = type;
+            this.InheritancePathCompilableStrings = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringCompilable()).ToList();
             this.ConcreteDerivativeTypes = this.GetConcreteDerivativeTypes(type);
             this.TypeCompilableString = type.ToStringCompilable();
             this.TypeReadableString = type.ToStringReadable();
@@ -79,6 +83,7 @@ namespace OBeautifulCode.CodeGen
             this.BaseTypeReadableString = type.BaseType?.ToStringReadable();
 
             this.HierarchyKind = hierarchyKind;
+            this.IsAbstractBase = (hierarchyKind == HierarchyKind.AbstractBaseRoot) || (hierarchyKind == HierarchyKind.AbstractBaseInherited);
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
             this.Constructors = type.GetConstructors();
@@ -105,6 +110,11 @@ namespace OBeautifulCode.CodeGen
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
         }
+
+        /// <summary>
+        /// Gets the inheritance path as compilable string representations of the type.
+        /// </summary>
+        public IReadOnlyList<string> InheritancePathCompilableStrings { get; }
 
         /// <summary>
         /// Gets a compilable string representation of the type.
@@ -145,6 +155,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets the <see cref="HierarchyKind"/> of the model type.
         /// </summary>
         public HierarchyKind HierarchyKind { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model is an abstract base type.
+        /// </summary>
+        public bool IsAbstractBase { get; }
 
         /// <summary>
         /// Gets a value indicating whether two dummies of this model type
@@ -245,6 +260,21 @@ namespace OBeautifulCode.CodeGen
         /// or has a derivative that does.
         /// </summary>
         public bool DeclaresToStringMethodDirectlyOrInDerivative { get; }
+
+        /// <summary>
+        /// Determines if the specified property is declared by this model type.
+        /// </summary>
+        /// <param name="propertyOfConcern">The property.</param>
+        /// <returns>
+        /// true if the specified property is declared by this model type; otherwise false.
+        /// </returns>
+        public bool DeclaresProperty(
+            PropertyOfConcern propertyOfConcern)
+        {
+            var result = propertyOfConcern.DeclaringType == this.underlyingType;
+
+            return result;
+        }
 
         private static void ThrowIfNotSupported(
             Type type)
@@ -360,7 +390,7 @@ namespace OBeautifulCode.CodeGen
         {
             var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.DeclaredOnly;
 
-            var result = type.GetProperties(bindingFlags).Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, _.GetSetMethod(true) == null)).ToList();
+            var result = type.GetProperties(bindingFlags).Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, type, _.GetSetMethod(true) == null)).ToList();
 
             if ((!declaredOnly) && type.BaseType != typeof(object))
             {

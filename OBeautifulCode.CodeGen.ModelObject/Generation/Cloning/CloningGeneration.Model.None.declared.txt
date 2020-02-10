@@ -1,0 +1,2 @@
+﻿        /// <inheritdoc />
+        public object Clone() => this.DeepClone();

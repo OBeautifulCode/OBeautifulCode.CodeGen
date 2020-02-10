@@ -415,7 +415,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -506,7 +506,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -597,7 +597,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -688,7 +688,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -779,7 +779,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -870,7 +870,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -961,7 +961,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1052,7 +1052,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1143,7 +1143,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1234,7 +1234,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1325,7 +1325,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1416,7 +1416,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1507,7 +1507,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1598,7 +1598,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1689,7 +1689,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1780,7 +1780,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1871,7 +1871,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -1962,7 +1962,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2053,7 +2053,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2144,7 +2144,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2235,7 +2235,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2326,7 +2326,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2417,7 +2417,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2508,7 +2508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2599,7 +2599,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2690,7 +2690,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2781,7 +2781,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2872,7 +2872,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -2963,7 +2963,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3054,7 +3054,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3145,7 +3145,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3236,7 +3236,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3327,7 +3327,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3418,7 +3418,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3509,7 +3509,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3600,7 +3600,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3691,7 +3691,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3782,7 +3782,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3873,7 +3873,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -3964,7 +3964,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4055,7 +4055,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4146,7 +4146,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4237,7 +4237,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4328,7 +4328,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4419,7 +4419,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4510,7 +4510,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4601,7 +4601,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4692,7 +4692,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4783,7 +4783,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4874,7 +4874,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -4965,7 +4965,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5056,7 +5056,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5147,7 +5147,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5238,7 +5238,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5329,7 +5329,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5420,7 +5420,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5511,7 +5511,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5602,7 +5602,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5693,7 +5693,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5784,7 +5784,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5875,7 +5875,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -5966,7 +5966,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6057,7 +6057,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6148,7 +6148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6239,7 +6239,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6330,7 +6330,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6421,7 +6421,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6512,7 +6512,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6603,7 +6603,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6694,7 +6694,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6785,7 +6785,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6876,7 +6876,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -6967,7 +6967,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -7058,7 +7058,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -7149,7 +7149,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -7240,7 +7240,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -7331,7 +7331,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -7422,7 +7422,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                  this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-            
+
             return result;
         }
 
@@ -7513,7 +7513,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
                                  readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-            
+
             return result;
         }
 

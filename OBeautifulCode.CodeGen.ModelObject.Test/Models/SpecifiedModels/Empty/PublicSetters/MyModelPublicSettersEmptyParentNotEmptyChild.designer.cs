@@ -83,26 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Value;
 
         /// <inheritdoc />
-        public override object Clone() => this.DeepClone();
-
-        /// <inheritdoc />
-        public override MyModelPublicSettersEmptyParent DeepClone()
-        {
-            var result = ((IDeepCloneable<MyModelPublicSettersEmptyParentNotEmptyChild>)this).DeepClone();
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        MyModelPublicSettersEmptyParentNotEmptyChild IDeepCloneable<MyModelPublicSettersEmptyParentNotEmptyChild>.DeepClone()
-        {
-            var result = new MyModelPublicSettersEmptyParentNotEmptyChild
-                             {
-                                 ChildReadOnlyDictionaryOfStringString = this.ChildReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
-                             };
-
-            return result;
-        }
+        public new MyModelPublicSettersEmptyParentNotEmptyChild DeepClone() => (MyModelPublicSettersEmptyParentNotEmptyChild)this.DeepCloneInternal();
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ChildReadOnlyDictionaryOfStringString" />.
@@ -115,7 +96,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ChildReadOnlyDictionaryOfStringString = childReadOnlyDictionaryOfStringString,
                              };
-            
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        protected override MyModelPublicSettersEmptyParent DeepCloneInternal()
+        {
+            var result = new MyModelPublicSettersEmptyParentNotEmptyChild
+                             {
+                                 ChildReadOnlyDictionaryOfStringString = this.ChildReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                             };
+
             return result;
         }
 

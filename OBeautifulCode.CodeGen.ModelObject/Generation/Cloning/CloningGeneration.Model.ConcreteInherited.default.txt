@@ -1,0 +1,10 @@
+﻿        /// <inheritdoc />
+        public new [model-type-name-here] DeepClone() => ([model-type-name-here])this.DeepCloneInternal();[deep-clone-with-here]
+
+        /// <inheritdoc />
+        protected override [model-root-ancestor-type-name-here] DeepCloneInternal()
+        {
+            var result = [deep-clone-here];
+
+            return result;
+        }

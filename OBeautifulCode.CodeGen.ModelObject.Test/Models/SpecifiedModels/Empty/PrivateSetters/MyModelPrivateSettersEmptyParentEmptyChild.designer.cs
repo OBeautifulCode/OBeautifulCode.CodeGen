@@ -82,18 +82,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Value;
 
         /// <inheritdoc />
-        public override object Clone() => this.DeepClone();
+        public new MyModelPrivateSettersEmptyParentEmptyChild DeepClone() => (MyModelPrivateSettersEmptyParentEmptyChild)this.DeepCloneInternal();
 
         /// <inheritdoc />
-        public override MyModelPrivateSettersEmptyParent DeepClone()
-        {
-            var result = ((IDeepCloneable<MyModelPrivateSettersEmptyParentEmptyChild>)this).DeepClone();
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        MyModelPrivateSettersEmptyParentEmptyChild IDeepCloneable<MyModelPrivateSettersEmptyParentEmptyChild>.DeepClone()
+        protected override MyModelPrivateSettersEmptyParent DeepCloneInternal()
         {
             var result = new MyModelPrivateSettersEmptyParentEmptyChild();
 

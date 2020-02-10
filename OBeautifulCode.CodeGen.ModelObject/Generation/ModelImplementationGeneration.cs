@@ -92,7 +92,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresDeepCloning)
             {
                 items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateCloningMethods());
+                items.Add(modelType.GenerateCloningMethods());
             }
 
             if (modelType.RequiresStringRepresentation)

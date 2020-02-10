@@ -508,7 +508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     var getEquivalentAllModelMethodStatements = new List<string>
                     {
                         string.Empty,
-                        Invariant($"        private {modelName} DeepCloneInternal()"),
+                        Invariant($"        private {modelName} DeepCloneImplementation()"),
                         Invariant($"        {{"),
                         Invariant($"            var referenceModel = A.Dummy<{generatedModelScenarioAllName}>();"),
                         string.Empty,
@@ -541,7 +541,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                             ? Invariant($"        public {modelName} DeepClone()")
                             : Invariant($"        {modelName} {typeof(IDeclareDeepCloneMethod<>).ToStringWithoutGenericComponent()}<{modelName}>.DeepClone()"));
                     methodStatements.Add(Invariant($"        {{"));
-                    methodStatements.Add(Invariant($"            var result = this.DeepCloneInternal();"));
+                    methodStatements.Add(Invariant($"            var result = this.DeepCloneImplementation();"));
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"            return result;"));
                     methodStatements.Add(Invariant($"        }}"));

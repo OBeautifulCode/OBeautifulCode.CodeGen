@@ -371,12 +371,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         MyModelCloningPublicSettersChild2 IDeclareDeepCloneMethod<MyModelCloningPublicSettersChild2>.DeepClone()
         {
-            var result = this.DeepCloneInternal();
+            var result = this.DeepCloneImplementation();
 
             return result;
         }
 
-        private MyModelCloningPublicSettersChild2 DeepCloneInternal()
+        private MyModelCloningPublicSettersChild2 DeepCloneImplementation()
         {
             var referenceModel = A.Dummy<MyModelAllPublicSettersChild2>();
 

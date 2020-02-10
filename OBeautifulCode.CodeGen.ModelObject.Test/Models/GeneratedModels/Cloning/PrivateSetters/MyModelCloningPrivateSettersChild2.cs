@@ -681,12 +681,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         MyModelCloningPrivateSettersChild2 IDeclareDeepCloneMethod<MyModelCloningPrivateSettersChild2>.DeepClone()
         {
-            var result = this.DeepCloneInternal();
+            var result = this.DeepCloneImplementation();
 
             return result;
         }
 
-        private MyModelCloningPrivateSettersChild2 DeepCloneInternal()
+        private MyModelCloningPrivateSettersChild2 DeepCloneImplementation()
         {
             var referenceModel = A.Dummy<MyModelAllPrivateSettersChild2>();
 

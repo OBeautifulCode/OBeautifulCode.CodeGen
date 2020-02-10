@@ -83,26 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Value;
 
         /// <inheritdoc />
-        public override object Clone() => this.DeepClone();
-
-        /// <inheritdoc />
-        public override MyModelPublicSettersNotEmptyParent DeepClone()
-        {
-            var result = ((IDeepCloneable<MyModelPublicSettersNotEmptyParentEmptyChild>)this).DeepClone();
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        MyModelPublicSettersNotEmptyParentEmptyChild IDeepCloneable<MyModelPublicSettersNotEmptyParentEmptyChild>.DeepClone()
-        {
-            var result = new MyModelPublicSettersNotEmptyParentEmptyChild
-                             {
-                                 ParentReadOnlyDictionaryOfStringString = this.ParentReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
-                             };
-
-            return result;
-        }
+        public new MyModelPublicSettersNotEmptyParentEmptyChild DeepClone() => (MyModelPublicSettersNotEmptyParentEmptyChild)this.DeepCloneInternal();
 
         /// <inheritdoc />
         public override MyModelPublicSettersNotEmptyParent DeepCloneWithParentReadOnlyDictionaryOfStringString(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryOfStringString)
@@ -111,7 +92,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ParentReadOnlyDictionaryOfStringString = parentReadOnlyDictionaryOfStringString,
                              };
-            
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        protected override MyModelPublicSettersNotEmptyParent DeepCloneInternal()
+        {
+            var result = new MyModelPublicSettersNotEmptyParentEmptyChild
+                             {
+                                 ParentReadOnlyDictionaryOfStringString = this.ParentReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                             };
+
             return result;
         }
 

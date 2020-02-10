@@ -1,0 +1,2 @@
+﻿        /// <inheritdoc />
+        public new [model-type-name-here] DeepClone() => ([model-type-name-here])this.DeepCloneInternal();[deep-clone-with-here]

@@ -215,7 +215,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
 
-                var maxCharsInAnyPropertyName = memberNames.Select(_ => _.Length).Max();
+                var maxCharsInAnyPropertyName = memberNames.Any() ? memberNames.Select(_ => _.Length).Max() : 0;
 
                 var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
 

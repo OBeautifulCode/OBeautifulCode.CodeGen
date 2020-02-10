@@ -66,10 +66,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public abstract override int GetHashCode();
 
         /// <inheritdoc />
-        public abstract object Clone();
+        public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public abstract MyModelAllPrivateSettersParent DeepClone();
+        public MyModelAllPrivateSettersParent DeepClone() => this.DeepCloneInternal();
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentBoolProperty" />.
@@ -623,6 +623,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <param name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPrivateSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
         public abstract MyModelAllPrivateSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+
+        /// <summary>
+        /// Creates a new object that is a deep clone of this instance.
+        /// </summary>
+        /// <returns>
+        /// A new object that is a deep clone of this instance.
+        /// </returns>
+        protected abstract MyModelAllPrivateSettersParent DeepCloneInternal();
 
         /// <inheritdoc />
         public abstract override string ToString();

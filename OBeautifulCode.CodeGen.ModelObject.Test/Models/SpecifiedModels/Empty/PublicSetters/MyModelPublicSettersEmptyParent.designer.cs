@@ -66,10 +66,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public abstract override int GetHashCode();
 
         /// <inheritdoc />
-        public abstract object Clone();
+        public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public abstract MyModelPublicSettersEmptyParent DeepClone();
+        public MyModelPublicSettersEmptyParent DeepClone() => this.DeepCloneInternal();
+
+        /// <summary>
+        /// Creates a new object that is a deep clone of this instance.
+        /// </summary>
+        /// <returns>
+        /// A new object that is a deep clone of this instance.
+        /// </returns>
+        protected abstract MyModelPublicSettersEmptyParent DeepCloneInternal();
 
         /// <inheritdoc />
         public abstract override string ToString();

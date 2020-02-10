@@ -83,24 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Value;
 
         /// <inheritdoc />
-        public override object Clone() => this.DeepClone();
-
-        /// <inheritdoc />
-        public override MyModelPrivateSettersEmptyParent DeepClone()
-        {
-            var result = ((IDeepCloneable<MyModelPrivateSettersEmptyParentNotEmptyChild>)this).DeepClone();
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        MyModelPrivateSettersEmptyParentNotEmptyChild IDeepCloneable<MyModelPrivateSettersEmptyParentNotEmptyChild>.DeepClone()
-        {
-            var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                 this.ChildReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()));
-
-            return result;
-        }
+        public new MyModelPrivateSettersEmptyParentNotEmptyChild DeepClone() => (MyModelPrivateSettersEmptyParentNotEmptyChild)this.DeepCloneInternal();
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ChildReadOnlyDictionaryOfStringString" />.
@@ -111,7 +94,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
                                  childReadOnlyDictionaryOfStringString);
-            
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        protected override MyModelPrivateSettersEmptyParent DeepCloneInternal()
+        {
+            var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
+                                 this.ChildReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()));
+
             return result;
         }
 

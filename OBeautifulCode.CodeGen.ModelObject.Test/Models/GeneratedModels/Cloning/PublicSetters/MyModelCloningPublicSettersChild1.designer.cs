@@ -26,22 +26,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public partial class MyModelCloningPublicSettersChild1 : IDeepCloneable<MyModelCloningPublicSettersChild1>
     {
         /// <inheritdoc />
-        public override object Clone() => this.DeepClone();
+        public new MyModelCloningPublicSettersChild1 DeepClone() => (MyModelCloningPublicSettersChild1)this.DeepCloneInternal();
 
         /// <inheritdoc />
-        public override MyModelCloningPublicSettersParent DeepClone()
-        {
-            var result = ((IDeepCloneable<MyModelCloningPublicSettersChild1>)this).DeepClone();
-
-            return result;
-        }
-
-        /// <inheritdoc />
-        MyModelCloningPublicSettersChild1 IDeepCloneable<MyModelCloningPublicSettersChild1>.DeepClone()
-        {
-            var result = ((IDeclareDeepCloneMethod<MyModelCloningPublicSettersChild1>)this).DeepClone();
-
-            return result;
-        }
+        protected override MyModelCloningPublicSettersParent DeepCloneInternal() => ((IDeclareDeepCloneMethod<MyModelCloningPublicSettersChild1>)this).DeepClone();
     }
 }
