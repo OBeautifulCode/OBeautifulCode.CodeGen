@@ -20,5 +20,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for a DeepCloneWith() method.
         /// </summary>
         DeepCloneWith,
+
+        /// <summary>
+        /// A code snippet for a CompareTo() method.
+        /// </summary>
+        CompareTo,
+
+        /// <summary>
+        /// A code snippet for a CompareToForRelativeSortOrder() method.
+        /// </summary>
+        CompareToForRelativeSortOrder,
     }
 }

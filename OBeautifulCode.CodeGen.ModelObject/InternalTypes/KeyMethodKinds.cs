@@ -1,35 +1,37 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="HierarchyKind.cs" company="OBeautifulCode">
+// <copyright file="KeyMethodKinds.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
+    using System;
+
     /// <summary>
-    /// Determine how a user-defined class participates in a hierarchy.
+    /// Specifies the kinds of key method.
     /// </summary>
-    internal enum HierarchyKind
+    [Flags]
+    internal enum KeyMethodKinds
     {
         /// <summary>
-        /// No participation in a hierarchy.
+        /// Unknown (default).
         /// </summary>
-        Standalone,
+        Unknown,
 
         /// <summary>
-        /// Is an abstract base root class.
+        /// The key method is declared.
         /// </summary>
-        AbstractBaseRoot,
+        Declared = 1,
 
         /// <summary>
-        /// Is an abstract base class that inherits from
-        /// an abstract base class (root or not).
+        /// The key method is generated.
         /// </summary>
-        AbstractBaseInherited,
+        Generated = 2,
 
         /// <summary>
-        /// Is a concrete, inherited class.
+        /// The key method is declared or generated.
         /// </summary>
-        ConcreteInherited,
+        Both = Declared | Generated,
     }
 }

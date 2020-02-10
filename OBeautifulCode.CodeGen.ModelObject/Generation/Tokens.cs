@@ -55,5 +55,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The property Type name.
         /// </summary>
         public const string PropertyTypeNameToken = "[property-type-name-here]";
+
+        /// <summary>
+        /// The CompareTo... code.
+        /// </summary>
+        public const string CompareToToken = "[compare-to-here]";
+
+        /// <summary>
+        /// The CompareToForRelativeSortOrder() code.
+        /// </summary>
+        public const string CompareToForRelativeSortOrderToken = "[compare-to-for-relative-sort-order-here]";
     }
 }

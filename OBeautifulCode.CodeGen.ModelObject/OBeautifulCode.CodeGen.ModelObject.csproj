@@ -94,13 +94,13 @@
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="GenerateFor.cs" />
     <Compile Include="Generation\Cloning\CloningGeneration.cs" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.ConcreteInherited.default.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.ConcreteInherited.declared.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.None.declared.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.None.default.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.AbstractBaseInherited.default.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.AbstractBaseRoot.default.txt" />
-    <Compile Include="Generation\ComparisonGeneration.cs" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.ConcreteInherited.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.ConcreteInherited.Declared.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.Standalone.Declared.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.Standalone.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.AbstractBaseInherited.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Model.AbstractBaseRoot.Generated.txt" />
+    <Compile Include="Generation\Comparison\ComparisonGeneration.cs" />
     <Compile Include="Generation\GenerationShared.cs" />
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="Generation\ConstructingGeneration.cs" />
@@ -108,6 +108,8 @@
     <Compile Include="Generation\EqualityGeneration.cs" />
     <Compile Include="Generation\HashCodeGeneration.cs" />
     <Compile Include="Generation\Tokens.cs" />
+    <Compile Include="InternalTypes\HierarchyKinds.cs" />
+    <Compile Include="InternalTypes\KeyMethodKinds.cs" />
     <Compile Include="InternalTypes\CodeSnippetKind.cs" />
     <Compile Include="InternalTypes\CodeTemplateKind.cs" />
     <Compile Include="InternalTypes\HierarchyKind.cs" />
@@ -135,10 +137,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.None.default.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.ConcreteInherited.default.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.AbstractBaseInherited.default.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.AbstractBaseRoot.default.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareToForRelativeSortOrder.ConcreteInherited.Declared.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareTo.Standalone.Declared.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareTo.ConcreteInherited.Declared.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareTo.AbstractBaseInherited.Generated.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.Model.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareTo.AbstractBaseRoot.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.Standalone.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.ConcreteInherited.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.AbstractBaseInherited.Generated.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWith.AbstractBaseRoot.Generated.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -75,7 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresComparability)
             {
                 items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateComparableMethods());
+                items.Add(modelType.GenerateComparableMethods());
             }
 
             if (modelType.RequiresHashing)

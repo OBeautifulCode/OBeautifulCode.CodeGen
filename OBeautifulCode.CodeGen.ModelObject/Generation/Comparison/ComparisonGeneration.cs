@@ -7,8 +7,9 @@
 namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
+    using System.Linq;
 
-    using static System.FormattableString;
+    using OBeautifulCode.Collection.Recipes;
 
     /// <summary>
     /// Generates code related to comparisons.
@@ -16,169 +17,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class ComparisonGeneration
     {
         private const string TypeNameToken = "<<<TypeNameHere>>>";
-        private const string BaseTypeNameToken = "<<<BaseTypeNameHere>>>";
-        private const string OverrideModifierToken = "<<<OverrideModifierHere>>>";
 
         private const string ComparableTestFieldsForDeclaredTypeCodeTemplate = @"    private static readonly ComparableTestScenarios<" + TypeNameToken + @"> ComparableTestScenarios = new ComparableTestScenarios<" + TypeNameToken + @">();";
 
-        private const string ComparableOperatorsAndMethodsCodeTemplate = @"    /// <summary>
-        /// Determines whether an object of type <see cref=""" + TypeNameToken + @"""/> is less than another object of that type.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the less-than operator.</param>
-        /// <param name=""right"">The object to the right of the less-than operator.</param>
-        /// <returns>true if <paramref name=""left""/> is less than <paramref name=""right""/>; otherwise false.</returns>
-        public static bool operator <(" + TypeNameToken + @" left, " + TypeNameToken + @" right)
-        {
-            if (ReferenceEquals(left, right))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(left, null))
-            {
-                return true;
-            }
-
-            if (ReferenceEquals(right, null))
-            {
-                return false;
-            }
-
-            if (left.GetType() != right.GetType())
-            {
-                throw new ArgumentException(Invariant($""" + TypeMismatchOperatorArgumentExceptionMessage + @"""));
-            }
-
-            var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
-
-            var result = relativeSortOrder == RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether an object of type <see cref=""" + TypeNameToken + @"""/> is greater than another object of that type.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the greater-than operator.</param>
-        /// <param name=""right"">The object to the right of the greater-than operator.</param>
-        /// <returns>true if <paramref name=""left""/> is greater than <paramref name=""right""/>; otherwise false.</returns>
-        public static bool operator >(" + TypeNameToken + @" left, " + TypeNameToken + @" right)
-        {
-            if (ReferenceEquals(left, right))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(left, null))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(right, null))
-            {
-                return true;
-            }
-
-            if (left.GetType() != right.GetType())
-            {
-                throw new ArgumentException(Invariant($""" + TypeMismatchOperatorArgumentExceptionMessage + @"""));
-            }
-
-            var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
-
-            var result = relativeSortOrder == RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether an object of type <see cref=""" + TypeNameToken + @"""/> is less than or equal to another object of that type.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the less-than-or-equal-to operator.</param>
-        /// <param name=""right"">The object to the right of the less-than-or-equal-to operator.</param>
-        /// <returns>true if <paramref name=""left""/> is less than or equal to <paramref name=""right""/>; otherwise false.</returns>
-        public static bool operator <=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left > right);
-
-        /// <summary>
-        /// Determines whether an object of type <see cref=""" + TypeNameToken + @"""/> is greater than or equal to another object of that type.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the greater-than-or-equal-to operator.</param>
-        /// <param name=""right"">The object to the right of the greater-than-or-equal-to operator.</param>
-        /// <returns>true if <paramref name=""left""/> is greater than or equal to <paramref name=""right""/>; otherwise false.</returns>
-        public static bool operator >=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left < right);
-
-        /// <inheritdoc />
-        public int CompareTo(" + TypeNameToken + @" other)
-        {
-            if (ReferenceEquals(other, null))
-            {
-                return 1;
-            }
-
-            var relativeSortOrder = this.CompareToForRelativeSortOrder(other);
-
-            switch(relativeSortOrder)
-            {
-                case RelativeSortOrder.ThisInstancePrecedesTheOtherInstance:
-                    return -1;
-                case RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance:
-                    return 0;
-                case RelativeSortOrder.ThisInstanceFollowsTheOtherInstance:
-                    return 1;
-                default:
-                    throw new NotSupportedException(Invariant($""This {nameof(RelativeSortOrder)} is not supported: {relativeSortOrder}.""));
-            }
-        }";
-
-        private const string ComparableMethodsForConcreteTypeCodeTemplate = @"        
-        /// <inheritdoc />
-        public " + OverrideModifierToken + @"int CompareTo(object obj)
-        {
-            if (ReferenceEquals(obj, null))
-            {
-                return 1;
-            }
-
-            if (!(obj is " + TypeNameToken + @" other))
-            {
-                throw new ArgumentException(Invariant($""" + TypeMismatchInstanceMethodArgumentExceptionMessage + @" '{obj.GetType().ToStringReadable()}'.""));
-            }
-
-            var result = this.CompareTo(other);
-
-            return result;
-        }";
-
-        private const string ComparableMethodsForInheritedTypeCodeTemplate = @"
-        public override RelativeSortOrder CompareToForRelativeSortOrder(" + BaseTypeNameToken + @" other)
-        {
-            if (ReferenceEquals(other, null))
-            {
-                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
-            }
-
-            if (!(other is " + TypeNameToken + @" otherAs" + TypeNameToken + @"))
-            {
-                throw new ArgumentException(Invariant($""" + TypeMismatchInstanceMethodArgumentExceptionMessage + @" '{other.GetType().ToStringReadable()}'.""));
-            }
-
-            var result = this.CompareToForRelativeSortOrder(otherAs" + TypeNameToken + @");
-
-            return result;
-        }";
-
         private const string TypeMismatchArgumentExceptionMessagePrefixTemplate = @"Attempting to compare objects of different types.";
-
-        private const string TypeMismatchInstanceMethodArgumentExceptionMessage = TypeMismatchArgumentExceptionMessagePrefixTemplate + @"  This object is of type '{nameof(" + TypeNameToken + @")}' whereas the other object is of type";
-
-        private const string TypeMismatchOperatorArgumentExceptionMessage = TypeMismatchArgumentExceptionMessagePrefixTemplate + @"  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'.";
-
-        private const string ComparableMethodsForAbstractTypeCodeTemplate = @"    
-        /// <inheritdoc />
-        public abstract int CompareTo(object obj);
-
-        /// <inheritdoc />
-        public abstract RelativeSortOrder CompareToForRelativeSortOrder(" + TypeNameToken + @" other);";
 
         private const string ComparableTestMethodsCodeTemplate = @"    public static class Comparability
         {
@@ -276,7 +118,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void LessThanOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -408,7 +250,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void GreaterThanOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -540,7 +382,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void LessThanOrEqualToOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -672,7 +514,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -774,7 +616,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void CompareTo_with_" + TypeNameToken + @"___Should_return_1___When_object_is_greater_than_parameter_other()
             {
@@ -869,7 +711,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void CompareTo_with_Object___Should_return_1___When_object_is_greater_than_parameter_obj()
             {
@@ -971,7 +813,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void CompareToForRelativeSortOrder_with_" + TypeNameToken + @"___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {
@@ -1032,40 +874,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateComparableMethods(
             this ModelType modelType)
         {
-            string codeTemplate;
+            var codeTemplate = typeof(ComparisonGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Model, KeyMethodKinds.Both);
 
-            string overrideModifier = null;
+            var compareToSnippet = typeof(ComparisonGeneration).GetCodeTemplate(modelType.HierarchyKinds, CodeTemplateKind.ModelSnippet, modelType.CompareToKeyMethodKinds, CodeSnippetKind.CompareTo);
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
+            var compareToForRelativeSortOrderSnippets = string.Empty;
+
+            if (modelType.HierarchyKind == HierarchyKind.ConcreteInherited)
             {
-                if (modelType.DeclaresCompareToMethod)
-                {
-                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare CompareTo method."));
-                }
+                var compareToForRelativeSortOrderSnippet = typeof(ComparisonGeneration).GetCodeTemplate(modelType.HierarchyKinds, CodeTemplateKind.ModelSnippet, modelType.CompareToKeyMethodKinds, CodeSnippetKind.CompareToForRelativeSortOrder);
 
-                codeTemplate = ComparableOperatorsAndMethodsCodeTemplate + Environment.NewLine + ComparableMethodsForAbstractTypeCodeTemplate;
-            }
-            else
-            {
-                if (!modelType.DeclaresCompareToMethod)
-                {
-                    throw new NotSupportedException(Invariant($"Type {modelType.TypeReadableString} must declare CompareTo method."));
-                }
-
-                codeTemplate = ComparableOperatorsAndMethodsCodeTemplate + Environment.NewLine + ComparableMethodsForConcreteTypeCodeTemplate;
-
-                if (modelType.HierarchyKind == HierarchyKind.ConcreteInherited)
-                {
-                    overrideModifier = "override ";
-
-                    codeTemplate = codeTemplate + Environment.NewLine + ComparableMethodsForInheritedTypeCodeTemplate;
-                }
+                compareToForRelativeSortOrderSnippets = Environment.NewLine + Environment.NewLine + modelType
+                    .InheritancePathCompilableStrings
+                    .Reverse()
+                    .Select(_ => compareToForRelativeSortOrderSnippet.Replace(Tokens.ModelAncestorTypeNameToken, _))
+                    .ToDelimitedString(Environment.NewLine + Environment.NewLine);
             }
 
             var result = codeTemplate
-                .Replace(TypeNameToken, modelType.TypeCompilableString)
-                .Replace(BaseTypeNameToken, modelType.BaseTypeCompilableString)
-                .Replace(OverrideModifierToken, overrideModifier);
+                .Replace(Tokens.CompareToToken, compareToSnippet)
+                .Replace(Tokens.CompareToForRelativeSortOrderToken, compareToForRelativeSortOrderSnippets)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
 
             return result;
         }

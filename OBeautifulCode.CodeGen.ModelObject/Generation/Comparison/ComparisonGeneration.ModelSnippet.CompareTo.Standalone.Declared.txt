@@ -1,0 +1,17 @@
+﻿        /// <inheritdoc />
+        public int CompareTo(object obj)
+        {
+            if (ReferenceEquals(obj, null))
+            {
+                return 1;
+            }
+
+            if (!(obj is [model-type-name-here] other))
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof([model-type-name-here])}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
+            }
+
+            var result = this.CompareTo(other);
+
+            return result;
+        }

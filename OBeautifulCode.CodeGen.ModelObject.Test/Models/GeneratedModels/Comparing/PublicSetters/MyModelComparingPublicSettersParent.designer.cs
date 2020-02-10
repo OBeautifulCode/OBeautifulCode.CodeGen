@@ -133,7 +133,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     throw new NotSupportedException(Invariant($"This {nameof(RelativeSortOrder)} is not supported: {relativeSortOrder}."));
             }
         }
-    
+
         /// <inheritdoc />
         public abstract int CompareTo(object obj);
 

@@ -1,0 +1,5 @@
+﻿        /// <inheritdoc />
+        public abstract int CompareTo(object obj);
+
+        /// <inheritdoc />
+        public abstract RelativeSortOrder CompareToForRelativeSortOrder([model-type-name-here] other);

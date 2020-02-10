@@ -133,7 +133,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     throw new NotSupportedException(Invariant($"This {nameof(RelativeSortOrder)} is not supported: {relativeSortOrder}."));
             }
         }
-        
+
         /// <inheritdoc />
         public override int CompareTo(object obj)
         {
@@ -152,6 +152,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
+        /// <inheritdoc />
         public override RelativeSortOrder CompareToForRelativeSortOrder(MyModelComparingPublicSettersParent other)
         {
             if (ReferenceEquals(other, null))

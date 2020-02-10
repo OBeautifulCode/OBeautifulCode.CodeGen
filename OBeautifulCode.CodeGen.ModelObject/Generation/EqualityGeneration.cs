@@ -574,7 +574,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Replace(ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectToken, objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject);
 
                     break;
-                case HierarchyKind.None:
+                case HierarchyKind.Standalone:
                 case HierarchyKind.ConcreteInherited:
                     codeTemplate = EqualityTestFieldsForConcreteTypeCodeTemplate;
                     break;

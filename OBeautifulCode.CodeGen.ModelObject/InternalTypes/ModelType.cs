@@ -58,7 +58,7 @@ namespace OBeautifulCode.CodeGen
             var declaresGetHashCodeMethod = type.IsAssignableTo(typeof(IDeclareGetHashCodeMethod));
             var declaresToStringMethod = type.IsAssignableTo(typeof(IDeclareToStringMethod));
 
-            ThrowIfNotSupported(type, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
+            ThrowIfNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
 
             // note: We are explicitly NOT exposing the passed-in type to avoid some issues:
             // Before the first pass of code-gen, only user-defined model code will exist.
@@ -83,6 +83,7 @@ namespace OBeautifulCode.CodeGen
             this.BaseTypeReadableString = type.BaseType?.ToStringReadable();
 
             this.HierarchyKind = hierarchyKind;
+            this.HierarchyKinds = hierarchyKind.ToHierarchyKinds();
             this.IsAbstractBase = (hierarchyKind == HierarchyKind.AbstractBaseRoot) || (hierarchyKind == HierarchyKind.AbstractBaseInherited);
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
@@ -102,6 +103,12 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresEqualsMethod = declaresEqualsMethod;
             this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
             this.DeclaresToStringMethod = declaresToStringMethod;
+
+            this.CompareToKeyMethodKinds = declaresCompareToMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.DeepCloneKeyMethodKinds = declaresDeepCloneMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.EqualsKeyMethodKinds = declaresEqualsMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
 
             this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareDeepCloneMethod<>));
             this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
@@ -155,6 +162,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets the <see cref="HierarchyKind"/> of the model type.
         /// </summary>
         public HierarchyKind HierarchyKind { get; }
+
+        /// <summary>
+        /// Gets the <see cref="HierarchyKinds"/> of the model type.
+        /// </summary>
+        public HierarchyKinds HierarchyKinds { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model is an abstract base type.
@@ -236,6 +248,31 @@ namespace OBeautifulCode.CodeGen
         /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method.
         /// </summary>
         public bool DeclaresToStringMethod { get; }
+
+        /// <summary>
+        /// Gets the key method kind for the <see cref="IDeclareCompareToForRelativeSortOrderMethod{T}.CompareToForRelativeSortOrder(T)"/> method.
+        /// </summary>
+        public KeyMethodKinds CompareToKeyMethodKinds { get; }
+
+        /// <summary>
+        /// Gets the key method kind for the <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method.
+        /// </summary>
+        public KeyMethodKinds DeepCloneKeyMethodKinds { get; }
+
+        /// <summary>
+        /// Gets the key method kind for the <see cref="IDeclareEqualsMethod{T}.Equals(T)"/> method.
+        /// </summary>
+        public KeyMethodKinds EqualsKeyMethodKinds { get; }
+
+        /// <summary>
+        /// Gets the key method kind for the <see cref="IDeclareGetHashCodeMethod.GetHashCode"/> method.
+        /// </summary>
+        public KeyMethodKinds GetHashCodeKeyMethodKinds { get; }
+
+        /// <summary>
+        /// Gets the key method kind for the <see cref="IDeclareToStringMethod.ToString"/> method.
+        /// </summary>
+        public KeyMethodKinds ToStringKeyMethodKinds { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method
@@ -339,6 +376,7 @@ namespace OBeautifulCode.CodeGen
 
         private static void ThrowIfNotSupported(
             Type type,
+            bool requiresComparability,
             bool declaresCompareToMethod,
             bool declaresDeepCloneMethod,
             bool declaresEqualsMethod,
@@ -350,6 +388,14 @@ namespace OBeautifulCode.CodeGen
                 if (type.IsAbstract)
                 {
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an abstract class that implements one or more of the IDeclare... interfaces."));
+                }
+            }
+
+            if (requiresComparability)
+            {
+                if ((!type.IsAbstract) && (!declaresCompareToMethod))
+                {
+                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a concrete class that implements IComparableViaCodeGen but does not implement IDeclareCompareToForRelativeSortOrderMethod."));
                 }
             }
         }
@@ -366,7 +412,7 @@ namespace OBeautifulCode.CodeGen
             }
             else if (DoesInheritFromObject(type))
             {
-                result = HierarchyKind.None;
+                result = HierarchyKind.Standalone;
             }
             else
             {

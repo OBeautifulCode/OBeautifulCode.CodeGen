@@ -158,7 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? string.Empty
                 : modelType.GenerateDeepCloneWithCode();
 
-            var codeTemplate = typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKind, CodeTemplateKind.Model, modelType.DeclaresDeepCloneMethod);
+            var codeTemplate = typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKinds, CodeTemplateKind.Model, modelType.DeepCloneKeyMethodKinds);
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeReadableString)
@@ -243,7 +243,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             switch (modelType.HierarchyKind)
             {
-                case HierarchyKind.None:
+                case HierarchyKind.Standalone:
                 case HierarchyKind.AbstractBaseRoot:
                 case HierarchyKind.AbstractBaseInherited:
                     cloningTestMethodsCodeTemplate = CloningTestMethodsForNonInheritedTypeCodeTemplate;
@@ -435,10 +435,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     var deepCloneWithModelInstantiationCode = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 33);
 
                     var effectiveHierarchyKind = (modelType.HierarchyKind == HierarchyKind.ConcreteInherited) && modelType.DeclaresProperty(property)
-                        ? HierarchyKind.None
+                        ? HierarchyKind.Standalone
                         : modelType.HierarchyKind;
 
-                    var deepCloneWithMethodTemplate = typeof(CloningGeneration).GetCodeTemplate(effectiveHierarchyKind, CodeTemplateKind.ModelSnippet, modelType.DeclaresDeepCloneMethod, CodeSnippetKind.DeepCloneWith);
+                    var deepCloneWithMethodTemplate = typeof(CloningGeneration).GetCodeTemplate(effectiveHierarchyKind.ToHierarchyKinds(), CodeTemplateKind.ModelSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWith);
 
                     var deepCloneWithMethod = deepCloneWithMethodTemplate
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
