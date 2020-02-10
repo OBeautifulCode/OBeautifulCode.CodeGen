@@ -849,22 +849,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         /// <summary>
-        /// Generates fields required to test comparability.
-        /// </summary>
-        /// <param name="modelType">The model type.</param>
-        /// <returns>
-        /// Generated fields required to test comparability.
-        /// </returns>
-        public static string GenerateComparableTestFields(
-            this ModelType modelType)
-        {
-            var result = ComparableTestFieldsForDeclaredTypeCodeTemplate
-                .Replace(TypeNameToken, modelType.TypeCompilableString);
-
-            return result;
-        }
-
-        /// <summary>
         /// Generates comparable methods.
         /// </summary>
         /// <param name="modelType">The model type.</param>
@@ -895,6 +879,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CompareToToken, compareToSnippet)
                 .Replace(Tokens.CompareToForRelativeSortOrderToken, compareToForRelativeSortOrderSnippets)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates fields required to test comparability.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated fields required to test comparability.
+        /// </returns>
+        public static string GenerateComparableTestFields(
+            this ModelType modelType)
+        {
+            var result = ComparableTestFieldsForDeclaredTypeCodeTemplate
+                .Replace(TypeNameToken, modelType.TypeCompilableString);
 
             return result;
         }

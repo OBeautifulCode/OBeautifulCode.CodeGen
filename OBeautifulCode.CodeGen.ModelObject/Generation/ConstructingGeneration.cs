@@ -155,7 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var systemUnderTest = " + NewObjectForGetterTestToken + @";
 
                 var expected = referenceObject." + PropertyNameToken + @";
-                
+
                 // Act
                 var actual = systemUnderTest." + PropertyNameToken + @";
 
