@@ -65,5 +65,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The CompareToForRelativeSortOrder() code.
         /// </summary>
         public const string CompareToForRelativeSortOrderToken = "[compare-to-for-relative-sort-order-here]";
+
+        /// <summary>
+        /// The equality statements.
+        /// </summary>
+        public const string EqualityStatementsToken = "[equality-statements-here]";
     }
 }

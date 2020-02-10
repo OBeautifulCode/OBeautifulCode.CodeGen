@@ -46,6 +46,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ConcreteInherited = 8,
 
         /// <summary>
+        /// Is a concrete class.
+        /// </summary>
+        Concrete = Standalone | ConcreteInherited,
+
+        /// <summary>
         /// All kinds.
         /// </summary>
         All = Standalone | Abstract | ConcreteInherited,

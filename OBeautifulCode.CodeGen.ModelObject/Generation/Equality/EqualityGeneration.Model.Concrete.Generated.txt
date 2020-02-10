@@ -1,0 +1,51 @@
+﻿        /// <summary>
+        /// Determines whether two objects of type <see cref="[model-type-name-here]"/> are equal.
+        /// </summary>
+        /// <param name="left">The object to the left of the equality operator.</param>
+        /// <param name="right">The object to the right of the equality operator.</param>
+        /// <returns>true if the two items are equal; otherwise false.</returns>
+        public static bool operator ==([model-type-name-here] left, [model-type-name-here] right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            var result = left.Equals(right);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether two objects of type <see cref="[model-type-name-here]"/> are not equal.
+        /// </summary>
+        /// <param name="left">The object to the left of the equality operator.</param>
+        /// <param name="right">The object to the right of the equality operator.</param>
+        /// <returns>true if the two items not equal; otherwise false.</returns>
+        public static bool operator !=([model-type-name-here] left, [model-type-name-here] right) => !(left == right);
+
+        /// <inheritdoc />
+        public bool Equals([model-type-name-here] other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(other, null))
+            {
+                return false;
+            }
+
+            var result = [equality-statements-here];
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override bool Equals(object obj) => this == (obj as [model-type-name-here]);

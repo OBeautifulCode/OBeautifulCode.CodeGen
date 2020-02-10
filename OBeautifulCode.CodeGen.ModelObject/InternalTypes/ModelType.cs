@@ -85,6 +85,7 @@ namespace OBeautifulCode.CodeGen
             this.HierarchyKind = hierarchyKind;
             this.HierarchyKinds = hierarchyKind.ToHierarchyKinds();
             this.IsAbstractBase = (hierarchyKind == HierarchyKind.AbstractBaseRoot) || (hierarchyKind == HierarchyKind.AbstractBaseInherited);
+            this.IsConcrete = (hierarchyKind == HierarchyKind.ConcreteInherited) || (hierarchyKind == HierarchyKind.Standalone);
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
             this.Constructors = type.GetConstructors();
@@ -172,6 +173,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets a value indicating whether the model is an abstract base type.
         /// </summary>
         public bool IsAbstractBase { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model is a concrete type.
+        /// </summary>
+        public bool IsConcrete { get; }
 
         /// <summary>
         /// Gets a value indicating whether two dummies of this model type

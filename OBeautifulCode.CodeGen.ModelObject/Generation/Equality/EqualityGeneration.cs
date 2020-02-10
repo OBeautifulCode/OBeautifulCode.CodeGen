@@ -23,8 +23,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string TypeNameToken = "<<<TypeNameHere>>>";
         private const string PropertyNameToken = "<<<PropertyNameHere>>>";
         private const string PropertyTypeNameToken = "<<<PropertyTypeNameHere>>>";
-        private const string EqualsMethodToken = "<<<EqualsMethodHere>>>";
-        private const string EqualityToken = "<<<EqualityLogicHere>>>";
         private const string NewObjectForEquatableToken = "<<<NewObjectLogicForEquatableHere>>>";
         private const string UnequalObjectsToken = "<<<UnequalObjectsCreationHere>>>";
         private const string ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectToken = "<<<ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectHere>>>";
@@ -32,7 +30,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string EqualityTestFieldsForDeclaredTypeCodeTemplate = @"    private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">();";
 
         private const string EqualityTestFieldsForAbstractBaseTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ReferenceObjectForEquatableTestScenarios = A.Dummy<" + TypeNameToken + @">();
-            
+
         private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">()
             .AddScenario(
                 new EquatableTestScenario<" + TypeNameToken + @">
@@ -57,7 +55,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 });";
 
         private const string EqualityTestFieldsForConcreteTypeCodeTemplate = @"    private static readonly " + TypeNameToken + @" ReferenceObjectForEquatableTestScenarios = A.Dummy<" + TypeNameToken + @">();
-        
+
         private static readonly EquatableTestScenarios<" + TypeNameToken + @"> EquatableTestScenarios = new EquatableTestScenarios<" + TypeNameToken + @">()
             .AddScenario(
                 new EquatableTestScenario<" + TypeNameToken + @">
@@ -88,97 +86,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         A.Dummy<" + TypeNameToken + @">().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
                     },";
-
-        private const string EqualsMethodForConcreteTypeCodeTemplate = @"
-
-        /// <inheritdoc />
-        public bool Equals(" + TypeNameToken + @" other)
-        {
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            if (ReferenceEquals(other, null))
-            {
-                return false;
-            }
-
-            var result = " + EqualityToken + @";
-
-            return result;
-        }";
-
-        private const string EqualityMethodsForConcreteTypeCodeTemplate = @"    /// <summary>
-        /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the equality operator.</param>
-        /// <param name=""right"">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(" + TypeNameToken + @" left, " + TypeNameToken + @" right)
-        {
-            if (ReferenceEquals(left, right))
-            {
-                return true;
-            }
-
-            if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
-            {
-                return false;
-            }
-
-            var result = left.Equals(right);
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are not equal.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the equality operator.</param>
-        /// <param name=""right"">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);" + EqualsMethodToken + @"
-
-        /// <inheritdoc />
-        public override bool Equals(object obj) => this == (obj as " + TypeNameToken + @");";
-
-        private const string EqualityMethodsForAbstractBaseTypeCodeTemplate = @"    /// <summary>
-        /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are equal.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the equality operator.</param>
-        /// <param name=""right"">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(" + TypeNameToken + @" left, " + TypeNameToken + @" right)
-        {
-            if (ReferenceEquals(left, right))
-            {
-                return true;
-            }
-
-            if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
-            {
-                return false;
-            }
-
-            var result = left.Equals((object)right);
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether two objects of type <see cref=""" + TypeNameToken + @"""/> are not equal.
-        /// </summary>
-        /// <param name=""left"">The object to the left of the equality operator.</param>
-        /// <param name=""right"">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(" + TypeNameToken + @" left, " + TypeNameToken + @" right) => !(left == right);
-
-        /// <inheritdoc />
-        public bool Equals(" + TypeNameToken + @" other) => this == other;
-
-        /// <inheritdoc />
-        public abstract override bool Equals(object obj);";
 
         private const string EqualityTestMethodsCodeTemplate = @"    public static class Equality
         {
@@ -543,6 +450,34 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }";
 
         /// <summary>
+        /// Generates equality methods.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated equality methods.
+        /// </returns>
+        public static string GenerateEqualityMethods(
+            this ModelType modelType)
+        {
+            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.IsConcrete ? HierarchyKinds.Concrete : modelType.HierarchyKinds, CodeTemplateKind.Model, modelType.EqualsKeyMethodKinds);
+
+            var equalityStatements = modelType
+                .PropertiesOfConcern
+                .Select(_ => _.GenerateEqualityLogicCodeForProperty())
+                .ToList();
+
+            var equalityStatementsCode = modelType.PropertiesOfConcern.Any()
+                ? string.Join(Environment.NewLine + "                      && ", equalityStatements)
+                : "true";
+
+            var result = codeTemplate
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.EqualityStatementsToken, equalityStatementsCode);
+
+            return result;
+        }
+
+        /// <summary>
         /// Generates fields required to test equality.
         /// </summary>
         /// <param name="modelType">The model type.</param>
@@ -566,6 +501,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             switch (modelType.HierarchyKind)
             {
                 case HierarchyKind.AbstractBaseRoot:
+                case HierarchyKind.AbstractBaseInherited:
                     var objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypes.Count() >= 2)
                         ? ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObjectCodeTemplate
                         : string.Empty;
@@ -630,48 +566,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 : string.Empty;
 
             result = result.Replace(UnequalObjectsToken, unequalObjectsCode);
-
-            return result;
-        }
-
-        /// <summary>
-        /// Generates equality methods.
-        /// </summary>
-        /// <param name="modelType">The model type.</param>
-        /// <returns>
-        /// Generated equality methods.
-        /// </returns>
-        public static string GenerateEqualityMethods(
-            this ModelType modelType)
-        {
-            string result;
-
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
-            {
-                if (modelType.DeclaresEqualsMethod)
-                {
-                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare an Equals method."));
-                }
-
-                result = EqualityMethodsForAbstractBaseTypeCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
-            }
-            else
-            {
-                var equalityLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateEqualityLogicCodeForProperty()).ToList();
-
-                var equalityToken = modelType.PropertiesOfConcern.Any()
-                    ? string.Join(Environment.NewLine + "                      && ", equalityLines)
-                    : "true";
-
-                var equalsMethodCode = modelType.DeclaresEqualsMethod
-                    ? string.Empty
-                    : EqualsMethodForConcreteTypeCodeTemplate;
-
-                result = EqualityMethodsForConcreteTypeCodeTemplate
-                    .Replace(EqualsMethodToken, equalsMethodCode)
-                    .Replace(TypeNameToken, modelType.TypeCompilableString)
-                    .Replace(EqualityToken, equalityToken);
-            }
 
             return result;
         }

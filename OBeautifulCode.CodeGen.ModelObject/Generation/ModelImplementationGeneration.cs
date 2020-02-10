@@ -69,7 +69,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresEquality)
             {
                 items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateEqualityMethods());
+                items.Add(modelType.GenerateEqualityMethods());
             }
 
             if (modelType.RequiresComparability)
