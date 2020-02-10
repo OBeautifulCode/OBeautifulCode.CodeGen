@@ -20,19 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class StringRepresentationGeneration
     {
         private const string TypeNameToken = "<<<TypeNameHere>>>";
-        private const string ToStringToken = "<<<ToStringConstructionHere>>>";
         private const string ToStringTestToken = "<<<ToStringConstructionForTestHere>>>";
-
-        private const string ToStringMethodForConcreteTypeCodeTemplate = @"    /// <inheritdoc />
-        public override string ToString()
-        {
-            var result = " + ToStringToken + @";
-
-            return result;
-        }";
-
-        private const string ToStringMethodForAbstractBaseTypeCodeTemplate = @"    /// <inheritdoc />
-        public abstract override string ToString();";
 
         private const string StringRepresentationTestsCodeTemplate = @"    public static class StringRepresentation
         {
@@ -62,28 +50,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateStringRepresentationMethods(
             this ModelType modelType)
         {
-            string result;
+            var codeTemplate = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Model, modelType.ToStringKeyMethodKinds);
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
-            {
-                if (modelType.DeclaresToStringMethod)
-                {
-                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare an ToString method."));
-                }
+            var toStringStatement = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false);
 
-                result = ToStringMethodForAbstractBaseTypeCodeTemplate;
-            }
-            else
-            {
-                if (modelType.DeclaresToStringMethod)
-                {
-                    return null;
-                }
-
-                var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false);
-
-                result = ToStringMethodForConcreteTypeCodeTemplate.Replace(ToStringToken, toStringConstructionCode);
-            }
+            var result = codeTemplate
+                .Replace(Tokens.ToStringStatementToken, toStringStatement);
 
             return result;
         }

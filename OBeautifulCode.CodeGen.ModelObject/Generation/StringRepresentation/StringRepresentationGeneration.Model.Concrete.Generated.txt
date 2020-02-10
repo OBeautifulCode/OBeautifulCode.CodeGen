@@ -1,0 +1,7 @@
+﻿        /// <inheritdoc />
+        public override string ToString()
+        {
+            var result = [to-string-statement-here];
+
+            return result;
+        }

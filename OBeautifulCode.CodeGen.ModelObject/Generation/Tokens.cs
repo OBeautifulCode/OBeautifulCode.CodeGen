@@ -75,5 +75,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The hash statements.
         /// </summary>
         public const string HashStatementsToken = "[hash-statements-here]";
+
+        /// <summary>
+        /// The ToString() statement.
+        /// </summary>
+        public const string ToStringStatementToken = "[to-string-statement-here]";
     }
 }

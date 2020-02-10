@@ -99,10 +99,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var stringRepresentationMethods = modelType.GenerateStringRepresentationMethods();
 
-                if (stringRepresentationMethods != null)
+                if (!string.IsNullOrWhiteSpace(stringRepresentationMethods))
                 {
                     items.Add(string.Empty);
-                    items.Add("    " + stringRepresentationMethods);
+                    items.Add(stringRepresentationMethods);
                 }
             }
 
