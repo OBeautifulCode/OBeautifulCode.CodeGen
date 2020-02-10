@@ -1,0 +1,16 @@
+﻿            [Fact]
+            public static void [property-name-here]___Should_return_same_[parameter-name-here]_parameter_passed_to_constructor___When_getting()
+            {
+                // Arrange
+                var referenceObject = A.Dummy<[model-type-name-here]>();
+
+                var systemUnderTest = [construct-object-here];
+
+                var expected = referenceObject.[property-name-here];
+
+                // Act
+                var actual = systemUnderTest.[property-name-here];
+
+                // Assert
+                [assert-property-getter-here]
+            }

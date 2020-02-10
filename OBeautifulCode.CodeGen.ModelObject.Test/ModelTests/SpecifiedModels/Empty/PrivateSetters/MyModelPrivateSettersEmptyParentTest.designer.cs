@@ -42,7 +42,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
         private static readonly MyModelPrivateSettersEmptyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersEmptyParent>();
-            
+
         private static readonly EquatableTestScenarios<MyModelPrivateSettersEmptyParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersEmptyParent>()
             .AddScenario(
                 new EquatableTestScenario<MyModelPrivateSettersEmptyParent>

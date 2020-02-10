@@ -25,5 +25,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A template for a snippet of code that goes in the model.
         /// </summary>
         ModelSnippet,
+
+        /// <summary>
+        /// A template for a snippet of code that goes in the test class.
+        /// </summary>
+        TestSnippet,
     }
 }

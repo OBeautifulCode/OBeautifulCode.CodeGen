@@ -42,7 +42,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
         private static readonly MyModelAllPublicSetters ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelAllPublicSetters>();
-        
+
         private static readonly EquatableTestScenarios<MyModelAllPublicSetters> EquatableTestScenarios = new EquatableTestScenarios<MyModelAllPublicSetters>()
             .AddScenario(
                 new EquatableTestScenario<MyModelAllPublicSetters>
@@ -6771,7 +6771,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithBoolProperty(referenceObject.BoolProperty);
 
@@ -6930,7 +6930,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithIntProperty(referenceObject.IntProperty);
 
@@ -7089,7 +7089,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithStringProperty(referenceObject.StringProperty);
 
@@ -7248,7 +7248,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithGuidProperty(referenceObject.GuidProperty);
 
@@ -7407,7 +7407,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithDateTimeProperty(referenceObject.DateTimeProperty);
 
@@ -7566,7 +7566,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithModelEnumProperty(referenceObject.ModelEnumProperty);
 
@@ -7725,7 +7725,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithModelFlagsEnumProperty(referenceObject.ModelFlagsEnumProperty);
 
@@ -7884,7 +7884,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithModelClassProperty(referenceObject.ModelClassProperty);
 
@@ -8042,7 +8042,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableBoolProperty(referenceObject.NullableBoolProperty);
 
@@ -8201,7 +8201,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableIntProperty(referenceObject.NullableIntProperty);
 
@@ -8360,7 +8360,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableGuidProperty(referenceObject.NullableGuidProperty);
 
@@ -8519,7 +8519,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableDateTimeProperty(referenceObject.NullableDateTimeProperty);
 
@@ -8678,7 +8678,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableModelEnumProperty(referenceObject.NullableModelEnumProperty);
 
@@ -8837,7 +8837,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithNullableModelFlagsEnumProperty(referenceObject.NullableModelFlagsEnumProperty);
 
@@ -8996,7 +8996,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfBoolProperty(referenceObject.ArrayOfBoolProperty);
 
@@ -9154,7 +9154,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfIntProperty(referenceObject.ArrayOfIntProperty);
 
@@ -9312,7 +9312,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfStringProperty(referenceObject.ArrayOfStringProperty);
 
@@ -9470,7 +9470,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfGuidProperty(referenceObject.ArrayOfGuidProperty);
 
@@ -9628,7 +9628,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfDateTimeProperty(referenceObject.ArrayOfDateTimeProperty);
 
@@ -9786,7 +9786,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfModelEnumProperty(referenceObject.ArrayOfModelEnumProperty);
 
@@ -9944,7 +9944,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfModelFlagsEnumProperty(referenceObject.ArrayOfModelFlagsEnumProperty);
 
@@ -10102,7 +10102,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfModelClassProperty(referenceObject.ArrayOfModelClassProperty);
 
@@ -10260,7 +10260,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableBoolProperty(referenceObject.ArrayOfNullableBoolProperty);
 
@@ -10418,7 +10418,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableIntProperty(referenceObject.ArrayOfNullableIntProperty);
 
@@ -10576,7 +10576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableGuidProperty(referenceObject.ArrayOfNullableGuidProperty);
 
@@ -10734,7 +10734,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableDateTimeProperty(referenceObject.ArrayOfNullableDateTimeProperty);
 
@@ -10892,7 +10892,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableModelEnumProperty(referenceObject.ArrayOfNullableModelEnumProperty);
 
@@ -11050,7 +11050,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithArrayOfNullableModelFlagsEnumProperty(referenceObject.ArrayOfNullableModelFlagsEnumProperty);
 
@@ -11208,7 +11208,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfBoolProperty(referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty);
 
@@ -11366,7 +11366,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfIntProperty(referenceObject.ReadOnlyCollectionInterfaceOfIntProperty);
 
@@ -11524,7 +11524,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfStringProperty(referenceObject.ReadOnlyCollectionInterfaceOfStringProperty);
 
@@ -11682,7 +11682,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfGuidProperty(referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty);
 
@@ -11840,7 +11840,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfDateTimeProperty(referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty);
 
@@ -11998,7 +11998,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfModelEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfModelEnumProperty);
 
@@ -12156,7 +12156,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
 
@@ -12314,7 +12314,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfModelClassProperty(referenceObject.ReadOnlyCollectionInterfaceOfModelClassProperty);
 
@@ -12472,7 +12472,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
 
@@ -12630,7 +12630,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableIntProperty);
 
@@ -12788,7 +12788,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
 
@@ -12946,7 +12946,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
 
@@ -13104,7 +13104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
 
@@ -13262,7 +13262,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
 
@@ -13420,7 +13420,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfBoolProperty(referenceObject.ReadOnlyListInterfaceOfBoolProperty);
 
@@ -13578,7 +13578,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfIntProperty(referenceObject.ReadOnlyListInterfaceOfIntProperty);
 
@@ -13736,7 +13736,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfStringProperty(referenceObject.ReadOnlyListInterfaceOfStringProperty);
 
@@ -13894,7 +13894,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfGuidProperty(referenceObject.ReadOnlyListInterfaceOfGuidProperty);
 
@@ -14052,7 +14052,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyListInterfaceOfDateTimeProperty);
 
@@ -14210,7 +14210,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfModelEnumProperty(referenceObject.ReadOnlyListInterfaceOfModelEnumProperty);
 
@@ -14368,7 +14368,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfModelFlagsEnumProperty(referenceObject.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
 
@@ -14526,7 +14526,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfModelClassProperty(referenceObject.ReadOnlyListInterfaceOfModelClassProperty);
 
@@ -14684,7 +14684,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty(referenceObject.ReadOnlyListInterfaceOfNullableBoolProperty);
 
@@ -14842,7 +14842,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty(referenceObject.ReadOnlyListInterfaceOfNullableIntProperty);
 
@@ -15000,7 +15000,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty(referenceObject.ReadOnlyListInterfaceOfNullableGuidProperty);
 
@@ -15158,7 +15158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty(referenceObject.ReadOnlyListInterfaceOfNullableDateTimeProperty);
 
@@ -15316,7 +15316,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableModelEnumProperty(referenceObject.ReadOnlyListInterfaceOfNullableModelEnumProperty);
 
@@ -15474,7 +15474,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
 
@@ -15632,7 +15632,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfBoolProperty(referenceObject.ReadOnlyDictionaryInterfaceOfBoolProperty);
 
@@ -15790,7 +15790,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfIntProperty(referenceObject.ReadOnlyDictionaryInterfaceOfIntProperty);
 
@@ -15948,7 +15948,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfStringProperty(referenceObject.ReadOnlyDictionaryInterfaceOfStringProperty);
 
@@ -16106,7 +16106,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfGuidProperty(referenceObject.ReadOnlyDictionaryInterfaceOfGuidProperty);
 
@@ -16264,7 +16264,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfModelEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
 
@@ -16422,7 +16422,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
 
@@ -16580,7 +16580,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfModelClassProperty(referenceObject.ReadOnlyDictionaryInterfaceOfModelClassProperty);
 
@@ -16738,7 +16738,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
 
@@ -16896,7 +16896,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
 
@@ -17054,7 +17054,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
 
@@ -17212,7 +17212,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
 
@@ -17370,7 +17370,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
 
@@ -17528,7 +17528,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithCollectionInterfaceOfStringProperty(referenceObject.CollectionInterfaceOfStringProperty);
 
@@ -17686,7 +17686,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty(referenceObject.CollectionOfCollectionInterfaceOfStringProperty);
 
@@ -17844,7 +17844,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithListInterfaceOfCollectionInterfaceOfStringProperty(referenceObject.ListInterfaceOfCollectionInterfaceOfStringProperty);
 
@@ -18002,7 +18002,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithListOfCollectionInterfaceOfStringProperty(referenceObject.ListOfCollectionInterfaceOfStringProperty);
 
@@ -18160,7 +18160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty(referenceObject.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
 
@@ -18318,7 +18318,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
@@ -18476,7 +18476,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
@@ -18634,7 +18634,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
@@ -18792,7 +18792,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
@@ -18950,7 +18950,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
@@ -19108,7 +19108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelAllPublicSetters>();
 
                 var referenceObject = A.Dummy<MyModelAllPublicSetters>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(referenceObject.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 

@@ -80,5 +80,25 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The ToString() statement.
         /// </summary>
         public const string ToStringStatementToken = "[to-string-statement-here]";
+
+        /// <summary>
+        /// The constructor tests.
+        /// </summary>
+        public const string ConstructorTestsToken = "[constructor-tests-here]";
+
+        /// <summary>
+        /// Constructs an object.
+        /// </summary>
+        public const string ConstructObjectToken = "[construct-object-here]";
+
+        /// <summary>
+        /// Sets a dictionary value to null.
+        /// </summary>
+        public const string SetDictionaryValueToNullToken = "[set-dictionary-value-to-null-here]";
+
+        /// <summary>
+        /// Asserts a property getter.
+        /// </summary>
+        public const string AssertPropertyGetterHereToken = "[assert-property-getter-here]";
     }
 }

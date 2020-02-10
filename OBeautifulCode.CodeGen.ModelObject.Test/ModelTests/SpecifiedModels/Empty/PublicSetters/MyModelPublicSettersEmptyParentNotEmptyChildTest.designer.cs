@@ -42,7 +42,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
         private static readonly MyModelPublicSettersEmptyParentNotEmptyChild ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>();
-        
+
         private static readonly EquatableTestScenarios<MyModelPublicSettersEmptyParentNotEmptyChild> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersEmptyParentNotEmptyChild>()
             .AddScenario(
                 new EquatableTestScenario<MyModelPublicSettersEmptyParentNotEmptyChild>
@@ -169,7 +169,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>();
 
                 var referenceObject = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>().ThatIsNot(systemUnderTest);
-                
+
                 // Act
                 var actual = systemUnderTest.DeepCloneWithChildReadOnlyDictionaryOfStringString(referenceObject.ChildReadOnlyDictionaryOfStringString);
 

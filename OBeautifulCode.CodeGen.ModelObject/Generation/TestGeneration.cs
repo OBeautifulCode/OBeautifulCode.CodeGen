@@ -119,7 +119,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 if (constructorTestMethodsCode != null)
                 {
                     items.Add(string.Empty);
-                    items.Add("    " + constructorTestMethodsCode);
+                    items.Add(constructorTestMethodsCode);
                 }
             }
 

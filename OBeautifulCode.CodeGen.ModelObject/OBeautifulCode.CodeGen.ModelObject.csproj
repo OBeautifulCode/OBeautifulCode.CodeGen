@@ -104,7 +104,7 @@
     <Compile Include="Generation\Equality\EqualityGeneration.cs" />
     <Compile Include="Generation\GenerationShared.cs" />
     <Compile Include="CodeGenerator.cs" />
-    <Compile Include="Generation\ConstructingGeneration.cs" />
+    <Compile Include="Generation\Constructing\ConstructingGeneration.cs" />
     <Compile Include="Generation\DummyGeneration.cs" />
     <Compile Include="Generation\Hashing\HashCodeGeneration.cs" />
     <Compile Include="Generation\Tokens.cs" />
@@ -137,6 +137,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.Test.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForStringArgument.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForCollectionArgumentThatIsEmpty.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForCollectionArgumentThatContainsNullElement.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForDictionaryArgumentThatIsEmpty.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForDictionaryArgumentThatContainsNullValue.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.PropertyGetterTestMethod.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForArgument.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Generated.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Declared.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Abstract.Generated.txt" />

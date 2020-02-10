@@ -160,7 +160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void LessThanOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -292,7 +292,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void GreaterThanOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -424,7 +424,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeTrue(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void LessThanOrEqualToOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -556,7 +556,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeFalse(because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
             {
@@ -658,7 +658,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void CompareTo_with_MyModelComparingPrivateSettersChild1___Should_return_1___When_object_is_greater_than_parameter_other()
             {
@@ -753,7 +753,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void CompareTo_with_Object___Should_return_1___When_object_is_greater_than_parameter_obj()
             {
@@ -855,7 +855,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
                 }
             }
-            
+
             [Fact]
             public static void CompareToForRelativeSortOrder_with_MyModelComparingPrivateSettersChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {

@@ -23,6 +23,80 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DummyFactory()
         {
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultiLevelGrandChild2B(
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultiLevelGrandChild2A(
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultiLevelGrandChild1B(
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultiLevelGrandChild1A(
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<int>()));
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersMultiLevelChild2>();
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersMultiLevelChild1>();
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersMultiLevelParent>();
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersMultiLevelChild1>();
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersMultiLevelChild2>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersMultiLevelGrandChild1A
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child1Int       = A.Dummy<int>(),
+                                 GrandChild1AInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersMultiLevelGrandChild1B
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child1Int       = A.Dummy<int>(),
+                                 GrandChild1BInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersMultiLevelGrandChild2A
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child2Int       = A.Dummy<int>(),
+                                 GrandChild2AInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersMultiLevelGrandChild2B
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child2Int       = A.Dummy<int>(),
+                                 GrandChild2BInt = A.Dummy<int>(),
+                             });
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersMultiLevelParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new MyModelPrivateSettersEmpty());
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
