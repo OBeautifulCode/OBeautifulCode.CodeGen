@@ -71,6 +71,30 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
+        /// Classifies the specified <see cref="HierarchyKind"/>
+        /// into abstract or concrete.
+        /// </summary>
+        /// <param name="hierarchyKinds">The hierarchy kinds.</param>
+        /// <returns>
+        /// The specified hierarchy kinds, classified into abstract or concrete.
+        /// </returns>
+        public static HierarchyKinds Classify(
+            this HierarchyKinds hierarchyKinds)
+        {
+            if ((hierarchyKinds & HierarchyKinds.Abstract) != 0)
+            {
+                return HierarchyKinds.Abstract;
+            }
+
+            if ((hierarchyKinds & HierarchyKinds.Concrete) != 0)
+            {
+                return HierarchyKinds.Concrete;
+            }
+
+            throw new InvalidOperationException("Cannot be classified");
+        }
+
+        /// <summary>
         /// Gets a code template.
         /// </summary>
         /// <param name="generationType">The type of the class containing the generation logic.</param>

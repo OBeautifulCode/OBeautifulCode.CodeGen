@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Collection.Recipes;
 
     using static System.FormattableString;
 
@@ -20,13 +21,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     {
         private const string HashToken = "<<<HashMethodStackHere>>>";
         private const string UnequalHashCodeToken = "<<<UnequalHashCodeHere>>>";
-
-        private const string HashMethodForConcreteTypeCodeTemplate = @"    /// <inheritdoc />
-        public override int GetHashCode() => HashCodeHelper.Initialize()" + HashToken + @"
-            .Value;";
-
-        private const string HashMethodForAbstractBaseTypeCodeTemplate = @"    /// <inheritdoc />
-        public abstract override int GetHashCode();";
 
         private const string HashingTestMethodsCodeTemplate = @"    public static class Hashing
         {
@@ -75,37 +69,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateHashingMethods(
             this ModelType modelType)
         {
-            string result;
+            var codeTemplate = typeof(HashCodeGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Model, modelType.GetHashCodeKeyMethodKinds);
 
-            if (modelType.HierarchyKind == HierarchyKind.AbstractBaseRoot)
-            {
-                if (modelType.DeclaresGetHashCodeMethod)
-                {
-                    throw new NotSupportedException(Invariant($"Abstract type {modelType.TypeReadableString} cannot declare a GetHashCode method."));
-                }
+            var hashStatements = modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
 
-                result = HashMethodForAbstractBaseTypeCodeTemplate;
-            }
-            else
-            {
-                if (modelType.DeclaresGetHashCodeMethod)
-                {
-                    return null;
-                }
+            var hashStatementsCode = hashStatements.Any()
+                ? new string[0].Concat(new[] { string.Empty }).Concat(hashStatements).ToDelimitedString(Environment.NewLine + "            .")
+                : string.Empty;
 
-                var hashLines = modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
-
-                string hashToken = null;
-
-                if (hashLines.Any())
-                {
-                    hashLines = new string[0].Concat(new[] { string.Empty }).Concat(hashLines).ToList();
-
-                    hashToken = string.Join(Environment.NewLine + "            .", hashLines);
-                }
-
-                result = HashMethodForConcreteTypeCodeTemplate.Replace(HashToken, hashToken);
-            }
+            var result = codeTemplate
+                .Replace(Tokens.HashStatementsToken, hashStatementsCode);
 
             return result;
         }

@@ -1,0 +1,3 @@
+﻿        /// <inheritdoc />
+        public override int GetHashCode() => HashCodeHelper.Initialize()[hash-statements-here]
+            .Value;

@@ -82,10 +82,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var hashingMethods = modelType.GenerateHashingMethods();
 
-                if (hashingMethods != null)
+                if (!string.IsNullOrWhiteSpace(hashingMethods))
                 {
                     items.Add(string.Empty);
-                    items.Add("    " + hashingMethods);
+                    items.Add(hashingMethods);
                 }
             }
 

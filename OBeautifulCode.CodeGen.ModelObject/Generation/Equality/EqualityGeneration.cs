@@ -459,7 +459,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityMethods(
             this ModelType modelType)
         {
-            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.IsConcrete ? HierarchyKinds.Concrete : modelType.HierarchyKinds, CodeTemplateKind.Model, modelType.EqualsKeyMethodKinds);
+            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Model, modelType.EqualsKeyMethodKinds);
 
             var equalityStatements = modelType
                 .PropertiesOfConcern

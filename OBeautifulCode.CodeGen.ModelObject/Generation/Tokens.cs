@@ -70,5 +70,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The equality statements.
         /// </summary>
         public const string EqualityStatementsToken = "[equality-statements-here]";
+
+        /// <summary>
+        /// The hash statements.
+        /// </summary>
+        public const string HashStatementsToken = "[hash-statements-here]";
     }
 }

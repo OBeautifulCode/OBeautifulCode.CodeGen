@@ -53,6 +53,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// All kinds.
         /// </summary>
-        All = Standalone | Abstract | ConcreteInherited,
+        All = Abstract | Concrete,
     }
 }

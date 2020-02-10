@@ -106,7 +106,7 @@
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="Generation\ConstructingGeneration.cs" />
     <Compile Include="Generation\DummyGeneration.cs" />
-    <Compile Include="Generation\HashCodeGeneration.cs" />
+    <Compile Include="Generation\Hashing\HashCodeGeneration.cs" />
     <Compile Include="Generation\Tokens.cs" />
     <Compile Include="InternalTypes\HierarchyKinds.cs" />
     <Compile Include="InternalTypes\KeyMethodKinds.cs" />
@@ -137,10 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Model.Concrete.Declared.txt" />
+    <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Model.Abstract.Generated.txt" />
+    <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Model.Concrete.Generated.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Model.Concrete.Declared.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Model.Concrete.Generated.txt" />
-    <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Model.AbstractBaseInherited.Generated.txt" />
-    <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Model.AbstractBaseRoot.Generated.txt" />
+    <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Model.Abstract.Generated.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareToForRelativeSortOrder.ConcreteInherited.Declared.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareTo.Standalone.Declared.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.ModelSnippet.CompareTo.ConcreteInherited.Declared.txt" />
