@@ -164,9 +164,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 if (modelType.IsAbstractBase)
                 {
+                    var cast = modelType.DeclaresProperty(property)
+                        ? string.Empty
+                        : Invariant($"({modelType.TypeCompilableString})");
+
                     var code = typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject)
                         .Replace(Tokens.PropertyNameToken, property.Name)
-                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable());
+                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
+                        .Replace(Tokens.CastToken, cast);
 
                     unequalSet.Add(code);
                 }

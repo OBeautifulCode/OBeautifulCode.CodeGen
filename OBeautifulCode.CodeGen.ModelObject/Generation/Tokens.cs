@@ -200,5 +200,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The test implementation.
         /// </summary>
         public const string TestImplementationToken = "[test-implementation-here]";
+
+        /// <summary>
+        /// A cast.
+        /// </summary>
+        public const string CastToken = "[cast-here]";
     }
 }
