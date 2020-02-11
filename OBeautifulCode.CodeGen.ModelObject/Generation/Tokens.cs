@@ -145,5 +145,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A new dummy object.
         /// </summary>
         public const string NewDummyToken = "[new-dummy-here]";
+
+        /// <summary>
+        /// The serialization configuration name prefix.
+        /// </summary>
+        public const string SerializationConfigurationPrefixToken = "[serialization-configuration-prefix-here]";
+
+        /// <summary>
+        /// The serialization configuration name prefix.
+        /// </summary>
+        public const string SerializationTestsToken = "[serialization-tests-here]";
     }
 }

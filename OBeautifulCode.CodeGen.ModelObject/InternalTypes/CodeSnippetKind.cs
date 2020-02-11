@@ -95,5 +95,25 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for an object that is not equal to reference object.
         /// </summary>
         EquatableTestFieldsObjectNotEqualToReferenceObject,
+
+        /// <summary>
+        /// A code snippet for the BSON serialization test fields.
+        /// </summary>
+        SerializationBsonTestFields,
+
+        /// <summary>
+        /// A code snippet for the JSON serialization test fields.
+        /// </summary>
+        SerializationJsonTestFields,
+
+        /// <summary>
+        /// A code snippet for the BSON serialization tests.
+        /// </summary>
+        SerializationBsonTests,
+
+        /// <summary>
+        /// A code snippet for the JSON serialization tests.
+        /// </summary>
+        SerializationJsonTests,
     }
 }

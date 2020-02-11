@@ -38,7 +38,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     public static partial class MyModelPrivateSettersEmptyParentTest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.BsonConfigurationType);
-        
+
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
         private static readonly MyModelPrivateSettersEmptyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersEmptyParent>();

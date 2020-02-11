@@ -82,7 +82,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 items.Add(string.Empty);
 
-                items.Add("    " + modelType.GenerateSerializationTestFields());
+                items.Add(modelType.GenerateSerializationTestFields());
             }
 
             if (modelType.RequiresEquality || modelType.RequiresHashing)
@@ -145,7 +145,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 items.Add(string.Empty);
 
-                items.Add("    " + modelType.GenerateSerializationTestMethods());
+                items.Add(modelType.GenerateSerializationTestMethods());
             }
 
             if (modelType.RequiresEquality)

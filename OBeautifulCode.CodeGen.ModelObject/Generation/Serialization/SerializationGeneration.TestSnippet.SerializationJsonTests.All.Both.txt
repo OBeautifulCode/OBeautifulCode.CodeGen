@@ -1,0 +1,16 @@
+﻿            [Fact]
+            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
+            {
+                // Arrange
+                var expected = A.Dummy<[model-type-name-here]>();
+
+                var serializer = JsonSerializer;
+
+                var serializedJson = serializer.SerializeToString(expected);
+
+                // Act
+                var actual = serializer.Deserialize<[model-type-name-here]>(serializedJson);
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(expected);
+            }

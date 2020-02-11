@@ -121,7 +121,7 @@
     <Compile Include="InternalTypes\ModelType.cs" />
     <Compile Include="InternalTypes\PropertyOfConcern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Generation\SerializationGeneration.cs" />
+    <Compile Include="Generation\Serialization\SerializationGeneration.cs" />
     <Compile Include="Generation\StringRepresentation\StringRepresentationGeneration.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +137,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.Test.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationJsonTests.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTests.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTestFields.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationJsonTestFields.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Abstract.Generated.txt" />
