@@ -140,5 +140,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The expected ToString() result.
         /// </summary>
         public const string ToStringExpectedToken = "[to-string-expected-here]";
+
+        /// <summary>
+        /// A new dummy object.
+        /// </summary>
+        public const string NewDummyToken = "[new-dummy-here]";
     }
 }

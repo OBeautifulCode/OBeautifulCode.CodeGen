@@ -6,25 +6,18 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
-    using System;
     using System.Linq;
-
-    using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.Type.Recipes;
 
     /// <summary>
     /// Generates code that creates model dummies.
     /// </summary>
     internal static class DummyGeneration
     {
-        private const string NewDummyToken = "<<<NEWDUMMYLOGICHERE>>>";
-        private const string TypeNameToken = "<<<TYPENAMEHERE>>>";
-
         private const string AddDummyCreatorCodeTemplate = @"            AutoFixtureBackedDummyFactory.AddDummyCreator(
-                () => " + NewDummyToken + @");";
+                () => [new-dummy-here]);";
 
         private const string UseRandomConcreteSubclassCodeTemplate = @"
-            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<" + TypeNameToken + @">();";
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<[model-type-name-here]>();";
 
         /// <summary>
         /// Generates code for a dummy factory.
@@ -39,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string result;
             if (modelType.IsAbstractBase)
             {
-                result = UseRandomConcreteSubclassCodeTemplate.Replace(TypeNameToken, modelType.TypeCompilableString);
+                result = UseRandomConcreteSubclassCodeTemplate.Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
             }
             else
             {
@@ -47,30 +40,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var newDummyToken = modelType.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 
-                result = AddDummyCreatorCodeTemplate.Replace(NewDummyToken, newDummyToken);
+                result = AddDummyCreatorCodeTemplate.Replace(Tokens.NewDummyToken, newDummyToken);
             }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Generates code that constructs a dummy model.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <param name="thatIsNot">Code to inject into a ThatIsNot qualification.</param>
-        /// <returns>
-        /// Generated code that constructs a dummy model.
-        /// </returns>
-        public static string GenerateDummyConstructionCodeForType(
-            this Type type,
-            string thatIsNot = null)
-        {
-            type.AsArg(nameof(type)).Must().NotBeNull();
-
-            var result =
-                string.IsNullOrWhiteSpace(thatIsNot)
-                    ? "A.Dummy<" + type.ToStringCompilable() + ">()"
-                    : "A.Dummy<" + type.ToStringCompilable() + ">().ThatIsNot(" + thatIsNot + ")";
 
             return result;
         }

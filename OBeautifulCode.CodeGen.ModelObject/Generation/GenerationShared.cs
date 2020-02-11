@@ -289,5 +289,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Generates code that constructs a dummy model.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="thatIsNot">Code to inject into a ThatIsNot qualification.</param>
+        /// <returns>
+        /// Generated code that constructs a dummy model.
+        /// </returns>
+        public static string GenerateDummyConstructionCodeForType(
+            this Type type,
+            string thatIsNot = null)
+        {
+            type.AsArg(nameof(type)).Must().NotBeNull();
+
+            var result =
+                string.IsNullOrWhiteSpace(thatIsNot)
+                    ? "A.Dummy<" + type.ToStringCompilable() + ">()"
+                    : "A.Dummy<" + type.ToStringCompilable() + ">().ThatIsNot(" + thatIsNot + ")";
+
+            return result;
+        }
     }
 }

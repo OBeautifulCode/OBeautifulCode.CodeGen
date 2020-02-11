@@ -105,7 +105,7 @@
     <Compile Include="Generation\GenerationShared.cs" />
     <Compile Include="CodeGenerator.cs" />
     <Compile Include="Generation\Constructing\ConstructingGeneration.cs" />
-    <Compile Include="Generation\DummyGeneration.cs" />
+    <Compile Include="Generation\DummyFactory\DummyGeneration.cs" />
     <Compile Include="Generation\Hashing\HashCodeGeneration.cs" />
     <Compile Include="Generation\Tokens.cs" />
     <Compile Include="InternalTypes\HierarchyKinds.cs" />
