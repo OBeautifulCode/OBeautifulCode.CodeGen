@@ -159,7 +159,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 items.Add(string.Empty);
 
-                items.Add("    " + modelType.GenerateHashingTestMethods());
+                items.Add(modelType.GenerateHashingTestMethods());
             }
 
             if (modelType.RequiresComparability)

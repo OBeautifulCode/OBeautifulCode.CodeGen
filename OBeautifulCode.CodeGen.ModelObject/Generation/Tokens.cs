@@ -130,5 +130,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Objects that derive from scenario type but are not of the same type as the reference object.
         /// </summary>
         public const string ScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObjectToken = "[objects-that-derive-from-scenario-type-but-are-not-of-the-same-type-as-reference-object-here]";
+
+        /// <summary>
+        /// Skips the GetHashCode() test for objects that are not equal.
+        /// </summary>
+        public const string SkipGetHashCodeTestForNotEqualObjectsToken = "[skip-get-hash-code-test-here]";
     }
 }
