@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Abstract.Generated.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Test.All.Both.txt" />

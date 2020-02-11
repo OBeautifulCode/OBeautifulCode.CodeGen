@@ -22,24 +22,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         private const string TypeNameToken = "<<<TypeNameHere>>>";
         private const string ToStringTestToken = "<<<ToStringConstructionForTestHere>>>";
 
-        private const string StringRepresentationTestsCodeTemplate = @"    public static class StringRepresentation
-        {
-            [Fact]
-            public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                var expected = " + ToStringTestToken + @";
-
-                // Act
-                var actual = systemUnderTest.ToString();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
-            }
-        }";
-
         /// <summary>
         /// Generates the string representation methods.
         /// </summary>
@@ -70,20 +52,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateStringRepresentationTestMethods(
             this ModelType modelType)
         {
-            if (modelType.DeclaresToStringMethodDirectlyOrInDerivative)
-            {
-                return null;
-            }
-
             string result = null;
 
-            if (modelType.HierarchyKind != HierarchyKind.AbstractBaseRoot)
+            if ((!modelType.DeclaresToStringMethodDirectlyOrInDerivative) && modelType.IsConcrete)
             {
                 var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
-                result = StringRepresentationTestsCodeTemplate
-                    .Replace(TypeNameToken, modelType.TypeCompilableString)
-                    .Replace(ToStringTestToken, toStringConstructionCode);
+                result = typeof(StringRepresentationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both)
+                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                    .Replace(Tokens.ToStringExpectedToken, toStringConstructionCode);
             }
 
             return result;

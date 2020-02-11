@@ -135,5 +135,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Skips the GetHashCode() test for objects that are not equal.
         /// </summary>
         public const string SkipGetHashCodeTestForNotEqualObjectsToken = "[skip-get-hash-code-test-here]";
+
+        /// <summary>
+        /// The expected ToString() result.
+        /// </summary>
+        public const string ToStringExpectedToken = "[to-string-expected-here]";
     }
 }

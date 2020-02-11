@@ -114,11 +114,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var stringTestMethodsCode = modelType.GenerateStringRepresentationTestMethods();
 
-                if (stringTestMethodsCode != null)
+                if (!string.IsNullOrWhiteSpace(stringTestMethodsCode))
                 {
                     items.Add(string.Empty);
 
-                    items.Add("    " + stringTestMethodsCode);
+                    items.Add(stringTestMethodsCode);
                 }
             }
 
