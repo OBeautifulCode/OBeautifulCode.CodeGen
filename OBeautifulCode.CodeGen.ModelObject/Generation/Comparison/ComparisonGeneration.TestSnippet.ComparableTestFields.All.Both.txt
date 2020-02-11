@@ -1,0 +1,1 @@
+﻿        private static readonly ComparableTestScenarios<[model-type-name-here]> ComparableTestScenarios = new ComparableTestScenarios<[model-type-name-here]>();

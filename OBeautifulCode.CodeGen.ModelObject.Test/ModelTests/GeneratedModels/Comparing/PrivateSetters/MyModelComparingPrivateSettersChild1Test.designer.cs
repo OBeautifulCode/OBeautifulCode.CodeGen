@@ -191,10 +191,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
 
                     actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
 
@@ -323,10 +323,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
 
                     actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
 
@@ -455,10 +455,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
 
                     actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
 
@@ -587,10 +587,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
 
                     actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
 
@@ -688,7 +688,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
 
@@ -784,10 +784,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals1.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
 
                     actuals2.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals2.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
 
@@ -885,7 +885,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
-                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith(Invariant($"Attempting to compare objects of different types."));
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
                 }
             }
         }

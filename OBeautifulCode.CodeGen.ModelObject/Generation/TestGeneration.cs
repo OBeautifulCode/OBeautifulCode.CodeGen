@@ -73,6 +73,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             };
 
             items.Add(Invariant($"    public static partial class {modelType.TypeCompilableString}Test"));
+
             items.Add("    {");
 
             var firstNewlineInsideClassIndex = items.Count;
@@ -80,15 +81,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
             {
                 items.Add(string.Empty);
+
                 items.Add("    " + modelType.GenerateSerializationTestFields());
             }
 
             if (modelType.RequiresEquality || modelType.RequiresHashing)
             {
                 var equalityFieldsCode = modelType.GenerateEqualityTestFields();
+
                 if (equalityFieldsCode != null)
                 {
                     items.Add(string.Empty);
+
                     items.Add("    " + equalityFieldsCode);
                 }
             }
@@ -96,19 +100,24 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresComparability)
             {
                 var comparableTestFields = modelType.GenerateComparableTestFields();
+
                 items.Add(string.Empty);
-                items.Add("    " + comparableTestFields);
+
+                items.Add(comparableTestFields);
             }
 
             items.Add(string.Empty);
+
             items.Add("    " + modelType.GenerateStructuralTestMethods());
 
             if (modelType.RequiresStringRepresentation)
             {
                 var stringTestMethodsCode = modelType.GenerateStringRepresentationTestMethods();
+
                 if (stringTestMethodsCode != null)
                 {
                     items.Add(string.Empty);
+
                     items.Add("    " + stringTestMethodsCode);
                 }
             }
@@ -116,9 +125,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresModel)
             {
                 var constructorTestMethodsCode = modelType.GenerateConstructorTestMethods();
+
                 if (constructorTestMethodsCode != null)
                 {
                     items.Add(string.Empty);
+
                     items.Add(constructorTestMethodsCode);
                 }
             }
@@ -126,34 +137,40 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresDeepCloning)
             {
                 items.Add(string.Empty);
+
                 items.Add(modelType.GenerateCloningTestMethods());
             }
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
             {
                 items.Add(string.Empty);
+
                 items.Add("    " + modelType.GenerateSerializationTestMethods());
             }
 
             if (modelType.RequiresEquality)
             {
                 items.Add(string.Empty);
+
                 items.Add("    " + modelType.GenerateEqualityTestMethods());
             }
 
             if (modelType.RequiresHashing)
             {
                 items.Add(string.Empty);
+
                 items.Add("    " + modelType.GenerateHashingTestMethods());
             }
 
             if (modelType.RequiresComparability)
             {
                 items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateComparabilityTestMethods());
+
+                items.Add(modelType.GenerateComparabilityTestMethods());
             }
 
             items.Add("    }");
+
             items.Add("}");
 
             items.RemoveAt(firstNewlineInsideClassIndex);

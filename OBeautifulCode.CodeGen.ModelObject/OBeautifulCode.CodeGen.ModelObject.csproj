@@ -137,6 +137,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.Test.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.TestSnippet.ComparableTestFields.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithForNotDeclaredPropertyTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithForDeclaredPropertyTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Test.All.Both.txt" />

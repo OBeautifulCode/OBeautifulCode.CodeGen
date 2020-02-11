@@ -75,5 +75,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for a DeepCloneWith test method where the type does not declare the property.
         /// </summary>
         DeepCloneWithForNotDeclaredPropertyTestMethod,
+
+        /// <summary>
+        /// A code snippet for comparability-related test fields.
+        /// </summary>
+        ComparableTestFields,
     }
 }
