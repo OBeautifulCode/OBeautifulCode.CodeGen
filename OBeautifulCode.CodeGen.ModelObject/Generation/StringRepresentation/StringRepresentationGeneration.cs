@@ -19,9 +19,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// </summary>
     internal static class StringRepresentationGeneration
     {
-        private const string TypeNameToken = "<<<TypeNameHere>>>";
-        private const string ToStringTestToken = "<<<ToStringConstructionForTestHere>>>";
-
         /// <summary>
         /// Generates the string representation methods.
         /// </summary>
