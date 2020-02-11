@@ -75,7 +75,7 @@ namespace OBeautifulCode.CodeGen
             // class, where we ensure that there are no dependencies on the added interfaces.
             this.underlyingType = type;
             this.InheritancePathCompilableStrings = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringCompilable()).ToList();
-            this.ConcreteDerivativeTypes = this.GetConcreteDerivativeTypes(type);
+            this.ConcreteDerivativeTypes = GetConcreteDerivativeTypes(type);
             this.TypeCompilableString = type.ToStringCompilable();
             this.TypeReadableString = type.ToStringReadable();
             this.TypeNamespace = type.Namespace;
@@ -97,7 +97,7 @@ namespace OBeautifulCode.CodeGen
             this.RequiresModel = requiresModel;
             this.RequiresStringRepresentation = requiresStringRepresentation;
 
-            this.RequiredInterfaces = this.DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
+            this.RequiredInterfaces = DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
 
             this.DeclaresCompareToMethod = declaresCompareToMethod;
             this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
@@ -111,10 +111,10 @@ namespace OBeautifulCode.CodeGen
             this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
             this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
 
-            this.DeclaresDeepCloneMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareDeepCloneMethod<>));
-            this.DeclaresEqualsMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
-            this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
-            this.DeclaresToStringMethodDirectlyOrInDerivative = this.DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareToStringMethod));
+            this.DeclaresDeepCloneMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareDeepCloneMethod<>));
+            this.DeclaresEqualsMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
+            this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
+            this.DeclaresToStringMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareToStringMethod));
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
         }
@@ -315,6 +315,14 @@ namespace OBeautifulCode.CodeGen
             PropertyOfConcern propertyOfConcern)
         {
             var result = propertyOfConcern.DeclaringType == this.underlyingType;
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var result = this.underlyingType.ToStringReadable();
 
             return result;
         }
@@ -578,7 +586,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private IReadOnlyList<Type> DetermineRequiredInterfaces(
+        private static IReadOnlyList<Type> DetermineRequiredInterfaces(
             Type type,
             bool requiresModel,
             bool requiresDeepCloning,
@@ -624,7 +632,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private bool DetermineIfDeclaresMethodDirectlyOrInDerivative(
+        private static bool DetermineIfDeclaresMethodDirectlyOrInDerivative(
             Type type,
             Type methodInterfaceType)
         {
@@ -636,7 +644,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private IReadOnlyCollection<Type> GetConcreteDerivativeTypes(
+        private static IReadOnlyCollection<Type> GetConcreteDerivativeTypes(
             Type type)
         {
             var result = AssemblyLoader

@@ -80,5 +80,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for comparability-related test fields.
         /// </summary>
         ComparableTestFields,
+
+        /// <summary>
+        /// A code snippet for equatable-related test fields.
+        /// </summary>
+        EquatableTestFields,
+
+        /// <summary>
+        /// A code snippet for objects that derive from scenario type but are not of the same type as the reference object.
+        /// </summary>
+        EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject,
+
+        /// <summary>
+        /// A code snippet for an object that is not equal to reference object.
+        /// </summary>
+        EquatableTestFieldsObjectNotEqualToReferenceObject,
     }
 }

@@ -1,0 +1,24 @@
+﻿        private static readonly [model-type-name-here] ReferenceObjectForEquatableTestScenarios = A.Dummy<[model-type-name-here]>();
+
+        private static readonly EquatableTestScenarios<[model-type-name-here]> EquatableTestScenarios = new EquatableTestScenarios<[model-type-name-here]>()
+            .AddScenario(
+                new EquatableTestScenario<[model-type-name-here]>
+                {
+                    Name = "Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new [model-type-name-here][]
+                    {
+                        ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new [model-type-name-here][]
+                    {[objects-not-equal-to-reference-object-here]
+                    },[objects-that-derive-from-scenario-type-but-are-not-of-the-same-type-as-reference-object-here]
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });

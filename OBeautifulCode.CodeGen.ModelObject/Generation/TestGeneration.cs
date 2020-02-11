@@ -93,7 +93,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 {
                     items.Add(string.Empty);
 
-                    items.Add("    " + equalityFieldsCode);
+                    items.Add(equalityFieldsCode);
                 }
             }
 
@@ -152,7 +152,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 items.Add(string.Empty);
 
-                items.Add("    " + modelType.GenerateEqualityTestMethods());
+                items.Add(modelType.GenerateEqualityTestMethods());
             }
 
             if (modelType.RequiresHashing)

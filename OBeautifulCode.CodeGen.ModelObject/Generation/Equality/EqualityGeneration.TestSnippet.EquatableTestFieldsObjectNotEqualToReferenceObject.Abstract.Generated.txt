@@ -1,0 +1,1 @@
+﻿ReferenceObjectForEquatableTestScenarios.DeepCloneWith[property-name-here](A.Dummy<[property-type-name-here]>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.[property-name-here]))

@@ -107,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="codeTemplateKind">The code template kind.</param>
         /// <param name="keyMethodKinds">The key method kinds.</param>
         /// <param name="codeSnippetKind">Optional code snippet kind.  Default is None (not treated as a code snippet).</param>
+        /// <param name="throwIfDoesNotExist">Throw if the code template does not exist.</param>
         /// <returns>
         /// The code template corresponding to the specified parameters.
         /// </returns>
@@ -115,7 +116,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             HierarchyKinds hierarchyKinds,
             CodeTemplateKind codeTemplateKind,
             KeyMethodKinds keyMethodKinds,
-            CodeSnippetKind codeSnippetKind = CodeSnippetKind.None)
+            CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
+            bool throwIfDoesNotExist = true)
         {
             new { hierarchyKinds }.AsArg().Must().NotBeEqualTo(HierarchyKinds.Unknown);
             new { keyMethodKinds }.AsArg().Must().NotBeEqualTo(KeyMethodKinds.Unknown);
@@ -126,7 +128,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var resourceNameSuffix = Invariant($"{generationType.Name}.{codeTemplateKind}.{codeSnippetToken}{hierarchyKinds}.{keyMethodKinds}.txt");
 
-            var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().Single(_ => _.EndsWith(resourceNameSuffix));
+            var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().SingleOrDefault(_ => _.EndsWith(resourceNameSuffix));
+
+            if (throwIfDoesNotExist)
+            {
+                if (resourceName == null)
+                {
+                    throw new InvalidOperationException("An embedded resource with this suffix does not exist: " + resourceNameSuffix);
+                }
+            }
+            else
+            {
+                if (resourceName == null)
+                {
+                    return null;
+                }
+            }
 
             var result = AssemblyHelper.ReadEmbeddedResourceAsString(resourceName, addCallerNamespace: false);
 

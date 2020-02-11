@@ -115,5 +115,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Asserts deep cloning.
         /// </summary>
         public const string AssertDeepCloneWithToken = "[assert-deep-clone-with-here]";
+
+        /// <summary>
+        /// Objects that are not equal to reference object.
+        /// </summary>
+        public const string ObjectsNotEqualToReferenceObjectToken = "[objects-not-equal-to-reference-object-here]";
+
+        /// <summary>
+        /// Objects that are equal to but not the same as reference object.
+        /// </summary>
+        public const string ObjectsEqualToButNotTheSameAsReferenceObjectToken = "[object-equal-to-but-not-same-as-reference-object-here]";
+
+        /// <summary>
+        /// Objects that derive from scenario type but are not of the same type as the reference object.
+        /// </summary>
+        public const string ScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObjectToken = "[objects-that-derive-from-scenario-type-but-are-not-of-the-same-type-as-reference-object-here]";
     }
 }
