@@ -99,6 +99,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Asserts a property getter.
         /// </summary>
-        public const string AssertPropertyGetterHereToken = "[assert-property-getter-here]";
+        public const string AssertPropertyGetterToken = "[assert-property-getter-here]";
+
+        /// <summary>
+        /// Asserts deep cloning.
+        /// </summary>
+        public const string AssertDeepCloneToken = "[assert-deep-clone-here]";
+
+        /// <summary>
+        /// Asserts deep cloning.
+        /// </summary>
+        public const string DeepCloneWithTestsToken = "[deep-clone-with-tests-here]";
+
+        /// <summary>
+        /// Asserts deep cloning.
+        /// </summary>
+        public const string AssertDeepCloneWithToken = "[assert-deep-clone-with-here]";
     }
 }

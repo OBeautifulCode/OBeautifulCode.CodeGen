@@ -25,123 +25,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// </summary>
     internal static class CloningGeneration
     {
-        private const string TypeNameToken = "<<<TypeNameHere>>>";
-
-        private const string PropertyNameToken = "<<<PropertyNameHere>>>";
-        private const string ParameterNameToken = "<<<ParameterNameHere>>>";
-
-        private const string DeepCloneWithTestAssertLogicToken = "<<<DeepCloneWithTestAssertLogicHere>>>";
-        private const string AssertDeepCloneToken = "<<<AssertDeepCloneHere>>>";
-        private const string DeepCloneWithTestInflationToken = "<<<DeepCloneWithTestInflationHere>>>";
-
-        private const string CloningTestMethodsForNonInheritedTypeCodeTemplate = @"    public static class Cloning
-        {
-            [Fact]
-            public static void Clone___Should_clone_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                // Act
-                var actual = (" + TypeNameToken + @")systemUnderTest.Clone();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(systemUnderTest);
-                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-            }
-
-            [Fact]
-            public static void DeepClone___Should_deep_clone_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                // Act
-                var actual = systemUnderTest.DeepClone();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(systemUnderTest);
-                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);" + AssertDeepCloneToken + @"
-            }" + DeepCloneWithTestInflationToken + @"
-        }";
-
-        private const string CloningTestMethodsForConcreteInheritedTypeCodeTemplate = @"    public static class Cloning
-        {
-            [Fact]
-            public static void Clone___Should_clone_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                // Act
-                var actual = (" + TypeNameToken + @")systemUnderTest.Clone();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(systemUnderTest);
-                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-            }
-
-            [Fact]
-            public static void DeepClone_override___Should_deep_clone_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                // Act
-                var actual = (" + TypeNameToken + @")systemUnderTest.DeepClone();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(systemUnderTest);
-                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);" + AssertDeepCloneToken + @"
-            }
-
-            [Fact]
-            public static void DeepClone_explicit_interface___Should_deep_clone_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                // Act
-                var actual = ((IDeepCloneable<" + TypeNameToken + @">)systemUnderTest).DeepClone();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(systemUnderTest);
-                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);" + AssertDeepCloneToken + @"
-            }" + DeepCloneWithTestInflationToken + @"
-        }";
-
-        private const string DeepCloneWithTestMethodForDeclaredPropertyCodeTemplate = @"
-            [Fact]
-            public static void DeepCloneWith" + PropertyNameToken + @"___Should_deep_clone_object_and_replace_" + PropertyNameToken + @"_with_the_provided_" + ParameterNameToken + @"___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                var referenceObject = A.Dummy<" + TypeNameToken + @">().ThatIsNot(systemUnderTest);
-
-                // Act
-                var actual = systemUnderTest.DeepCloneWith" + PropertyNameToken + @"(referenceObject." + PropertyNameToken + @");
-
-                // Assert
-                " + DeepCloneWithTestAssertLogicToken + @"
-            }";
-
-        private const string DeepCloneWithTestMethodForNonDeclaredPropertyCodeTemplate = @"
-            [Fact]
-            public static void DeepCloneWith" + PropertyNameToken + @"___Should_deep_clone_object_and_replace_" + PropertyNameToken + @"_with_the_provided_" + ParameterNameToken + @"___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<" + TypeNameToken + @">();
-
-                var referenceObject = A.Dummy<" + TypeNameToken + @">().ThatIsNot(systemUnderTest);
-
-                // Act
-                var actual = (" + TypeNameToken + @")systemUnderTest.DeepCloneWith" + PropertyNameToken + @"(referenceObject." + PropertyNameToken + @");
-
-                // Assert
-                " + DeepCloneWithTestAssertLogicToken + @"
-            }";
-
         /// <summary>
         /// Generates cloning methods.
         /// </summary>
@@ -179,86 +62,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateCloningTestMethods(
             this ModelType modelType)
         {
-            var declaredPropertyNames = new HashSet<string>(modelType.DeclaredOnlyPropertiesOfConcern.Select(_ => _.Name));
+            var assertDeepCloneStatements = modelType.PropertiesOfConcern.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
 
-            var assertDeepCloneSet = modelType.PropertiesOfConcern.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
+            var assertDeepCloneStatementsCode = assertDeepCloneStatements.Any()
+                ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneStatements)
+                : string.Empty;
 
-            var assertDeepCloneToken = assertDeepCloneSet.Any() ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneSet) : string.Empty;
+            var deepCloneWithTestCode = modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative
+                ? string.Empty
+                : modelType.GetDeepCloneWithTestMethods();
 
-            var deepCloneWithTestInflationToken = string.Empty;
+            var codeTemplate = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
 
-            if (!modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative)
-            {
-                var deepCloneWithTestMethods = new List<string>();
-
-                if (modelType.PropertiesOfConcern.Any())
-                {
-                    // since we have parameters we'll go ahead and pad down.
-                    deepCloneWithTestMethods.Add(string.Empty);
-
-                    foreach (var property in modelType.PropertiesOfConcern)
-                    {
-                        var assertDeepCloneWithSet =
-                            modelType
-                                .PropertiesOfConcern
-                                .Select(
-                                    _ =>
-                                    {
-                                        var sourceName = _.Name == property.Name ? "referenceObject" : "systemUnderTest";
-
-                                        var resultAssert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
-                                            Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
-                                            Invariant($"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
-                                            sameReferenceExpected: false);
-
-                                        if (_.Name != property.Name && !_.PropertyType.IsValueType && _.PropertyType != typeof(string))
-                                        {
-                                            resultAssert += Environment.NewLine + Invariant($"                actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.AsTest().Must().NotBeSameReferenceAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
-                                        }
-
-                                        return resultAssert;
-                                    })
-                                .ToList();
-
-                        var assertDeepCloneWithToken = string.Join(Environment.NewLine + "                ", assertDeepCloneWithSet);
-
-                        var deepCloneWithTestMethodCodeTemplate = declaredPropertyNames.Contains(property.Name)
-                            ? DeepCloneWithTestMethodForDeclaredPropertyCodeTemplate
-                            : DeepCloneWithTestMethodForNonDeclaredPropertyCodeTemplate;
-
-                        var testMethod = deepCloneWithTestMethodCodeTemplate
-                                        .Replace(TypeNameToken,                     modelType.TypeCompilableString)
-                                        .Replace(PropertyNameToken,                 property.Name)
-                                        .Replace(ParameterNameToken,                property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
-                                        .Replace(DeepCloneWithTestAssertLogicToken, assertDeepCloneWithToken);
-
-                        deepCloneWithTestMethods.Add(testMethod);
-                    }
-                }
-
-                deepCloneWithTestInflationToken = string.Join(Environment.NewLine, deepCloneWithTestMethods);
-            }
-
-            string cloningTestMethodsCodeTemplate;
-
-            switch (modelType.HierarchyKind)
-            {
-                case HierarchyKind.Standalone:
-                case HierarchyKind.AbstractBaseRoot:
-                case HierarchyKind.AbstractBaseInherited:
-                    cloningTestMethodsCodeTemplate = CloningTestMethodsForNonInheritedTypeCodeTemplate;
-                    break;
-                case HierarchyKind.ConcreteInherited:
-                    cloningTestMethodsCodeTemplate = CloningTestMethodsForConcreteInheritedTypeCodeTemplate;
-                    break;
-                default:
-                    throw new NotSupportedException("This kind is not supported: " + modelType.HierarchyKind);
-            }
-
-            var result = cloningTestMethodsCodeTemplate
-                .Replace(TypeNameToken,                   modelType.TypeCompilableString)
-                .Replace(AssertDeepCloneToken,            assertDeepCloneToken)
-                .Replace(DeepCloneWithTestInflationToken, deepCloneWithTestInflationToken);
+            var result = codeTemplate
+                .Replace(Tokens.DeepCloneWithTestsToken, deepCloneWithTestCode)
+                .Replace(Tokens.AssertDeepCloneToken, assertDeepCloneStatementsCode)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
 
             return result;
         }
@@ -454,6 +273,64 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = deepCloneWithMethods.Any()
                 ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, deepCloneWithMethods)
+                : string.Empty;
+
+            return result;
+        }
+
+        private static string GetDeepCloneWithTestMethods(
+            this ModelType modelType)
+        {
+            var declaredPropertyNames = new HashSet<string>(modelType.DeclaredOnlyPropertiesOfConcern.Select(_ => _.Name));
+
+            var deepCloneWithTestMethods = new List<string>();
+
+            if (modelType.PropertiesOfConcern.Any())
+            {
+                foreach (var property in modelType.PropertiesOfConcern)
+                {
+                    var assertDeepCloneWithSet =
+                        modelType
+                            .PropertiesOfConcern
+                            .Select(
+                                _ =>
+                                {
+                                    var sourceName = _.Name == property.Name ? "referenceObject" : "systemUnderTest";
+
+                                    var resultAssert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
+                                        Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
+                                        Invariant(
+                                            $"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
+                                        sameReferenceExpected: false);
+
+                                    if (_.Name != property.Name && !_.PropertyType.IsValueType &&
+                                        _.PropertyType != typeof(string))
+                                    {
+                                        resultAssert += Environment.NewLine + Invariant(
+                                                            $"                actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.AsTest().Must().NotBeSameReferenceAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
+                                    }
+
+                                    return resultAssert;
+                                })
+                            .ToList();
+
+                    var assertDeepCloneWithStatements = string.Join(Environment.NewLine + "                ", assertDeepCloneWithSet);
+
+                    var deepCloneWithTestMethodCodeTemplate = declaredPropertyNames.Contains(property.Name)
+                        ? typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithForDeclaredPropertyTestMethod)
+                        : typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithForNotDeclaredPropertyTestMethod);
+
+                    var testMethod = deepCloneWithTestMethodCodeTemplate
+                        .Replace(Tokens.PropertyNameToken, property.Name)
+                        .Replace(Tokens.ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
+                        .Replace(Tokens.AssertDeepCloneWithToken, assertDeepCloneWithStatements);
+
+                    deepCloneWithTestMethods.Add(testMethod);
+                }
+            }
+
+            var result = deepCloneWithTestMethods.Any()
+                ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, deepCloneWithTestMethods)
                 : string.Empty;
 
             return result;

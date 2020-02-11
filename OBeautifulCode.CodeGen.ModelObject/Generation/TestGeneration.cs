@@ -126,7 +126,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresDeepCloning)
             {
                 items.Add(string.Empty);
-                items.Add("    " + modelType.GenerateCloningTestMethods());
+                items.Add(modelType.GenerateCloningTestMethods());
             }
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)

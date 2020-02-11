@@ -126,27 +126,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void DeepClone_override___Should_deep_clone_object___When_called()
+            public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
                 var systemUnderTest = A.Dummy<MyModelPrivateSettersEmptyParentEmptyChild>();
 
                 // Act
-                var actual = (MyModelPrivateSettersEmptyParentEmptyChild)systemUnderTest.DeepClone();
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(systemUnderTest);
-                actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-            }
-
-            [Fact]
-            public static void DeepClone_explicit_interface___Should_deep_clone_object___When_called()
-            {
-                // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersEmptyParentEmptyChild>();
-
-                // Act
-                var actual = ((IDeepCloneable<MyModelPrivateSettersEmptyParentEmptyChild>)systemUnderTest).DeepClone();
+                var actual = systemUnderTest.DeepClone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);

@@ -137,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithForNotDeclaredPropertyTestMethod.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithForDeclaredPropertyTestMethod.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForStringArgument.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForCollectionArgumentThatIsEmpty.All.Both.txt" />

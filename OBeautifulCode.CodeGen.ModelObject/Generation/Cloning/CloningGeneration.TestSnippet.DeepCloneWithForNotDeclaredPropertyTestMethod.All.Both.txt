@@ -1,0 +1,14 @@
+﻿            [Fact]
+            public static void DeepCloneWith[property-name-here]___Should_deep_clone_object_and_replace_[property-name-here]_with_the_provided_[parameter-name-here]___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<[model-type-name-here]>();
+
+                var referenceObject = A.Dummy<[model-type-name-here]>().ThatIsNot(systemUnderTest);
+
+                // Act
+                var actual = ([model-type-name-here])systemUnderTest.DeepCloneWith[property-name-here](referenceObject.[property-name-here]);
+
+                // Assert
+                [assert-deep-clone-with-here]
+            }

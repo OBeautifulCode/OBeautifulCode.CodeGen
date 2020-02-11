@@ -219,7 +219,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                                     .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                                     .Replace(Tokens.PropertyNameToken, parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
                                     .Replace(Tokens.ParameterNameToken,  parameter.Name)
-                                    .Replace(Tokens.AssertPropertyGetterHereToken,  assertPropertyGetterToken)
+                                    .Replace(Tokens.AssertPropertyGetterToken,  assertPropertyGetterToken)
                                     .Replace(Tokens.ConstructObjectToken, newObjectCode);
 
                     testMethods.Add(testMethod);
