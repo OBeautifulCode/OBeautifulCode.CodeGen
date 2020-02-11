@@ -115,5 +115,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for the JSON serialization tests.
         /// </summary>
         SerializationJsonTests,
+
+        /// <summary>
+        /// A code snippet for an expected interface test.
+        /// </summary>
+        ExpectedInterfaceTest,
+
+        /// <summary>
+        /// A code snippet for a test that GetHashCode() is declared.
+        /// </summary>
+        DeclaresGetHashCodeTest,
+
+        /// <summary>
+        /// A code snippet for a test that ToString() is declared.
+        /// </summary>
+        DeclaresToStringTest,
     }
 }

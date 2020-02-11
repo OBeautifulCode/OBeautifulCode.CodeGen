@@ -107,6 +107,7 @@
     <Compile Include="Generation\Constructing\ConstructingGeneration.cs" />
     <Compile Include="Generation\DummyFactory\DummyGeneration.cs" />
     <Compile Include="Generation\Hashing\HashCodeGeneration.cs" />
+    <Compile Include="Generation\Structural\StructuralGeneration.cs" />
     <Compile Include="Generation\Tokens.cs" />
     <Compile Include="InternalTypes\HierarchyKinds.cs" />
     <Compile Include="InternalTypes\KeyMethodKinds.cs" />
@@ -114,7 +115,6 @@
     <Compile Include="InternalTypes\CodeTemplateKind.cs" />
     <Compile Include="InternalTypes\HierarchyKind.cs" />
     <Compile Include="Generation\ModelImplementationGeneration.cs" />
-    <Compile Include="Generation\StructuralGeneration.cs" />
     <Compile Include="InternalTypes\MemberCode.cs" />
     <Compile Include="Generation\TestGeneration.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -137,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Structural\StructuralGeneration.TestSnippet.DeclaresToStringTest.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Structural\StructuralGeneration.TestSnippet.DeclaresGetHashCodeTest.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Structural\StructuralGeneration.TestSnippet.ExpectedInterfaceTest.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Structural\StructuralGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationJsonTests.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTests.All.Both.txt" />

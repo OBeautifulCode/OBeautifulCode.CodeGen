@@ -152,8 +152,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string SerializationConfigurationPrefixToken = "[serialization-configuration-prefix-here]";
 
         /// <summary>
-        /// The serialization configuration name prefix.
+        /// The serialization tests.
         /// </summary>
         public const string SerializationTestsToken = "[serialization-tests-here]";
+
+        /// <summary>
+        /// The structural tests.
+        /// </summary>
+        public const string StructuralTestsToken = "[structural-tests-here]";
+
+        /// <summary>
+        /// The name of the expected interface.
+        /// </summary>
+        public const string ExpectedInterfaceToken = "[expected-interface-here]";
+
+        /// <summary>
+        /// The name of the expected interface to be used in a test method name.
+        /// </summary>
+        public const string ExpectedInterfaceTestMethodNameToken = "[expected-interface-test-method-name-here]";
     }
 }

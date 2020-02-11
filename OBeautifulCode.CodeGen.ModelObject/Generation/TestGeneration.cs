@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             items.Add(string.Empty);
 
-            items.Add("    " + modelType.GenerateStructuralTestMethods());
+            items.Add(modelType.GenerateStructuralTestMethods());
 
             if (modelType.RequiresStringRepresentation)
             {

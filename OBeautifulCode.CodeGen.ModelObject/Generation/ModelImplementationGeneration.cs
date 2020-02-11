@@ -69,12 +69,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresEquality)
             {
                 items.Add(string.Empty);
+
                 items.Add(modelType.GenerateEqualityMethods());
             }
 
             if (modelType.RequiresComparability)
             {
                 items.Add(string.Empty);
+
                 items.Add(modelType.GenerateComparableMethods());
             }
 
@@ -85,6 +87,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 if (!string.IsNullOrWhiteSpace(hashingMethods))
                 {
                     items.Add(string.Empty);
+
                     items.Add(hashingMethods);
                 }
             }
@@ -92,6 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (modelType.RequiresDeepCloning)
             {
                 items.Add(string.Empty);
+
                 items.Add(modelType.GenerateCloningMethods());
             }
 
@@ -102,11 +106,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 if (!string.IsNullOrWhiteSpace(stringRepresentationMethods))
                 {
                     items.Add(string.Empty);
+
                     items.Add(stringRepresentationMethods);
                 }
             }
 
             items.Add("    }");
+
             items.Add("}");
 
             if (items[firstNewlineInsideClassIndex] == string.Empty)

@@ -1,0 +1,21 @@
+﻿            [Fact]
+            public static void [model-type-name-here]___Should_implement_[expected-interface-test-method-name-here]___When_reflecting()
+            {
+                // Arrange
+                var type = typeof([model-type-name-here]);
+
+                var expectedModelMethods = typeof([expected-interface-here])
+                                          .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
+                                          .ToList();
+
+                var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
+
+                // Act
+                var actualInterfaces = type.GetInterfaces();
+                var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
+                var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
+
+                // Assert
+                actualInterfaces.AsTest().Must().ContainElement(typeof([expected-interface-here]));
+                expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
+            }

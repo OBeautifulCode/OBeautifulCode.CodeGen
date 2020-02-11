@@ -1,0 +1,12 @@
+﻿            [Fact]
+            public static void [model-type-name-here]___Should_declare_ToString_method___When_reflecting()
+            {
+                // Arrange
+                var expected = typeof([model-type-name-here]);
+
+                // Act
+                var actual = expected.GetMethod(nameof(ToString));
+
+                // Assert
+                actual.DeclaringType.AsTest().Must().BeEqualTo(expected);
+            }
