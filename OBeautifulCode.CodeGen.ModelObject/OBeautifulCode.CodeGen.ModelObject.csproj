@@ -116,7 +116,6 @@
     <Compile Include="InternalTypes\CodeTemplateKind.cs" />
     <Compile Include="InternalTypes\HierarchyKind.cs" />
     <Compile Include="InternalTypes\MemberCode.cs" />
-    <Compile Include="Generation\TestGeneration.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="InternalTypes\ModelType.cs" />
     <Compile Include="InternalTypes\PropertyOfConcern.cs" />
@@ -137,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\ModelImplementation\ModelImplementationGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\ModelImplementation\ModelImplementationGeneration.Model.All.Both.txt" />
     <EmbeddedResource Include="Generation\Structural\StructuralGeneration.TestSnippet.DeclaresToStringTest.All.Both.txt" />
     <EmbeddedResource Include="Generation\Structural\StructuralGeneration.TestSnippet.DeclaresGetHashCodeTest.All.Both.txt" />

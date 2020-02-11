@@ -6,7 +6,6 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -90,6 +89,125 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                 .Replace(Tokens.RequiredInterfacesToken, modelType.RequiredInterfaces.Select(_ => _.ToStringCompilable()).ToDelimitedString(", "))
                 .Replace(Tokens.ModelImplementationToken, modelImplementationCode);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates unit test code.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <param name="kind">Specifies the kind of code to generate.</param>
+        /// <returns>
+        /// Generated equality methods.
+        /// </returns>
+        public static string GenerateCodeForTests(
+            this ModelType modelType,
+            GenerateFor kind)
+        {
+            var testImplementationItems = new List<string>();
+
+            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
+            {
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(modelType.GenerateSerializationTestFields());
+            }
+
+            if (modelType.RequiresEquality || modelType.RequiresHashing)
+            {
+                var equalityFieldsCode = modelType.GenerateEqualityTestFields();
+
+                if (equalityFieldsCode != null)
+                {
+                    testImplementationItems.Add(string.Empty);
+
+                    testImplementationItems.Add(equalityFieldsCode);
+                }
+            }
+
+            if (modelType.RequiresComparability)
+            {
+                var comparableTestFields = modelType.GenerateComparableTestFields();
+
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(comparableTestFields);
+            }
+
+            testImplementationItems.Add(string.Empty);
+
+            testImplementationItems.Add(modelType.GenerateStructuralTestMethods());
+
+            if (modelType.RequiresStringRepresentation)
+            {
+                var stringTestMethodsCode = modelType.GenerateStringRepresentationTestMethods();
+
+                if (!string.IsNullOrWhiteSpace(stringTestMethodsCode))
+                {
+                    testImplementationItems.Add(string.Empty);
+
+                    testImplementationItems.Add(stringTestMethodsCode);
+                }
+            }
+
+            if (modelType.RequiresModel)
+            {
+                var constructorTestMethodsCode = modelType.GenerateConstructorTestMethods();
+
+                if (constructorTestMethodsCode != null)
+                {
+                    testImplementationItems.Add(string.Empty);
+
+                    testImplementationItems.Add(constructorTestMethodsCode);
+                }
+            }
+
+            if (modelType.RequiresDeepCloning)
+            {
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(modelType.GenerateCloningTestMethods());
+            }
+
+            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
+            {
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(modelType.GenerateSerializationTestMethods());
+            }
+
+            if (modelType.RequiresEquality)
+            {
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(modelType.GenerateEqualityTestMethods());
+            }
+
+            if (modelType.RequiresHashing)
+            {
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(modelType.GenerateHashingTestMethods());
+            }
+
+            if (modelType.RequiresComparability)
+            {
+                testImplementationItems.Add(string.Empty);
+
+                testImplementationItems.Add(modelType.GenerateComparabilityTestMethods());
+            }
+
+            var testImplementationCode = testImplementationItems.Where(_ => _ != null).ToNewLineDelimited();
+
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+
+            var result = codeTemplate
+                .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
+                .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
+                .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.TestImplementationToken, testImplementationCode);
 
             return result;
         }

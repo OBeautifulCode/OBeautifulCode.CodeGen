@@ -195,5 +195,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The model implementation.
         /// </summary>
         public const string ModelImplementationToken = "[model-implementation-here]";
+
+        /// <summary>
+        /// The test implementation.
+        /// </summary>
+        public const string TestImplementationToken = "[test-implementation-here]";
     }
 }
