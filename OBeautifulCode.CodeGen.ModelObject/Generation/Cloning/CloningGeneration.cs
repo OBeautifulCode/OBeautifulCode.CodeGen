@@ -295,22 +295,36 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             .Select(
                                 _ =>
                                 {
-                                    var sourceName = _.Name == property.Name ? "referenceObject" : "systemUnderTest";
+                                    string assert;
 
-                                    var resultAssert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
-                                        Invariant($"actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
-                                        Invariant(
-                                            $"{sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}"),
-                                        sameReferenceExpected: false);
-
-                                    if (_.Name != property.Name && !_.PropertyType.IsValueType &&
-                                        _.PropertyType != typeof(string))
+                                    if (_.Name == property.Name)
                                     {
-                                        resultAssert += Environment.NewLine + Invariant(
-                                                            $"                actual.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.AsTest().Must().NotBeSameReferenceAs({sourceName}.{_.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)});");
+                                        if (_.PropertyType.IsValueType || (_.PropertyType == typeof(string)))
+                                        {
+                                            assert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
+                                                Invariant($"actual.{_.Name}"),
+                                                Invariant($"referenceObject.{_.Name}"),
+                                                sameReferenceExpected: false);
+                                        }
+                                        else
+                                        {
+                                            assert = Invariant($"actual.{_.Name}.AsTest().Must().BeSameReferenceAs(referenceObject.{_.Name});");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        assert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
+                                            Invariant($"actual.{_.Name}"),
+                                            Invariant($"systemUnderTest.{_.Name}"),
+                                            sameReferenceExpected: false);
+
+                                        if ((!_.PropertyType.IsValueType) && (_.PropertyType != typeof(string)))
+                                        {
+                                            assert += Environment.NewLine + Invariant($"                actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});");
+                                        }
                                     }
 
-                                    return resultAssert;
+                                    return assert;
                                 })
                             .ToList();
 

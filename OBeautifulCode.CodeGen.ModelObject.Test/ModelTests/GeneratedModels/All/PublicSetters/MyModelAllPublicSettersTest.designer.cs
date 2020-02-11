@@ -7896,7 +7896,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.DateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DateTimeProperty);
                 actual.ModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ModelEnumProperty);
                 actual.ModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ModelFlagsEnumProperty);
-                actual.ModelClassProperty.AsTest().Must().BeEqualTo(referenceObject.ModelClassProperty);
+                actual.ModelClassProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ModelClassProperty);
                 actual.NullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableBoolProperty);
                 actual.NullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableIntProperty);
                 actual.NullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableGuidProperty);
@@ -9016,7 +9016,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.NullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableDateTimeProperty);
                 actual.NullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableModelEnumProperty);
                 actual.NullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableModelFlagsEnumProperty);
-                actual.ArrayOfBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfBoolProperty);
+                actual.ArrayOfBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfBoolProperty);
                 actual.ArrayOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfIntProperty);
                 actual.ArrayOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfIntProperty);
                 actual.ArrayOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfStringProperty);
@@ -9176,7 +9176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.NullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.NullableModelFlagsEnumProperty);
                 actual.ArrayOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfBoolProperty);
                 actual.ArrayOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfBoolProperty);
-                actual.ArrayOfIntProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfIntProperty);
+                actual.ArrayOfIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfIntProperty);
                 actual.ArrayOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfStringProperty);
                 actual.ArrayOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfStringProperty);
                 actual.ArrayOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfGuidProperty);
@@ -9336,7 +9336,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfBoolProperty);
                 actual.ArrayOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfIntProperty);
                 actual.ArrayOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfIntProperty);
-                actual.ArrayOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfStringProperty);
+                actual.ArrayOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfStringProperty);
                 actual.ArrayOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfGuidProperty);
                 actual.ArrayOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfGuidProperty);
                 actual.ArrayOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfDateTimeProperty);
@@ -9496,7 +9496,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfIntProperty);
                 actual.ArrayOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfStringProperty);
                 actual.ArrayOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfStringProperty);
-                actual.ArrayOfGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfGuidProperty);
+                actual.ArrayOfGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfGuidProperty);
                 actual.ArrayOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfDateTimeProperty);
                 actual.ArrayOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfDateTimeProperty);
                 actual.ArrayOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelEnumProperty);
@@ -9656,7 +9656,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfStringProperty);
                 actual.ArrayOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfGuidProperty);
                 actual.ArrayOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfGuidProperty);
-                actual.ArrayOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfDateTimeProperty);
+                actual.ArrayOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfDateTimeProperty);
                 actual.ArrayOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelEnumProperty);
                 actual.ArrayOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelEnumProperty);
                 actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelFlagsEnumProperty);
@@ -9816,7 +9816,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfGuidProperty);
                 actual.ArrayOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfDateTimeProperty);
                 actual.ArrayOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfDateTimeProperty);
-                actual.ArrayOfModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfModelEnumProperty);
+                actual.ArrayOfModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfModelEnumProperty);
                 actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelFlagsEnumProperty);
                 actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelFlagsEnumProperty);
                 actual.ArrayOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelClassProperty);
@@ -9976,7 +9976,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfDateTimeProperty);
                 actual.ArrayOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelEnumProperty);
                 actual.ArrayOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelEnumProperty);
-                actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfModelFlagsEnumProperty);
+                actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfModelFlagsEnumProperty);
                 actual.ArrayOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelClassProperty);
                 actual.ArrayOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelClassProperty);
                 actual.ArrayOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableBoolProperty);
@@ -10136,7 +10136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelEnumProperty);
                 actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelFlagsEnumProperty);
                 actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelFlagsEnumProperty);
-                actual.ArrayOfModelClassProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfModelClassProperty);
+                actual.ArrayOfModelClassProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfModelClassProperty);
                 actual.ArrayOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableBoolProperty);
                 actual.ArrayOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableBoolProperty);
                 actual.ArrayOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableIntProperty);
@@ -10296,7 +10296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelFlagsEnumProperty);
                 actual.ArrayOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfModelClassProperty);
                 actual.ArrayOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelClassProperty);
-                actual.ArrayOfNullableBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfNullableBoolProperty);
+                actual.ArrayOfNullableBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfNullableBoolProperty);
                 actual.ArrayOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableIntProperty);
                 actual.ArrayOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableIntProperty);
                 actual.ArrayOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableGuidProperty);
@@ -10456,7 +10456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelClassProperty);
                 actual.ArrayOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableBoolProperty);
                 actual.ArrayOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableBoolProperty);
-                actual.ArrayOfNullableIntProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfNullableIntProperty);
+                actual.ArrayOfNullableIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfNullableIntProperty);
                 actual.ArrayOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableGuidProperty);
                 actual.ArrayOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableGuidProperty);
                 actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableDateTimeProperty);
@@ -10616,7 +10616,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableBoolProperty);
                 actual.ArrayOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableIntProperty);
                 actual.ArrayOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableIntProperty);
-                actual.ArrayOfNullableGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfNullableGuidProperty);
+                actual.ArrayOfNullableGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfNullableGuidProperty);
                 actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableDateTimeProperty);
                 actual.ArrayOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableDateTimeProperty);
                 actual.ArrayOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableModelEnumProperty);
@@ -10776,7 +10776,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableIntProperty);
                 actual.ArrayOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableGuidProperty);
                 actual.ArrayOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableGuidProperty);
-                actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfNullableDateTimeProperty);
+                actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfNullableDateTimeProperty);
                 actual.ArrayOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableModelEnumProperty);
                 actual.ArrayOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelEnumProperty);
                 actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
@@ -10936,7 +10936,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableGuidProperty);
                 actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableDateTimeProperty);
                 actual.ArrayOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableDateTimeProperty);
-                actual.ArrayOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfNullableModelEnumProperty);
+                actual.ArrayOfNullableModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfNullableModelEnumProperty);
                 actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
                 actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
@@ -11096,7 +11096,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableDateTimeProperty);
                 actual.ArrayOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableModelEnumProperty);
                 actual.ArrayOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelEnumProperty);
-                actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ArrayOfNullableModelFlagsEnumProperty);
+                actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ArrayOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
@@ -11256,7 +11256,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelEnumProperty);
                 actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
                 actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty);
+                actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
@@ -11416,7 +11416,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
-                actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfIntProperty);
+                actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
@@ -11576,7 +11576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
-                actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfStringProperty);
+                actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
@@ -11736,7 +11736,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
-                actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty);
+                actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
@@ -11896,7 +11896,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
-                actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty);
+                actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
@@ -12056,7 +12056,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
-                actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfModelEnumProperty);
+                actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
@@ -12216,7 +12216,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
+                actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
@@ -12376,7 +12376,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfModelClassProperty);
+                actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfModelClassProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
@@ -12536,7 +12536,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
                 actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
+                actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
@@ -12696,7 +12696,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfNullableIntProperty);
+                actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfNullableIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
@@ -12856,7 +12856,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
+                actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
@@ -13016,7 +13016,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
+                actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
@@ -13176,7 +13176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
+                actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
@@ -13336,7 +13336,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
+                actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
                 actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
                 actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
@@ -13496,7 +13496,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
-                actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfBoolProperty);
+                actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfBoolProperty);
                 actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
                 actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
                 actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
@@ -13656,7 +13656,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
                 actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
-                actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfIntProperty);
+                actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfIntProperty);
                 actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
                 actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
                 actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
@@ -13816,7 +13816,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
                 actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
                 actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
-                actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfStringProperty);
+                actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfStringProperty);
                 actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
                 actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
                 actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
@@ -13976,7 +13976,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
                 actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
                 actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
-                actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfGuidProperty);
+                actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfGuidProperty);
                 actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
@@ -14136,7 +14136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
                 actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
                 actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
-                actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfDateTimeProperty);
+                actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
@@ -14296,7 +14296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
                 actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfModelEnumProperty);
+                actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
@@ -14456,7 +14456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
-                actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
+                actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
                 actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
                 actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
@@ -14616,7 +14616,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
-                actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfModelClassProperty);
+                actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfModelClassProperty);
                 actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
@@ -14776,7 +14776,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
                 actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
-                actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfNullableBoolProperty);
+                actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
                 actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
                 actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
@@ -14936,7 +14936,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
                 actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
-                actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfNullableIntProperty);
+                actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfNullableIntProperty);
                 actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
@@ -15096,7 +15096,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
                 actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
-                actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfNullableGuidProperty);
+                actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
@@ -15256,7 +15256,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
                 actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
-                actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfNullableDateTimeProperty);
+                actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
@@ -15416,7 +15416,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
-                actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfNullableModelEnumProperty);
+                actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
@@ -15576,7 +15576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
-                actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
+                actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
@@ -15736,7 +15736,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfBoolProperty);
+                actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
@@ -15896,7 +15896,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
-                actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfIntProperty);
+                actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
                 actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
                 actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
@@ -16056,7 +16056,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
-                actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfStringProperty);
+                actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfStringProperty);
                 actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
@@ -16216,7 +16216,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
                 actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
-                actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfGuidProperty);
+                actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
@@ -16376,7 +16376,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
                 actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
-                actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
+                actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
@@ -16536,7 +16536,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
+                actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
@@ -16696,7 +16696,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfModelClassProperty);
+                actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfModelClassProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
@@ -16856,7 +16856,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
                 actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
+                actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
@@ -17016,7 +17016,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
+                actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
@@ -17176,7 +17176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
+                actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
@@ -17336,7 +17336,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
+                actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
                 actual.CollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.CollectionInterfaceOfStringProperty);
@@ -17496,7 +17496,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
+                actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
                 actual.CollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.CollectionInterfaceOfStringProperty);
                 actual.CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionInterfaceOfStringProperty);
                 actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
@@ -17656,7 +17656,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
-                actual.CollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.CollectionInterfaceOfStringProperty);
+                actual.CollectionInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.CollectionInterfaceOfStringProperty);
                 actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
                 actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
                 actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
@@ -17816,7 +17816,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
                 actual.CollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.CollectionInterfaceOfStringProperty);
                 actual.CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionInterfaceOfStringProperty);
-                actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.CollectionOfCollectionInterfaceOfStringProperty);
+                actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.CollectionOfCollectionInterfaceOfStringProperty);
                 actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
                 actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
                 actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
@@ -17976,7 +17976,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionInterfaceOfStringProperty);
                 actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
                 actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
-                actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ListInterfaceOfCollectionInterfaceOfStringProperty);
+                actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ListInterfaceOfCollectionInterfaceOfStringProperty);
                 actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
                 actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
@@ -18136,7 +18136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
                 actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
                 actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
-                actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ListOfCollectionInterfaceOfStringProperty);
+                actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ListOfCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
                 actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18296,7 +18296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
                 actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
                 actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
-                actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+                actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
                 actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18456,7 +18456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
                 actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
-                actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+                actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18616,7 +18616,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
                 actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18776,7 +18776,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -18936,7 +18936,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
@@ -19096,7 +19096,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+                actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
             }
@@ -19256,7 +19256,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeEqualTo(referenceObject.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeSameReferenceAs(referenceObject.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
             }
         }
 

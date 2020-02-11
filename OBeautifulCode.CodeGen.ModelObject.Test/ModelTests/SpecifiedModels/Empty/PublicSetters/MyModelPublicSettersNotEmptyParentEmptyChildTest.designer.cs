@@ -159,7 +159,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actual = (MyModelPublicSettersNotEmptyParentEmptyChild)systemUnderTest.DeepCloneWithParentReadOnlyDictionaryOfStringString(referenceObject.ParentReadOnlyDictionaryOfStringString);
 
                 // Assert
-                actual.ParentReadOnlyDictionaryOfStringString.AsTest().Must().BeEqualTo(referenceObject.ParentReadOnlyDictionaryOfStringString);
+                actual.ParentReadOnlyDictionaryOfStringString.AsTest().Must().BeSameReferenceAs(referenceObject.ParentReadOnlyDictionaryOfStringString);
             }
         }
 
