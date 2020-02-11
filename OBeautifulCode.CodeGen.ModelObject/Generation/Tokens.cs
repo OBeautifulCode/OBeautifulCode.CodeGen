@@ -17,6 +17,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ModelTypeNameToken = "[model-type-name-here]";
 
         /// <summary>
+        /// The namespace of the model Type.
+        /// </summary>
+        public const string ModelTypeNamespaceToken = "[model-type-namespace-here]";
+
+        /// <summary>
         /// The name of the root ancestor Type of the model.
         /// </summary>
         public const string ModelRootAncestorTypeNameToken = "[model-root-ancestor-type-name-here]";
@@ -170,5 +175,25 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The name of the expected interface to be used in a test method name.
         /// </summary>
         public const string ExpectedInterfaceTestMethodNameToken = "[expected-interface-test-method-name-here]";
+
+        /// <summary>
+        /// The name of the code gen assembly.
+        /// </summary>
+        public const string CodeGenAssemblyNameToken = "[code-gen-assembly-name-here]";
+
+        /// <summary>
+        /// The name of the code gen assembly.
+        /// </summary>
+        public const string CodeGenAssemblyVersionToken = "[code-gen-assembly-version-here]";
+
+        /// <summary>
+        /// The required interfaces.
+        /// </summary>
+        public const string RequiredInterfacesToken = "[required-interfaces-here]";
+
+        /// <summary>
+        /// The model implementation.
+        /// </summary>
+        public const string ModelImplementationToken = "[model-implementation-here]";
     }
 }
