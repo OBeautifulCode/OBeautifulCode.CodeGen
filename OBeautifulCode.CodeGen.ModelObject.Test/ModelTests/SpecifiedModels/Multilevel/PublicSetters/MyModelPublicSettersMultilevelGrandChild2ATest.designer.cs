@@ -1208,6 +1208,202 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelParent___Should_return_1___When_parameter_other_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersMultilevelParent other = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelParent)other);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelParent___Should_return_0___When_parameter_other_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelParent)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelParent___Should_return_0___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelParent)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelParent___Should_return_negative_1___When_object_is_less_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo((MyModelPublicSettersMultilevelParent)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelParent)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelParent___Should_return_1___When_object_is_greater_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo((MyModelPublicSettersMultilevelParent)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelParent)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelParent___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelParent)_))).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelChild2___Should_return_1___When_parameter_other_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersMultilevelChild2 other = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelChild2)other);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelChild2___Should_return_0___When_parameter_other_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelChild2)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelChild2___Should_return_0___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelChild2)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(0, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelChild2___Should_return_negative_1___When_object_is_less_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo((MyModelPublicSettersMultilevelChild2)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelChild2)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(-1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelChild2___Should_return_1___When_object_is_greater_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo((MyModelPublicSettersMultilevelChild2)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelChild2)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(1, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareTo_with_MyModelPublicSettersMultilevelChild2___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo((MyModelPublicSettersMultilevelChild2)_))).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
+                }
+            }
+
+            [Fact]
             public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_1___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();

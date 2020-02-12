@@ -214,6 +214,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// CompareToForRelativeSortOrder() tests.
         /// </summary>
+        public const string CompareToTestsToken = "[compare-to-tests-here]";
+
+        /// <summary>
+        /// CompareToForRelativeSortOrder() tests.
+        /// </summary>
         public const string CompareToForRelativeSortOrderTestsToken = "[compare-to-for-relative-sort-order-tests-here]";
     }
 }

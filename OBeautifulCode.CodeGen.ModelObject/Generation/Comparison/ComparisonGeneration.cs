@@ -80,18 +80,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateComparabilityTestMethods(
             this ModelType modelType)
         {
+            var compareToTestTemplate = typeof(ComparisonGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.CompareToTests);
             var compareToForRelativeSortOrderTestTemplate = typeof(ComparisonGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.CompareToForRelativeSortOrderTests);
 
-            var typesForCompareToForRelativeSortOrder = modelType.InheritancePathCompilableStrings.Reverse().Concat(new[] { modelType.TypeCompilableString }).ToList();
-
+            var compareToItems = new List<string>();
             var compareToForRelativeSortOrderItems = new List<string>();
 
-            foreach (var typeCompilableString in typesForCompareToForRelativeSortOrder)
+            foreach (var typeCompilableString in modelType.DerivativePathFromRootToSelfCompilableStrings)
             {
+                var compareToItem = compareToTestTemplate
+                    .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
+                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
+
                 var compareToForRelativeSortOrderItem = compareToForRelativeSortOrderTestTemplate
                     .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
                     .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
 
+                compareToItems.Add(compareToItem);
                 compareToForRelativeSortOrderItems.Add(compareToForRelativeSortOrderItem);
             }
 
@@ -99,6 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.CompareToTestsToken, compareToItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine)
                 .Replace(Tokens.CompareToForRelativeSortOrderTestsToken, compareToForRelativeSortOrderItems.ToDelimitedString(Environment.NewLine + Environment.NewLine));
 
             return result;

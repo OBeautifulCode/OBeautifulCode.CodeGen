@@ -127,6 +127,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         DeclaresToStringTest,
 
         /// <summary>
+        /// A code snippet for testing CompareTo().
+        /// </summary>
+        CompareToTests,
+
+        /// <summary>
         /// A code snippet for testing CompareToForRelativeSortOrder().
         /// </summary>
         CompareToForRelativeSortOrderTests,

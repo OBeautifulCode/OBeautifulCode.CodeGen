@@ -79,6 +79,8 @@ namespace OBeautifulCode.CodeGen
             this.InheritancePathCompilableStrings = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringCompilable()).ToList();
             this.ConcreteDerivativeTypesCompilableStrings = GetConcreteDerivativeTypes(type).Select(_ => _.ToStringCompilable()).ToList();
             this.AncestorConcreteDerivativesCompilableStrings = GetAncestorConcreteDerivatives(type).Select(_ => _.ToStringCompilable()).ToList();
+            this.DerivativePathFromRootToSelfCompilableStrings = this.InheritancePathCompilableStrings.Reverse().Concat(new[] { type.ToStringCompilable() }).ToList();
+
             this.TypeCompilableString = type.ToStringCompilable();
             this.TypeReadableString = type.ToStringReadable();
             this.TypeNamespace = type.Namespace;
@@ -158,6 +160,12 @@ namespace OBeautifulCode.CodeGen
         /// Gets the compilable string representations of this model type's concrete derivative types.
         /// </summary>
         public IReadOnlyCollection<string> ConcreteDerivativeTypesCompilableStrings { get; }
+
+        /// <summary>
+        /// Gets the compilable string representations of this model's derivative path, starting
+        /// at the root type and ending in the model type itself.
+        /// </summary>
+        public IReadOnlyCollection<string> DerivativePathFromRootToSelfCompilableStrings { get; }
 
         /// <summary>
         /// Gets the compilable string representations of this model type's ancestors' concrete derivative types
