@@ -8,6 +8,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System.Linq;
 
+    using OBeautifulCode.Type.Recipes;
+
     /// <summary>
     /// Generates code that creates model dummies.
     /// </summary>
@@ -36,7 +38,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                var propertyNameToCodeMap = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateDummyConstructionCodeForType())).ToList();
+                var propertyNameToCodeMap = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringCompilable().GenerateDummyConstructionCodeForType())).ToList();
 
                 var newDummyToken = modelType.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 

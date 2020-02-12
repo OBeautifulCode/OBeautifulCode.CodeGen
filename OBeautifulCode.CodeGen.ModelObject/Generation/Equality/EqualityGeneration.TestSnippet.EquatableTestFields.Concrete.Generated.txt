@@ -19,6 +19,6 @@
                         A.Dummy<string>(),
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
-                        A.Dummy<Guid>(),
+                        A.Dummy<Guid>(),[dummy-ancestor-concrete-derivatives-here]
                     },
                 });

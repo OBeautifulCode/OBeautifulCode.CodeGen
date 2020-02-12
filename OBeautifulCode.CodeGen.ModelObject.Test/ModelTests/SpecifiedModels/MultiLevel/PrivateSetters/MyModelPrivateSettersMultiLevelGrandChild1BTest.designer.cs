@@ -78,6 +78,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
                         A.Dummy<Guid>(),
+                        A.Dummy<MyModelPrivateSettersMultiLevelGrandChild2B>(),
+                        A.Dummy<MyModelPrivateSettersMultiLevelGrandChild2A>(),
+                        A.Dummy<MyModelPrivateSettersMultiLevelGrandChild1A>(),
                     },
                 });
 

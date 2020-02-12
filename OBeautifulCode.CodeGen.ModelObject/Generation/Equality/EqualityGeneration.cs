@@ -11,6 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -67,6 +68,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = string.Empty;
             var objectsEqualToButNotTheSameAsReferenceObject = string.Empty;
             var objectsNotEqualToReferenceObject = string.Empty;
+            var dummyAncestorConcreteDerivatives = string.Empty;
 
             if (keyMethodKinds == KeyMethodKinds.Declared)
             {
@@ -78,7 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(hierarchyKinds, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
 
-                objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypes.Count() >= 2)
+                objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypesCompilableStrings.Count() >= 2)
                     ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(hierarchyKinds, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
                     : string.Empty;
 
@@ -86,13 +88,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 objectsEqualToButNotTheSameAsReferenceObject = modelType.GenerateModelInstantiation(objectsEqualToButNotTheSameAsReferenceObjectMemberCode, parameterPaddingLength: 32);
 
                 objectsNotEqualToReferenceObject = modelType.GetObjectsNotEqualToReferenceObject();
+
+                dummyAncestorConcreteDerivatives = modelType.AncestorConcreteDerivativesCompilableStrings.Any()
+                    ? Environment.NewLine + "                        " + modelType.AncestorConcreteDerivativesCompilableStrings.Select(_ => _.GenerateDummyConstructionCodeForType() + ",").ToDelimitedString(Environment.NewLine + "                        ")
+                    : string.Empty;
             }
 
             var result = codeTemplate
                 .Replace(Tokens.ScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObjectToken, objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject)
                 .Replace(Tokens.ObjectsEqualToButNotTheSameAsReferenceObjectToken, objectsEqualToButNotTheSameAsReferenceObject)
                 .Replace(Tokens.ObjectsNotEqualToReferenceObjectToken, objectsNotEqualToReferenceObject)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.DummyAncestorConcreteDerivativesToken, dummyAncestorConcreteDerivatives);
 
             return result;
         }
@@ -183,7 +190,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         var memberCode = _.Name != property.Name
                             ? referenceObject
-                            : _.PropertyType.GenerateDummyConstructionCodeForType(referenceObject);
+                            : _.PropertyType.ToStringCompilable().GenerateDummyConstructionCodeForType(referenceObject);
 
                         return new MemberCode(_.Name, memberCode);
                     }).ToList();

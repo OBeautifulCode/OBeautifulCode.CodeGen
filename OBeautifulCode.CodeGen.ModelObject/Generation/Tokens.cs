@@ -205,5 +205,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A cast.
         /// </summary>
         public const string CastToken = "[cast-here]";
+
+        /// <summary>
+        /// Dummy ancestor concrete derivatives.
+        /// </summary>
+        public const string DummyAncestorConcreteDerivativesToken = "[dummy-ancestor-concrete-derivatives-here]";
     }
 }

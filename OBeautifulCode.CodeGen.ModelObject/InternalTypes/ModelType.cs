@@ -75,7 +75,8 @@ namespace OBeautifulCode.CodeGen
             // class, where we ensure that there are no dependencies on the added interfaces.
             this.underlyingType = type;
             this.InheritancePathCompilableStrings = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringCompilable()).ToList();
-            this.ConcreteDerivativeTypes = GetConcreteDerivativeTypes(type);
+            this.ConcreteDerivativeTypesCompilableStrings = GetConcreteDerivativeTypes(type).Select(_ => _.ToStringCompilable()).ToList();
+            this.AncestorConcreteDerivativesCompilableStrings = GetAncestorConcreteDerivatives(type).Select(_ => _.ToStringCompilable()).ToList();
             this.TypeCompilableString = type.ToStringCompilable();
             this.TypeReadableString = type.ToStringReadable();
             this.TypeNamespace = type.Namespace;
@@ -150,9 +151,15 @@ namespace OBeautifulCode.CodeGen
         public string BaseTypeReadableString { get; }
 
         /// <summary>
-        /// Gets the concrete derivative types.
+        /// Gets the compilable string representations of this model type's concrete derivative types.
         /// </summary>
-        public IReadOnlyCollection<Type> ConcreteDerivativeTypes { get; }
+        public IReadOnlyCollection<string> ConcreteDerivativeTypesCompilableStrings { get; }
+
+        /// <summary>
+        /// Gets the compilable string representations of this model type's ancestors' concrete derivative types
+        /// (excluding this model type).
+        /// </summary>
+        public IReadOnlyCollection<string> AncestorConcreteDerivativesCompilableStrings { get; }
 
         /// <summary>
         /// Gets the constructors.
@@ -655,6 +662,25 @@ namespace OBeautifulCode.CodeGen
                 .Where(_ => !_.ContainsGenericParameters)
                 .Where(_ => _.IsAssignableTo(type))
                 .ToList();
+
+            return result;
+        }
+
+        private static IReadOnlyCollection<Type> GetAncestorConcreteDerivatives(
+            Type type)
+        {
+            var oldestAncestorType = type
+                .GetInheritancePath()
+                .Reverse()
+                .Skip(1) // typeof(object)
+                .FirstOrDefault();
+
+            var result = new List<Type>();
+
+            if (oldestAncestorType != null)
+            {
+                result = GetConcreteDerivativeTypes(oldestAncestorType).Where(_ => _ != type).ToList();
+            }
 
             return result;
         }

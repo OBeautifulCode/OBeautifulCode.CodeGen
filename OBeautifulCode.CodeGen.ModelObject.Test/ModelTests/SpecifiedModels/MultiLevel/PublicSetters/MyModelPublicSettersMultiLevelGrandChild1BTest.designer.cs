@@ -86,6 +86,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
                         A.Dummy<Guid>(),
+                        A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>(),
+                        A.Dummy<MyModelPublicSettersMultiLevelGrandChild2A>(),
+                        A.Dummy<MyModelPublicSettersMultiLevelGrandChild2B>(),
                     },
                 });
 
