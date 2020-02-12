@@ -128,7 +128,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var resourceNameSuffix = Invariant($"{generationType.Name}.{codeTemplateKind}.{codeSnippetToken}{hierarchyKinds}.{keyMethodKinds}.txt");
 
-            var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().SingleOrDefault(_ => _.EndsWith(resourceNameSuffix));
+            var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().SingleOrDefault(_ => _.EndsWith(resourceNameSuffix, StringComparison.Ordinal));
 
             if (throwIfDoesNotExist)
             {

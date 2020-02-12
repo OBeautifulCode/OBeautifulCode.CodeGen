@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics.CodeAnalysis;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.String.Recipes;
@@ -153,8 +154,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string BuildSpecifiedModelName(
-            this SpecifiedModelKind specifiedModelKind,
-            SetterKind setterKind,
+            this SetterKind setterKind,
             string modelNameSuffix)
         {
             var result = Invariant($"{Settings.ModelBaseName}{setterKind}{modelNameSuffix}");

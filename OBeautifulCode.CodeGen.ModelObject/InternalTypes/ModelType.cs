@@ -8,11 +8,13 @@ namespace OBeautifulCode.CodeGen
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
+    using OBeautifulCode.CodeGen.ModelObject.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type;
@@ -143,11 +145,13 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets a compilable string representation of the base type.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public string BaseTypeCompilableString { get; }
 
         /// <summary>
         /// Gets a readability-optimized string representation of the base type.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public string BaseTypeReadableString { get; }
 
         /// <summary>
@@ -240,16 +244,19 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareCompareToForRelativeSortOrderMethod{T}.CompareToForRelativeSortOrder(T)"/> method.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public bool DeclaresCompareToMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public bool DeclaresDeepCloneMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareEqualsMethod{T}.Equals(T)"/> method.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public bool DeclaresEqualsMethod { get; }
 
         /// <summary>

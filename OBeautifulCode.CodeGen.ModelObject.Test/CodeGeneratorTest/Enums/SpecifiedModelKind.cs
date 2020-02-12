@@ -12,6 +12,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         Empty,
 
-        MultiLevel,
+        Multilevel,
     }
 }

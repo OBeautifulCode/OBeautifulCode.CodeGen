@@ -44,7 +44,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly string DummyFactoryFilePath = SourceRoot + "DummyFactory.cs";
 
-        public static readonly Type[] TypesToWrap =
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
+        public static readonly IReadOnlyList<Type> TypesToWrap = new[]
         {
             typeof(bool),
             typeof(int),
@@ -59,14 +60,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // typeof(ModelStruct),
         };
 
-        public static readonly Type[] ComparabilityTypes =
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
+        public static readonly IReadOnlyList<Type> ComparabilityTypes = new[]
         {
             typeof(int),
         };
 
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<TypeWrapperKind> TypeWrapperKinds = EnumExtensions.GetDefinedEnumValues<TypeWrapperKind>().ToList();
 
-        public static readonly Type[] AdditionalTypes =
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
+        public static readonly IReadOnlyList<Type> AdditionalTypes = new[]
         {
             typeof(ICollection<string>), // elements must be comparable for generated hashing unequal test to NOT be skipped
             typeof(Collection<ICollection<string>>),
@@ -81,12 +85,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
         };
 
-        public static readonly Type[] BlacklistTypes =
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
+        public static readonly IReadOnlyList<Type> BlacklistTypes = new[]
         {
             typeof(IReadOnlyDictionary<DateTime, DateTime>),
             typeof(IReadOnlyDictionary<DateTime?, DateTime?>),
         };
 
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyDictionary<SpecifiedModelKind, IReadOnlyCollection<string>> SpecifiedModelKindToModelNameSuffixMap = new Dictionary<SpecifiedModelKind, IReadOnlyCollection<string>>
         {
             {
@@ -94,7 +100,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new[] { "EmptyParentEmptyChild", "EmptyParentNotEmptyChild", "EmptyParent", "Empty", "NotEmptyParentEmptyChild", "NotEmptyParent" }
             },
             {
-                SpecifiedModelKind.MultiLevel,
+                SpecifiedModelKind.Multilevel,
                 new[] { "MultiLevelParent", "MultiLevelChild1", "MultiLevelChild2", "MultiLevelGrandChild1A", "MultiLevelGrandChild1B", "MultiLevelGrandChild2A", "MultiLevelGrandChild2B" }
             },
         };

@@ -8,8 +8,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeGen.ModelObject.Internal;
     using OBeautifulCode.Type;
 
     /// <summary>
@@ -20,6 +22,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Gets the types that indicate that coded gen is required.
         /// </summary>
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyCollection<Type> TypesThatIndicateCodeGenIsRequired = new[]
         {
             typeof(IComparableViaCodeGen),

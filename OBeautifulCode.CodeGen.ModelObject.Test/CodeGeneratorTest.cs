@@ -8,11 +8,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.String.Recipes;
@@ -102,7 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     foreach (var modelNameSuffix in modelNameSuffixes)
                     {
-                        var modelName = specifiedModelKind.BuildSpecifiedModelName(setterKind, modelNameSuffix);
+                        var modelName = setterKind.BuildSpecifiedModelName(modelNameSuffix);
 
                         eventHandler(generationKind, specifiedModelKind, GeneratedModelScenario.NotApplicable, setterKind, GeneratedModelPosition.NotApplicable, null, modelName, directoryPath);
                     }
@@ -187,7 +189,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                         content = codeLines.ToNewLineDelimited();
                     }
-                    else if ((generatedModelScenario == GeneratedModelScenario.Comparing) || (specifiedModelKind == SpecifiedModelKind.MultiLevel))
+                    else if ((generatedModelScenario == GeneratedModelScenario.Comparing) || (specifiedModelKind == SpecifiedModelKind.Multilevel))
                     {
                         // this is necessary so that the project compiles when running unit
                         // tests that precede the unit test that creates code generated model tests
@@ -248,6 +250,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
         }
 
+        [SuppressMessage("Microsoft.Performance", "CA1809:AvoidExcessiveLocals", Justification = ObcSuppressBecause.CA_ALL_AgreeWithAssessmentAndNeedsRefactoring)]
         private static void GenerateModel(
             GenerationKind generationKind,
             SpecifiedModelKind specifiedModelKind,
