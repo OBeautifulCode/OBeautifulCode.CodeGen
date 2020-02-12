@@ -130,5 +130,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for a test that ToString() is declared.
         /// </summary>
         DeclaresToStringTest,
+
+        /// <summary>
+        /// A code snippet for testing CompareToForRelativeSortOrder().
+        /// </summary>
+        CompareToForRelativeSortOrderTests,
     }
 }

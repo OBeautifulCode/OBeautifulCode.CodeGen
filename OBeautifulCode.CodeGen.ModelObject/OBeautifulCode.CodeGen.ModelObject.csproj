@@ -109,7 +109,7 @@
     <Compile Include="Generation\Hashing\HashCodeGeneration.cs" />
     <Compile Include="Generation\ModelImplementation\ModelImplementationGeneration.cs" />
     <Compile Include="Generation\Structural\StructuralGeneration.cs" />
-    <Compile Include="Generation\Tokens.cs" />
+    <Compile Include="InternalTypes\Tokens.cs" />
     <Compile Include="InternalTypes\HierarchyKinds.cs" />
     <Compile Include="InternalTypes\KeyMethodKinds.cs" />
     <Compile Include="InternalTypes\CodeSnippetKind.cs" />
@@ -189,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.TestSnippet.CompareToForRelativeSortOrderTests.All.Both.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\OBeautifulCode.Build.Analyzers.1.1.65\build\OBeautifulCode.Build.Analyzers.targets" Condition="Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.65\build\OBeautifulCode.Build.Analyzers.targets')" />

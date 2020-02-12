@@ -1405,6 +1405,202 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersMultiLevelParent other = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_))).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPublicSettersMultiLevelChild1 other = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_)).ToList();
+
+                    // Assert
+                    actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                    actuals2.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            {
+                var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach(var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_))).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
+                    actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
+                }
+            }
+
+            [Fact]
             public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1B___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();

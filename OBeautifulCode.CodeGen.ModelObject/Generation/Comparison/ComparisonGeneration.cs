@@ -7,9 +7,12 @@
 namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     using OBeautifulCode.Collection.Recipes;
+
+    using static System.FormattableString;
 
     /// <summary>
     /// Generates code related to comparisons.
@@ -77,8 +80,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateComparabilityTestMethods(
             this ModelType modelType)
         {
-            var result = typeof(ComparisonGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+            var compareToForRelativeSortOrderTestTemplate = typeof(ComparisonGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.CompareToForRelativeSortOrderTests);
+
+            var typesForCompareToForRelativeSortOrder = modelType.InheritancePathCompilableStrings.Reverse().Concat(new[] { modelType.TypeCompilableString }).ToList();
+
+            var compareToForRelativeSortOrderItems = new List<string>();
+
+            foreach (var typeCompilableString in typesForCompareToForRelativeSortOrder)
+            {
+                var compareToForRelativeSortOrderItem = compareToForRelativeSortOrderTestTemplate
+                    .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
+                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
+
+                compareToForRelativeSortOrderItems.Add(compareToForRelativeSortOrderItem);
+            }
+
+            var codeTemplate = typeof(ComparisonGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+
+            var result = codeTemplate
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.CompareToForRelativeSortOrderTestsToken, compareToForRelativeSortOrderItems.ToDelimitedString(Environment.NewLine + Environment.NewLine));
 
             return result;
         }

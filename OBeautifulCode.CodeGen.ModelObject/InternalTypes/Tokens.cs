@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// <summary>
     /// Replacement tokens.
     /// </summary>
-    public static class Tokens
+    internal static class Tokens
     {
         /// <summary>
         /// The name of the model Type.
@@ -210,5 +210,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Dummy ancestor concrete derivatives.
         /// </summary>
         public const string DummyAncestorConcreteDerivativesToken = "[dummy-ancestor-concrete-derivatives-here]";
+
+        /// <summary>
+        /// CompareToForRelativeSortOrder() tests.
+        /// </summary>
+        public const string CompareToForRelativeSortOrderTestsToken = "[compare-to-for-relative-sort-order-tests-here]";
     }
 }
