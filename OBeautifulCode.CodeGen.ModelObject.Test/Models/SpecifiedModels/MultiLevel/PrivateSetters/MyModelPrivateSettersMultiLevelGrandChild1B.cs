@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 var sumThis = this.ParentInt + this.Child1Int + this.GrandChild1BInt;
 
-                var sumOther = other.ParentInt + this.Child1Int + this.GrandChild1BInt;
+                var sumOther = other.ParentInt + other.Child1Int + other.GrandChild1BInt;
 
                 if (sumThis > sumOther)
                 {
