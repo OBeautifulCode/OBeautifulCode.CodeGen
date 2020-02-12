@@ -330,11 +330,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var assertDeepCloneWithStatements = string.Join(Environment.NewLine + "                ", assertDeepCloneWithSet);
 
-                    var deepCloneWithTestMethodCodeTemplate = declaredPropertyNames.Contains(property.Name)
-                        ? typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithForDeclaredPropertyTestMethod)
-                        : typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithForNotDeclaredPropertyTestMethod);
+                    var deepCloneWithTestMethodCodeTemplate = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTestMethod);
 
                     var testMethod = deepCloneWithTestMethodCodeTemplate
+                        .Replace(Tokens.CastToken, declaredPropertyNames.Contains(property.Name) ? string.Empty : Invariant($"({modelType.TypeCompilableString})"))
                         .Replace(Tokens.PropertyNameToken, property.Name)
                         .Replace(Tokens.ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
                         .Replace(Tokens.AssertDeepCloneWithToken, assertDeepCloneWithStatements);

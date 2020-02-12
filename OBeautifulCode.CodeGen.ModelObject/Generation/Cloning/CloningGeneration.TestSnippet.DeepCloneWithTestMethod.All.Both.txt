@@ -7,7 +7,7 @@
                 var referenceObject = A.Dummy<[model-type-name-here]>().ThatIsNot(systemUnderTest);
 
                 // Act
-                var actual = systemUnderTest.DeepCloneWith[property-name-here](referenceObject.[property-name-here]);
+                var actual = [cast-here]systemUnderTest.DeepCloneWith[property-name-here](referenceObject.[property-name-here]);
 
                 // Assert
                 [assert-deep-clone-with-here]

@@ -67,14 +67,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         PropertyGetterTestMethod,
 
         /// <summary>
-        /// A code snippet for a DeepCloneWith test method where the type declares the property.
+        /// A code snippet for a DeepCloneWith test method.
         /// </summary>
-        DeepCloneWithForDeclaredPropertyTestMethod,
-
-        /// <summary>
-        /// A code snippet for a DeepCloneWith test method where the type does not declare the property.
-        /// </summary>
-        DeepCloneWithForNotDeclaredPropertyTestMethod,
+        DeepCloneWithTestMethod,
 
         /// <summary>
         /// A code snippet for comparability-related test fields.

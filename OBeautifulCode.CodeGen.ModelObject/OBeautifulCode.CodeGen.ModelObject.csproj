@@ -156,8 +156,7 @@
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFields.Abstract.Generated.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.TestSnippet.ComparableTestFields.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithForNotDeclaredPropertyTestMethod.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithForDeclaredPropertyTestMethod.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForStringArgument.All.Both.txt" />
