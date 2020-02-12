@@ -150,117 +150,117 @@
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GeneratedModelPosition.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2B.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2B.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild2B.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2B.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2B.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild2B.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2A.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2A.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild2A.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2A.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2A.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild2A.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1B.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1B.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild1B.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1B.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1B.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild1B.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1A.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1A.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild1A.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1A.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1A.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild1A.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild2.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild2.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelChild2.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelChild2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild1.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild1.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelChild1.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelChild1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelParent.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelParent.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelParent.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParent.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParent.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild1.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild1.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelChild1.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelChild1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild2.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild2.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelChild2.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelChild2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1A.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1A.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild1A.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1A.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1A.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild1A.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1B.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1B.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild1B.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1B.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1B.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild1B.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2A.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2A.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild2A.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2A.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2A.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild2A.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2B.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2B.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild2B.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2B.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2B.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild2B.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelParent.cs" />
-    <Compile Include="Models\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelParent.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelParent.cs</DependentUpon>
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParent.cs" />
+    <Compile Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParent.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild1Test.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild1Test.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelChild1Test.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1Test.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelChild1Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild2Test.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelChild2Test.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelChild2Test.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2Test.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1ATest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1ATest.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild1ATest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1ATest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1ATest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild1ATest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1BTest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild1BTest.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild1BTest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1BTest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild1BTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild1BTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2ATest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2ATest.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild2ATest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2ATest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2ATest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild2ATest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2BTest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelGrandChild2BTest.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelGrandChild2BTest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2BTest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandChild2BTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelGrandChild2BTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelParentTest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PrivateSetters\MyModelPrivateSettersMultiLevelParentTest.designer.cs">
-      <DependentUpon>MyModelPrivateSettersMultiLevelParentTest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParentTest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParentTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultilevelParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild1Test.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild1Test.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelChild1Test.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1Test.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1Test.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelChild1Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild2Test.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelChild2Test.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelChild2Test.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2Test.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2Test.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1ATest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1ATest.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild1ATest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1ATest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1ATest.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild1ATest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1BTest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild1BTest.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild1BTest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1BTest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild1BTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild1BTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2ATest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2ATest.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild2ATest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2ATest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2ATest.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild2ATest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2BTest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelGrandChild2BTest.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelGrandChild2BTest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2BTest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandChild2BTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelGrandChild2BTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelParentTest.cs" />
-    <Compile Include="ModelTests\SpecifiedModels\MultiLevel\PublicSetters\MyModelPublicSettersMultiLevelParentTest.designer.cs">
-      <DependentUpon>MyModelPublicSettersMultiLevelParentTest.cs</DependentUpon>
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParentTest.cs" />
+    <Compile Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParentTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersMultilevelParentTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
