@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPrivateSettersMultiLevelParentTest.cs" company="OBeautifulCode">
+// <copyright file="MyModelPrivateSettersMultilevelParentTest.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,37 +8,37 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
 
-    public static partial class MyModelPrivateSettersMultiLevelParentTest
+    public static partial class MyModelPrivateSettersMultilevelParentTest
     {
-        static MyModelPrivateSettersMultiLevelParentTest()
+        static MyModelPrivateSettersMultilevelParentTest()
         {
-            ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPrivateSettersMultiLevelParent>
+            ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPrivateSettersMultilevelParent>
             {
                 Name = "Scenario 1",
-                ReferenceObject = new MyModelPrivateSettersMultiLevelGrandChild1A(1, 2, 3),
+                ReferenceObject = new MyModelPrivateSettersMultilevelGrandChild1A(1, 2, 3),
                 ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(1, 2, 3),
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(3, 2, 1),
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(0, 6, 0),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(3, 2, 1),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(0, 6, 0),
                 },
                 ObjectsThatAreLessThanReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(1, 2, 2),
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(6, -2, -1),
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(0, 5, 0),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(1, 2, 2),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(6, -2, -1),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(0, 5, 0),
                 },
                 ObjectsThatAreGreaterThanReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(2, 2, 3),
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(3, 3, 1),
-                    new MyModelPrivateSettersMultiLevelGrandChild1A(0, 7, 0),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(2, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(3, 3, 1),
+                    new MyModelPrivateSettersMultilevelGrandChild1A(0, 7, 0),
                 },
-                ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersMultiLevelParent[]
+                ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersMultilevelParent[]
                 {
-                    new MyModelPrivateSettersMultiLevelGrandChild1B(1, 2, 3),
-                    new MyModelPrivateSettersMultiLevelGrandChild2A(1, 2, 3),
-                    new MyModelPrivateSettersMultiLevelGrandChild2B(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandChild1B(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandChild2A(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandChild2B(1, 2, 3),
                 },
                 ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                 {

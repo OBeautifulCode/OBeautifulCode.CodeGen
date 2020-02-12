@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPrivateSettersMultiLevelGrandChild1B.cs" company="OBeautifulCode">
+// <copyright file="MyModelPrivateSettersMultilevelGrandChild1B.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using OBeautifulCode.Type;
 
-    public partial class MyModelPrivateSettersMultiLevelGrandChild1B : MyModelPrivateSettersMultiLevelChild1, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPrivateSettersMultiLevelGrandChild1B>
+    public partial class MyModelPrivateSettersMultilevelGrandChild1B : MyModelPrivateSettersMultilevelChild1, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPrivateSettersMultilevelGrandChild1B>
     {
-        public MyModelPrivateSettersMultiLevelGrandChild1B(
+        public MyModelPrivateSettersMultilevelGrandChild1B(
             int parentInt,
             int child1Int,
             int grandChild1BInt)
@@ -22,7 +22,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public int GrandChild1BInt { get; private set; }
 
         public RelativeSortOrder CompareToForRelativeSortOrder(
-            MyModelPrivateSettersMultiLevelGrandChild1B other)
+            MyModelPrivateSettersMultilevelGrandChild1B other)
         {
             if (other == null)
             {

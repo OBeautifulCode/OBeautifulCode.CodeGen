@@ -23,15 +23,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPublicSettersMultiLevelChild1 : IModel<MyModelPublicSettersMultiLevelChild1>, IComparableForRelativeSortOrder<MyModelPublicSettersMultiLevelChild1>
+    public partial class MyModelPublicSettersMultilevelChild1 : IModel<MyModelPublicSettersMultilevelChild1>, IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelChild1>
     {
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPublicSettersMultiLevelChild1"/> are equal.
+        /// Determines whether two objects of type <see cref="MyModelPublicSettersMultilevelChild1"/> are equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(MyModelPublicSettersMultiLevelChild1 left, MyModelPublicSettersMultiLevelChild1 right)
+        public static bool operator ==(MyModelPublicSettersMultilevelChild1 left, MyModelPublicSettersMultilevelChild1 right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -49,26 +49,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPublicSettersMultiLevelChild1"/> are not equal.
+        /// Determines whether two objects of type <see cref="MyModelPublicSettersMultilevelChild1"/> are not equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(MyModelPublicSettersMultiLevelChild1 left, MyModelPublicSettersMultiLevelChild1 right) => !(left == right);
+        public static bool operator !=(MyModelPublicSettersMultilevelChild1 left, MyModelPublicSettersMultilevelChild1 right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPublicSettersMultiLevelChild1 other) => this == other;
+        public bool Equals(MyModelPublicSettersMultilevelChild1 other) => this == other;
 
         /// <inheritdoc />
         public abstract override bool Equals(object obj);
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPublicSettersMultiLevelChild1"/> is less than another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPublicSettersMultilevelChild1"/> is less than another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the less-than operator.</param>
         /// <param name="right">The object to the right of the less-than operator.</param>
         /// <returns>true if <paramref name="left"/> is less than <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator <(MyModelPublicSettersMultiLevelChild1 left, MyModelPublicSettersMultiLevelChild1 right)
+        public static bool operator <(MyModelPublicSettersMultilevelChild1 left, MyModelPublicSettersMultilevelChild1 right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -98,12 +98,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPublicSettersMultiLevelChild1"/> is greater than another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPublicSettersMultilevelChild1"/> is greater than another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the greater-than operator.</param>
         /// <param name="right">The object to the right of the greater-than operator.</param>
         /// <returns>true if <paramref name="left"/> is greater than <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator >(MyModelPublicSettersMultiLevelChild1 left, MyModelPublicSettersMultiLevelChild1 right)
+        public static bool operator >(MyModelPublicSettersMultilevelChild1 left, MyModelPublicSettersMultilevelChild1 right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -133,23 +133,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPublicSettersMultiLevelChild1"/> is less than or equal to another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPublicSettersMultilevelChild1"/> is less than or equal to another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the less-than-or-equal-to operator.</param>
         /// <param name="right">The object to the right of the less-than-or-equal-to operator.</param>
         /// <returns>true if <paramref name="left"/> is less than or equal to <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator <=(MyModelPublicSettersMultiLevelChild1 left, MyModelPublicSettersMultiLevelChild1 right) => !(left > right);
+        public static bool operator <=(MyModelPublicSettersMultilevelChild1 left, MyModelPublicSettersMultilevelChild1 right) => !(left > right);
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPublicSettersMultiLevelChild1"/> is greater than or equal to another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPublicSettersMultilevelChild1"/> is greater than or equal to another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the greater-than-or-equal-to operator.</param>
         /// <param name="right">The object to the right of the greater-than-or-equal-to operator.</param>
         /// <returns>true if <paramref name="left"/> is greater than or equal to <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator >=(MyModelPublicSettersMultiLevelChild1 left, MyModelPublicSettersMultiLevelChild1 right) => !(left < right);
+        public static bool operator >=(MyModelPublicSettersMultilevelChild1 left, MyModelPublicSettersMultilevelChild1 right) => !(left < right);
 
         /// <inheritdoc />
-        public int CompareTo(MyModelPublicSettersMultiLevelChild1 other)
+        public int CompareTo(MyModelPublicSettersMultilevelChild1 other)
         {
             if (ReferenceEquals(other, null))
             {
@@ -172,20 +172,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public abstract RelativeSortOrder CompareToForRelativeSortOrder(MyModelPublicSettersMultiLevelChild1 other);
+        public abstract RelativeSortOrder CompareToForRelativeSortOrder(MyModelPublicSettersMultilevelChild1 other);
 
         /// <inheritdoc />
         public abstract override int GetHashCode();
 
         /// <inheritdoc />
-        public new MyModelPublicSettersMultiLevelChild1 DeepClone() => (MyModelPublicSettersMultiLevelChild1)this.DeepCloneInternal();
+        public new MyModelPublicSettersMultilevelChild1 DeepClone() => (MyModelPublicSettersMultilevelChild1)this.DeepCloneInternal();
 
         /// <summary>
         /// Deep clones this object with a new <see cref="Child1Int" />.
         /// </summary>
         /// <param name="child1Int">The new <see cref="Child1Int" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPublicSettersMultiLevelChild1" /> using the specified <paramref name="child1Int" /> for <see cref="Child1Int" /> and a deep clone of every other property.</returns>
-        public abstract MyModelPublicSettersMultiLevelChild1 DeepCloneWithChild1Int(int child1Int);
+        /// <returns>New <see cref="MyModelPublicSettersMultilevelChild1" /> using the specified <paramref name="child1Int" /> for <see cref="Child1Int" /> and a deep clone of every other property.</returns>
+        public abstract MyModelPublicSettersMultilevelChild1 DeepCloneWithChild1Int(int child1Int);
 
         /// <inheritdoc />
         public abstract override string ToString();

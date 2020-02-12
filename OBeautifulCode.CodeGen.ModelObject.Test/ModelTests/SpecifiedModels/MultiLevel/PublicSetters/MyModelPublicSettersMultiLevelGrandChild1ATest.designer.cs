@@ -35,44 +35,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public static partial class MyModelPublicSettersMultiLevelGrandChild1ATest
+    public static partial class MyModelPublicSettersMultilevelGrandChild1ATest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.BsonConfigurationType);
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPublicSettersMultiLevelGrandChild1A ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+        private static readonly MyModelPublicSettersMultilevelGrandChild1A ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
-        private static readonly EquatableTestScenarios<MyModelPublicSettersMultiLevelGrandChild1A> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersMultiLevelGrandChild1A>()
+        private static readonly EquatableTestScenarios<MyModelPublicSettersMultilevelGrandChild1A> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersMultilevelGrandChild1A>()
             .AddScenario(
-                new EquatableTestScenario<MyModelPublicSettersMultiLevelGrandChild1A>
+                new EquatableTestScenario<MyModelPublicSettersMultilevelGrandChild1A>
                 {
                     Name = "Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
-                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersMultiLevelGrandChild1A[]
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersMultilevelGrandChild1A[]
                     {
-                        new MyModelPublicSettersMultiLevelGrandChild1A
+                        new MyModelPublicSettersMultilevelGrandChild1A
                             {
                                 ParentInt       = ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 Child1Int       = ReferenceObjectForEquatableTestScenarios.Child1Int,
                                 GrandChild1AInt = ReferenceObjectForEquatableTestScenarios.GrandChild1AInt,
                             },
                     },
-                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersMultiLevelGrandChild1A[]
+                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersMultilevelGrandChild1A[]
                     {
-                        new MyModelPublicSettersMultiLevelGrandChild1A
+                        new MyModelPublicSettersMultilevelGrandChild1A
                             {
                                 ParentInt       = A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentInt),
                                 Child1Int       = ReferenceObjectForEquatableTestScenarios.Child1Int,
                                 GrandChild1AInt = ReferenceObjectForEquatableTestScenarios.GrandChild1AInt,
                             },
-                        new MyModelPublicSettersMultiLevelGrandChild1A
+                        new MyModelPublicSettersMultilevelGrandChild1A
                             {
                                 ParentInt       = ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 Child1Int       = A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.Child1Int),
                                 GrandChild1AInt = ReferenceObjectForEquatableTestScenarios.GrandChild1AInt,
                             },
-                        new MyModelPublicSettersMultiLevelGrandChild1A
+                        new MyModelPublicSettersMultilevelGrandChild1A
                             {
                                 ParentInt       = ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 Child1Int       = ReferenceObjectForEquatableTestScenarios.Child1Int,
@@ -86,23 +86,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
                         A.Dummy<Guid>(),
-                        A.Dummy<MyModelPublicSettersMultiLevelGrandChild1B>(),
-                        A.Dummy<MyModelPublicSettersMultiLevelGrandChild2A>(),
-                        A.Dummy<MyModelPublicSettersMultiLevelGrandChild2B>(),
+                        A.Dummy<MyModelPublicSettersMultilevelGrandChild1B>(),
+                        A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>(),
+                        A.Dummy<MyModelPublicSettersMultilevelGrandChild2B>(),
                     },
                 });
 
-        private static readonly ComparableTestScenarios<MyModelPublicSettersMultiLevelGrandChild1A> ComparableTestScenarios = new ComparableTestScenarios<MyModelPublicSettersMultiLevelGrandChild1A>();
+        private static readonly ComparableTestScenarios<MyModelPublicSettersMultilevelGrandChild1A> ComparableTestScenarios = new ComparableTestScenarios<MyModelPublicSettersMultilevelGrandChild1A>();
 
         public static class Structural
         {
             [Fact]
-            public static void MyModelPublicSettersMultiLevelGrandChild1A___Should_implement_IModel_of_MyModelPublicSettersMultiLevelGrandChild1A___When_reflecting()
+            public static void MyModelPublicSettersMultilevelGrandChild1A___Should_implement_IModel_of_MyModelPublicSettersMultilevelGrandChild1A___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSettersMultiLevelGrandChild1A);
+                var type = typeof(MyModelPublicSettersMultilevelGrandChild1A);
 
-                var expectedModelMethods = typeof(IModel<MyModelPublicSettersMultiLevelGrandChild1A>)
+                var expectedModelMethods = typeof(IModel<MyModelPublicSettersMultilevelGrandChild1A>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
 
@@ -114,17 +114,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSettersMultiLevelGrandChild1A>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSettersMultilevelGrandChild1A>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
 
             [Fact]
-            public static void MyModelPublicSettersMultiLevelGrandChild1A___Should_implement_IComparableForRelativeSortOrder_of_MyModelPublicSettersMultiLevelGrandChild1A___When_reflecting()
+            public static void MyModelPublicSettersMultilevelGrandChild1A___Should_implement_IComparableForRelativeSortOrder_of_MyModelPublicSettersMultilevelGrandChild1A___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSettersMultiLevelGrandChild1A);
+                var type = typeof(MyModelPublicSettersMultilevelGrandChild1A);
 
-                var expectedModelMethods = typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultiLevelGrandChild1A>)
+                var expectedModelMethods = typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandChild1A>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
 
@@ -136,7 +136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultiLevelGrandChild1A>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandChild1A>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
         }
@@ -147,9 +147,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
-                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultiLevelGrandChild1A)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1Int = {systemUnderTest.Child1Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GrandChild1AInt = {systemUnderTest.GrandChild1AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
+                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultilevelGrandChild1A)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1Int = {systemUnderTest.Child1Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GrandChild1AInt = {systemUnderTest.GrandChild1AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
 
                 // Act
                 var actual = systemUnderTest.ToString();
@@ -165,10 +165,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
                 // Act
-                var actual = (MyModelPublicSettersMultiLevelGrandChild1A)systemUnderTest.Clone();
+                var actual = (MyModelPublicSettersMultilevelGrandChild1A)systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -179,7 +179,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
@@ -193,12 +193,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentInt___Should_deep_clone_object_and_replace_ParentInt_with_the_provided_parentInt___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
-                var referenceObject = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>().ThatIsNot(systemUnderTest);
 
                 // Act
-                var actual = (MyModelPublicSettersMultiLevelGrandChild1A)systemUnderTest.DeepCloneWithParentInt(referenceObject.ParentInt);
+                var actual = (MyModelPublicSettersMultilevelGrandChild1A)systemUnderTest.DeepCloneWithParentInt(referenceObject.ParentInt);
 
                 // Assert
                 actual.ParentInt.AsTest().Must().BeEqualTo(referenceObject.ParentInt);
@@ -210,12 +210,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithChild1Int___Should_deep_clone_object_and_replace_Child1Int_with_the_provided_child1Int___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
-                var referenceObject = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>().ThatIsNot(systemUnderTest);
 
                 // Act
-                var actual = (MyModelPublicSettersMultiLevelGrandChild1A)systemUnderTest.DeepCloneWithChild1Int(referenceObject.Child1Int);
+                var actual = (MyModelPublicSettersMultilevelGrandChild1A)systemUnderTest.DeepCloneWithChild1Int(referenceObject.Child1Int);
 
                 // Assert
                 actual.ParentInt.AsTest().Must().BeEqualTo(systemUnderTest.ParentInt);
@@ -227,9 +227,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithGrandChild1AInt___Should_deep_clone_object_and_replace_GrandChild1AInt_with_the_provided_grandChild1AInt___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
-                var referenceObject = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>().ThatIsNot(systemUnderTest);
 
                 // Act
                 var actual = systemUnderTest.DeepCloneWithGrandChild1AInt(referenceObject.GrandChild1AInt);
@@ -247,14 +247,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var expected = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersMultiLevelGrandChild1A>(serializedBson);
+                var actual = serializer.Deserialize<MyModelPublicSettersMultilevelGrandChild1A>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -264,14 +264,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersMultiLevelGrandChild1A>();
+                var expected = A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersMultiLevelGrandChild1A>(serializedJson);
+                var actual = serializer.Deserialize<MyModelPublicSettersMultilevelGrandChild1A>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -284,8 +284,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest1 = null;
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 == systemUnderTest2;
@@ -302,7 +302,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest = null;
+                    MyModelPublicSettersMultilevelGrandChild1A systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest == scenario.ReferenceObject;
@@ -386,8 +386,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest1 = null;
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 != systemUnderTest2;
@@ -404,7 +404,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest = null;
+                    MyModelPublicSettersMultilevelGrandChild1A systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest != scenario.ReferenceObject;
@@ -485,14 +485,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest = null;
+                    MyModelPublicSettersMultilevelGrandChild1A systemUnderTest = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.Equals(systemUnderTest);
@@ -503,7 +503,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -518,7 +518,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -533,7 +533,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -548,7 +548,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void Equals_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -683,8 +683,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void LessThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest1 = null;
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 < systemUnderTest2;
@@ -815,8 +815,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GreaterThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest1 = null;
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 > systemUnderTest2;
@@ -947,8 +947,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void LessThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest1 = null;
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 <= systemUnderTest2;
@@ -1079,8 +1079,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest1 = null;
-                MyModelPublicSettersMultiLevelGrandChild1A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandChild1A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 >= systemUnderTest2;
@@ -1208,14 +1208,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareTo_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_1___When_parameter_other_is_null()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_1___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelGrandChild1A other = null;
+                    MyModelPublicSettersMultilevelGrandChild1A other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareTo(other);
@@ -1226,7 +1226,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareTo_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_0___When_parameter_other_is_same_object()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_0___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1241,7 +1241,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareTo_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_0___When_objects_being_compared_are_equal()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_0___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1256,7 +1256,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareTo_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_negative_1___When_object_is_less_than_parameter_other()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_negative_1___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1273,7 +1273,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareTo_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_1___When_object_is_greater_than_parameter_other()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_1___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1290,7 +1290,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareTo_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild1A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1405,14 +1405,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelParent___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelParent other = null;
+                    MyModelPublicSettersMultilevelParent other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
@@ -1423,14 +1423,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelParent___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)scenario.ReferenceObject);
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)scenario.ReferenceObject);
 
                     // Assert
                     actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
@@ -1438,14 +1438,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelParent___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_)).ToList();
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)_)).ToList();
 
                     // Assert
                     actuals.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
@@ -1453,15 +1453,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelParent___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)scenario.ReferenceObject)).ToList();
-                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_)).ToList();
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)_)).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
@@ -1470,15 +1470,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelParent___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)scenario.ReferenceObject)).ToList();
-                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_)).ToList();
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)_)).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
@@ -1487,14 +1487,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelParent___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelParent___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelParent)_))).ToList();
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelParent)_))).ToList();
 
                     // Assert
                     actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
@@ -1503,14 +1503,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelChild1 other = null;
+                    MyModelPublicSettersMultilevelChild1 other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
@@ -1521,14 +1521,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)scenario.ReferenceObject);
+                    var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)scenario.ReferenceObject);
 
                     // Assert
                     actual.AsTest().Must().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
@@ -1536,14 +1536,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelChild1___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_)).ToList();
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)_)).ToList();
 
                     // Assert
                     actuals.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance, because: scenario.Id);
@@ -1551,15 +1551,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelChild1___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)scenario.ReferenceObject)).ToList();
-                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_)).ToList();
+                    var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)_)).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstancePrecedesTheOtherInstance, because: scenario.Id);
@@ -1568,15 +1568,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelChild1___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)scenario.ReferenceObject)).ToList();
-                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_)).ToList();
+                    var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)scenario.ReferenceObject)).ToList();
+                    var actuals2 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)_)).ToList();
 
                     // Assert
                     actuals1.AsTest().Must().Each().BeEqualTo(RelativeSortOrder.ThisInstanceFollowsTheOtherInstance, because: scenario.Id);
@@ -1585,14 +1585,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelChild1___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelChild1___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach(var scenario in scenarios)
                 {
                     // Arrange, Act
-                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultiLevelChild1)_))).ToList();
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder((MyModelPublicSettersMultilevelChild1)_))).ToList();
 
                     // Assert
                     actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
@@ -1601,14 +1601,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultiLevelGrandChild1A other = null;
+                    MyModelPublicSettersMultilevelGrandChild1A other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
@@ -1619,7 +1619,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1634,7 +1634,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1649,7 +1649,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1666,7 +1666,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild1A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1683,7 +1683,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultiLevelGrandChild1A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild1A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPrivateSettersMultiLevelChild2.cs" company="OBeautifulCode">
+// <copyright file="MyModelPrivateSettersMultilevelChild2.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using OBeautifulCode.Type;
 
-    public abstract partial class MyModelPrivateSettersMultiLevelChild2 : MyModelPrivateSettersMultiLevelParent, IModelViaCodeGen, IComparableViaCodeGen
+    public abstract partial class MyModelPrivateSettersMultilevelChild2 : MyModelPrivateSettersMultilevelParent, IModelViaCodeGen, IComparableViaCodeGen
     {
-        protected MyModelPrivateSettersMultiLevelChild2(
+        protected MyModelPrivateSettersMultilevelChild2(
             int parentInt,
             int child2Int)
             : base(parentInt)

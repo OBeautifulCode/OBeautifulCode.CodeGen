@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPublicSettersMultiLevelChild2Test.cs" company="OBeautifulCode">
+// <copyright file="MyModelPublicSettersMultilevelChild2Test.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,14 +8,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
 
-    public static partial class MyModelPublicSettersMultiLevelChild2Test
+    public static partial class MyModelPublicSettersMultilevelChild2Test
     {
-        static MyModelPublicSettersMultiLevelChild2Test()
+        static MyModelPublicSettersMultilevelChild2Test()
         {
-            ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPublicSettersMultiLevelChild2>
+            ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPublicSettersMultilevelChild2>
             {
                 Name = "Scenario 1",
-                ReferenceObject = new MyModelPublicSettersMultiLevelGrandChild2A
+                ReferenceObject = new MyModelPublicSettersMultilevelGrandChild2A
                 {
                     ParentInt = 1,
                     Child2Int = 2,
@@ -23,19 +23,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 },
                 ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 1,
                         Child2Int = 2,
                         GrandChild2AInt = 3,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 3,
                         Child2Int = 2,
                         GrandChild2AInt = 1,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 0,
                         Child2Int = 6,
@@ -44,19 +44,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 },
                 ObjectsThatAreLessThanReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 1,
                         Child2Int = 2,
                         GrandChild2AInt = 2,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 6,
                         Child2Int = -2,
                         GrandChild2AInt = -1,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 0,
                         Child2Int = 5,
@@ -65,19 +65,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 },
                 ObjectsThatAreGreaterThanReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 2,
                         Child2Int = 2,
                         GrandChild2AInt = 3,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 3,
                         Child2Int = 3,
                         GrandChild2AInt = 1,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandChild2A
                     {
                         ParentInt = 0,
                         Child2Int = 7,
@@ -86,7 +86,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 },
                 ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultiLevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandChild2B
                     {
                         ParentInt = 1,
                         Child2Int = 2,
@@ -97,13 +97,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     1,
                     "dummy-string",
-                    new MyModelPublicSettersMultiLevelGrandChild1A
+                    new MyModelPublicSettersMultilevelGrandChild1A
                     {
                         ParentInt = 1,
                         Child1Int = 2,
                         GrandChild1AInt = 3,
                     },
-                    new MyModelPublicSettersMultiLevelGrandChild1B
+                    new MyModelPublicSettersMultilevelGrandChild1B
                     {
                         ParentInt = 1,
                         Child1Int = 2,
