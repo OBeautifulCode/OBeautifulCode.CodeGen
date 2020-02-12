@@ -220,5 +220,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// CompareToForRelativeSortOrder() tests.
         /// </summary>
         public const string CompareToForRelativeSortOrderTestsToken = "[compare-to-for-relative-sort-order-tests-here]";
+
+        /// <summary>
+        /// Equals() tests.
+        /// </summary>
+        public const string EqualsTestsToken = "[equals-tests-here]";
     }
 }

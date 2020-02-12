@@ -188,6 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EqualsTests.All.Both.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.TestSnippet.CompareToTests.All.Both.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.TestSnippet.CompareToForRelativeSortOrderTests.All.Both.txt" />
   </ItemGroup>

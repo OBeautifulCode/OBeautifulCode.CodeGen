@@ -114,8 +114,24 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestMethods(
             this ModelType modelType)
         {
-            var result = typeof(EqualityGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+            var equalsTestTemplate = typeof(EqualityGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.EqualsTests);
+
+            var equalsItems = new List<string>();
+
+            foreach (var typeCompilableString in modelType.DerivativePathFromRootToSelfCompilableStrings)
+            {
+                var equalsItem = equalsTestTemplate
+                    .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
+                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
+
+                equalsItems.Add(equalsItem);
+            }
+
+            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+
+            var result = codeTemplate
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.EqualsTestsToken, equalsItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine);
 
             return result;
         }

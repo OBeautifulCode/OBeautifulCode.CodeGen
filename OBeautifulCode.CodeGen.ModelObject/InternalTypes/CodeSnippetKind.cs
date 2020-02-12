@@ -135,5 +135,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for testing CompareToForRelativeSortOrder().
         /// </summary>
         CompareToForRelativeSortOrderTests,
+
+        /// <summary>
+        /// A code snippet for testing Equals().
+        /// </summary>
+        EqualsTests,
     }
 }
