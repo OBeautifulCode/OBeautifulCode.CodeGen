@@ -436,10 +436,12 @@ namespace OBeautifulCode.CodeGen.Console
                 Assembly.LoadFrom(assemblyToLoad);
             }
 
+            var projectName = new DirectoryInfo(projectDirectory).Name;
+
             var loadedAssemblies = AssemblyLoader.GetLoadedAssemblies();
             loadedAssemblies.ToList().ForEach(_ => Console.WriteLine(_.CodeBase));
             var typesToCheck = loadedAssemblies
-                              .Where(_ => _.CodeBase.Contains(tempDirectoryName))
+                              .Where(_ => _.CodeBase.Contains(tempDirectoryName) && _.CodeBase.Contains(projectName))
                               .ToList()
                               .GetTypesFromAssemblies();
             return typesToCheck;
