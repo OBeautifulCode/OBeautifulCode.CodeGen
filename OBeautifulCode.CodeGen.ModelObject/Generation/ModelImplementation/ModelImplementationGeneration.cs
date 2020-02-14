@@ -6,6 +6,7 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -208,6 +209,55 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                 .Replace(Tokens.TestImplementationToken, testImplementationCode);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates the code for the dummy factory.
+        /// </summary>
+        /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
+        /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
+        /// <param name="dummyFactorySnippets">The dummy factory snippets.</param>
+        /// <returns>
+        /// The dummy factory code.
+        /// </returns>
+        public static string GenerateCodeForDummyFactory(
+            string dummyFactoryTypeNamespace,
+            string dummyFactoryTypeName,
+            IReadOnlyList<string> dummyFactorySnippets)
+        {
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.DummyFactory, KeyMethodKinds.Both);
+
+            var result = codeTemplate
+                .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
+                .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
+                .Replace(Tokens.DummyFactoryTypeNamespaceToken, dummyFactoryTypeNamespace)
+                .Replace(Tokens.DummyFactoryTypeNameToken, dummyFactoryTypeName)
+                .Replace(Tokens.DummyFactorySnippetsTokens, dummyFactorySnippets.Any() ? Environment.NewLine + dummyFactorySnippets.ToDelimitedString(Environment.NewLine + Environment.NewLine) : string.Empty);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates the code for the dummy factory tests.
+        /// </summary>
+        /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
+        /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
+        /// <returns>
+        /// The dummy factory code.
+        /// </returns>
+        public static string GenerateCodeForDummyFactoryTests(
+            string dummyFactoryTypeNamespace,
+            string dummyFactoryTypeName)
+        {
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.DummyFactoryTest, KeyMethodKinds.Both);
+
+            var result = codeTemplate
+                .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
+                .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
+                .Replace(Tokens.DummyFactoryTypeNamespaceToken, dummyFactoryTypeNamespace)
+                .Replace(Tokens.DummyFactoryTypeNameToken, dummyFactoryTypeName);
 
             return result;
         }

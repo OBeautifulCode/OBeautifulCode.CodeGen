@@ -357,7 +357,7 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an open type."));
             }
 
-            if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.All(_ => type.GetInterface(_.Name) == null))
+            if (!CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)))
             {
                 // this really should be checked via: (!type.IsAssignableTo(typeof(IModelViaCodeGen))) but since this can be called using reflected types
                 //    we are using a less strict check which does not require it to be truly assignable but instead merely the presence of a version of the interface

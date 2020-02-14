@@ -96,5 +96,48 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Generates the dummy factory.
+        /// </summary>
+        /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
+        /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
+        /// <param name="dummyFactorySnippets">The dummy factory snippets.</param>
+        /// <returns>
+        /// The dummy factory code.
+        /// </returns>
+        public static string GenerateDummyFactory(
+            string dummyFactoryTypeNamespace,
+            string dummyFactoryTypeName,
+            IReadOnlyList<string> dummyFactorySnippets)
+        {
+            new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
+            new { dummyFactoryTypeName }.Must().NotBeNullNorWhiteSpace();
+            new { dummyFactorySnippets }.Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+
+            var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(dummyFactoryTypeNamespace, dummyFactoryTypeName, dummyFactorySnippets);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates the dummy factory tests.
+        /// </summary>
+        /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
+        /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
+        /// <returns>
+        /// The dummy factory code.
+        /// </returns>
+        public static string GenerateDummyFactoryTests(
+            string dummyFactoryTypeNamespace,
+            string dummyFactoryTypeName)
+        {
+            new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
+            new { dummyFactoryTypeName }.Must().NotBeNullNorWhiteSpace();
+
+            var result = ModelImplementationGeneration.GenerateCodeForDummyFactoryTests(dummyFactoryTypeNamespace, dummyFactoryTypeName);
+
+            return result;
+        }
     }
 }

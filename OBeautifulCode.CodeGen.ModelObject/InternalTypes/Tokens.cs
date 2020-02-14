@@ -225,5 +225,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Equals() tests.
         /// </summary>
         public const string EqualsTestsToken = "[equals-tests-here]";
+
+        /// <summary>
+        /// The namespace of the dummy factory type.
+        /// </summary>
+        public const string DummyFactoryTypeNamespaceToken = "[dummy-factory-type-namespace-here]";
+
+        /// <summary>
+        /// The name of the dummy factory type.
+        /// </summary>
+        public const string DummyFactoryTypeNameToken = "[dummy-factory-type-name-here]";
+
+        /// <summary>
+        /// The dummy factory snippets.
+        /// </summary>
+        public const string DummyFactorySnippetsTokens = "[dummy-factory-snippets-here]";
     }
 }

@@ -30,5 +30,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A template for a snippet of code that goes in the test class.
         /// </summary>
         TestSnippet,
+
+        /// <summary>
+        /// A template for code that goes in the dummy factory.
+        /// </summary>
+        DummyFactory,
+
+        /// <summary>
+        /// A template for code that goes in the dummy factory test class.
+        /// </summary>
+        DummyFactoryTest,
     }
 }

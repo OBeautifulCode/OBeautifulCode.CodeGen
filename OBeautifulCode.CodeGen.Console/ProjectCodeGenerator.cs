@@ -9,20 +9,19 @@ namespace OBeautifulCode.CodeGen.Console
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Globalization;
     using System.IO;
     using System.Linq;
-    using System.Reflection;
     using System.Text;
 
     using Newtonsoft.Json.Linq;
 
     using OBeautifulCode.CodeGen.Console.Internal;
     using OBeautifulCode.CodeGen.ModelObject;
-    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
+
+    using static System.FormattableString;
 
     /// <summary>
     /// Generates code for a project.
@@ -31,357 +30,153 @@ namespace OBeautifulCode.CodeGen.Console
     {
         private const string TempDirectoryPrefix = "OBC.CodeGen";
 
+        private static readonly Encoding Encoding = Encoding.UTF8;
+
         /// <summary>
         /// Generate logic for models.
         /// </summary>
         /// <param name="projectDirectory">Directory of the project to work on.</param>
         /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
+        /// <param name="projectOutputDirectory">Directory where project outputs built files (e.g. ...\\bin\\debug\\)..</param>
         public static void GenerateCodeForProject(
             string projectDirectory,
-            string testProjectDirectory)
+            string testProjectDirectory,
+            string projectOutputDirectory)
         {
             if (!Directory.Exists(projectDirectory))
             {
-                throw new ArgumentException("Could not find provided directory: " + projectDirectory);
+                throw new ArgumentException("Could not find project directory: " + projectDirectory);
             }
 
-            var tempDirectoryRootPath = Path.GetTempPath();
-            RemoveTempFilesFromPreviousRuns(tempDirectoryRootPath, TempDirectoryPrefix);
-
-            var typesToCheck = ShadowCopyAssembliesLoadAndGetTypesToCheck(projectDirectory, tempDirectoryRootPath);
-
-            var allProjectSourceFiles = Directory.GetFiles(projectDirectory, "*.cs", SearchOption.AllDirectories);
-            var allTestProjectSourceFiles = !Directory.Exists(testProjectDirectory) ? new string[0] : Directory.GetFiles(testProjectDirectory, "*.cs", SearchOption.AllDirectories);
-
-            var fileHeaderBuilder = GetFileHeaderBuilder(projectDirectory);
-            var dummyFactorySnippets = new List<string>();
-            var hasTestProject = !string.IsNullOrEmpty(testProjectDirectory) && Directory.Exists(testProjectDirectory);
-            var testNamespace = hasTestProject ? new DirectoryInfo(testProjectDirectory).Name : null;
-            foreach (var type in typesToCheck)
+            if (!Directory.Exists(projectOutputDirectory))
             {
-                Console.WriteLine("Checking type: " + type.ToStringReadable());
-                if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.GetInterface(_.Name) != null))
+                throw new ArgumentException("Could not find project output directory: " + projectOutputDirectory);
+            }
+
+            var projectName = new DirectoryInfo(projectDirectory).Name;
+
+            var runningDirectory = Path.GetDirectoryName(typeof(ProjectCodeGenerator).Assembly.GetCodeBaseAsPathInsteadOfUri());
+
+            var hasTestProject = !string.IsNullOrEmpty(testProjectDirectory) && Directory.Exists(testProjectDirectory);
+
+            var projectSourceFilePaths = Directory.GetFiles(projectDirectory, "*.cs", SearchOption.AllDirectories).Where(_ => !_.Contains(".recipes")).ToArray();
+
+            var testProjectSourceFilePaths = hasTestProject
+                ? Directory.GetFiles(testProjectDirectory, "*.cs", SearchOption.AllDirectories).Where(_ => !_.Contains(".recipes")).ToArray()
+                : new string[0];
+
+            var testNamespace = hasTestProject
+                ? new DirectoryInfo(testProjectDirectory).Name
+                : null;
+
+            var dummyFactoryFilePath = testProjectSourceFilePaths.SingleOrDefault(_ => _.EndsWith("DummyFactory.cs", StringComparison.OrdinalIgnoreCase));
+
+            var hasDummyFactory = dummyFactoryFilePath != null;
+
+            var fileHeaderBuilder = GetFileHeaderBuilder(projectName, projectDirectory);
+
+            CopyMissingAssembliesFromProjectOutputDirectoryToRunningDirectory(projectOutputDirectory, runningDirectory);
+
+            using (AssemblyLoader.CreateAndLoadFromDirectory(runningDirectory))
+            {
+                var typesToCheck = AssemblyLoader
+                    .GetLoadedAssemblies()
+                    .GetTypesFromAssemblies()
+                    .Where(_ => (_.Namespace ?? string.Empty).StartsWith(projectName))
+                    .ToList();
+
+                var dummyFactorySnippets = new List<string>();
+
+                foreach (var type in typesToCheck)
                 {
-                    var modelDesignerFileContents = type.GenerateForModel(GenerateFor.ModelImplementationPartialClass);
-                    var modelTestDesignerFileContents = type.GenerateForModel(GenerateFor.ModelImplementationTestsPartialClassWithSerialization);
-                    var dummyFactorySnippet = type.GenerateForModel(GenerateFor.ModelDummyFactorySnippet);
+                    Console.WriteLine("Checking type: " + type.ToStringReadable());
 
-                    // find file
-                    var modelFilePath = allProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(type.Name + ".cs", StringComparison.OrdinalIgnoreCase));
-                    if (modelFilePath == null)
+                    if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)))
                     {
-                        throw new FileNotFoundException("Expected a source file for type: " + type.ToStringReadable());
-                    }
+                        WriteModelFile(type, projectSourceFilePaths);
 
-                    var modelDesignerFilePath = modelFilePath.Replace(".cs", ".designer.cs");
-
-                    File.WriteAllText(modelDesignerFilePath, modelDesignerFileContents, Encoding.UTF8);
-
-                    if (hasTestProject)
-                    {
-                        dummyFactorySnippets.Add(dummyFactorySnippet);
-                        var modelTestFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(type.Name + "Test.cs", StringComparison.OrdinalIgnoreCase));
-                        if (modelTestFilePath == null)
+                        if (hasTestProject)
                         {
-                            var modelTestTypeName = type.Name + "Test";
-                            modelTestFilePath = Path.Combine(testProjectDirectory, modelTestTypeName + ".cs");
-                            var modelTestFileHeader = fileHeaderBuilder(modelTestTypeName);
-                            var modelTestFileContents = GenerateModelTestFileContents(modelTestFileHeader, testNamespace, modelTestTypeName);
-
-                            File.WriteAllText(modelTestFilePath, modelTestFileContents);
+                            WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder);
                         }
 
-                        var modelTestDesignerFilePath = modelTestFilePath.Replace(".cs", ".designer.cs");
-                        File.WriteAllText(modelTestDesignerFilePath, modelTestDesignerFileContents);
+                        if (type.IsAssignableTo(typeof(IModelViaCodeGen)))
+                        {
+                            var dummyFactorySnippet = type.GenerateForModel(GenerateFor.ModelDummyFactorySnippet);
+
+                            dummyFactorySnippets.Add(dummyFactorySnippet);
+                        }
+                    }
+                }
+
+                if (hasDummyFactory)
+                {
+                    WriteDummyFactoryFile(dummyFactoryFilePath, testNamespace, dummyFactorySnippets, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder);
+                }
+            }
+        }
+
+        private static void CopyMissingAssembliesFromProjectOutputDirectoryToRunningDirectory(
+            string projectOutputDirectory,
+            string runningDirectory)
+        {
+            var projectOutputFiles = Directory.GetFiles(projectOutputDirectory);
+
+            if (projectOutputFiles.Length == 0)
+            {
+                throw new InvalidOperationException("Could not find any files in project output directory (check build): " + projectOutputDirectory);
+            }
+
+            foreach (var projectOutputFile in projectOutputFiles)
+            {
+                if (projectOutputFile.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) ||
+                    projectOutputFile.EndsWith(".dll", StringComparison.OrdinalIgnoreCase))
+                {
+                    var runningDirectoryOutputFile = Path.Combine(runningDirectory, Path.GetFileName(projectOutputFile));
+
+                    if (!File.Exists(runningDirectoryOutputFile))
+                    {
+                        File.Copy(projectOutputFile, runningDirectoryOutputFile);
                     }
                 }
             }
-
-            if (hasTestProject && dummyFactorySnippets.Any())
-            {
-                var dummyFactoryFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => !_.Contains(".recipes") && _.EndsWith("DummyFactory.cs", StringComparison.OrdinalIgnoreCase))
-                                        ?? Path.Combine(testProjectDirectory, "DummyFactory.cs");
-
-                var dummyFactoryDesignerFilePath = dummyFactoryFilePath.Replace(".cs", ".designer.cs");
-
-                var dummyFactoryTypeName = Path.GetFileName(dummyFactoryFilePath).Replace(".cs", string.Empty);
-                if (!File.Exists(dummyFactoryFilePath))
-                {
-                    var dummyFactoryFileHeader = fileHeaderBuilder(dummyFactoryTypeName);
-                    var dummyFactoryFileContents = GenerateDummyFactoryFileContents(dummyFactoryFileHeader, testNamespace, dummyFactoryTypeName);
-                    File.WriteAllText(dummyFactoryFilePath, dummyFactoryFileContents);
-                }
-
-                var dummyFactoryDesignerFileContents = GenerateDummyFactoryDesignerFileContents(
-                    testNamespace,
-                    dummyFactoryTypeName,
-                    dummyFactorySnippets);
-
-                File.WriteAllText(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents);
-
-                var dummyFactoryTestTypeName = dummyFactoryTypeName + "Test";
-                var dummyFactoryTestFilePath = allTestProjectSourceFiles.SingleOrDefault(_ => _.EndsWith(dummyFactoryTypeName + "Test.cs", StringComparison.OrdinalIgnoreCase))
-                                            ?? Path.Combine(testProjectDirectory, dummyFactoryTestTypeName + ".cs");
-                var dummyFactoryTestDesignerFilePath = dummyFactoryTestFilePath.Replace(".cs", ".designer.cs");
-                if (!File.Exists(dummyFactoryTestFilePath))
-                {
-                    var dummyFactoryTestFileHeader = fileHeaderBuilder(dummyFactoryTestTypeName);
-                    var dummyFactoryTestFileContents = GenerateDummyFactoryTestFileContents(dummyFactoryTestFileHeader, testNamespace, dummyFactoryTestTypeName);
-                    File.WriteAllText(dummyFactoryTestFilePath, dummyFactoryTestFileContents);
-                }
-
-                var dummyFactoryTestDesignerFileContents = GenerateDummyFactoryTestDesignerFileContents(testNamespace, dummyFactoryTestTypeName, dummyFactoryTypeName);
-                File.WriteAllText(dummyFactoryTestDesignerFilePath, dummyFactoryTestDesignerFileContents);
-            }
-        }
-
-        private static string GenerateDummyFactoryFileContents(
-            string fileHeader,
-            string typeNamespace,
-            string typeName)
-        {
-            var dummyFactoryFileContents = fileHeader
-                                         + Environment.NewLine
-                                         + Environment.NewLine
-                                         + "namespace "
-                                         + typeNamespace
-                                         + Environment.NewLine
-                                         + "{"
-                                         + Environment.NewLine
-                                         + "    using System;"
-                                         + Environment.NewLine
-                                         + "    using System.Diagnostics.CodeAnalysis;"
-                                         + Environment.NewLine
-                                         + "    using System.Linq;"
-                                         + Environment.NewLine
-                                         + "    using FakeItEasy;"
-                                         + Environment.NewLine
-                                         + "    using OBeautifulCode.AutoFakeItEasy;"
-                                         + Environment.NewLine
-                                         + Environment.NewLine
-                                         + "    public class "
-                                         + typeName
-                                         + " : Default"
-                                         + typeName
-                                         + Environment.NewLine
-                                         + "    {"
-                                         + Environment.NewLine
-                                         + "        public Default" + typeName + "()"
-                                         + Environment.NewLine
-                                         + "        {"
-                                         + Environment.NewLine
-                                         + "            /* Add any overriding or custom registrations here. */"
-                                         + Environment.NewLine
-                                         + "        }"
-                                         + Environment.NewLine
-                                         + "    }"
-                                         + Environment.NewLine
-                                         + "}";
-
-            return dummyFactoryFileContents;
-        }
-
-        private static string GenerateDummyFactoryDesignerFileContents(
-            string typeNamespace,
-            string typeName,
-            List<string> dummyFactorySnippets)
-        {
-            var autoGenerateHeader =
-                "// --------------------------------------------------------------------------------------------------------------------"
-              + Environment.NewLine
-              + "// <auto-generated>"
-              + Environment.NewLine
-              + "//   Generated using OBeautifulCode.CodeGen.ModelObject (1.0.0.0)"
-              + Environment.NewLine
-              + "// </auto-generated>"
-              + Environment.NewLine
-              + "// --------------------------------------------------------------------------------------------------------------------";
-
-            var contents = autoGenerateHeader
-                         + Environment.NewLine
-                         + "namespace "
-                         + typeNamespace
-                         + Environment.NewLine
-                         + "{"
-                         + Environment.NewLine
-                         + "    using System;"
-                         + Environment.NewLine
-                         + "    using System.Diagnostics.CodeAnalysis;"
-                         + Environment.NewLine
-                         + "    using System.Linq;"
-                         + Environment.NewLine
-                         + "    using FakeItEasy;"
-                         + Environment.NewLine
-                         + "    using OBeautifulCode.AutoFakeItEasy;"
-                         + Environment.NewLine
-                         + Environment.NewLine
-                         + "    public abstract class Default" + typeName + " : IDummyFactory"
-                         + Environment.NewLine
-                         + "    {"
-                         + Environment.NewLine
-                         + "        public Default" + typeName + "()"
-                         + Environment.NewLine
-                         + "        {"
-                         + dummyFactorySnippets.ToDelimitedString(Environment.NewLine + Environment.NewLine + "        ")
-                         + Environment.NewLine
-                         + "        }"
-                         + Environment.NewLine
-                         + Environment.NewLine
-                         + "        /// <inheritdoc />"
-                         + Environment.NewLine
-                         + "        public Priority Priority => new FakeItEasy.Priority(1);"
-                         + Environment.NewLine
-                         + Environment.NewLine
-                         + "        /// <inheritdoc />"
-                         + Environment.NewLine
-                         + "        public bool CanCreate(Type type)"
-                         + Environment.NewLine
-                         + "        {"
-                         + Environment.NewLine
-                         + "            return false;"
-                         + Environment.NewLine
-                         + "        }"
-                         + Environment.NewLine
-                         + Environment.NewLine
-                         + "        /// <inheritdoc />"
-                         + Environment.NewLine
-                         + "        public object Create(Type type)"
-                         + Environment.NewLine
-                         + "        {"
-                         + Environment.NewLine
-                         + "            return null;"
-                         + Environment.NewLine
-                         + "        }"
-                         + Environment.NewLine
-                         + "    }"
-                         + Environment.NewLine
-                         + "}";
-
-            return contents;
-        }
-
-        private static string GenerateDummyFactoryTestFileContents(
-            string fileHeader,
-            string typeNamespace,
-            string typeName)
-        {
-            var dummyFactoryFileContents = fileHeader
-                                         + Environment.NewLine
-                                         + Environment.NewLine
-                                         + "namespace "
-                                         + typeNamespace
-                                         + Environment.NewLine
-                                         + "{"
-                                         + Environment.NewLine
-                                         + "    using System;"
-                                         + Environment.NewLine
-                                         + "    using System.Diagnostics.CodeAnalysis;"
-                                         + Environment.NewLine
-                                         + "    using System.Linq;"
-                                         + Environment.NewLine
-                                         + "    using FakeItEasy;"
-                                         + Environment.NewLine
-                                         + "    using OBeautifulCode.AutoFakeItEasy;"
-                                         + Environment.NewLine
-                                         + Environment.NewLine
-                                         + "    public partial class "
-                                         + typeName
-                                         + Environment.NewLine
-                                         + "    {"
-                                         + Environment.NewLine
-                                         + "    }"
-                                         + Environment.NewLine
-                                         + "}";
-
-            return dummyFactoryFileContents;
-        }
-
-        private static string GenerateDummyFactoryTestDesignerFileContents(
-            string typeNamespace,
-            string dummyFactoryTestTypeName,
-            string dummyFactoryTypeName)
-        {
-            var autoGenerateHeader =
-                "// --------------------------------------------------------------------------------------------------------------------"
-              + Environment.NewLine
-              + "// <auto-generated>"
-              + Environment.NewLine
-              + "//   Generated using OBeautifulCode.CodeGen.ModelObject (1.0.0.0)"
-              + Environment.NewLine
-              + "// </auto-generated>"
-              + Environment.NewLine
-              + "// --------------------------------------------------------------------------------------------------------------------";
-
-            var contents = autoGenerateHeader
-                         + Environment.NewLine
-                         + Environment.NewLine
-                         + "namespace "
-                         + typeNamespace
-                         + Environment.NewLine
-                         + "{"
-                         + Environment.NewLine
-                         + "    using System;"
-                         + Environment.NewLine
-                         + "    using System.Diagnostics.CodeAnalysis;"
-                         + Environment.NewLine
-                         + "    using OBeautifulCode.Assertion.Recipes ;"
-                         + Environment.NewLine
-                         + "    using FakeItEasy;"
-                         + Environment.NewLine
-                         + "    using Xunit;"
-                         + Environment.NewLine
-                         + Environment.NewLine
-                         + "    public partial class " + dummyFactoryTestTypeName
-                         + Environment.NewLine
-                         + "    {"
-                         + Environment.NewLine
-                         + "        [Fact]"
-                         + Environment.NewLine
-                         + "        public void ConfirmDummyFactorDerivesFromDesigner()"
-                         + Environment.NewLine
-                         + "        {"
-                         + Environment.NewLine
-                         + "            typeof(Default" + dummyFactoryTypeName + ").GetInterface(nameof(IDummyFactory)).AsTest().Must().NotBeNull();"
-                         + Environment.NewLine
-                         + "            typeof(" + dummyFactoryTypeName + ").BaseType.AsTest().Must().BeEqualTo(typeof(Default" + dummyFactoryTypeName + "));"
-                         + Environment.NewLine
-                         + "        }"
-                         + Environment.NewLine
-                         + "    }"
-                         + Environment.NewLine
-                         + "}";
-
-            return contents;
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static Func<string, string> GetFileHeaderBuilder(
+            string projectName,
             string projectDirectory)
         {
             var packagesDirectoryPath = Path.Combine(projectDirectory, "../packages");
-            var projectDirectoryName = new DirectoryInfo(projectDirectory).Name;
-            var buildPackagePrefix = projectDirectoryName.Split('.').FirstOrDefault();
+
+            var buildPackagePrefix = projectName.Split('.').FirstOrDefault();
+
             var buildAnalyzerPackageName = buildPackagePrefix == null ? null : buildPackagePrefix + ".Build.Analyzers";
+
             var analyzerCandidates = buildAnalyzerPackageName == null
                 ? null
                 : Directory.GetDirectories(packagesDirectoryPath, buildAnalyzerPackageName + "*", SearchOption.TopDirectoryOnly);
-            var analyzerPackageDirectory = analyzerCandidates == null ? null : analyzerCandidates.OrderByDescending(_ => _).FirstOrDefault();
-            var styleCopJsonFilePath =
-                analyzerPackageDirectory == null ? null : Path.Combine(analyzerPackageDirectory, "analyzers/stylecop.json");
-            string fileHeader = null;
+
+            var analyzerPackageDirectory = analyzerCandidates?.OrderByDescending(_ => _).FirstOrDefault();
+
+            var styleCopJsonFilePath = analyzerPackageDirectory == null ? null : Path.Combine(analyzerPackageDirectory, "analyzers/stylecop.json");
+
             if (styleCopJsonFilePath == null || !File.Exists(styleCopJsonFilePath))
             {
                 return typeName => string.Empty;
             }
 
             var styleCopJsonContents = File.ReadAllText(styleCopJsonFilePath);
+
             dynamic styleCopJson = JObject.Parse(styleCopJsonContents);
+
             var companyName = styleCopJson.settings.documentationRules.companyName.ToString();
+
             var copyrightText = styleCopJson.settings.documentationRules.copyrightText.ToString().Replace("{companyName}", companyName);
 
-            return typeName =>
+            string Result(string typeName)
             {
-                fileHeader =
+                var fileHeader =
                     "// --------------------------------------------------------------------------------------------------------------------"
                   + Environment.NewLine
                   + "// <copyright file=\""
@@ -398,53 +193,66 @@ namespace OBeautifulCode.CodeGen.Console
                   + "// --------------------------------------------------------------------------------------------------------------------";
 
                 return fileHeader;
-            };
+            }
+
+            return Result;
         }
 
-        [SuppressMessage("Microsoft.Reliability", "CA2001:AvoidCallingProblematicMethods", MessageId = "System.Reflection.Assembly.LoadFrom", Justification = "Required to achieve desired functionality.")]
-        private static IReadOnlyCollection<Type> ShadowCopyAssembliesLoadAndGetTypesToCheck(
-            string projectDirectory,
-            string tempDirectoryRootPath)
+        private static void WriteModelFile(
+            Type type,
+            IReadOnlyCollection<string> projectSourceFilePaths)
         {
-            var tempDirectoryName = TempDirectoryPrefix + DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ", CultureInfo.InvariantCulture);
-            var tempDirectoryPath = tempDirectoryRootPath + tempDirectoryName;
+            var modelPartialClassContents = type.GenerateForModel(GenerateFor.ModelImplementationPartialClass);
 
-            if (!Directory.Exists(tempDirectoryPath))
+            var modelFileName = type.Name + ".cs";
+
+            var modelFilePath = projectSourceFilePaths.SingleOrDefault(_ => _.EndsWith(modelFileName, StringComparison.OrdinalIgnoreCase));
+
+            if (modelFilePath == null)
             {
-                Directory.CreateDirectory(tempDirectoryPath);
+                throw new FileNotFoundException(Invariant($"Expected a source file for type {type.ToStringReadable()} named {modelFileName}"));
             }
 
-            var projectBinDebugFiles = GetProjectBinDebugFiles(projectDirectory);
-            var assembliesToLoad = new List<string>();
-            foreach (var fileToConsiderLoading in projectBinDebugFiles)
-            {
-                if (fileToConsiderLoading.EndsWith(".exe", StringComparison.OrdinalIgnoreCase) || fileToConsiderLoading.EndsWith(".dll", StringComparison.OrdinalIgnoreCase) || fileToConsiderLoading.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase))
-                {
-                    var fileName = Path.GetFileName(fileToConsiderLoading);
-                    var newFilePath = Path.Combine(tempDirectoryPath, fileName);
-                    File.Copy(fileToConsiderLoading, newFilePath);
+            var modelDesignerFilePath = GetDesignerFilePath(modelFilePath);
 
-                    if (!newFilePath.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase))
-                    {
-                        assembliesToLoad.Add(newFilePath);
-                    }
-                }
+            File.WriteAllText(modelDesignerFilePath, modelPartialClassContents, Encoding);
+        }
+
+        private static void WriteTestFiles(
+            Type type,
+            string testProjectDirectory,
+            IReadOnlyCollection<string> testProjectSourceFilePaths,
+            string testNamespace,
+            Func<string, string> fileHeaderBuilder)
+        {
+            var modelTestFilePath = testProjectSourceFilePaths.SingleOrDefault(_ => _.EndsWith(type.Name + "Test.cs", StringComparison.OrdinalIgnoreCase));
+
+            if (modelTestFilePath == null)
+            {
+                var modelTestTypeName = type.Name + "Test";
+
+                modelTestFilePath = Path.Combine(testProjectDirectory, modelTestTypeName + ".cs");
+
+                var modelTestFileHeader = fileHeaderBuilder(modelTestTypeName);
+
+                var modelTestFileContents = GenerateModelTestFileContents(modelTestFileHeader, testNamespace, modelTestTypeName);
+
+                File.WriteAllText(modelTestFilePath, modelTestFileContents, Encoding);
             }
 
-            foreach (var assemblyToLoad in assembliesToLoad)
-            {
-                Assembly.LoadFrom(assemblyToLoad);
-            }
+            var modelTestDesignerFilePath = GetDesignerFilePath(modelTestFilePath);
 
-            var projectName = new DirectoryInfo(projectDirectory).Name;
+            var testPartialClassContents = type.GenerateForModel(GenerateFor.ModelImplementationTestsPartialClassWithSerialization);
 
-            var loadedAssemblies = AssemblyLoader.GetLoadedAssemblies();
-            loadedAssemblies.ToList().ForEach(_ => Console.WriteLine(_.CodeBase));
-            var typesToCheck = loadedAssemblies
-                              .Where(_ => _.CodeBase.Contains(tempDirectoryName) && _.CodeBase.Contains(projectName))
-                              .ToList()
-                              .GetTypesFromAssemblies();
-            return typesToCheck;
+            File.WriteAllText(modelTestDesignerFilePath, testPartialClassContents, Encoding);
+        }
+
+        private static string GetDesignerFilePath(
+            string filePath)
+        {
+            var result = filePath.Replace(".cs", ".designer.cs");
+
+            return result;
         }
 
         private static string GenerateModelTestFileContents(
@@ -452,60 +260,109 @@ namespace OBeautifulCode.CodeGen.Console
             string typeNamespace,
             string typeName)
         {
-            var modelTestFileContents = fileHeader
-                                 + Environment.NewLine
-                                 + Environment.NewLine
-                                 + "namespace " + typeNamespace
-                                 + Environment.NewLine
-                                  + "{"
-                                 + Environment.NewLine
-                                 + "    public partial class "
-                                 + typeName
-                                 + Environment.NewLine
-                                 + "    {"
-                                 + Environment.NewLine
-                                 + "    }"
-                                 + Environment.NewLine
-                                 + "}";
+            var result = fileHeader
+                         + Environment.NewLine
+                         + Environment.NewLine
+                         + "namespace " + typeNamespace
+                         + Environment.NewLine
+                         + "{"
+                         + Environment.NewLine
+                         + "    using System;"
+                         + Environment.NewLine
+                         + Environment.NewLine
+                         + "    using FakeItEasy;"
+                         + Environment.NewLine
+                         + Environment.NewLine
+                         + "    using OBeautifulCode.AutoFakeItEasy;"
+                         + Environment.NewLine
+                         + Environment.NewLine
+                         + "    using Xunit;"
+                         + Environment.NewLine
+                         + Environment.NewLine
+                         + "    public static partial class "
+                         + typeName
+                         + Environment.NewLine
+                         + "    {"
+                         + Environment.NewLine
+                         + "    }"
+                         + Environment.NewLine
+                         + "}";
 
-            return modelTestFileContents;
+            return result;
         }
 
-        private static string[] GetProjectBinDebugFiles(
-            string projectDirectory)
+        private static void WriteDummyFactoryFile(
+            string dummyFactoryFilePath,
+            string testNamespace,
+            IReadOnlyList<string> snippets,
+            string testProjectDirectory,
+            IReadOnlyCollection<string> testProjectSourceFilePaths,
+            Func<string, string> fileHeaderBuilder)
         {
-            var binDebugPath = Path.Combine(projectDirectory, "bin\\debug");
+            var dummyFactoryDesignerFilePath = GetDesignerFilePath(dummyFactoryFilePath);
 
-            if (!Directory.Exists(binDebugPath))
+            // ReSharper disable once PossibleNullReferenceException
+            var dummyFactoryTypeName = Path.GetFileName(dummyFactoryFilePath).Replace(".cs", string.Empty);
+
+            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(testNamespace, dummyFactoryTypeName, snippets);
+
+            File.WriteAllText(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents, Encoding);
+
+            var dummyFactoryTestTypeName = dummyFactoryTypeName + "Test";
+
+            var dummyFactoryTestFilePath = testProjectSourceFilePaths.SingleOrDefault(_ => _.EndsWith(dummyFactoryTypeName + "Test.cs", StringComparison.OrdinalIgnoreCase)) ?? Path.Combine(testProjectDirectory, dummyFactoryTestTypeName + ".cs");
+
+            if (!File.Exists(dummyFactoryTestFilePath))
             {
-                throw new InvalidOperationException("Could not find bin/debug directory (check build): " + binDebugPath);
+                var dummyFactoryTestFileHeader = fileHeaderBuilder(dummyFactoryTestTypeName);
+
+                var dummyFactoryTestFileContents = GenerateDummyFactoryTestFileContents(dummyFactoryTestFileHeader, testNamespace, dummyFactoryTestTypeName);
+
+                File.WriteAllText(dummyFactoryTestFilePath, dummyFactoryTestFileContents, Encoding);
             }
 
-            var projectBinDebugFiles = Directory.GetFiles(binDebugPath);
-            if (projectBinDebugFiles.Length == 0)
-            {
-                throw new InvalidOperationException("Could not find any files in bin/debug directory (check build): " + binDebugPath);
-            }
+            var dummyFactoryTestDesignerFilePath = GetDesignerFilePath(dummyFactoryTestFilePath);
 
-            return projectBinDebugFiles;
+            var dummyFactoryTestDesignerFileContents = CodeGenerator.GenerateDummyFactoryTests(testNamespace, dummyFactoryTypeName);
+
+            File.WriteAllText(dummyFactoryTestDesignerFilePath, dummyFactoryTestDesignerFileContents, Encoding);
         }
 
-        private static void RemoveTempFilesFromPreviousRuns(
-            string tempDirectoryRootPath,
-            string tempDirectoryPrefix)
+        private static string GenerateDummyFactoryTestFileContents(
+            string fileHeader,
+            string typeNamespace,
+            string typeName)
         {
-            var priorTempDirectories = Directory.GetDirectories(tempDirectoryRootPath, tempDirectoryPrefix + "*");
-            foreach (var priorTempDirectory in priorTempDirectories)
-            {
-                try
-                {
-                    Directory.Delete(priorTempDirectory, true);
-                }
-                catch (Exception)
-                {
-                    // nothing we can do here because these are locked we will just try and remove via eventual consistency.
-                }
-            }
+            var dummyFactoryFileContents = fileHeader
+                                           + Environment.NewLine
+                                           + Environment.NewLine
+                                           + "namespace "
+                                           + typeNamespace
+                                           + Environment.NewLine
+                                           + "{"
+                                           + Environment.NewLine
+                                           + "    using System;"
+                                           + Environment.NewLine
+                                           + Environment.NewLine
+                                           + "    using FakeItEasy;"
+                                           + Environment.NewLine
+                                           + Environment.NewLine
+                                           + "    using OBeautifulCode.AutoFakeItEasy;"
+                                           + Environment.NewLine
+                                           + Environment.NewLine
+                                           + "    using Xunit;"
+                                           + Environment.NewLine
+                                           + Environment.NewLine
+                                           + "    public static partial class "
+                                           + typeName
+                                           + Environment.NewLine
+                                           + "    {"
+                                           + Environment.NewLine
+                                           + "    }"
+                                           + Environment.NewLine
+                                           + "}";
+
+            return dummyFactoryFileContents;
         }
     }
 }
