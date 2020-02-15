@@ -7,11 +7,19 @@
 namespace [dummy-factory-type-namespace-here]
 {
     using System;
+    using System.CodeDom.Compiler;
+    using System.Diagnostics.CodeAnalysis;
 
     using FakeItEasy;
 
     using OBeautifulCode.AutoFakeItEasy;
 
+    /// <summary>
+    /// The default (code generated) Dummy Factory.
+    /// Derive from this class to override registrations.
+    /// </summary>
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]
     public abstract class Default[dummy-factory-type-name-here] : IDummyFactory
     {
         public Default[dummy-factory-type-name-here]()

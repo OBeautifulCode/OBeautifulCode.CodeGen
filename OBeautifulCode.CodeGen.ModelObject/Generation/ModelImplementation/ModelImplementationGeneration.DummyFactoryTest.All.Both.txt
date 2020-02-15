@@ -6,12 +6,17 @@
 
 namespace [dummy-factory-type-namespace-here]
 {
+    using System.CodeDom.Compiler;
+    using System.Diagnostics.CodeAnalysis;
+
     using FakeItEasy;
     
     using OBeautifulCode.Assertion.Recipes;
 
     using Xunit;
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]
     public static partial class [dummy-factory-type-name-here]Test
     {
         [Fact]
