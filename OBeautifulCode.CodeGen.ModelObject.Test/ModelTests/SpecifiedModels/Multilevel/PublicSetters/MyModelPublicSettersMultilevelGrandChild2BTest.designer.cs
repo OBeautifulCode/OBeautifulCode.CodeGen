@@ -36,9 +36,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
     public static partial class MyModelPublicSettersMultilevelGrandChild2BTest
     {
-        private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.BsonConfigurationType);
+        private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(CodeGenSerializationConfigurationTypes.BsonConfigurationType);
 
-        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenModelObjectTestSerializationConfigurationTypes.JsonConfigurationType);
+        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(CodeGenSerializationConfigurationTypes.JsonConfigurationType);
 
         private static readonly MyModelPublicSettersMultilevelGrandChild2B ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersMultilevelGrandChild2B>();
 

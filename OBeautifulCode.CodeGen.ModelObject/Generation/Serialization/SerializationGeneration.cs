@@ -33,9 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .TypeNamespace
                 .Split('.')
                 .Skip(1)
-                .Where(_ => _ != "Serialization")
-                .Where(_ => _ != "Bson")
-                .Where(_ => _ != "Json")
+                .Take(1)
                 .ToDelimitedString(string.Empty);
 
             var bsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTestFields);

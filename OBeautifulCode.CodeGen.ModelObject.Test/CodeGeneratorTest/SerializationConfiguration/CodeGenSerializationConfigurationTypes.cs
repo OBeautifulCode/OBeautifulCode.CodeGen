@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CodeGenModelObjectTestSerializationConfigurationTypes.cs" company="OBeautifulCode">
+// <copyright file="CodeGenSerializationConfigurationTypes.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,7 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
 
-    public static class CodeGenModelObjectTestSerializationConfigurationTypes
+    public static class CodeGenSerializationConfigurationTypes
     {
         public static Type BsonConfigurationType => typeof(CodeGenModelObjectTestBsonConfiguration);
 
