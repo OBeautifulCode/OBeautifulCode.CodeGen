@@ -28,8 +28,6 @@ namespace OBeautifulCode.CodeGen.Console
     /// </summary>
     public static class ProjectCodeGenerator
     {
-        private const string TempDirectoryPrefix = "OBC.CodeGen";
-
         private static readonly Encoding Encoding = Encoding.UTF8;
 
         /// <summary>
@@ -206,7 +204,8 @@ namespace OBeautifulCode.CodeGen.Console
 
             var modelFileName = type.Name + ".cs";
 
-            var modelFilePath = projectSourceFilePaths.SingleOrDefault(_ => _.EndsWith(modelFileName, StringComparison.OrdinalIgnoreCase));
+            // ReSharper disable once PossibleNullReferenceException
+            var modelFilePath = projectSourceFilePaths.SingleOrDefault(_ => Path.GetFileName(_).Equals(modelFileName, StringComparison.OrdinalIgnoreCase));
 
             if (modelFilePath == null)
             {
@@ -225,7 +224,10 @@ namespace OBeautifulCode.CodeGen.Console
             string testNamespace,
             Func<string, string> fileHeaderBuilder)
         {
-            var modelTestFilePath = testProjectSourceFilePaths.SingleOrDefault(_ => _.EndsWith(type.Name + "Test.cs", StringComparison.OrdinalIgnoreCase));
+            var modelTestFileName = type.Name + "Test.cs";
+
+            // ReSharper disable once PossibleNullReferenceException
+            var modelTestFilePath = testProjectSourceFilePaths.SingleOrDefault(_ => Path.GetFileName(_).Equals(modelTestFileName, StringComparison.OrdinalIgnoreCase));
 
             if (modelTestFilePath == null)
             {
