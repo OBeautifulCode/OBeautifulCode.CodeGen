@@ -27,7 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
-        public static readonly bool WriteFiles = false;
+        public static readonly bool WriteFiles = true;
 
         private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelScenario generatedModelScenario, SetterKind setterKind, GeneratedModelPosition generatedModelPosition, string childIdentifier, string modelName, string directoryPath);
 
