@@ -178,7 +178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
                                               referenceObject.ParentInt,
                                               referenceObject.Child2Int,
-                                              referenceObject.Grandchild2BInt);
+                                              referenceObject.GrandChild2BInt);
 
                 var expected = referenceObject.ParentInt;
 
@@ -202,7 +202,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
                                               referenceObject.ParentInt,
                                               referenceObject.Child2Int,
-                                              referenceObject.Grandchild2BInt);
+                                              referenceObject.GrandChild2BInt);
 
                 var expected = referenceObject.Child2Int;
 
@@ -218,7 +218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void Grandchild2BInt___Should_return_same_grandChild2BInt_parameter_passed_to_constructor___When_getting()
+            public static void GrandChild2BInt___Should_return_same_grandchild2BInt_parameter_passed_to_constructor___When_getting()
             {
                 // Arrange
                 var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
@@ -226,12 +226,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
                                               referenceObject.ParentInt,
                                               referenceObject.Child2Int,
-                                              referenceObject.Grandchild2BInt);
+                                              referenceObject.GrandChild2BInt);
 
-                var expected = referenceObject.Grandchild2BInt;
+                var expected = referenceObject.GrandChild2BInt;
 
                 // Act
-                var actual = systemUnderTest.Grandchild2BInt;
+                var actual = systemUnderTest.GrandChild2BInt;
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -320,7 +320,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void DeepCloneWithGrandchild2BInt___Should_deep_clone_object_and_replace_Grandchild2BInt_with_the_provided_grandChild2BInt___When_called()
+            public static void DeepCloneWithGrandchild2BInt___Should_deep_clone_object_and_replace_Grandchild2BInt_with_the_provided_grandchild2BInt___When_called()
             {
                 // Arrange
                 var systemUnderTest = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();

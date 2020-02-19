@@ -251,7 +251,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void DeepCloneWithGrandchild2AInt___Should_deep_clone_object_and_replace_Grandchild2AInt_with_the_provided_grandChild2AInt___When_called()
+            public static void DeepCloneWithGrandchild2AInt___Should_deep_clone_object_and_replace_Grandchild2AInt_with_the_provided_grandchild2AInt___When_called()
             {
                 // Arrange
                 var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();

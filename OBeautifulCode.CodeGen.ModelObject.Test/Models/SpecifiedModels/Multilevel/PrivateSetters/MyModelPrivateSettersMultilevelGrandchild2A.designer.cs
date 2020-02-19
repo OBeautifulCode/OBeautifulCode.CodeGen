@@ -277,14 +277,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <summary>
         /// Deep clones this object with a new <see cref="Grandchild2AInt" />.
         /// </summary>
-        /// <param name="grandChild2AInt">The new <see cref="Grandchild2AInt" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersMultilevelGrandchild2A" /> using the specified <paramref name="grandChild2AInt" /> for <see cref="Grandchild2AInt" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersMultilevelGrandchild2A DeepCloneWithGrandchild2AInt(int grandChild2AInt)
+        /// <param name="grandchild2AInt">The new <see cref="Grandchild2AInt" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="MyModelPrivateSettersMultilevelGrandchild2A" /> using the specified <paramref name="grandchild2AInt" /> for <see cref="Grandchild2AInt" /> and a deep clone of every other property.</returns>
+        public MyModelPrivateSettersMultilevelGrandchild2A DeepCloneWithGrandchild2AInt(int grandchild2AInt)
         {
             var result = new MyModelPrivateSettersMultilevelGrandchild2A(
                                  this.ParentInt,
                                  this.Child2Int,
-                                 grandChild2AInt);
+                                 grandchild2AInt);
 
             return result;
         }

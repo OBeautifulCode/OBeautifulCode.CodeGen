@@ -13,10 +13,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public MyModelPrivateSettersMultilevelGrandchild1B(
             int parentInt,
             int child1Int,
-            int grandChild1BInt)
+            int grandchild1BInt)
             : base(parentInt, child1Int)
         {
-            this.Grandchild1BInt = grandChild1BInt;
+            this.Grandchild1BInt = grandchild1BInt;
         }
 
         public int Grandchild1BInt { get; private set; }
