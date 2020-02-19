@@ -32,8 +32,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static System.FormattableString;
 
-    [ExcludeFromCodeCoverage]
-    [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
     public static partial class MyModelAllPublicSettersTest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(SerializationConfigurationTypes.BsonConfigurationType);
@@ -6624,9 +6622,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                 });
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Structural
         {
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void MyModelAllPublicSetters___Should_implement_IModel_of_MyModelAllPublicSetters___When_reflecting()
             {
                 // Arrange
@@ -6649,9 +6652,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class StringRepresentation
         {
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
                 // Arrange
@@ -6667,9 +6675,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Cloning
         {
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
@@ -6684,6 +6697,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
@@ -6764,6 +6780,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithBoolProperty___Should_deep_clone_object_and_replace_BoolProperty_with_the_provided_boolProperty___When_called()
             {
                 // Arrange
@@ -6923,6 +6942,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithIntProperty___Should_deep_clone_object_and_replace_IntProperty_with_the_provided_intProperty___When_called()
             {
                 // Arrange
@@ -7082,6 +7104,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithStringProperty___Should_deep_clone_object_and_replace_StringProperty_with_the_provided_stringProperty___When_called()
             {
                 // Arrange
@@ -7241,6 +7266,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithGuidProperty___Should_deep_clone_object_and_replace_GuidProperty_with_the_provided_guidProperty___When_called()
             {
                 // Arrange
@@ -7400,6 +7428,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithDateTimeProperty___Should_deep_clone_object_and_replace_DateTimeProperty_with_the_provided_dateTimeProperty___When_called()
             {
                 // Arrange
@@ -7559,6 +7590,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithModelEnumProperty___Should_deep_clone_object_and_replace_ModelEnumProperty_with_the_provided_modelEnumProperty___When_called()
             {
                 // Arrange
@@ -7718,6 +7752,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ModelFlagsEnumProperty_with_the_provided_modelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -7877,6 +7914,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithModelClassProperty___Should_deep_clone_object_and_replace_ModelClassProperty_with_the_provided_modelClassProperty___When_called()
             {
                 // Arrange
@@ -8035,6 +8075,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithNullableBoolProperty___Should_deep_clone_object_and_replace_NullableBoolProperty_with_the_provided_nullableBoolProperty___When_called()
             {
                 // Arrange
@@ -8194,6 +8237,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithNullableIntProperty___Should_deep_clone_object_and_replace_NullableIntProperty_with_the_provided_nullableIntProperty___When_called()
             {
                 // Arrange
@@ -8353,6 +8399,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithNullableGuidProperty___Should_deep_clone_object_and_replace_NullableGuidProperty_with_the_provided_nullableGuidProperty___When_called()
             {
                 // Arrange
@@ -8512,6 +8561,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithNullableDateTimeProperty___Should_deep_clone_object_and_replace_NullableDateTimeProperty_with_the_provided_nullableDateTimeProperty___When_called()
             {
                 // Arrange
@@ -8671,6 +8723,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithNullableModelEnumProperty___Should_deep_clone_object_and_replace_NullableModelEnumProperty_with_the_provided_nullableModelEnumProperty___When_called()
             {
                 // Arrange
@@ -8830,6 +8885,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_NullableModelFlagsEnumProperty_with_the_provided_nullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -8989,6 +9047,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfBoolProperty___Should_deep_clone_object_and_replace_ArrayOfBoolProperty_with_the_provided_arrayOfBoolProperty___When_called()
             {
                 // Arrange
@@ -9147,6 +9208,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfIntProperty___Should_deep_clone_object_and_replace_ArrayOfIntProperty_with_the_provided_arrayOfIntProperty___When_called()
             {
                 // Arrange
@@ -9305,6 +9369,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfStringProperty___Should_deep_clone_object_and_replace_ArrayOfStringProperty_with_the_provided_arrayOfStringProperty___When_called()
             {
                 // Arrange
@@ -9463,6 +9530,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfGuidProperty___Should_deep_clone_object_and_replace_ArrayOfGuidProperty_with_the_provided_arrayOfGuidProperty___When_called()
             {
                 // Arrange
@@ -9621,6 +9691,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfDateTimeProperty___Should_deep_clone_object_and_replace_ArrayOfDateTimeProperty_with_the_provided_arrayOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -9779,6 +9852,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfModelEnumProperty___Should_deep_clone_object_and_replace_ArrayOfModelEnumProperty_with_the_provided_arrayOfModelEnumProperty___When_called()
             {
                 // Arrange
@@ -9937,6 +10013,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ArrayOfModelFlagsEnumProperty_with_the_provided_arrayOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -10095,6 +10174,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfModelClassProperty___Should_deep_clone_object_and_replace_ArrayOfModelClassProperty_with_the_provided_arrayOfModelClassProperty___When_called()
             {
                 // Arrange
@@ -10253,6 +10335,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfNullableBoolProperty___Should_deep_clone_object_and_replace_ArrayOfNullableBoolProperty_with_the_provided_arrayOfNullableBoolProperty___When_called()
             {
                 // Arrange
@@ -10411,6 +10496,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfNullableIntProperty___Should_deep_clone_object_and_replace_ArrayOfNullableIntProperty_with_the_provided_arrayOfNullableIntProperty___When_called()
             {
                 // Arrange
@@ -10569,6 +10657,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfNullableGuidProperty___Should_deep_clone_object_and_replace_ArrayOfNullableGuidProperty_with_the_provided_arrayOfNullableGuidProperty___When_called()
             {
                 // Arrange
@@ -10727,6 +10818,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ArrayOfNullableDateTimeProperty_with_the_provided_arrayOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
@@ -10885,6 +10979,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ArrayOfNullableModelEnumProperty_with_the_provided_arrayOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
@@ -11043,6 +11140,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithArrayOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ArrayOfNullableModelFlagsEnumProperty_with_the_provided_arrayOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -11201,6 +11301,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfBoolProperty_with_the_provided_readOnlyCollectionInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
@@ -11359,6 +11462,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfIntProperty_with_the_provided_readOnlyCollectionInterfaceOfIntProperty___When_called()
             {
                 // Arrange
@@ -11517,6 +11623,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfStringProperty_with_the_provided_readOnlyCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -11675,6 +11784,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfGuidProperty_with_the_provided_readOnlyCollectionInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
@@ -11833,6 +11945,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfDateTimeProperty_with_the_provided_readOnlyCollectionInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -11991,6 +12106,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfModelEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
@@ -12149,6 +12267,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -12307,6 +12428,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfModelClassProperty_with_the_provided_readOnlyCollectionInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
@@ -12465,6 +12589,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableBoolProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
@@ -12623,6 +12750,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableIntProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
@@ -12781,6 +12911,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableGuidProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
@@ -12939,6 +13072,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableDateTimeProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
@@ -13097,6 +13233,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableModelEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
@@ -13255,6 +13394,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_readOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -13413,6 +13555,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfBoolProperty_with_the_provided_readOnlyListInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
@@ -13571,6 +13716,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfIntProperty_with_the_provided_readOnlyListInterfaceOfIntProperty___When_called()
             {
                 // Arrange
@@ -13729,6 +13877,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfStringProperty_with_the_provided_readOnlyListInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -13887,6 +14038,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfGuidProperty_with_the_provided_readOnlyListInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
@@ -14045,6 +14199,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -14203,6 +14360,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfModelEnumProperty_with_the_provided_readOnlyListInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
@@ -14361,6 +14521,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfModelFlagsEnumProperty_with_the_provided_readOnlyListInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -14519,6 +14682,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfModelClassProperty_with_the_provided_readOnlyListInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
@@ -14677,6 +14843,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableBoolProperty_with_the_provided_readOnlyListInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
@@ -14835,6 +15004,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableIntProperty_with_the_provided_readOnlyListInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
@@ -14993,6 +15165,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableGuidProperty_with_the_provided_readOnlyListInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
@@ -15151,6 +15326,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableDateTimeProperty_with_the_provided_readOnlyListInterfaceOfNullableDateTimeProperty___When_called()
             {
                 // Arrange
@@ -15309,6 +15487,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableModelEnumProperty_with_the_provided_readOnlyListInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
@@ -15467,6 +15648,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_readOnlyListInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -15625,6 +15809,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfBoolProperty_with_the_provided_readOnlyDictionaryInterfaceOfBoolProperty___When_called()
             {
                 // Arrange
@@ -15783,6 +15970,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfIntProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfIntProperty_with_the_provided_readOnlyDictionaryInterfaceOfIntProperty___When_called()
             {
                 // Arrange
@@ -15941,6 +16131,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfStringProperty_with_the_provided_readOnlyDictionaryInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -16099,6 +16292,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfGuidProperty_with_the_provided_readOnlyDictionaryInterfaceOfGuidProperty___When_called()
             {
                 // Arrange
@@ -16257,6 +16453,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfModelEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfModelEnumProperty___When_called()
             {
                 // Arrange
@@ -16415,6 +16614,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -16573,6 +16775,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfModelClassProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfModelClassProperty_with_the_provided_readOnlyDictionaryInterfaceOfModelClassProperty___When_called()
             {
                 // Arrange
@@ -16731,6 +16936,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableBoolProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableBoolProperty___When_called()
             {
                 // Arrange
@@ -16889,6 +17097,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableIntProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableIntProperty___When_called()
             {
                 // Arrange
@@ -17047,6 +17258,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableGuidProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableGuidProperty___When_called()
             {
                 // Arrange
@@ -17205,6 +17419,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableModelEnumProperty___When_called()
             {
                 // Arrange
@@ -17363,6 +17580,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty_with_the_provided_readOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty___When_called()
             {
                 // Arrange
@@ -17521,6 +17741,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_CollectionInterfaceOfStringProperty_with_the_provided_collectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -17679,6 +17902,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_CollectionOfCollectionInterfaceOfStringProperty_with_the_provided_collectionOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -17837,6 +18063,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithListInterfaceOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ListInterfaceOfCollectionInterfaceOfStringProperty_with_the_provided_listInterfaceOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -17995,6 +18224,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithListOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ListOfCollectionInterfaceOfStringProperty_with_the_provided_listOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -18153,6 +18385,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty___Should_deep_clone_object_and_replace_ReadOnlyCollectionOfCollectionInterfaceOfStringProperty_with_the_provided_readOnlyCollectionOfCollectionInterfaceOfStringProperty___When_called()
             {
                 // Arrange
@@ -18311,6 +18546,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -18469,6 +18707,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_DictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_dictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -18627,6 +18868,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -18785,6 +19029,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -18943,6 +19190,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -19101,6 +19351,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___Should_deep_clone_object_and_replace_ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty_with_the_provided_readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty___When_called()
             {
                 // Arrange
@@ -19259,9 +19512,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Serialization
         {
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange
@@ -19279,6 +19537,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
             {
                 // Arrange
@@ -19296,9 +19557,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Equality
         {
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
@@ -19313,6 +19579,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void EqualsOperator___Should_return_false___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19333,6 +19602,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void EqualsOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19350,6 +19622,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_derive_from_the_same_type_but_are_not_of_the_same_type()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19367,6 +19642,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void EqualsOperator___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19384,6 +19662,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void EqualsOperator___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19401,6 +19682,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
@@ -19415,6 +19699,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void NotEqualsOperator___Should_return_true___When_one_side_of_operator_is_null_and_the_other_side_is_not_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19435,6 +19722,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void NotEqualsOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19452,6 +19742,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_derive_from_the_same_type_but_are_not_of_the_same_type()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19469,6 +19762,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void NotEqualsOperator___Should_return_true___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19486,6 +19782,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void NotEqualsOperator___Should_return_false___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19503,6 +19802,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_MyModelAllPublicSetters___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19521,6 +19823,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_MyModelAllPublicSetters___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19536,6 +19841,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_MyModelAllPublicSetters___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19551,6 +19859,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_MyModelAllPublicSetters___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19566,6 +19877,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_MyModelAllPublicSetters___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19581,6 +19895,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19596,6 +19913,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_Object___Should_return_false___When_parameter_other_is_not_of_the_same_type()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19613,6 +19933,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_Object___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19628,6 +19951,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_Object___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19643,6 +19969,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void Equals_with_Object___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19658,9 +19987,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Hashing
         {
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void GetHashCode___Should_not_be_equal_for_two_objects___When_objects_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
@@ -19678,6 +20012,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             }
 
             [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             public static void GetHashCode___Should_be_equal_for_two_objects___When_objects_have_the_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();

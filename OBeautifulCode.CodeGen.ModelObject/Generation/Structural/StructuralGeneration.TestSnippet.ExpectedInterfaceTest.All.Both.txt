@@ -1,4 +1,5 @@
 ﻿            [Fact]
+[test-method-code-analysis-suppressions]
             public static void [model-type-name-here]___Should_implement_[expected-interface-test-method-name-here]___When_reflecting()
             {
                 // Arrange

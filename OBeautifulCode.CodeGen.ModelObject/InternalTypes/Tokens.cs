@@ -234,6 +234,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// The dummy factory snippets.
         /// </summary>
-        public const string DummyFactorySnippetsTokens = "[dummy-factory-snippets-here]";
+        public const string DummyFactorySnippetsToken = "[dummy-factory-snippets-here]";
+
+        /// <summary>
+        /// The code analysis suppressions to add to a nested test class.
+        /// </summary>
+        public const string NestedTestClassCodeAnalysisSuppressionsToken = "[nested-test-class-code-analysis-suppressions]";
+
+        /// <summary>
+        /// The code analysis suppressions to add to a test method.
+        /// </summary>
+        public const string TestMethodCodeAnalysisSuppressionsToken = "[test-method-code-analysis-suppressions]";
     }
 }

@@ -1,4 +1,5 @@
 ﻿            [Fact]
+[test-method-code-analysis-suppressions]
             public static void Constructor___Should_throw_ArgumentException___When_parameter_[parameter-name-here]_is_empty()
             {
                 // Arrange

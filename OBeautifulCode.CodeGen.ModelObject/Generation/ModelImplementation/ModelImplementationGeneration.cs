@@ -110,14 +110,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
             {
+                var serializationFieldsCode = modelType.GenerateSerializationTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
                 testImplementationItems.Add(string.Empty);
 
-                testImplementationItems.Add(modelType.GenerateSerializationTestFields());
+                testImplementationItems.Add(serializationFieldsCode);
             }
 
             if (modelType.RequiresEquality || modelType.RequiresHashing)
             {
-                var equalityFieldsCode = modelType.GenerateEqualityTestFields();
+                var equalityFieldsCode = modelType.GenerateEqualityTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
 
                 if (equalityFieldsCode != null)
                 {
@@ -129,20 +131,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.RequiresComparability)
             {
-                var comparableTestFields = modelType.GenerateComparableTestFields();
+                var comparableTestFields = modelType.GenerateComparableTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
 
                 testImplementationItems.Add(string.Empty);
 
                 testImplementationItems.Add(comparableTestFields);
             }
 
+            var structuralTestMethodsCode = modelType.GenerateStructuralTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
             testImplementationItems.Add(string.Empty);
 
-            testImplementationItems.Add(modelType.GenerateStructuralTestMethods());
+            testImplementationItems.Add(structuralTestMethodsCode);
 
             if (modelType.RequiresStringRepresentation)
             {
-                var stringTestMethodsCode = modelType.GenerateStringRepresentationTestMethods();
+                var stringTestMethodsCode = modelType.GenerateStringRepresentationTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
 
                 if (!string.IsNullOrWhiteSpace(stringTestMethodsCode))
                 {
@@ -154,7 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.RequiresModel)
             {
-                var constructorTestMethodsCode = modelType.GenerateConstructorTestMethods();
+                var constructorTestMethodsCode = modelType.GenerateConstructorTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
 
                 if (constructorTestMethodsCode != null)
                 {
@@ -166,37 +170,47 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (modelType.RequiresDeepCloning)
             {
+                var cloningTestMethodsCode = modelType.GenerateCloningTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
                 testImplementationItems.Add(string.Empty);
 
-                testImplementationItems.Add(modelType.GenerateCloningTestMethods());
+                testImplementationItems.Add(cloningTestMethodsCode);
             }
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
             {
+                var serializationTestMethodsCode = modelType.GenerateSerializationTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
                 testImplementationItems.Add(string.Empty);
 
-                testImplementationItems.Add(modelType.GenerateSerializationTestMethods());
+                testImplementationItems.Add(serializationTestMethodsCode);
             }
 
             if (modelType.RequiresEquality)
             {
+                var equalityTestMethodsCode = modelType.GenerateEqualityTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
                 testImplementationItems.Add(string.Empty);
 
-                testImplementationItems.Add(modelType.GenerateEqualityTestMethods());
+                testImplementationItems.Add(equalityTestMethodsCode);
             }
 
             if (modelType.RequiresHashing)
             {
+                var hashingTestMethodsCode = modelType.GenerateHashingTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
                 testImplementationItems.Add(string.Empty);
 
-                testImplementationItems.Add(modelType.GenerateHashingTestMethods());
+                testImplementationItems.Add(hashingTestMethodsCode);
             }
 
             if (modelType.RequiresComparability)
             {
+                var comparabilityTestMethodsCode = modelType.GenerateComparabilityTestMethods().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
                 testImplementationItems.Add(string.Empty);
 
-                testImplementationItems.Add(modelType.GenerateComparabilityTestMethods());
+                testImplementationItems.Add(comparabilityTestMethodsCode);
             }
 
             var testImplementationCode = testImplementationItems.Where(_ => _ != null).ToNewLineDelimited();
@@ -234,7 +248,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.DummyFactoryTypeNamespaceToken, dummyFactoryTypeNamespace)
                 .Replace(Tokens.DummyFactoryTypeNameToken, dummyFactoryTypeName)
-                .Replace(Tokens.DummyFactorySnippetsTokens, dummyFactorySnippets.Any() ? Environment.NewLine + dummyFactorySnippets.ToDelimitedString(Environment.NewLine + Environment.NewLine) : string.Empty);
+                .Replace(Tokens.DummyFactorySnippetsToken, dummyFactorySnippets.Any() ? Environment.NewLine + dummyFactorySnippets.ToDelimitedString(Environment.NewLine + Environment.NewLine) : string.Empty);
 
             return result;
         }

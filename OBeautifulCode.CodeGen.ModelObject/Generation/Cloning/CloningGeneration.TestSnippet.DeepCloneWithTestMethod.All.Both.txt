@@ -1,4 +1,5 @@
 ﻿            [Fact]
+[test-method-code-analysis-suppressions]
             public static void DeepCloneWith[property-name-here]___Should_deep_clone_object_and_replace_[property-name-here]_with_the_provided_[parameter-name-here]___When_called()
             {
                 // Arrange

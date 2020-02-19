@@ -1,4 +1,5 @@
 ﻿            [Fact]
+[test-method-code-analysis-suppressions]
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange

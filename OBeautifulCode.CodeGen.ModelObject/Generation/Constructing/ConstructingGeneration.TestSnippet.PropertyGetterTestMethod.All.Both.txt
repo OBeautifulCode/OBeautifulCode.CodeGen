@@ -1,4 +1,5 @@
 ﻿            [Fact]
+[test-method-code-analysis-suppressions]
             public static void [property-name-here]___Should_return_same_[parameter-name-here]_parameter_passed_to_constructor___When_getting()
             {
                 // Arrange

@@ -311,5 +311,30 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Replaces all code analysis suppression tokens in test code.
+        /// </summary>
+        /// <param name="code">The code.</param>
+        /// <returns>
+        /// The code after tokens have been replace.
+        /// </returns>
+        public static string ReplaceCodeAnalysisSuppressionTokensInTestCode(
+            this string code)
+        {
+            if (code == null)
+            {
+                return null;
+            }
+
+            var nestedTestClassCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.NestedTestClassCodeAnalysisSuppressions);
+            var testMethodCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.TestMethodCodeAnalysisSuppressions);
+
+            var result = code
+                .Replace(Tokens.NestedTestClassCodeAnalysisSuppressionsToken, nestedTestClassCodeAnalysisSuppressions)
+                .Replace(Tokens.TestMethodCodeAnalysisSuppressionsToken, testMethodCodeAnalysisSuppressions);
+
+            return result;
+        }
     }
 }

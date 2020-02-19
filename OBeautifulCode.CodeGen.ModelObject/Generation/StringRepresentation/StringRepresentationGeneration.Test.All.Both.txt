@@ -1,6 +1,8 @@
-﻿        public static class StringRepresentation
+﻿[nested-test-class-code-analysis-suppressions]
+        public static class StringRepresentation
         {
             [Fact]
+[test-method-code-analysis-suppressions]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
                 // Arrange

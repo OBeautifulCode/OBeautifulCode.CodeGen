@@ -1,4 +1,5 @@
 ﻿            [Fact]
+[test-method-code-analysis-suppressions]
             public static void [model-type-name-here]___Should_declare_GetHashCode_method___When_reflecting()
             {
                 // Arrange

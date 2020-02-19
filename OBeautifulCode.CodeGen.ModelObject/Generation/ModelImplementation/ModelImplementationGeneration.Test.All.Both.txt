@@ -32,8 +32,6 @@ namespace [model-type-namespace-here].Test
 
     using static System.FormattableString;
 
-    [ExcludeFromCodeCoverage]
-    [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]
     public static partial class [model-type-name-here]Test
     {[test-implementation-here]
     }

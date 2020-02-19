@@ -1,4 +1,5 @@
-﻿        public static class Serialization
+﻿[nested-test-class-code-analysis-suppressions]
+        public static class Serialization
         {
 [serialization-tests-here]
         }

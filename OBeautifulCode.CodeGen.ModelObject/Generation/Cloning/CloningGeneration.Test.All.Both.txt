@@ -1,6 +1,8 @@
-﻿        public static class Cloning
+﻿[nested-test-class-code-analysis-suppressions]
+        public static class Cloning
         {
             [Fact]
+[test-method-code-analysis-suppressions]
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
@@ -15,6 +17,7 @@
             }
 
             [Fact]
+[test-method-code-analysis-suppressions]
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
