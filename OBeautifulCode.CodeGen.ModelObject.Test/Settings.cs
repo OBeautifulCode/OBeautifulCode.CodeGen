@@ -99,7 +99,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             },
             {
                 SpecifiedModelKind.Multilevel,
-                new[] { "MultilevelParent", "MultilevelChild1", "MultilevelChild2", "MultilevelGrandChild1A", "MultilevelGrandChild1B", "MultilevelGrandChild2A", "MultilevelGrandChild2B" }
+                new[] { "MultilevelParent", "MultilevelChild1", "MultilevelChild2", "MultilevelGrandchild1A", "MultilevelGrandchild1B", "MultilevelGrandchild2A", "MultilevelGrandchild2B" }
             },
         };
     }
