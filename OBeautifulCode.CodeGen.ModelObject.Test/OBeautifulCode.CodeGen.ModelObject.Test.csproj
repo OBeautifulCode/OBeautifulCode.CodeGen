@@ -643,7 +643,7 @@
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelFlagsEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelStruct.cs" />
-    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenSerializationConfigurationTypes.cs" />
+    <Compile Include="CodeGeneratorTest\SerializationConfiguration\SerializationConfigurationTypes.cs" />
     <Compile Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
     <Compile Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyTest.cs</DependentUpon>

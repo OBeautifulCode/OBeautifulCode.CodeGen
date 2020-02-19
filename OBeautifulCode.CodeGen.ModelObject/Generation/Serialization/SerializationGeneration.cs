@@ -29,13 +29,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
-            var prefix = modelType
-                .TypeNamespace
-                .Split('.')
-                .Skip(1)
-                .Take(1)
-                .ToDelimitedString(string.Empty);
-
             var bsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTestFields);
 
             var jsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTestFields);
@@ -44,8 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? jsonSnippet
                 : bsonSnippet + Environment.NewLine + Environment.NewLine + jsonSnippet;
 
-            var result = serializationFieldsCodeTemplate
-                        .Replace(Tokens.SerializationConfigurationPrefixToken, prefix);
+            var result = serializationFieldsCodeTemplate;
 
             return result;
         }

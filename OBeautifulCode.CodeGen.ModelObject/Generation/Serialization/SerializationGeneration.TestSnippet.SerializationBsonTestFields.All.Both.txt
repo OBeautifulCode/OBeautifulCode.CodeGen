@@ -1,1 +1,1 @@
-﻿        private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer([serialization-configuration-prefix-here]SerializationConfigurationTypes.BsonSerializationConfigurationType);
+﻿        private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(SerializationConfigurationTypes.BsonConfigurationType);
