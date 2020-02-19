@@ -178,7 +178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild1A(
                                               referenceObject.ParentInt,
                                               referenceObject.Child1Int,
-                                              referenceObject.GrandChild1AInt);
+                                              referenceObject.Grandchild1AInt);
 
                 var expected = referenceObject.ParentInt;
 
@@ -202,7 +202,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild1A(
                                               referenceObject.ParentInt,
                                               referenceObject.Child1Int,
-                                              referenceObject.GrandChild1AInt);
+                                              referenceObject.Grandchild1AInt);
 
                 var expected = referenceObject.Child1Int;
 
@@ -218,7 +218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void GrandChild1AInt___Should_return_same_grandchild1AInt_parameter_passed_to_constructor___When_getting()
+            public static void Grandchild1AInt___Should_return_same_grandchild1AInt_parameter_passed_to_constructor___When_getting()
             {
                 // Arrange
                 var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild1A>();
@@ -226,12 +226,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild1A(
                                               referenceObject.ParentInt,
                                               referenceObject.Child1Int,
-                                              referenceObject.GrandChild1AInt);
+                                              referenceObject.Grandchild1AInt);
 
-                var expected = referenceObject.GrandChild1AInt;
+                var expected = referenceObject.Grandchild1AInt;
 
                 // Act
-                var actual = systemUnderTest.GrandChild1AInt;
+                var actual = systemUnderTest.Grandchild1AInt;
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
