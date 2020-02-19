@@ -21,8 +21,6 @@ namespace [model-type-namespace-here]
 
     using static System.FormattableString;
 
-    [ExcludeFromCodeCoverage]
-    [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]
     public partial class [model-type-name-here] : [required-interfaces-here]
     {[model-implementation-here]
     }

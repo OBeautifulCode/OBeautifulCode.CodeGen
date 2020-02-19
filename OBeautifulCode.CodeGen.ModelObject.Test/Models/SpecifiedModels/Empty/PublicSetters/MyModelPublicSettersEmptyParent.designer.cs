@@ -21,8 +21,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using static System.FormattableString;
 
-    [ExcludeFromCodeCoverage]
-    [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
     public partial class MyModelPublicSettersEmptyParent : IModel<MyModelPublicSettersEmptyParent>
     {
         /// <summary>
