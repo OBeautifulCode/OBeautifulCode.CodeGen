@@ -8,11 +8,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     using FakeItEasy;
 
     using OBeautifulCode.AutoFakeItEasy;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
 
     public static partial class MyModelEqualityPublicSettersParentTest
     {
@@ -34,6 +36,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             A.Dummy<Guid>(),
         };
 
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelEqualityPublicSettersParentTest()
         {
             var objectThatIsEqualToButNotTheSameAsObjectForEquatableTests = new MyModelEqualityPublicSettersChild1();

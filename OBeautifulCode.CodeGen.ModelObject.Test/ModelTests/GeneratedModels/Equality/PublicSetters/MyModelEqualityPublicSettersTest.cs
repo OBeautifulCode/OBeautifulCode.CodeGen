@@ -20,6 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.AutoFakeItEasy;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Math.Recipes;
     using OBeautifulCode.Representation.System;
@@ -6611,6 +6612,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             A.Dummy<Guid>(),
         };
 
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelEqualityPublicSettersTest()
         {
             EquatableTestScenarios.AddScenario(new Recipes.EquatableTestScenario<MyModelEqualityPublicSetters>

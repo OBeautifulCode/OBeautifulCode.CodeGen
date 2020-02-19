@@ -6,10 +6,14 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
 
     public static partial class MyModelPublicSettersMultilevelParentTest
     {
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelPublicSettersMultilevelParentTest()
         {
             ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPublicSettersMultilevelParent>

@@ -7,9 +7,12 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     using FakeItEasy;
+
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
 
     public static partial class MyModelHashingPublicSettersParentTest
     {
@@ -22,6 +25,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             A.Dummy<MyModelHashingPublicSettersParent>(),
         };
 
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelHashingPublicSettersParentTest()
         {
             var objectThatIsEqualToButNotTheSameAsObjectForEquatableTests = new MyModelHashingPublicSettersChild1();

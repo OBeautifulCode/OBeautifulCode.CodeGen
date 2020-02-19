@@ -8,11 +8,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
 
     using FakeItEasy;
 
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.String.Recipes;
 
     public static partial class MyModelHashingPrivateSettersParentTest
@@ -37,6 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             A.Dummy<MyModelHashingPrivateSettersParent>(),
         };
 
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelHashingPrivateSettersParentTest()
         {
             EquatableTestScenarios.AddScenario(new Recipes.EquatableTestScenario<MyModelHashingPrivateSettersParent>

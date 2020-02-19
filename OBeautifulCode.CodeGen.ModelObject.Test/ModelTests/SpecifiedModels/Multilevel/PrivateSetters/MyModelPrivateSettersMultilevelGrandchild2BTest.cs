@@ -6,10 +6,14 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
 
     public static partial class MyModelPrivateSettersMultilevelGrandchild2BTest
     {
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelPrivateSettersMultilevelGrandchild2BTest()
         {
             ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPrivateSettersMultilevelGrandchild2B>
