@@ -27,6 +27,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public class CodeGeneratorTest
     {
+        public static readonly bool WriteFiles = false;
+
         private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelScenario generatedModelScenario, SetterKind setterKind, GeneratedModelPosition generatedModelPosition, string childIdentifier, string modelName, string directoryPath);
 
         [Fact]
@@ -164,7 +166,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
 
-            if (Settings.WriteFiles)
+            if (WriteFiles)
             {
                 var content = string.Empty;
 
@@ -244,7 +246,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var generatedCode = modelType.GenerateForModel(generateFor);
 
-            if (Settings.WriteFiles)
+            if (WriteFiles)
             {
                 File.WriteAllText(modelFilePath, generatedCode);
             }
@@ -669,7 +671,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Where(_ => _ != null)
                 .ToNewLineDelimited();
 
-            if (Settings.WriteFiles)
+            if (WriteFiles)
             {
                 File.WriteAllText(modelFilePath, modelCode);
             }
@@ -739,7 +741,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         private static void WriteDummyFactory(
             string code)
         {
-            if (Settings.WriteFiles)
+            if (WriteFiles)
             {
                 File.WriteAllText(Settings.DummyFactoryFilePath, code);
             }
