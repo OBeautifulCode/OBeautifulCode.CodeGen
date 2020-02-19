@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPrivateSettersMultilevelGrandChild1B.cs" company="OBeautifulCode">
+// <copyright file="MyModelPrivateSettersMultilevelGrandchild1B.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,21 +8,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using OBeautifulCode.Type;
 
-    public partial class MyModelPrivateSettersMultilevelGrandChild1B : MyModelPrivateSettersMultilevelChild1, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPrivateSettersMultilevelGrandChild1B>
+    public partial class MyModelPrivateSettersMultilevelGrandchild1B : MyModelPrivateSettersMultilevelChild1, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPrivateSettersMultilevelGrandchild1B>
     {
-        public MyModelPrivateSettersMultilevelGrandChild1B(
+        public MyModelPrivateSettersMultilevelGrandchild1B(
             int parentInt,
             int child1Int,
             int grandChild1BInt)
             : base(parentInt, child1Int)
         {
-            this.GrandChild1BInt = grandChild1BInt;
+            this.Grandchild1BInt = grandChild1BInt;
         }
 
-        public int GrandChild1BInt { get; private set; }
+        public int Grandchild1BInt { get; private set; }
 
         public RelativeSortOrder CompareToForRelativeSortOrder(
-            MyModelPrivateSettersMultilevelGrandChild1B other)
+            MyModelPrivateSettersMultilevelGrandchild1B other)
         {
             if (other == null)
             {
@@ -30,9 +30,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else
             {
-                var sumThis = this.ParentInt + this.Child1Int + this.GrandChild1BInt;
+                var sumThis = this.ParentInt + this.Child1Int + this.Grandchild1BInt;
 
-                var sumOther = other.ParentInt + other.Child1Int + other.GrandChild1BInt;
+                var sumOther = other.ParentInt + other.Child1Int + other.Grandchild1BInt;
 
                 if (sumThis > sumOther)
                 {

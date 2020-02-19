@@ -32,48 +32,48 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static System.FormattableString;
 
-    public static partial class MyModelPublicSettersMultilevelGrandChild2ATest
+    public static partial class MyModelPublicSettersMultilevelGrandchild2ATest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(SerializationConfigurationTypes.BsonConfigurationType);
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPublicSettersMultilevelGrandChild2A ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+        private static readonly MyModelPublicSettersMultilevelGrandchild2A ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
-        private static readonly EquatableTestScenarios<MyModelPublicSettersMultilevelGrandChild2A> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersMultilevelGrandChild2A>()
+        private static readonly EquatableTestScenarios<MyModelPublicSettersMultilevelGrandchild2A> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersMultilevelGrandchild2A>()
             .AddScenario(
-                new EquatableTestScenario<MyModelPublicSettersMultilevelGrandChild2A>
+                new EquatableTestScenario<MyModelPublicSettersMultilevelGrandchild2A>
                 {
                     Name = "Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
-                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersMultilevelGrandChild2A[]
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersMultilevelGrandchild2A[]
                     {
-                        new MyModelPublicSettersMultilevelGrandChild2A
+                        new MyModelPublicSettersMultilevelGrandchild2A
                             {
                                 ParentInt       = ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 Child2Int       = ReferenceObjectForEquatableTestScenarios.Child2Int,
-                                GrandChild2AInt = ReferenceObjectForEquatableTestScenarios.GrandChild2AInt,
+                                Grandchild2AInt = ReferenceObjectForEquatableTestScenarios.Grandchild2AInt,
                             },
                     },
-                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersMultilevelGrandChild2A[]
+                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersMultilevelGrandchild2A[]
                     {
-                        new MyModelPublicSettersMultilevelGrandChild2A
+                        new MyModelPublicSettersMultilevelGrandchild2A
                             {
                                 ParentInt       = A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentInt),
                                 Child2Int       = ReferenceObjectForEquatableTestScenarios.Child2Int,
-                                GrandChild2AInt = ReferenceObjectForEquatableTestScenarios.GrandChild2AInt,
+                                Grandchild2AInt = ReferenceObjectForEquatableTestScenarios.Grandchild2AInt,
                             },
-                        new MyModelPublicSettersMultilevelGrandChild2A
+                        new MyModelPublicSettersMultilevelGrandchild2A
                             {
                                 ParentInt       = ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 Child2Int       = A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.Child2Int),
-                                GrandChild2AInt = ReferenceObjectForEquatableTestScenarios.GrandChild2AInt,
+                                Grandchild2AInt = ReferenceObjectForEquatableTestScenarios.Grandchild2AInt,
                             },
-                        new MyModelPublicSettersMultilevelGrandChild2A
+                        new MyModelPublicSettersMultilevelGrandchild2A
                             {
                                 ParentInt       = ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 Child2Int       = ReferenceObjectForEquatableTestScenarios.Child2Int,
-                                GrandChild2AInt = A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.GrandChild2AInt),
+                                Grandchild2AInt = A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.Grandchild2AInt),
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -83,13 +83,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
                         A.Dummy<Guid>(),
-                        A.Dummy<MyModelPublicSettersMultilevelGrandChild1A>(),
-                        A.Dummy<MyModelPublicSettersMultilevelGrandChild1B>(),
-                        A.Dummy<MyModelPublicSettersMultilevelGrandChild2B>(),
+                        A.Dummy<MyModelPublicSettersMultilevelGrandchild1A>(),
+                        A.Dummy<MyModelPublicSettersMultilevelGrandchild1B>(),
+                        A.Dummy<MyModelPublicSettersMultilevelGrandchild2B>(),
                     },
                 });
 
-        private static readonly ComparableTestScenarios<MyModelPublicSettersMultilevelGrandChild2A> ComparableTestScenarios = new ComparableTestScenarios<MyModelPublicSettersMultilevelGrandChild2A>();
+        private static readonly ComparableTestScenarios<MyModelPublicSettersMultilevelGrandchild2A> ComparableTestScenarios = new ComparableTestScenarios<MyModelPublicSettersMultilevelGrandchild2A>();
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
@@ -99,12 +99,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void MyModelPublicSettersMultilevelGrandChild2A___Should_implement_IModel_of_MyModelPublicSettersMultilevelGrandChild2A___When_reflecting()
+            public static void MyModelPublicSettersMultilevelGrandchild2A___Should_implement_IModel_of_MyModelPublicSettersMultilevelGrandchild2A___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSettersMultilevelGrandChild2A);
+                var type = typeof(MyModelPublicSettersMultilevelGrandchild2A);
 
-                var expectedModelMethods = typeof(IModel<MyModelPublicSettersMultilevelGrandChild2A>)
+                var expectedModelMethods = typeof(IModel<MyModelPublicSettersMultilevelGrandchild2A>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
 
@@ -116,7 +116,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSettersMultilevelGrandChild2A>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSettersMultilevelGrandchild2A>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
 
@@ -124,12 +124,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void MyModelPublicSettersMultilevelGrandChild2A___Should_implement_IComparableForRelativeSortOrder_of_MyModelPublicSettersMultilevelGrandChild2A___When_reflecting()
+            public static void MyModelPublicSettersMultilevelGrandchild2A___Should_implement_IComparableForRelativeSortOrder_of_MyModelPublicSettersMultilevelGrandchild2A___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSettersMultilevelGrandChild2A);
+                var type = typeof(MyModelPublicSettersMultilevelGrandchild2A);
 
-                var expectedModelMethods = typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandChild2A>)
+                var expectedModelMethods = typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandchild2A>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
 
@@ -141,7 +141,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandChild2A>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandchild2A>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
         }
@@ -157,9 +157,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
-                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultilevelGrandChild2A)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {systemUnderTest.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GrandChild2AInt = {systemUnderTest.GrandChild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
+                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultilevelGrandchild2A)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {systemUnderTest.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2AInt = {systemUnderTest.Grandchild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
 
                 // Act
                 var actual = systemUnderTest.ToString();
@@ -180,10 +180,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
                 // Act
-                var actual = (MyModelPublicSettersMultilevelGrandChild2A)systemUnderTest.Clone();
+                var actual = (MyModelPublicSettersMultilevelGrandchild2A)systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -197,7 +197,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
@@ -214,17 +214,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithParentInt___Should_deep_clone_object_and_replace_ParentInt_with_the_provided_parentInt___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
-                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>().ThatIsNot(systemUnderTest);
 
                 // Act
-                var actual = (MyModelPublicSettersMultilevelGrandChild2A)systemUnderTest.DeepCloneWithParentInt(referenceObject.ParentInt);
+                var actual = (MyModelPublicSettersMultilevelGrandchild2A)systemUnderTest.DeepCloneWithParentInt(referenceObject.ParentInt);
 
                 // Assert
                 actual.ParentInt.AsTest().Must().BeEqualTo(referenceObject.ParentInt);
                 actual.Child2Int.AsTest().Must().BeEqualTo(systemUnderTest.Child2Int);
-                actual.GrandChild2AInt.AsTest().Must().BeEqualTo(systemUnderTest.GrandChild2AInt);
+                actual.Grandchild2AInt.AsTest().Must().BeEqualTo(systemUnderTest.Grandchild2AInt);
             }
 
             [Fact]
@@ -234,37 +234,37 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepCloneWithChild2Int___Should_deep_clone_object_and_replace_Child2Int_with_the_provided_child2Int___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
-                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>().ThatIsNot(systemUnderTest);
 
                 // Act
-                var actual = (MyModelPublicSettersMultilevelGrandChild2A)systemUnderTest.DeepCloneWithChild2Int(referenceObject.Child2Int);
+                var actual = (MyModelPublicSettersMultilevelGrandchild2A)systemUnderTest.DeepCloneWithChild2Int(referenceObject.Child2Int);
 
                 // Assert
                 actual.ParentInt.AsTest().Must().BeEqualTo(systemUnderTest.ParentInt);
                 actual.Child2Int.AsTest().Must().BeEqualTo(referenceObject.Child2Int);
-                actual.GrandChild2AInt.AsTest().Must().BeEqualTo(systemUnderTest.GrandChild2AInt);
+                actual.Grandchild2AInt.AsTest().Must().BeEqualTo(systemUnderTest.Grandchild2AInt);
             }
 
             [Fact]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void DeepCloneWithGrandChild2AInt___Should_deep_clone_object_and_replace_GrandChild2AInt_with_the_provided_grandChild2AInt___When_called()
+            public static void DeepCloneWithGrandchild2AInt___Should_deep_clone_object_and_replace_Grandchild2AInt_with_the_provided_grandChild2AInt___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
-                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>().ThatIsNot(systemUnderTest);
+                var referenceObject = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>().ThatIsNot(systemUnderTest);
 
                 // Act
-                var actual = systemUnderTest.DeepCloneWithGrandChild2AInt(referenceObject.GrandChild2AInt);
+                var actual = systemUnderTest.DeepCloneWithGrandchild2AInt(referenceObject.Grandchild2AInt);
 
                 // Assert
                 actual.ParentInt.AsTest().Must().BeEqualTo(systemUnderTest.ParentInt);
                 actual.Child2Int.AsTest().Must().BeEqualTo(systemUnderTest.Child2Int);
-                actual.GrandChild2AInt.AsTest().Must().BeEqualTo(referenceObject.GrandChild2AInt);
+                actual.Grandchild2AInt.AsTest().Must().BeEqualTo(referenceObject.Grandchild2AInt);
             }
         }
 
@@ -279,14 +279,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var expected = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersMultilevelGrandChild2A>(serializedBson);
+                var actual = serializer.Deserialize<MyModelPublicSettersMultilevelGrandchild2A>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -299,14 +299,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersMultilevelGrandChild2A>();
+                var expected = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersMultilevelGrandChild2A>(serializedJson);
+                var actual = serializer.Deserialize<MyModelPublicSettersMultilevelGrandchild2A>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -324,8 +324,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest1 = null;
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 == systemUnderTest2;
@@ -345,7 +345,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultilevelGrandChild2A systemUnderTest = null;
+                    MyModelPublicSettersMultilevelGrandchild2A systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest == scenario.ReferenceObject;
@@ -444,8 +444,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest1 = null;
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 != systemUnderTest2;
@@ -465,7 +465,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultilevelGrandChild2A systemUnderTest = null;
+                    MyModelPublicSettersMultilevelGrandchild2A systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest != scenario.ReferenceObject;
@@ -747,14 +747,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultilevelGrandChild2A systemUnderTest = null;
+                    MyModelPublicSettersMultilevelGrandchild2A systemUnderTest = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.Equals(systemUnderTest);
@@ -768,7 +768,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -786,7 +786,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -804,7 +804,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -822,7 +822,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void Equals_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -985,8 +985,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void LessThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest1 = null;
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 < systemUnderTest2;
@@ -1141,8 +1141,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GreaterThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest1 = null;
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 > systemUnderTest2;
@@ -1297,8 +1297,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void LessThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest1 = null;
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 <= systemUnderTest2;
@@ -1453,8 +1453,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest1 = null;
-                MyModelPublicSettersMultilevelGrandChild2A systemUnderTest2 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest1 = null;
+                MyModelPublicSettersMultilevelGrandchild2A systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 >= systemUnderTest2;
@@ -1838,14 +1838,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_1___When_parameter_other_is_null()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_1___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultilevelGrandChild2A other = null;
+                    MyModelPublicSettersMultilevelGrandchild2A other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareTo(other);
@@ -1859,7 +1859,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_0___When_parameter_other_is_same_object()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_0___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1877,7 +1877,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_0___When_objects_being_compared_are_equal()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_0___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1895,7 +1895,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_negative_1___When_object_is_less_than_parameter_other()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_negative_1___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1915,7 +1915,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_1___When_object_is_greater_than_parameter_other()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_1___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -1935,7 +1935,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandChild2A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareTo_with_MyModelPublicSettersMultilevelGrandchild2A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -2303,14 +2303,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersMultilevelGrandChild2A other = null;
+                    MyModelPublicSettersMultilevelGrandchild2A other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
@@ -2324,7 +2324,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -2342,7 +2342,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -2360,7 +2360,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -2380,7 +2380,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild2A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandchild2A___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -2400,7 +2400,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandChild2A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareToForRelativeSortOrder_with_MyModelPublicSettersMultilevelGrandchild2A___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 

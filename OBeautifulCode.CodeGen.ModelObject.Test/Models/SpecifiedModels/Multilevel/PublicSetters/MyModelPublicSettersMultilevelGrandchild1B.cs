@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPublicSettersMultilevelGrandChild1B.cs" company="OBeautifulCode">
+// <copyright file="MyModelPublicSettersMultilevelGrandchild1B.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,12 +8,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using OBeautifulCode.Type;
 
-    public partial class MyModelPublicSettersMultilevelGrandChild1B : MyModelPublicSettersMultilevelChild1, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPublicSettersMultilevelGrandChild1B>
+    public partial class MyModelPublicSettersMultilevelGrandchild1B : MyModelPublicSettersMultilevelChild1, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPublicSettersMultilevelGrandchild1B>
     {
-        public int GrandChild1BInt { get; set; }
+        public int Grandchild1BInt { get; set; }
 
         public RelativeSortOrder CompareToForRelativeSortOrder(
-            MyModelPublicSettersMultilevelGrandChild1B other)
+            MyModelPublicSettersMultilevelGrandchild1B other)
         {
             if (other == null)
             {
@@ -21,9 +21,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else
             {
-                var sumThis = this.ParentInt + this.Child1Int + this.GrandChild1BInt;
+                var sumThis = this.ParentInt + this.Child1Int + this.Grandchild1BInt;
 
-                var sumOther = other.ParentInt + other.Child1Int + other.GrandChild1BInt;
+                var sumOther = other.ParentInt + other.Child1Int + other.Grandchild1BInt;
 
                 if (sumThis > sumOther)
                 {

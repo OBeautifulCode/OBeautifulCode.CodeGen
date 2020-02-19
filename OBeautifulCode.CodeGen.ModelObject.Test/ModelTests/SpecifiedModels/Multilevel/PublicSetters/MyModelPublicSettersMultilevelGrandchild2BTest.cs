@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPublicSettersMultilevelGrandChild2BTest.cs" company="OBeautifulCode">
+// <copyright file="MyModelPublicSettersMultilevelGrandchild2BTest.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,103 +8,103 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
 
-    public static partial class MyModelPublicSettersMultilevelGrandChild2BTest
+    public static partial class MyModelPublicSettersMultilevelGrandchild2BTest
     {
-        static MyModelPublicSettersMultilevelGrandChild2BTest()
+        static MyModelPublicSettersMultilevelGrandchild2BTest()
         {
-            ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPublicSettersMultilevelGrandChild2B>
+            ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPublicSettersMultilevelGrandchild2B>
             {
                 Name = "Scenario 1",
-                ReferenceObject = new MyModelPublicSettersMultilevelGrandChild2B
+                ReferenceObject = new MyModelPublicSettersMultilevelGrandchild2B
                 {
                     ParentInt = 1,
                     Child2Int = 2,
-                    GrandChild2BInt = 3,
+                    Grandchild2BInt = 3,
                 },
                 ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 1,
                         Child2Int = 2,
-                        GrandChild2BInt = 3,
+                        Grandchild2BInt = 3,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 3,
                         Child2Int = 2,
-                        GrandChild2BInt = 1,
+                        Grandchild2BInt = 1,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 0,
                         Child2Int = 6,
-                        GrandChild2BInt = 0,
+                        Grandchild2BInt = 0,
                     },
                 },
                 ObjectsThatAreLessThanReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 1,
                         Child2Int = 2,
-                        GrandChild2BInt = 2,
+                        Grandchild2BInt = 2,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 6,
                         Child2Int = -2,
-                        GrandChild2BInt = -1,
+                        Grandchild2BInt = -1,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 0,
                         Child2Int = 5,
-                        GrandChild2BInt = 0,
+                        Grandchild2BInt = 0,
                     },
                 },
                 ObjectsThatAreGreaterThanReferenceObject = new[]
                 {
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 2,
                         Child2Int = 2,
-                        GrandChild2BInt = 3,
+                        Grandchild2BInt = 3,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 3,
                         Child2Int = 3,
-                        GrandChild2BInt = 1,
+                        Grandchild2BInt = 1,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild2B
+                    new MyModelPublicSettersMultilevelGrandchild2B
                     {
                         ParentInt = 0,
                         Child2Int = 7,
-                        GrandChild2BInt = 0,
+                        Grandchild2BInt = 0,
                     },
                 },
                 ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                 {
                     1,
                     "dummy-string",
-                    new MyModelPublicSettersMultilevelGrandChild2A
+                    new MyModelPublicSettersMultilevelGrandchild2A
                     {
                         ParentInt = 1,
                         Child2Int = 2,
-                        GrandChild2AInt = 3,
+                        Grandchild2AInt = 3,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild1A
+                    new MyModelPublicSettersMultilevelGrandchild1A
                     {
                         ParentInt = 1,
                         Child1Int = 2,
-                        GrandChild1AInt = 3,
+                        Grandchild1AInt = 3,
                     },
-                    new MyModelPublicSettersMultilevelGrandChild1B
+                    new MyModelPublicSettersMultilevelGrandchild1B
                     {
                         ParentInt = 1,
                         Child1Int = 2,
-                        GrandChild1BInt = 3,
+                        Grandchild1BInt = 3,
                     },
                 },
             });

@@ -23,15 +23,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-    public partial class MyModelPrivateSettersMultilevelGrandChild2A : IModel<MyModelPrivateSettersMultilevelGrandChild2A>, IComparableForRelativeSortOrder<MyModelPrivateSettersMultilevelGrandChild2A>
+    public partial class MyModelPrivateSettersMultilevelGrandchild2A : IModel<MyModelPrivateSettersMultilevelGrandchild2A>, IComparableForRelativeSortOrder<MyModelPrivateSettersMultilevelGrandchild2A>
     {
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPrivateSettersMultilevelGrandChild2A"/> are equal.
+        /// Determines whether two objects of type <see cref="MyModelPrivateSettersMultilevelGrandchild2A"/> are equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==(MyModelPrivateSettersMultilevelGrandChild2A left, MyModelPrivateSettersMultilevelGrandChild2A right)
+        public static bool operator ==(MyModelPrivateSettersMultilevelGrandchild2A left, MyModelPrivateSettersMultilevelGrandchild2A right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -49,15 +49,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether two objects of type <see cref="MyModelPrivateSettersMultilevelGrandChild2A"/> are not equal.
+        /// Determines whether two objects of type <see cref="MyModelPrivateSettersMultilevelGrandchild2A"/> are not equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items not equal; otherwise false.</returns>
-        public static bool operator !=(MyModelPrivateSettersMultilevelGrandChild2A left, MyModelPrivateSettersMultilevelGrandChild2A right) => !(left == right);
+        public static bool operator !=(MyModelPrivateSettersMultilevelGrandchild2A left, MyModelPrivateSettersMultilevelGrandchild2A right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(MyModelPrivateSettersMultilevelGrandChild2A other)
+        public bool Equals(MyModelPrivateSettersMultilevelGrandchild2A other)
         {
             if (ReferenceEquals(this, other))
             {
@@ -71,21 +71,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var result = this.ParentInt.IsEqualTo(other.ParentInt)
                       && this.Child2Int.IsEqualTo(other.Child2Int)
-                      && this.GrandChild2AInt.IsEqualTo(other.GrandChild2AInt);
+                      && this.Grandchild2AInt.IsEqualTo(other.Grandchild2AInt);
 
             return result;
         }
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => this == (obj as MyModelPrivateSettersMultilevelGrandChild2A);
+        public override bool Equals(object obj) => this == (obj as MyModelPrivateSettersMultilevelGrandchild2A);
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandChild2A"/> is less than another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandchild2A"/> is less than another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the less-than operator.</param>
         /// <param name="right">The object to the right of the less-than operator.</param>
         /// <returns>true if <paramref name="left"/> is less than <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator <(MyModelPrivateSettersMultilevelGrandChild2A left, MyModelPrivateSettersMultilevelGrandChild2A right)
+        public static bool operator <(MyModelPrivateSettersMultilevelGrandchild2A left, MyModelPrivateSettersMultilevelGrandchild2A right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -115,12 +115,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandChild2A"/> is greater than another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandchild2A"/> is greater than another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the greater-than operator.</param>
         /// <param name="right">The object to the right of the greater-than operator.</param>
         /// <returns>true if <paramref name="left"/> is greater than <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator >(MyModelPrivateSettersMultilevelGrandChild2A left, MyModelPrivateSettersMultilevelGrandChild2A right)
+        public static bool operator >(MyModelPrivateSettersMultilevelGrandchild2A left, MyModelPrivateSettersMultilevelGrandchild2A right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -150,23 +150,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandChild2A"/> is less than or equal to another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandchild2A"/> is less than or equal to another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the less-than-or-equal-to operator.</param>
         /// <param name="right">The object to the right of the less-than-or-equal-to operator.</param>
         /// <returns>true if <paramref name="left"/> is less than or equal to <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator <=(MyModelPrivateSettersMultilevelGrandChild2A left, MyModelPrivateSettersMultilevelGrandChild2A right) => !(left > right);
+        public static bool operator <=(MyModelPrivateSettersMultilevelGrandchild2A left, MyModelPrivateSettersMultilevelGrandchild2A right) => !(left > right);
 
         /// <summary>
-        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandChild2A"/> is greater than or equal to another object of that type.
+        /// Determines whether an object of type <see cref="MyModelPrivateSettersMultilevelGrandchild2A"/> is greater than or equal to another object of that type.
         /// </summary>
         /// <param name="left">The object to the left of the greater-than-or-equal-to operator.</param>
         /// <param name="right">The object to the right of the greater-than-or-equal-to operator.</param>
         /// <returns>true if <paramref name="left"/> is greater than or equal to <paramref name="right"/>; otherwise false.</returns>
-        public static bool operator >=(MyModelPrivateSettersMultilevelGrandChild2A left, MyModelPrivateSettersMultilevelGrandChild2A right) => !(left < right);
+        public static bool operator >=(MyModelPrivateSettersMultilevelGrandchild2A left, MyModelPrivateSettersMultilevelGrandchild2A right) => !(left < right);
 
         /// <inheritdoc />
-        public int CompareTo(MyModelPrivateSettersMultilevelGrandChild2A other)
+        public int CompareTo(MyModelPrivateSettersMultilevelGrandchild2A other)
         {
             if (ReferenceEquals(other, null))
             {
@@ -196,9 +196,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return 1;
             }
 
-            if (!(obj is MyModelPrivateSettersMultilevelGrandChild2A other))
+            if (!(obj is MyModelPrivateSettersMultilevelGrandchild2A other))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPrivateSettersMultilevelGrandChild2A)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPrivateSettersMultilevelGrandchild2A)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareTo(other);
@@ -214,12 +214,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
 
-            if (!(other is MyModelPrivateSettersMultilevelGrandChild2A otherAsMyModelPrivateSettersMultilevelGrandChild2A))
+            if (!(other is MyModelPrivateSettersMultilevelGrandchild2A otherAsMyModelPrivateSettersMultilevelGrandchild2A))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPrivateSettersMultilevelGrandChild2A)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPrivateSettersMultilevelGrandchild2A)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
-            var result = this.CompareToForRelativeSortOrder(otherAsMyModelPrivateSettersMultilevelGrandChild2A);
+            var result = this.CompareToForRelativeSortOrder(otherAsMyModelPrivateSettersMultilevelGrandchild2A);
 
             return result;
         }
@@ -232,12 +232,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
 
-            if (!(other is MyModelPrivateSettersMultilevelGrandChild2A otherAsMyModelPrivateSettersMultilevelGrandChild2A))
+            if (!(other is MyModelPrivateSettersMultilevelGrandchild2A otherAsMyModelPrivateSettersMultilevelGrandchild2A))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPrivateSettersMultilevelGrandChild2A)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPrivateSettersMultilevelGrandchild2A)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
-            var result = this.CompareToForRelativeSortOrder(otherAsMyModelPrivateSettersMultilevelGrandChild2A);
+            var result = this.CompareToForRelativeSortOrder(otherAsMyModelPrivateSettersMultilevelGrandchild2A);
 
             return result;
         }
@@ -246,19 +246,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override int GetHashCode() => HashCodeHelper.Initialize()
             .Hash(this.ParentInt)
             .Hash(this.Child2Int)
-            .Hash(this.GrandChild2AInt)
+            .Hash(this.Grandchild2AInt)
             .Value;
 
         /// <inheritdoc />
-        public new MyModelPrivateSettersMultilevelGrandChild2A DeepClone() => (MyModelPrivateSettersMultilevelGrandChild2A)this.DeepCloneInternal();
+        public new MyModelPrivateSettersMultilevelGrandchild2A DeepClone() => (MyModelPrivateSettersMultilevelGrandchild2A)this.DeepCloneInternal();
 
         /// <inheritdoc />
         public override MyModelPrivateSettersMultilevelParent DeepCloneWithParentInt(int parentInt)
         {
-            var result = new MyModelPrivateSettersMultilevelGrandChild2A(
+            var result = new MyModelPrivateSettersMultilevelGrandchild2A(
                                  parentInt,
                                  this.Child2Int,
-                                 this.GrandChild2AInt);
+                                 this.Grandchild2AInt);
 
             return result;
         }
@@ -266,22 +266,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override MyModelPrivateSettersMultilevelChild2 DeepCloneWithChild2Int(int child2Int)
         {
-            var result = new MyModelPrivateSettersMultilevelGrandChild2A(
+            var result = new MyModelPrivateSettersMultilevelGrandchild2A(
                                  this.ParentInt,
                                  child2Int,
-                                 this.GrandChild2AInt);
+                                 this.Grandchild2AInt);
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="GrandChild2AInt" />.
+        /// Deep clones this object with a new <see cref="Grandchild2AInt" />.
         /// </summary>
-        /// <param name="grandChild2AInt">The new <see cref="GrandChild2AInt" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="MyModelPrivateSettersMultilevelGrandChild2A" /> using the specified <paramref name="grandChild2AInt" /> for <see cref="GrandChild2AInt" /> and a deep clone of every other property.</returns>
-        public MyModelPrivateSettersMultilevelGrandChild2A DeepCloneWithGrandChild2AInt(int grandChild2AInt)
+        /// <param name="grandChild2AInt">The new <see cref="Grandchild2AInt" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="MyModelPrivateSettersMultilevelGrandchild2A" /> using the specified <paramref name="grandChild2AInt" /> for <see cref="Grandchild2AInt" /> and a deep clone of every other property.</returns>
+        public MyModelPrivateSettersMultilevelGrandchild2A DeepCloneWithGrandchild2AInt(int grandChild2AInt)
         {
-            var result = new MyModelPrivateSettersMultilevelGrandChild2A(
+            var result = new MyModelPrivateSettersMultilevelGrandchild2A(
                                  this.ParentInt,
                                  this.Child2Int,
                                  grandChild2AInt);
@@ -292,10 +292,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         protected override MyModelPrivateSettersMultilevelParent DeepCloneInternal()
         {
-            var result = new MyModelPrivateSettersMultilevelGrandChild2A(
+            var result = new MyModelPrivateSettersMultilevelGrandchild2A(
                                  this.ParentInt,
                                  this.Child2Int,
-                                 this.GrandChild2AInt);
+                                 this.Grandchild2AInt);
 
             return result;
         }
@@ -303,7 +303,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersMultilevelGrandChild2A)}: ParentInt = {this.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {this.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GrandChild2AInt = {this.GrandChild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
+            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersMultilevelGrandchild2A)}: ParentInt = {this.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {this.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2AInt = {this.Grandchild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
 
             return result;
         }

@@ -15,35 +15,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPrivateSettersMultilevelChild2>
             {
                 Name = "Scenario 1",
-                ReferenceObject = new MyModelPrivateSettersMultilevelGrandChild2A(1, 2, 3),
+                ReferenceObject = new MyModelPrivateSettersMultilevelGrandchild2A(1, 2, 3),
                 ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultilevelGrandChild2A(1, 2, 3),
-                    new MyModelPrivateSettersMultilevelGrandChild2A(3, 2, 1),
-                    new MyModelPrivateSettersMultilevelGrandChild2A(0, 6, 0),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(3, 2, 1),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(0, 6, 0),
                 },
                 ObjectsThatAreLessThanReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultilevelGrandChild2A(1, 2, 2),
-                    new MyModelPrivateSettersMultilevelGrandChild2A(6, -2, -1),
-                    new MyModelPrivateSettersMultilevelGrandChild2A(0, 5, 0),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(1, 2, 2),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(6, -2, -1),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(0, 5, 0),
                 },
                 ObjectsThatAreGreaterThanReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultilevelGrandChild2A(2, 2, 3),
-                    new MyModelPrivateSettersMultilevelGrandChild2A(3, 3, 1),
-                    new MyModelPrivateSettersMultilevelGrandChild2A(0, 7, 0),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(2, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(3, 3, 1),
+                    new MyModelPrivateSettersMultilevelGrandchild2A(0, 7, 0),
                 },
                 ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new[]
                 {
-                    new MyModelPrivateSettersMultilevelGrandChild2B(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandchild2B(1, 2, 3),
                 },
                 ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                 {
                     1,
                     "dummy-string",
-                    new MyModelPrivateSettersMultilevelGrandChild1A(1, 2, 3),
-                    new MyModelPrivateSettersMultilevelGrandChild1B(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandchild1A(1, 2, 3),
+                    new MyModelPrivateSettersMultilevelGrandchild1B(1, 2, 3),
                 },
             });
         }
