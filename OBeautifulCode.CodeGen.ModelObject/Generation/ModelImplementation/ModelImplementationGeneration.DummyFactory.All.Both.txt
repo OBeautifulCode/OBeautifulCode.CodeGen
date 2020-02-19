@@ -16,7 +16,7 @@ namespace [dummy-factory-type-namespace-here]
 
     /// <summary>
     /// The default (code generated) Dummy Factory.
-    /// Derive from this class to override registrations.
+    /// Derive from this class to add any overriding or custom registrations.
     /// </summary>
     [ExcludeFromCodeCoverage]
     [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]

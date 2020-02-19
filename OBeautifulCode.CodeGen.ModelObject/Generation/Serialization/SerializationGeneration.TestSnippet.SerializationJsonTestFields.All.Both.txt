@@ -1,1 +1,1 @@
-﻿        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer([serialization-configuration-prefix-here]SerializationConfigurationTypes.JsonConfigurationType);
+﻿        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer([serialization-configuration-prefix-here]SerializationConfigurationTypes.JsonSerializationConfigurationType);
