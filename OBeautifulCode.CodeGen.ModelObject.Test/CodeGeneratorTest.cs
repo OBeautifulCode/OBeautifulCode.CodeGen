@@ -323,6 +323,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var propertyName = typeToAddAsProperty.BuildPropertyName(generatedModelPosition, childIdentifier);
 
+                propertyStatements.Add("        [SuppressMessage(\"Microsoft.Design\", \"CA1002: DoNotExposeGenericLists\")]");
+                propertyStatements.Add("        [SuppressMessage(\"Microsoft.Naming\", \"CA1720: IdentifiersShouldNotContainTypeNames\")]");
+                propertyStatements.Add("        [SuppressMessage(\"Microsoft.Naming\", \"CA1726:UsePreferredTerms\")]");
+                propertyStatements.Add("        [SuppressMessage(\"Microsoft.Performance\", \"CA1819:PropertiesShouldNotReturnArrays\")]");
+                propertyStatements.Add("        [SuppressMessage(\"Microsoft.Usage\", \"CA2227:CollectionPropertiesShouldBeReadOnly\")]");
                 propertyStatements.Add(Invariant($"        public {typeCompilableString} {propertyName} {{ get; {setterKind.ToSetterString()}}}"));
                 propertyStatements.Add(string.Empty);
 
@@ -374,6 +379,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string interfaceStatement;
             var pragmaDisableStatements = new List<string>();
             var pragmaRestoreStatements = new List<string>();
+            string classLevelCodeAnalysisSuppressions = null;
+
             switch (generatedModelScenario)
             {
                 case GeneratedModelScenario.All:
@@ -401,6 +408,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     pragmaRestoreStatements.Add("#pragma warning disable CS0661");
                     pragmaRestoreStatements.Add("#pragma warning disable CS0659");
 
+                    classLevelCodeAnalysisSuppressions = "    [SuppressMessage(\"Microsoft.Usage\", \"CA2218: OverrideGetHashCodeOnOverridingEquals\")]" + Environment.NewLine;
                     break;
                 case GeneratedModelScenario.Hashing:
                     interfaceStatement = generatedModelPosition == GeneratedModelPosition.Parent
@@ -416,6 +424,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     interfaceStatement = generatedModelPosition == GeneratedModelPosition.Parent
                         ? nameof(IComparableViaCodeGen)
                         : Invariant($"{nameof(IComparableViaCodeGen)}, {typeof(IDeclareCompareToForRelativeSortOrderMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
+                    classLevelCodeAnalysisSuppressions = "    [SuppressMessage(\"Microsoft.Design\", \"CA1036: OverrideMethodsOnComparableTypes\")]" + Environment.NewLine;
                     break;
                 default:
                     throw new NotSupportedException("This generated model kind is not supported: " + generatedModelScenario);
@@ -438,6 +447,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using System.Collections.Concurrent;",
                 "    using System.Collections.Generic;",
                 "    using System.Collections.ObjectModel;",
+                "    using System.Diagnostics.CodeAnalysis;",
                 string.Empty,
                 "    using FakeItEasy;",
                 string.Empty,
@@ -446,7 +456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using OBeautifulCode.Type;",
                 string.Empty,
                 pragmaDisableStatements.Any() ? pragmaDisableStatements.ToNewLineDelimited() : null,
-                Invariant($"    public {abstractStatement}partial class {modelName} : {derivativeStatement}{interfaceStatement}"),
+                Invariant($"{classLevelCodeAnalysisSuppressions}    public {abstractStatement}partial class {modelName} : {derivativeStatement}{interfaceStatement}"),
                 pragmaRestoreStatements.Any() ? pragmaDisableStatements.ToNewLineDelimited() : null,
                 "    {",
             };
@@ -642,6 +652,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var constructorStatements = new List<string>();
             if (setterKind.RequiresConstructor())
             {
+                constructorStatements.Add("        [SuppressMessage(\"Microsoft.Design\", \"CA1002: DoNotExposeGenericLists\")]");
+                constructorStatements.Add("        [SuppressMessage(\"Microsoft.Naming\", \"CA1720: IdentifiersShouldNotContainTypeNames\")]");
+                constructorStatements.Add("        [SuppressMessage(\"Microsoft.Naming\", \"CA1726:UsePreferredTerms\")]");
                 constructorStatements.Add(constructorDeclarationStatement);
 
                 constructorStatements.AddRange(constructorParentParameterStatements);

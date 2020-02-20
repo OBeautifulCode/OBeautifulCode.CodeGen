@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics.CodeAnalysis;
 
     using FakeItEasy;
 
@@ -20,8 +21,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
+    [SuppressMessage("Microsoft.Design", "CA1036: OverrideMethodsOnComparableTypes")]
     public partial class MyModelComparingPrivateSetters : IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelComparingPrivateSetters>
     {
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public MyModelComparingPrivateSetters(
             int intProperty)
         {
@@ -29,6 +34,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.IntProperty = intProperty;
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public int IntProperty { get; private set; }
 
         /// <inheritdoc />

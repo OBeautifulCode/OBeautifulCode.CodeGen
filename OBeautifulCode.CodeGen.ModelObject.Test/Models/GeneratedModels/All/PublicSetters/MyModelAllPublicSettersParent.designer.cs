@@ -74,6 +74,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentBoolProperty">The new <see cref="ParentBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentBoolProperty" /> for <see cref="ParentBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentBoolProperty(bool parentBoolProperty);
 
         /// <summary>
@@ -81,6 +94,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentIntProperty">The new <see cref="ParentIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentIntProperty" /> for <see cref="ParentIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentIntProperty(int parentIntProperty);
 
         /// <summary>
@@ -88,6 +114,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentStringProperty">The new <see cref="ParentStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentStringProperty" /> for <see cref="ParentStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentStringProperty(string parentStringProperty);
 
         /// <summary>
@@ -95,6 +134,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentGuidProperty">The new <see cref="ParentGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentGuidProperty" /> for <see cref="ParentGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentGuidProperty(Guid parentGuidProperty);
 
         /// <summary>
@@ -102,6 +154,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentDateTimeProperty">The new <see cref="ParentDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentDateTimeProperty" /> for <see cref="ParentDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentDateTimeProperty(DateTime parentDateTimeProperty);
 
         /// <summary>
@@ -109,6 +174,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentModelEnumProperty">The new <see cref="ParentModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentModelEnumProperty" /> for <see cref="ParentModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentModelEnumProperty(ModelEnum parentModelEnumProperty);
 
         /// <summary>
@@ -116,6 +194,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentModelFlagsEnumProperty">The new <see cref="ParentModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentModelFlagsEnumProperty" /> for <see cref="ParentModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentModelFlagsEnumProperty(ModelFlagsEnum parentModelFlagsEnumProperty);
 
         /// <summary>
@@ -123,6 +214,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentModelClassProperty">The new <see cref="ParentModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentModelClassProperty" /> for <see cref="ParentModelClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentModelClassProperty(ModelClass parentModelClassProperty);
 
         /// <summary>
@@ -130,6 +234,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentNullableBoolProperty">The new <see cref="ParentNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableBoolProperty" /> for <see cref="ParentNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableBoolProperty(bool? parentNullableBoolProperty);
 
         /// <summary>
@@ -137,6 +254,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentNullableIntProperty">The new <see cref="ParentNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableIntProperty" /> for <see cref="ParentNullableIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableIntProperty(int? parentNullableIntProperty);
 
         /// <summary>
@@ -144,6 +274,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentNullableGuidProperty">The new <see cref="ParentNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableGuidProperty" /> for <see cref="ParentNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableGuidProperty(Guid? parentNullableGuidProperty);
 
         /// <summary>
@@ -151,6 +294,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentNullableDateTimeProperty">The new <see cref="ParentNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableDateTimeProperty" /> for <see cref="ParentNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableDateTimeProperty(DateTime? parentNullableDateTimeProperty);
 
         /// <summary>
@@ -158,6 +314,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentNullableModelEnumProperty">The new <see cref="ParentNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableModelEnumProperty" /> for <see cref="ParentNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableModelEnumProperty(ModelEnum? parentNullableModelEnumProperty);
 
         /// <summary>
@@ -165,6 +334,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentNullableModelFlagsEnumProperty">The new <see cref="ParentNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentNullableModelFlagsEnumProperty" /> for <see cref="ParentNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentNullableModelFlagsEnumProperty(ModelFlagsEnum? parentNullableModelFlagsEnumProperty);
 
         /// <summary>
@@ -172,6 +354,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfBoolProperty">The new <see cref="ParentArrayOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfBoolProperty" /> for <see cref="ParentArrayOfBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfBoolProperty(bool[] parentArrayOfBoolProperty);
 
         /// <summary>
@@ -179,6 +374,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfIntProperty">The new <see cref="ParentArrayOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfIntProperty" /> for <see cref="ParentArrayOfIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfIntProperty(int[] parentArrayOfIntProperty);
 
         /// <summary>
@@ -186,6 +394,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfStringProperty">The new <see cref="ParentArrayOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfStringProperty" /> for <see cref="ParentArrayOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfStringProperty(string[] parentArrayOfStringProperty);
 
         /// <summary>
@@ -193,6 +414,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfGuidProperty">The new <see cref="ParentArrayOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfGuidProperty" /> for <see cref="ParentArrayOfGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfGuidProperty(Guid[] parentArrayOfGuidProperty);
 
         /// <summary>
@@ -200,6 +434,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfDateTimeProperty">The new <see cref="ParentArrayOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfDateTimeProperty" /> for <see cref="ParentArrayOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfDateTimeProperty(DateTime[] parentArrayOfDateTimeProperty);
 
         /// <summary>
@@ -207,6 +454,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfModelEnumProperty">The new <see cref="ParentArrayOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelEnumProperty" /> for <see cref="ParentArrayOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfModelEnumProperty(ModelEnum[] parentArrayOfModelEnumProperty);
 
         /// <summary>
@@ -214,6 +474,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfModelFlagsEnumProperty">The new <see cref="ParentArrayOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelFlagsEnumProperty" /> for <see cref="ParentArrayOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfModelFlagsEnumProperty(ModelFlagsEnum[] parentArrayOfModelFlagsEnumProperty);
 
         /// <summary>
@@ -221,6 +494,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfModelClassProperty">The new <see cref="ParentArrayOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfModelClassProperty" /> for <see cref="ParentArrayOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfModelClassProperty(ModelClass[] parentArrayOfModelClassProperty);
 
         /// <summary>
@@ -228,6 +514,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfNullableBoolProperty">The new <see cref="ParentArrayOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableBoolProperty" /> for <see cref="ParentArrayOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableBoolProperty(bool?[] parentArrayOfNullableBoolProperty);
 
         /// <summary>
@@ -235,6 +534,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfNullableIntProperty">The new <see cref="ParentArrayOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableIntProperty" /> for <see cref="ParentArrayOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableIntProperty(int?[] parentArrayOfNullableIntProperty);
 
         /// <summary>
@@ -242,6 +554,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfNullableGuidProperty">The new <see cref="ParentArrayOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableGuidProperty" /> for <see cref="ParentArrayOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableGuidProperty(Guid?[] parentArrayOfNullableGuidProperty);
 
         /// <summary>
@@ -249,6 +574,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfNullableDateTimeProperty">The new <see cref="ParentArrayOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableDateTimeProperty" /> for <see cref="ParentArrayOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableDateTimeProperty(DateTime?[] parentArrayOfNullableDateTimeProperty);
 
         /// <summary>
@@ -256,6 +594,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfNullableModelEnumProperty">The new <see cref="ParentArrayOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableModelEnumProperty" /> for <see cref="ParentArrayOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableModelEnumProperty(ModelEnum?[] parentArrayOfNullableModelEnumProperty);
 
         /// <summary>
@@ -263,6 +614,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentArrayOfNullableModelFlagsEnumProperty">The new <see cref="ParentArrayOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentArrayOfNullableModelFlagsEnumProperty" /> for <see cref="ParentArrayOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty(ModelFlagsEnum?[] parentArrayOfNullableModelFlagsEnumProperty);
 
         /// <summary>
@@ -270,6 +634,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfBoolProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty(IReadOnlyCollection<bool> parentReadOnlyCollectionInterfaceOfBoolProperty);
 
         /// <summary>
@@ -277,6 +654,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfIntProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty(IReadOnlyCollection<int> parentReadOnlyCollectionInterfaceOfIntProperty);
 
         /// <summary>
@@ -284,6 +674,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfStringProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty(IReadOnlyCollection<string> parentReadOnlyCollectionInterfaceOfStringProperty);
 
         /// <summary>
@@ -291,6 +694,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfGuidProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty(IReadOnlyCollection<Guid> parentReadOnlyCollectionInterfaceOfGuidProperty);
 
         /// <summary>
@@ -298,6 +714,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty(IReadOnlyCollection<DateTime> parentReadOnlyCollectionInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -305,6 +734,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfModelEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty(IReadOnlyCollection<ModelEnum> parentReadOnlyCollectionInterfaceOfModelEnumProperty);
 
         /// <summary>
@@ -312,6 +754,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum> parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
 
         /// <summary>
@@ -319,6 +774,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfModelClassProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty(IReadOnlyCollection<ModelClass> parentReadOnlyCollectionInterfaceOfModelClassProperty);
 
         /// <summary>
@@ -326,6 +794,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> parentReadOnlyCollectionInterfaceOfNullableBoolProperty);
 
         /// <summary>
@@ -333,6 +814,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> parentReadOnlyCollectionInterfaceOfNullableIntProperty);
 
         /// <summary>
@@ -340,6 +834,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> parentReadOnlyCollectionInterfaceOfNullableGuidProperty);
 
         /// <summary>
@@ -347,6 +854,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
 
         /// <summary>
@@ -354,6 +874,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty(IReadOnlyCollection<ModelEnum?> parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
 
         /// <summary>
@@ -361,6 +894,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyCollection<ModelFlagsEnum?> parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
 
         /// <summary>
@@ -368,6 +914,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfBoolProperty">The new <see cref="ParentReadOnlyListInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty);
 
         /// <summary>
@@ -375,6 +934,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfIntProperty">The new <see cref="ParentReadOnlyListInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty);
 
         /// <summary>
@@ -382,6 +954,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfStringProperty">The new <see cref="ParentReadOnlyListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty);
 
         /// <summary>
@@ -389,6 +974,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfGuidProperty">The new <see cref="ParentReadOnlyListInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty);
 
         /// <summary>
@@ -396,6 +994,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -403,6 +1014,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfModelEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty(IReadOnlyList<ModelEnum> parentReadOnlyListInterfaceOfModelEnumProperty);
 
         /// <summary>
@@ -410,6 +1034,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfModelFlagsEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum> parentReadOnlyListInterfaceOfModelFlagsEnumProperty);
 
         /// <summary>
@@ -417,6 +1054,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfModelClassProperty">The new <see cref="ParentReadOnlyListInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyListInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty(IReadOnlyList<ModelClass> parentReadOnlyListInterfaceOfModelClassProperty);
 
         /// <summary>
@@ -424,6 +1074,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> parentReadOnlyListInterfaceOfNullableBoolProperty);
 
         /// <summary>
@@ -431,6 +1094,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> parentReadOnlyListInterfaceOfNullableIntProperty);
 
         /// <summary>
@@ -438,6 +1114,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> parentReadOnlyListInterfaceOfNullableGuidProperty);
 
         /// <summary>
@@ -445,6 +1134,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> parentReadOnlyListInterfaceOfNullableDateTimeProperty);
 
         /// <summary>
@@ -452,6 +1154,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableModelEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty(IReadOnlyList<ModelEnum?> parentReadOnlyListInterfaceOfNullableModelEnumProperty);
 
         /// <summary>
@@ -459,6 +1174,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyList<ModelFlagsEnum?> parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
 
         /// <summary>
@@ -466,6 +1194,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfBoolProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfBoolProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(IReadOnlyDictionary<bool, bool> parentReadOnlyDictionaryInterfaceOfBoolProperty);
 
         /// <summary>
@@ -473,6 +1214,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfIntProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfIntProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(IReadOnlyDictionary<int, int> parentReadOnlyDictionaryInterfaceOfIntProperty);
 
         /// <summary>
@@ -480,6 +1234,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfStringProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty);
 
         /// <summary>
@@ -487,6 +1254,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfGuidProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfGuidProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty);
 
         /// <summary>
@@ -494,6 +1274,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfModelEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty(IReadOnlyDictionary<ModelEnum, ModelEnum> parentReadOnlyDictionaryInterfaceOfModelEnumProperty);
 
         /// <summary>
@@ -501,6 +1294,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
 
         /// <summary>
@@ -508,6 +1314,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfModelClassProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfModelClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfModelClassProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfModelClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty(IReadOnlyDictionary<ModelClass, ModelClass> parentReadOnlyDictionaryInterfaceOfModelClassProperty);
 
         /// <summary>
@@ -515,6 +1334,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> parentReadOnlyDictionaryInterfaceOfNullableBoolProperty);
 
         /// <summary>
@@ -522,6 +1354,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryInterfaceOfNullableIntProperty);
 
         /// <summary>
@@ -529,6 +1374,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryInterfaceOfNullableGuidProperty);
 
         /// <summary>
@@ -536,6 +1394,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty(IReadOnlyDictionary<ModelEnum?, ModelEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
 
         /// <summary>
@@ -543,6 +1414,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty(IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
 
         /// <summary>
@@ -550,6 +1434,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentCollectionInterfaceOfStringProperty">The new <see cref="ParentCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentCollectionInterfaceOfStringProperty" /> for <see cref="ParentCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentCollectionInterfaceOfStringProperty(ICollection<string> parentCollectionInterfaceOfStringProperty);
 
         /// <summary>
@@ -557,6 +1454,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="ParentCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> parentCollectionOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
@@ -564,6 +1474,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentListInterfaceOfCollectionInterfaceOfStringProperty">The new <see cref="ParentListInterfaceOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentListInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentListInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(IList<ICollection<string>> parentListInterfaceOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
@@ -571,6 +1494,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentListOfCollectionInterfaceOfStringProperty">The new <see cref="ParentListOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentListOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> parentListOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
@@ -578,6 +1514,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
 
         /// <summary>
@@ -585,6 +1534,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IDictionary<string, IReadOnlyList<DateTime>> parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -592,6 +1554,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -599,6 +1574,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -606,6 +1594,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -613,6 +1614,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>
@@ -620,6 +1634,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="MyModelAllPublicSettersParent" /> using the specified <paramref name="parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public abstract MyModelAllPublicSettersParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
 
         /// <summary>

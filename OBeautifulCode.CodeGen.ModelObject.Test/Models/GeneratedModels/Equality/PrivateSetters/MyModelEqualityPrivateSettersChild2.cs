@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics.CodeAnalysis;
 
     using FakeItEasy;
 
@@ -22,10 +23,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
 #pragma warning disable CS0659
 #pragma warning disable CS0661
+    [SuppressMessage("Microsoft.Usage", "CA2218: OverrideGetHashCodeOnOverridingEquals")]
     public partial class MyModelEqualityPrivateSettersChild2 : MyModelEqualityPrivateSettersParent, IEquatableViaCodeGen, IDeclareEqualsMethod<MyModelEqualityPrivateSettersChild2>
 #pragma warning disable CS0659
 #pragma warning disable CS0661
     {
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         public MyModelEqualityPrivateSettersChild2(
             bool parentBoolProperty,
             int parentIntProperty,
@@ -336,162 +341,557 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty;
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public bool Child2BoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public int Child2IntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public string Child2StringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public Guid Child2GuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public DateTime Child2DateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelEnum Child2ModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelFlagsEnum Child2ModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelClass Child2ModelClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public bool? Child2NullableBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public int? Child2NullableIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public Guid? Child2NullableGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public DateTime? Child2NullableDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelEnum? Child2NullableModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelFlagsEnum? Child2NullableModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public bool[] Child2ArrayOfBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public int[] Child2ArrayOfIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public string[] Child2ArrayOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public Guid[] Child2ArrayOfGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public DateTime[] Child2ArrayOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelEnum[] Child2ArrayOfModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelFlagsEnum[] Child2ArrayOfModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelClass[] Child2ArrayOfModelClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public bool?[] Child2ArrayOfNullableBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public int?[] Child2ArrayOfNullableIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public Guid?[] Child2ArrayOfNullableGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public DateTime?[] Child2ArrayOfNullableDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelEnum?[] Child2ArrayOfNullableModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ModelFlagsEnum?[] Child2ArrayOfNullableModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<bool> Child2ReadOnlyCollectionInterfaceOfBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<int> Child2ReadOnlyCollectionInterfaceOfIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<string> Child2ReadOnlyCollectionInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<Guid> Child2ReadOnlyCollectionInterfaceOfGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<DateTime> Child2ReadOnlyCollectionInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<ModelEnum> Child2ReadOnlyCollectionInterfaceOfModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<ModelFlagsEnum> Child2ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<ModelClass> Child2ReadOnlyCollectionInterfaceOfModelClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<bool?> Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<int?> Child2ReadOnlyCollectionInterfaceOfNullableIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<Guid?> Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<DateTime?> Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<ModelEnum?> Child2ReadOnlyCollectionInterfaceOfNullableModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<ModelFlagsEnum?> Child2ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<bool> Child2ReadOnlyListInterfaceOfBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<int> Child2ReadOnlyListInterfaceOfIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<string> Child2ReadOnlyListInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<Guid> Child2ReadOnlyListInterfaceOfGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<DateTime> Child2ReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<ModelEnum> Child2ReadOnlyListInterfaceOfModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<ModelFlagsEnum> Child2ReadOnlyListInterfaceOfModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<ModelClass> Child2ReadOnlyListInterfaceOfModelClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<bool?> Child2ReadOnlyListInterfaceOfNullableBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<int?> Child2ReadOnlyListInterfaceOfNullableIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<Guid?> Child2ReadOnlyListInterfaceOfNullableGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<DateTime?> Child2ReadOnlyListInterfaceOfNullableDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<ModelEnum?> Child2ReadOnlyListInterfaceOfNullableModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<ModelFlagsEnum?> Child2ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<bool, bool> Child2ReadOnlyDictionaryInterfaceOfBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<int, int> Child2ReadOnlyDictionaryInterfaceOfIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<string, string> Child2ReadOnlyDictionaryInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<Guid, Guid> Child2ReadOnlyDictionaryInterfaceOfGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<ModelEnum, ModelEnum> Child2ReadOnlyDictionaryInterfaceOfModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<ModelFlagsEnum, ModelFlagsEnum> Child2ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<ModelClass, ModelClass> Child2ReadOnlyDictionaryInterfaceOfModelClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<bool?, bool?> Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<int?, int?> Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<Guid?, Guid?> Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<ModelEnum?, ModelEnum?> Child2ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<ModelFlagsEnum?, ModelFlagsEnum?> Child2ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ICollection<string> Child2CollectionInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public Collection<ICollection<string>> Child2CollectionOfCollectionInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IList<ICollection<string>> Child2ListInterfaceOfCollectionInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public List<ICollection<string>> Child2ListOfCollectionInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ReadOnlyCollection<ICollection<string>> Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IDictionary<string, IReadOnlyList<DateTime>> Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public Dictionary<string, IReadOnlyList<DateTime>> Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ReadOnlyDictionary<string, IReadOnlyList<DateTime>> Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public ConcurrentDictionary<string, IReadOnlyList<DateTime>> Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>> Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>> Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; private set; }
 
         /// <inheritdoc />

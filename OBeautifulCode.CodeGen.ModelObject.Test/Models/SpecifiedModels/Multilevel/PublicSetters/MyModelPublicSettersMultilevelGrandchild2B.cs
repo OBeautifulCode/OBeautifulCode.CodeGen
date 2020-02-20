@@ -6,10 +6,14 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System.Diagnostics.CodeAnalysis;
+
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
     public partial class MyModelPublicSettersMultilevelGrandchild2B : MyModelPublicSettersMultilevelChild2, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPublicSettersMultilevelGrandchild2B>
     {
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public int Grandchild2BInt { get; set; }
 
         public RelativeSortOrder CompareToForRelativeSortOrder(

@@ -6,10 +6,14 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System.Diagnostics.CodeAnalysis;
+
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
     public partial class MyModelPrivateSettersMultilevelGrandchild2A : MyModelPrivateSettersMultilevelChild2, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<MyModelPrivateSettersMultilevelGrandchild2A>
     {
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public MyModelPrivateSettersMultilevelGrandchild2A(
             int parentInt,
             int child2Int,
@@ -19,6 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Grandchild2AInt = grandchild2AInt;
         }
 
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public int Grandchild2AInt { get; private set; }
 
         public RelativeSortOrder CompareToForRelativeSortOrder(

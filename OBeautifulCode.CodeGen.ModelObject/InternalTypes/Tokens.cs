@@ -245,5 +245,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The code analysis suppressions to add to a test method.
         /// </summary>
         public const string TestMethodCodeAnalysisSuppressionsToken = "[test-method-code-analysis-suppressions]";
+
+        /// <summary>
+        /// The code analysis suppressions to add to a DeepCloneWith() method.
+        /// </summary>
+        public const string DeepCloneWithCodeAnalysisSuppressionsToken = "[deep-clone-with-code-analysis-suppressions]";
     }
 }

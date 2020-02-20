@@ -150,5 +150,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for the Code Analysis suppressions to apply on a test method.
         /// </summary>
         TestMethodCodeAnalysisSuppressions,
+
+        /// <summary>
+        /// A code snippet for the Code Analysis suppressions to apply on a DeepCloneWith() method.
+        /// </summary>
+        DeepCloneWithCodeAnalysisSuppressions,
     }
 }

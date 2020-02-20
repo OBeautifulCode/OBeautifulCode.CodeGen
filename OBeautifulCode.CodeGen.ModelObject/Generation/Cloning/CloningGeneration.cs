@@ -275,6 +275,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, deepCloneWithMethods)
                 : string.Empty;
 
+            result = result
+                .Replace(Tokens.DeepCloneWithCodeAnalysisSuppressionsToken, typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithCodeAnalysisSuppressions));
+
             return result;
         }
 
