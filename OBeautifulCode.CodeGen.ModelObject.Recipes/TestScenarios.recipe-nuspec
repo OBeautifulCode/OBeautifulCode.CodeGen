@@ -1,21 +1,21 @@
-﻿<?xml version="1.0"?>
-<package >
+<?xml version="1.0"?>
+<package>
   <metadata>
     <id>OBeautifulCode.CodeGen.ModelObject.Recipes.TestScenarios</id>
     <description>Specifies scenarios for code generated tests.</description>
     <tags>code gen test scenario</tags>
     <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen.ModelObject.Recipes/nuget-icon.png</iconUrl>
     <dependencies>
-      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.12" />
+      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.14" />
     </dependencies>
   </metadata>
   <files>
-    <file src=".analyzers\SuppressBecause.cs"          target="content\net462\.recipes\OBeautifulCode.CodeGen\SuppressBecause.cs" />
-    <file src="EquatableTestScenario{T}.cs"            target="content\net462\.recipes\OBeautifulCode.CodeGen\EquatableTestScenario{T}.cs" />
-    <file src="EquatableTestScenarios{T}.cs"           target="content\net462\.recipes\OBeautifulCode.CodeGen\EquatableTestScenarios{T}.cs" />
-    <file src="ValidatedEquatableTestScenario{T}.cs"  target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedEquatableTestScenario{T}.cs" />
-    <file src="ComparableTestScenario{T}.cs"           target="content\net462\.recipes\OBeautifulCode.CodeGen\ComparableTestScenario{T}.cs" />
-    <file src="ComparableTestScenarios{T}.cs"          target="content\net462\.recipes\OBeautifulCode.CodeGen\ComparableTestScenarios{T}.cs" />
+    <file src=".analyzers\SuppressBecause.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SuppressBecause.cs" />
+    <file src="EquatableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\EquatableTestScenario{T}.cs" />
+    <file src="EquatableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\EquatableTestScenarios{T}.cs" />
+    <file src="ValidatedEquatableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedEquatableTestScenario{T}.cs" />
+    <file src="ComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ComparableTestScenario{T}.cs" />
+    <file src="ComparableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ComparableTestScenarios{T}.cs" />
     <file src="ValidatedComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedComparableTestScenario{T}.cs" />
   </files>
 </package>
