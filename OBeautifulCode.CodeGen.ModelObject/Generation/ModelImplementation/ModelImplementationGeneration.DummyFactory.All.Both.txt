@@ -8,6 +8,9 @@ namespace [dummy-factory-type-namespace-here]
 {
     using System;
     using System.CodeDom.Compiler;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Diagnostics.CodeAnalysis;
 
     using FakeItEasy;
