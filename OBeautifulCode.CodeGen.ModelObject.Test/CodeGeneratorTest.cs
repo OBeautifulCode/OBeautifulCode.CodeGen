@@ -31,7 +31,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelScenario generatedModelScenario, SetterKind setterKind, GeneratedModelPosition generatedModelPosition, string childIdentifier, string modelName, string directoryPath);
 
-        [Fact]
+        [Fact(Skip = "for local testing only")]
         public void GenerateModel___Should_generate_models___When_called()
         {
             // Arrange
@@ -49,7 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ExecuteForGeneratedModels(GenerationKind.Model, GenerateModel);
         }
 
-        [Fact]
+        [Fact(Skip = "for local testing only")]
         public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
         {
             // Arrange
@@ -64,7 +64,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ExecuteForGeneratedModels(GenerationKind.Model, RunCodeGen);
         }
 
-        [Fact]
+        [Fact(Skip = "for local testing only")]
         public void GenerateForModel___Should_generate_dummy_factory___When_parameter_generateFor_is_ModelDummyFactorySnippet()
         {
             // Arrange
@@ -80,7 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             WriteDummyFactory(dummyFactoryCode);
         }
 
-        [Fact]
+        [Fact(Skip = "for local testing only")]
         public void GenerateForModel___Should_generate_model_test_partial_class___When_parameter_generateFor_is_ModelImplementationTestsPartialClassWithSerialization()
         {
             // Arrange, Act, Assert
