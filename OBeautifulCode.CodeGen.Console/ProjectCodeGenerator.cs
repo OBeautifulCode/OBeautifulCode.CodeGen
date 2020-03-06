@@ -89,7 +89,11 @@ namespace OBeautifulCode.CodeGen.Console
                 {
                     Console.WriteLine("Checking type: " + type.ToStringReadable());
 
-                    if (!type.ContainsGenericParameters && CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)))
+                    var shouldGenerateCode =
+                        !type.ContainsGenericParameters &&
+                        CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_) && type.Name != _.Name); // the Name check allows us to run code gen in OBeautifulCode.Type which contains the TypesThatIndicateCodeGenIsRequired
+
+                    if (shouldGenerateCode)
                     {
                         WriteModelFile(type, projectSourceFilePaths);
 
