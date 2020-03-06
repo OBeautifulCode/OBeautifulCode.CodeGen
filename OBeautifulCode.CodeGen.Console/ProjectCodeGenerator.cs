@@ -91,7 +91,8 @@ namespace OBeautifulCode.CodeGen.Console
 
                     var shouldGenerateCode =
                         !type.ContainsGenericParameters &&
-                        CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_) && type.Name != _.Name); // the Name check allows us to run code gen in OBeautifulCode.Type which contains the TypesThatIndicateCodeGenIsRequired
+                        CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)) &&
+                        !type.IsInterface;
 
                     if (shouldGenerateCode)
                     {
