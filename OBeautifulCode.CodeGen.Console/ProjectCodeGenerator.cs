@@ -96,6 +96,8 @@ namespace OBeautifulCode.CodeGen.Console
 
                     if (shouldGenerateCode)
                     {
+                        Console.WriteLine("Generating code for type: " + type.ToStringReadable());
+
                         WriteModelFile(type, projectSourceFilePaths);
 
                         if (hasTestProject)
