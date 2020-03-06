@@ -89,7 +89,7 @@ namespace OBeautifulCode.CodeGen.Console
                 {
                     Console.WriteLine("Checking type: " + type.ToStringReadable());
 
-                    if (CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)))
+                    if (!type.ContainsGenericParameters && CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)))
                     {
                         WriteModelFile(type, projectSourceFilePaths);
 
