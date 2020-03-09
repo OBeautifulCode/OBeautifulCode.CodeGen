@@ -21,6 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.AutoFakeItEasy;
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
+    using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Math.Recipes;
     using OBeautifulCode.Representation.System;
     using OBeautifulCode.Serialization;
@@ -52,8 +53,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersMultilevelChild2[]
                     {
-                        (MyModelPrivateSettersMultilevelChild2)ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentInt(A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentInt)),
-                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithChild2Int(A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.Child2Int)),
+                        (MyModelPrivateSettersMultilevelChild2)ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentInt(A.Dummy<MyModelPrivateSettersMultilevelChild2>().Whose(_ => !_.ParentInt.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentInt)).ParentInt),
+                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithChild2Int(A.Dummy<MyModelPrivateSettersMultilevelChild2>().Whose(_ => !_.Child2Int.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2Int)).Child2Int),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersMultilevelChild2[]
                     {

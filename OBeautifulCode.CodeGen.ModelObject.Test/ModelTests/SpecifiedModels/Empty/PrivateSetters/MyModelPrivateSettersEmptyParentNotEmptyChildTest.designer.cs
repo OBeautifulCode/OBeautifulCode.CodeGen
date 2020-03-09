@@ -21,6 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.AutoFakeItEasy;
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
+    using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Math.Recipes;
     using OBeautifulCode.Representation.System;
     using OBeautifulCode.Serialization;
@@ -54,7 +55,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersEmptyParentNotEmptyChild[]
                     {
                         new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                A.Dummy<IReadOnlyDictionary<string, string>>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ChildReadOnlyDictionaryOfStringString)),
+                                A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>().Whose(_ => !_.ChildReadOnlyDictionaryOfStringString.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ChildReadOnlyDictionaryOfStringString)).ChildReadOnlyDictionaryOfStringString),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {

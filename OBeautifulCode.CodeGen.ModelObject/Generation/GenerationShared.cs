@@ -294,20 +294,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Generates code that constructs a dummy model.
         /// </summary>
         /// <param name="typeCompilableString">The type's compilable string representation.</param>
-        /// <param name="thatIsNot">Code to inject into a ThatIsNot qualification.</param>
         /// <returns>
         /// Generated code that constructs a dummy model.
         /// </returns>
         public static string GenerateDummyConstructionCodeForType(
-            this string typeCompilableString,
-            string thatIsNot = null)
+            this string typeCompilableString)
         {
             new { typeCompilableString }.Must().NotBeNullNorWhiteSpace();
 
-            var result =
-                string.IsNullOrWhiteSpace(thatIsNot)
-                    ? "A.Dummy<" + typeCompilableString + ">()"
-                    : "A.Dummy<" + typeCompilableString + ">().ThatIsNot(" + thatIsNot + ")";
+            var result = "A.Dummy<" + typeCompilableString + ">()";
 
             return result;
         }

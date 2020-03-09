@@ -206,7 +206,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         var memberCode = _.Name != property.Name
                             ? referenceObject
-                            : _.PropertyType.ToStringCompilable().GenerateDummyConstructionCodeForType(referenceObject);
+                            : typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject)
+                                .Replace(Tokens.PropertyNameToken, property.Name)
+                                .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable());
 
                         return new MemberCode(_.Name, memberCode);
                     }).ToList();

@@ -151,7 +151,6 @@
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GeneratedModelPosition.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
-    <Content Include="DummyFactory.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GeneratedModelScenario.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GenerationKind.cs" />
@@ -167,6 +166,8 @@
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelFlagsEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
+    <Content Include="DummyFactory.cs" />
     <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.cs" />
     <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild2B.cs</DependentUpon>

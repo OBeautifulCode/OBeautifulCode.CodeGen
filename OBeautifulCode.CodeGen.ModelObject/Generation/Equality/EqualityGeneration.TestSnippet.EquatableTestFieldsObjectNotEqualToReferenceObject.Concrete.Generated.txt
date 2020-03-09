@@ -1,0 +1,1 @@
+﻿A.Dummy<[model-type-name-here]>().Whose(_ => !_.[property-name-here].IsEqualTo(ReferenceObjectForEquatableTestScenarios.[property-name-here])).[property-name-here]

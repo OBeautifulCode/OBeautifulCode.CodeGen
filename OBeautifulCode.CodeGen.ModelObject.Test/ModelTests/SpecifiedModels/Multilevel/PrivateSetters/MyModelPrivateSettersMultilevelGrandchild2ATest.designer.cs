@@ -21,6 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.AutoFakeItEasy;
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
+    using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Math.Recipes;
     using OBeautifulCode.Representation.System;
     using OBeautifulCode.Serialization;
@@ -56,17 +57,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersMultilevelGrandchild2A[]
                     {
                         new MyModelPrivateSettersMultilevelGrandchild2A(
-                                A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.ParentInt),
+                                A.Dummy<MyModelPrivateSettersMultilevelGrandchild2A>().Whose(_ => !_.ParentInt.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentInt)).ParentInt,
                                 ReferenceObjectForEquatableTestScenarios.Child2Int,
                                 ReferenceObjectForEquatableTestScenarios.Grandchild2AInt),
                         new MyModelPrivateSettersMultilevelGrandchild2A(
                                 ReferenceObjectForEquatableTestScenarios.ParentInt,
-                                A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.Child2Int),
+                                A.Dummy<MyModelPrivateSettersMultilevelGrandchild2A>().Whose(_ => !_.Child2Int.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2Int)).Child2Int,
                                 ReferenceObjectForEquatableTestScenarios.Grandchild2AInt),
                         new MyModelPrivateSettersMultilevelGrandchild2A(
                                 ReferenceObjectForEquatableTestScenarios.ParentInt,
                                 ReferenceObjectForEquatableTestScenarios.Child2Int,
-                                A.Dummy<int>().ThatIsNot(ReferenceObjectForEquatableTestScenarios.Grandchild2AInt)),
+                                A.Dummy<MyModelPrivateSettersMultilevelGrandchild2A>().Whose(_ => !_.Grandchild2AInt.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Grandchild2AInt)).Grandchild2AInt),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
