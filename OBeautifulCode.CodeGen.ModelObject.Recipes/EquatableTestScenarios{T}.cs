@@ -9,6 +9,7 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -32,21 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     {
         private readonly object lockScenarios = new object();
 
-        private readonly List<EquatableTestScenario<T>> scenarios = new List<EquatableTestScenario<T>>();
-
-        /// <summary>
-        /// Gets the scenarios.
-        /// </summary>
-        public IReadOnlyList<EquatableTestScenario<T>> Scenarios
-        {
-            get
-            {
-                lock (this.lockScenarios)
-                {
-                    return this.scenarios.ToList();
-                }
-            }
-        }
+        private readonly List<Lazy<EquatableTestScenario<T>>> scenarios = new List<Lazy<EquatableTestScenario<T>>>();
 
         /// <summary>
         /// Adds the specified scenarios to the list of scenarios.
@@ -60,11 +47,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             new { scenario }.AsTest().Must().NotBeNull();
 
+            this.AddScenario(() => scenario);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the specified scenarios to the list of scenarios.
+        /// </summary>
+        /// <param name="scenarioFunc">A func that returns the scenario to add.</param>
+        /// <returns>
+        /// This object.
+        /// </returns>
+        public EquatableTestScenarios<T> AddScenario(
+            Func<EquatableTestScenario<T>> scenarioFunc)
+        {
+            new { scenarioFunc }.AsTest().Must().NotBeNull();
+
             lock (this.lockScenarios)
             {
-                new { this.Scenarios }.AsTest().Must().NotContainElement(scenario);
+                // We are wrapping in a Lazy<> because the code-generated scenarios may
+                // throw based on assertions within the model object's constructor.  We want
+                // the end-user to have an opportunity to clear-out the scenarios and specify
+                // their own (via static constructor on the test class) before the code-generated
+                // ones are evaluated and throw.
+                var lazyScenario = new Lazy<EquatableTestScenario<T>>(scenarioFunc);
 
-                this.scenarios.Add(scenario);
+                this.scenarios.Add(lazyScenario);
             }
 
             return this;
@@ -91,7 +100,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                this.Scenarios.AsTest("EquatableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling EquatableTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest("EquatableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling EquatableTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedEquatableTestScenario<T>>();
 
@@ -99,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 for (var x = 0; x < scenariosCount; x++)
                 {
-                    var scenario = this.scenarios[x];
+                    var scenario = this.scenarios[x].Value;
 
                     var scenarioNumber = x + 1;
 

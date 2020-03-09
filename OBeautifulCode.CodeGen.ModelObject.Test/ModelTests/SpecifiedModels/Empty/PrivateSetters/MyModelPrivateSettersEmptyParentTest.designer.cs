@@ -42,7 +42,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         private static readonly MyModelPrivateSettersEmptyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersEmptyParent>();
 
         private static readonly EquatableTestScenarios<MyModelPrivateSettersEmptyParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersEmptyParent>()
-            .AddScenario(
+            .AddScenario(() =>
                 new EquatableTestScenario<MyModelPrivateSettersEmptyParent>
                 {
                     Name = "Code Generated Scenario",

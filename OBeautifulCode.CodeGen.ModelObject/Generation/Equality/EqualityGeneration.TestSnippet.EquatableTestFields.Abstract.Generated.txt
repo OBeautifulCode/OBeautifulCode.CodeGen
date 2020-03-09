@@ -1,7 +1,7 @@
 ﻿        private static readonly [model-type-name-here] ReferenceObjectForEquatableTestScenarios = A.Dummy<[model-type-name-here]>();
 
         private static readonly EquatableTestScenarios<[model-type-name-here]> EquatableTestScenarios = new EquatableTestScenarios<[model-type-name-here]>()
-            .AddScenario(
+            .AddScenario(() =>
                 new EquatableTestScenario<[model-type-name-here]>
                 {
                     Name = "Code Generated Scenario",

@@ -9,6 +9,7 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -32,21 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     {
         private readonly object lockScenarios = new object();
 
-        private readonly List<ComparableTestScenario<T>> scenarios = new List<ComparableTestScenario<T>>();
-
-        /// <summary>
-        /// Gets the scenarios.
-        /// </summary>
-        public IReadOnlyList<ComparableTestScenario<T>> Scenarios
-        {
-            get
-            {
-                lock (this.lockScenarios)
-                {
-                    return this.scenarios.ToList();
-                }
-            }
-        }
+        private readonly List<Lazy<ComparableTestScenario<T>>> scenarios = new List<Lazy<ComparableTestScenario<T>>>();
 
         /// <summary>
         /// Adds the specified scenarios to the list of scenarios.
@@ -60,11 +47,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             new { scenario }.AsTest().Must().NotBeNull();
 
+            this.AddScenario(() => scenario);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the specified scenarios to the list of scenarios.
+        /// </summary>
+        /// <param name="scenarioFunc">A func that returns the scenario to add.</param>
+        /// <returns>
+        /// This object.
+        /// </returns>
+        public ComparableTestScenarios<T> AddScenario(
+            Func<ComparableTestScenario<T>> scenarioFunc)
+        {
+            new { scenarioFunc }.AsTest().Must().NotBeNull();
+
             lock (this.lockScenarios)
             {
-                new { this.Scenarios }.AsTest().Must().NotContainElement(scenario);
+                var lazyScenario = new Lazy<ComparableTestScenario<T>>(scenarioFunc);
 
-                this.scenarios.Add(scenario);
+                this.scenarios.Add(lazyScenario);
             }
 
             return this;
@@ -91,7 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                this.Scenarios.AsTest("ComparableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ComparableTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest("ComparableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ComparableTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedComparableTestScenario<T>>();
 
@@ -99,7 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 for (var x = 0; x < scenariosCount; x++)
                 {
-                    var scenario = this.scenarios[x];
+                    var scenario = this.scenarios[x].Value;
 
                     var scenarioNumber = x + 1;
 
