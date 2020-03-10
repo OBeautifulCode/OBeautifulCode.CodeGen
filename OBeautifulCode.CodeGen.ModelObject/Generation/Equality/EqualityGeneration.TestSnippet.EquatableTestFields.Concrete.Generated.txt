@@ -4,7 +4,7 @@
             .AddScenario(() =>
                 new EquatableTestScenario<[model-type-name-here]>
                 {
-                    Name = "Code Generated Scenario",
+                    Name = "Default Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
                     ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new [model-type-name-here][]
                     {
