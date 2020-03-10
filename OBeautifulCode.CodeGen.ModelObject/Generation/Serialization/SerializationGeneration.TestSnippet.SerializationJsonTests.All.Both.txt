@@ -1,6 +1,6 @@
 ﻿            [Fact]
 [test-method-code-analysis-suppressions]
-            public static void Deserialize___Should_roundtrip_object___When_serializing_and_deserializing_using_ObcJsonSerializer()
+            public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_string_using_ObcJsonSerializer()
             {
                 // Arrange
                 var expected = A.Dummy<[model-type-name-here]>();
@@ -8,6 +8,24 @@
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
+
+                // Act
+                var actual = serializer.Deserialize<[model-type-name-here]>(serializedJson);
+
+                // Assert
+                actual.AsTest().Must().BeEqualTo(expected);
+            }
+
+            [Fact]
+[test-method-code-analysis-suppressions]
+            public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_bytes_using_ObcJsonSerializer()
+            {
+                // Arrange
+                var expected = A.Dummy<[model-type-name-here]>();
+
+                var serializer = JsonSerializer;
+
+                var serializedJson = serializer.SerializeToBytes(expected);
 
                 // Act
                 var actual = serializer.Deserialize<[model-type-name-here]>(serializedJson);
