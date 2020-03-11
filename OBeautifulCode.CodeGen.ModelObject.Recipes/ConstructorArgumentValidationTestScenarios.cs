@@ -99,10 +99,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                // In this case, it's possible to have empty scenarios.  For example in MyModel(int someInt) there are no code
-                // generated scenarios.  And we cannot just skip/not write the unit test, because the consumer might
-                // have scenarios of their own to add (e.g. someInt < 0).
-                // this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedConstructorArgumentValidationTestScenario<T>>();
 
