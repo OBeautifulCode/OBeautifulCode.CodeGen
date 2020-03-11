@@ -11,7 +11,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
 
@@ -111,41 +110,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioId = Invariant($"{scenarioName} (comparable test scenario #{scenarioNumber} of {scenariosCount}):");
 
-                    new { scenario.ReferenceObject }.AsTest().Must().NotBeNull(scenarioId);
-
-                    if (scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject != null)
-                    {
-                        new { scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
-                    }
-
-                    if (scenario.ObjectsThatAreLessThanReferenceObject != null)
-                    {
-                        new { scenario.ObjectsThatAreLessThanReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
-                    }
-                    
-                    if (scenario.ObjectsThatAreGreaterThanReferenceObject != null)
-                    {
-                        new { scenario.ObjectsThatAreGreaterThanReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
-                    }
-                    
-                    if (scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject != null)
-                    {
-                        new { scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
-                    }
-
-                    if (scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject != null)
-                    {
-                        new { scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotContainAnyNullElements(scenarioId);
-                    }
-
                     var validatedScenario = new ValidatedComparableTestScenario<T>(
                         scenarioId,
                         scenario.ReferenceObject,
-                        scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject?.ToList() ?? new List<T>(),
-                        scenario.ObjectsThatAreLessThanReferenceObject?.ToList() ?? new List<T>(),
-                        scenario.ObjectsThatAreGreaterThanReferenceObject?.ToList() ?? new List<T>(),
-                        scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject?.ToList() ?? new List<T>(),
-                        scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject?.ToList() ?? new List<object>());
+                        scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject ?? new List<T>(),
+                        scenario.ObjectsThatAreLessThanReferenceObject ?? new List<T>(),
+                        scenario.ObjectsThatAreGreaterThanReferenceObject ?? new List<T>(),
+                        scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject ?? new List<T>(),
+                        scenario.ObjectsThatAreNotOfTheSameTypeAsReferenceObject ?? new List<object>());
 
                     result.Add(validatedScenario);
                 }

@@ -17,5 +17,8 @@
     <file src="ComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ComparableTestScenario{T}.cs" />
     <file src="ComparableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ComparableTestScenarios{T}.cs" />
     <file src="ValidatedComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedComparableTestScenario{T}.cs" />
+    <file src="ConstructorArgumentValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidationTestScenario{T}.cs" />
+    <file src="ConstructorArgumentValidationTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidationTestScenarios{T}.cs" />
+    <file src="ValidatedConstructorArgumentValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedConstructorArgumentValidationTestScenario{T}.cs" />
   </files>
 </package>

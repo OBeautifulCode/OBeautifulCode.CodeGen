@@ -45,11 +45,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             IReadOnlyList<object> objectsThatAreNotOfTheSameTypeAsReferenceObject)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
-            new { referenceObject }.AsTest().Must().NotBeNull();
-            new { objectsThatAreEqualToButNotTheSameAsReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
-            new { objectsThatAreNotEqualToReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
-            new { objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
-            new { objectsThatAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotBeNull().And().NotContainAnyNullElements();
+            new { referenceObject }.AsTest().Must().NotBeNull(id);
+            new { objectsThatAreEqualToButNotTheSameAsReferenceObject }.AsTest().Must().NotBeNull(id).And().NotContainAnyNullElements(id);
+            new { objectsThatAreNotEqualToReferenceObject }.AsTest().Must().NotBeNull(id).And().NotContainAnyNullElements(id);
+            new { objectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotBeNull(id).And().NotContainAnyNullElements(id);
+            new { objectsThatAreNotOfTheSameTypeAsReferenceObject }.AsTest().Must().NotBeNull(id).And().NotContainAnyNullElements(id);
 
             this.Id = id;
             this.ReferenceObject = referenceObject;
