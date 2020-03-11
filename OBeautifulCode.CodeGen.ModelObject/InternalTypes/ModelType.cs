@@ -11,6 +11,7 @@ namespace OBeautifulCode.CodeGen
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
+    using System.Runtime.CompilerServices;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
@@ -44,6 +45,7 @@ namespace OBeautifulCode.CodeGen
             var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false);
             var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: true);
             var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern);
+            var constructor = GetConstructor(type, propertiesOfConcern);
 
             ThrowIfNotSupported(type, propertiesOfConcern);
 
@@ -93,7 +95,7 @@ namespace OBeautifulCode.CodeGen
             this.IsConcrete = (hierarchyKind == HierarchyKind.ConcreteInherited) || (hierarchyKind == HierarchyKind.Standalone);
             this.PropertiesOfConcern = propertiesOfConcern;
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
-            this.Constructors = type.GetConstructors();
+            this.Constructor = constructor;
 
             this.RequiresComparability = requiresComparability;
             this.RequiresDeepCloning = requiresDeepCloning;
@@ -174,9 +176,16 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyCollection<string> AncestorConcreteDerivativesCompilableStrings { get; }
 
         /// <summary>
-        /// Gets the constructors.
+        /// Gets the constructor or null if there is no constructor.
         /// </summary>
-        public IReadOnlyList<ConstructorInfo> Constructors { get; }
+        public ConstructorInfo Constructor { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether <see cref="Constructor"/> is a default constructor.
+        /// </summary>
+        public bool IsDefaultConstructor => this.Constructor == null
+            ? throw new InvalidOperationException("There is no constructor")
+            : this.Constructor.GetParameters().Length == 0;
 
         /// <summary>
         /// Gets the <see cref="HierarchyKind"/> of the model type.
@@ -401,13 +410,6 @@ namespace OBeautifulCode.CodeGen
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
-
-            var getterOnlyProperties = propertiesOfConcern.Where(_ => _.IsGetterOnly).ToList();
-
-            if (getterOnlyProperties.Any())
-            {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following getter-only properties when flattening the hierarchy: {getterOnlyProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
-            }
         }
 
         private static void ThrowIfNotSupported(
@@ -472,9 +474,24 @@ namespace OBeautifulCode.CodeGen
         {
             var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.DeclaredOnly;
 
-            var result = type.GetProperties(bindingFlags).Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, type, _.GetSetMethod(true) == null)).ToList();
+            var properties = type.GetProperties(bindingFlags);
 
-            if ((!declaredOnly) && type.BaseType != typeof(object))
+            var getterOnlyProperties = properties
+                .Where(_ => _.GetSetMethod(true) == null) // no set method
+                .Where(IsAutoProperty) // is an auto-property (e.g. int MyProperty { get; }).  expression body properties are NOT auto-properties
+                .ToList();
+
+            if (getterOnlyProperties.Any())
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following getter-only properties : {getterOnlyProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+            }
+
+            var result = properties
+                .Where(_ => _.GetSetMethod(true) != null) // requires a setter.  based on the logic above, this will filter out expression body properties (e.g. int MyProperty => 5)
+                .Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, type))
+                .ToList();
+
+            if ((!declaredOnly) && (type.BaseType != typeof(object)))
             {
                 // ReSharper disable once ConditionIsAlwaysTrueOrFalse
                 result = new PropertyOfConcern[0]
@@ -482,6 +499,54 @@ namespace OBeautifulCode.CodeGen
                     .Concat(result)
                     .ToList();
             }
+
+            return result;
+        }
+
+        private static ConstructorInfo GetConstructor(
+            Type type,
+            IReadOnlyList<PropertyOfConcern> propertyOfConcerns)
+        {
+            var constructors = type.GetConstructors();
+
+            // no constructors?
+            if (!constructors.Any())
+            {
+                return null;
+            }
+
+            // only has default constructor?
+            if ((constructors.Length == 1) && (constructors.Single().GetParameters().Length == 0))
+            {
+                return constructors.Single();
+            }
+
+            var propertyNames = propertyOfConcerns.Select(_ => _.Name).ToList();
+
+            var constructorsMatchingPropertiesOfConcern =
+                constructors
+                .Where(
+                    _ =>
+                    {
+                        var parameterNames = _.GetParameters().Select(p => p.Name).ToList();
+
+                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(propertyNames, StringComparer.OrdinalIgnoreCase).Any();
+
+                        return foundMatchingConstructor;
+                    })
+                .ToList();
+
+            if (constructorsMatchingPropertiesOfConcern.Count == 0)
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one non-default constructor, but none of the constructors have parameters that match the properties of concern by name: {propertyNames.ToDelimitedString(", ")}"));
+            }
+
+            if (constructorsMatchingPropertiesOfConcern.Count > 1)
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {constructorsMatchingPropertiesOfConcern.Count} constructors that match the properties of concern by name, whereas only 1 was expected."));
+            }
+
+            var result = constructorsMatchingPropertiesOfConcern.Single();
 
             return result;
         }
@@ -696,6 +761,22 @@ namespace OBeautifulCode.CodeGen
             {
                 result = GetConcreteDerivativeTypes(oldestAncestorType).Where(_ => _ != type).ToList();
             }
+
+            return result;
+        }
+
+        private static bool IsAutoProperty(
+            PropertyInfo propertyInfo)
+        {
+            new { propertyInfo }.Must().NotBeNull();
+
+            // see: https://stackoverflow.com/a/60638810/356790
+            var backingFieldName = Invariant($"<{propertyInfo.Name}>k__BackingField");
+
+            // ReSharper disable once PossibleNullReferenceException
+            var backingField = propertyInfo.DeclaringType.GetField(backingFieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+
+            var result = (backingField != null) && (backingField.GetCustomAttribute(typeof(CompilerGeneratedAttribute)) != null);
 
             return result;
         }

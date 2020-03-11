@@ -40,197 +40,195 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            string result = null;
-
-            var constructorWithParameters = modelType.Constructors.SingleOrDefault(_ => _.GetParameters().Length > 0);
-
-            if (constructorWithParameters != null)
+            if ((modelType.Constructor == null) || modelType.IsDefaultConstructor)
             {
-                var testMethods = new List<string>();
+                return null;
+            }
 
-                var parameters = constructorWithParameters.GetParameters();
+            var testMethods = new List<string>();
 
-                foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
+            var parameters = modelType.Constructor.GetParameters();
+
+            foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
+            {
+                var parametersCode = parameters.Select(_ =>
                 {
-                    var parametersCode = parameters.Select(_ =>
+                    var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                    return new MemberCode(_.Name, _.Name == parameter.Name ? "null" : referenceObject);
+                }).ToList();
+
+                var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
+
+                var testMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForArgument)
+                                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                                .Replace(Tokens.ParameterNameToken, parameter.Name)
+                                .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                testMethods.Add(testMethod);
+
+                if (parameter.ParameterType == typeof(string))
+                {
+                    var stringParameterCode = parameters.Select(_ =>
                     {
                         var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                        return new MemberCode(_.Name, _.Name == parameter.Name ? "null" : referenceObject);
+                        return new MemberCode(_.Name, _.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject);
                     }).ToList();
 
-                    var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
+                    objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
 
-                    var testMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForArgument)
-                                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                                    .Replace(Tokens.ParameterNameToken, parameter.Name)
-                                    .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+                    var stringTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForStringArgument)
+                                            .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                                            .Replace(Tokens.ParameterNameToken, parameter.Name)
+                                            .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                    testMethods.Add(testMethod);
+                    testMethods.Add(stringTestMethod);
+                }
 
-                    if (parameter.ParameterType == typeof(string))
+                if (parameter.ParameterType.IsClosedSystemCollectionType() || parameter.ParameterType.IsArray)
+                {
+                    // add test for empty collection or array
+                    var collectionParameterCode = parameters.Select(_ =>
                     {
-                        var stringParameterCode = parameters.Select(_ =>
+                        var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                        return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                    }).ToList();
+
+                    objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
+
+                    var collectionTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForCollectionArgumentThatIsEmpty)
+                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.ParameterNameToken, parameter.Name)
+                        .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                    testMethods.Add(collectionTestMethod);
+
+                    // add test for collection or array containing null element
+                    // we are specifically EXCLUDING nullable types here
+                    var elementType = parameter.ParameterType.IsArray
+                        ? parameter.ParameterType.GetElementType()
+                        : parameter.ParameterType.GetClosedSystemCollectionElementType();
+
+                    // ReSharper disable once PossibleNullReferenceException
+                    if (!elementType.IsValueType)
+                    {
+                        collectionParameterCode = parameters.Select(_ =>
                         {
                             var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                            return new MemberCode(_.Name, _.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject);
-                        }).ToList();
+                            if (_.Name == parameter.Name)
+                            {
+                                referenceObject = Invariant($"new {elementType.ToStringCompilable()}[0].Concat({referenceObject}).Concat(new {elementType.ToStringCompilable()}[] {{ null }}).Concat({referenceObject})");
 
-                        objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
+                                referenceObject = parameter.ParameterType.IsArray
+                                    ? referenceObject + ".ToArray()"
+                                    : referenceObject + ".ToList()";
 
-                        var stringTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForStringArgument)
-                                              .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                                              .Replace(Tokens.ParameterNameToken, parameter.Name)
-                                              .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+                                if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
+                                {
+                                    referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
+                                }
+                            }
 
-                        testMethods.Add(stringTestMethod);
-                    }
-
-                    if (parameter.ParameterType.IsClosedSystemCollectionType() || parameter.ParameterType.IsArray)
-                    {
-                        // add test for empty collection or array
-                        var collectionParameterCode = parameters.Select(_ =>
-                        {
-                            var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
-
-                            return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                            return new MemberCode(_.Name, referenceObject);
                         }).ToList();
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
 
-                        var collectionTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForCollectionArgumentThatIsEmpty)
+                        collectionTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForCollectionArgumentThatContainsNullElement)
                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
                         testMethods.Add(collectionTestMethod);
-
-                        // add test for collection or array containing null element
-                        // we are specifically EXCLUDING nullable types here
-                        var elementType = parameter.ParameterType.IsArray
-                            ? parameter.ParameterType.GetElementType()
-                            : parameter.ParameterType.GetClosedSystemCollectionElementType();
-
-                        // ReSharper disable once PossibleNullReferenceException
-                        if (!elementType.IsValueType)
-                        {
-                            collectionParameterCode = parameters.Select(_ =>
-                            {
-                                var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
-
-                                if (_.Name == parameter.Name)
-                                {
-                                    referenceObject = Invariant($"new {elementType.ToStringCompilable()}[0].Concat({referenceObject}).Concat(new {elementType.ToStringCompilable()}[] {{ null }}).Concat({referenceObject})");
-
-                                    referenceObject = parameter.ParameterType.IsArray
-                                        ? referenceObject + ".ToArray()"
-                                        : referenceObject + ".ToList()";
-
-                                    if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
-                                    {
-                                        referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
-                                    }
-                                }
-
-                                return new MemberCode(_.Name, referenceObject);
-                            }).ToList();
-
-                            objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
-
-                            collectionTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForCollectionArgumentThatContainsNullElement)
-                                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                                .Replace(Tokens.ParameterNameToken, parameter.Name)
-                                .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
-
-                            testMethods.Add(collectionTestMethod);
-                        }
                     }
+                }
 
-                    if (parameter.ParameterType.IsClosedSystemDictionaryType())
+                if (parameter.ParameterType.IsClosedSystemDictionaryType())
+                {
+                    // add test for empty dictionary
+                    var dictionaryParameterCode = parameters.Select(_ =>
                     {
-                        // add test for empty dictionary
-                        var dictionaryParameterCode = parameters.Select(_ =>
+                        var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+
+                        return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                    }).ToList();
+
+                    objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
+
+                    var dictionaryTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForDictionaryArgumentThatIsEmpty)
+                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.ParameterNameToken, parameter.Name)
+                        .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                    testMethods.Add(dictionaryTestMethod);
+
+                    // add test for dictionary containing null value
+                    // we are specifically EXCLUDING nullable types here
+                    var valueType = parameter.ParameterType.GetClosedSystemDictionaryValueType();
+
+                    if (!valueType.IsValueType)
+                    {
+                        dictionaryParameterCode = parameters.Select(_ =>
                         {
                             var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                            return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                            if (_.Name == parameter.Name)
+                            {
+                                referenceObject = "dictionaryWithNullValue";
+
+                                if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))))
+                                {
+                                    referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
+                                }
+                            }
+
+                            return new MemberCode(_.Name, referenceObject);
                         }).ToList();
+
+                        var setDictionaryValueToNullCode = Invariant($"var dictionaryWithNullValue = referenceObject.{parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.ToDictionary(_ => _.Key, _ => _.Value);");
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
 
-                        var dictionaryTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForDictionaryArgumentThatIsEmpty)
+                        dictionaryTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForDictionaryArgumentThatContainsNullValue)
+                            .Replace(Tokens.SetDictionaryValueToNullToken, setDictionaryValueToNullCode)
                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
                         testMethods.Add(dictionaryTestMethod);
-
-                        // add test for dictionary containing null value
-                        // we are specifically EXCLUDING nullable types here
-                        var valueType = parameter.ParameterType.GetClosedSystemDictionaryValueType();
-
-                        if (!valueType.IsValueType)
-                        {
-                            dictionaryParameterCode = parameters.Select(_ =>
-                            {
-                                var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
-
-                                if (_.Name == parameter.Name)
-                                {
-                                    referenceObject = "dictionaryWithNullValue";
-
-                                    if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))))
-                                    {
-                                        referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
-                                    }
-                                }
-
-                                return new MemberCode(_.Name, referenceObject);
-                            }).ToList();
-
-                            var setDictionaryValueToNullCode = Invariant($"var dictionaryWithNullValue = referenceObject.{parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.ToDictionary(_ => _.Key, _ => _.Value);");
-
-                            objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
-
-                            dictionaryTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForDictionaryArgumentThatContainsNullValue)
-                                .Replace(Tokens.SetDictionaryValueToNullToken, setDictionaryValueToNullCode)
-                                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                                .Replace(Tokens.ParameterNameToken, parameter.Name)
-                                .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
-
-                            testMethods.Add(dictionaryTestMethod);
-                        }
                     }
                 }
-
-                foreach (var parameter in parameters)
-                {
-                    var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
-
-                    var newObjectCode = modelType.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 46);
-
-                    var assertPropertyGetterToken = parameter.ParameterType.GenerateObcAssertionsEqualityStatement(
-                        "actual",
-                        "expected",
-                        sameReferenceExpected: true);
-
-                    var testMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.PropertyGetterTestMethod)
-                                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                                    .Replace(Tokens.PropertyNameToken, parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
-                                    .Replace(Tokens.ParameterNameToken,  parameter.Name)
-                                    .Replace(Tokens.AssertPropertyGetterToken,  assertPropertyGetterToken)
-                                    .Replace(Tokens.ConstructObjectToken, newObjectCode);
-
-                    testMethods.Add(testMethod);
-                }
-
-                var constructorTestInflationToken = string.Join(Environment.NewLine + Environment.NewLine, testMethods);
-
-                result = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both)
-                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                    .Replace(Tokens.ConstructorTestsToken, constructorTestInflationToken);
             }
+
+            foreach (var parameter in parameters)
+            {
+                var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
+
+                var newObjectCode = modelType.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 46);
+
+                var assertPropertyGetterToken = parameter.ParameterType.GenerateObcAssertionsEqualityStatement(
+                    "actual",
+                    "expected",
+                    sameReferenceExpected: true);
+
+                var testMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.PropertyGetterTestMethod)
+                                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                                .Replace(Tokens.PropertyNameToken, parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
+                                .Replace(Tokens.ParameterNameToken,  parameter.Name)
+                                .Replace(Tokens.AssertPropertyGetterToken,  assertPropertyGetterToken)
+                                .Replace(Tokens.ConstructObjectToken, newObjectCode);
+
+                testMethods.Add(testMethod);
+            }
+
+            var constructorTestInflationToken = string.Join(Environment.NewLine + Environment.NewLine, testMethods);
+
+            var result = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ConstructorTestsToken, constructorTestInflationToken);
 
             return result;
         }

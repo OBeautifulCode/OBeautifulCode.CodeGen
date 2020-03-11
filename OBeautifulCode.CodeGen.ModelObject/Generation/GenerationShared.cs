@@ -173,46 +173,35 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var parameterPadding = new string(' ', parameterPaddingLength);
 
-            var constructorInfo = modelType
-                .Constructors
-                .SingleOrDefault(
-                    _ =>
-                    {
-                        var parameterNames = _.GetParameters().Select(p => p.Name).ToList();
-
-                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(memberNames, StringComparer.OrdinalIgnoreCase).Any();
-
-                        return foundMatchingConstructor;
-                    });
-
-            if (constructorInfo != null)
+            if ((modelType.Constructor == null) || modelType.IsDefaultConstructor)
             {
-                var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code, StringComparer.OrdinalIgnoreCase);
+                if (memberCode.Any())
+                {
+                    var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
 
-                var parameters = constructorInfo.GetParameters();
+                    var maxCharsInAnyPropertyName = memberNames.Any() ? memberNames.Select(_ => _.Length).Max() : 0;
 
-                var parameterCode =
-                    parameters
-                    .Select(_ => propertyNameToCodeMap[_.Name])
-                    .ToDelimitedString("," + Environment.NewLine + parameterPadding);
+                    var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + modelType.TypeCompilableString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
-            }
-            else if (modelType.PropertiesOfConcern.All(_ => !_.IsGetterOnly))
-            {
-                var curlyBracketPadding = new string(' ', parameterPaddingLength - 4);
-
-                var maxCharsInAnyPropertyName = memberNames.Any() ? memberNames.Select(_ => _.Length).Max() : 0;
-
-                var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
-
-                result = "new " + modelType.TypeCompilableString + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + "," + Environment.NewLine + curlyBracketPadding + "}";
+                    result = "new " + modelType.TypeCompilableString + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + "," + Environment.NewLine + curlyBracketPadding + "}";
+                }
+                else
+                {
+                    result = "new " + modelType.TypeCompilableString + "()";
+                }
             }
             else
             {
-                var propertiesAddIn = string.Join(",", modelType.PropertiesOfConcern.Select(_ => _.Name));
+                var propertyNameToCodeMap = memberCode.ToDictionary(_ => _.Name, _ => _.Code, StringComparer.OrdinalIgnoreCase);
 
-                throw new NotSupportedException("Could not find a constructor to take properties of concern and they are not all settable: " + propertiesAddIn);
+                var parameters = modelType.Constructor.GetParameters();
+
+                var parameterCode =
+                    parameters
+                        .Select(_ => propertyNameToCodeMap[_.Name])
+                        .ToDelimitedString("," + Environment.NewLine + parameterPadding);
+
+                result = "new " + modelType.TypeCompilableString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
             }
 
             return result;

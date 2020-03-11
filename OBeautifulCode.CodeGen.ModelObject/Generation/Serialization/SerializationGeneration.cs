@@ -33,9 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var jsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTestFields);
 
-            var serializationFieldsCodeTemplate = modelType.PropertiesOfConcern.Any(_ => _.IsGetterOnly)
-                ? jsonSnippet
-                : bsonSnippet + Environment.NewLine + Environment.NewLine + jsonSnippet;
+            var serializationFieldsCodeTemplate = bsonSnippet + Environment.NewLine + Environment.NewLine + jsonSnippet;
 
             var result = serializationFieldsCodeTemplate;
 
@@ -60,9 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var jsonTests = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTests);
 
-            var serializationTests = modelType.PropertiesOfConcern.Any(_ => _.IsGetterOnly)
-                ? jsonTests
-                : bsonTests + Environment.NewLine + Environment.NewLine + jsonTests;
+            var serializationTests = bsonTests + Environment.NewLine + Environment.NewLine + jsonTests;
 
             var result = codeTemplate
                 .Replace(Tokens.SerializationTestsToken, serializationTests)

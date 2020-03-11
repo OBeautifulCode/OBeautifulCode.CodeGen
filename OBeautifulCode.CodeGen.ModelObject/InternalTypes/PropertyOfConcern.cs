@@ -21,12 +21,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="propertyType">The type of the property.</param>
         /// <param name="name">The name of the property.</param>
         /// <param name="declaringType">The declaring type.</param>
-        /// <param name="isGetterOnly">A value indicating whether this is a getter-only property.</param>
         public PropertyOfConcern(
             Type propertyType,
             string name,
-            Type declaringType,
-            bool isGetterOnly)
+            Type declaringType)
         {
             new { propertyType }.Must().NotBeNull();
             new { name }.Must().NotBeNullNorWhiteSpace();
@@ -35,7 +33,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this.PropertyType = propertyType;
             this.Name = name;
             this.DeclaringType = declaringType;
-            this.IsGetterOnly = isGetterOnly;
         }
 
         /// <summary>
@@ -52,10 +49,5 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Gets the declaring type.
         /// </summary>
         public Type DeclaringType { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether this is a getter-only property.
-        /// </summary>
-        public bool IsGetterOnly { get; }
     }
 }

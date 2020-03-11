@@ -45,7 +45,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new EquatableTestScenario<MyModelPublicSettersMultilevelGrandchild2B>
                 {
-                    Name = "Code Generated Scenario",
+                    Name = "Default Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
                     ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersMultilevelGrandchild2B[]
                     {
