@@ -17,7 +17,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using static System.FormattableString;
 
     /// <summary>
-    /// Specifies various scenarios for construction argument validation tests.
+    /// Specifies various scenarios for constructor argument validation tests.
     /// </summary>
     /// <typeparam name="T">The type of the object being tested.</typeparam>
 #if !OBeautifulCodeCodeGenRecipesProject

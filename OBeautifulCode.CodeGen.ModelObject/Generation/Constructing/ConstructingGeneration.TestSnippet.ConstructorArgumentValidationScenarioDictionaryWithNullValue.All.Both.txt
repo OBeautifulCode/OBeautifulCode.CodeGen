@@ -1,7 +1,7 @@
 ﻿            .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<[model-type-name-here]>
                 {
-                    Name = "Throw ArgumentException When Parameter '[parameter-name-here]' Contains a Key-Value Pair With a Null Value Scenario",
+                    Name = "constructor should throw ArgumentException when parameter '[parameter-name-here]' contains a key-value pair with a null value scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<[model-type-name-here]>();
