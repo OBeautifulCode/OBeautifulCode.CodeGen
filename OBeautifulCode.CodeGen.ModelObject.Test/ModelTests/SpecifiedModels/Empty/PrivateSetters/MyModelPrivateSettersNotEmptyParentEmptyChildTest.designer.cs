@@ -43,7 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersNotEmptyParentEmptyChild>
                 {
-                    Name = "Throw ArgumentNullException When Parameter 'parentReadOnlyDictionaryOfStringString' is Null Scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryOfStringString' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<MyModelPrivateSettersNotEmptyParentEmptyChild>();
@@ -59,7 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersNotEmptyParentEmptyChild>
                 {
-                    Name = "Throw ArgumentException When Parameter 'parentReadOnlyDictionaryOfStringString' is an Empty Dictionary Scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryOfStringString' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<MyModelPrivateSettersNotEmptyParentEmptyChild>();
@@ -75,7 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersNotEmptyParentEmptyChild>
                 {
-                    Name = "Throw ArgumentException When Parameter 'parentReadOnlyDictionaryOfStringString' Contains a Key-Value Pair With a Null Value Scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryOfStringString' contains a key-value pair with a null value scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<MyModelPrivateSettersNotEmptyParentEmptyChild>();
