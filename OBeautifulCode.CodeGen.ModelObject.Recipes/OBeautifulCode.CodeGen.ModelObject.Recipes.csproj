@@ -85,7 +85,7 @@
     <Compile Include="EquatableTestScenarios{T}.cs" />
     <Compile Include="ComparableTestScenario{T}.cs" />
     <Compile Include="ValidatedComparableTestScenario{T}.cs" />
-    <Compile Include="ValidatedConstructorArgumentValidationScenario{T}.cs" />
+    <Compile Include="ValidatedConstructorArgumentValidationTestScenario{T}.cs" />
     <Compile Include="ValidatedEquatableTestScenario{T}.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EquatableTestScenario{T}.cs" />
