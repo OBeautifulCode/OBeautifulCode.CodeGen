@@ -17,7 +17,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         static MyModelPrivateSettersMultilevelGrandchild1ATest()
         {
             ConstructorArgumentValidationTestScenarios.AddScenario(
-                ConstructorArgumentValidationTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>.AlwaysPassingScenario);
+                ConstructorArgumentValidationTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>.ConstructorCannotThrowScenario);
 
             ComparableTestScenarios.AddScenario(new ComparableTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>
             {

@@ -26,7 +26,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     class ConstructorArgumentValidationTestScenario<T>
         where T : class
     {
-        private const string AlwaysPassingScenarioExceptionMessage = "Thrown by ConstructionFunc of a constructor argument validation test scenario that is guaranteed to pass because the ExpectedExceptionType and ExpectedExceptionMessageEquals are set to the type of this exception and this message, respectively.";
+        private const string ConstructorCannotThrowExceptionMessage = "Thrown by ConstructionFunc for a constructor argument validation test scenario that is guaranteed to pass because the ExpectedExceptionType and ExpectedExceptionMessageEquals are set to the type of this exception and this message, respectively.";
 
         /// <summary>
         /// Gets or sets the name of the scenario.
@@ -56,15 +56,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string ExpectedExceptionMessageEquals { get; set; }
 
         /// <summary>
-        /// Gets a scenario that will always pass.
+        /// Gets a scenario to use when the constructor cannot throw.
         /// </summary>
-        public static ConstructorArgumentValidationTestScenario<T> AlwaysPassingScenario =>
+        public static ConstructorArgumentValidationTestScenario<T> ConstructorCannotThrowScenario =>
             new ConstructorArgumentValidationTestScenario<T>
             {
-                Name = "Always Passing Scenario",
-                ConstructionFunc = () => throw new NotSupportedException(AlwaysPassingScenarioExceptionMessage),
+                Name = "constructor cannot throw scenario",
+                ConstructionFunc = () => throw new NotSupportedException(ConstructorCannotThrowExceptionMessage),
                 ExpectedExceptionType = typeof(NotSupportedException),
-                ExpectedExceptionMessageEquals = AlwaysPassingScenarioExceptionMessage,
+                ExpectedExceptionMessageEquals = ConstructorCannotThrowExceptionMessage,
             };
     }
 }
