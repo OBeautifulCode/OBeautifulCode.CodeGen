@@ -99,7 +99,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).  If there are no test scenarios, then call ConstructorArgumentValidationTestScenarios.AddScenario(ConstructorArgumentValidationTestScenario<T>.AlwaysPassingScenario).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).  If there are no test scenarios, then call ConstructorArgumentValidationTestScenarios.AddScenario(ConstructorArgumentValidationTestScenario<T>.ConstructorCannotThrowScenario).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedConstructorArgumentValidationTestScenario<T>>();
 
