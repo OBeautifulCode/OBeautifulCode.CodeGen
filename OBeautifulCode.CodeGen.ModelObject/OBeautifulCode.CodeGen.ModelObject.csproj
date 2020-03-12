@@ -159,13 +159,7 @@
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.Test.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForStringArgument.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForCollectionArgumentThatIsEmpty.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForCollectionArgumentThatContainsNullElement.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForDictionaryArgumentThatIsEmpty.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForDictionaryArgumentThatContainsNullValue.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.PropertyGetterTestMethod.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestMethodForArgument.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Generated.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Declared.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Abstract.Generated.txt" />
@@ -204,6 +198,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioDictionaryWithNullValue.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEmptyDictionary.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEmptyEnumerable.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEnumerableWithNullElement.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioNullObject.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioWhiteSpaceString.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationTestFields.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Concrete.Generated.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

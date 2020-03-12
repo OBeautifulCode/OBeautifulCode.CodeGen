@@ -32,34 +32,39 @@ namespace OBeautifulCode.CodeGen.ModelObject
         CompareToForRelativeSortOrder,
 
         /// <summary>
-        /// A code snippet for a constructor argument test method.
+        /// A code snippet for constructor argument validation test fields.
         /// </summary>
-        ConstructorTestMethodForArgument,
+        ConstructorArgumentValidationTestFields,
 
         /// <summary>
-        /// A code snippet for a constructor string argument test method.
+        /// A code snippet for a constructor argument validation scenario that tests a null argument.
         /// </summary>
-        ConstructorTestMethodForStringArgument,
+        ConstructorArgumentValidationScenarioNullObject,
 
         /// <summary>
-        /// A code snippet for a constructor collection is empty argument test method.
+        /// A code snippet for a constructor argument validation scenario that tests a white space string.
         /// </summary>
-        ConstructorTestMethodForCollectionArgumentThatIsEmpty,
+        ConstructorArgumentValidationScenarioWhiteSpaceString,
 
         /// <summary>
-        /// A code snippet for a constructor collection contains null element argument test method.
+        /// A code snippet for a constructor argument validation scenario that tests an empty enumerable.
         /// </summary>
-        ConstructorTestMethodForCollectionArgumentThatContainsNullElement,
+        ConstructorArgumentValidationScenarioEmptyEnumerable,
 
         /// <summary>
-        /// A code snippet for a constructor dictionary that is empty argument test method.
+        /// A code snippet for a constructor argument validation scenario that tests an enumerable with a null element.
         /// </summary>
-        ConstructorTestMethodForDictionaryArgumentThatIsEmpty,
+        ConstructorArgumentValidationScenarioEnumerableWithNullElement,
 
         /// <summary>
-        /// A code snippet for a constructor dictionary that contains null value argument test method.
+        /// A code snippet for a constructor argument validation scenario that tests an empty dictionary.
         /// </summary>
-        ConstructorTestMethodForDictionaryArgumentThatContainsNullValue,
+        ConstructorArgumentValidationScenarioEmptyDictionary,
+
+        /// <summary>
+        /// A code snippet for a constructor argument validation scenario that tests a dictionary with a null value.
+        /// </summary>
+        ConstructorArgumentValidationScenarioDictionaryWithNullValue,
 
         /// <summary>
         /// A code snippet for a property getter test method.

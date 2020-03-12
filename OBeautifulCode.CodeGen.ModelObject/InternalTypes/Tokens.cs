@@ -92,6 +92,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ConstructorTestsToken = "[constructor-tests-here]";
 
         /// <summary>
+        /// The constructor argument validation test scenarios.
+        /// </summary>
+        public const string ConstructorArgumentValidationTestScenariosToken = "[constructor-argument-validation-test-scenarios-here]";
+
+        /// <summary>
         /// Constructs an object.
         /// </summary>
         public const string ConstructObjectToken = "[construct-object-here]";

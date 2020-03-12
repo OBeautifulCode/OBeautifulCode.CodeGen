@@ -11,8 +11,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System.Collections.Generic;
 
-    using static System.FormattableString;
-
     /// <summary>
     /// Specifies a scenario for equality tests.
     /// </summary>

@@ -13,6 +13,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using System.Collections.Generic;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
+
+    using static System.FormattableString;
 
     /// <summary>
     /// Specifies a scenario for construction argument validation tests.
@@ -45,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
             new { constructionFunc }.AsTest().Must().NotBeNull(id);
-            new { expectedExceptionType }.AsTest().Must().NotBeNull(id).And().BeAssignableToType<Exception>(id);
+            expectedExceptionType.IsAssignableTo(typeof(Exception)).AsTest(Invariant($"{nameof(expectedExceptionType)}.{nameof(TypeExtensions.IsAssignableTo)}(typeof({nameof(Exception)}))")).Must().BeTrue();
             
             if (expectedExceptionMessageContains != null)
             {

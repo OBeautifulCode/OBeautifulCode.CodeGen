@@ -12,8 +12,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using System;
     using System.Collections.Generic;
 
-    using static System.FormattableString;
-
     /// <summary>
     /// Specifies a scenario for construction argument validation tests.
     /// </summary>
@@ -28,6 +26,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     class ConstructorArgumentValidationTestScenario<T>
         where T : class
     {
+        private const string AlwaysPassingScenarioExceptionMessage = "Thrown by ConstructionFunc of a constructor argument validation test scenario that is guaranteed to pass because the ExpectedExceptionType and ExpectedExceptionMessageEquals are set to the type of this exception and this message, respectively.";
+
         /// <summary>
         /// Gets or sets the name of the scenario.
         /// </summary>
@@ -54,5 +54,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// If the full message is not known, leave null and set <see cref="ExpectedExceptionMessageContains"/>.
         /// </summary>
         public string ExpectedExceptionMessageEquals { get; set; }
+
+        /// <summary>
+        /// Gets a scenario that will always pass.
+        /// </summary>
+        public static ConstructorArgumentValidationTestScenario<T> AlwaysPassingScenario =>
+            new ConstructorArgumentValidationTestScenario<T>
+            {
+                Name = "Always Passing Scenario",
+                ConstructionFunc = () => throw new NotSupportedException(AlwaysPassingScenarioExceptionMessage),
+                ExpectedExceptionType = typeof(NotSupportedException),
+                ExpectedExceptionMessageEquals = AlwaysPassingScenarioExceptionMessage,
+            };
     }
 }

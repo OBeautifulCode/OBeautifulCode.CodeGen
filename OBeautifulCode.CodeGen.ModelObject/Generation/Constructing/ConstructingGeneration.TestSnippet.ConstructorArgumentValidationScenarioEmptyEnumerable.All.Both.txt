@@ -1,0 +1,15 @@
+﻿            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-here]>
+                {
+                    Name = "Throw ArgumentException When Parameter '[parameter-name-here]' is an Empty Enumerable Scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<[model-type-name-here]>();
+
+                        var result = [construct-object-here];
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "is an empty enumerable" },
+                })

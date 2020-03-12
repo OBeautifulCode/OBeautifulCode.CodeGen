@@ -39,6 +39,62 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
+        private static readonly ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild>()
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                {
+                    Name = "Throw ArgumentNullException When Parameter 'childReadOnlyDictionaryOfStringString' is Null Scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+
+                        var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
+                                  null);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                {
+                    Name = "Throw ArgumentException When Parameter 'childReadOnlyDictionaryOfStringString' is an Empty Dictionary Scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+
+                        var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
+                                  new Dictionary<string, string>());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "is an empty dictionary" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                {
+                    Name = "Throw ArgumentException When Parameter 'childReadOnlyDictionaryOfStringString' Contains a Key-Value Pair With a Null Value Scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+
+                        var dictionaryWithNullValue = referenceObject.ChildReadOnlyDictionaryOfStringString.ToDictionary(_ => _.Key, _ => _.Value);
+
+                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
+
+                        dictionaryWithNullValue[randomKey] = null;
+
+                        var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
+                                  dictionaryWithNullValue);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "contains at least one key-value pair with a null value" },
+                });
+
         private static readonly MyModelPrivateSettersEmptyParentNotEmptyChild ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
 
         private static readonly EquatableTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild>()
@@ -156,84 +212,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void Constructor___Should_throw_ArgumentNullException___When_parameter_childReadOnlyDictionaryOfStringString_is_null()
+            public static void Constructor___Should_throw___When_parameters_are_not_valid()
             {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+                var scenarios = ConstructorArgumentValidationTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual = Record.Exception(
-                    () => new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                  null));
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = Record.Exception(scenario.ConstructionFunc);
 
-                // Assert
-                actual.AsTest().Must().BeOfType<ArgumentNullException>();
-                actual.Message.AsTest().Must().ContainString("childReadOnlyDictionaryOfStringString");
-            }
+                    // Assert
+                    actual.AsTest().Must().BeOfType(scenario.ExpectedExceptionType, because: scenario.Id);
 
-            [Fact]
-            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void Constructor___Should_throw_ArgumentException___When_parameter_childReadOnlyDictionaryOfStringString_is_empty()
-            {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+                    foreach(var expected in scenario.ExpectedExceptionMessageContains ?? new List<string>())
+                    {
+                        actual.Message.AsTest().Must().ContainString(expected, because: scenario.Id);
+                    }
 
-                // Act
-                var actual = Record.Exception(
-                    () => new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                  new Dictionary<string, string>()));
-
-                // Assert
-                actual.AsTest().Must().BeOfType<ArgumentException>();
-                actual.Message.AsTest().Must().ContainString("childReadOnlyDictionaryOfStringString");
-                actual.Message.AsTest().Must().ContainString("is an empty dictionary");
-            }
-
-            [Fact]
-            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void Constructor___Should_throw_ArgumentException___When_parameter_childReadOnlyDictionaryOfStringString_contains_a_null_value()
-            {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
-
-                var dictionaryWithNullValue = referenceObject.ChildReadOnlyDictionaryOfStringString.ToDictionary(_ => _.Key, _ => _.Value);
-                var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
-                dictionaryWithNullValue[randomKey] = null;
-
-                // Act
-                var actual = Record.Exception(
-                    () => new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                  dictionaryWithNullValue));
-
-                // Assert
-                actual.AsTest().Must().BeOfType<ArgumentException>();
-                actual.Message.AsTest().Must().ContainString("childReadOnlyDictionaryOfStringString");
-                actual.Message.AsTest().Must().ContainString("contains at least one key-value pair with a null value");
+                    if (scenario.ExpectedExceptionMessageEquals != null)
+                    {
+                        actual.Message.AsTest().Must().BeEqualTo(scenario.ExpectedExceptionMessageEquals, because: scenario.Id);
+                    }
+                }
             }
 
             [Fact]

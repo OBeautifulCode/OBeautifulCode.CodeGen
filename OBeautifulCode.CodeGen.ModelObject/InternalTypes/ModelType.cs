@@ -45,7 +45,7 @@ namespace OBeautifulCode.CodeGen
             var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false);
             var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: true);
             var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern);
-            var constructor = GetConstructor(type, propertiesOfConcern);
+            var constructor = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern);
 
             ThrowIfNotSupported(type, propertiesOfConcern);
 
@@ -503,7 +503,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private static ConstructorInfo GetConstructor(
+        private static ConstructorInfo GetConstructorAndThrowIfNotSupported(
             Type type,
             IReadOnlyList<PropertyOfConcern> propertyOfConcerns)
         {
@@ -513,6 +513,11 @@ namespace OBeautifulCode.CodeGen
             if (!constructors.Any())
             {
                 return null;
+            }
+
+            if (type.IsAbstract)
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one constructor, but the class is abstract.  Abstract classes should not have constructors."));
             }
 
             // only has default constructor?

@@ -35,7 +35,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// </returns>
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
-        public static string GenerateConstructorTestMethods(
+        public static string GenerateConstructorTestFields(
             this ModelType modelType)
         {
             new { modelType }.AsArg().Must().NotBeNull();
@@ -45,7 +45,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var testMethods = new List<string>();
+            var scenarios = new List<string>();
 
             var parameters = modelType.Constructor.GetParameters();
 
@@ -60,12 +60,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 34);
 
-                var testMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForArgument)
+                var scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
                                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                                 .Replace(Tokens.ParameterNameToken, parameter.Name)
                                 .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                testMethods.Add(testMethod);
+                scenarios.Add(scenario);
 
                 if (parameter.ParameterType == typeof(string))
                 {
@@ -78,12 +78,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 34);
 
-                    var stringTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForStringArgument)
+                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioWhiteSpaceString)
                                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                    testMethods.Add(stringTestMethod);
+                    scenarios.Add(scenario);
                 }
 
                 if (parameter.ParameterType.IsClosedSystemCollectionType() || parameter.ParameterType.IsArray)
@@ -98,12 +98,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
 
-                    var collectionTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForCollectionArgumentThatIsEmpty)
+                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyEnumerable)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
                         .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                    testMethods.Add(collectionTestMethod);
+                    scenarios.Add(scenario);
 
                     // add test for collection or array containing null element
                     // we are specifically EXCLUDING nullable types here
@@ -137,12 +137,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 34);
 
-                        collectionTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForCollectionArgumentThatContainsNullElement)
+                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEnumerableWithNullElement)
                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                        testMethods.Add(collectionTestMethod);
+                        scenarios.Add(scenario);
                     }
                 }
 
@@ -158,12 +158,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
 
-                    var dictionaryTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForDictionaryArgumentThatIsEmpty)
+                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyDictionary)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
                         .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                    testMethods.Add(dictionaryTestMethod);
+                    scenarios.Add(scenario);
 
                     // add test for dictionary containing null value
                     // we are specifically EXCLUDING nullable types here
@@ -192,16 +192,48 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 34);
 
-                        dictionaryTestMethod = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestMethodForDictionaryArgumentThatContainsNullValue)
+                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioDictionaryWithNullValue)
                             .Replace(Tokens.SetDictionaryValueToNullToken, setDictionaryValueToNullCode)
                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
-                        testMethods.Add(dictionaryTestMethod);
+                        scenarios.Add(scenario);
                     }
                 }
             }
+
+            var scenariosCode = scenarios.Any() ? Environment.NewLine + string.Join(Environment.NewLine, scenarios) : string.Empty;
+
+            var result = typeof(ConstructingGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationTestFields)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ConstructorArgumentValidationTestScenariosToken, scenariosCode);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates test methods that test a model's constructor.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated test methods that test a model's constructor.
+        /// </returns>
+        [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
+        public static string GenerateConstructorTestMethods(
+            this ModelType modelType)
+        {
+            new { modelType }.AsArg().Must().NotBeNull();
+
+            if ((modelType.Constructor == null) || modelType.IsDefaultConstructor)
+            {
+                return null;
+            }
+
+            var parameters = modelType.Constructor.GetParameters();
+
+            var testMethods = new List<string>();
 
             foreach (var parameter in parameters)
             {

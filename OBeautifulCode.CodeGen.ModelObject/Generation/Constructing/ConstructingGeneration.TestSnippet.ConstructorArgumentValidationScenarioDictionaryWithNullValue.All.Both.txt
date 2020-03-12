@@ -1,0 +1,21 @@
+﻿            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-here]>
+                {
+                    Name = "Throw ArgumentException When Parameter '[parameter-name-here]' Contains a Key-Value Pair With a Null Value Scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<[model-type-name-here]>();
+
+                        [set-dictionary-value-to-null-here]
+
+                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
+
+                        dictionaryWithNullValue[randomKey] = null;
+
+                        var result = [construct-object-here];
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "contains at least one key-value pair with a null value" },
+                })
