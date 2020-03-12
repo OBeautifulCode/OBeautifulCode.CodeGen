@@ -306,8 +306,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                                         {
                                             assert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
                                                 Invariant($"actual.{_.Name}"),
-                                                Invariant($"referenceObject.{_.Name}"),
-                                                sameReferenceExpected: false);
+                                                Invariant($"referenceObject.{_.Name}"));
                                         }
                                         else
                                         {
@@ -318,8 +317,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                                     {
                                         assert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
                                             Invariant($"actual.{_.Name}"),
-                                            Invariant($"systemUnderTest.{_.Name}"),
-                                            sameReferenceExpected: false);
+                                            Invariant($"systemUnderTest.{_.Name}"));
 
                                         if ((!_.PropertyType.IsValueType) && (_.PropertyType != typeof(string)))
                                         {

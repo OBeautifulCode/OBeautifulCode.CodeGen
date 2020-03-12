@@ -87,14 +87,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ToStringStatementToken = "[to-string-statement-here]";
 
         /// <summary>
-        /// The constructor tests.
-        /// </summary>
-        public const string ConstructorTestsToken = "[constructor-tests-here]";
-
-        /// <summary>
         /// The constructor argument validation test scenarios.
         /// </summary>
         public const string ConstructorArgumentValidationTestScenariosToken = "[constructor-argument-validation-test-scenarios-here]";
+
+        /// <summary>
+        /// The constructor property assignment test scenarios.
+        /// </summary>
+        public const string ConstructorPropertyAssignmentTestScenariosToken = "[constructor-property-assignment-test-scenarios-here]";
 
         /// <summary>
         /// Constructs an object.
@@ -105,11 +105,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Sets a dictionary value to null.
         /// </summary>
         public const string SetDictionaryValueToNullToken = "[set-dictionary-value-to-null-here]";
-
-        /// <summary>
-        /// Asserts a property getter.
-        /// </summary>
-        public const string AssertPropertyGetterToken = "[assert-property-getter-here]";
 
         /// <summary>
         /// Asserts deep cloning.

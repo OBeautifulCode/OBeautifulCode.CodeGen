@@ -20,5 +20,9 @@
     <file src="ConstructorArgumentValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidationTestScenario{T}.cs" />
     <file src="ConstructorArgumentValidationTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidationTestScenarios{T}.cs" />
     <file src="ValidatedConstructorArgumentValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedConstructorArgumentValidationTestScenario{T}.cs" />
+    <file src="ConstructorPropertyAssignmentTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignmentTestScenario{T}.cs" />
+    <file src="ConstructorPropertyAssignmentTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignmentTestScenarios{T}.cs" />
+    <file src="ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" />
+    <file src="SystemUnderTestExpectedPropertyValue{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SystemUnderTestExpectedPropertyValue{T}.cs" />
   </files>
 </package>

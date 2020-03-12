@@ -1,0 +1,18 @@
+﻿            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<[model-type-name-here]>
+                {
+                    Name = "[property-name-here] should return same '[parameter-name-here]' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<[model-type-name-here]>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<[model-type-name-here]>
+                        {
+                            SystemUnderTest = [construct-object-here],
+                            ExpectedPropertyValue = referenceObject.[property-name-here],
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.[property-name-here],
+                })

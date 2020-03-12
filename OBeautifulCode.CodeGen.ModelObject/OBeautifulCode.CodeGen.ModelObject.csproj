@@ -159,7 +159,6 @@
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.Test.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.PropertyGetterTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Generated.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Declared.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Abstract.Generated.txt" />
@@ -198,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorParameterAssignmentScenario.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioDictionaryWithNullValue.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEmptyDictionary.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEmptyEnumerable.All.Both.txt" />

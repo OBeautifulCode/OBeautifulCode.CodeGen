@@ -27,5 +27,32 @@
                 }
             }
 
-[constructor-tests-here]
+            [Fact]
+[test-method-code-analysis-suppressions]
+            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
+            public static void Properties___Should_be_assigned_by_constructor_to_expected_value___When_getting()
+            {
+                var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
+
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
+
+                    // Act
+                    var actual = scenario.PropertyGetterFunc(systemUnderTestAndExpected.SystemUnderTest);
+
+                    // Assert
+                    if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
+                    {
+                        actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                    else
+                    {
+                        actual.AsTest().Must().BeSameReferenceAs(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                }
+            }
         }

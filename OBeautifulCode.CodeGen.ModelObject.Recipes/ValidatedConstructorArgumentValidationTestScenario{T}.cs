@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         where T : class
     {
         /// <summary>
-        /// 
+        /// Initializes a new instance of the <see cref="ValidatedConstructorArgumentValidationTestScenario{T}"/> class.
         /// </summary>
         /// <param name="id">The identifier of the scenario.</param>
         /// <param name="constructionFunc">A func that constructs the object</param>

@@ -142,26 +142,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="type">The type.</param>
         /// <param name="actual">The actual value.</param>
         /// <param name="expected">The expected value.</param>
-        /// <param name="sameReferenceExpected">A value indicating whether the same reference expected for reference types.</param>
         /// <returns>
         /// Generated assertion equality statement.
         /// </returns>
         public static string GenerateObcAssertionsEqualityStatement(
             this Type type,
             string actual,
-            string expected,
-            bool sameReferenceExpected)
+            string expected)
         {
-            string result;
-
-            if ((!type.IsValueType) && sameReferenceExpected)
-            {
-                result = Invariant($"{actual}.AsTest().Must().BeSameReferenceAs({expected});");
-            }
-            else
-            {
-                result = Invariant($"{actual}.AsTest().Must().BeEqualTo({expected});");
-            }
+            var result = Invariant($"{actual}.AsTest().Must().BeEqualTo({expected});");
 
             return result;
         }

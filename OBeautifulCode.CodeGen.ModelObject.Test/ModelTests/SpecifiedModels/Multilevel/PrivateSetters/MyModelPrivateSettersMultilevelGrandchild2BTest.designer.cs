@@ -41,6 +41,71 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B>();
 
+        private static readonly ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B>()
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<MyModelPrivateSettersMultilevelGrandchild2B>
+                {
+                    Name = "ParentInt should return same 'parentInt' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<MyModelPrivateSettersMultilevelGrandchild2B>
+                        {
+                            SystemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
+                                                      referenceObject.ParentInt,
+                                                      referenceObject.Child2Int,
+                                                      referenceObject.Grandchild2BInt),
+                            ExpectedPropertyValue = referenceObject.ParentInt,
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ParentInt,
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<MyModelPrivateSettersMultilevelGrandchild2B>
+                {
+                    Name = "Child2Int should return same 'child2Int' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<MyModelPrivateSettersMultilevelGrandchild2B>
+                        {
+                            SystemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
+                                                      referenceObject.ParentInt,
+                                                      referenceObject.Child2Int,
+                                                      referenceObject.Grandchild2BInt),
+                            ExpectedPropertyValue = referenceObject.Child2Int,
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.Child2Int,
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<MyModelPrivateSettersMultilevelGrandchild2B>
+                {
+                    Name = "Grandchild2BInt should return same 'grandchild2BInt' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<MyModelPrivateSettersMultilevelGrandchild2B>
+                        {
+                            SystemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
+                                                      referenceObject.ParentInt,
+                                                      referenceObject.Child2Int,
+                                                      referenceObject.Grandchild2BInt),
+                            ExpectedPropertyValue = referenceObject.Grandchild2BInt,
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.Grandchild2BInt,
+                });
+
         private static readonly MyModelPrivateSettersMultilevelGrandchild2B ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
 
         private static readonly EquatableTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B>()
@@ -246,89 +311,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void ParentInt___Should_return_same_parentInt_parameter_passed_to_constructor___When_getting()
+            public static void Properties___Should_be_assigned_by_constructor_to_expected_value___When_getting()
             {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
+                var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
 
-                var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
-                                              referenceObject.ParentInt,
-                                              referenceObject.Child2Int,
-                                              referenceObject.Grandchild2BInt);
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
 
-                var expected = referenceObject.ParentInt;
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
 
-                // Act
-                var actual = systemUnderTest.ParentInt;
+                    // Act
+                    var actual = scenario.PropertyGetterFunc(systemUnderTestAndExpected.SystemUnderTest);
 
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
-            }
-
-            [Fact]
-            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void Child2Int___Should_return_same_child2Int_parameter_passed_to_constructor___When_getting()
-            {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
-
-                var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
-                                              referenceObject.ParentInt,
-                                              referenceObject.Child2Int,
-                                              referenceObject.Grandchild2BInt);
-
-                var expected = referenceObject.Child2Int;
-
-                // Act
-                var actual = systemUnderTest.Child2Int;
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
-            }
-
-            [Fact]
-            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void Grandchild2BInt___Should_return_same_grandchild2BInt_parameter_passed_to_constructor___When_getting()
-            {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
-
-                var systemUnderTest = new MyModelPrivateSettersMultilevelGrandchild2B(
-                                              referenceObject.ParentInt,
-                                              referenceObject.Child2Int,
-                                              referenceObject.Grandchild2BInt);
-
-                var expected = referenceObject.Grandchild2BInt;
-
-                // Act
-                var actual = systemUnderTest.Grandchild2BInt;
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                    // Assert
+                    if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
+                    {
+                        actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                    else
+                    {
+                        actual.AsTest().Must().BeSameReferenceAs(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                }
             }
         }
 

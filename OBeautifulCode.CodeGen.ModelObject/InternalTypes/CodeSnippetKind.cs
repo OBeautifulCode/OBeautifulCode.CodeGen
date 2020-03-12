@@ -67,9 +67,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ConstructorArgumentValidationScenarioDictionaryWithNullValue,
 
         /// <summary>
-        /// A code snippet for a property getter test method.
+        /// A code snippet for a constructor property assignment scenario.
         /// </summary>
-        PropertyGetterTestMethod,
+        ConstructorParameterAssignmentScenario,
 
         /// <summary>
         /// A code snippet for a DeepCloneWith test method.

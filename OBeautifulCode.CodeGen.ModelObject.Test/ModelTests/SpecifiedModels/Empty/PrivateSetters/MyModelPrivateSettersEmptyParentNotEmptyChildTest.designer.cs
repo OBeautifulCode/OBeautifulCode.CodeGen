@@ -49,7 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
 
                         var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                  null);
+                                             null);
 
                         return result;
                     },
@@ -65,7 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
 
                         var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                  new Dictionary<string, string>());
+                                             new Dictionary<string, string>());
 
                         return result;
                     },
@@ -87,12 +87,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         dictionaryWithNullValue[randomKey] = null;
 
                         var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                  dictionaryWithNullValue);
+                                             dictionaryWithNullValue);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "contains at least one key-value pair with a null value" },
+                });
+
+        private static readonly ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild>()
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                {
+                    Name = "ChildReadOnlyDictionaryOfStringString should return same 'childReadOnlyDictionaryOfStringString' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                        {
+                            SystemUnderTest = new MyModelPrivateSettersEmptyParentNotEmptyChild(
+                                                      referenceObject.ChildReadOnlyDictionaryOfStringString),
+                            ExpectedPropertyValue = referenceObject.ChildReadOnlyDictionaryOfStringString,
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ChildReadOnlyDictionaryOfStringString,
                 });
 
         private static readonly MyModelPrivateSettersEmptyParentNotEmptyChild ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
@@ -250,21 +271,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
-            public static void ChildReadOnlyDictionaryOfStringString___Should_return_same_childReadOnlyDictionaryOfStringString_parameter_passed_to_constructor___When_getting()
+            public static void Properties___Should_be_assigned_by_constructor_to_expected_value___When_getting()
             {
-                // Arrange
-                var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+                var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
 
-                var systemUnderTest = new MyModelPrivateSettersEmptyParentNotEmptyChild(
-                                              referenceObject.ChildReadOnlyDictionaryOfStringString);
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
 
-                var expected = referenceObject.ChildReadOnlyDictionaryOfStringString;
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
 
-                // Act
-                var actual = systemUnderTest.ChildReadOnlyDictionaryOfStringString;
+                    // Act
+                    var actual = scenario.PropertyGetterFunc(systemUnderTestAndExpected.SystemUnderTest);
 
-                // Assert
-                actual.AsTest().Must().BeSameReferenceAs(expected);
+                    // Assert
+                    if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
+                    {
+                        actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                    else
+                    {
+                        actual.AsTest().Must().BeSameReferenceAs(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                }
             }
         }
 
