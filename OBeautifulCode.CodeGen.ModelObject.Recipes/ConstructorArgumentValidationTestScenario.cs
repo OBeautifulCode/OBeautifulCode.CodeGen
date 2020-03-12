@@ -56,7 +56,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string ExpectedExceptionMessageEquals { get; set; }
 
         /// <summary>
-        /// Gets a scenario to use when the constructor cannot throw.
+        /// Gets a scenario to use when the constructor cannot throw or you need to force the consuming unit test to pass.
         /// </summary>
         public static ConstructorArgumentValidationTestScenario<T> ConstructorCannotThrowScenario =>
             new ConstructorArgumentValidationTestScenario<T>
