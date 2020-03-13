@@ -26,7 +26,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     class ConstructorArgumentValidationTestScenario<T>
         where T : class
     {
-        private const string ConstructorCannotThrowExceptionMessage = "Thrown by ConstructionFunc for a constructor argument validation test scenario that is guaranteed to pass because the ExpectedExceptionType and ExpectedExceptionMessageEquals are set to the type of this exception and this message, respectively.";
+        private const string AlwaysPassingExceptionMessage = "Thrown by ConstructionFunc for a constructor argument validation test scenario that is guaranteed to pass because the ExpectedExceptionType and ExpectedExceptionMessageEquals are set to the type of this exception and this message, respectively.";
 
         /// <summary>
         /// Gets or sets the name of the scenario.
@@ -56,15 +56,27 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string ExpectedExceptionMessageEquals { get; set; }
 
         /// <summary>
-        /// Gets a scenario to use when the constructor cannot throw or you need to force the consuming unit test to pass.
+        /// Gets a scenario to use when the constructor cannot throw.
         /// </summary>
         public static ConstructorArgumentValidationTestScenario<T> ConstructorCannotThrowScenario =>
             new ConstructorArgumentValidationTestScenario<T>
             {
-                Name = "constructor cannot throw scenario",
-                ConstructionFunc = () => throw new NotSupportedException(ConstructorCannotThrowExceptionMessage),
+                Name = "constructor cannot throw",
+                ConstructionFunc = () => throw new NotSupportedException(AlwaysPassingExceptionMessage),
                 ExpectedExceptionType = typeof(NotSupportedException),
-                ExpectedExceptionMessageEquals = ConstructorCannotThrowExceptionMessage,
+                ExpectedExceptionMessageEquals = AlwaysPassingExceptionMessage,
+            };
+
+        /// <summary>
+        /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
+        /// </summary>
+        public static ConstructorArgumentValidationTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>
+            new ConstructorArgumentValidationTestScenario<T>
+            {
+                Name = "force generated unit tests to pass, i'll write my own",
+                ConstructionFunc = () => throw new NotSupportedException(AlwaysPassingExceptionMessage),
+                ExpectedExceptionType = typeof(NotSupportedException),
+                ExpectedExceptionMessageEquals = AlwaysPassingExceptionMessage,
             };
     }
 }

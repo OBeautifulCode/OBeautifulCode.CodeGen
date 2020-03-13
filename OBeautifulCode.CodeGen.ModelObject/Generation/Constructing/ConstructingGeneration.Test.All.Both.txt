@@ -45,7 +45,11 @@
                     var actual = scenario.PropertyGetterFunc(systemUnderTestAndExpected.SystemUnderTest);
 
                     // Assert
-                    if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
+                    if (systemUnderTestAndExpected.ExpectedPropertyValue == null)
+                    {
+                        actual.AsTest().Must().BeNull(because: scenario.Id);
+                    }
+                    else if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
                     {
                         actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
                     }

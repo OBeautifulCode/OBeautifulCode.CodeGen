@@ -99,7 +99,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).  If the constructor cannot throw or you need to force the consuming unit test to pass (perhaps you'll write your own unit test(s)), then call ConstructorArgumentValidationTestScenarios.AddScenario(ConstructorArgumentValidationTestScenario<T>.ConstructorCannotThrowScenario).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                var becauseNoScenarios = new[]
+                {
+                    "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).",
+                    "If the constructor cannot throw, clear all scenarios by calling ConstructorArgumentValidationTestScenarios.RemoveAllScenarios() and add ConstructorArgumentValidationTestScenario<T>.ConstructorCannotThrowScenario.",
+                    "If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorArgumentValidationTestScenario<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.",
+                };
+
+                this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedConstructorArgumentValidationTestScenario<T>>();
 

@@ -94,7 +94,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                this.scenarios.AsTest("ComparableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ComparableTestScenarios.AddScenario(...).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                var becauseNoScenarios = new[]
+                {
+                    "Use a static constructor on your test class to add scenarios by calling ComparableTestScenarios.AddScenario(...).",
+                    "If you need to force the consuming unit test to pass and you'll write your own unit tests, clear all scenarios by calling ComparableTestScenarios.RemoveAllScenarios() and then add ComparableTestScenario<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.",
+                };
+
+                this.scenarios.AsTest("ComparableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedComparableTestScenario<T>>();
 

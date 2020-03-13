@@ -10,6 +10,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Specifies a scenario for testing when a constructor sets a property values.
@@ -39,5 +40,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets or sets a func that calls the getter of the property that is assigned a value by the constructor.
         /// </summary>
         public Func<T, object> PropertyGetterFunc { get; set; }
+
+        /// <summary>
+        /// Gets a scenario to use when no properties are assigned in the constructor.
+        /// </summary>
+        public static ConstructorPropertyAssignmentTestScenario<T> NoPropertiesAssignedInConstructorScenario =>
+            new ConstructorPropertyAssignmentTestScenario<T>
+            {
+                Name = "no properties assigned in constructor scenario",
+                SystemUnderTestExpectedPropertyValueFunc = () => new SystemUnderTestExpectedPropertyValue<T>
+                {
+                    SystemUnderTest = (T)FormatterServices.GetUninitializedObject(typeof(T)),
+                    ExpectedPropertyValue = null,
+                },
+                PropertyGetterFunc = systemUnderTest => null,
+            };
+
+        /// <summary>
+        /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
+        /// </summary>
+        public static ConstructorPropertyAssignmentTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>
+            new ConstructorPropertyAssignmentTestScenario<T>
+            {
+                Name = "force generated unit tests to pass, i'll write my own",
+                SystemUnderTestExpectedPropertyValueFunc = () => new SystemUnderTestExpectedPropertyValue<T>
+                {
+                    SystemUnderTest = (T)FormatterServices.GetUninitializedObject(typeof(T)),
+                    ExpectedPropertyValue = null,
+                },
+                PropertyGetterFunc = systemUnderTest => null,
+            };
     }
 }

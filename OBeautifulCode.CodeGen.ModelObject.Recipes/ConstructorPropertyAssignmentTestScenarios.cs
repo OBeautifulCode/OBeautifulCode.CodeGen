@@ -99,7 +99,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
-                this.scenarios.AsTest("ConstructorPropertyAssignmentTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: "Use a static constructor on your test class to add scenarios by calling ConstructorPropertyAssignmentTestScenarios.AddScenario(...).  If there are no test scenarios, then call ConstructorPropertyAssignmentTestScenarios.AddScenario(ConstructorPropertyAssignmentTestScenario<T>.AlwaysPassingScenario).", applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                var becauseNoScenarios = new[]
+                {
+                    "Use a static constructor on your test class to add scenarios by calling ConstructorPropertyAssignmentTestScenarios.AddScenario(...).",
+                    "If no properties are assigned in the constructor, clear all scenarios by calling ConstructorPropertyAssignmentTestScenarios.RemoveAllScenarios() and add ConstructorPropertyAssignmentTestScenarios<T>.NoPropertiesAssignedInConstructorScenario.",
+                    "If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorPropertyAssignmentTestScenarios<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.",
+                };
+
+                this.scenarios.AsTest("ConstructorPropertyAssignmentTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedConstructorPropertyAssignmentTestScenario<T>>();
 

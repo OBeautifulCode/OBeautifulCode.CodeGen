@@ -10,6 +10,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
 
     /// <summary>
     /// Specifies a scenario for comparability tests.
@@ -59,5 +60,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets or sets objects that are not the same type as the <see cref="ReferenceObject"/>.
         /// </summary>
         public IReadOnlyList<object> ObjectsThatAreNotOfTheSameTypeAsReferenceObject { get; set; }
+
+        /// <summary>
+        /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
+        /// </summary>
+        public static ComparableTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>
+            new ComparableTestScenario<T>
+            {
+                Name = "force generated unit tests to pass, i'll write my own",
+                ReferenceObject = (T)FormatterServices.GetUninitializedObject(typeof(T)),
+            };
     }
 }
