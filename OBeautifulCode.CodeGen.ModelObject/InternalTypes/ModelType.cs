@@ -478,7 +478,7 @@ namespace OBeautifulCode.CodeGen
 
             var getterOnlyProperties = properties
                 .Where(_ => _.GetSetMethod(true) == null) // no set method
-                .Where(IsAutoProperty) // is an auto-property (e.g. int MyProperty { get; }).  expression body properties are NOT auto-properties
+                .Where(IsAutoPropertyBasedOnGetter) // is an auto-property (e.g. int MyProperty { get; }).  expression body properties are NOT auto-properties
                 .ToList();
 
             if (getterOnlyProperties.Any())
@@ -770,18 +770,13 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private static bool IsAutoProperty(
+        private static bool IsAutoPropertyBasedOnGetter(
             PropertyInfo propertyInfo)
         {
             new { propertyInfo }.Must().NotBeNull();
 
             // see: https://stackoverflow.com/a/60638810/356790
-            var backingFieldName = Invariant($"<{propertyInfo.Name}>k__BackingField");
-
-            // ReSharper disable once PossibleNullReferenceException
-            var backingField = propertyInfo.DeclaringType.GetField(backingFieldName, BindingFlags.NonPublic | BindingFlags.Instance);
-
-            var result = (backingField != null) && (backingField.GetCustomAttribute(typeof(CompilerGeneratedAttribute)) != null);
+            var result = propertyInfo.GetGetMethod().GetCustomAttribute(typeof(CompilerGeneratedAttribute)) != null;
 
             return result;
         }
