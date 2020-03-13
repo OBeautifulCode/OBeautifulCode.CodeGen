@@ -105,7 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
                 var becauseNoScenarios = new[]
                 {
                     "Use a static constructor on your test class to add scenarios by calling EquatableTestScenarios.AddScenario(...).",
-                    Invariant($"If you need to force the consuming unit test to pass and you'll write your own unit tests, clear all scenarios by calling EquatableTestScenarios.RemoveAllScenarios() and then add EquatableTestScenarios<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling EquatableTestScenarios.RemoveAllScenarios() and then add EquatableTestScenarios<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
                 };
 
                 this.scenarios.AsTest("EquatableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
