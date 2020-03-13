@@ -80,11 +80,11 @@
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="ComparableTestScenarios{T}.cs" />
-    <Compile Include="ConstructorPropertyAssignmentTestScenarios.cs" />
+    <Compile Include="ConstructorPropertyAssignmentTestScenarios{T}.cs" />
     <Compile Include="SystemUnderTestExpectedPropertyValue{T}.cs" />
-    <Compile Include="ConstructorPropertyAssignmentTestScenario.cs" />
-    <Compile Include="ConstructorArgumentValidationTestScenario.cs" />
-    <Compile Include="ConstructorArgumentValidationTestScenarios.cs" />
+    <Compile Include="ConstructorPropertyAssignmentTestScenario{T}.cs" />
+    <Compile Include="ConstructorArgumentValidationTestScenario{T}.cs" />
+    <Compile Include="ConstructorArgumentValidationTestScenarios{T}.cs" />
     <Compile Include="EquatableTestScenarios{T}.cs" />
     <Compile Include="ComparableTestScenario{T}.cs" />
     <Compile Include="ValidatedComparableTestScenario{T}.cs" />
