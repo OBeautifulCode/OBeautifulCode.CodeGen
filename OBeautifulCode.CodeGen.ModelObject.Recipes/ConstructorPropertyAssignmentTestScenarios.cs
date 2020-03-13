@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using System.Collections.Generic;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -99,11 +100,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
+                var typeCompilableString = typeof(T).ToStringCompilable();
+
                 var becauseNoScenarios = new[]
                 {
                     "Use a static constructor on your test class to add scenarios by calling ConstructorPropertyAssignmentTestScenarios.AddScenario(...).",
-                    "If no properties are assigned in the constructor, clear all scenarios by calling ConstructorPropertyAssignmentTestScenarios.RemoveAllScenarios() and add ConstructorPropertyAssignmentTestScenarios<T>.NoPropertiesAssignedInConstructorScenario.",
-                    "If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorPropertyAssignmentTestScenarios<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.",
+                    Invariant($"If no properties are assigned in the constructor, clear all scenarios by calling ConstructorPropertyAssignmentTestScenarios.RemoveAllScenarios() and add ConstructorPropertyAssignmentTestScenarios<{typeCompilableString}>.NoPropertiesAssignedInConstructorScenario."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorPropertyAssignmentTestScenarios<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
                 };
 
                 this.scenarios.AsTest("ConstructorPropertyAssignmentTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);

@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using System.Collections.Generic;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -99,11 +100,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
+                var typeCompilableString = typeof(T).ToStringCompilable();
+
                 var becauseNoScenarios = new[]
                 {
                     "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).",
-                    "If the constructor cannot throw, clear all scenarios by calling ConstructorArgumentValidationTestScenarios.RemoveAllScenarios() and add ConstructorArgumentValidationTestScenario<T>.ConstructorCannotThrowScenario.",
-                    "If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorArgumentValidationTestScenario<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.",
+                    Invariant($"If the constructor cannot throw, clear all scenarios by calling ConstructorArgumentValidationTestScenarios.RemoveAllScenarios() and add ConstructorArgumentValidationTestScenario<{typeCompilableString}>.ConstructorCannotThrowScenario."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorArgumentValidationTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
                 };
 
                 this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);

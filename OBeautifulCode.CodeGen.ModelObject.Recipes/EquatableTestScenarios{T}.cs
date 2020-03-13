@@ -13,6 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using System.Collections.Generic;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -99,10 +100,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         {
             lock (this.lockScenarios)
             {
+                var typeCompilableString = typeof(T).ToStringCompilable();
+
                 var becauseNoScenarios = new[]
                 {
                     "Use a static constructor on your test class to add scenarios by calling EquatableTestScenarios.AddScenario(...).",
-                    "If you need to force the consuming unit test to pass and you'll write your own unit tests, clear all scenarios by calling EquatableTestScenarios.RemoveAllScenarios() and then add EquatableTestScenarios<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.",
+                    Invariant($"If you need to force the consuming unit test to pass and you'll write your own unit tests, clear all scenarios by calling EquatableTestScenarios.RemoveAllScenarios() and then add EquatableTestScenarios<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
                 };
 
                 this.scenarios.AsTest("EquatableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
