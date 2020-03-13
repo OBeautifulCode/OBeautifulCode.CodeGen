@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
     using System.Reflection;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -40,6 +41,32 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
+        /// Generates fields required to test a model's string representation.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated test fields.
+        /// </returns>
+        public static string GenerateStringRepresentationTestFields(
+            this ModelType modelType)
+        {
+            new { modelType }.AsArg().Must().NotBeNull();
+
+            if (!modelType.IsConcrete)
+            {
+                return null;
+            }
+
+            var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
+
+            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, modelType.ToStringKeyMethodKinds, CodeSnippetKind.StringRepresentationTestFields)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ToStringExpectedToken, toStringConstructionCode);
+
+            return result;
+        }
+
+        /// <summary>
         /// Generates tests for the string representation methods.
         /// </summary>
         /// <param name="modelType">The model type.</param>
@@ -49,16 +76,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateStringRepresentationTestMethods(
             this ModelType modelType)
         {
-            string result = null;
-
-            if ((!modelType.DeclaresToStringMethodDirectlyOrInDerivative) && modelType.IsConcrete)
+            if (!modelType.IsConcrete)
             {
-                var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
-
-                result = typeof(StringRepresentationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both)
-                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                    .Replace(Tokens.ToStringExpectedToken, toStringConstructionCode);
+                return null;
             }
+
+            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             return result;
         }

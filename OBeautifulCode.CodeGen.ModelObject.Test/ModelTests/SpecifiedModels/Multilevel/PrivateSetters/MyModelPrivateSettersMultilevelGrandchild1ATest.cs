@@ -16,6 +16,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
         static MyModelPrivateSettersMultilevelGrandchild1ATest()
         {
+            StringRepresentationTestScenarios.RemoveAllScenarios();
+
+            StringRepresentationTestScenarios.AddScenario(StringRepresentationTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>.ForceGeneratedTestsToPassAndWriteMyOwnScenario);
+
             ConstructorArgumentValidationTestScenarios.AddScenario(
                 ConstructorArgumentValidationTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>.ConstructorCannotThrowScenario);
 

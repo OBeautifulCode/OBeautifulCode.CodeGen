@@ -32,9 +32,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         CompareToForRelativeSortOrder,
 
         /// <summary>
-        /// A code snippet for constructor argument validation test fields.
+        /// A code snippet for constructor test fields.
         /// </summary>
-        ConstructorArgumentValidationTestFields,
+        ConstructorTestFields,
 
         /// <summary>
         /// A code snippet for a constructor argument validation scenario that tests a null argument.
@@ -160,5 +160,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for the Code Analysis suppressions to apply on a DeepCloneWith() method.
         /// </summary>
         DeepCloneWithCodeAnalysisSuppressions,
+
+        /// <summary>
+        /// A code snippet for string representation test fields.
+        /// </summary>
+        StringRepresentationTestFields,
     }
 }

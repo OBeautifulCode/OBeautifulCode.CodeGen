@@ -1,0 +1,3 @@
+﻿        private static readonly ConstructorArgumentValidationTestScenarios<[model-type-name-here]> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<[model-type-name-here]>()[constructor-argument-validation-test-scenarios-here];
+
+        private static readonly ConstructorPropertyAssignmentTestScenarios<[model-type-name-here]> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<[model-type-name-here]>()[constructor-property-assignment-test-scenarios-here];

@@ -39,6 +39,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
+        private static readonly StringRepresentationTestScenarios<MyModelPublicSettersMultilevelGrandchild2A> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<MyModelPublicSettersMultilevelGrandchild2A>()
+            .AddScenario(() =>
+                new StringRepresentationTestScenario<MyModelPublicSettersMultilevelGrandchild2A>
+                {
+                    Name = "Default Code Generated Scenario",
+                    SystemUnderTestExpectedStringRepresentationFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
+
+                        var result = new SystemUnderTestExpectedStringRepresentation<MyModelPublicSettersMultilevelGrandchild2A>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            ExpectedStringRepresentation = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultilevelGrandchild2A)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {systemUnderTest.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2AInt = {systemUnderTest.Grandchild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}."),
+                        };
+
+                        return result;
+                    },
+                });
+
         private static readonly MyModelPublicSettersMultilevelGrandchild2A ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
 
         private static readonly EquatableTestScenarios<MyModelPublicSettersMultilevelGrandchild2A> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersMultilevelGrandchild2A>()
@@ -184,16 +203,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
-                // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersMultilevelGrandchild2A>();
+                var scenarios = StringRepresentationTestScenarios.ValidateAndPrepareForTesting();
 
-                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultilevelGrandchild2A)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {systemUnderTest.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2AInt = {systemUnderTest.Grandchild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
 
-                // Act
-                var actual = systemUnderTest.ToString();
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
 
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                    // Act
+                    var actual = systemUnderTestAndExpected.SystemUnderTest.ToString();
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedStringRepresentation, because: scenario.Id);
+                }
             }
         }
 

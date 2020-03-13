@@ -39,6 +39,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
+        private static readonly StringRepresentationTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B>()
+            .AddScenario(() =>
+                new StringRepresentationTestScenario<MyModelPrivateSettersMultilevelGrandchild2B>
+                {
+                    Name = "Default Code Generated Scenario",
+                    SystemUnderTestExpectedStringRepresentationFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
+
+                        var result = new SystemUnderTestExpectedStringRepresentation<MyModelPrivateSettersMultilevelGrandchild2B>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            ExpectedStringRepresentation = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersMultilevelGrandchild2B)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {systemUnderTest.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2BInt = {systemUnderTest.Grandchild2BInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}."),
+                        };
+
+                        return result;
+                    },
+                });
+
         private static readonly ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B>();
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersMultilevelGrandchild2B>()
@@ -243,16 +262,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
-                // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersMultilevelGrandchild2B>();
+                var scenarios = StringRepresentationTestScenarios.ValidateAndPrepareForTesting();
 
-                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersMultilevelGrandchild2B)}: ParentInt = {systemUnderTest.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {systemUnderTest.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2BInt = {systemUnderTest.Grandchild2BInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
 
-                // Act
-                var actual = systemUnderTest.ToString();
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
 
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                    // Act
+                    var actual = systemUnderTestAndExpected.SystemUnderTest.ToString();
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedStringRepresentation, because: scenario.Id);
+                }
             }
         }
 
@@ -326,7 +350,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = scenario.PropertyGetterFunc(systemUnderTestAndExpected.SystemUnderTest);
 
                     // Assert
-                    if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
+                    if (systemUnderTestAndExpected.ExpectedPropertyValue == null)
+                    {
+                        actual.AsTest().Must().BeNull(because: scenario.Id);
+                    }
+                    else if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
                     {
                         actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
                     }

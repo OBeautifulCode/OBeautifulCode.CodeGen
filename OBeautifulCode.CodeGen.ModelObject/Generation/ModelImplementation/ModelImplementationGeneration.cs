@@ -117,6 +117,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 testImplementationItems.Add(serializationFieldsCode);
             }
 
+            if (modelType.RequiresStringRepresentation)
+            {
+                var stringFieldsCode = modelType.GenerateStringRepresentationTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
+                if (!string.IsNullOrWhiteSpace(stringFieldsCode))
+                {
+                    testImplementationItems.Add(string.Empty);
+
+                    testImplementationItems.Add(stringFieldsCode);
+                }
+            }
+
             if (modelType.RequiresModel)
             {
                 var constructorFieldsCode = modelType.GenerateConstructorTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();

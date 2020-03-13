@@ -39,6 +39,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
+        private static readonly StringRepresentationTestScenarios<MyModelPublicSettersEmptyParentEmptyChild> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<MyModelPublicSettersEmptyParentEmptyChild>()
+            .AddScenario(() =>
+                new StringRepresentationTestScenario<MyModelPublicSettersEmptyParentEmptyChild>
+                {
+                    Name = "Default Code Generated Scenario",
+                    SystemUnderTestExpectedStringRepresentationFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParentEmptyChild>();
+
+                        var result = new SystemUnderTestExpectedStringRepresentation<MyModelPublicSettersEmptyParentEmptyChild>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            ExpectedStringRepresentation = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersEmptyParentEmptyChild)}: <no properties>."),
+                        };
+
+                        return result;
+                    },
+                });
+
         private static readonly MyModelPublicSettersEmptyParentEmptyChild ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersEmptyParentEmptyChild>();
 
         private static readonly EquatableTestScenarios<MyModelPublicSettersEmptyParentEmptyChild> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersEmptyParentEmptyChild>()
@@ -123,16 +142,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
-                // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParentEmptyChild>();
+                var scenarios = StringRepresentationTestScenarios.ValidateAndPrepareForTesting();
 
-                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersEmptyParentEmptyChild)}: <no properties>.");
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
 
-                // Act
-                var actual = systemUnderTest.ToString();
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
 
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                    // Act
+                    var actual = systemUnderTestAndExpected.SystemUnderTest.ToString();
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedStringRepresentation, because: scenario.Id);
+                }
             }
         }
 

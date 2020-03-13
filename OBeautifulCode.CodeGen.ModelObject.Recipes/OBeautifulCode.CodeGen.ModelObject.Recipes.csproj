@@ -79,8 +79,11 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="StringRepresentationTestScenarios{T}.cs" />
     <Compile Include="ComparableTestScenarios{T}.cs" />
+    <Compile Include="StringRepresentationTestScenario{T}.cs" />
     <Compile Include="ConstructorPropertyAssignmentTestScenarios{T}.cs" />
+    <Compile Include="SystemUnderTestExpectedStringRepresentation{T}.cs" />
     <Compile Include="SystemUnderTestExpectedPropertyValue{T}.cs" />
     <Compile Include="ConstructorPropertyAssignmentTestScenario{T}.cs" />
     <Compile Include="ConstructorArgumentValidationTestScenario{T}.cs" />
@@ -88,6 +91,7 @@
     <Compile Include="EquatableTestScenarios{T}.cs" />
     <Compile Include="ComparableTestScenario{T}.cs" />
     <Compile Include="ValidatedComparableTestScenario{T}.cs" />
+    <Compile Include="ValidatedStringRepresentationTestScenario{T}.cs" />
     <Compile Include="ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" />
     <Compile Include="ValidatedConstructorArgumentValidationTestScenario{T}.cs" />
     <Compile Include="ValidatedEquatableTestScenario{T}.cs" />

@@ -146,7 +146,7 @@
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTests.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTestFields.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationJsonTestFields.All.Both.txt" />
-    <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Test.All.Both.txt" />
+    <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Test.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Abstract.Generated.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.Test.All.Both.txt" />
@@ -197,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.TestSnippet.StringRepresentationTestFields.Concrete.Declared.txt" />
+    <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.TestSnippet.StringRepresentationTestFields.Concrete.Generated.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorParameterAssignmentScenario.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioDictionaryWithNullValue.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEmptyDictionary.All.Both.txt" />
@@ -204,7 +206,7 @@
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEnumerableWithNullElement.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioNullObject.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioWhiteSpaceString.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationTestFields.Concrete.Both.txt" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestFields.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Concrete.Generated.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

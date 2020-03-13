@@ -39,6 +39,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
+        private static readonly StringRepresentationTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild>()
+            .AddScenario(() =>
+                new StringRepresentationTestScenario<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                {
+                    Name = "Default Code Generated Scenario",
+                    SystemUnderTestExpectedStringRepresentationFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+
+                        var result = new SystemUnderTestExpectedStringRepresentation<MyModelPrivateSettersEmptyParentNotEmptyChild>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            ExpectedStringRepresentation = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersEmptyParentNotEmptyChild)}: ChildReadOnlyDictionaryOfStringString = {systemUnderTest.ChildReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}."),
+                        };
+
+                        return result;
+                    },
+                });
+
         private static readonly ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersEmptyParentNotEmptyChild>()
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersEmptyParentNotEmptyChild>
@@ -203,16 +222,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
-                // Arrange
-                var systemUnderTest = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
+                var scenarios = StringRepresentationTestScenarios.ValidateAndPrepareForTesting();
 
-                var expected = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersEmptyParentNotEmptyChild)}: ChildReadOnlyDictionaryOfStringString = {systemUnderTest.ChildReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}.");
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
 
-                // Act
-                var actual = systemUnderTest.ToString();
+                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
 
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                    // Act
+                    var actual = systemUnderTestAndExpected.SystemUnderTest.ToString();
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedStringRepresentation, because: scenario.Id);
+                }
             }
         }
 
@@ -286,7 +310,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = scenario.PropertyGetterFunc(systemUnderTestAndExpected.SystemUnderTest);
 
                     // Assert
-                    if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
+                    if (systemUnderTestAndExpected.ExpectedPropertyValue == null)
+                    {
+                        actual.AsTest().Must().BeNull(because: scenario.Id);
+                    }
+                    else if (systemUnderTestAndExpected.ExpectedPropertyValue.GetType().IsValueType)
                     {
                         actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedPropertyValue, because: scenario.Id);
                     }

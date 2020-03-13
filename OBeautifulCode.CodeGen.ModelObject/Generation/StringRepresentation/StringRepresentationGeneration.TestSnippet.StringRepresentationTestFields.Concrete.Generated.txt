@@ -1,0 +1,18 @@
+﻿        private static readonly StringRepresentationTestScenarios<[model-type-name-here]> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<[model-type-name-here]>()
+            .AddScenario(() =>
+                new StringRepresentationTestScenario<[model-type-name-here]>
+                {
+                    Name = "Default Code Generated Scenario",
+                    SystemUnderTestExpectedStringRepresentationFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<[model-type-name-here]>();
+
+                        var result = new SystemUnderTestExpectedStringRepresentation<[model-type-name-here]>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            ExpectedStringRepresentation = [to-string-expected-here],
+                        };
+
+                        return result;
+                    },
+                });

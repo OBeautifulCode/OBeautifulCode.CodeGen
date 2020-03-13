@@ -35,7 +35,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Initializes a new instance of the <see cref="ValidatedConstructorArgumentValidationTestScenario{T}"/> class.
         /// </summary>
         /// <param name="id">The identifier of the scenario.</param>
-        /// <param name="constructionFunc">A func that constructs the object</param>
+        /// <param name="constructionFunc">A func that constructs the object.</param>
         /// <param name="expectedExceptionType">The Type of the expected <see cref="Exception"/> that is thrown when the object is constructed.</param>
         /// <param name="expectedExceptionMessageContains">A set strings that should each be contained within the expected <see cref="Exception.Message"/>.</param>
         /// <param name="expectedExceptionMessageEquals">The expected <see cref="Exception.Message"/>.</param>

@@ -27,11 +27,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class ConstructingGeneration
     {
         /// <summary>
-        /// Generates test methods that test a model's constructor.
+        /// Generates fields required to test a model's constructor.
         /// </summary>
         /// <param name="modelType">The model type.</param>
         /// <returns>
-        /// Generated test methods that test a model's constructor.
+        /// Generated test fields.
         /// </returns>
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
@@ -224,7 +224,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var propertyAssignmentScenariosCode = propertyAssignmentScenarios.Any() ? Environment.NewLine + string.Join(Environment.NewLine, propertyAssignmentScenarios) : string.Empty;
 
-            var result = typeof(ConstructingGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationTestFields)
+            var result = typeof(ConstructingGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestFields)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                 .Replace(Tokens.ConstructorArgumentValidationTestScenariosToken, argumentValidationScenariosCode)
                 .Replace(Tokens.ConstructorPropertyAssignmentTestScenariosToken, propertyAssignmentScenariosCode);

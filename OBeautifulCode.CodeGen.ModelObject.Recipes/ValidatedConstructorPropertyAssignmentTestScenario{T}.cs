@@ -13,8 +13,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
     using OBeautifulCode.Assertion.Recipes;
 
-    using static System.FormattableString;
-
     /// <summary>
     /// Specifies a scenario for testing when a constructor sets a property values.
     /// </summary>
