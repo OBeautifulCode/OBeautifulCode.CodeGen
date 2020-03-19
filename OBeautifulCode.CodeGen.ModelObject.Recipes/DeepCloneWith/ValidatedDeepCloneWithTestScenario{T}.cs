@@ -45,38 +45,45 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
             new { withPropertyName }.AsTest().Must().NotBeNullNorWhiteSpace(id);
 
-            new { systemUnderTestDeepCloneWithValueFunc }.AsTest().Must().NotBeNull(id);
-            var systemUnderTestDeepCloneWith = systemUnderTestDeepCloneWithValueFunc();
-            new { systemUnderTestDeepCloneWith }.AsTest().Must().NotBeNull(id);
+            T systemUnderTest = null;
+            object withValue = null;
+            MethodInfo deepCloneWithMethod = null;
 
-            var systemUnderTest = systemUnderTestDeepCloneWith.SystemUnderTest;
-            new { systemUnderTest }.AsTest().Must().NotBeNull(id);
-
-            var deepCloneWithMethodName = "DeepCloneWith" + withPropertyName;
-            var deepCloneWithMethod = typeof(T).GetMethods(BindingFlags.Public | BindingFlags.Instance).SingleOrDefault(_ => _.Name == deepCloneWithMethodName);
-            new { deepCloneWithMethod }.AsTest().Must().NotBeNull(id);
-            
-            // ReSharper disable once PossibleNullReferenceException
-            var deepCloneWithMethodParameters = deepCloneWithMethod.GetParameters();
-            new { deepCloneWithMethodParameters }.AsTest().Must().HaveCount(1, id);
-
-            var withValue = systemUnderTestDeepCloneWith.DeepCloneWithValue;
-
-            var deepCloneWithMethodParameterType = deepCloneWithMethodParameters.Single().ParameterType;
-
-            if (withValue == null)
+            if (withPropertyName != DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
             {
-                var deepCloneWithMethodParameterTypeIsValueType = deepCloneWithMethodParameterType.IsValueType;
-                new { deepCloneWithMethodParameterTypeIsValueType }.AsTest().Must().BeFalse(id);
-            }
-            else
-            {
-                var withValueTypeIsAssignableToDeepCloneWithMethodParameterType = withValue.GetType().IsAssignableTo(deepCloneWithMethodParameterType);
-                new { withValueTypeIsAssignableToDeepCloneWithMethodParameterType }.AsTest().Must().BeTrue(id);
-            }
+                new { systemUnderTestDeepCloneWithValueFunc }.AsTest().Must().NotBeNull(id);
+                var systemUnderTestDeepCloneWith = systemUnderTestDeepCloneWithValueFunc();
+                new { systemUnderTestDeepCloneWith }.AsTest().Must().NotBeNull(id);
 
-            var withProperty = typeof(T).GetProperty(withPropertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
-            new { withProperty }.Must().NotBeNull(id);
+                systemUnderTest = systemUnderTestDeepCloneWith.SystemUnderTest;
+                new { systemUnderTest }.AsTest().Must().NotBeNull(id);
+
+                var deepCloneWithMethodName = "DeepCloneWith" + withPropertyName;
+                deepCloneWithMethod = typeof(T).GetMethods(BindingFlags.Public | BindingFlags.Instance).SingleOrDefault(_ => _.Name == deepCloneWithMethodName);
+                new { deepCloneWithMethod }.AsTest().Must().NotBeNull(id);
+
+                // ReSharper disable once PossibleNullReferenceException
+                var deepCloneWithMethodParameters = deepCloneWithMethod.GetParameters();
+                new { deepCloneWithMethodParameters }.AsTest().Must().HaveCount(1, id);
+
+                withValue = systemUnderTestDeepCloneWith.DeepCloneWithValue;
+
+                var deepCloneWithMethodParameterType = deepCloneWithMethodParameters.Single().ParameterType;
+
+                if (withValue == null)
+                {
+                    var deepCloneWithMethodParameterTypeIsValueType = deepCloneWithMethodParameterType.IsValueType;
+                    new { deepCloneWithMethodParameterTypeIsValueType }.AsTest().Must().BeFalse(id);
+                }
+                else
+                {
+                    var withValueTypeIsAssignableToDeepCloneWithMethodParameterType = withValue.GetType().IsAssignableTo(deepCloneWithMethodParameterType);
+                    new { withValueTypeIsAssignableToDeepCloneWithMethodParameterType }.AsTest().Must().BeTrue(id);
+                }
+
+                var withProperty = typeof(T).GetProperty(withPropertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty);
+                new { withProperty }.Must().NotBeNull(id);
+            }
 
             this.Id = id;
             this.WithPropertyName = withPropertyName;

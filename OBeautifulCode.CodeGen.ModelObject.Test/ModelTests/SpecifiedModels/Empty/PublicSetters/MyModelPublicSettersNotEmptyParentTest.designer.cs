@@ -208,7 +208,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                 foreach (var scenario in scenarios)
                 {
-                    // Arrange, Act
+                    // Arrange
+                    if (scenario.WithPropertyName == DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
+                    {
+                        continue;
+                    }
+
+                    // Act
                     var actual = (MyModelPublicSettersNotEmptyParent)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
 
                     // Assert

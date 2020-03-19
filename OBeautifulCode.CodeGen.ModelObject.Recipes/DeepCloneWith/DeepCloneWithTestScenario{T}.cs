@@ -10,7 +10,6 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
-    using System.Runtime.Serialization;
 
     /// <summary>
     /// Specifies a scenario for testing DeepCloneWith methods.
@@ -49,6 +48,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             new DeepCloneWithTestScenario<T>
             {
                 Name = "force generated unit tests to pass, i'll write my own",
+                WithPropertyName = DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName,
             };
+    }
+
+    /// <summary>
+    /// Contains constants related to testing DeepCloneWith methods.
+    /// </summary>
+#if !OBeautifulCodeCodeGenRecipesProject
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    [System.CodeDom.Compiler.GeneratedCode("OBeautifulCode.CodeGen.ModelObject.Recipes", "See package version number")]
+    internal
+#else
+    public
+#endif
+        static class DeepCloneWithTestScenario
+    {
+        /// <summary>
+        /// The name of the property to use to force the scenario to pass.
+        /// </summary>
+        public const string ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName = "ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName";
     }
 }
