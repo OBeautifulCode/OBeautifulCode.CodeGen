@@ -18,7 +18,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     using static System.FormattableString;
 
     /// <summary>
-    /// Specifies various scenarios for testing DeepCloneWith... methods.
+    /// Specifies various scenarios for testing DeepCloneWith methods.
     /// </summary>
     /// <typeparam name="T">The type of the object being tested.</typeparam>
 #if !OBeautifulCodeCodeGenRecipesProject

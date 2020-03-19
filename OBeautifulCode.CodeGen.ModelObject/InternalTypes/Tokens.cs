@@ -37,12 +37,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string DeepCloneToken = "[deep-clone-here]";
 
         /// <summary>
-        /// The DeepCloneWith... code.
+        /// The DeepCloneWith code.
         /// </summary>
         public const string DeepCloneWithToken = "[deep-clone-with-here]";
 
         /// <summary>
-        /// The DeepCloneWith... model instantiation code.
+        /// The DeepCloneWith model instantiation code.
         /// </summary>
         public const string DeepCloneWithModelInstantiationToken = "[deep-clone-with-model-instantiation-here]";
 

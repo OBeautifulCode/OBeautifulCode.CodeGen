@@ -29,7 +29,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public T SystemUnderTest { get; set; }
 
         /// <summary>
-        /// Gets or sets the value to use when calling DeepCloneWith...
+        /// Gets or sets the value to use when calling DeepCloneWith.
         /// </summary>
         public object DeepCloneWithValue { get; set; }
     }

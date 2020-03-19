@@ -54,7 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
-        /// Generates fields required to test a model's DeepCloneWith... methods.
+        /// Generates fields required to test a model's DeepCloneWith methods.
         /// </summary>
         /// <param name="modelType">The model type.</param>
         /// <returns>
