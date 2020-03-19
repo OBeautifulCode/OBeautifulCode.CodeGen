@@ -62,6 +62,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string PropertyTypeNameToken = "[property-type-name-here]";
 
         /// <summary>
+        /// The names of the properties of concern.
+        /// </summary>
+        public const string PropertiesOfConcernNamesHereToken = "[properties-of-concern-names-here]";
+
+        /// <summary>
         /// The CompareTo... code.
         /// </summary>
         public const string CompareToToken = "[compare-to-here]";
@@ -112,14 +117,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string AssertDeepCloneToken = "[assert-deep-clone-here]";
 
         /// <summary>
-        /// Asserts deep cloning.
+        /// The DeepCloneWith test.
         /// </summary>
-        public const string DeepCloneWithTestsToken = "[deep-clone-with-tests-here]";
-
-        /// <summary>
-        /// Asserts deep cloning.
-        /// </summary>
-        public const string AssertDeepCloneWithToken = "[assert-deep-clone-with-here]";
+        public const string DeepCloneWithTestToken = "[deep-clone-with-test-here]";
 
         /// <summary>
         /// Objects that are not equal to reference object.
@@ -250,5 +250,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The code analysis suppressions to add to a DeepCloneWith() method.
         /// </summary>
         public const string DeepCloneWithCodeAnalysisSuppressionsToken = "[deep-clone-with-code-analysis-suppressions]";
+
+        /// <summary>
+        /// The DeepConeWith... test scenarios.
+        /// </summary>
+        public const string DeepCloneWithTestScenariosToken = "[deep-clone-with-test-scenarios-here]";
     }
 }

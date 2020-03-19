@@ -88,5 +88,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets objects that are not of the same type as the <see cref="ReferenceObject"/>.
         /// </summary>
         public IReadOnlyList<object> ObjectsThatAreNotOfTheSameTypeAsReferenceObject { get; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var result = this.Id;
+
+            return result;
+        }
     }
 }

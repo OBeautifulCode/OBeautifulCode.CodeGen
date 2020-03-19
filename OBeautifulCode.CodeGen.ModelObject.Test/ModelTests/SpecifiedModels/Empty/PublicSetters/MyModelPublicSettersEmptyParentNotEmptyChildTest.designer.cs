@@ -58,6 +58,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                 });
 
+        private static readonly DeepCloneWithTestScenarios<MyModelPublicSettersEmptyParentNotEmptyChild> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<MyModelPublicSettersEmptyParentNotEmptyChild>()
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<MyModelPublicSettersEmptyParentNotEmptyChild>
+                {
+                    Name = "DeepCloneWithChildReadOnlyDictionaryOfStringString should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    WithPropertyName = "ChildReadOnlyDictionaryOfStringString",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>();
+
+                        var referenceObject = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>().ThatIs(_ => !systemUnderTest.ChildReadOnlyDictionaryOfStringString.IsEqualTo(_.ChildReadOnlyDictionaryOfStringString));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPublicSettersEmptyParentNotEmptyChild>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ChildReadOnlyDictionaryOfStringString,
+                        };
+
+                        return result;
+                    },
+                });
+
         private static readonly MyModelPublicSettersEmptyParentNotEmptyChild ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>();
 
         private static readonly EquatableTestScenarios<MyModelPublicSettersEmptyParentNotEmptyChild> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersEmptyParentNotEmptyChild>()
@@ -237,18 +259,63 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void DeepCloneWithChildReadOnlyDictionaryOfStringString___Should_deep_clone_object_and_replace_ChildReadOnlyDictionaryOfStringString_with_the_provided_childReadOnlyDictionaryOfStringString___When_called()
+            public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>();
+                var propertyNames = new string[] { "ChildReadOnlyDictionaryOfStringString" };
 
-                var referenceObject = A.Dummy<MyModelPublicSettersEmptyParentNotEmptyChild>().ThatIsNot(systemUnderTest);
+                var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 
-                // Act
-                var actual = systemUnderTest.DeepCloneWithChildReadOnlyDictionaryOfStringString(referenceObject.ChildReadOnlyDictionaryOfStringString);
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
 
-                // Assert
-                actual.ChildReadOnlyDictionaryOfStringString.AsTest().Must().BeSameReferenceAs(referenceObject.ChildReadOnlyDictionaryOfStringString);
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = (MyModelPublicSettersEmptyParentNotEmptyChild)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
+
+                    // Assert
+                    foreach(var propertyName in propertyNames)
+                    {
+                        var property = typeof(MyModelPublicSettersEmptyParentNotEmptyChild).GetProperty(propertyName);
+
+                        var propertyType = property.PropertyType;
+
+                        var actualPropertyValue = property.GetValue(actual);
+
+                        if (propertyName == scenario.WithPropertyName)
+                        {
+                            if (propertyType.IsValueType)
+                            {
+                                actualPropertyValue.AsTest().Must().BeEqualTo(scenario.WithValue, because: scenario.Id);
+                            }
+                            else
+                            {
+                                actualPropertyValue.AsTest().Must().BeSameReferenceAs(scenario.WithValue, because: scenario.Id);
+                            }
+                        }
+                        else
+                        {
+                            var systemUnderTestPropertyValue = property.GetValue(scenario.SystemUnderTest);
+
+                            // Use reflection to call: actualPropertyValue.AsTest().Must().BeEqualTo(systemUnderTestPropertyValue, because: scenario.Id)
+                            // We need to use reflection here because OBC Assertion uses declared types and not runtime types to identify the contract to use.
+                            // In this unit test we fetch property values using PropertyInfo.GetValue(), and as such the declared type is Object and its
+                            // contract is to determine equality based on reference equality.  The type we want to use is the property's real type, PropertyInfo.PropertyType.
+                            // For example, these two arrays of boolean are NOT equal if they are declared as objects:
+                            // object x = new[] { true, false };
+                            // object y = new[] { true, false };
+                            var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actualPropertyValue, Type.Missing })).Must();
+                            var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
+                            invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, systemUnderTestPropertyValue, scenario.Id, Type.Missing, Type.Missing });
+
+                            if ((!propertyType.IsValueType) && (propertyType != typeof(string)))
+                            {
+                                actualPropertyValue.AsTest().Must().NotBeSameReferenceAs(systemUnderTestPropertyValue, because: scenario.Id);
+                            }
+                        }
+                    }
+                }
             }
         }
 

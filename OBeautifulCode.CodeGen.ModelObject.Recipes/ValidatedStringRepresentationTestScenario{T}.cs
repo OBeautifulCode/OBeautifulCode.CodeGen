@@ -10,7 +10,6 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
-    using System.Collections.Generic;
 
     using OBeautifulCode.Assertion.Recipes;
 
@@ -53,5 +52,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets a func that returns the object to test and the its expected string representation.
         /// </summary>
         public Func<SystemUnderTestExpectedStringRepresentation<T>> SystemUnderTestExpectedPropertyValueFunc { get; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var result = this.Id;
+
+            return result;
+        }
     }
 }

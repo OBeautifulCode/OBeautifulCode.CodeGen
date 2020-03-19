@@ -90,5 +90,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets the expected <see cref="Exception.Message"/>.
         /// </summary>
         public string ExpectedExceptionMessageEquals { get; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var result = this.Id;
+
+            return result;
+        }
     }
 }

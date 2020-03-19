@@ -156,7 +156,6 @@
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFields.Abstract.Generated.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Comparison\ComparisonGeneration.TestSnippet.ComparableTestFields.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTestMethod.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Model.Concrete.Generated.txt" />
@@ -197,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTest.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithScenario.All.Both.txt" />
+    <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTestFields.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.TestSnippet.StringRepresentationTestFields.Concrete.Declared.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.TestSnippet.StringRepresentationTestFields.Concrete.Generated.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorParameterAssignmentScenario.All.Both.txt" />

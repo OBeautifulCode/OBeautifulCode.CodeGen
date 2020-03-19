@@ -136,25 +136,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }
 
-        /// <summary>
-        /// Generates an assertion equality statement.
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <param name="actual">The actual value.</param>
-        /// <param name="expected">The expected value.</param>
-        /// <returns>
-        /// Generated assertion equality statement.
-        /// </returns>
-        public static string GenerateObcAssertionsEqualityStatement(
-            this Type type,
-            string actual,
-            string expected)
-        {
-            var result = Invariant($"{actual}.AsTest().Must().BeEqualTo({expected});");
-
-            return result;
-        }
-
         private static string GenerateEqualityLogicCodeForProperty(
             this PropertyOfConcern propertyOfConcern)
         {

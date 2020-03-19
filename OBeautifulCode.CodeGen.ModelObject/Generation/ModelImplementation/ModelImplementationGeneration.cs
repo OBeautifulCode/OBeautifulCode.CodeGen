@@ -141,6 +141,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
             }
 
+            if (modelType.RequiresDeepCloning)
+            {
+                var deepCloneWithFieldsCode = modelType.GenerateDeepCloneWithTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
+
+                if (!string.IsNullOrWhiteSpace(deepCloneWithFieldsCode))
+                {
+                    testImplementationItems.Add(string.Empty);
+
+                    testImplementationItems.Add(deepCloneWithFieldsCode);
+                }
+            }
+
             if (modelType.RequiresEquality || modelType.RequiresHashing)
             {
                 var equalityFieldsCode = modelType.GenerateEqualityTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();

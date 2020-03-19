@@ -14,6 +14,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
@@ -53,6 +54,45 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
+        /// Generates fields required to test a model's DeepCloneWith... methods.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated test fields.
+        /// </returns>
+        public static string GenerateDeepCloneWithTestFields(
+            this ModelType modelType)
+        {
+            new { modelType }.AsArg().Must().NotBeNull();
+
+            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative)
+            {
+                return null;
+            }
+
+            var deepCloneWithScenarios = new List<string>();
+
+            var properties = modelType.PropertiesOfConcern;
+
+            foreach (var property in properties)
+            {
+                var scenario = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithScenario)
+                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                    .Replace(Tokens.PropertyNameToken, property.Name);
+
+                deepCloneWithScenarios.Add(scenario);
+            }
+
+            var deepCloneWithScenariosCode = deepCloneWithScenarios.Any() ? Environment.NewLine + string.Join(Environment.NewLine, deepCloneWithScenarios) : string.Empty;
+
+            var result = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTestFields)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.DeepCloneWithTestScenariosToken, deepCloneWithScenariosCode);
+
+            return result;
+        }
+
+        /// <summary>
         /// Generates test methods that test cloning.
         /// </summary>
         /// <param name="modelType">The model type.</param>
@@ -70,13 +110,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var deepCloneWithTestCode = modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative
                 ? string.Empty
-                : modelType.GetDeepCloneWithTestMethods();
+                : Environment.NewLine + Environment.NewLine + typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTest);
+
+            var propertiesOfConcernNames = modelType.PropertiesOfConcern.Select(_ => "\"" + _.Name + "\"").ToDelimitedString(", ");
 
             var codeTemplate = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate
-                .Replace(Tokens.DeepCloneWithTestsToken, deepCloneWithTestCode)
                 .Replace(Tokens.AssertDeepCloneToken, assertDeepCloneStatementsCode)
+                .Replace(Tokens.DeepCloneWithTestToken, deepCloneWithTestCode)
+                .Replace(Tokens.PropertiesOfConcernNamesHereToken, propertiesOfConcernNames)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
 
             return result;
@@ -170,6 +213,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             else if (type == typeof(string))
             {
                 // string should be cloned using it's existing interface.
+                // note that this just returns the same reference, it doesn't result in a new reference
+                // https://stackoverflow.com/questions/3465377/whats-the-use-of-string-clone
                 result = Invariant($"{cloneCode}?.Clone().ToString()");
             }
             else if (type.IsClosedNullableType())
@@ -277,75 +322,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             result = result
                 .Replace(Tokens.DeepCloneWithCodeAnalysisSuppressionsToken, typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithCodeAnalysisSuppressions));
-
-            return result;
-        }
-
-        private static string GetDeepCloneWithTestMethods(
-            this ModelType modelType)
-        {
-            var declaredPropertyNames = new HashSet<string>(modelType.DeclaredOnlyPropertiesOfConcern.Select(_ => _.Name));
-
-            var deepCloneWithTestMethods = new List<string>();
-
-            if (modelType.PropertiesOfConcern.Any())
-            {
-                foreach (var property in modelType.PropertiesOfConcern)
-                {
-                    var assertDeepCloneWithSet =
-                        modelType
-                            .PropertiesOfConcern
-                            .Select(
-                                _ =>
-                                {
-                                    string assert;
-
-                                    if (_.Name == property.Name)
-                                    {
-                                        if (_.PropertyType.IsValueType || (_.PropertyType == typeof(string)))
-                                        {
-                                            assert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
-                                                Invariant($"actual.{_.Name}"),
-                                                Invariant($"referenceObject.{_.Name}"));
-                                        }
-                                        else
-                                        {
-                                            assert = Invariant($"actual.{_.Name}.AsTest().Must().BeSameReferenceAs(referenceObject.{_.Name});");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        assert = _.PropertyType.GenerateObcAssertionsEqualityStatement(
-                                            Invariant($"actual.{_.Name}"),
-                                            Invariant($"systemUnderTest.{_.Name}"));
-
-                                        if ((!_.PropertyType.IsValueType) && (_.PropertyType != typeof(string)))
-                                        {
-                                            assert += Environment.NewLine + Invariant($"                actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});");
-                                        }
-                                    }
-
-                                    return assert;
-                                })
-                            .ToList();
-
-                    var assertDeepCloneWithStatements = string.Join(Environment.NewLine + "                ", assertDeepCloneWithSet);
-
-                    var deepCloneWithTestMethodCodeTemplate = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTestMethod);
-
-                    var testMethod = deepCloneWithTestMethodCodeTemplate
-                        .Replace(Tokens.CastToken, declaredPropertyNames.Contains(property.Name) ? string.Empty : Invariant($"({modelType.TypeCompilableString})"))
-                        .Replace(Tokens.PropertyNameToken, property.Name)
-                        .Replace(Tokens.ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
-                        .Replace(Tokens.AssertDeepCloneWithToken, assertDeepCloneWithStatements);
-
-                    deepCloneWithTestMethods.Add(testMethod);
-                }
-            }
-
-            var result = deepCloneWithTestMethods.Any()
-                ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, deepCloneWithTestMethods)
-                : string.Empty;
 
             return result;
         }

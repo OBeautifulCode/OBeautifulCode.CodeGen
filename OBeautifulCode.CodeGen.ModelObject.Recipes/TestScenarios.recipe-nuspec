@@ -34,5 +34,9 @@
     <file src="ValidatedStringRepresentationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedStringRepresentationTestScenario{T}.cs" />
     <file src="SystemUnderTestExpectedStringRepresentation{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SystemUnderTestExpectedStringRepresentation{T}.cs" />
 
+    <file src="DeepCloneWithTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWithTestScenario{T}.cs" />
+    <file src="DeepCloneWithTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWithTestScenarios{T}.cs" />
+    <file src="ValidatedDeepCloneWithTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidatedDeepCloneWithTestScenario{T}.cs" />
+    <file src="SystemUnderTestDeepCloneWithValue{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SystemUnderTestDeepCloneWithValue{T}.cs" />
   </files>
 </package>

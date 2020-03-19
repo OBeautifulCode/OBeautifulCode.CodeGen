@@ -1,0 +1,20 @@
+﻿            .AddScenario(() =>
+                new DeepCloneWithTestScenario<[model-type-name-here]>
+                {
+                    Name = "DeepCloneWith[property-name-here] should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    WithPropertyName = "[property-name-here]",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<[model-type-name-here]>();
+
+                        var referenceObject = A.Dummy<[model-type-name-here]>().ThatIs(_ => !systemUnderTest.[property-name-here].IsEqualTo(_.[property-name-here]));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<[model-type-name-here]>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.[property-name-here],
+                        };
+
+                        return result;
+                    },
+                })

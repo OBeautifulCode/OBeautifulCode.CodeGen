@@ -22,6 +22,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         DeepCloneWith,
 
         /// <summary>
+        /// A code snippet for test fields used to test the DeepCloneWith() methods.
+        /// </summary>
+        DeepCloneWithTestFields,
+
+        /// <summary>
+        /// A code snippet for the DeepCloneWith test.
+        /// </summary>
+        DeepCloneWithTest,
+
+        /// <summary>
         /// A code snippet for a CompareTo() method.
         /// </summary>
         CompareTo,
@@ -67,14 +77,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ConstructorArgumentValidationScenarioDictionaryWithNullValue,
 
         /// <summary>
-        /// A code snippet for a constructor property assignment scenario.
+        /// A code snippet for a constructor property assignment test scenario.
         /// </summary>
         ConstructorParameterAssignmentScenario,
-
-        /// <summary>
-        /// A code snippet for a DeepCloneWith test method.
-        /// </summary>
-        DeepCloneWithTestMethod,
 
         /// <summary>
         /// A code snippet for comparability-related test fields.
@@ -165,5 +170,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for string representation test fields.
         /// </summary>
         StringRepresentationTestFields,
+
+        /// <summary>
+        /// A code snippet for a DeepCloneWith test scenario.
+        /// </summary>
+        DeepCloneWithScenario,
     }
 }

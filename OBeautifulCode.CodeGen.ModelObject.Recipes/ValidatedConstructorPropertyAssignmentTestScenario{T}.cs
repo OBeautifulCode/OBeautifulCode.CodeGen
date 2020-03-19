@@ -61,5 +61,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets a func that calls the getter of the property that is assigned a value by the constructor.
         /// </summary>
         public Func<T, object> PropertyGetterFunc { get; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            var result = this.Id;
+
+            return result;
+        }
     }
 }
