@@ -105,8 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
                 var becauseNoScenarios = new[]
                 {
                     "Use a static constructor on your test class to add scenarios by calling DeepCloneWithTestScenarios.AddScenario(...).",
-                    Invariant($"If there are no DeepCloneWith... methods, clear all scenarios by calling DeepCloneWithTestScenarios.RemoveAllScenarios() and add DeepCloneWithTestScenario<{typeCompilableString}>.NoDeepCloneWithMethodsScenario."),
-                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add DeepCloneWithTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling DeepCloneWithTestScenarios.RemoveAllScenarios() and then add DeepCloneWithTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
                 };
 
                 this.scenarios.AsTest("DeepCloneWithTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);

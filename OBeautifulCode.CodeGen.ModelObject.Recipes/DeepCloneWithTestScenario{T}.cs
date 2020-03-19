@@ -43,15 +43,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public Func<SystemUnderTestDeepCloneWithValue<T>> SystemUnderTestDeepCloneWithValueFunc { get; set; }
 
         /// <summary>
-        /// Gets a scenario to use when there are no DeepCloneWith... methods.
-        /// </summary>
-        public static DeepCloneWithTestScenario<T> NoDeepCloneWithMethodsScenario =>
-            new DeepCloneWithTestScenario<T>
-            {
-                Name = "no DeepCloneWith... methods to test",
-            };
-
-        /// <summary>
         /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
         /// </summary>
         public static DeepCloneWithTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>

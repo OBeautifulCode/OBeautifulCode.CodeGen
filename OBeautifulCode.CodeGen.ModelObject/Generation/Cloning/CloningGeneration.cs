@@ -65,7 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative)
+            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()))
             {
                 return null;
             }
@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneStatements)
                 : string.Empty;
 
-            var deepCloneWithTestCode = modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative
+            var deepCloneWithTestCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()))
                 ? string.Empty
                 : Environment.NewLine + Environment.NewLine + typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTest);
 
