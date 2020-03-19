@@ -51,7 +51,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<MyModelPrivateSettersEmptyParentNotEmptyChild>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersEmptyParentNotEmptyChild)}: ChildReadOnlyDictionaryOfStringString = {systemUnderTest.ChildReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.MyModelPrivateSettersEmptyParentNotEmptyChild: ChildReadOnlyDictionaryOfStringString = {systemUnderTest.ChildReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}."),
                         };
 
                         return result;

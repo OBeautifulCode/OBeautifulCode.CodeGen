@@ -142,7 +142,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (!(obj is MyModelComparingPublicSetters other))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelComparingPublicSetters)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'MyModelComparingPublicSetters' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareTo(other);

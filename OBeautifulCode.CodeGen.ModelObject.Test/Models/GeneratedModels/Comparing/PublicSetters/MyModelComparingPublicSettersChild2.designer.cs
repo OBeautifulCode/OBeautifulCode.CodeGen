@@ -142,7 +142,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (!(obj is MyModelComparingPublicSettersChild2 other))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelComparingPublicSettersChild2)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'MyModelComparingPublicSettersChild2' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareTo(other);
@@ -160,7 +160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (!(other is MyModelComparingPublicSettersChild2 otherAsMyModelComparingPublicSettersChild2))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelComparingPublicSettersChild2)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'MyModelComparingPublicSettersChild2' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareToForRelativeSortOrder(otherAsMyModelComparingPublicSettersChild2);

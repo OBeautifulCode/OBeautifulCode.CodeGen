@@ -8,7 +8,7 @@
 
             if (!(other is [model-type-name-here] otherAs[model-type-name-here]))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof([model-type-name-here])}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '[model-type-name-here]' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareToForRelativeSortOrder(otherAs[model-type-name-here]);

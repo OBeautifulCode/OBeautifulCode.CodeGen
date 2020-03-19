@@ -51,7 +51,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<MyModelPublicSettersEmptyParentEmptyChild>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersEmptyParentEmptyChild)}: <no properties>."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.MyModelPublicSettersEmptyParentEmptyChild: <no properties>."),
                         };
 
                         return result;

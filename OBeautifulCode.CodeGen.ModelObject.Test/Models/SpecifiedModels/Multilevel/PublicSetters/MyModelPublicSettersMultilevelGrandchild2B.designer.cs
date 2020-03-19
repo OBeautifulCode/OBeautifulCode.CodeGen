@@ -196,7 +196,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (!(obj is MyModelPublicSettersMultilevelGrandchild2B other))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPublicSettersMultilevelGrandchild2B)}' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'MyModelPublicSettersMultilevelGrandchild2B' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareTo(other);
@@ -214,7 +214,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (!(other is MyModelPublicSettersMultilevelGrandchild2B otherAsMyModelPublicSettersMultilevelGrandchild2B))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPublicSettersMultilevelGrandchild2B)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'MyModelPublicSettersMultilevelGrandchild2B' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareToForRelativeSortOrder(otherAsMyModelPublicSettersMultilevelGrandchild2B);
@@ -232,7 +232,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (!(other is MyModelPublicSettersMultilevelGrandchild2B otherAsMyModelPublicSettersMultilevelGrandchild2B))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '{nameof(MyModelPublicSettersMultilevelGrandchild2B)}' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'MyModelPublicSettersMultilevelGrandchild2B' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
             var result = this.CompareToForRelativeSortOrder(otherAsMyModelPublicSettersMultilevelGrandchild2B);
@@ -348,7 +348,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersMultilevelGrandchild2B)}: ParentInt = {this.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {this.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2BInt = {this.Grandchild2BInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.MyModelPublicSettersMultilevelGrandchild2B: ParentInt = {this.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {this.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2BInt = {this.Grandchild2BInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");
 
             return result;
         }

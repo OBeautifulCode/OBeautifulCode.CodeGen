@@ -117,7 +117,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPrivateSettersNotEmptyParentEmptyChild)}: ParentReadOnlyDictionaryOfStringString = {this.ParentReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.MyModelPrivateSettersNotEmptyParentEmptyChild: ParentReadOnlyDictionaryOfStringString = {this.ParentReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}.");
 
             return result;
         }

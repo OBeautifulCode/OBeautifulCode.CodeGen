@@ -209,6 +209,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                         content = codeLines.ToNewLineDelimited();
                     }
+                    else if (generatedModelScenario == GeneratedModelScenario.StringRepresentation)
+                    {
+                        // this is necessary so that the project compiles when running unit
+                        // tests that precede the unit test that creates code generated model tests
+                        var codeLines = new List<string>
+                        {
+                            "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                            "{",
+                            "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                            Invariant($"    public static partial class {modelName}{testToken}"),
+                            "    {",
+                            Invariant($"        private static readonly StringRepresentationTestScenarios<{modelName}> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<{modelName}>();"),
+                            "    }",
+                            "}",
+                        };
+
+                        content = codeLines.ToNewLineDelimited();
+                    }
                 }
 
                 File.WriteAllText(modelFilePath, content);

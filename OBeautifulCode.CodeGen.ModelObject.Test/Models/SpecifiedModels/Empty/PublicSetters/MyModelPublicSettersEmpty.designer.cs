@@ -93,7 +93,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"{nameof(OBeautifulCode.CodeGen.ModelObject.Test)}.{nameof(MyModelPublicSettersEmpty)}: <no properties>.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.MyModelPublicSettersEmpty: <no properties>.");
 
             return result;
         }
