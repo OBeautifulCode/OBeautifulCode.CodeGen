@@ -410,6 +410,13 @@ namespace OBeautifulCode.CodeGen
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
+
+            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsSystemEnumerable(_.PropertyType)).ToList();
+
+            if (enumerableProperties.Any())
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree an IEnumerable<T>; enumerables may have unintended side-effects when iterating (e.g. fetch objects from a database)': {enumerableProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+            }
         }
 
         private static void ThrowIfNotSupported(
@@ -578,6 +585,32 @@ namespace OBeautifulCode.CodeGen
                     // if the argument is a model type then move on;
                     // it will be validated when code gen is run for that model
                     if ((!IsEquatableType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private static bool IsOrContainsSystemEnumerable(
+            Type type)
+        {
+            if (type.IsClosedSystemEnumerableType())
+            {
+                return true;
+            }
+
+            if (type.IsGenericType)
+            {
+                var genericTypeArguments = type.GenericTypeArguments;
+
+                foreach (var genericTypeArgument in genericTypeArguments)
+                {
+                    // if the argument is a model type then move on;
+                    // it will be validated when code gen is run for that model
+                    if (IsOrContainsSystemEnumerable(genericTypeArgument))
                     {
                         return true;
                     }
