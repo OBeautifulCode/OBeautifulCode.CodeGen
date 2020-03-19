@@ -31,16 +31,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Initializes a new instance of the <see cref="ValidatedStringRepresentationTestScenario{T}"/> class.
         /// </summary>
         /// <param name="id">The identifier of the scenario.</param>
-        /// <param name="systemUnderTestExpectedPropertyValueFunc">A func that returns the object to test and the its expected string representation.</param>
+        /// <param name="systemUnderTestExpectedStringRepresentationFunc">A func that returns the object to test and the its expected string representation.</param>
         public ValidatedStringRepresentationTestScenario(
             string id,
-            Func<SystemUnderTestExpectedStringRepresentation<T>> systemUnderTestExpectedPropertyValueFunc)
+            Func<SystemUnderTestExpectedStringRepresentation<T>> systemUnderTestExpectedStringRepresentationFunc)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
-            new { systemUnderTestExpectedPropertyValueFunc }.AsTest().Must().NotBeNull(id);
+
+            new { systemUnderTestExpectedStringRepresentationFunc }.AsTest().Must().NotBeNull(id);
+
+            var systemUnderTestExpectedStringRepresentation = systemUnderTestExpectedStringRepresentationFunc();
+            var systemUnderTest = systemUnderTestExpectedStringRepresentation.SystemUnderTest;
+            new { systemUnderTest }.AsTest().Must().NotBeNull(id);
 
             this.Id = id;
-            this.SystemUnderTestExpectedPropertyValueFunc = systemUnderTestExpectedPropertyValueFunc;
+            this.SystemUnderTest = systemUnderTest;
+            this.ExpectedStringRepresentation = systemUnderTestExpectedStringRepresentation.ExpectedStringRepresentation;
         }
 
         /// <summary>
@@ -49,9 +55,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string Id { get; }
 
         /// <summary>
-        /// Gets a func that returns the object to test and the its expected string representation.
+        /// Gets the object being tested.
         /// </summary>
-        public Func<SystemUnderTestExpectedStringRepresentation<T>> SystemUnderTestExpectedPropertyValueFunc { get; }
+        public T SystemUnderTest { get; }
+
+        /// <summary>
+        /// Gets the expected string representation.
+        /// </summary>
+        public string ExpectedStringRepresentation { get; }
 
         /// <inheritdoc />
         public override string ToString()

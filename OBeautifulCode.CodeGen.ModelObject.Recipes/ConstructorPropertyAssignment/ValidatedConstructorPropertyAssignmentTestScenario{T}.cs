@@ -39,11 +39,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             Func<T, object> propertyGetterFunc)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
+            
             new { systemUnderTestExpectedPropertyValueFunc }.AsTest().Must().NotBeNull(id);
+
+            var systemUnderTestExpectedPropertyValue = systemUnderTestExpectedPropertyValueFunc();
+            var systemUnderTest = systemUnderTestExpectedPropertyValue.SystemUnderTest;
+            new { systemUnderTest }.AsTest().Must().NotBeNull(id);
+
             new { propertyGetterFunc }.AsTest().Must().NotBeNull(id);
 
             this.Id = id;
-            this.SystemUnderTestExpectedPropertyValueFunc = systemUnderTestExpectedPropertyValueFunc;
+            this.SystemUnderTest = systemUnderTest;
+            this.ExpectedPropertyValue = systemUnderTestExpectedPropertyValue.ExpectedPropertyValue;
             this.PropertyGetterFunc = propertyGetterFunc;
         }
 
@@ -53,9 +60,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string Id { get; }
 
         /// <summary>
-        /// Gets a func that returns the object to test and the expected value of the property being tested.
+        /// Gets the object to test.
         /// </summary>
-        public Func<SystemUnderTestExpectedPropertyValue<T>> SystemUnderTestExpectedPropertyValueFunc { get; }
+        public T SystemUnderTest { get; }
+
+        /// <summary>
+        /// Gets the expected property value.
+        /// </summary>
+        public object ExpectedPropertyValue { get; }
 
         /// <summary>
         /// Gets a func that calls the getter of the property that is assigned a value by the constructor.

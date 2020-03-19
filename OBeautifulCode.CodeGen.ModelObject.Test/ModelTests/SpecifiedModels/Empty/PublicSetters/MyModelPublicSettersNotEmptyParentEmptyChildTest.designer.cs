@@ -174,16 +174,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                 foreach (var scenario in scenarios)
                 {
-                    // Arrange
-                    var systemUnderTestAndExpected = scenario.SystemUnderTestExpectedPropertyValueFunc();
-
-                    systemUnderTestAndExpected.SystemUnderTest.AsTest().Must().NotBeNull(because: scenario.Id);
-
-                    // Act
-                    var actual = systemUnderTestAndExpected.SystemUnderTest.ToString();
+                    // Arrange, Act
+                    var actual = scenario.SystemUnderTest.ToString();
 
                     // Assert
-                    actual.AsTest().Must().BeEqualTo(systemUnderTestAndExpected.ExpectedStringRepresentation, because: scenario.Id);
+                    actual.AsTest().Must().BeEqualTo(scenario.ExpectedStringRepresentation, because: scenario.Id);
                 }
             }
         }
