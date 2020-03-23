@@ -191,7 +191,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                         content = codeLines.ToNewLineDelimited();
                     }
-                    else if ((generatedModelScenario == GeneratedModelScenario.Comparing) || (specifiedModelKind == SpecifiedModelKind.Multilevel))
+                    else if (generatedModelScenario == GeneratedModelScenario.Comparing)
                     {
                         // this is necessary so that the project compiles when running unit
                         // tests that precede the unit test that creates code generated model tests
@@ -206,6 +206,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                 "    }",
                                 "}",
                             };
+
+                        content = codeLines.ToNewLineDelimited();
+                    }
+                    else if (specifiedModelKind == SpecifiedModelKind.Multilevel)
+                    {
+                        // this is necessary so that the project compiles when running unit
+                        // tests that precede the unit test that creates code generated model tests
+                        var codeLines = new List<string>
+                        {
+                            "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                            "{",
+                            "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                            Invariant($"    public static partial class {modelName}{testToken}"),
+                            "    {",
+                            Invariant($"        private static readonly StringRepresentationTestScenarios<{modelName}> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<{modelName}>();"),
+                            string.Empty,
+                            Invariant($"        private static readonly ConstructorArgumentValidationTestScenarios<{modelName}> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<{modelName}>();"),
+                            string.Empty,
+                            Invariant($"        private static readonly ComparableTestScenarios<{modelName}> ComparableTestScenarios = new ComparableTestScenarios<{modelName}>();"),
+                            "    }",
+                            "}",
+                        };
 
                         content = codeLines.ToNewLineDelimited();
                     }

@@ -13,5 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         Empty,
 
         Multilevel,
+
+        ExpressionBody,
     }
 }

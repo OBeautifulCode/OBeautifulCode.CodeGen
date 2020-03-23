@@ -4279,6 +4279,66 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
 
             AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelAllPublicSettersParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersExpressionBody(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersExpressionBodyChild1(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersExpressionBodyChild2(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersExpressionBodyParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersExpressionBody
+                             {
+                                 IntProperty                        = A.Dummy<int>(),
+                                 StringProperty                     = A.Dummy<string>(),
+                                 ReadOnlyCollectionOfStringProperty = A.Dummy<IReadOnlyCollection<string>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersExpressionBodyChild1
+                             {
+                                 ParentIntProperty                        = A.Dummy<int>(),
+                                 ParentStringProperty                     = A.Dummy<string>(),
+                                 ParentReadOnlyCollectionOfStringProperty = A.Dummy<IReadOnlyCollection<string>>(),
+                                 ChildIntProperty                         = A.Dummy<int>(),
+                                 ChildStringProperty                      = A.Dummy<string>(),
+                                 ChildReadOnlyCollectionOfStringProperty  = A.Dummy<IReadOnlyCollection<string>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPublicSettersExpressionBodyChild2
+                             {
+                                 ParentIntProperty                        = A.Dummy<int>(),
+                                 ParentStringProperty                     = A.Dummy<string>(),
+                                 ParentReadOnlyCollectionOfStringProperty = A.Dummy<IReadOnlyCollection<string>>(),
+                                 ChildIntProperty                         = A.Dummy<int>(),
+                                 ChildStringProperty                      = A.Dummy<string>(),
+                                 ChildReadOnlyCollectionOfStringProperty  = A.Dummy<IReadOnlyCollection<string>>(),
+                             });
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersExpressionBodyParent>();
         }
 
         /// <inheritdoc />
