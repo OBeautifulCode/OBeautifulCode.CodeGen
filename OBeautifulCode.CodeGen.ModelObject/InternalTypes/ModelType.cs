@@ -221,6 +221,7 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets the declared only properties of concern for the model type.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public IReadOnlyList<PropertyOfConcern> DeclaredOnlyPropertiesOfConcern { get; }
 
         /// <summary>
@@ -333,6 +334,7 @@ namespace OBeautifulCode.CodeGen
         /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method
         /// or has a derivative that does.
         /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public bool DeclaresToStringMethodDirectlyOrInDerivative { get; }
 
         /// <summary>
@@ -524,7 +526,7 @@ namespace OBeautifulCode.CodeGen
 
             if (type.IsAbstract)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one constructor, but the class is abstract.  Abstract classes should not have constructors."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one public constructor, but the class is abstract.  Abstract classes should not have public constructors."));
             }
 
             // only has default constructor?
@@ -533,29 +535,40 @@ namespace OBeautifulCode.CodeGen
                 return constructors.Single();
             }
 
-            var propertyNames = propertyOfConcerns.Select(_ => _.Name).ToList();
-
             var constructorsMatchingPropertiesOfConcern =
                 constructors
                 .Where(
                     _ =>
                     {
-                        var parameterNames = _.GetParameters().Select(p => p.Name).ToList();
+                        var parameterNameToTypeMap = _.GetParameters().ToDictionary(p => p.Name, p => p.ParameterType, StringComparer.OrdinalIgnoreCase);
 
-                        var foundMatchingConstructor = !parameterNames.SymmetricDifference(propertyNames, StringComparer.OrdinalIgnoreCase).Any();
+                        foreach (var propertyOfConcern in propertyOfConcerns)
+                        {
+                            if (!parameterNameToTypeMap.ContainsKey(propertyOfConcern.Name))
+                            {
+                                return false;
+                            }
 
-                        return foundMatchingConstructor;
+                            var parameterType = parameterNameToTypeMap[propertyOfConcern.Name];
+
+                            if (parameterType != propertyOfConcern.PropertyType)
+                            {
+                                return false;
+                            }
+                        }
+
+                        return true;
                     })
                 .ToList();
 
             if (constructorsMatchingPropertiesOfConcern.Count == 0)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one non-default constructor, but none of the constructors have parameters that match the properties of concern by name: {propertyNames.ToDelimitedString(", ")}"));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one non-default constructor, but none of the constructors have parameters that match the properties of concern by name and type: {propertyOfConcerns.Select(_ => _.Name).ToDelimitedString(", ")}"));
             }
 
             if (constructorsMatchingPropertiesOfConcern.Count > 1)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {constructorsMatchingPropertiesOfConcern.Count} constructors that match the properties of concern by name, whereas only 1 was expected."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {constructorsMatchingPropertiesOfConcern.Count} constructors that match the properties of concern by name and type, whereas only 1 was expected."));
             }
 
             var result = constructorsMatchingPropertiesOfConcern.Single();

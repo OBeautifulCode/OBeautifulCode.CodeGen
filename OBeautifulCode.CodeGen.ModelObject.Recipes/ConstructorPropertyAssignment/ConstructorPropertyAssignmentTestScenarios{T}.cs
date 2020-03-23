@@ -104,12 +104,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 var becauseNoScenarios = new[]
                 {
-                    "Use a static constructor on your test class to add scenarios by calling ConstructorPropertyAssignmentTestScenarios.AddScenario(...).",
-                    Invariant($"If no properties are assigned in the constructor, clear all scenarios by calling ConstructorPropertyAssignmentTestScenarios.RemoveAllScenarios() and add ConstructorPropertyAssignmentTestScenario<{typeCompilableString}>.NoPropertiesAssignedInConstructorScenario."),
-                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorPropertyAssignmentTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"Use a static constructor on your test class to add scenarios by calling {nameof(ConstructorPropertyAssignmentTestScenarios<object>)}.{nameof(ConstructorPropertyAssignmentTestScenarios<object>.AddScenario)}(...)."),
+                    Invariant($"If no properties are assigned in the constructor, clear all scenarios by calling {nameof(ConstructorPropertyAssignmentTestScenarios<object>)}.{nameof(ConstructorPropertyAssignmentTestScenarios<object>.RemoveAllScenarios)}() and add {nameof(ConstructorPropertyAssignmentTestScenario<object>)}<{typeCompilableString}>.{nameof(ConstructorPropertyAssignmentTestScenario<object>.NoPropertiesAssignedInConstructorScenario)}."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add {nameof(ConstructorPropertyAssignmentTestScenario<object>)}<{typeCompilableString}>.{nameof(ConstructorPropertyAssignmentTestScenario<object>.ForceGeneratedTestsToPassAndWriteMyOwnScenario)}."),
                 };
 
-                this.scenarios.AsTest("ConstructorPropertyAssignmentTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest(Invariant($"{nameof(ConstructorPropertyAssignmentTestScenarios<object>)}.{nameof(ConstructorPropertyAssignmentTestScenarios<object>.scenarios)}")).Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedConstructorPropertyAssignmentTestScenario<T>>();
 
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    var scenarioId = Invariant($"{scenarioName} (ConstructorPropertyAssignment test scenario #{scenarioNumber} of {scenariosCount}):");
+                    var scenarioId = Invariant($"{scenarioName} ({nameof(ConstructorPropertyAssignmentTestScenario<object>)} #{scenarioNumber} of {scenariosCount}):");
 
                     var validatedScenario = new ValidatedConstructorPropertyAssignmentTestScenario<T>(
                         scenarioId,

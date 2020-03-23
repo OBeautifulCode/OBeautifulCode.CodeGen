@@ -104,11 +104,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 var becauseNoScenarios = new[]
                 {
-                    "Use a static constructor on your test class to add scenarios by calling DeepCloneWithTestScenarios.AddScenario(...).",
-                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling DeepCloneWithTestScenarios.RemoveAllScenarios() and then add DeepCloneWithTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"Use a static constructor on your test class to add scenarios by calling {nameof(DeepCloneWithTestScenarios<object>)}.{nameof(DeepCloneWithTestScenarios<object>.AddScenario)}(...)."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling {nameof(DeepCloneWithTestScenarios<object>)}.{nameof(DeepCloneWithTestScenarios<object>.RemoveAllScenarios)}() and then add {nameof(DeepCloneWithTestScenario<object>)}<{typeCompilableString}>.{nameof(DeepCloneWithTestScenario<object>.ForceGeneratedTestsToPassAndWriteMyOwnScenario)}."),
                 };
 
-                this.scenarios.AsTest("DeepCloneWithTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest(Invariant($"{nameof(DeepCloneWithTestScenarios<object>)}.{nameof(DeepCloneWithTestScenarios<object>.scenarios)}")).Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedDeepCloneWithTestScenario<T>>();
 
@@ -122,7 +122,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    var scenarioId = Invariant($"{scenarioName} (DeepCloneWith test scenario #{scenarioNumber} of {scenariosCount}):");
+                    var scenarioId = Invariant($"{scenarioName} ({nameof(DeepCloneWithTestScenario<object>)} #{scenarioNumber} of {scenariosCount}):");
 
                     var validatedScenario = new ValidatedDeepCloneWithTestScenario<T>(
                         scenarioId,

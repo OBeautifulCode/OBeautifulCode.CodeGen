@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MyModelPublicSettersExpressionBodyChild2.cs" company="OBeautifulCode">
+// <copyright file="MyModelPrivateSettersMultipleConstructors.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,35 +8,49 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
-    public partial class MyModelPublicSettersExpressionBodyChild2 : MyModelPublicSettersExpressionBodyParent, IModelViaCodeGen
+    public partial class MyModelPrivateSettersMultipleConstructors : IModelViaCodeGen
     {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public int ChildIntProperty { get; set; }
+        public MyModelPrivateSettersMultipleConstructors(
+            int intProperty)
+            : this(intProperty, "MyModelPrivateSettersMultipleConstructors-constant")
+        {
+        }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public string ChildStringProperty { get; set; }
+        public MyModelPrivateSettersMultipleConstructors(
+            int intProperty,
+            string stringProperty)
+            : this(intProperty, stringProperty, new[] { stringProperty })
+        {
+        }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyCollection<string> ChildReadOnlyCollectionOfStringProperty { get; set; }
+        public MyModelPrivateSettersMultipleConstructors(
+            int intProperty,
+            string stringProperty,
+            IReadOnlyCollection<string> readOnlyCollectionOfStringProperty)
+        {
+            new { stringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { readOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+
+            this.IntProperty = intProperty;
+            this.StringProperty = stringProperty;
+            this.ReadOnlyCollectionOfStringProperty = readOnlyCollectionOfStringProperty;
+        }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public string ExpressionBodyChildStringProperty => this.ChildStringProperty + this.ChildIntProperty;
+        public int IntProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public int ExpressionBodyChildIntProperty => this.ChildIntProperty * 5;
+        public string StringProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyCollection<string> ExpressionBodyChildReadOnlyCollectionOfStringProperty => this.ChildReadOnlyCollectionOfStringProperty?.Take(1).ToList();
-
-        public override string OverrideExpressionBodyPropertyString => this.ParentStringProperty + this.ParentIntProperty;
-
-        public override int OverrideExpressionBodyIntProperty => this.ParentIntProperty * 5;
-
-        public override IReadOnlyCollection<string> OverrideExpressionBodyReadOnlyCollectionOfStringProperty => this.ParentReadOnlyCollectionOfStringProperty?.Take(1).ToList();
+        public IReadOnlyCollection<string> ReadOnlyCollectionOfStringProperty { get; private set; }
     }
 }

@@ -100,6 +100,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 foreach (var setterKind in setterKinds)
                 {
+                    if ((specifiedModelKind == SpecifiedModelKind.MultipleConstructors) && (setterKind != SetterKind.PrivateSetters))
+                    {
+                        continue;
+                    }
+
                     var directoryPath = specifiedModelKind.GetSpecifiedModelsDirectoryPath(setterKind, generationKind);
 
                     var modelNameSuffixes = Settings.SpecifiedModelKindToModelNameSuffixMap[specifiedModelKind];

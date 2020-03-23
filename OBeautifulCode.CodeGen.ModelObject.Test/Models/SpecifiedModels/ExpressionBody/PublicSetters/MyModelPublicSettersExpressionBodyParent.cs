@@ -31,10 +31,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public int ExpressionBodyParentIntProperty => this.ParentIntProperty * 7;
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyCollection<string> ExpressionBodyParentReadOnlyCollectionOfStringProperty => this.ParentReadOnlyCollectionOfStringProperty.Take(1).ToList();
+        public IReadOnlyCollection<string> ExpressionBodyParentReadOnlyCollectionOfStringProperty => this.ParentReadOnlyCollectionOfStringProperty?.Take(1).ToList();
 
         public abstract string OverrideExpressionBodyPropertyString { get; }
 
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public abstract int OverrideExpressionBodyIntProperty { get; }
 
         public abstract IReadOnlyCollection<string> OverrideExpressionBodyReadOnlyCollectionOfStringProperty { get; }

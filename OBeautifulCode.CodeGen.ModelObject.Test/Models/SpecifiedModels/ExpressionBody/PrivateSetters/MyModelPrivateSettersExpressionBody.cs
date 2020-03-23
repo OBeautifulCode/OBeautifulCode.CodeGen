@@ -16,6 +16,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public partial class MyModelPrivateSettersExpressionBody : IModelViaCodeGen
     {
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public MyModelPrivateSettersExpressionBody(
             int intProperty,
             string stringProperty,

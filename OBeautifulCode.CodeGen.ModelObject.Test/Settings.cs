@@ -105,6 +105,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 SpecifiedModelKind.ExpressionBody,
                 new[] { "ExpressionBody", "ExpressionBodyParent", "ExpressionBodyChild1", "ExpressionBodyChild2" }
             },
+            {
+                SpecifiedModelKind.MultipleConstructors,
+                new[] { "MultipleConstructors", "MultipleConstructorsParent", "MultipleConstructorsChild1", "MultipleConstructorsChild2" }
+            },
         };
     }
 }

@@ -104,12 +104,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 var becauseNoScenarios = new[]
                 {
-                    "Use a static constructor on your test class to add scenarios by calling ConstructorArgumentValidationTestScenarios.AddScenario(...).",
-                    Invariant($"If the constructor cannot throw, clear all scenarios by calling ConstructorArgumentValidationTestScenarios.RemoveAllScenarios() and add ConstructorArgumentValidationTestScenario<{typeCompilableString}>.ConstructorCannotThrowScenario."),
-                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add ConstructorArgumentValidationTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"Use a static constructor on your test class to add scenarios by calling {nameof(ConstructorArgumentValidationTestScenarios<object>)}.{nameof(ConstructorArgumentValidationTestScenarios<object>.AddScenario)}(...)."),
+                    Invariant($"If the constructor cannot throw, clear all scenarios by calling {nameof(ConstructorArgumentValidationTestScenarios<object>)}.{nameof(ConstructorArgumentValidationTestScenarios<object>.RemoveAllScenarios)}() and add {nameof(ConstructorArgumentValidationTestScenario<object>)}<{typeCompilableString}>.{nameof(ConstructorArgumentValidationTestScenario<object>.ConstructorCannotThrowScenario)}."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios and then add {nameof(ConstructorArgumentValidationTestScenario<object>)}<{typeCompilableString}>.{nameof(ConstructorArgumentValidationTestScenario<object>.ForceGeneratedTestsToPassAndWriteMyOwnScenario)}."),
                 };
 
-                this.scenarios.AsTest("ConstructorArgumentValidationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest(Invariant($"{nameof(ConstructorArgumentValidationTestScenarios<object>)}.{nameof(ConstructorArgumentValidationTestScenarios<object>.scenarios)}")).Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedConstructorArgumentValidationTestScenario<T>>();
 
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    var scenarioId = Invariant($"{scenarioName} (ConstructorArgumentValidation test scenario #{scenarioNumber} of {scenariosCount}):");
+                    var scenarioId = Invariant($"{scenarioName} ({nameof(ConstructorArgumentValidationTestScenario<object>)} #{scenarioNumber} of {scenariosCount}):");
 
                     var validatedScenario = new ValidatedConstructorArgumentValidationTestScenario<T>(
                         scenarioId,

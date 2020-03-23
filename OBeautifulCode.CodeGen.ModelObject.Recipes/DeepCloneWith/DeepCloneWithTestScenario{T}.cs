@@ -10,6 +10,9 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
+
+    using OBeautifulCode.CodeGen.ModelObject.Recipes.Internal;
 
     /// <summary>
     /// Specifies a scenario for testing DeepCloneWith methods.
@@ -44,6 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
         /// </summary>
+        [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = ObcSuppressBecause.CA1000_DoNotDeclareStaticMembersOnGenericTypes_StaticPropertyReturnsInstanceOfContainingGenericClassAndIsConvenientAndMostDiscoverableWhereDeclared)]
         public static DeepCloneWithTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>
             new DeepCloneWithTestScenario<T>
             {

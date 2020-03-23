@@ -41,8 +41,8 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OBeautifulCode.Type, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Type.1.0.38\lib\net462\OBeautifulCode.Type.dll</HintPath>
+    <Reference Include="OBeautifulCode.Type, Version=1.0.41.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Type.1.0.41\lib\net462\OBeautifulCode.Type.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -195,7 +195,6 @@
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneWithCodeAnalysisSuppressions.All.Both.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".analyzers\dictionary.xml" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTest.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithScenario.All.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.TestSnippet.DeepCloneWithTestFields.All.Both.txt" />
@@ -211,12 +210,15 @@
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorTestFields.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Concrete.Generated.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include=".analyzers\dictionary.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets" Condition="Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets')" />
+  <Import Project="..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets" Condition="Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets'))" />
+    <Error Condition="!Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets'))" />
   </Target>
 </Project>

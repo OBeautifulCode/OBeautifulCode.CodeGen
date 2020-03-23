@@ -23,6 +23,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DummyFactory()
         {
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultipleConstructors(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultipleConstructorsChild1(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersMultipleConstructorsChild2(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersMultipleConstructorsParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new MyModelPrivateSettersMultilevelGrandchild2B(
                                  A.Dummy<int>(),
                                  A.Dummy<int>(),

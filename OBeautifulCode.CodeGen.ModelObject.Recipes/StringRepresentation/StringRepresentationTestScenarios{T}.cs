@@ -99,11 +99,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 var becauseNoScenarios = new[]
                 {
-                    "Use a static constructor on your test class to add scenarios by calling StringRepresentationTestScenarios.AddScenario(...).",
-                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling StringRepresentationTestScenarios.RemoveAllScenarios() and then add StringRepresentationTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"Use a static constructor on your test class to add scenarios by calling {nameof(StringRepresentationTestScenarios<object>)}.{nameof(StringRepresentationTestScenarios<object>.AddScenario)}(...)."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling {nameof(StringRepresentationTestScenarios<object>)}.{nameof(StringRepresentationTestScenarios<object>.RemoveAllScenarios)}() and then add {nameof(StringRepresentationTestScenario<object>)}<{typeCompilableString}>.{nameof(StringRepresentationTestScenario<object>.ForceGeneratedTestsToPassAndWriteMyOwnScenario)}."),
                 };
 
-                this.scenarios.AsTest("StringRepresentationTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
+                this.scenarios.AsTest(Invariant($"{nameof(StringRepresentationTestScenarios<object>)}.{nameof(StringRepresentationTestScenarios<object>.scenarios)}")).Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedStringRepresentationTestScenario<T>>();
 
@@ -117,7 +117,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    var scenarioId = Invariant($"{scenarioName} (StringRepresentation test scenario #{scenarioNumber} of {scenariosCount}):");
+                    var scenarioId = Invariant($"{scenarioName} ({nameof(StringRepresentationTestScenario<object>)} #{scenarioNumber} of {scenariosCount}):");
 
                     var validatedScenario = new ValidatedStringRepresentationTestScenario<T>(
                         scenarioId,

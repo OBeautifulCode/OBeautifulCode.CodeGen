@@ -104,12 +104,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                 var becauseNoScenarios = new[]
                 {
-                    "Use a static constructor on your test class to add scenarios by calling EquatableTestScenarios.AddScenario(...).",
-                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling EquatableTestScenarios.RemoveAllScenarios() and then add EquatableTestScenario<{typeCompilableString}>.ForceGeneratedTestsToPassAndWriteMyOwnScenario."),
+                    Invariant($"Use a static constructor on your test class to add scenarios by calling {nameof(EquatableTestScenarios<object>)}.{nameof(EquatableTestScenarios<object>.AddScenario)}(...)."),
+                    Invariant($"If you need to force the consuming unit tests to pass and you'll write your own unit tests, clear all scenarios by calling {nameof(EquatableTestScenarios<object>)}.{nameof(EquatableTestScenarios<object>.RemoveAllScenarios)}() and then add {nameof(EquatableTestScenario<object>)}<{typeCompilableString}>.{nameof(EquatableTestScenario<object>.ForceGeneratedTestsToPassAndWriteMyOwnScenario)}."),
                 };
 
-                this.scenarios.AsTest("EquatableTestScenarios.Scenarios").Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
-
+                this.scenarios.AsTest(Invariant($"{nameof(EquatableTestScenarios<object>)}.{nameof(EquatableTestScenarios<object>.scenarios)}")).Must().NotBeEmptyEnumerable(because: string.Join(Environment.NewLine, becauseNoScenarios), applyBecause: ApplyBecause.SuffixedToDefaultMessage);
 
                 var result = new List<ValidatedEquatableTestScenario<T>>();
 
@@ -123,7 +122,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
 
-                    var scenarioId = Invariant($"{scenarioName} (equatable test scenario #{scenarioNumber} of {scenariosCount}):");
+                    var scenarioId = Invariant($"{scenarioName} ({nameof(EquatableTestScenario<object>)} #{scenarioNumber} of {scenariosCount}):");
 
                     var validatedScenario = new ValidatedEquatableTestScenario<T>(
                         scenarioId,

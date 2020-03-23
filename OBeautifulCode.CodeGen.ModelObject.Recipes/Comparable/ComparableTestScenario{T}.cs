@@ -10,7 +10,10 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.Serialization;
+
+    using OBeautifulCode.CodeGen.ModelObject.Recipes.Internal;
 
     /// <summary>
     /// Specifies a scenario for comparability tests.
@@ -64,6 +67,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
         /// </summary>
+        [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = ObcSuppressBecause.CA1000_DoNotDeclareStaticMembersOnGenericTypes_StaticPropertyReturnsInstanceOfContainingGenericClassAndIsConvenientAndMostDiscoverableWhereDeclared)]
         public static ComparableTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>
             new ComparableTestScenario<T>
             {

@@ -11,6 +11,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+
+    using OBeautifulCode.CodeGen.ModelObject.Recipes.Internal;
+
+    using static System.FormattableString;
 
     /// <summary>
     /// Specifies a scenario for constructor argument validation tests.
@@ -26,7 +31,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     class ConstructorArgumentValidationTestScenario<T>
         where T : class
     {
-        private const string AlwaysPassingExceptionMessage = "Thrown by ConstructionFunc for a constructor argument validation test scenario that is guaranteed to pass because the ExpectedExceptionType and ExpectedExceptionMessageEquals are set to the type of this exception and this message, respectively.";
+        private static readonly string AlwaysPassingExceptionMessage = Invariant($"Thrown by {nameof(ConstructorArgumentValidationTestScenario<object>.ConstructionFunc)} for a constructor argument validation test scenario that is guaranteed to pass because the {nameof(ConstructorArgumentValidationTestScenario<object>.ExpectedExceptionType)} and {nameof(ConstructorArgumentValidationTestScenario<object>.ExpectedExceptionMessageEquals)} are set to the type of this exception and this message, respectively.");
 
         /// <summary>
         /// Gets or sets the name of the scenario.
@@ -58,6 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Gets a scenario to use when the constructor cannot throw.
         /// </summary>
+        [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = ObcSuppressBecause.CA1000_DoNotDeclareStaticMembersOnGenericTypes_StaticPropertyReturnsInstanceOfContainingGenericClassAndIsConvenientAndMostDiscoverableWhereDeclared)]
         public static ConstructorArgumentValidationTestScenario<T> ConstructorCannotThrowScenario =>
             new ConstructorArgumentValidationTestScenario<T>
             {
@@ -70,6 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.
         /// </summary>
+        [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = ObcSuppressBecause.CA1000_DoNotDeclareStaticMembersOnGenericTypes_StaticPropertyReturnsInstanceOfContainingGenericClassAndIsConvenientAndMostDiscoverableWhereDeclared)]
         public static ConstructorArgumentValidationTestScenario<T> ForceGeneratedTestsToPassAndWriteMyOwnScenario =>
             new ConstructorArgumentValidationTestScenario<T>
             {
