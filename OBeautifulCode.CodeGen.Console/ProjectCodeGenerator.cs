@@ -36,10 +36,12 @@ namespace OBeautifulCode.CodeGen.Console
         /// <param name="projectDirectory">Directory of the project to work on.</param>
         /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
         /// <param name="projectOutputDirectory">Directory where project outputs built files (e.g. ...\\bin\\debug\\)..</param>
+        /// <param name="includeSerializationTesting">A value indicating whether to include serialization testing.</param>
         public static void GenerateCodeForProject(
             string projectDirectory,
             string testProjectDirectory,
-            string projectOutputDirectory)
+            string projectOutputDirectory,
+            bool includeSerializationTesting)
         {
             if (!Directory.Exists(projectDirectory))
             {
@@ -102,7 +104,7 @@ namespace OBeautifulCode.CodeGen.Console
 
                         if (hasTestProject)
                         {
-                            WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder);
+                            WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder, includeSerializationTesting);
                         }
 
                         if (type.IsAssignableTo(typeof(IModelViaCodeGen)))
@@ -229,7 +231,8 @@ namespace OBeautifulCode.CodeGen.Console
             string testProjectDirectory,
             IReadOnlyCollection<string> testProjectSourceFilePaths,
             string testNamespace,
-            Func<string, string> fileHeaderBuilder)
+            Func<string, string> fileHeaderBuilder,
+            bool includeSerializationTesting)
         {
             var modelTestFileName = type.Name + "Test.cs";
 
@@ -251,7 +254,7 @@ namespace OBeautifulCode.CodeGen.Console
 
             var modelTestDesignerFilePath = GetDesignerFilePath(modelTestFilePath);
 
-            var testPartialClassContents = type.GenerateForModel(GenerateFor.ModelImplementationTestsPartialClassWithSerialization);
+            var testPartialClassContents = type.GenerateForModel(includeSerializationTesting ? GenerateFor.ModelImplementationTestsPartialClassWithSerialization : GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization);
 
             File.WriteAllText(modelTestDesignerFilePath, testPartialClassContents, Encoding);
         }

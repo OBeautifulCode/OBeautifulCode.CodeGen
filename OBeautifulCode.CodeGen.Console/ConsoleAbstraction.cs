@@ -25,20 +25,22 @@ namespace OBeautifulCode.CodeGen.Console
         /// <param name="projectDirectory">Directory of the project to work on.</param>
         /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
         /// <param name="projectOutputDirectory">Directory where project outputs built files (e.g. ...\\bin\\debug\\).</param>
+        /// <param name="includeSerializationTesting">Optional value indicating whether to include serialization testing (default is true).</param>
         [Verb(Aliases = "model", IsDefault = false, Description = "Runs the generation logic for specified project.")]
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_MethodIsWiredIntoClapAsVerb)]
         public static void Model(
             [Aliases("")] [Description("Launches the debugger.")] [DefaultValue(false)] bool debug,
             [Aliases("")] [Required] [Description("Directory of the project to work on.")] string projectDirectory,
             [Aliases("")] [Required] [Description("Directory of the test project associated with the project to work on.")] string testProjectDirectory,
-            [Aliases("")] [Required] [Description("Directory where project outputs built files (e.g. ...\\bin\\debug\\).")] string projectOutputDirectory)
+            [Aliases("")] [Required] [Description("Directory where project outputs built files (e.g. ...\\bin\\debug\\).")] string projectOutputDirectory,
+            [Aliases("")] [Description("Indicates whether to include serialization testing.")] [DefaultValue(true)] bool includeSerializationTesting)
         {
             if (debug)
             {
                 Debugger.Launch();
             }
 
-            ProjectCodeGenerator.GenerateCodeForProject(projectDirectory, testProjectDirectory, projectOutputDirectory);
+            ProjectCodeGenerator.GenerateCodeForProject(projectDirectory, testProjectDirectory, projectOutputDirectory, includeSerializationTesting);
         }
     }
 }
