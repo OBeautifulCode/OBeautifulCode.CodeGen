@@ -65,8 +65,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     Name = "constructor should throw ArgumentNullException when parameter 'childReadOnlyDictionaryOfStringString' is null scenario",
                     ConstructionFunc = () =>
                     {
-                        var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
-
                         var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
                                              null);
 
@@ -81,8 +79,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     Name = "constructor should throw ArgumentException when parameter 'childReadOnlyDictionaryOfStringString' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
-                        var referenceObject = A.Dummy<MyModelPrivateSettersEmptyParentNotEmptyChild>();
-
                         var result = new MyModelPrivateSettersEmptyParentNotEmptyChild(
                                              new Dictionary<string, string>());
 

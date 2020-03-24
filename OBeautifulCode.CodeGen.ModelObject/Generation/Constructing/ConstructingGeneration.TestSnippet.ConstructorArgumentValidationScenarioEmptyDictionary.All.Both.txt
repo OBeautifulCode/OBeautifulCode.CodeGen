@@ -4,9 +4,7 @@
                     Name = "constructor should throw ArgumentException when parameter '[parameter-name-here]' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
-                        var referenceObject = A.Dummy<[model-type-name-here]>();
-
-                        var result = [construct-object-here];
+                        [reference-object-here]var result = [construct-object-here];
 
                         return result;
                     },

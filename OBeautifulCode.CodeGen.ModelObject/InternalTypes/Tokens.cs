@@ -255,5 +255,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The DeepConeWith... test scenarios.
         /// </summary>
         public const string DeepCloneWithTestScenariosToken = "[deep-clone-with-test-scenarios-here]";
+
+        /// <summary>
+        /// A reference object used in testing.
+        /// </summary>
+        public const string ReferenceObjectToken = "[reference-object-here]";
     }
 }

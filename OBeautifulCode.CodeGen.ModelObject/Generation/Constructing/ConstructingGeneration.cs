@@ -49,18 +49,34 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var parameters = modelType.Constructor.GetParameters();
 
+            var referenceObjectDummyCode = "var referenceObject = A.Dummy<[model-type-name-here]>();" + Environment.NewLine + Environment.NewLine + "                        ";
+
             foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
             {
+                var referenceObjectUsed = false;
+
                 var parametersCode = parameters.Select(_ =>
                 {
                     var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                    return new MemberCode(_.Name, _.Name == parameter.Name ? "null" : referenceObject);
+                    string code;
+                    if (_.Name == parameter.Name)
+                    {
+                        code = "null";
+                    }
+                    else
+                    {
+                        code = referenceObject;
+                        referenceObjectUsed = true;
+                    }
+
+                    return new MemberCode(_.Name, code);
                 }).ToList();
 
                 var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 45);
 
                 var scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
+                                .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                                 .Replace(Tokens.ParameterNameToken, parameter.Name)
                                 .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
@@ -69,19 +85,34 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 if (parameter.ParameterType == typeof(string))
                 {
+                    referenceObjectUsed = false;
+
                     var stringParameterCode = parameters.Select(_ =>
                     {
                         var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                        return new MemberCode(_.Name, _.Name == parameter.Name ? "Invariant($\"  {Environment.NewLine}  \")" : referenceObject);
+                        string code;
+
+                        if (_.Name == parameter.Name)
+                        {
+                            code = "Invariant($\"  {Environment.NewLine}  \")";
+                        }
+                        else
+                        {
+                            code = referenceObject;
+                            referenceObjectUsed = true;
+                        }
+
+                        return new MemberCode(_.Name, code);
                     }).ToList();
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 45);
 
                     scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioWhiteSpaceString)
-                                            .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                                            .Replace(Tokens.ParameterNameToken, parameter.Name)
-                                            .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+                        .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
+                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.ParameterNameToken, parameter.Name)
+                        .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
                     argumentValidationScenarios.Add(scenario);
                 }
@@ -89,16 +120,31 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 if (parameter.ParameterType.IsClosedSystemCollectionType() || parameter.ParameterType.IsArray)
                 {
                     // add test for empty collection or array
+                    referenceObjectUsed = false;
+
                     var collectionParameterCode = parameters.Select(_ =>
                     {
                         var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                        return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                        string code;
+
+                        if (_.Name == parameter.Name)
+                        {
+                            code = parameter.ParameterType.GenerateSystemTypeInstantiationCode();
+                        }
+                        else
+                        {
+                            code = referenceObject;
+                            referenceObjectUsed = true;
+                        }
+
+                        return new MemberCode(_.Name, code);
                     }).ToList();
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
 
                     scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyEnumerable)
+                        .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
                         .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
@@ -149,16 +195,31 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 if (parameter.ParameterType.IsClosedSystemDictionaryType())
                 {
                     // add test for empty dictionary
+                    referenceObjectUsed = false;
+
                     var dictionaryParameterCode = parameters.Select(_ =>
                     {
                         var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
-                        return new MemberCode(_.Name, _.Name == parameter.Name ? parameter.ParameterType.GenerateSystemTypeInstantiationCode() : referenceObject);
+                        string code;
+
+                        if (_.Name == parameter.Name)
+                        {
+                            code = parameter.ParameterType.GenerateSystemTypeInstantiationCode();
+                        }
+                        else
+                        {
+                            code = referenceObject;
+                            referenceObjectUsed = true;
+                        }
+
+                        return new MemberCode(_.Name, code);
                     }).ToList();
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 45);
 
                     scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyDictionary)
+                        .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
                         .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
