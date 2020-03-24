@@ -82,12 +82,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// Removes all scenarios.
         /// </summary>
-        public void RemoveAllScenarios()
+        /// <returns>
+        /// This object.
+        /// </returns>
+        public ConstructorArgumentValidationTestScenarios<T> RemoveAllScenarios()
         {
             lock (this.lockScenarios)
             {
                 this.scenarios.Clear();
             }
+
+            return this;
         }
 
         /// <summary>
