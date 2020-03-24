@@ -63,23 +63,23 @@
     <Reference Include="OBeautifulCode.AutoFakeItEasy, Version=1.0.126.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.AutoFakeItEasy.1.0.126\lib\net462\OBeautifulCode.AutoFakeItEasy.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Compression, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Compression.1.0.8\lib\net462\OBeautifulCode.Compression.dll</HintPath>
+    <Reference Include="OBeautifulCode.Compression, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Compression.1.0.9\lib\net462\OBeautifulCode.Compression.dll</HintPath>
     </Reference>
     <Reference Include="OBeautifulCode.Representation.System, Version=1.0.37.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.Representation.System.1.0.37\lib\net462\OBeautifulCode.Representation.System.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.1.0.13\lib\net462\OBeautifulCode.Serialization.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.1.0.16\lib\net462\OBeautifulCode.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.Bson, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.Bson.1.0.13\lib\net462\OBeautifulCode.Serialization.Bson.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.Bson, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.Bson.1.0.16\lib\net462\OBeautifulCode.Serialization.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.13\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.16\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Type, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Type.1.0.38\lib\net462\OBeautifulCode.Type.dll</HintPath>
+    <Reference Include="OBeautifulCode.Type, Version=1.0.41.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Type.1.0.41\lib\net462\OBeautifulCode.Type.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -167,7 +167,40 @@
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 
+
     <Content Include="DummyFactory.cs" />
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.cs" />
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructors.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1.cs" />
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild1.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2.cs" />
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild2.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParent.cs" />
+    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParent.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsParent.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsTest.cs" />
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsTest.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1Test.cs" />
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild1Test.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2Test.cs" />
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild2Test.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParentTest.cs" />
+    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParentTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersMultipleConstructorsParentTest.cs</DependentUpon>
+    </Content>
     <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.cs" />
     <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild2B.cs</DependentUpon>
@@ -760,6 +793,70 @@
     <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersTest.designer.cs">
       <DependentUpon>MyModelAllPublicSettersTest.cs</DependentUpon>
     </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBody.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBody.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBody.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyChild1.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyChild2.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParent.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParent.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyParent.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBody.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBody.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBody.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyChild1.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyChild2.cs</DependentUpon>
+    </Content>
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParent.cs" />
+    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParent.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyParent.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyTest.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyTest.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1Test.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyChild1Test.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2Test.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2Test.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyChild2Test.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParentTest.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParentTest.designer.cs">
+      <DependentUpon>MyModelPrivateSettersExpressionBodyParentTest.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyTest.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyTest.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1Test.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1Test.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyChild1Test.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2Test.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2Test.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyChild2Test.cs</DependentUpon>
+    </Content>
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParentTest.cs" />
+    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParentTest.designer.cs">
+      <DependentUpon>MyModelPublicSettersExpressionBodyParentTest.cs</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject.Recipes\OBeautifulCode.CodeGen.ModelObject.Recipes.csproj">
@@ -792,8 +889,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\xunit.core.2.4.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.1\build\xunit.core.props'))" />
     <Error Condition="!Exists('..\packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
-    <Error Condition="!Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets'))" />
+    <Error Condition="!Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets'))" />
   </Target>
   <Import Project="..\packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.4.1\build\xunit.core.targets')" />
-  <Import Project="..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets" Condition="Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.91\build\OBeautifulCode.Build.Analyzers.targets')" />
+  <Import Project="..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets" Condition="Exists('..\packages\OBeautifulCode.Build.Analyzers.1.1.92\build\OBeautifulCode.Build.Analyzers.targets')" />
 </Project>
