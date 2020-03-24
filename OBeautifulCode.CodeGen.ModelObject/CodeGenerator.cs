@@ -113,7 +113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
             new { dummyFactoryTypeName }.Must().NotBeNullNorWhiteSpace();
-            new { dummyFactorySnippets }.Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { dummyFactorySnippets }.Must().NotBeNull().And().NotContainAnyNullElements();
 
             var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(dummyFactoryTypeNamespace, dummyFactoryTypeName, dummyFactorySnippets);
 
