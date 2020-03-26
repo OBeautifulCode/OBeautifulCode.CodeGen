@@ -44,7 +44,7 @@ namespace OBeautifulCode.CodeGen
             var hierarchyKind = GetHierarchyKind(type);
             var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false);
             var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: true);
-            var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern);
+            var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, new HashSet<Type>());
             var constructor = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern);
 
             ThrowIfNotSupported(type, propertiesOfConcern);
@@ -406,14 +406,18 @@ namespace OBeautifulCode.CodeGen
             Type type,
             IReadOnlyCollection<PropertyOfConcern> propertiesOfConcern)
         {
-            var dictionaryKeyedOnDateTimeProperties = propertiesOfConcern.Where(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType)).ToList();
+            var visitedTypes = new HashSet<Type>();
+
+            var dictionaryKeyedOnDateTimeProperties = propertiesOfConcern.Where(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType, visitedTypes)).ToList();
 
             if (dictionaryKeyedOnDateTimeProperties.Any())
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsSystemEnumerable(_.PropertyType)).ToList();
+            visitedTypes = new HashSet<Type>();
+
+            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsSystemEnumerable(_.PropertyType, visitedTypes)).ToList();
 
             if (enumerableProperties.Any())
             {
@@ -577,7 +581,8 @@ namespace OBeautifulCode.CodeGen
         }
 
         private static bool IsOrContainsDictionaryKeyedOnDateTime(
-            Type type)
+            Type type,
+            HashSet<Type> visitedTypes)
         {
             if (type.IsClosedSystemDictionaryType())
             {
@@ -597,18 +602,21 @@ namespace OBeautifulCode.CodeGen
                 {
                     // if the argument is a model type then move on;
                     // it will be validated when code gen is run for that model
-                    if ((!IsEquatableType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument))
+                    if ((!visitedTypes.Contains(genericTypeArgument)) && (!IsEquatableType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument, visitedTypes))
                     {
                         return true;
                     }
                 }
             }
 
+            visitedTypes.Add(type);
+
             return false;
         }
 
         private static bool IsOrContainsSystemEnumerable(
-            Type type)
+            Type type,
+            HashSet<Type> visitedTypes)
         {
             if (type.IsClosedSystemEnumerableType())
             {
@@ -623,26 +631,30 @@ namespace OBeautifulCode.CodeGen
                 {
                     // if the argument is a model type then move on;
                     // it will be validated when code gen is run for that model
-                    if (IsOrContainsSystemEnumerable(genericTypeArgument))
+                    if ((!visitedTypes.Contains(genericTypeArgument)) && IsOrContainsSystemEnumerable(genericTypeArgument, visitedTypes))
                     {
                         return true;
                     }
                 }
             }
 
+            visitedTypes.Add(type);
+
             return false;
         }
 
         private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
-            IReadOnlyList<PropertyOfConcern> propertiesOfConcern)
+            IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
+            HashSet<Type> visitedTypes)
         {
-            var result = propertiesOfConcern.Any(_ => CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(_.PropertyType));
+            var result = propertiesOfConcern.Where(_ => !visitedTypes.Contains(_.PropertyType)).Any(_ => CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(_.PropertyType, visitedTypes));
 
             return result;
         }
 
         private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
-            Type type)
+            Type type,
+            HashSet<Type> visitedTypes)
         {
             // see scenarios in HashCodeHelper where we are forced to hash the
             // enumerable count instead of the elements.
@@ -676,14 +688,14 @@ namespace OBeautifulCode.CodeGen
                     {
                         var propertiesOfConcern = GetPropertiesOfConcernFromType(genericTypeArgument, declaredOnly: false);
 
-                        if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern))
+                        if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, visitedTypes))
                         {
                             return true;
                         }
                     }
                     else
                     {
-                        if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(genericTypeArgument))
+                        if ((!visitedTypes.Contains(genericTypeArgument)) && CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(genericTypeArgument, visitedTypes))
                         {
                             return true;
                         }
@@ -695,11 +707,13 @@ namespace OBeautifulCode.CodeGen
             {
                 var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false);
 
-                if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern))
+                if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, visitedTypes))
                 {
                     return true;
                 }
             }
+
+            visitedTypes.Add(type);
 
             return false;
         }
