@@ -584,6 +584,8 @@ namespace OBeautifulCode.CodeGen
             Type type,
             HashSet<Type> visitedTypes)
         {
+            visitedTypes.Add(type);
+
             if (type.IsClosedSystemDictionaryType())
             {
                 var keyType = type.GetClosedSystemDictionaryKeyType();
@@ -609,8 +611,6 @@ namespace OBeautifulCode.CodeGen
                 }
             }
 
-            visitedTypes.Add(type);
-
             return false;
         }
 
@@ -618,6 +618,8 @@ namespace OBeautifulCode.CodeGen
             Type type,
             HashSet<Type> visitedTypes)
         {
+            visitedTypes.Add(type);
+
             if (type.IsClosedSystemEnumerableType())
             {
                 return true;
@@ -638,8 +640,6 @@ namespace OBeautifulCode.CodeGen
                 }
             }
 
-            visitedTypes.Add(type);
-
             return false;
         }
 
@@ -656,6 +656,8 @@ namespace OBeautifulCode.CodeGen
             Type type,
             HashSet<Type> visitedTypes)
         {
+            visitedTypes.Add(type);
+
             // see scenarios in HashCodeHelper where we are forced to hash the
             // enumerable count instead of the elements.
             if (type.IsClosedSystemDictionaryType())
@@ -712,8 +714,6 @@ namespace OBeautifulCode.CodeGen
                     return true;
                 }
             }
-
-            visitedTypes.Add(type);
 
             return false;
         }
