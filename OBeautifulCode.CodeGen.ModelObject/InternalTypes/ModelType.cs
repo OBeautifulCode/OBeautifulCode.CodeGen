@@ -544,18 +544,22 @@ namespace OBeautifulCode.CodeGen
                 .Where(
                     _ =>
                     {
-                        var parameterNameToTypeMap = _.GetParameters().ToDictionary(p => p.Name, p => p.ParameterType, StringComparer.OrdinalIgnoreCase);
+                        var propertyNameTypeMap = propertyOfConcerns.ToDictionary(p => p.Name, p => p.PropertyType, StringComparer.OrdinalIgnoreCase);
 
-                        foreach (var propertyOfConcern in propertyOfConcerns)
+                        var parameters = _.GetParameters();
+
+                        foreach (var parameter in parameters)
                         {
-                            if (!parameterNameToTypeMap.ContainsKey(propertyOfConcern.Name))
+                            // property matching parameter by name?
+                            if (!propertyNameTypeMap.ContainsKey(parameter.Name))
                             {
                                 return false;
                             }
 
-                            var parameterType = parameterNameToTypeMap[propertyOfConcern.Name];
+                            var propertyType = propertyNameTypeMap[parameter.Name];
 
-                            if (parameterType != propertyOfConcern.PropertyType)
+                            // property matches parameter by type?
+                            if (propertyType != parameter.ParameterType)
                             {
                                 return false;
                             }
@@ -567,15 +571,19 @@ namespace OBeautifulCode.CodeGen
 
             if (constructorsMatchingPropertiesOfConcern.Count == 0)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one non-default constructor, but none of the constructors have parameters that match the properties of concern by name and type: {propertyOfConcerns.Select(_ => _.Name).ToDelimitedString(", ")}"));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one non-default constructor, but none of the constructors have parameters that match properties of concern by name and type: {propertyOfConcerns.Select(_ => _.Name).ToDelimitedString(", ")}"));
             }
 
-            if (constructorsMatchingPropertiesOfConcern.Count > 1)
+            var maxParameterCount = constructorsMatchingPropertiesOfConcern.Max(_ => _.GetParameters().Length);
+
+            var candidateConstructors = constructorsMatchingPropertiesOfConcern.Where(_ => _.GetParameters().Length == maxParameterCount).ToList();
+
+            if (candidateConstructors.Count > 1)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {constructorsMatchingPropertiesOfConcern.Count} constructors that match the properties of concern by name and type, whereas only 1 was expected."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {candidateConstructors.Count} constructors that match the properties of concern by name and type, whereas only 1 was expected."));
             }
 
-            var result = constructorsMatchingPropertiesOfConcern.Single();
+            var result = candidateConstructors.Single();
 
             return result;
         }
