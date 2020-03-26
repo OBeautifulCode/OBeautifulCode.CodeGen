@@ -6,16 +6,16 @@
 
 namespace [dummy-factory-type-namespace-here]
 {
-    using System;
-    using System.CodeDom.Compiler;
-    using System.Collections.Concurrent;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
+    using global::System;
+    using global::System.CodeDom.Compiler;
+    using global::System.Collections.Concurrent;
+    using global::System.Collections.Generic;
+    using global::System.Collections.ObjectModel;
+    using global::System.Diagnostics.CodeAnalysis;
 
-    using FakeItEasy;
+    using global::FakeItEasy;
 
-    using OBeautifulCode.AutoFakeItEasy;
+    using global::OBeautifulCode.AutoFakeItEasy;
 
     /// <summary>
     /// The default (code generated) Dummy Factory.

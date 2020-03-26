@@ -6,14 +6,14 @@
 
 namespace [dummy-factory-type-namespace-here]
 {
-    using System.CodeDom.Compiler;
-    using System.Diagnostics.CodeAnalysis;
+    using global::System.CodeDom.Compiler;
+    using global::System.Diagnostics.CodeAnalysis;
 
-    using FakeItEasy;
+    using global::FakeItEasy;
     
-    using OBeautifulCode.Assertion.Recipes;
+    using global::OBeautifulCode.Assertion.Recipes;
 
-    using Xunit;
+    using global::Xunit;
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]

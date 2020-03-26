@@ -6,32 +6,32 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
-    using System;
-    using System.CodeDom.Compiler;
-    using System.Collections.Concurrent;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Globalization;
-    using System.Linq;
-    using System.Reflection;
+    using global::System;
+    using global::System.CodeDom.Compiler;
+    using global::System.Collections.Concurrent;
+    using global::System.Collections.Generic;
+    using global::System.Collections.ObjectModel;
+    using global::System.Diagnostics.CodeAnalysis;
+    using global::System.Globalization;
+    using global::System.Linq;
+    using global::System.Reflection;
 
-    using FakeItEasy;
+    using global::FakeItEasy;
 
-    using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.AutoFakeItEasy;
-    using OBeautifulCode.CodeGen.ModelObject.Recipes;
-    using OBeautifulCode.Equality.Recipes;
-    using OBeautifulCode.Math.Recipes;
-    using OBeautifulCode.Representation.System;
-    using OBeautifulCode.Serialization;
-    using OBeautifulCode.Serialization.Bson;
-    using OBeautifulCode.Serialization.Json;
-    using OBeautifulCode.Type;
+    using global::OBeautifulCode.Assertion.Recipes;
+    using global::OBeautifulCode.AutoFakeItEasy;
+    using global::OBeautifulCode.CodeGen.ModelObject.Recipes;
+    using global::OBeautifulCode.Equality.Recipes;
+    using global::OBeautifulCode.Math.Recipes;
+    using global::OBeautifulCode.Representation.System;
+    using global::OBeautifulCode.Serialization;
+    using global::OBeautifulCode.Serialization.Bson;
+    using global::OBeautifulCode.Serialization.Json;
+    using global::OBeautifulCode.Type;
 
-    using Xunit;
+    using global::Xunit;
 
-    using static System.FormattableString;
+    using static global::System.FormattableString;
 
     public static partial class MyModelPublicSettersExpressionBodyParentTest
     {

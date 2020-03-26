@@ -6,20 +6,20 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
-    using System;
-    using System.CodeDom.Compiler;
-    using System.Collections.Concurrent;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Globalization;
-    using System.Linq;
+    using global::System;
+    using global::System.CodeDom.Compiler;
+    using global::System.Collections.Concurrent;
+    using global::System.Collections.Generic;
+    using global::System.Collections.ObjectModel;
+    using global::System.Diagnostics.CodeAnalysis;
+    using global::System.Globalization;
+    using global::System.Linq;
 
-    using OBeautifulCode.Equality.Recipes;
-    using OBeautifulCode.Type;
-    using OBeautifulCode.Type.Recipes;
+    using global::OBeautifulCode.Equality.Recipes;
+    using global::OBeautifulCode.Type;
+    using global::OBeautifulCode.Type.Recipes;
 
-    using static System.FormattableString;
+    using static global::System.FormattableString;
 
     public partial class MyModelPublicSettersMultilevelChild2 : IModel<MyModelPublicSettersMultilevelChild2>, IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelChild2>
     {
