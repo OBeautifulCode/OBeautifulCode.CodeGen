@@ -51,7 +51,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items not equal; otherwise false.</returns>
+        /// <returns>true if the two items are not equal; otherwise false.</returns>
         public static bool operator !=(MyModelEqualityPublicSettersChild1 left, MyModelEqualityPublicSettersChild1 right) => !(left == right);
 
         /// <inheritdoc />
