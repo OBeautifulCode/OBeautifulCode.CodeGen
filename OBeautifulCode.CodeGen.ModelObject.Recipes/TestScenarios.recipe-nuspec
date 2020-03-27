@@ -11,29 +11,23 @@
   </metadata>
   <files>
     <file src=".analyzers\SuppressBecause.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SuppressBecause.cs" />
-
     <file src="Comparable\ComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Comparable\ComparableTestScenario{T}.cs" />
     <file src="Comparable\ComparableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Comparable\ComparableTestScenarios{T}.cs" />
     <file src="Comparable\ValidatedComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Comparable\ValidatedComparableTestScenario{T}.cs" />
-
     <file src="ConstructorArgumentValidation\ConstructorArgumentValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidation\ConstructorArgumentValidationTestScenario{T}.cs" />
     <file src="ConstructorArgumentValidation\ConstructorArgumentValidationTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidation\ConstructorArgumentValidationTestScenarios{T}.cs" />
     <file src="ConstructorArgumentValidation\ValidatedConstructorArgumentValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorArgumentValidation\ValidatedConstructorArgumentValidationTestScenario{T}.cs" />
-
     <file src="ConstructorPropertyAssignment\ConstructorPropertyAssignmentTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\ConstructorPropertyAssignmentTestScenario{T}.cs" />
     <file src="ConstructorPropertyAssignment\ConstructorPropertyAssignmentTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\ConstructorPropertyAssignmentTestScenarios{T}.cs" />
     <file src="ConstructorPropertyAssignment\ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" />
     <file src="ConstructorPropertyAssignment\SystemUnderTestExpectedPropertyValue{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\SystemUnderTestExpectedPropertyValue{T}.cs" />
-
     <file src="DeepCloneWith\DeepCloneWithTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\DeepCloneWithTestScenario{T}.cs" />
     <file src="DeepCloneWith\DeepCloneWithTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\DeepCloneWithTestScenarios{T}.cs" />
     <file src="DeepCloneWith\ValidatedDeepCloneWithTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\ValidatedDeepCloneWithTestScenario{T}.cs" />
     <file src="DeepCloneWith\SystemUnderTestDeepCloneWithValue{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\SystemUnderTestDeepCloneWithValue{T}.cs" />
-
     <file src="Equatable\EquatableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Equatable\EquatableTestScenario{T}.cs" />
     <file src="Equatable\EquatableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Equatable\EquatableTestScenarios{T}.cs" />
     <file src="Equatable\ValidatedEquatableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Equatable\ValidatedEquatableTestScenario{T}.cs" />
-
     <file src="StringRepresentation\StringRepresentationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\StringRepresentation\StringRepresentationTestScenario{T}.cs" />
     <file src="StringRepresentation\StringRepresentationTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\StringRepresentation\StringRepresentationTestScenarios{T}.cs" />
     <file src="StringRepresentation\ValidatedStringRepresentationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\StringRepresentation\ValidatedStringRepresentationTestScenario{T}.cs" />

@@ -418,6 +418,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static string GetUsingStatements(
             this IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
             string containingNamespace,
