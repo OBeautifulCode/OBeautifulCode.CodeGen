@@ -23,10 +23,7 @@ namespace [model-type-namespace-here].Test
     using global::OBeautifulCode.CodeGen.ModelObject.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Math.Recipes;
-    using global::OBeautifulCode.Representation.System;
-    using global::OBeautifulCode.Serialization;
-    using global::OBeautifulCode.Serialization.Bson;
-    using global::OBeautifulCode.Serialization.Json;
+    using global::OBeautifulCode.Representation.System;[serialization-using-statements-here]
     using global::OBeautifulCode.Type;
 
     using global::Xunit;

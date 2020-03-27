@@ -253,7 +253,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
 
+            var serializationUsingStatements = kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization)
+                    ? Environment.NewLine + typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationUsingStatements)
+                    : string.Empty;
+
             var result = codeTemplate
+                .Replace(Tokens.SerializationUsingStatementsToken, serializationUsingStatements)
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
