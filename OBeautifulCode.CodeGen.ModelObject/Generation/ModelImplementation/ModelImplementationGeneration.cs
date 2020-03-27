@@ -8,9 +8,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeGen.ModelObject.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
@@ -102,6 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <returns>
         /// Generated equality methods.
         /// </returns>
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         public static string GenerateCodeForTests(
             this ModelType modelType,
             GenerateFor kind)
