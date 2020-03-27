@@ -175,10 +175,5 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for a DeepCloneWith test scenario.
         /// </summary>
         DeepCloneWithScenario,
-
-        /// <summary>
-        /// A code snippet for using statements for serialization.
-        /// </summary>
-        SerializationUsingStatements,
     }
 }

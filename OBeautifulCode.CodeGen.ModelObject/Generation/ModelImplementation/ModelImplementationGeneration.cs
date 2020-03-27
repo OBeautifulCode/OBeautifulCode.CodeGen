@@ -86,6 +86,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Model, KeyMethodKinds.Both);
 
             var result = codeTemplate
+                .Replace(Tokens.UsingStatementsToken, modelType.GetUsingStatementsForModelObject())
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
@@ -256,12 +257,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
 
-            var serializationUsingStatements = kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization)
-                    ? Environment.NewLine + typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationUsingStatements)
-                    : string.Empty;
-
             var result = codeTemplate
-                .Replace(Tokens.SerializationUsingStatementsToken, serializationUsingStatements)
+                .Replace(Tokens.UsingStatementsToken, modelType.GetUsingStatementsForTestClass(kind))
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
@@ -274,20 +271,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates the code for the dummy factory.
         /// </summary>
+        /// <param name="modelTypes">The model types.</param>
         /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
         /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
-        /// <param name="dummyFactorySnippets">The dummy factory snippets.</param>
         /// <returns>
         /// The dummy factory code.
         /// </returns>
         public static string GenerateCodeForDummyFactory(
+            IReadOnlyCollection<ModelType> modelTypes,
             string dummyFactoryTypeNamespace,
-            string dummyFactoryTypeName,
-            IReadOnlyList<string> dummyFactorySnippets)
+            string dummyFactoryTypeName)
         {
             var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.DummyFactory, KeyMethodKinds.Both);
 
+            var dummyFactorySnippets = modelTypes.Select(_ => _.GenerateCodeForDummyFactory()).ToList();
+
             var result = codeTemplate
+                .Replace(Tokens.UsingStatementsToken, modelTypes.GetUsingStatementsForDummyFactory(dummyFactoryTypeNamespace))
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.DummyFactoryTypeNamespaceToken, dummyFactoryTypeNamespace)
@@ -316,6 +316,154 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.DummyFactoryTypeNamespaceToken, dummyFactoryTypeNamespace)
                 .Replace(Tokens.DummyFactoryTypeNameToken, dummyFactoryTypeName);
+
+            return result;
+        }
+
+        private static string GetUsingStatementsForModelObject(
+            this ModelType modelType)
+        {
+            var statements = new[]
+            {
+                "System",
+                "System.CodeDom.Compiler",
+                "System.Collections.Concurrent",
+                "System.Collections.Generic",
+                "System.Collections.ObjectModel",
+                "System.Diagnostics.CodeAnalysis",
+                "System.Globalization",
+                "System.Linq",
+                "OBeautifulCode.Equality.Recipes",
+                "OBeautifulCode.Type",
+                "OBeautifulCode.Type.Recipes",
+            };
+
+            var staticStatements = new[]
+            {
+                "System.FormattableString",
+            };
+
+            var result = modelType.PropertiesOfConcern.GetUsingStatements(modelType.TypeNamespace, statements, staticStatements);
+
+            return result;
+        }
+
+        private static string GetUsingStatementsForTestClass(
+            this ModelType modelType,
+            GenerateFor kind)
+        {
+            var statements = new List<string>
+            {
+                "System",
+                "System.CodeDom.Compiler",
+                "System.Collections.Concurrent",
+                "System.Collections.Generic",
+                "System.Collections.ObjectModel",
+                "System.Diagnostics.CodeAnalysis",
+                "System.Globalization",
+                "System.Linq",
+                "System.Reflection",
+                "FakeItEasy",
+                "OBeautifulCode.Assertion.Recipes",
+                "OBeautifulCode.AutoFakeItEasy",
+                "OBeautifulCode.CodeGen.ModelObject.Recipes",
+                "OBeautifulCode.Equality.Recipes",
+                "OBeautifulCode.Math.Recipes",
+                "OBeautifulCode.Representation.System",
+                "OBeautifulCode.Type",
+                "Xunit",
+            };
+
+            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization))
+            {
+                statements.AddRange(
+                    new[]
+                    {
+                        "OBeautifulCode.Serialization",
+                        "OBeautifulCode.Serialization.Bson",
+                        "OBeautifulCode.Serialization.Json",
+                    });
+            }
+
+            var staticStatements = new[]
+            {
+                "System.FormattableString",
+            };
+
+            var result = modelType.PropertiesOfConcern.GetUsingStatements(modelType.TypeNamespace, statements, staticStatements);
+
+            return result;
+        }
+
+        private static string GetUsingStatementsForDummyFactory(
+            this IReadOnlyCollection<ModelType> modelTypes,
+            string containingNamespace)
+        {
+            var statements = new[]
+            {
+                "System",
+                "System.CodeDom.Compiler",
+                "System.Collections.Concurrent",
+                "System.Collections.Generic",
+                "System.Collections.ObjectModel",
+                "System.Diagnostics.CodeAnalysis",
+                "FakeItEasy",
+                "OBeautifulCode.AutoFakeItEasy",
+            };
+
+            var staticStatements = new string[0];
+
+            var result = modelTypes.SelectMany(_ => _.PropertiesOfConcern).ToList().GetUsingStatements(containingNamespace, statements, staticStatements);
+
+            return result;
+        }
+
+        private static string GetUsingStatements(
+            this IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
+            string containingNamespace,
+            IReadOnlyCollection<string> statements,
+            IReadOnlyCollection<string> staticStatements)
+        {
+            statements = new string[0]
+                .Concat(statements)
+                .Concat(propertiesOfConcern.Select(_ => _.PropertyType.Namespace))
+                .Where(_ => _ != containingNamespace)
+                .Distinct()
+                .ToList();
+
+            staticStatements = staticStatements.Distinct().ToList();
+
+            var systemStatementsInOrder = statements.Where(_ => _.Split('.').First() == "System").OrderBy(_ => _).ToList();
+
+            var nonSystemStatementsGroupedByProject = statements.Where(_ => _.Split('.').First() != "System").GroupBy(_ => _.Split('.').First()).OrderBy(_ => _.Key).ToList();
+
+            var result = systemStatementsInOrder.Select(_ => _.ToUsingStatement(isStatic: false)).ToNewLineDelimited();
+
+            foreach (var nonSystemStatements in nonSystemStatementsGroupedByProject)
+            {
+                result = result + Environment.NewLine + Environment.NewLine + nonSystemStatements.OrderBy(_ => _).Select(_ => _.ToUsingStatement(isStatic: false)).ToNewLineDelimited();
+            }
+
+            if (staticStatements.Any())
+            {
+                result = result + Environment.NewLine + Environment.NewLine + staticStatements.OrderBy(_ => _).Select(_ => _.ToUsingStatement(isStatic: true)).ToNewLineDelimited();
+            }
+
+            return result;
+        }
+
+        private static string ToUsingStatement(
+            this string statement,
+            bool isStatic)
+        {
+            var result = "global::" + statement + ";";
+
+            if (isStatic)
+            {
+                result = "static " + result;
+            }
+
+            result = "    using " + result;
 
             return result;
         }

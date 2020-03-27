@@ -9,6 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Internal;
@@ -100,22 +101,24 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Generates the dummy factory.
         /// </summary>
+        /// <param name="types">The types to generic dummy factory snippets for.</param>
         /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
         /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
-        /// <param name="dummyFactorySnippets">The dummy factory snippets.</param>
         /// <returns>
         /// The dummy factory code.
         /// </returns>
         public static string GenerateDummyFactory(
+            IReadOnlyCollection<Type> types,
             string dummyFactoryTypeNamespace,
-            string dummyFactoryTypeName,
-            IReadOnlyList<string> dummyFactorySnippets)
+            string dummyFactoryTypeName)
         {
+            new { types }.Must().NotBeNull().And().NotContainAnyNullElements();
             new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
             new { dummyFactoryTypeName }.Must().NotBeNullNorWhiteSpace();
-            new { dummyFactorySnippets }.Must().NotBeNull().And().NotContainAnyNullElements();
 
-            var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(dummyFactoryTypeNamespace, dummyFactoryTypeName, dummyFactorySnippets);
+            var modelTypes = types.Select(_ => new ModelType(_)).ToList();
+
+            var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(modelTypes, dummyFactoryTypeNamespace, dummyFactoryTypeName);
 
             return result;
         }

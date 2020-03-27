@@ -6,20 +6,7 @@
 
 namespace [model-type-namespace-here]
 {
-    using global::System;
-    using global::System.CodeDom.Compiler;
-    using global::System.Collections.Concurrent;
-    using global::System.Collections.Generic;
-    using global::System.Collections.ObjectModel;
-    using global::System.Diagnostics.CodeAnalysis;
-    using global::System.Globalization;
-    using global::System.Linq;
-
-    using global::OBeautifulCode.Equality.Recipes;
-    using global::OBeautifulCode.Type;
-    using global::OBeautifulCode.Type.Recipes;
-
-    using static global::System.FormattableString;
+[using-statements-here]
 
     public partial class [model-type-name-here] : [required-interfaces-here]
     {[model-implementation-here]

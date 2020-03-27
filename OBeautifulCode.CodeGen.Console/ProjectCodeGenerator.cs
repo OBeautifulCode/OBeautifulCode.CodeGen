@@ -85,7 +85,7 @@ namespace OBeautifulCode.CodeGen.Console
                     .Where(_ => (_.Namespace ?? string.Empty).StartsWith(projectName, StringComparison.Ordinal))
                     .ToList();
 
-                var dummyFactorySnippets = new List<string>();
+                var typesForDummyFactory = new List<Type>();
 
                 foreach (var type in typesToCheck)
                 {
@@ -109,16 +109,14 @@ namespace OBeautifulCode.CodeGen.Console
 
                         if (type.IsAssignableTo(typeof(IModelViaCodeGen)))
                         {
-                            var dummyFactorySnippet = type.GenerateForModel(GenerateFor.ModelDummyFactorySnippet);
-
-                            dummyFactorySnippets.Add(dummyFactorySnippet);
+                            typesForDummyFactory.Add(type);
                         }
                     }
                 }
 
                 if (hasDummyFactory)
                 {
-                    WriteDummyFactoryFile(dummyFactoryFilePath, testNamespace, dummyFactorySnippets, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder);
+                    WriteDummyFactoryFile(typesForDummyFactory, dummyFactoryFilePath, testNamespace, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder);
                 }
             }
         }
@@ -304,9 +302,9 @@ namespace OBeautifulCode.CodeGen.Console
         }
 
         private static void WriteDummyFactoryFile(
+            IReadOnlyCollection<Type> typesForDummyFactory,
             string dummyFactoryFilePath,
             string testNamespace,
-            IReadOnlyList<string> snippets,
             string testProjectDirectory,
             IReadOnlyCollection<string> testProjectSourceFilePaths,
             Func<string, string> fileHeaderBuilder)
@@ -316,7 +314,7 @@ namespace OBeautifulCode.CodeGen.Console
             // ReSharper disable once PossibleNullReferenceException
             var dummyFactoryTypeName = Path.GetFileName(dummyFactoryFilePath).Replace(".cs", string.Empty);
 
-            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(testNamespace, dummyFactoryTypeName, snippets);
+            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(typesForDummyFactory, testNamespace, dummyFactoryTypeName);
 
             File.WriteAllText(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents, Encoding);
 

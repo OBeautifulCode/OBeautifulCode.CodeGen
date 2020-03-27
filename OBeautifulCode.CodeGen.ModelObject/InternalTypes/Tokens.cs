@@ -262,8 +262,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ReferenceObjectToken = "[reference-object-here]";
 
         /// <summary>
-        /// Serialization using statements.
+        /// Using statements.
         /// </summary>
-        public const string SerializationUsingStatementsToken = "[serialization-using-statements-here]";
+        public const string UsingStatementsToken = "[using-statements-here]";
     }
 }

@@ -6,16 +6,7 @@
 
 namespace [dummy-factory-type-namespace-here]
 {
-    using global::System;
-    using global::System.CodeDom.Compiler;
-    using global::System.Collections.Concurrent;
-    using global::System.Collections.Generic;
-    using global::System.Collections.ObjectModel;
-    using global::System.Diagnostics.CodeAnalysis;
-
-    using global::FakeItEasy;
-
-    using global::OBeautifulCode.AutoFakeItEasy;
+[using-statements-here]
 
     /// <summary>
     /// The default (code generated) Dummy Factory.
