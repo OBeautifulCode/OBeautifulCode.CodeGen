@@ -10,11 +10,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Globalization;
     using System.Linq;
+    using System.Reflection;
+
+    using Microsoft.CSharp;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
+    using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -317,6 +322,48 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = code
                 .Replace(Tokens.NestedTestClassCodeAnalysisSuppressionsToken, nestedTestClassCodeAnalysisSuppressions)
                 .Replace(Tokens.TestMethodCodeAnalysisSuppressionsToken, testMethodCodeAnalysisSuppressions);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts a property to it's corresponding parameter name
+        /// in constructors and other methods.
+        /// </summary>
+        /// <param name="propertyOfConcern">The property of concern.</param>
+        /// <returns>
+        /// The parameter name.
+        /// </returns>
+        public static string ToParameterName(
+            this PropertyOfConcern propertyOfConcern)
+        {
+            var result = propertyOfConcern.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture);
+
+            using (var codeProvider = new CSharpCodeProvider())
+            {
+                if (!codeProvider.IsValidIdentifier(result))
+                {
+                    result = "@" + result;
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts a parameter to it's corresponding property name.
+        /// </summary>
+        /// <param name="parameterInfo">The parameter of concern.</param>
+        /// <returns>
+        /// The property name.
+        /// </returns>
+        public static string ToPropertyName(
+            this ParameterInfo parameterInfo)
+        {
+            // note that parameters names don't have the leading @ if they are
+            // reserved words. So if a constructor's parameter is defined as '@namespace' in code
+            // then it's parameterInfo.Name is just 'namespace'.
+            var result = parameterInfo.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
 
             return result;
         }

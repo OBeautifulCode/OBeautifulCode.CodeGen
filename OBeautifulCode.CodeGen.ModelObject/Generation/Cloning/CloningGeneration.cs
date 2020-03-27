@@ -291,7 +291,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name);
 
                         var code = _.Name == property.Name
-                            ? property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture)
+                            ? property.ToParameterName()
                             : referenceItemCloned;
 
                         return new MemberCode(_.Name, code);
@@ -309,7 +309,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ModelAncestorTypeNameToken, property.DeclaringType.ToStringReadable())
                         .Replace(Tokens.PropertyNameToken, property.Name)
-                        .Replace(Tokens.ParameterNameToken, property.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture))
+                        .Replace(Tokens.ParameterNameToken, property.ToParameterName())
                         .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
                         .Replace(Tokens.DeepCloneWithModelInstantiationToken, deepCloneWithModelInstantiationCode);
 

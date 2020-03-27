@@ -57,7 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var parametersCode = parameters.Select(_ =>
                 {
-                    var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+                    var referenceObject = "referenceObject." + _.ToPropertyName();
 
                     string code;
                     if (_.Name == parameter.Name)
@@ -89,7 +89,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var stringParameterCode = parameters.Select(_ =>
                     {
-                        var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+                        var referenceObject = "referenceObject." + _.ToPropertyName();
 
                         string code;
 
@@ -124,7 +124,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var collectionParameterCode = parameters.Select(_ =>
                     {
-                        var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+                        var referenceObject = "referenceObject." + _.ToPropertyName();
 
                         string code;
 
@@ -162,7 +162,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         collectionParameterCode = parameters.Select(_ =>
                         {
-                            var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+                            var referenceObject = "referenceObject." + _.ToPropertyName();
 
                             if (_.Name == parameter.Name)
                             {
@@ -199,7 +199,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var dictionaryParameterCode = parameters.Select(_ =>
                     {
-                        var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+                        var referenceObject = "referenceObject." + _.ToPropertyName();
 
                         string code;
 
@@ -234,7 +234,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         dictionaryParameterCode = parameters.Select(_ =>
                         {
-                            var referenceObject = "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture);
+                            var referenceObject = "referenceObject." + _.ToPropertyName();
 
                             if (_.Name == parameter.Name)
                             {
@@ -249,7 +249,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             return new MemberCode(_.Name, referenceObject);
                         }).ToList();
 
-                        var setDictionaryValueToNullCode = Invariant($"var dictionaryWithNullValue = referenceObject.{parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture)}.ToDictionary(_ => _.Key, _ => _.Value);");
+                        var setDictionaryValueToNullCode = Invariant($"var dictionaryWithNullValue = referenceObject.{parameter.ToPropertyName()}.ToDictionary(_ => _.Key, _ => _.Value);");
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 45);
 
@@ -268,13 +268,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             foreach (var parameter in parameters)
             {
-                var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))).ToList();
+                var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.ToPropertyName())).ToList();
 
                 var newObjectCode = modelType.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 54);
 
                 var scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorParameterAssignmentScenario)
                     .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                    .Replace(Tokens.PropertyNameToken, parameter.Name.ToUpperFirstCharacter(CultureInfo.InvariantCulture))
+                    .Replace(Tokens.PropertyNameToken, parameter.ToPropertyName())
                     .Replace(Tokens.ParameterNameToken, parameter.Name)
                     .Replace(Tokens.ConstructObjectToken, newObjectCode);
 
