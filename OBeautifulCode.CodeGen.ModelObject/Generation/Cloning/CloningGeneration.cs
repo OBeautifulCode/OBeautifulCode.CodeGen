@@ -310,6 +310,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Replace(Tokens.ModelAncestorTypeNameToken, property.DeclaringType.ToStringReadable())
                         .Replace(Tokens.PropertyNameToken, property.Name)
                         .Replace(Tokens.ParameterNameToken, property.ToParameterName())
+                        .Replace(Tokens.ParameterNameInXmlDocToken, property.ToParameterName(forXmlDoc: true))
                         .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
                         .Replace(Tokens.DeepCloneWithModelInstantiationToken, deepCloneWithModelInstantiationCode);
 

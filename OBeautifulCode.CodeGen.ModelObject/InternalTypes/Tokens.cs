@@ -57,6 +57,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ParameterNameToken = "[parameter-name-here]";
 
         /// <summary>
+        /// The parameter name in XML doc.
+        /// </summary>
+        public const string ParameterNameInXmlDocToken = "[parameter-name-in-xml-doc-here]";
+
+        /// <summary>
         /// The property Type name.
         /// </summary>
         public const string PropertyTypeNameToken = "[property-type-name-here]";

@@ -331,19 +331,24 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// in constructors and other methods.
         /// </summary>
         /// <param name="propertyOfConcern">The property of concern.</param>
+        /// <param name="forXmlDoc">Is the parameter name being used in XML doc?</param>
         /// <returns>
         /// The parameter name.
         /// </returns>
         public static string ToParameterName(
-            this PropertyOfConcern propertyOfConcern)
+            this PropertyOfConcern propertyOfConcern,
+            bool forXmlDoc = false)
         {
             var result = propertyOfConcern.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture);
 
-            using (var codeProvider = new CSharpCodeProvider())
+            if (!forXmlDoc)
             {
-                if (!codeProvider.IsValidIdentifier(result))
+                using (var codeProvider = new CSharpCodeProvider())
                 {
-                    result = "@" + result;
+                    if (!codeProvider.IsValidIdentifier(result))
+                    {
+                        result = "@" + result;
+                    }
                 }
             }
 
