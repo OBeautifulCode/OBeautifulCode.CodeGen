@@ -331,7 +331,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// in constructors and other methods.
         /// </summary>
         /// <param name="propertyOfConcern">The property of concern.</param>
-        /// <param name="forXmlDoc">Is the parameter name being used in XML doc?</param>
+        /// <param name="forXmlDoc">A value indicating whether the parameter name will be used used in XML doc.</param>
         /// <returns>
         /// The parameter name.
         /// </returns>
