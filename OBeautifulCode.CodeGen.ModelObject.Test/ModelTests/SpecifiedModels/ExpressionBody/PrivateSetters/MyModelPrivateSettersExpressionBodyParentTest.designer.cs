@@ -43,7 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyParent>
                 {
-                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentIntProperty with the provided parentIntProperty",
                     WithPropertyName = "ParentIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -63,7 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyParent>
                 {
-                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentStringProperty with the provided parentStringProperty",
                     WithPropertyName = "ParentStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -83,7 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionOfStringProperty should deep clone object and replace ParentReadOnlyCollectionOfStringProperty with the provided parentReadOnlyCollectionOfStringProperty",
                     WithPropertyName = "ParentReadOnlyCollectionOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {

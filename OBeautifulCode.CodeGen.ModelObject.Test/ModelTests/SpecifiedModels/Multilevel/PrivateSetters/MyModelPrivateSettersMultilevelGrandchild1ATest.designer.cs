@@ -129,7 +129,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>
                 {
-                    Name = "DeepCloneWithParentInt should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentInt should deep clone object and replace ParentInt with the provided parentInt",
                     WithPropertyName = "ParentInt",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -149,7 +149,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>
                 {
-                    Name = "DeepCloneWithChild1Int should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithChild1Int should deep clone object and replace Child1Int with the provided child1Int",
                     WithPropertyName = "Child1Int",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -169,7 +169,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersMultilevelGrandchild1A>
                 {
-                    Name = "DeepCloneWithGrandchild1AInt should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithGrandchild1AInt should deep clone object and replace Grandchild1AInt with the provided grandchild1AInt",
                     WithPropertyName = "Grandchild1AInt",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {

@@ -420,7 +420,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyChild2>
                 {
-                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentIntProperty with the provided parentIntProperty",
                     WithPropertyName = "ParentIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -440,7 +440,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyChild2>
                 {
-                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentStringProperty with the provided parentStringProperty",
                     WithPropertyName = "ParentStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -460,7 +460,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyChild2>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionOfStringProperty should deep clone object and replace ParentReadOnlyCollectionOfStringProperty with the provided parentReadOnlyCollectionOfStringProperty",
                     WithPropertyName = "ParentReadOnlyCollectionOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -480,7 +480,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyChild2>
                 {
-                    Name = "DeepCloneWithChildIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithChildIntProperty should deep clone object and replace ChildIntProperty with the provided childIntProperty",
                     WithPropertyName = "ChildIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -500,7 +500,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyChild2>
                 {
-                    Name = "DeepCloneWithChildStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithChildStringProperty should deep clone object and replace ChildStringProperty with the provided childStringProperty",
                     WithPropertyName = "ChildStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -520,7 +520,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyChild2>
                 {
-                    Name = "DeepCloneWithChildReadOnlyCollectionOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithChildReadOnlyCollectionOfStringProperty should deep clone object and replace ChildReadOnlyCollectionOfStringProperty with the provided childReadOnlyCollectionOfStringProperty",
                     WithPropertyName = "ChildReadOnlyCollectionOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {

@@ -63,7 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentIntProperty with the provided parentIntProperty",
                     WithPropertyName = "ParentIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -83,7 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentStringProperty with the provided parentStringProperty",
                     WithPropertyName = "ParentStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -103,7 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentGuidProperty should deep clone object and replace ParentGuidProperty with the provided parentGuidProperty",
                     WithPropertyName = "ParentGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentDateTimeProperty should deep clone object and replace ParentDateTimeProperty with the provided parentDateTimeProperty",
                     WithPropertyName = "ParentDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -143,7 +143,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentModelEnumProperty should deep clone object and replace ParentModelEnumProperty with the provided parentModelEnumProperty",
                     WithPropertyName = "ParentModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -163,7 +163,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentModelFlagsEnumProperty should deep clone object and replace ParentModelFlagsEnumProperty with the provided parentModelFlagsEnumProperty",
                     WithPropertyName = "ParentModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -183,7 +183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentModelClassProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentModelClassProperty should deep clone object and replace ParentModelClassProperty with the provided parentModelClassProperty",
                     WithPropertyName = "ParentModelClassProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -203,7 +203,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentNullableBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentNullableBoolProperty should deep clone object and replace ParentNullableBoolProperty with the provided parentNullableBoolProperty",
                     WithPropertyName = "ParentNullableBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -223,7 +223,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentNullableIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentNullableIntProperty should deep clone object and replace ParentNullableIntProperty with the provided parentNullableIntProperty",
                     WithPropertyName = "ParentNullableIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -243,7 +243,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentNullableGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentNullableGuidProperty should deep clone object and replace ParentNullableGuidProperty with the provided parentNullableGuidProperty",
                     WithPropertyName = "ParentNullableGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -263,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentNullableDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentNullableDateTimeProperty should deep clone object and replace ParentNullableDateTimeProperty with the provided parentNullableDateTimeProperty",
                     WithPropertyName = "ParentNullableDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -283,7 +283,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentNullableModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentNullableModelEnumProperty should deep clone object and replace ParentNullableModelEnumProperty with the provided parentNullableModelEnumProperty",
                     WithPropertyName = "ParentNullableModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -303,7 +303,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentNullableModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentNullableModelFlagsEnumProperty should deep clone object and replace ParentNullableModelFlagsEnumProperty with the provided parentNullableModelFlagsEnumProperty",
                     WithPropertyName = "ParentNullableModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -323,7 +323,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfBoolProperty should deep clone object and replace ParentArrayOfBoolProperty with the provided parentArrayOfBoolProperty",
                     WithPropertyName = "ParentArrayOfBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -343,7 +343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfIntProperty should deep clone object and replace ParentArrayOfIntProperty with the provided parentArrayOfIntProperty",
                     WithPropertyName = "ParentArrayOfIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -363,7 +363,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfStringProperty should deep clone object and replace ParentArrayOfStringProperty with the provided parentArrayOfStringProperty",
                     WithPropertyName = "ParentArrayOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -383,7 +383,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfGuidProperty should deep clone object and replace ParentArrayOfGuidProperty with the provided parentArrayOfGuidProperty",
                     WithPropertyName = "ParentArrayOfGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -403,7 +403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfDateTimeProperty should deep clone object and replace ParentArrayOfDateTimeProperty with the provided parentArrayOfDateTimeProperty",
                     WithPropertyName = "ParentArrayOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -423,7 +423,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfModelEnumProperty should deep clone object and replace ParentArrayOfModelEnumProperty with the provided parentArrayOfModelEnumProperty",
                     WithPropertyName = "ParentArrayOfModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -443,7 +443,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfModelFlagsEnumProperty should deep clone object and replace ParentArrayOfModelFlagsEnumProperty with the provided parentArrayOfModelFlagsEnumProperty",
                     WithPropertyName = "ParentArrayOfModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -463,7 +463,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfModelClassProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfModelClassProperty should deep clone object and replace ParentArrayOfModelClassProperty with the provided parentArrayOfModelClassProperty",
                     WithPropertyName = "ParentArrayOfModelClassProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -483,7 +483,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfNullableBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfNullableBoolProperty should deep clone object and replace ParentArrayOfNullableBoolProperty with the provided parentArrayOfNullableBoolProperty",
                     WithPropertyName = "ParentArrayOfNullableBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -503,7 +503,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfNullableIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfNullableIntProperty should deep clone object and replace ParentArrayOfNullableIntProperty with the provided parentArrayOfNullableIntProperty",
                     WithPropertyName = "ParentArrayOfNullableIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -523,7 +523,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfNullableGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfNullableGuidProperty should deep clone object and replace ParentArrayOfNullableGuidProperty with the provided parentArrayOfNullableGuidProperty",
                     WithPropertyName = "ParentArrayOfNullableGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -543,7 +543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfNullableDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfNullableDateTimeProperty should deep clone object and replace ParentArrayOfNullableDateTimeProperty with the provided parentArrayOfNullableDateTimeProperty",
                     WithPropertyName = "ParentArrayOfNullableDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -563,7 +563,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfNullableModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfNullableModelEnumProperty should deep clone object and replace ParentArrayOfNullableModelEnumProperty with the provided parentArrayOfNullableModelEnumProperty",
                     WithPropertyName = "ParentArrayOfNullableModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -583,7 +583,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentArrayOfNullableModelFlagsEnumProperty should deep clone object and replace ParentArrayOfNullableModelFlagsEnumProperty with the provided parentArrayOfNullableModelFlagsEnumProperty",
                     WithPropertyName = "ParentArrayOfNullableModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -603,7 +603,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfBoolProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfBoolProperty with the provided parentReadOnlyCollectionInterfaceOfBoolProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -623,7 +623,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfIntProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfIntProperty with the provided parentReadOnlyCollectionInterfaceOfIntProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -643,7 +643,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfStringProperty with the provided parentReadOnlyCollectionInterfaceOfStringProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -663,7 +663,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfGuidProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfGuidProperty with the provided parentReadOnlyCollectionInterfaceOfGuidProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -683,7 +683,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfDateTimeProperty with the provided parentReadOnlyCollectionInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -703,7 +703,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfModelEnumProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfModelEnumProperty with the provided parentReadOnlyCollectionInterfaceOfModelEnumProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -723,7 +723,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty with the provided parentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -743,7 +743,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfModelClassProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfModelClassProperty with the provided parentReadOnlyCollectionInterfaceOfModelClassProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfModelClassProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -763,7 +763,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableBoolProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableBoolProperty with the provided parentReadOnlyCollectionInterfaceOfNullableBoolProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -783,7 +783,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableIntProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableIntProperty with the provided parentReadOnlyCollectionInterfaceOfNullableIntProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -803,7 +803,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableGuidProperty with the provided parentReadOnlyCollectionInterfaceOfNullableGuidProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -823,7 +823,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty with the provided parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -843,7 +843,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty with the provided parentReadOnlyCollectionInterfaceOfNullableModelEnumProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -863,7 +863,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty with the provided parentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty",
                     WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -883,7 +883,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty should deep clone object and replace ParentReadOnlyListInterfaceOfBoolProperty with the provided parentReadOnlyListInterfaceOfBoolProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -903,7 +903,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfIntProperty should deep clone object and replace ParentReadOnlyListInterfaceOfIntProperty with the provided parentReadOnlyListInterfaceOfIntProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -923,7 +923,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyListInterfaceOfStringProperty with the provided parentReadOnlyListInterfaceOfStringProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -943,7 +943,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty should deep clone object and replace ParentReadOnlyListInterfaceOfGuidProperty with the provided parentReadOnlyListInterfaceOfGuidProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -963,7 +963,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -983,7 +983,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfModelEnumProperty should deep clone object and replace ParentReadOnlyListInterfaceOfModelEnumProperty with the provided parentReadOnlyListInterfaceOfModelEnumProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1003,7 +1003,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfModelFlagsEnumProperty should deep clone object and replace ParentReadOnlyListInterfaceOfModelFlagsEnumProperty with the provided parentReadOnlyListInterfaceOfModelFlagsEnumProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1023,7 +1023,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfModelClassProperty should deep clone object and replace ParentReadOnlyListInterfaceOfModelClassProperty with the provided parentReadOnlyListInterfaceOfModelClassProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfModelClassProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1043,7 +1043,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableBoolProperty should deep clone object and replace ParentReadOnlyListInterfaceOfNullableBoolProperty with the provided parentReadOnlyListInterfaceOfNullableBoolProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfNullableBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1063,7 +1063,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableIntProperty should deep clone object and replace ParentReadOnlyListInterfaceOfNullableIntProperty with the provided parentReadOnlyListInterfaceOfNullableIntProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfNullableIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1083,7 +1083,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableGuidProperty should deep clone object and replace ParentReadOnlyListInterfaceOfNullableGuidProperty with the provided parentReadOnlyListInterfaceOfNullableGuidProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfNullableGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1103,7 +1103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableDateTimeProperty should deep clone object and replace ParentReadOnlyListInterfaceOfNullableDateTimeProperty with the provided parentReadOnlyListInterfaceOfNullableDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfNullableDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1123,7 +1123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableModelEnumProperty should deep clone object and replace ParentReadOnlyListInterfaceOfNullableModelEnumProperty with the provided parentReadOnlyListInterfaceOfNullableModelEnumProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfNullableModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1143,7 +1143,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty should deep clone object and replace ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty with the provided parentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfNullableModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1163,7 +1163,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfBoolProperty with the provided parentReadOnlyDictionaryInterfaceOfBoolProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1183,7 +1183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfIntProperty with the provided parentReadOnlyDictionaryInterfaceOfIntProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1203,7 +1203,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfStringProperty with the provided parentReadOnlyDictionaryInterfaceOfStringProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1223,7 +1223,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfGuidProperty with the provided parentReadOnlyDictionaryInterfaceOfGuidProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1243,7 +1243,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelEnumProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfModelEnumProperty with the provided parentReadOnlyDictionaryInterfaceOfModelEnumProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1263,7 +1263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty with the provided parentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1283,7 +1283,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfModelClassProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfModelClassProperty with the provided parentReadOnlyDictionaryInterfaceOfModelClassProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfModelClassProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1303,7 +1303,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty with the provided parentReadOnlyDictionaryInterfaceOfNullableBoolProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1323,7 +1323,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfNullableIntProperty with the provided parentReadOnlyDictionaryInterfaceOfNullableIntProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableIntProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1343,7 +1343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty with the provided parentReadOnlyDictionaryInterfaceOfNullableGuidProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1363,7 +1363,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty with the provided parentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableModelEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1383,7 +1383,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty with the provided parentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1403,7 +1403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentCollectionInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentCollectionInterfaceOfStringProperty should deep clone object and replace ParentCollectionInterfaceOfStringProperty with the provided parentCollectionInterfaceOfStringProperty",
                     WithPropertyName = "ParentCollectionInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1423,7 +1423,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentCollectionOfCollectionInterfaceOfStringProperty with the provided parentCollectionOfCollectionInterfaceOfStringProperty",
                     WithPropertyName = "ParentCollectionOfCollectionInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1443,7 +1443,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentListInterfaceOfCollectionInterfaceOfStringProperty with the provided parentListInterfaceOfCollectionInterfaceOfStringProperty",
                     WithPropertyName = "ParentListInterfaceOfCollectionInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1463,7 +1463,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentListOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentListOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentListOfCollectionInterfaceOfStringProperty with the provided parentListOfCollectionInterfaceOfStringProperty",
                     WithPropertyName = "ParentListOfCollectionInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1483,7 +1483,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty with the provided parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
                     WithPropertyName = "ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1503,7 +1503,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1523,7 +1523,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1543,7 +1543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1563,7 +1563,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1583,7 +1583,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
@@ -1603,7 +1603,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelAllPrivateSettersParent>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {

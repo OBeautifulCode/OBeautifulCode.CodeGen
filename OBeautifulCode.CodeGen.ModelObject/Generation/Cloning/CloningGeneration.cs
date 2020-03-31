@@ -78,7 +78,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var scenario = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithScenario)
                     .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                    .Replace(Tokens.PropertyNameToken, property.Name);
+                    .Replace(Tokens.PropertyNameToken, property.Name)
+                    .Replace(Tokens.ParameterNameToken, property.ToParameterName());
 
                 deepCloneWithScenarios.Add(scenario);
             }

@@ -135,7 +135,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersNotEmptyParentEmptyChild>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryOfStringString should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryOfStringString should deep clone object and replace ParentReadOnlyDictionaryOfStringString with the provided parentReadOnlyDictionaryOfStringString",
                     WithPropertyName = "ParentReadOnlyDictionaryOfStringString",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {

@@ -43,7 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<MyModelPrivateSettersMultilevelParent>
                 {
-                    Name = "DeepCloneWithParentInt should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWithParentInt should deep clone object and replace ParentInt with the provided parentInt",
                     WithPropertyName = "ParentInt",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {

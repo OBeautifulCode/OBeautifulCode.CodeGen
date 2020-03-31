@@ -1,7 +1,7 @@
 ﻿            .AddScenario(() =>
                 new DeepCloneWithTestScenario<[model-type-name-here]>
                 {
-                    Name = "DeepCloneWith[property-name-here] should deep clone object and replace ParentBoolProperty with the provided parentBoolProperty",
+                    Name = "DeepCloneWith[property-name-here] should deep clone object and replace [property-name-here] with the provided [parameter-name-here]",
                     WithPropertyName = "[property-name-here]",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
