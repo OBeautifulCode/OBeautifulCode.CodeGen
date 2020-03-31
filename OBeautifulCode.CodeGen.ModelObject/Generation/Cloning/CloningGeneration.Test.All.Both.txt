@@ -29,5 +29,5 @@
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);[assert-deep-clone-here]
-            }[deep-clone-with-test-here]
+            }[deep-clone-with-test-here][deep-clone-with-throws-tests-here]
         }

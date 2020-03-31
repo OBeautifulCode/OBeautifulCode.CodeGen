@@ -11,7 +11,11 @@
                         ReferenceObjectForEquatableTestScenarios.DeepClone(),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new [model-type-name-here][]
-                    {[objects-not-equal-to-reference-object-here]
+                    {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.[objects-not-equal-to-reference-object-here]
                     },[objects-that-derive-from-scenario-type-but-are-not-of-the-same-type-as-reference-object-here]
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {

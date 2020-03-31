@@ -33,34 +33,36 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static global::System.FormattableString;
 
-    public static partial class MyModelPublicSettersEmptyParentTest
+    public static partial class MyModelPrivateSettersConstructorMissingPropertyParentTest
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(SerializationConfigurationTypes.BsonConfigurationType);
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPublicSettersEmptyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersEmptyParent>();
+        private static readonly MyModelPrivateSettersConstructorMissingPropertyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
-        private static readonly EquatableTestScenarios<MyModelPublicSettersEmptyParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersEmptyParent>()
+        private static readonly EquatableTestScenarios<MyModelPrivateSettersConstructorMissingPropertyParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersConstructorMissingPropertyParent>()
             .AddScenario(() =>
-                new EquatableTestScenario<MyModelPublicSettersEmptyParent>
+                new EquatableTestScenario<MyModelPrivateSettersConstructorMissingPropertyParent>
                 {
                     Name = "Default Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
-                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersEmptyParent[]
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPrivateSettersConstructorMissingPropertyParent[]
                     {
                         ReferenceObjectForEquatableTestScenarios.DeepClone(),
                     },
-                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersEmptyParent[]
+                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersConstructorMissingPropertyParent[]
                     {
                         // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
                         // when the derivative's constructor in-use (by code gen) does not have a parameter that
                         // corresponds with the property who's value is provided in the DeepCloneWith___() method.
                         // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentEnumProperty(A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>().Whose(_ => !_.ParentEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentEnumProperty)).ParentEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionOfStringProperty(A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>().Whose(_ => !_.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfStringProperty)).ParentReadOnlyCollectionOfStringProperty),
                     },
-                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPublicSettersEmptyParent[]
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersConstructorMissingPropertyParent[]
                     {
-                        A.Dummy<MyModelPublicSettersEmptyParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                        A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
@@ -89,12 +91,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void MyModelPublicSettersEmptyParent___Should_implement_IModel_of_MyModelPublicSettersEmptyParent___When_reflecting()
+            public static void MyModelPrivateSettersConstructorMissingPropertyParent___Should_implement_IModel_of_MyModelPrivateSettersConstructorMissingPropertyParent___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSettersEmptyParent);
+                var type = typeof(MyModelPrivateSettersConstructorMissingPropertyParent);
 
-                var expectedModelMethods = typeof(IModel<MyModelPublicSettersEmptyParent>)
+                var expectedModelMethods = typeof(IModel<MyModelPrivateSettersConstructorMissingPropertyParent>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
 
@@ -106,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSettersEmptyParent>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPrivateSettersConstructorMissingPropertyParent>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
             }
         }
@@ -131,10 +133,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
                 // Act
-                var actual = (MyModelPublicSettersEmptyParent)systemUnderTest.Clone();
+                var actual = (MyModelPrivateSettersConstructorMissingPropertyParent)systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -157,7 +159,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
@@ -165,6 +167,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
+                actual.ParentReadOnlyCollectionOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionOfStringProperty);
             }
         }
 
@@ -188,14 +191,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_string_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedBson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyParent>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -217,14 +220,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_bytes_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToBytes(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedBson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyParent>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -246,14 +249,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_string_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedJson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyParent>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -275,14 +278,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_bytes_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToBytes(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedJson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyParent>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -309,8 +312,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersEmptyParent systemUnderTest1 = null;
-                MyModelPublicSettersEmptyParent systemUnderTest2 = null;
+                MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest1 = null;
+                MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 == systemUnderTest2;
@@ -339,7 +342,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersEmptyParent systemUnderTest = null;
+                    MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest == scenario.ReferenceObject;
@@ -483,8 +486,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersEmptyParent systemUnderTest1 = null;
-                MyModelPublicSettersEmptyParent systemUnderTest2 = null;
+                MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest1 = null;
+                MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 != systemUnderTest2;
@@ -513,7 +516,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersEmptyParent systemUnderTest = null;
+                    MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest != scenario.ReferenceObject;
@@ -654,14 +657,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersEmptyParent systemUnderTest = null;
+                    MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.Equals(systemUnderTest);
@@ -684,7 +687,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -711,7 +714,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -738,7 +741,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -765,7 +768,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 

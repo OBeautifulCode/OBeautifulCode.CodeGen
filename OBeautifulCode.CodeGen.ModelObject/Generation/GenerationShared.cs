@@ -372,5 +372,28 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Determines if the model's constructor is missing a parameter that corresponds
+        /// to the specified property of concern.
+        /// </summary>
+        /// <remarks>
+        /// This occurs when a base class property isn't a constructor parameter (so the concrete class is passing a compile-time constant to the base class).
+        /// </remarks>
+        /// <param name="modelType">The model type.</param>
+        /// <param name="propertyOfConcern">The property of concern.</param>
+        /// <returns>
+        /// true if the model has a public, non-default constructor that is missing a parameter that corresponds to the specified property.
+        /// </returns>
+        public static bool IsMissingCorrespondingConstructorParameter(
+            this ModelType modelType,
+            PropertyOfConcern propertyOfConcern)
+        {
+            var result = (modelType.HierarchyKind == HierarchyKind.ConcreteInherited)
+                         && (!modelType.IsDefaultConstructor)
+                         && (!modelType.Constructor.GetParameters().Select(_ => _.Name).Contains(propertyOfConcern.Name, StringComparer.OrdinalIgnoreCase));
+
+            return result;
+        }
     }
 }

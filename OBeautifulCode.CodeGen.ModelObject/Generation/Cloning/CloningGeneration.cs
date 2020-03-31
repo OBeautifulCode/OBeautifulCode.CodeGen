@@ -15,7 +15,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
-    using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
@@ -65,7 +64,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()))
+            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (modelType.HierarchyKinds.Classify() == HierarchyKinds.Abstract))
             {
                 return null;
             }
@@ -76,17 +75,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             foreach (var property in properties)
             {
-                var scenario = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithScenario)
-                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                    .Replace(Tokens.PropertyNameToken, property.Name)
-                    .Replace(Tokens.ParameterNameToken, property.ToParameterName());
+                if (!modelType.IsMissingCorrespondingConstructorParameter(property))
+                {
+                    var scenario = typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithScenario)
+                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.PropertyNameToken, property.Name)
+                        .Replace(Tokens.ParameterNameToken, property.ToParameterName());
 
-                deepCloneWithScenarios.Add(scenario);
+                    deepCloneWithScenarios.Add(scenario);
+                }
             }
 
             var deepCloneWithScenariosCode = deepCloneWithScenarios.Any() ? Environment.NewLine + string.Join(Environment.NewLine, deepCloneWithScenarios) : string.Empty;
 
-            var result = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTestFields)
+            var result = typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithTestFields)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                 .Replace(Tokens.DeepCloneWithTestScenariosToken, deepCloneWithScenariosCode);
 
@@ -109,19 +111,111 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneStatements)
                 : string.Empty;
 
-            var deepCloneWithTestCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()))
+            var deepCloneWithTestCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (modelType.HierarchyKinds.Classify() == HierarchyKinds.Abstract))
                 ? string.Empty
-                : Environment.NewLine + Environment.NewLine + typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithTest);
+                : Environment.NewLine + Environment.NewLine + typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithTest);
 
             var propertiesOfConcernNames = modelType.PropertiesOfConcern.Select(_ => "\"" + _.Name + "\"").ToDelimitedString(", ");
+
+            var deepCloneWithThrowsTestMethods = new List<string>();
+
+            foreach (var property in modelType.PropertiesOfConcern)
+            {
+                if (modelType.IsMissingCorrespondingConstructorParameter(property))
+                {
+                    var deepCloneWithThrowsTestMethod =
+                        typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKinds, CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithThrows)
+                            .Replace(Tokens.PropertyNameToken, property.Name)
+                            .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
+                            .Replace(Tokens.ParameterNameToken, property.ToParameterName());
+
+                    deepCloneWithThrowsTestMethods.Add(deepCloneWithThrowsTestMethod);
+                }
+            }
+
+            var deepCloneWithThrowsTestMethodsCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (!deepCloneWithThrowsTestMethods.Any()))
+                ? string.Empty
+                : Environment.NewLine + Environment.NewLine + deepCloneWithThrowsTestMethods.ToDelimitedString(Environment.NewLine + Environment.NewLine);
 
             var codeTemplate = typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate
                 .Replace(Tokens.AssertDeepCloneToken, assertDeepCloneStatementsCode)
                 .Replace(Tokens.DeepCloneWithTestToken, deepCloneWithTestCode)
+                .Replace(Tokens.DeepCloneWithThrowsTestsToken, deepCloneWithThrowsTestMethodsCode)
                 .Replace(Tokens.PropertiesOfConcernNamesHereToken, propertiesOfConcernNames)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+
+            return result;
+        }
+
+        private static string GenerateDeepCloneCode(
+            this ModelType modelType)
+        {
+            var deepCloneCodeForEachProperty = modelType
+                .PropertiesOfConcern
+                .Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name)))
+                .ToList();
+
+            var result = modelType.GenerateModelInstantiation(deepCloneCodeForEachProperty, parameterPaddingLength: 33);
+
+            return result;
+        }
+
+        private static string GenerateDeepCloneWithCode(
+            this ModelType modelType)
+        {
+            var deepCloneWithMethods = new List<string>();
+
+            if (modelType.PropertiesOfConcern.Any())
+            {
+                foreach (var property in modelType.PropertiesOfConcern)
+                {
+                    if (modelType.IsAbstractBase && (!modelType.DeclaresProperty(property)))
+                    {
+                        continue;
+                    }
+
+                    var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
+                    {
+                        var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name);
+
+                        var code = _.Name == property.Name
+                            ? property.ToParameterName()
+                            : referenceItemCloned;
+
+                        return new MemberCode(_.Name, code);
+                    }).ToList();
+
+                    var deepCloneWithModelInstantiationCode = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 33);
+
+                    var effectiveHierarchyKind = (modelType.HierarchyKind == HierarchyKind.ConcreteInherited) && modelType.DeclaresProperty(property)
+                        ? HierarchyKind.Standalone
+                        : modelType.HierarchyKind;
+
+                    var deepCloneWithMethodTemplate = modelType.IsMissingCorrespondingConstructorParameter(property)
+                        ? typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKinds, CodeTemplateKind.ModelSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithThrows)
+                        : typeof(CloningGeneration).GetCodeTemplate(effectiveHierarchyKind.ToHierarchyKinds(), CodeTemplateKind.ModelSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWith);
+
+                    var deepCloneWithMethod = deepCloneWithMethodTemplate
+                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.ModelAncestorTypeNameToken, property.DeclaringType.ToStringReadable())
+                        .Replace(Tokens.PropertyNameToken, property.Name)
+                        .Replace(Tokens.ParameterNameToken, property.ToParameterName())
+                        .Replace(Tokens.ParameterNameInXmlDocToken, property.ToParameterName(forXmlDoc: true))
+                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
+                        .Replace(Tokens.DeepCloneWithModelInstantiationToken, deepCloneWithModelInstantiationCode);
+
+                    deepCloneWithMethods.Add(deepCloneWithMethod);
+                }
+            }
+
+            var result = deepCloneWithMethods.Any()
+                ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, deepCloneWithMethods)
+                : string.Empty;
+
+            result = result
+                .Replace(Tokens.DeepCloneWithCodeAnalysisSuppressionsToken, typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithCodeAnalysisSuppressions));
 
             return result;
         }
@@ -256,75 +350,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 result = expressionParameter + recursionDepth.ToString(CultureInfo.InvariantCulture);
             }
-
-            return result;
-        }
-
-        private static string GenerateDeepCloneCode(
-            this ModelType modelType)
-        {
-            var deepCloneCodeForEachProperty = modelType
-                .PropertiesOfConcern
-                .Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name)))
-                .ToList();
-
-            var result = modelType.GenerateModelInstantiation(deepCloneCodeForEachProperty, parameterPaddingLength: 33);
-
-            return result;
-        }
-
-        private static string GenerateDeepCloneWithCode(
-            this ModelType modelType)
-        {
-            var deepCloneWithMethods = new List<string>();
-
-            if (modelType.PropertiesOfConcern.Any())
-            {
-                foreach (var property in modelType.PropertiesOfConcern)
-                {
-                    if (modelType.IsAbstractBase && (!modelType.DeclaresProperty(property)))
-                    {
-                        continue;
-                    }
-
-                    var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
-                    {
-                        var referenceItemCloned = _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name);
-
-                        var code = _.Name == property.Name
-                            ? property.ToParameterName()
-                            : referenceItemCloned;
-
-                        return new MemberCode(_.Name, code);
-                    }).ToList();
-
-                    var deepCloneWithModelInstantiationCode = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 33);
-
-                    var effectiveHierarchyKind = (modelType.HierarchyKind == HierarchyKind.ConcreteInherited) && modelType.DeclaresProperty(property)
-                        ? HierarchyKind.Standalone
-                        : modelType.HierarchyKind;
-
-                    var deepCloneWithMethodTemplate = typeof(CloningGeneration).GetCodeTemplate(effectiveHierarchyKind.ToHierarchyKinds(), CodeTemplateKind.ModelSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWith);
-
-                    var deepCloneWithMethod = deepCloneWithMethodTemplate
-                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                        .Replace(Tokens.ModelAncestorTypeNameToken, property.DeclaringType.ToStringReadable())
-                        .Replace(Tokens.PropertyNameToken, property.Name)
-                        .Replace(Tokens.ParameterNameToken, property.ToParameterName())
-                        .Replace(Tokens.ParameterNameInXmlDocToken, property.ToParameterName(forXmlDoc: true))
-                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
-                        .Replace(Tokens.DeepCloneWithModelInstantiationToken, deepCloneWithModelInstantiationCode);
-
-                    deepCloneWithMethods.Add(deepCloneWithMethod);
-                }
-            }
-
-            var result = deepCloneWithMethods.Any()
-                ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, deepCloneWithMethods)
-                : string.Empty;
-
-            result = result
-                .Replace(Tokens.DeepCloneWithCodeAnalysisSuppressionsToken, typeof(CloningGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneWithCodeAnalysisSuppressions));
 
             return result;
         }

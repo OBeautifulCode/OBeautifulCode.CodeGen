@@ -4366,6 +4366,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
 
             AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPublicSettersExpressionBodyParent>();
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersConstructorMissingPropertyChild1(
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersConstructorMissingPropertyChild3(
+                                 A.Dummy<ModelEnum>(),
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<int>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                 A.Dummy<IReadOnlyCollection<string>>(),
+                                 A.Dummy<ModelClass>()));
+
+
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<MyModelPrivateSettersConstructorMissingPropertyParent>();
         }
 
         /// <inheritdoc />

@@ -33,34 +33,207 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static global::System.FormattableString;
 
-    public static partial class MyModelPublicSettersEmptyParentTest
+    public static partial class MyModelPrivateSettersConstructorMissingPropertyChild2Test
     {
         private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(SerializationConfigurationTypes.BsonConfigurationType);
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly MyModelPublicSettersEmptyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPublicSettersEmptyParent>();
-
-        private static readonly EquatableTestScenarios<MyModelPublicSettersEmptyParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelPublicSettersEmptyParent>()
+        private static readonly StringRepresentationTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2>()
             .AddScenario(() =>
-                new EquatableTestScenario<MyModelPublicSettersEmptyParent>
+                new StringRepresentationTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "Default Code Generated Scenario",
+                    SystemUnderTestExpectedStringRepresentationFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new SystemUnderTestExpectedStringRepresentation<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.MyModelPrivateSettersConstructorMissingPropertyChild2: ParentEnumProperty = {systemUnderTest.ParentEnumProperty.ToString() ?? "<null>"}, ParentReadOnlyCollectionOfStringProperty = {systemUnderTest.ParentReadOnlyCollectionOfStringProperty?.ToString() ?? "<null>"}, ChildClass = {systemUnderTest.ChildClass?.ToString() ?? "<null>"}."),
+                        };
+
+                        return result;
+                    },
+                });
+
+        private static readonly ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2>()
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyCollectionOfStringProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                             null,
+                                             referenceObject.ChildClass);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionOfStringProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                             new List<string>(),
+                                             referenceObject.ChildClass);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionOfStringProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                             new string[0].Concat(referenceObject.ParentReadOnlyCollectionOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.ParentReadOnlyCollectionOfStringProperty).ToList(),
+                                             referenceObject.ChildClass);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'childClass' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                             referenceObject.ParentReadOnlyCollectionOfStringProperty,
+                                             null);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "childClass" },
+                });
+
+        private static readonly ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2>()
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "ParentReadOnlyCollectionOfStringProperty should return same 'parentReadOnlyCollectionOfStringProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                        {
+                            SystemUnderTest = new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                                      referenceObject.ParentReadOnlyCollectionOfStringProperty,
+                                                      referenceObject.ChildClass),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyCollectionOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ParentReadOnlyCollectionOfStringProperty,
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "ChildClass should return same 'childClass' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                        {
+                            SystemUnderTest = new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                                      referenceObject.ParentReadOnlyCollectionOfStringProperty,
+                                                      referenceObject.ChildClass),
+                            ExpectedPropertyValue = referenceObject.ChildClass,
+                        };
+
+                        return result;
+                    },
+                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ChildClass,
+                });
+
+        private static readonly DeepCloneWithTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2>()
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "DeepCloneWithParentReadOnlyCollectionOfStringProperty should deep clone object and replace ParentReadOnlyCollectionOfStringProperty with the provided parentReadOnlyCollectionOfStringProperty",
+                    WithPropertyName = "ParentReadOnlyCollectionOfStringProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>().ThatIs(_ => !systemUnderTest.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(_.ParentReadOnlyCollectionOfStringProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyCollectionOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                {
+                    Name = "DeepCloneWithChildClass should deep clone object and replace ChildClass with the provided childClass",
+                    WithPropertyName = "ChildClass",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                        var referenceObject = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>().ThatIs(_ => !systemUnderTest.ChildClass.IsEqualTo(_.ChildClass));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersConstructorMissingPropertyChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ChildClass,
+                        };
+
+                        return result;
+                    },
+                });
+
+        private static readonly MyModelPrivateSettersConstructorMissingPropertyChild2 ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+        private static readonly EquatableTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersConstructorMissingPropertyChild2>()
+            .AddScenario(() =>
+                new EquatableTestScenario<MyModelPrivateSettersConstructorMissingPropertyChild2>
                 {
                     Name = "Default Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
-                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPublicSettersEmptyParent[]
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new MyModelPrivateSettersConstructorMissingPropertyChild2[]
                     {
-                        ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                        new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ChildClass),
                     },
-                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPublicSettersEmptyParent[]
+                    ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersConstructorMissingPropertyChild2[]
                     {
-                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
-                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
-                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
-                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
-                    },
-                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPublicSettersEmptyParent[]
-                    {
-                        A.Dummy<MyModelPublicSettersEmptyParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                        new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>().Whose(_ => !_.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfStringProperty)).ParentReadOnlyCollectionOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ChildClass),
+                        new MyModelPrivateSettersConstructorMissingPropertyChild2(
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfStringProperty,
+                                A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>().Whose(_ => !_.ChildClass.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ChildClass)).ChildClass),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
@@ -69,6 +242,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
                         A.Dummy<Guid>(),
+                        A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild1>(),
+                        A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild3>(),
                     },
                 });
 
@@ -89,12 +264,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void MyModelPublicSettersEmptyParent___Should_implement_IModel_of_MyModelPublicSettersEmptyParent___When_reflecting()
+            public static void MyModelPrivateSettersConstructorMissingPropertyChild2___Should_implement_IModel_of_MyModelPrivateSettersConstructorMissingPropertyChild2___When_reflecting()
             {
                 // Arrange
-                var type = typeof(MyModelPublicSettersEmptyParent);
+                var type = typeof(MyModelPrivateSettersConstructorMissingPropertyChild2);
 
-                var expectedModelMethods = typeof(IModel<MyModelPublicSettersEmptyParent>)
+                var expectedModelMethods = typeof(IModel<MyModelPrivateSettersConstructorMissingPropertyChild2>)
                                           .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
                                           .ToList();
 
@@ -106,8 +281,121 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
-                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPublicSettersEmptyParent>));
+                actualInterfaces.AsTest().Must().ContainElement(typeof(IModel<MyModelPrivateSettersConstructorMissingPropertyChild2>));
                 expectedModelMethodHashes.Except(actualModelMethodHashes).AsTest().Must().BeEmptyEnumerable();
+            }
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
+        public static class StringRepresentation
+        {
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
+            {
+                var scenarios = StringRepresentationTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.SystemUnderTest.ToString();
+
+                    // Assert
+                    actual.AsTest().Must().BeEqualTo(scenario.ExpectedStringRepresentation, because: scenario.Id);
+                }
+            }
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
+        public static class Constructing
+        {
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void Constructor___Should_throw___When_parameters_are_not_valid()
+            {
+                var scenarios = ConstructorArgumentValidationTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = Record.Exception(scenario.ConstructionFunc);
+
+                    // Assert
+                    actual.AsTest().Must().BeOfType(scenario.ExpectedExceptionType, because: scenario.Id);
+
+                    foreach(var expected in scenario.ExpectedExceptionMessageContains ?? new List<string>())
+                    {
+                        actual.Message.AsTest().Must().ContainString(expected, because: scenario.Id);
+                    }
+
+                    if (scenario.ExpectedExceptionMessageEquals != null)
+                    {
+                        actual.Message.AsTest().Must().BeEqualTo(scenario.ExpectedExceptionMessageEquals, because: scenario.Id);
+                    }
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
+            public static void Properties___Should_be_assigned_by_constructor_to_expected_value___When_getting()
+            {
+                var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.PropertyGetterFunc(scenario.SystemUnderTest);
+
+                    // Assert
+                    if (scenario.ExpectedPropertyValue == null)
+                    {
+                        actual.AsTest().Must().BeNull(because: scenario.Id);
+                    }
+                    else if (scenario.ExpectedPropertyValue.GetType().IsValueType)
+                    {
+                        actual.AsTest().Must().BeEqualTo(scenario.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                    else
+                    {
+                        actual.AsTest().Must().BeSameReferenceAs(scenario.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                }
             }
         }
 
@@ -131,10 +419,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
 
                 // Act
-                var actual = (MyModelPublicSettersEmptyParent)systemUnderTest.Clone();
+                var actual = (MyModelPrivateSettersConstructorMissingPropertyChild2)systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -157,7 +445,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();
@@ -165,6 +453,114 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
+                actual.ParentReadOnlyCollectionOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionOfStringProperty);
+                actual.ChildClass.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ChildClass);
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
+            {
+                var propertyNames = new string[] { "ParentEnumProperty", "ParentReadOnlyCollectionOfStringProperty", "ChildClass" };
+
+                var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
+
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
+
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    if (scenario.WithPropertyName == DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
+                    {
+                        continue;
+                    }
+
+                    // Act
+                    var actual = (MyModelPrivateSettersConstructorMissingPropertyChild2)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
+
+                    // Assert
+                    foreach(var propertyName in propertyNames)
+                    {
+                        var property = typeof(MyModelPrivateSettersConstructorMissingPropertyChild2).GetProperty(propertyName);
+
+                        var propertyType = property.PropertyType;
+
+                        var actualPropertyValue = property.GetValue(actual);
+
+                        if (propertyName == scenario.WithPropertyName)
+                        {
+                            if (propertyType.IsValueType)
+                            {
+                                actualPropertyValue.AsTest().Must().BeEqualTo(scenario.WithValue, because: scenario.Id);
+                            }
+                            else
+                            {
+                                actualPropertyValue.AsTest().Must().BeSameReferenceAs(scenario.WithValue, because: scenario.Id);
+                            }
+                        }
+                        else
+                        {
+                            var systemUnderTestPropertyValue = property.GetValue(scenario.SystemUnderTest);
+
+                            // Use reflection to call: actualPropertyValue.AsTest().Must().BeEqualTo(systemUnderTestPropertyValue, because: scenario.Id)
+                            // We need to use reflection here because OBC Assertion uses declared types and not runtime types to identify the contract to use.
+                            // In this unit test we fetch property values using PropertyInfo.GetValue(), and as such the declared type is Object and its
+                            // contract is to determine equality based on reference equality.  The type we want to use is the property's real type, PropertyInfo.PropertyType.
+                            // For example, these two arrays of boolean are NOT equal if they are declared as objects:
+                            // object x = new[] { true, false };
+                            // object y = new[] { true, false };
+                            var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actualPropertyValue, Type.Missing })).Must();
+                            var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
+                            invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, systemUnderTestPropertyValue, scenario.Id, Type.Missing, Type.Missing });
+
+                            if ((!propertyType.IsValueType) && (propertyType != typeof(string)) && (systemUnderTestPropertyValue != null))
+                            {
+                                actualPropertyValue.AsTest().Must().NotBeSameReferenceAs(systemUnderTestPropertyValue, because: scenario.Id);
+                            }
+                        }
+                    }
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void DeepCloneWithParentEnumProperty___Should_throw_NotSupportedException___When_called()
+            {
+                // Arrange
+                var systemUnderTest = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
+
+                var parentEnumProperty = A.Dummy<ModelEnum>();
+
+                // Act
+                var actual = Record.Exception(()=> systemUnderTest.DeepCloneWithParentEnumProperty(parentEnumProperty));
+
+                // Assert
+                actual.AsTest().Must().BeOfType<NotSupportedException>();
+                actual.Message.AsTest().Must().BeEqualTo("The constructor in-use (by code gen) for MyModelPrivateSettersConstructorMissingPropertyChild2 does not have a parameter that corresponds with the 'ParentEnumProperty' property.  As such, this method, DeepCloneWithParentEnumProperty(ModelEnum parentEnumProperty), cannot utilize the specified 'parentEnumProperty' value for that property.");
             }
         }
 
@@ -188,14 +584,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_string_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedBson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyChild2>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -217,14 +613,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_bytes_using_ObcBsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
 
                 var serializer = BsonSerializer;
 
                 var serializedBson = serializer.SerializeToBytes(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedBson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyChild2>(serializedBson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -246,14 +642,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_string_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToString(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedJson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyChild2>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -275,14 +671,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void Deserialize___Should_roundtrip_object___When_serializing_to_and_deserializing_from_bytes_using_ObcJsonSerializer()
             {
                 // Arrange
-                var expected = A.Dummy<MyModelPublicSettersEmptyParent>();
+                var expected = A.Dummy<MyModelPrivateSettersConstructorMissingPropertyChild2>();
 
                 var serializer = JsonSerializer;
 
                 var serializedJson = serializer.SerializeToBytes(expected);
 
                 // Act
-                var actual = serializer.Deserialize<MyModelPublicSettersEmptyParent>(serializedJson);
+                var actual = serializer.Deserialize<MyModelPrivateSettersConstructorMissingPropertyChild2>(serializedJson);
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(expected);
@@ -309,8 +705,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersEmptyParent systemUnderTest1 = null;
-                MyModelPublicSettersEmptyParent systemUnderTest2 = null;
+                MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest1 = null;
+                MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 == systemUnderTest2;
@@ -339,7 +735,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersEmptyParent systemUnderTest = null;
+                    MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest == scenario.ReferenceObject;
@@ -483,8 +879,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                MyModelPublicSettersEmptyParent systemUnderTest1 = null;
-                MyModelPublicSettersEmptyParent systemUnderTest2 = null;
+                MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest1 = null;
+                MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 != systemUnderTest2;
@@ -513,7 +909,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersEmptyParent systemUnderTest = null;
+                    MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest != scenario.ReferenceObject;
@@ -654,14 +1050,152 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    MyModelPublicSettersEmptyParent systemUnderTest = null;
+                    MyModelPrivateSettersConstructorMissingPropertyParent systemUnderTest = null;
+
+                    // Act
+                    var actual = scenario.ReferenceObject.Equals((MyModelPrivateSettersConstructorMissingPropertyParent)systemUnderTest);
+
+                    // Assert
+                    actual.AsTest().Must().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_true___When_parameter_other_is_same_object()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.ReferenceObject.Equals((MyModelPrivateSettersConstructorMissingPropertyParent)scenario.ReferenceObject);
+
+                    // Assert
+                    actual.AsTest().Must().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((MyModelPrivateSettersConstructorMissingPropertyParent)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_false___When_objects_being_compared_have_different_property_values()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreNotEqualToReferenceObject.Select(_ => scenario.ReferenceObject.Equals((MyModelPrivateSettersConstructorMissingPropertyParent)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeFalse(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyParent___Should_return_true___When_objects_being_compared_have_same_property_values()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.Equals((MyModelPrivateSettersConstructorMissingPropertyParent)_)).ToList();
+
+                    // Assert
+                    actuals.AsTest().Must().Each().BeTrue(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyChild2___Should_return_false___When_parameter_other_is_null()
+            {
+                var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange
+                    MyModelPrivateSettersConstructorMissingPropertyChild2 systemUnderTest = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.Equals(systemUnderTest);
@@ -684,7 +1218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyChild2___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -711,7 +1245,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyChild2___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -738,7 +1272,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyChild2___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -765,7 +1299,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void Equals_with_MyModelPublicSettersEmptyParent___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_MyModelPrivateSettersConstructorMissingPropertyChild2___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 

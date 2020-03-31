@@ -100,7 +100,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 foreach (var setterKind in setterKinds)
                 {
-                    if ((specifiedModelKind == SpecifiedModelKind.MultipleConstructors) && (setterKind != SetterKind.PrivateSetters))
+                    if (((specifiedModelKind == SpecifiedModelKind.MultipleConstructors) || (specifiedModelKind == SpecifiedModelKind.ConstructorMissingProperty)) && (setterKind != SetterKind.PrivateSetters))
                     {
                         continue;
                     }

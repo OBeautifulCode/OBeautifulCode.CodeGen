@@ -153,6 +153,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var unequalSet = new List<string>();
 
+            var objectNotEqualToReferenceObjectCodeSnippet = typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject);
+
             foreach (var property in modelType.PropertiesOfConcern)
             {
                 if (modelType.IsAbstractBase)
@@ -161,7 +163,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         ? string.Empty
                         : Invariant($"({modelType.TypeCompilableString})");
 
-                    var code = typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject)
+                    var code = objectNotEqualToReferenceObjectCodeSnippet
                         .Replace(Tokens.PropertyNameToken, property.Name)
                         .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
                         .Replace(Tokens.CastToken, cast);
@@ -170,22 +172,25 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
                 else
                 {
-                    var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
+                    if (!modelType.IsMissingCorrespondingConstructorParameter(property))
                     {
-                        var referenceObject = "ReferenceObjectForEquatableTestScenarios." + _.Name;
+                        var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
+                        {
+                            var referenceObject = "ReferenceObjectForEquatableTestScenarios." + _.Name;
 
-                        var memberCode = _.Name != property.Name
-                            ? referenceObject
-                            : typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject)
-                                .Replace(Tokens.PropertyNameToken, property.Name)
-                                .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable());
+                            var memberCode = _.Name != property.Name
+                                ? referenceObject
+                                : objectNotEqualToReferenceObjectCodeSnippet
+                                    .Replace(Tokens.PropertyNameToken, property.Name)
+                                    .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable());
 
-                        return new MemberCode(_.Name, memberCode);
-                    }).ToList();
+                            return new MemberCode(_.Name, memberCode);
+                        }).ToList();
 
-                    var code = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 32);
+                        var code = modelType.GenerateModelInstantiation(propertiesCode, parameterPaddingLength: 32);
 
-                    unequalSet.Add(code);
+                        unequalSet.Add(code);
+                    }
                 }
             }
 

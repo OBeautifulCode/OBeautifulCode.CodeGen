@@ -127,6 +127,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string DeepCloneWithTestToken = "[deep-clone-with-test-here]";
 
         /// <summary>
+        /// The DeepCloneWith throwing tests.
+        /// </summary>
+        public const string DeepCloneWithThrowsTestsToken = "[deep-clone-with-throws-tests-here]";
+
+        /// <summary>
         /// Objects that are not equal to reference object.
         /// </summary>
         public const string ObjectsNotEqualToReferenceObjectToken = "[objects-not-equal-to-reference-object-here]";

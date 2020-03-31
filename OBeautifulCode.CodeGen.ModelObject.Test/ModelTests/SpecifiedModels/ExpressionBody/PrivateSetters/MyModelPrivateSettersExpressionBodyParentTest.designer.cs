@@ -39,68 +39,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly DeepCloneWithTestScenarios<MyModelPrivateSettersExpressionBodyParent> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<MyModelPrivateSettersExpressionBodyParent>()
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyParent>
-                {
-                    Name = "DeepCloneWithParentIntProperty should deep clone object and replace ParentIntProperty with the provided parentIntProperty",
-                    WithPropertyName = "ParentIntProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<MyModelPrivateSettersExpressionBodyParent>();
-
-                        var referenceObject = A.Dummy<MyModelPrivateSettersExpressionBodyParent>().ThatIs(_ => !systemUnderTest.ParentIntProperty.IsEqualTo(_.ParentIntProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersExpressionBodyParent>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentIntProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyParent>
-                {
-                    Name = "DeepCloneWithParentStringProperty should deep clone object and replace ParentStringProperty with the provided parentStringProperty",
-                    WithPropertyName = "ParentStringProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<MyModelPrivateSettersExpressionBodyParent>();
-
-                        var referenceObject = A.Dummy<MyModelPrivateSettersExpressionBodyParent>().ThatIs(_ => !systemUnderTest.ParentStringProperty.IsEqualTo(_.ParentStringProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersExpressionBodyParent>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentStringProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<MyModelPrivateSettersExpressionBodyParent>
-                {
-                    Name = "DeepCloneWithParentReadOnlyCollectionOfStringProperty should deep clone object and replace ParentReadOnlyCollectionOfStringProperty with the provided parentReadOnlyCollectionOfStringProperty",
-                    WithPropertyName = "ParentReadOnlyCollectionOfStringProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<MyModelPrivateSettersExpressionBodyParent>();
-
-                        var referenceObject = A.Dummy<MyModelPrivateSettersExpressionBodyParent>().ThatIs(_ => !systemUnderTest.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(_.ParentReadOnlyCollectionOfStringProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersExpressionBodyParent>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentReadOnlyCollectionOfStringProperty,
-                        };
-
-                        return result;
-                    },
-                });
-
         private static readonly MyModelPrivateSettersExpressionBodyParent ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersExpressionBodyParent>();
 
         private static readonly EquatableTestScenarios<MyModelPrivateSettersExpressionBodyParent> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersExpressionBodyParent>()
@@ -115,9 +53,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersExpressionBodyParent[]
                     {
-                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentIntProperty(A.Dummy<MyModelPrivateSettersExpressionBodyParent>().Whose(_ => !_.ParentIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentIntProperty)).ParentIntProperty),
-                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentStringProperty(A.Dummy<MyModelPrivateSettersExpressionBodyParent>().Whose(_ => !_.ParentStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentStringProperty)).ParentStringProperty),
-                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionOfStringProperty(A.Dummy<MyModelPrivateSettersExpressionBodyParent>().Whose(_ => !_.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfStringProperty)).ParentReadOnlyCollectionOfStringProperty),
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentIntProperty(A.Dummy<MyModelPrivateSettersExpressionBodyParent>().Whose(_ => !_.ParentIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentIntProperty)).ParentIntProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentStringProperty(A.Dummy<MyModelPrivateSettersExpressionBodyParent>().Whose(_ => !_.ParentStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentStringProperty)).ParentStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionOfStringProperty(A.Dummy<MyModelPrivateSettersExpressionBodyParent>().Whose(_ => !_.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfStringProperty)).ParentReadOnlyCollectionOfStringProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersExpressionBodyParent[]
                     {
@@ -227,84 +169,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
                 actual.ParentReadOnlyCollectionOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionOfStringProperty);
-            }
-
-            [Fact]
-            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
-            {
-                var propertyNames = new string[] { "ParentIntProperty", "ParentStringProperty", "ParentReadOnlyCollectionOfStringProperty" };
-
-                var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
-
-                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
-
-                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
-
-                foreach (var scenario in scenarios)
-                {
-                    // Arrange
-                    if (scenario.WithPropertyName == DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
-                    {
-                        continue;
-                    }
-
-                    // Act
-                    var actual = (MyModelPrivateSettersExpressionBodyParent)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
-
-                    // Assert
-                    foreach(var propertyName in propertyNames)
-                    {
-                        var property = typeof(MyModelPrivateSettersExpressionBodyParent).GetProperty(propertyName);
-
-                        var propertyType = property.PropertyType;
-
-                        var actualPropertyValue = property.GetValue(actual);
-
-                        if (propertyName == scenario.WithPropertyName)
-                        {
-                            if (propertyType.IsValueType)
-                            {
-                                actualPropertyValue.AsTest().Must().BeEqualTo(scenario.WithValue, because: scenario.Id);
-                            }
-                            else
-                            {
-                                actualPropertyValue.AsTest().Must().BeSameReferenceAs(scenario.WithValue, because: scenario.Id);
-                            }
-                        }
-                        else
-                        {
-                            var systemUnderTestPropertyValue = property.GetValue(scenario.SystemUnderTest);
-
-                            // Use reflection to call: actualPropertyValue.AsTest().Must().BeEqualTo(systemUnderTestPropertyValue, because: scenario.Id)
-                            // We need to use reflection here because OBC Assertion uses declared types and not runtime types to identify the contract to use.
-                            // In this unit test we fetch property values using PropertyInfo.GetValue(), and as such the declared type is Object and its
-                            // contract is to determine equality based on reference equality.  The type we want to use is the property's real type, PropertyInfo.PropertyType.
-                            // For example, these two arrays of boolean are NOT equal if they are declared as objects:
-                            // object x = new[] { true, false };
-                            // object y = new[] { true, false };
-                            var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actualPropertyValue, Type.Missing })).Must();
-                            var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
-                            invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, systemUnderTestPropertyValue, scenario.Id, Type.Missing, Type.Missing });
-
-                            if ((!propertyType.IsValueType) && (propertyType != typeof(string)) && (systemUnderTestPropertyValue != null))
-                            {
-                                actualPropertyValue.AsTest().Must().NotBeSameReferenceAs(systemUnderTestPropertyValue, because: scenario.Id);
-                            }
-                        }
-                    }
-                }
             }
         }
 

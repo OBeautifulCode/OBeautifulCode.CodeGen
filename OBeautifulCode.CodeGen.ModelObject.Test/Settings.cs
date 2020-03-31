@@ -109,6 +109,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 SpecifiedModelKind.MultipleConstructors,
                 new[] { "MultipleConstructors", "MultipleConstructorsParent", "MultipleConstructorsChild1", "MultipleConstructorsChild2" }
             },
+            {
+                SpecifiedModelKind.ConstructorMissingProperty,
+                new[] { "ConstructorMissingPropertyParent", "ConstructorMissingPropertyChild1", "ConstructorMissingPropertyChild2", "ConstructorMissingPropertyChild3" }
+            },
         };
     }
 }

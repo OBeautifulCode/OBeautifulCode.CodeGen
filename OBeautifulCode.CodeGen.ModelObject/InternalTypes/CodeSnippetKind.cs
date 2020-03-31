@@ -22,6 +22,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         DeepCloneWith,
 
         /// <summary>
+        /// A code snippet for a DeepCloneWith() method that throws.
+        /// </summary>
+        DeepCloneWithThrows,
+
+        /// <summary>
         /// A code snippet for test fields used to test the DeepCloneWith() methods.
         /// </summary>
         DeepCloneWithTestFields,

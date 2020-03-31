@@ -39,48 +39,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
 
-        private static readonly DeepCloneWithTestScenarios<MyModelPrivateSettersMultilevelChild2> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<MyModelPrivateSettersMultilevelChild2>()
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<MyModelPrivateSettersMultilevelChild2>
-                {
-                    Name = "DeepCloneWithParentInt should deep clone object and replace ParentInt with the provided parentInt",
-                    WithPropertyName = "ParentInt",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<MyModelPrivateSettersMultilevelChild2>();
-
-                        var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelChild2>().ThatIs(_ => !systemUnderTest.ParentInt.IsEqualTo(_.ParentInt));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersMultilevelChild2>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentInt,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<MyModelPrivateSettersMultilevelChild2>
-                {
-                    Name = "DeepCloneWithChild2Int should deep clone object and replace Child2Int with the provided child2Int",
-                    WithPropertyName = "Child2Int",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<MyModelPrivateSettersMultilevelChild2>();
-
-                        var referenceObject = A.Dummy<MyModelPrivateSettersMultilevelChild2>().ThatIs(_ => !systemUnderTest.Child2Int.IsEqualTo(_.Child2Int));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<MyModelPrivateSettersMultilevelChild2>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child2Int,
-                        };
-
-                        return result;
-                    },
-                });
-
         private static readonly MyModelPrivateSettersMultilevelChild2 ReferenceObjectForEquatableTestScenarios = A.Dummy<MyModelPrivateSettersMultilevelChild2>();
 
         private static readonly EquatableTestScenarios<MyModelPrivateSettersMultilevelChild2> EquatableTestScenarios = new EquatableTestScenarios<MyModelPrivateSettersMultilevelChild2>()
@@ -95,8 +53,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersMultilevelChild2[]
                     {
-                        (MyModelPrivateSettersMultilevelChild2)ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentInt(A.Dummy<MyModelPrivateSettersMultilevelChild2>().Whose(_ => !_.ParentInt.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentInt)).ParentInt),
-                        ReferenceObjectForEquatableTestScenarios.DeepCloneWithChild2Int(A.Dummy<MyModelPrivateSettersMultilevelChild2>().Whose(_ => !_.Child2Int.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2Int)).Child2Int),
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // (MyModelPrivateSettersMultilevelChild2)ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentInt(A.Dummy<MyModelPrivateSettersMultilevelChild2>().Whose(_ => !_.ParentInt.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentInt)).ParentInt),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithChild2Int(A.Dummy<MyModelPrivateSettersMultilevelChild2>().Whose(_ => !_.Child2Int.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2Int)).Child2Int),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersMultilevelChild2[]
                     {
@@ -241,84 +203,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-            }
-
-            [Fact]
-            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-            public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
-            {
-                var propertyNames = new string[] { "ParentInt", "Child2Int" };
-
-                var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
-
-                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
-
-                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
-
-                foreach (var scenario in scenarios)
-                {
-                    // Arrange
-                    if (scenario.WithPropertyName == DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
-                    {
-                        continue;
-                    }
-
-                    // Act
-                    var actual = (MyModelPrivateSettersMultilevelChild2)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
-
-                    // Assert
-                    foreach(var propertyName in propertyNames)
-                    {
-                        var property = typeof(MyModelPrivateSettersMultilevelChild2).GetProperty(propertyName);
-
-                        var propertyType = property.PropertyType;
-
-                        var actualPropertyValue = property.GetValue(actual);
-
-                        if (propertyName == scenario.WithPropertyName)
-                        {
-                            if (propertyType.IsValueType)
-                            {
-                                actualPropertyValue.AsTest().Must().BeEqualTo(scenario.WithValue, because: scenario.Id);
-                            }
-                            else
-                            {
-                                actualPropertyValue.AsTest().Must().BeSameReferenceAs(scenario.WithValue, because: scenario.Id);
-                            }
-                        }
-                        else
-                        {
-                            var systemUnderTestPropertyValue = property.GetValue(scenario.SystemUnderTest);
-
-                            // Use reflection to call: actualPropertyValue.AsTest().Must().BeEqualTo(systemUnderTestPropertyValue, because: scenario.Id)
-                            // We need to use reflection here because OBC Assertion uses declared types and not runtime types to identify the contract to use.
-                            // In this unit test we fetch property values using PropertyInfo.GetValue(), and as such the declared type is Object and its
-                            // contract is to determine equality based on reference equality.  The type we want to use is the property's real type, PropertyInfo.PropertyType.
-                            // For example, these two arrays of boolean are NOT equal if they are declared as objects:
-                            // object x = new[] { true, false };
-                            // object y = new[] { true, false };
-                            var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actualPropertyValue, Type.Missing })).Must();
-                            var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
-                            invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, systemUnderTestPropertyValue, scenario.Id, Type.Missing, Type.Missing });
-
-                            if ((!propertyType.IsValueType) && (propertyType != typeof(string)) && (systemUnderTestPropertyValue != null))
-                            {
-                                actualPropertyValue.AsTest().Must().NotBeSameReferenceAs(systemUnderTestPropertyValue, because: scenario.Id);
-                            }
-                        }
-                    }
-                }
             }
         }
 

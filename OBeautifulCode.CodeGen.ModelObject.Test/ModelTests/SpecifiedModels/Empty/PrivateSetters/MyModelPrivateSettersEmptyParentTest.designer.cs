@@ -53,6 +53,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new MyModelPrivateSettersEmptyParent[]
                     {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new MyModelPrivateSettersEmptyParent[]
                     {
