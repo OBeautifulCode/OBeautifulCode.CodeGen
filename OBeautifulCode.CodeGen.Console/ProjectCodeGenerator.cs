@@ -221,7 +221,7 @@ namespace OBeautifulCode.CodeGen.Console
 
             var modelDesignerFilePath = GetDesignerFilePath(modelFilePath);
 
-            File.WriteAllText(modelDesignerFilePath, modelPartialClassContents, Encoding);
+            WriteFileWithWindowsNewLines(modelDesignerFilePath, modelPartialClassContents);
         }
 
         private static void WriteTestFiles(
@@ -247,14 +247,14 @@ namespace OBeautifulCode.CodeGen.Console
 
                 var modelTestFileContents = GenerateModelTestFileContents(modelTestFileHeader, testNamespace, modelTestTypeName);
 
-                File.WriteAllText(modelTestFilePath, modelTestFileContents, Encoding);
+                WriteFileWithWindowsNewLines(modelTestFilePath, modelTestFileContents);
             }
 
             var modelTestDesignerFilePath = GetDesignerFilePath(modelTestFilePath);
 
             var testPartialClassContents = type.GenerateForModel(includeSerializationTesting ? GenerateFor.ModelImplementationTestsPartialClassWithSerialization : GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization);
 
-            File.WriteAllText(modelTestDesignerFilePath, testPartialClassContents, Encoding);
+            WriteFileWithWindowsNewLines(modelTestDesignerFilePath, testPartialClassContents);
         }
 
         private static string GetDesignerFilePath(
@@ -316,7 +316,7 @@ namespace OBeautifulCode.CodeGen.Console
 
             var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(typesForDummyFactory, testNamespace, dummyFactoryTypeName);
 
-            File.WriteAllText(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents, Encoding);
+            WriteFileWithWindowsNewLines(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents);
 
             var dummyFactoryTestTypeName = dummyFactoryTypeName + "Test";
 
@@ -328,14 +328,14 @@ namespace OBeautifulCode.CodeGen.Console
 
                 var dummyFactoryTestFileContents = GenerateDummyFactoryTestFileContents(dummyFactoryTestFileHeader, testNamespace, dummyFactoryTestTypeName);
 
-                File.WriteAllText(dummyFactoryTestFilePath, dummyFactoryTestFileContents, Encoding);
+                WriteFileWithWindowsNewLines(dummyFactoryTestFilePath, dummyFactoryTestFileContents);
             }
 
             var dummyFactoryTestDesignerFilePath = GetDesignerFilePath(dummyFactoryTestFilePath);
 
             var dummyFactoryTestDesignerFileContents = CodeGenerator.GenerateDummyFactoryTests(testNamespace, dummyFactoryTypeName);
 
-            File.WriteAllText(dummyFactoryTestDesignerFilePath, dummyFactoryTestDesignerFileContents, Encoding);
+            WriteFileWithWindowsNewLines(dummyFactoryTestDesignerFilePath, dummyFactoryTestDesignerFileContents);
         }
 
         private static string GenerateDummyFactoryTestFileContents(
@@ -373,6 +373,15 @@ namespace OBeautifulCode.CodeGen.Console
                                            + "}";
 
             return dummyFactoryFileContents;
+        }
+
+        private static void WriteFileWithWindowsNewLines(
+            string filePath,
+            string contents)
+        {
+            contents = contents.Replace("\r\n", "\n").Replace('\r', '\n').Replace("\n", "\r\n");
+
+            File.WriteAllText(filePath, contents, Encoding);
         }
     }
 }
