@@ -92,7 +92,7 @@ namespace OBeautifulCode.CodeGen
             this.BaseTypeReadableString = type.BaseType?.ToStringReadable();
 
             this.HierarchyKind = hierarchyKind;
-            this.HierarchyKinds = hierarchyKind.ToHierarchyKinds();
+            this.ClassifiedHierarchyKind = Classify(hierarchyKind);
             this.IsAbstractBase = (hierarchyKind == HierarchyKind.AbstractBaseRoot) || (hierarchyKind == HierarchyKind.AbstractBaseInherited);
             this.IsConcrete = (hierarchyKind == HierarchyKind.ConcreteInherited) || (hierarchyKind == HierarchyKind.Standalone);
             this.PropertiesOfConcern = propertiesOfConcern;
@@ -188,9 +188,9 @@ namespace OBeautifulCode.CodeGen
         public HierarchyKind HierarchyKind { get; }
 
         /// <summary>
-        /// Gets the <see cref="HierarchyKinds"/> of the model type.
+        /// Gets the <see cref="ClassifiedHierarchyKind"/> of the model type.
         /// </summary>
-        public HierarchyKinds HierarchyKinds { get; }
+        public ClassifiedHierarchyKind ClassifiedHierarchyKind { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model is an abstract base type.
@@ -924,6 +924,22 @@ namespace OBeautifulCode.CodeGen
             var result = propertyInfo.GetGetMethod().GetCustomAttribute(typeof(CompilerGeneratedAttribute)) != null;
 
             return result;
+        }
+
+        private static ClassifiedHierarchyKind Classify(
+            HierarchyKind hierarchyKind)
+        {
+            switch (hierarchyKind)
+            {
+                case HierarchyKind.AbstractBaseInherited:
+                case HierarchyKind.AbstractBaseRoot:
+                    return ClassifiedHierarchyKind.Abstract;
+                case HierarchyKind.ConcreteInherited:
+                case HierarchyKind.Standalone:
+                    return ClassifiedHierarchyKind.Concrete;
+                default:
+                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
+            }
         }
 
         private class PropertiesOfConcernResult

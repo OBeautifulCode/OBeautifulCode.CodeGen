@@ -75,7 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 45);
 
-                var scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
+                var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
                                 .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                                 .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 45);
 
-                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioWhiteSpaceString)
+                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioWhiteSpaceString)
                         .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -143,7 +143,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
 
-                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyEnumerable)
+                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyEnumerable)
                         .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -183,7 +183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
 
-                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEnumerableWithNullElement)
+                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEnumerableWithNullElement)
                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
@@ -218,7 +218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 45);
 
-                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyDictionary)
+                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyDictionary)
                         .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -253,7 +253,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 45);
 
-                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioDictionaryWithNullValue)
+                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioDictionaryWithNullValue)
                             .Replace(Tokens.SetDictionaryValueToNullToken, setDictionaryValueToNullCode)
                             .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -272,7 +272,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var newObjectCode = modelType.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 54);
 
-                var scenario = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorParameterAssignmentScenario)
+                var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorParameterAssignmentScenario)
                     .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                     .Replace(Tokens.PropertyNameToken, parameter.ToPropertyName())
                     .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -285,7 +285,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var propertyAssignmentScenariosCode = propertyAssignmentScenarios.Any() ? Environment.NewLine + string.Join(Environment.NewLine, propertyAssignmentScenarios) : string.Empty;
 
-            var result = typeof(ConstructingGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestFields)
+            var result = typeof(ConstructingGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorTestFields)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                 .Replace(Tokens.ConstructorArgumentValidationTestScenariosToken, argumentValidationScenariosCode)
                 .Replace(Tokens.ConstructorPropertyAssignmentTestScenariosToken, propertyAssignmentScenariosCode);
@@ -310,7 +310,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var result = typeof(ConstructingGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+            var result = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             return result;
         }

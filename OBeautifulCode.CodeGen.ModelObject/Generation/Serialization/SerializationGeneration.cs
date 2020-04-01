@@ -29,9 +29,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
-            var bsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTestFields);
+            var bsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTestFields);
 
-            var jsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTestFields);
+            var jsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTestFields);
 
             var serializationFieldsCodeTemplate = bsonSnippet + Environment.NewLine + Environment.NewLine + jsonSnippet;
 
@@ -52,11 +52,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             modelType.AsArg(nameof(modelType)).Must().NotBeNull();
 
-            var codeTemplate = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+            var codeTemplate = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
-            var bsonTests = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTests);
+            var bsonTests = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTests);
 
-            var jsonTests = typeof(SerializationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTests);
+            var jsonTests = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTests);
 
             var serializationTests = bsonTests + Environment.NewLine + Environment.NewLine + jsonTests;
 

@@ -31,7 +31,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityMethods(
             this ModelType modelType)
         {
-            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Model, modelType.EqualsKeyMethodKinds);
+            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.Model, modelType.EqualsKeyMethodKinds);
 
             var equalityStatements = modelType
                 .PropertiesOfConcern
@@ -72,16 +72,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (keyMethodKinds == KeyMethodKinds.Declared)
             {
-                codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
+                codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
             }
             else
             {
-                var hierarchyKinds = modelType.HierarchyKinds.Classify();
-
-                codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(hierarchyKinds, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
+                codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
 
                 objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypesCompilableStrings.Count() >= 2)
-                    ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(hierarchyKinds, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
+                    ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
                     : string.Empty;
 
                 var objectsEqualToButNotTheSameAsReferenceObjectMemberCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ReferenceObjectForEquatableTestScenarios." + _.Name)).ToList();
@@ -114,7 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestMethods(
             this ModelType modelType)
         {
-            var equalsTestTemplate = typeof(EqualityGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.EqualsTests);
+            var equalsTestTemplate = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.EqualsTests);
 
             var equalsItems = new List<string>();
 
@@ -127,7 +125,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 equalsItems.Add(equalsItem);
             }
 
-            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
@@ -153,7 +151,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var unequalSet = new List<string>();
 
-            var objectNotEqualToReferenceObjectCodeSnippet = typeof(EqualityGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject);
+            var objectNotEqualToReferenceObjectCodeSnippet = typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsObjectNotEqualToReferenceObject);
 
             foreach (var property in modelType.PropertiesOfConcern)
             {

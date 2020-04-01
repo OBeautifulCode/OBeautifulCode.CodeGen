@@ -83,7 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var modelImplementationCode = modelImplementationItems.Where(_ => _ != null).ToNewLineDelimited();
 
-            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Model, KeyMethodKinds.Both);
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.Model, KeyMethodKinds.Both);
 
             var result = codeTemplate
                 .Replace(Tokens.UsingStatementsToken, modelType.GetUsingStatementsForModelObject())
@@ -255,7 +255,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var testImplementationCode = testImplementationItems.Where(_ => _ != null).ToNewLineDelimited();
 
-            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.Test, KeyMethodKinds.Both);
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate
                 .Replace(Tokens.UsingStatementsToken, modelType.GetUsingStatementsForTestClass(kind))
@@ -282,7 +282,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string dummyFactoryTypeNamespace,
             string dummyFactoryTypeName)
         {
-            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.DummyFactory, KeyMethodKinds.Both);
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.DummyFactory, KeyMethodKinds.Both);
 
             var dummyFactorySnippets = modelTypes.Select(_ => _.GenerateCodeForDummyFactory()).ToList();
 
@@ -309,7 +309,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string dummyFactoryTypeNamespace,
             string dummyFactoryTypeName)
         {
-            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.DummyFactoryTest, KeyMethodKinds.Both);
+            var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.DummyFactoryTest, KeyMethodKinds.Both);
 
             var result = codeTemplate
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())

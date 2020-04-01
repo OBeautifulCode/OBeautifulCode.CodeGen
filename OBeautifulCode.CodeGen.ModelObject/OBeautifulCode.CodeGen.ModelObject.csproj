@@ -110,7 +110,7 @@
     <Compile Include="Generation\ModelImplementation\ModelImplementationGeneration.cs" />
     <Compile Include="Generation\Structural\StructuralGeneration.cs" />
     <Compile Include="InternalTypes\Tokens.cs" />
-    <Compile Include="InternalTypes\HierarchyKinds.cs" />
+    <Compile Include="InternalTypes\ClassifiedHierarchyKind.cs" />
     <Compile Include="InternalTypes\KeyMethodKinds.cs" />
     <Compile Include="InternalTypes\CodeSnippetKind.cs" />
     <Compile Include="InternalTypes\CodeTemplateKind.cs" />

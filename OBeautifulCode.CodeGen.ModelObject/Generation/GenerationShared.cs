@@ -56,59 +56,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         }
 
         /// <summary>
-        /// Converts a <see cref="HierarchyKind"/> to a <see cref="HierarchyKinds"/>.
-        /// </summary>
-        /// <param name="hierarchyKind">The hierarchy kind to convert.</param>
-        /// <returns>
-        /// The <see cref="HierarchyKinds"/> equivalent of the specified <see cref="HierarchyKind"/>.
-        /// </returns>
-        public static HierarchyKinds ToHierarchyKinds(
-            this HierarchyKind hierarchyKind)
-        {
-            switch (hierarchyKind)
-            {
-                case HierarchyKind.Standalone:
-                    return HierarchyKinds.Standalone;
-                case HierarchyKind.AbstractBaseRoot:
-                    return HierarchyKinds.AbstractBaseRoot;
-                case HierarchyKind.AbstractBaseInherited:
-                    return HierarchyKinds.AbstractBaseInherited;
-                case HierarchyKind.ConcreteInherited:
-                    return HierarchyKinds.ConcreteInherited;
-                default:
-                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
-            }
-        }
-
-        /// <summary>
-        /// Classifies the specified <see cref="HierarchyKind"/>
-        /// into abstract or concrete.
-        /// </summary>
-        /// <param name="hierarchyKinds">The hierarchy kinds.</param>
-        /// <returns>
-        /// The specified hierarchy kinds, classified into abstract or concrete.
-        /// </returns>
-        public static HierarchyKinds Classify(
-            this HierarchyKinds hierarchyKinds)
-        {
-            if ((hierarchyKinds & HierarchyKinds.Abstract) != 0)
-            {
-                return HierarchyKinds.Abstract;
-            }
-
-            if ((hierarchyKinds & HierarchyKinds.Concrete) != 0)
-            {
-                return HierarchyKinds.Concrete;
-            }
-
-            throw new InvalidOperationException("Cannot be classified");
-        }
-
-        /// <summary>
         /// Gets a code template.
         /// </summary>
         /// <param name="generationType">The type of the class containing the generation logic.</param>
-        /// <param name="hierarchyKinds">The hierarchy kinds.</param>
         /// <param name="codeTemplateKind">The code template kind.</param>
         /// <param name="keyMethodKinds">The key method kinds.</param>
         /// <param name="codeSnippetKind">Optional code snippet kind.  Default is None (not treated as a code snippet).</param>
@@ -118,39 +68,62 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// </returns>
         public static string GetCodeTemplate(
             this Type generationType,
-            HierarchyKinds hierarchyKinds,
             CodeTemplateKind codeTemplateKind,
             KeyMethodKinds keyMethodKinds,
             CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
             bool throwIfDoesNotExist = true)
         {
-            new { hierarchyKinds }.AsArg().Must().NotBeEqualTo(HierarchyKinds.Unknown);
-            new { keyMethodKinds }.AsArg().Must().NotBeEqualTo(KeyMethodKinds.Unknown);
+            var result = generationType.GetCodeTemplate("All", codeTemplateKind, keyMethodKinds, codeSnippetKind, throwIfDoesNotExist);
 
-            var codeSnippetToken = codeSnippetKind == CodeSnippetKind.None
-                ? string.Empty
-                : codeSnippetKind + ".";
+            return result;
+        }
 
-            var resourceNameSuffix = Invariant($"{generationType.Name}.{codeTemplateKind}.{codeSnippetToken}{hierarchyKinds}.{keyMethodKinds}.txt");
+        /// <summary>
+        /// Gets a code template.
+        /// </summary>
+        /// <param name="generationType">The type of the class containing the generation logic.</param>
+        /// <param name="hierarchyKind">The hierarchy kind.</param>
+        /// <param name="codeTemplateKind">The code template kind.</param>
+        /// <param name="keyMethodKinds">The key method kinds.</param>
+        /// <param name="codeSnippetKind">Optional code snippet kind.  Default is None (not treated as a code snippet).</param>
+        /// <param name="throwIfDoesNotExist">Throw if the code template does not exist.</param>
+        /// <returns>
+        /// The code template corresponding to the specified parameters.
+        /// </returns>
+        public static string GetCodeTemplate(
+            this Type generationType,
+            HierarchyKind hierarchyKind,
+            CodeTemplateKind codeTemplateKind,
+            KeyMethodKinds keyMethodKinds,
+            CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
+            bool throwIfDoesNotExist = true)
+        {
+            var result = generationType.GetCodeTemplate(hierarchyKind.ToString(), codeTemplateKind, keyMethodKinds, codeSnippetKind, throwIfDoesNotExist);
 
-            var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().SingleOrDefault(_ => _.EndsWith(resourceNameSuffix, StringComparison.Ordinal));
+            return result;
+        }
 
-            if (throwIfDoesNotExist)
-            {
-                if (resourceName == null)
-                {
-                    throw new InvalidOperationException("An embedded resource with this suffix does not exist: " + resourceNameSuffix);
-                }
-            }
-            else
-            {
-                if (resourceName == null)
-                {
-                    return null;
-                }
-            }
-
-            var result = AssemblyHelper.ReadEmbeddedResourceAsString(resourceName, addCallerNamespace: false);
+        /// <summary>
+        /// Gets a code template.
+        /// </summary>
+        /// <param name="generationType">The type of the class containing the generation logic.</param>
+        /// <param name="classifiedHierarchyKind">The classified hierarchy kind.</param>
+        /// <param name="codeTemplateKind">The code template kind.</param>
+        /// <param name="keyMethodKinds">The key method kinds.</param>
+        /// <param name="codeSnippetKind">Optional code snippet kind.  Default is None (not treated as a code snippet).</param>
+        /// <param name="throwIfDoesNotExist">Throw if the code template does not exist.</param>
+        /// <returns>
+        /// The code template corresponding to the specified parameters.
+        /// </returns>
+        public static string GetCodeTemplate(
+            this Type generationType,
+            ClassifiedHierarchyKind classifiedHierarchyKind,
+            CodeTemplateKind codeTemplateKind,
+            KeyMethodKinds keyMethodKinds,
+            CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
+            bool throwIfDoesNotExist = true)
+        {
+            var result = generationType.GetCodeTemplate(classifiedHierarchyKind.ToString(), codeTemplateKind, keyMethodKinds, codeSnippetKind, throwIfDoesNotExist);
 
             return result;
         }
@@ -318,8 +291,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var nestedTestClassCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.NestedTestClassCodeAnalysisSuppressions);
-            var testMethodCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(HierarchyKinds.All, CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.TestMethodCodeAnalysisSuppressions);
+            var nestedTestClassCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.NestedTestClassCodeAnalysisSuppressions);
+            var testMethodCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.TestMethodCodeAnalysisSuppressions);
 
             var result = code
                 .Replace(Tokens.NestedTestClassCodeAnalysisSuppressionsToken, nestedTestClassCodeAnalysisSuppressions)
@@ -418,6 +391,44 @@ namespace OBeautifulCode.CodeGen.ModelObject
             new { constructor }.AsArg().Must().NotBeNull();
 
             var result = constructor.GetParameters().Length == 0;
+
+            return result;
+        }
+
+        private static string GetCodeTemplate(
+            this Type generationType,
+            string hierarchyKind,
+            CodeTemplateKind codeTemplateKind,
+            KeyMethodKinds keyMethodKinds,
+            CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
+            bool throwIfDoesNotExist = true)
+        {
+            new { keyMethodKinds }.AsArg().Must().NotBeEqualTo(KeyMethodKinds.Unknown);
+
+            var codeSnippetToken = codeSnippetKind == CodeSnippetKind.None
+                ? string.Empty
+                : codeSnippetKind + ".";
+
+            var resourceNameSuffix = Invariant($"{generationType.Name}.{codeTemplateKind}.{codeSnippetToken}{hierarchyKind}.{keyMethodKinds}.txt");
+
+            var resourceName = typeof(GenerationShared).Assembly.GetManifestResourceNames().SingleOrDefault(_ => _.EndsWith(resourceNameSuffix, StringComparison.Ordinal));
+
+            if (throwIfDoesNotExist)
+            {
+                if (resourceName == null)
+                {
+                    throw new InvalidOperationException("An embedded resource with this suffix does not exist: " + resourceNameSuffix);
+                }
+            }
+            else
+            {
+                if (resourceName == null)
+                {
+                    return null;
+                }
+            }
+
+            var result = AssemblyHelper.ReadEmbeddedResourceAsString(resourceName, addCallerNamespace: false);
 
             return result;
         }

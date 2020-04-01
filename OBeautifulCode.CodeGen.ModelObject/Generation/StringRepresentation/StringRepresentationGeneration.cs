@@ -30,7 +30,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateStringRepresentationMethods(
             this ModelType modelType)
         {
-            var codeTemplate = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Model, modelType.ToStringKeyMethodKinds);
+            var codeTemplate = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.Model, modelType.ToStringKeyMethodKinds);
 
             var toStringStatement = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false);
 
@@ -59,7 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
-            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.TestSnippet, modelType.ToStringKeyMethodKinds, CodeSnippetKind.StringRepresentationTestFields)
+            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.ToStringKeyMethodKinds, CodeSnippetKind.StringRepresentationTestFields)
                 .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
                 .Replace(Tokens.ToStringExpectedToken, toStringConstructionCode);
 
@@ -81,7 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.HierarchyKinds.Classify(), CodeTemplateKind.Test, KeyMethodKinds.Both);
+            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             return result;
         }
