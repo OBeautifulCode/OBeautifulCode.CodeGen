@@ -178,7 +178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var parameterPadding = new string(' ', parameterPaddingLength);
 
-            if ((modelType.Constructor == null) || modelType.IsDefaultConstructor)
+            if ((modelType.Constructor == null) || modelType.Constructor.IsDefaultConstructor())
             {
                 if (memberCode.Any())
                 {
@@ -224,6 +224,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this Type type,
             string constructorParameterCode = null)
         {
+            new { type }.AsArg().Must().NotBeNull();
+
             string result;
 
             if (type.IsArray)
@@ -294,7 +296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateDummyConstructionCodeForType(
             this string typeCompilableString)
         {
-            new { typeCompilableString }.Must().NotBeNullNorWhiteSpace();
+            new { typeCompilableString }.AsArg().Must().NotBeNullNorWhiteSpace();
 
             var result = "A.Dummy<" + typeCompilableString + ">()";
 
@@ -339,6 +341,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this PropertyOfConcern propertyOfConcern,
             bool forXmlDoc = false)
         {
+            new { propertyOfConcern }.AsArg().Must().NotBeNull();
+
             var result = propertyOfConcern.Name.ToLowerFirstCharacter(CultureInfo.InvariantCulture);
 
             if (!forXmlDoc)
@@ -365,6 +369,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string ToPropertyName(
             this ParameterInfo parameterInfo)
         {
+            new { parameterInfo }.AsArg().Must().NotBeNull();
+
             // note that parameters names don't have the leading @ if they are
             // reserved words. So if a constructor's parameter is defined as '@namespace' in code
             // then it's parameterInfo.Name is just 'namespace'.
@@ -389,9 +395,29 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this ModelType modelType,
             PropertyOfConcern propertyOfConcern)
         {
+            new { modelType }.AsArg().Must().NotBeNull();
+            new { propertyOfConcern }.AsArg().Must().NotBeNull();
+
             var result = (modelType.HierarchyKind == HierarchyKind.ConcreteInherited)
-                         && (!modelType.IsDefaultConstructor)
+                         && (!modelType.Constructor.IsDefaultConstructor())
                          && (!modelType.Constructor.GetParameters().Select(_ => _.Name).Contains(propertyOfConcern.Name, StringComparer.OrdinalIgnoreCase));
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified constructor is the default constructor.
+        /// </summary>
+        /// <param name="constructor">The constructor.</param>
+        /// <returns>
+        /// true if the specified constructor is the default constructor; otherwise false.
+        /// </returns>
+        public static bool IsDefaultConstructor(
+            this ConstructorInfo constructor)
+        {
+            new { constructor }.AsArg().Must().NotBeNull();
+
+            var result = constructor.GetParameters().Length == 0;
 
             return result;
         }

@@ -40,7 +40,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            if ((modelType.Constructor == null) || modelType.IsDefaultConstructor)
+            if ((modelType.Constructor == null) || modelType.Constructor.IsDefaultConstructor())
             {
                 return null;
             }
@@ -305,7 +305,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            if ((modelType.Constructor == null) || modelType.IsDefaultConstructor)
+            if ((modelType.Constructor == null) || modelType.Constructor.IsDefaultConstructor())
             {
                 return null;
             }

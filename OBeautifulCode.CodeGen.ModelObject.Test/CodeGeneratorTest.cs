@@ -88,6 +88,78 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ExecuteForGeneratedModels(GenerationKind.Test, RunCodeGen);
         }
 
+        [Fact]
+        public void GenerateForModel___Should_throw_NotSupportedException___When_model_type_not_supported()
+        {
+            // Arrange
+            var tests = new[]
+            {
+                new { Type = typeof(List<>), ExpectedExceptionMessageContains = "it is an open type" },
+                new { Type = typeof(List<>).MakeArrayType(), ExpectedExceptionMessageContains = "it is an open type" },
+                new { Type = typeof(List<>).MakeGenericType(typeof(List<>)), ExpectedExceptionMessageContains = "it is an open type" },
+                new { Type = typeof(Dictionary<,>).GetGenericArguments()[0], ExpectedExceptionMessageContains = "it is an open type" },
+                new { Type = typeof(DoesNotImplementInterfaceThatIndicatesCodeGenIsRequired), ExpectedExceptionMessageContains = "it does not implement one of the following interfaces" },
+                new { Type = typeof(List<string>), ExpectedExceptionMessageContains = "it does not implement one of the following interfaces" },
+                new { Type = typeof(IList<string>), ExpectedExceptionMessageContains = "it does not implement one of the following interfaces" },
+                new { Type = typeof(Interface), ExpectedExceptionMessageContains = "it is a value type or interface type" },
+                new { Type = typeof(IGenericInterface<string>), ExpectedExceptionMessageContains = "it is a value type or interface type" },
+                new { Type = typeof(Struct), ExpectedExceptionMessageContains = "it is a value type or interface type" },
+                new { Type = typeof(GenericStruct<string>), ExpectedExceptionMessageContains = "it is a value type or interface type" },
+                new { Type = typeof(GenericClass<string>), ExpectedExceptionMessageContains = "it is a generic type" },
+                new { Type = typeof(GenericClass<IReadOnlyList<string>>), ExpectedExceptionMessageContains = "it is a generic type" },
+                new { Type = typeof(ConcreteBaseClass), ExpectedExceptionMessageContains = "it is a base class of one or more other classes but it is not abstract" },
+                new { Type = typeof(AbstractClassWithConcreteBaseClass), ExpectedExceptionMessageContains = "it is abstract but has a concrete type in its inheritance path" },
+                new { Type = typeof(ConcreteClassWithConcreteBaseClass), ExpectedExceptionMessageContains = "it is concrete and has a concrete type in its inheritance path" },
+                new { Type = typeof(MissingCodeGenInterfacesGrandchild1), ExpectedExceptionMessageContains = "there is a type in its inheritance path (MissingCodeGenInterfacesParent1) that does not implement all of the following code gen interfaces which are implemented by this type: IDeepCloneableViaCodeGen, IEquatableViaCodeGen, IHashableViaCodeGen, IModelViaCodeGen, IStringRepresentableViaCodeGen" },
+                new { Type = typeof(MissingCodeGenInterfacesGrandchild2), ExpectedExceptionMessageContains = "there is a type in its inheritance path (MissingCodeGenInterfacesParent2) that does not implement all of the following code gen interfaces which are implemented by this type: IDeepCloneableViaCodeGen, IEquatableViaCodeGen, IStringRepresentableViaCodeGen" },
+                new { Type = typeof(GetterOnlyProperties1), ExpectedExceptionMessageContains = "it contains the following getter-only properties: Property1" },
+                new { Type = typeof(GetterOnlyProperties2), ExpectedExceptionMessageContains = "it contains the following getter-only properties: Property1, Property2" },
+                new { Type = typeof(GetterOnlyProperties3), ExpectedExceptionMessageContains = "it contains the following getter-only properties: Property1, Property2" },
+                new { Type = typeof(GetterOnlyProperties4), ExpectedExceptionMessageContains = "it contains the following getter-only properties: Property1" },
+                new { Type = typeof(NotPrivateNotPublicProperties1), ExpectedExceptionMessageContains = "it contains properties of concern are neither private nor public; only private and public setters are supported" },
+                new { Type = typeof(NotPrivateNotPublicProperties2), ExpectedExceptionMessageContains = "it contains properties of concern are neither private nor public; only private and public setters are supported" },
+                new { Type = typeof(NotPrivateNotPublicProperties3), ExpectedExceptionMessageContains = "it contains properties of concern are neither private nor public; only private and public setters are supported" },
+                new { Type = typeof(MixedAccessProperties1), ExpectedExceptionMessageContains = "it contains properties of concern with inconsistent access modifiers on its setters" },
+                new { Type = typeof(MixedAccessProperties2), ExpectedExceptionMessageContains = "it contains properties of concern with inconsistent access modifiers on its setters" },
+                new { Type = typeof(MixedAccessProperties3), ExpectedExceptionMessageContains = "it contains properties of concern with inconsistent access modifiers on its setters" },
+                new { Type = typeof(DictionaryKeyedOnDateTimeProperty1), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime" },
+                new { Type = typeof(DictionaryKeyedOnDateTimeProperty2), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime" },
+                new { Type = typeof(DictionaryKeyedOnDateTimeProperty3), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime" },
+                new { Type = typeof(DictionaryKeyedOnDateTimeProperty4), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime" },
+                new { Type = typeof(EnumerableKeyedOnDateTimeProperty1), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>" },
+                new { Type = typeof(EnumerableKeyedOnDateTimeProperty2), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>" },
+                new { Type = typeof(EnumerableKeyedOnDateTimeProperty3), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>" },
+                new { Type = typeof(EnumerableKeyedOnDateTimeProperty4), ExpectedExceptionMessageContains = "it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>" },
+                new { Type = typeof(AbstractDeclaredCompareTo), ExpectedExceptionMessageContains = "it is an abstract class that implements one or more of the IDeclare... interfaces" },
+                new { Type = typeof(AbstractDeclaredDeepClone), ExpectedExceptionMessageContains = "it is an abstract class that implements one or more of the IDeclare... interfaces" },
+                new { Type = typeof(AbstractDeclaredEquals), ExpectedExceptionMessageContains = "it is an abstract class that implements one or more of the IDeclare... interfaces" },
+                new { Type = typeof(AbstractDeclaredGetHashCode), ExpectedExceptionMessageContains = "it is an abstract class that implements one or more of the IDeclare... interfaces" },
+                new { Type = typeof(AbstractDeclaredToString), ExpectedExceptionMessageContains = "it is an abstract class that implements one or more of the IDeclare... interfaces" },
+                new { Type = typeof(ComparableViaCodeGenWithoutDeclaredCompareTo), ExpectedExceptionMessageContains = "it is a concrete class that implements IComparableViaCodeGen but does not implement IDeclareCompareToForRelativeSortOrderMethod" },
+                new { Type = typeof(AbstractClassWithConstructor1), ExpectedExceptionMessageContains = "there is at least one public constructor, but the class is abstract" },
+                new { Type = typeof(AbstractClassWithConstructor2), ExpectedExceptionMessageContains = "there is at least one public constructor, but the class is abstract" },
+                new { Type = typeof(ConstructorParameterWithoutMatchingProperty1), ExpectedExceptionMessageContains = "none of its public constructors have parameters where all parameters have a matching property by name and type" },
+                new { Type = typeof(ConstructorParameterWithoutMatchingProperty2), ExpectedExceptionMessageContains = "none of its public constructors have parameters where all parameters have a matching property by name and type" },
+                new { Type = typeof(ConstructorParameterWithoutMatchingProperty3), ExpectedExceptionMessageContains = "none of its public constructors have parameters where all parameters have a matching property by name and type" },
+                new { Type = typeof(ConstructorParameterWithoutMatchingProperty4), ExpectedExceptionMessageContains = "none of its public constructors have parameters where all parameters have a matching property by name and type" },
+                new { Type = typeof(MultipleCandidateConstructors1), ExpectedExceptionMessageContains = "there are 2 public constructors having 3 parameters that have a matching property by name type" },
+                new { Type = typeof(MultipleCandidateConstructors2), ExpectedExceptionMessageContains = "there are 3 public constructors having 3 parameters that have a matching property by name type" },
+                new { Type = typeof(DefaultConstructorWithPrivateSetters), ExpectedExceptionMessageContains = "the constructor to use is the default constructor but there are properties declared on the type that have private setters" },
+                new { Type = typeof(ParameterizedConstructorWithPublicSetters), ExpectedExceptionMessageContains = "the constructor to use is parameterized but there are properties declared on the type with a public setter" },
+                new { Type = typeof(DeclaredPropertyNotInConstructor), ExpectedExceptionMessageContains = "the constructor to use is parameterized but one or more of the properties declared on the type does not match a parameter in that constructor" },
+            };
+
+            // Act
+            var actuals = tests.Select(_ => Record.Exception(() => _.Type.GenerateForModel(GenerateFor.AllPossibleCode))).ToList();
+
+            // Assert
+            for (int x = 0; x < tests.Length; x++)
+            {
+                actuals[x].AsTest().Must().BeOfType<NotSupportedException>();
+                actuals[x].Message.AsTest().Must().ContainString(tests[x].ExpectedExceptionMessageContains);
+            }
+        }
+
         private static void ExecuteForSpecifiedModels(
             GenerationKind generationKind,
             ExecuteForModelsEventHandler eventHandler)

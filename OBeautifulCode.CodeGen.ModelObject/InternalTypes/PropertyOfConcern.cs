@@ -21,10 +21,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="propertyType">The type of the property.</param>
         /// <param name="name">The name of the property.</param>
         /// <param name="declaringType">The declaring type.</param>
+        /// <param name="hasPrivateSetter">A value indicating whether the property has a private setter.</param>
+        /// <param name="hasPublicSetter">A value indicating whether the property has a public setter.</param>
         public PropertyOfConcern(
             Type propertyType,
             string name,
-            Type declaringType)
+            Type declaringType,
+            bool hasPrivateSetter,
+            bool hasPublicSetter)
         {
             new { propertyType }.Must().NotBeNull();
             new { name }.Must().NotBeNullNorWhiteSpace();
@@ -33,6 +37,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this.PropertyType = propertyType;
             this.Name = name;
             this.DeclaringType = declaringType;
+            this.HasPrivateSetter = hasPrivateSetter;
+            this.HasPublicSetter = hasPublicSetter;
         }
 
         /// <summary>
@@ -49,5 +55,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Gets the declaring type.
         /// </summary>
         public Type DeclaringType { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the property has a private setter.
+        /// </summary>
+        public bool HasPrivateSetter { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the property has a public setter.
+        /// </summary>
+        public bool HasPublicSetter { get; }
     }
 }

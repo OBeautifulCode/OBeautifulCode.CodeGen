@@ -149,6 +149,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="CodeGeneratorTest\BadModels.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GeneratedModelPosition.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="Settings.cs" />
