@@ -8,11 +8,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+
     using OBeautifulCode.Type;
 
 #pragma warning disable SA1649 // File name should match first type name
 #pragma warning disable SA1201 // Elements should appear in the correct order
 
+    [ExcludeFromCodeCoverage]
     public class DoesNotImplementInterfaceThatIndicatesCodeGenIsRequired
     {
     }
@@ -21,10 +24,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public struct Struct : IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public struct GenericStruct<T> : IModelViaCodeGen
     {
     }
@@ -33,94 +38,115 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class GenericClass<T> : IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class ConcreteBaseClass : IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractClassWithConcreteBaseClass : ConcreteBaseClass, IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class ConcreteClassWithConcreteBaseClass : ConcreteBaseClass, IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MissingCodeGenInterfacesParent1
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MissingCodeGenInterfacesChild1 : MissingCodeGenInterfacesParent1, IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class MissingCodeGenInterfacesGrandchild1 : MissingCodeGenInterfacesChild1, IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MissingCodeGenInterfacesParent2 : IDeepCloneableViaCodeGen, IStringRepresentableViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MissingCodeGenInterfacesChild2 : MissingCodeGenInterfacesParent2, IDeepCloneableViaCodeGen, IEquatableViaCodeGen, IStringRepresentableViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class MissingCodeGenInterfacesGrandchild2 : MissingCodeGenInterfacesChild2, IDeepCloneableViaCodeGen, IEquatableViaCodeGen, IStringRepresentableViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class DictionaryKeyedOnDateTimeProperty1 : IModelViaCodeGen
     {
         public IReadOnlyDictionary<DateTime, string> Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class DictionaryKeyedOnDateTimeProperty2 : IModelViaCodeGen
     {
         public List<List<Dictionary<string, Dictionary<DateTime, string>>>> Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class DictionaryKeyedOnDateTimeProperty3 : IModelViaCodeGen
     {
         public IDictionary<DateTime, string>[] Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class DictionaryKeyedOnDateTimeProperty4Base : IModelViaCodeGen
     {
         public List<List<Dictionary<Dictionary<DateTime, string>[], string>>>[] Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class DictionaryKeyedOnDateTimeProperty4 : DictionaryKeyedOnDateTimeProperty4Base, IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class EnumerableKeyedOnDateTimeProperty1 : IModelViaCodeGen
     {
         public IEnumerable<string> Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class EnumerableKeyedOnDateTimeProperty2 : IModelViaCodeGen
     {
         public List<List<Dictionary<string, IEnumerable<string>>>> Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class EnumerableKeyedOnDateTimeProperty3 : IModelViaCodeGen
     {
         public IEnumerable<string>[] Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class EnumerableKeyedOnDateTimeProperty4Base : IModelViaCodeGen
     {
         public List<List<Dictionary<IEnumerable<string>[], string>>>[] Property1 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class EnumerableKeyedOnDateTimeProperty4 : EnumerableKeyedOnDateTimeProperty4Base, IModelViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractDeclaredCompareTo : IModelViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<AbstractDeclaredCompareTo>
     {
         public RelativeSortOrder CompareToForRelativeSortOrder(AbstractDeclaredCompareTo other)
@@ -129,6 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractDeclaredDeepClone : IModelViaCodeGen, IDeclareDeepCloneMethod<AbstractDeclaredDeepClone>
     {
         public AbstractDeclaredDeepClone DeepClone()
@@ -137,6 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractDeclaredEquals : IModelViaCodeGen, IDeclareEqualsMethod<AbstractDeclaredEquals>
     {
         public bool Equals(AbstractDeclaredEquals other)
@@ -145,23 +173,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractDeclaredGetHashCode : IModelViaCodeGen, IDeclareGetHashCodeMethod
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractDeclaredToString : IModelViaCodeGen, IDeclareToStringMethod
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class ComparableViaCodeGenWithoutDeclaredCompareTo : IComparableViaCodeGen
     {
     }
 
+    [ExcludeFromCodeCoverage]
     public class GetterOnlyProperties1 : IModelViaCodeGen
     {
         public string Property1 { get; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class GetterOnlyProperties2 : IModelViaCodeGen
     {
         public GetterOnlyProperties2(
@@ -178,6 +211,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class GetterOnlyPropertiesBase : IModelViaCodeGen
     {
         protected GetterOnlyPropertiesBase(
@@ -194,6 +228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class GetterOnlyProperties3 : GetterOnlyPropertiesBase, IModelViaCodeGen
     {
         public GetterOnlyProperties3(
@@ -204,11 +239,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public class GetterOnlyProperties4 : IModelViaCodeGen
     {
         public DateTime Property1 { get; } = DateTime.Now;
     }
 
+    [ExcludeFromCodeCoverage]
     public class NotPrivateNotPublicProperties1 : IModelViaCodeGen
     {
         public string Property1 { get; set; }
@@ -216,6 +253,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; protected set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class NotPrivateNotPublicPropertiesBase1 : IModelViaCodeGen
     {
         public string Property1 { get; set; }
@@ -223,6 +261,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class NotPrivateNotPublicProperties2 : NotPrivateNotPublicPropertiesBase1, IModelViaCodeGen
     {
         public string Property3 { get; protected set; }
@@ -230,6 +269,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property4 { get; protected set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class NotPrivateNotPublicPropertiesBase2 : IModelViaCodeGen
     {
         public string Property1 { get; protected set; }
@@ -237,6 +277,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; protected set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class NotPrivateNotPublicProperties3 : NotPrivateNotPublicPropertiesBase2, IModelViaCodeGen
     {
         public string Property3 { get; set; }
@@ -244,6 +285,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property4 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class MixedAccessProperties1 : IModelViaCodeGen
     {
         public string Property1 { get; set; }
@@ -251,6 +293,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MixedAccessPropertiesBase1 : IModelViaCodeGen
     {
         public string Property1 { get; set; }
@@ -258,6 +301,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class MixedAccessProperties2 : MixedAccessPropertiesBase1, IModelViaCodeGen
     {
         public string Property3 { get; private set; }
@@ -265,6 +309,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property4 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MixedAccessPropertiesBase2 : IModelViaCodeGen
     {
         public string Property1 { get; private set; }
@@ -272,6 +317,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class MixedAccessProperties3 : MixedAccessPropertiesBase2, IModelViaCodeGen
     {
         public string Property3 { get; set; }
@@ -279,6 +325,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property4 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractClassWithConstructor1 : IModelViaCodeGen
     {
         public AbstractClassWithConstructor1()
@@ -286,6 +333,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class AbstractClassWithConstructor2 : IModelViaCodeGen
     {
         public AbstractClassWithConstructor2(
@@ -297,6 +345,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Test { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ConstructorParameterWithoutMatchingProperty1 : IModelViaCodeGen
     {
         public ConstructorParameterWithoutMatchingProperty1(string property1, string property3)
@@ -315,6 +364,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class ConstructorParameterWithoutMatchingPropertyBase : IModelViaCodeGen
     {
         protected ConstructorParameterWithoutMatchingPropertyBase()
@@ -337,6 +387,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ConstructorParameterWithoutMatchingProperty2 : ConstructorParameterWithoutMatchingPropertyBase, IModelViaCodeGen
     {
         public ConstructorParameterWithoutMatchingProperty2(DateTime property5)
@@ -359,6 +410,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property4 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ConstructorParameterWithoutMatchingProperty3 : IModelViaCodeGen
     {
         public ConstructorParameterWithoutMatchingProperty3(string property1, DateTime property2)
@@ -376,6 +428,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public string Property2 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ConstructorParameterWithoutMatchingProperty4 : ConstructorParameterWithoutMatchingPropertyBase, IModelViaCodeGen
     {
         public ConstructorParameterWithoutMatchingProperty4(DateTime property1, string property2, DateTime property3)
@@ -393,6 +446,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property3 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class MultipleCandidateConstructors1 : IModelViaCodeGen
     {
         public MultipleCandidateConstructors1(string property1, string property2, DateTime property3)
@@ -418,6 +472,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property4 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public abstract class MultipleCandidateConstructorsBase : IModelViaCodeGen
     {
         protected MultipleCandidateConstructorsBase()
@@ -447,6 +502,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property4 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class MultipleCandidateConstructors2 : MultipleCandidateConstructorsBase, IModelViaCodeGen
     {
         public MultipleCandidateConstructors2(string property1, string property2, DateTime property3)
@@ -474,6 +530,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property7 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class DefaultConstructorWithPrivateSetters : IModelViaCodeGen
     {
         public DefaultConstructorWithPrivateSetters()
@@ -485,6 +542,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property2 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ParameterizedConstructorWithPublicSetters : IModelViaCodeGen
     {
         public ParameterizedConstructorWithPublicSetters(
@@ -500,6 +558,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property2 { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     public class DeclaredPropertyNotInConstructor : IModelViaCodeGen
     {
         public DeclaredPropertyNotInConstructor(string property1, string property2)

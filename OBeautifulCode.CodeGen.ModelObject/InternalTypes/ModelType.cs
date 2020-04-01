@@ -355,6 +355,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static void ThrowIfNotSupported(
             Type type)
         {
@@ -541,6 +542,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static ConstructorInfo GetConstructorAndThrowIfNotSupported(
             Type type,
             IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
