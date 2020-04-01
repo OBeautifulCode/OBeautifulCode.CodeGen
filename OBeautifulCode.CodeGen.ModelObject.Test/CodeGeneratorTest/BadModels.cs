@@ -22,7 +22,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
     }
 
-    public interface Interface : IModelViaCodeGen
+    public interface IBad : IModelViaCodeGen
     {
     }
 

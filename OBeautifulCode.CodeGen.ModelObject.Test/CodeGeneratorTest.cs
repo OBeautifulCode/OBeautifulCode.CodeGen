@@ -101,7 +101,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new { Type = typeof(DoesNotImplementInterfaceThatIndicatesCodeGenIsRequired), ExpectedExceptionMessageContains = "it does not implement one of the following interfaces" },
                 new { Type = typeof(List<string>), ExpectedExceptionMessageContains = "it does not implement one of the following interfaces" },
                 new { Type = typeof(IList<string>), ExpectedExceptionMessageContains = "it does not implement one of the following interfaces" },
-                new { Type = typeof(Interface), ExpectedExceptionMessageContains = "it is a value type or interface type" },
+                new { Type = typeof(IBad), ExpectedExceptionMessageContains = "it is a value type or interface type" },
                 new { Type = typeof(IGenericInterface<string>), ExpectedExceptionMessageContains = "it is a value type or interface type" },
                 new { Type = typeof(Struct), ExpectedExceptionMessageContains = "it is a value type or interface type" },
                 new { Type = typeof(GenericStruct<string>), ExpectedExceptionMessageContains = "it is a value type or interface type" },
