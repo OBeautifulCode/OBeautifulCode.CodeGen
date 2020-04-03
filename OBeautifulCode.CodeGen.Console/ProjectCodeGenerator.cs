@@ -81,8 +81,9 @@ namespace OBeautifulCode.CodeGen.Console
             {
                 var typesToCheck = AssemblyLoader
                     .GetLoadedAssemblies()
+                    .Where(_ => (_.GetName().Name ?? string.Empty).StartsWith(projectName, StringComparison.Ordinal))
+                    .ToList()
                     .GetTypesFromAssemblies()
-                    .Where(_ => (_.Namespace ?? string.Empty).StartsWith(projectName, StringComparison.Ordinal))
                     .ToList();
 
                 var typesForDummyFactory = new List<Type>();
