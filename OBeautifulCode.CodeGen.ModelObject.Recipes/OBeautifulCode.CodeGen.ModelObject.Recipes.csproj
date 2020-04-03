@@ -76,6 +76,7 @@
     <Compile Include=".recipes\OBeautifulCode.Equality\HashCodeHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\ReadOnlyDictionaryEqualityComparer.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\SuppressBecause.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Type\ArrayKind.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />

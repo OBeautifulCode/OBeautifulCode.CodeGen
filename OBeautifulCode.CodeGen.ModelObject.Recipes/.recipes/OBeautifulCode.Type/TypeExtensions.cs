@@ -128,6 +128,44 @@ namespace OBeautifulCode.Type.Recipes
             };
 
         /// <summary>
+        /// Determines the kind of array that the specified type is.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>
+        /// The kind of array of the specified type.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
+        public static ArrayKind GetArrayKind(
+            this Type type)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
+            }
+
+            ArrayKind result;
+
+            if (!type.IsArray)
+            {
+                result = ArrayKind.None;
+            }
+            else if (type.GetArrayRank() > 1)
+            {
+                result = ArrayKind.Multidimensional;
+            }
+            else if (type == type.GetElementType().MakeArrayType())
+            {
+                result = ArrayKind.Vector;
+            }
+            else
+            {
+                result = ArrayKind.Multidimensional;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Gets the type of the elements of a specified closed Enumerable type.
         /// </summary>
         /// <param name="type">The closed Enumerable type.</param>
