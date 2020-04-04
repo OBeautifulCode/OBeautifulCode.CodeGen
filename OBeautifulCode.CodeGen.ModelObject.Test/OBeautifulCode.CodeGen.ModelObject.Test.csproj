@@ -172,6 +172,8 @@
     <Compile Include="CodeGeneratorTest\CustomTypesForGeneratedModelProperties\ModelStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include=".analyzers\dictionary.xml" />
+
+    <!-- START: FIND "Content" AND REPLACE WITH "Compile" FROM HERE TO THE ENDING COMMENT TO USE GENERATED MODELS AND TESTS -->
     <Content Include="DummyFactory.cs" />
     <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.cs" />
     <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.designer.cs">
@@ -893,6 +895,7 @@
     <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyParentTest.cs</DependentUpon>
     </Content>
+    <!-- END: FIND "Content" AND REPLACE WITH "Compile" FROM HERE TO THE ENDING COMMENT TO USE GENERATED MODELS AND TESTS -->
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OBeautifulCode.CodeGen.ModelObject.Recipes\OBeautifulCode.CodeGen.ModelObject.Recipes.csproj">
