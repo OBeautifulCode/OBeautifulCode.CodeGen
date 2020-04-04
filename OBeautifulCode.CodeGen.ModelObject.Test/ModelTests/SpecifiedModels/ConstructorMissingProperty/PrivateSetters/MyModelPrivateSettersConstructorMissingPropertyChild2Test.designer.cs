@@ -387,17 +387,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = scenario.PropertyGetterFunc(scenario.SystemUnderTest);
 
                     // Assert
-                    if (scenario.ExpectedPropertyValue == null)
-                    {
-                        actual.AsTest().Must().BeNull(because: scenario.Id);
-                    }
-                    else if (scenario.ExpectedPropertyValue.GetType().IsValueType)
+                    if (scenario.CompareActualToExpectedUsing == CompareActualToExpectedUsing.ValueEquality)
                     {
                         actual.AsTest().Must().BeEqualTo(scenario.ExpectedPropertyValue, because: scenario.Id);
                     }
-                    else
+                    else if (scenario.CompareActualToExpectedUsing == CompareActualToExpectedUsing.ReferenceEquality)
                     {
                         actual.AsTest().Must().BeSameReferenceAs(scenario.ExpectedPropertyValue, because: scenario.Id);
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("This CompareActualToExpectedUsing is not supported: " + scenario.CompareActualToExpectedUsing);
                     }
                 }
             }

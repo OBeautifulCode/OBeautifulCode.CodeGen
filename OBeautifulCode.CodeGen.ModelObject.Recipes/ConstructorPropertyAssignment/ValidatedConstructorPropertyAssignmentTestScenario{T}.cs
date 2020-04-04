@@ -33,10 +33,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <param name="id">The identifier of the scenario.</param>
         /// <param name="systemUnderTestExpectedPropertyValueFunc">A func that returns the object to test and the expected value of the property being tested.</param>
         /// <param name="propertyGetterFunc">A func that calls the getter of the property that is assigned a value by the constructor.</param>
+        /// <param name="compareActualToExpectedUsing">Specifies how to compare the actual property value to the expected property value.</param>
         public ValidatedConstructorPropertyAssignmentTestScenario(
             string id,
             Func<SystemUnderTestExpectedPropertyValue<T>> systemUnderTestExpectedPropertyValueFunc,
-            Func<T, object> propertyGetterFunc)
+            Func<T, object> propertyGetterFunc,
+            CompareActualToExpectedUsing compareActualToExpectedUsing)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
             
@@ -48,10 +50,29 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
             new { propertyGetterFunc }.AsTest().Must().NotBeNull(id);
 
+            var expectedPropertyValue = systemUnderTestExpectedPropertyValue.ExpectedPropertyValue;
+
+            if (compareActualToExpectedUsing == CompareActualToExpectedUsing.DefaultStrategy)
+            {
+                if (expectedPropertyValue == null)
+                {
+                    compareActualToExpectedUsing = CompareActualToExpectedUsing.ReferenceEquality;
+                }
+                else if (compareActualToExpectedUsing.GetType().IsValueType)
+                {
+                    compareActualToExpectedUsing = CompareActualToExpectedUsing.ValueEquality;
+                }
+                else
+                {
+                    compareActualToExpectedUsing = CompareActualToExpectedUsing.ReferenceEquality;
+                }
+            }
+
             this.Id = id;
             this.SystemUnderTest = systemUnderTest;
-            this.ExpectedPropertyValue = systemUnderTestExpectedPropertyValue.ExpectedPropertyValue;
+            this.ExpectedPropertyValue = expectedPropertyValue;
             this.PropertyGetterFunc = propertyGetterFunc;
+            this.CompareActualToExpectedUsing = compareActualToExpectedUsing;
         }
 
         /// <summary>
@@ -73,6 +94,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets a func that calls the getter of the property that is assigned a value by the constructor.
         /// </summary>
         public Func<T, object> PropertyGetterFunc { get; }
+
+        /// <summary>
+        /// Gets a specification of how to compare the actual property value to the expected property value.
+        /// </summary>
+        public CompareActualToExpectedUsing CompareActualToExpectedUsing { get; }
 
         /// <inheritdoc />
         public override string ToString()

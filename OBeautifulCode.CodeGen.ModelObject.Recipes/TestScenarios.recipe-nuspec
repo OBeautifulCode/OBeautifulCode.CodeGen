@@ -21,6 +21,7 @@
     <file src="ConstructorPropertyAssignment\ConstructorPropertyAssignmentTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\ConstructorPropertyAssignmentTestScenarios{T}.cs" />
     <file src="ConstructorPropertyAssignment\ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\ValidatedConstructorPropertyAssignmentTestScenario{T}.cs" />
     <file src="ConstructorPropertyAssignment\SystemUnderTestExpectedPropertyValue{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\SystemUnderTestExpectedPropertyValue{T}.cs" />
+    <file src="ConstructorPropertyAssignment\CompareActualToExpectedUsing.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ConstructorPropertyAssignment\CompareActualToExpectedUsing.cs" />
     <file src="DeepCloneWith\DeepCloneWithTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\DeepCloneWithTestScenario{T}.cs" />
     <file src="DeepCloneWith\DeepCloneWithTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\DeepCloneWithTestScenarios{T}.cs" />
     <file src="DeepCloneWith\ValidatedDeepCloneWithTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\DeepCloneWith\ValidatedDeepCloneWithTestScenario{T}.cs" />

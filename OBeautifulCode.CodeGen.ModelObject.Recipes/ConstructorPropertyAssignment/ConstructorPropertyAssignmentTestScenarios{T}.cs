@@ -133,7 +133,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
                     var validatedScenario = new ValidatedConstructorPropertyAssignmentTestScenario<T>(
                         scenarioId,
                         scenario.SystemUnderTestExpectedPropertyValueFunc,
-                        scenario.PropertyGetterFunc);
+                        scenario.PropertyGetterFunc,
+                        scenario.CompareActualToExpectedUsing);
 
                     result.Add(validatedScenario);
                 }

@@ -45,6 +45,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public Func<T, object> PropertyGetterFunc { get; set; }
 
         /// <summary>
+        /// Gets or sets a specification of how to compare the actual property value to the expected property value.
+        /// </summary>
+        public CompareActualToExpectedUsing CompareActualToExpectedUsing { get; set; }
+
+        /// <summary>
         /// Gets a scenario to use when no properties are assigned in the constructor.
         /// </summary>
         [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = ObcSuppressBecause.CA1000_DoNotDeclareStaticMembersOnGenericTypes_StaticPropertyReturnsInstanceOfContainingGenericClassAndIsConvenientAndMostDiscoverableWhereDeclared)]

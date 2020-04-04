@@ -80,6 +80,7 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="ConstructorPropertyAssignment\CompareActualToExpectedUsing.cs" />
     <Compile Include="DeepCloneWith\DeepCloneWithTestScenarios{T}.cs" />
     <Compile Include="DeepCloneWith\DeepCloneWithTestScenario{T}.cs" />
     <Compile Include="StringRepresentation\StringRepresentationTestScenarios{T}.cs" />
