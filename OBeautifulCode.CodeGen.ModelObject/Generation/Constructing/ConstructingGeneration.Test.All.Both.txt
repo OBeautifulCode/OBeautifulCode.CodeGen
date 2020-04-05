@@ -34,15 +34,41 @@
             {
                 var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
 
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
+
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+
                 foreach (var scenario in scenarios)
                 {
-                    // Arrange, Act
-                    var actual = scenario.PropertyGetterFunc(scenario.SystemUnderTest);
+                    // Arrange
+                    if ((scenario.PropertyName == ConstructorPropertyAssignmentTestScenario.NoPropertiesAssignedInConstructorScenarioPropertyName) || (scenario.PropertyName == ConstructorPropertyAssignmentTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName))
+                    {
+                        continue;
+                    }
+
+                    // Act
+                    var actual = scenario.Property.GetValue(scenario.SystemUnderTest);
 
                     // Assert
                     if (scenario.CompareActualToExpectedUsing == CompareActualToExpectedUsing.ValueEquality)
                     {
-                        actual.AsTest().Must().BeEqualTo(scenario.ExpectedPropertyValue, because: scenario.Id);
+                        var propertyType = scenario.Property.PropertyType;
+
+                        // Use reflection to call: actual.AsTest().Must().BeEqualTo(scenario.ExpectedPropertyValue, because: scenario.Id)
+                        // We need to use reflection here to specify the 'subject' and 'comparisonValue' types.
+                        // BeEqualTo() uses declared types and not runtime types to identify the contract to use for equality.
+                        // Here 'scenario.ExpectedPropertyValue' and 'actual' are declared as typeof(object).
+                        // With the exception of some specific boxed types (e.g. value types, string),
+                        // BeEqualTo() uses reference equality to compare two objects declared as typeof(object).
+                        // We want to use the property's real type, 'scenario.Property.PropertyType'.
+                        // For example, BeEqualTo() returns false for these two dictionaries because their declared type is typeof(object):
+                        // object x = Dictionary<string, string>();
+                        // object y = Dictionary<string, string>();
+                        var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actual, Type.Missing })).Must();
+
+                        var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
+
+                        invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, scenario.ExpectedPropertyValue, scenario.Id, Type.Missing, Type.Missing });
                     }
                     else if (scenario.CompareActualToExpectedUsing == CompareActualToExpectedUsing.ReferenceEquality)
                     {

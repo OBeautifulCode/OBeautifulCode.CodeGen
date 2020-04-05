@@ -35,15 +35,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the name of the property that is assigned a value by the constructor.
+        /// </summary>
+        public string PropertyName { get; set; }
+
+        /// <summary>
         /// Gets or sets a func that returns the object to test and the expected value of the property being tested.
         /// </summary>
         public Func<SystemUnderTestExpectedPropertyValue<T>> SystemUnderTestExpectedPropertyValueFunc { get; set; }
         
-        /// <summary>
-        /// Gets or sets a func that calls the getter of the property that is assigned a value by the constructor.
-        /// </summary>
-        public Func<T, object> PropertyGetterFunc { get; set; }
-
         /// <summary>
         /// Gets or sets a specification of how to compare the actual property value to the expected property value.
         /// </summary>
@@ -57,12 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             new ConstructorPropertyAssignmentTestScenario<T>
             {
                 Name = "no properties assigned in constructor scenario",
-                SystemUnderTestExpectedPropertyValueFunc = () => new SystemUnderTestExpectedPropertyValue<T>
-                {
-                    SystemUnderTest = (T)FormatterServices.GetUninitializedObject(typeof(T)),
-                    ExpectedPropertyValue = null,
-                },
-                PropertyGetterFunc = systemUnderTest => null,
+                PropertyName = ConstructorPropertyAssignmentTestScenario.NoPropertiesAssignedInConstructorScenarioPropertyName,
             };
 
         /// <summary>
@@ -73,12 +68,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             new ConstructorPropertyAssignmentTestScenario<T>
             {
                 Name = "force generated unit tests to pass, i'll write my own",
-                SystemUnderTestExpectedPropertyValueFunc = () => new SystemUnderTestExpectedPropertyValue<T>
-                {
-                    SystemUnderTest = (T)FormatterServices.GetUninitializedObject(typeof(T)),
-                    ExpectedPropertyValue = null,
-                },
-                PropertyGetterFunc = systemUnderTest => null,
+                PropertyName = ConstructorPropertyAssignmentTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName,
             };
+    }
+
+    /// <summary>
+    /// Contains constants related to testing when a constructor sets a property values.
+    /// </summary>
+#if !OBeautifulCodeCodeGenRecipesProject
+    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    [System.CodeDom.Compiler.GeneratedCode("OBeautifulCode.CodeGen.ModelObject.Recipes", "See package version number")]
+    internal
+#else
+    public
+#endif
+        static class ConstructorPropertyAssignmentTestScenario
+    {
+        /// <summary>
+        /// The name of the property to use to force the scenario to pass.
+        /// </summary>
+        public const string ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName = "ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName";
+        
+        /// <summary>
+        /// The name of the property to use when no properties are assigned in the constructor.
+        /// </summary>
+        public const string NoPropertiesAssignedInConstructorScenarioPropertyName = "NoPropertiesAssignedInConstructorScenarioPropertyName";
     }
 }

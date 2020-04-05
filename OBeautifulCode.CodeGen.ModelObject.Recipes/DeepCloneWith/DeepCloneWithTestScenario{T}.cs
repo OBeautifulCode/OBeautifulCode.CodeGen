@@ -52,7 +52,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             new DeepCloneWithTestScenario<T>
             {
                 Name = "force generated unit tests to pass, i'll write my own",
-                WithPropertyName = DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName,
+                WithPropertyName = DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName,
             };
     }
 
@@ -71,6 +71,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// <summary>
         /// The name of the property to use to force the scenario to pass.
         /// </summary>
-        public const string ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName = "ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName";
+        public const string ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName = "ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName";
     }
 }

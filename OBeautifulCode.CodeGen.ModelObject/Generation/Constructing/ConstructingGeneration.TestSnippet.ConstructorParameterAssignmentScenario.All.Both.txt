@@ -14,5 +14,5 @@
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.[property-name-here],
+                    PropertyName = "[property-name-here]",
                 })

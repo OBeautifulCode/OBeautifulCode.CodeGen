@@ -14486,7 +14486,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.BoolProperty,
+                    PropertyName = "BoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -14583,7 +14583,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.IntProperty,
+                    PropertyName = "IntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -14680,7 +14680,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.StringProperty,
+                    PropertyName = "StringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -14777,7 +14777,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.GuidProperty,
+                    PropertyName = "GuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -14874,7 +14874,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.DateTimeProperty,
+                    PropertyName = "DateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -14971,7 +14971,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ModelEnumProperty,
+                    PropertyName = "ModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15068,7 +15068,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ModelFlagsEnumProperty,
+                    PropertyName = "ModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15165,7 +15165,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ModelClassProperty,
+                    PropertyName = "ModelClassProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15262,7 +15262,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.NullableBoolProperty,
+                    PropertyName = "NullableBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15359,7 +15359,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.NullableIntProperty,
+                    PropertyName = "NullableIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15456,7 +15456,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.NullableGuidProperty,
+                    PropertyName = "NullableGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15553,7 +15553,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.NullableDateTimeProperty,
+                    PropertyName = "NullableDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15650,7 +15650,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.NullableModelEnumProperty,
+                    PropertyName = "NullableModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15747,7 +15747,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.NullableModelFlagsEnumProperty,
+                    PropertyName = "NullableModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15844,7 +15844,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfBoolProperty,
+                    PropertyName = "ArrayOfBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -15941,7 +15941,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfIntProperty,
+                    PropertyName = "ArrayOfIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16038,7 +16038,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfStringProperty,
+                    PropertyName = "ArrayOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16135,7 +16135,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfGuidProperty,
+                    PropertyName = "ArrayOfGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16232,7 +16232,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfDateTimeProperty,
+                    PropertyName = "ArrayOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16329,7 +16329,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfModelEnumProperty,
+                    PropertyName = "ArrayOfModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16426,7 +16426,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfModelFlagsEnumProperty,
+                    PropertyName = "ArrayOfModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16523,7 +16523,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfModelClassProperty,
+                    PropertyName = "ArrayOfModelClassProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16620,7 +16620,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfNullableBoolProperty,
+                    PropertyName = "ArrayOfNullableBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16717,7 +16717,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfNullableIntProperty,
+                    PropertyName = "ArrayOfNullableIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16814,7 +16814,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfNullableGuidProperty,
+                    PropertyName = "ArrayOfNullableGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -16911,7 +16911,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfNullableDateTimeProperty,
+                    PropertyName = "ArrayOfNullableDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17008,7 +17008,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfNullableModelEnumProperty,
+                    PropertyName = "ArrayOfNullableModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17105,7 +17105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ArrayOfNullableModelFlagsEnumProperty,
+                    PropertyName = "ArrayOfNullableModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17202,7 +17202,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17299,7 +17299,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17396,7 +17396,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17493,7 +17493,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17590,7 +17590,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17687,7 +17687,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17784,7 +17784,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17881,7 +17881,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfModelClassProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -17978,7 +17978,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfNullableBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18075,7 +18075,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfNullableIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18172,7 +18172,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfNullableGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18269,7 +18269,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfNullableDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18366,7 +18366,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfNullableModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18463,7 +18463,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty,
+                    PropertyName = "ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18560,7 +18560,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfBoolProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18657,7 +18657,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfIntProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18754,7 +18754,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfStringProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18851,7 +18851,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfGuidProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -18948,7 +18948,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19045,7 +19045,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19142,7 +19142,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19239,7 +19239,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfModelClassProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19336,7 +19336,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfNullableBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19433,7 +19433,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfNullableIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19530,7 +19530,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfNullableGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19627,7 +19627,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfNullableDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19724,7 +19724,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfNullableModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19821,7 +19821,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -19918,7 +19918,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20015,7 +20015,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20112,7 +20112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20209,7 +20209,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20306,7 +20306,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20403,7 +20403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20500,7 +20500,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfModelClassProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20597,7 +20597,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfNullableBoolProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20694,7 +20694,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfNullableIntProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20791,7 +20791,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfNullableGuidProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20888,7 +20888,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -20985,7 +20985,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21082,7 +21082,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.CollectionInterfaceOfStringProperty,
+                    PropertyName = "CollectionInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21179,7 +21179,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty,
+                    PropertyName = "CollectionOfCollectionInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21276,7 +21276,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty,
+                    PropertyName = "ListInterfaceOfCollectionInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21373,7 +21373,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ListOfCollectionInterfaceOfStringProperty,
+                    PropertyName = "ListOfCollectionInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21470,7 +21470,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                    PropertyName = "ReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21567,7 +21567,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21664,7 +21664,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "DictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21761,7 +21761,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21858,7 +21858,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -21955,7 +21955,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<MyModelAllPrivateSetters>
@@ -22052,7 +22052,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
-                    PropertyGetterFunc = systemUnderTest => systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
                 });
 
         private static readonly DeepCloneWithTestScenarios<MyModelAllPrivateSetters> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<MyModelAllPrivateSetters>()
@@ -30195,15 +30195,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
 
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
+
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+
                 foreach (var scenario in scenarios)
                 {
-                    // Arrange, Act
-                    var actual = scenario.PropertyGetterFunc(scenario.SystemUnderTest);
+                    // Arrange
+                    if ((scenario.PropertyName == ConstructorPropertyAssignmentTestScenario.NoPropertiesAssignedInConstructorScenarioPropertyName) || (scenario.PropertyName == ConstructorPropertyAssignmentTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName))
+                    {
+                        continue;
+                    }
+
+                    // Act
+                    var actual = scenario.Property.GetValue(scenario.SystemUnderTest);
 
                     // Assert
                     if (scenario.CompareActualToExpectedUsing == CompareActualToExpectedUsing.ValueEquality)
                     {
-                        actual.AsTest().Must().BeEqualTo(scenario.ExpectedPropertyValue, because: scenario.Id);
+                        var propertyType = scenario.Property.PropertyType;
+
+                        // Use reflection to call: actual.AsTest().Must().BeEqualTo(scenario.ExpectedPropertyValue, because: scenario.Id)
+                        // We need to use reflection here to specify the 'subject' and 'comparisonValue' types.
+                        // BeEqualTo() uses declared types and not runtime types to identify the contract to use for equality.
+                        // Here 'scenario.ExpectedPropertyValue' and 'actual' are declared as typeof(object).
+                        // With the exception of some specific boxed types (e.g. value types, string),
+                        // BeEqualTo() uses reference equality to compare two objects declared as typeof(object).
+                        // We want to use the property's real type, 'scenario.Property.PropertyType'.
+                        // For example, BeEqualTo() returns false for these two dictionaries because their declared type is typeof(object):
+                        // object x = Dictionary<string, string>();
+                        // object y = Dictionary<string, string>();
+                        var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actual, Type.Missing })).Must();
+
+                        var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
+
+                        invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, scenario.ExpectedPropertyValue, scenario.Id, Type.Missing, Type.Missing });
                     }
                     else if (scenario.CompareActualToExpectedUsing == CompareActualToExpectedUsing.ReferenceEquality)
                     {
@@ -30368,7 +30394,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    if (scenario.WithPropertyName == DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
+                    if (scenario.WithPropertyName == DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName)
                     {
                         continue;
                     }
@@ -30401,14 +30427,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                             var systemUnderTestPropertyValue = property.GetValue(scenario.SystemUnderTest);
 
                             // Use reflection to call: actualPropertyValue.AsTest().Must().BeEqualTo(systemUnderTestPropertyValue, because: scenario.Id)
-                            // We need to use reflection here because OBC Assertion uses declared types and not runtime types to identify the contract to use.
-                            // In this unit test we fetch property values using PropertyInfo.GetValue(), and as such the declared type is Object and its
-                            // contract is to determine equality based on reference equality.  The type we want to use is the property's real type, PropertyInfo.PropertyType.
-                            // For example, these two arrays of boolean are NOT equal if they are declared as objects:
-                            // object x = new[] { true, false };
-                            // object y = new[] { true, false };
+                            // We need to use reflection here to specify the 'subject' and 'comparisonValue' types.
+                            // BeEqualTo() uses declared types and not runtime types to identify the contract to use for equality.
+                            // Here 'systemUnderTestPropertyValue' and 'actualPropertyValue' are declared as typeof(object).
+                            // With the exception of some specific boxed types (e.g. value types, string),
+                            // BeEqualTo() uses reference equality to compare two objects declared as typeof(object).
+                            // We want to use the property's real type, 'property.PropertyType'.
+                            // For example, BeEqualTo() returns false for these two dictionaries because their declared type is typeof(object):
+                            // object x = Dictionary<string, string>();
+                            // object y = Dictionary<string, string>();
                             var assertionTracker = ((AssertionTracker)obcAssertionAsTestMethod.MakeGenericMethod(propertyType).Invoke(null, new[] { actualPropertyValue, Type.Missing })).Must();
+
                             var invokeableObcAssertionBeEqualToMethod = obcAssertionBeEqualToMethod.MakeGenericMethod(propertyType);
+
                             invokeableObcAssertionBeEqualToMethod.Invoke(null, new object[] { assertionTracker, systemUnderTestPropertyValue, scenario.Id, Type.Missing, Type.Missing });
 
                             if ((!propertyType.IsValueType) && (propertyType != typeof(string)) && (systemUnderTestPropertyValue != null))

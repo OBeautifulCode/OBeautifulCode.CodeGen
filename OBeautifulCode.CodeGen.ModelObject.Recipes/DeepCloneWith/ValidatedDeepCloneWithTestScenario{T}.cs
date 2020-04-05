@@ -49,7 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             object withValue = null;
             MethodInfo deepCloneWithMethod = null;
 
-            if (withPropertyName != DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
+            if (withPropertyName != DeepCloneWithTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioWithPropertyName)
             {
                 new { systemUnderTestDeepCloneWithValueFunc }.AsTest().Must().NotBeNull(id);
                 var systemUnderTestDeepCloneWith = systemUnderTestDeepCloneWithValueFunc();

@@ -10,6 +10,8 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
     using System;
+    using System.Linq;
+    using System.Reflection;
 
     using OBeautifulCode.Assertion.Recipes;
 
@@ -31,47 +33,61 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Initializes a new instance of the <see cref="ValidatedConstructorPropertyAssignmentTestScenario{T}"/> class.
         /// </summary>
         /// <param name="id">The identifier of the scenario.</param>
+        /// <param name="propertyName">The name of the property that is assigned a value by the constructor.</param>
         /// <param name="systemUnderTestExpectedPropertyValueFunc">A func that returns the object to test and the expected value of the property being tested.</param>
-        /// <param name="propertyGetterFunc">A func that calls the getter of the property that is assigned a value by the constructor.</param>
         /// <param name="compareActualToExpectedUsing">Specifies how to compare the actual property value to the expected property value.</param>
         public ValidatedConstructorPropertyAssignmentTestScenario(
             string id,
+            string propertyName,
             Func<SystemUnderTestExpectedPropertyValue<T>> systemUnderTestExpectedPropertyValueFunc,
-            Func<T, object> propertyGetterFunc,
             CompareActualToExpectedUsing compareActualToExpectedUsing)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
-            
-            new { systemUnderTestExpectedPropertyValueFunc }.AsTest().Must().NotBeNull(id);
 
-            var systemUnderTestExpectedPropertyValue = systemUnderTestExpectedPropertyValueFunc();
-            var systemUnderTest = systemUnderTestExpectedPropertyValue.SystemUnderTest;
-            new { systemUnderTest }.AsTest().Must().NotBeNull(id);
+            new { propertyName }.AsTest().Must().NotBeNullNorWhiteSpace(id);
 
-            new { propertyGetterFunc }.AsTest().Must().NotBeNull(id);
+            T systemUnderTest = null;
 
-            var expectedPropertyValue = systemUnderTestExpectedPropertyValue.ExpectedPropertyValue;
+            PropertyInfo property = null;
 
-            if (compareActualToExpectedUsing == CompareActualToExpectedUsing.DefaultStrategy)
+            object expectedPropertyValue = null;
+
+            if ((propertyName != ConstructorPropertyAssignmentTestScenario.ForceGeneratedTestsToPassAndWriteMyOwnScenarioPropertyName)
+                && (propertyName != ConstructorPropertyAssignmentTestScenario.NoPropertiesAssignedInConstructorScenarioPropertyName))
             {
-                if (expectedPropertyValue == null)
+                new { systemUnderTestExpectedPropertyValueFunc }.AsTest().Must().NotBeNull(id);
+                var systemUnderTestExpectedPropertyValue = systemUnderTestExpectedPropertyValueFunc();
+
+                systemUnderTest = systemUnderTestExpectedPropertyValue.SystemUnderTest;
+                new { systemUnderTest }.AsTest().Must().NotBeNull(id);
+
+                expectedPropertyValue = systemUnderTestExpectedPropertyValue.ExpectedPropertyValue;
+
+                property = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance).SingleOrDefault(_ => _.Name == propertyName);
+                new { property }.AsTest().Must().NotBeNull(id);
+
+                if (compareActualToExpectedUsing == CompareActualToExpectedUsing.DefaultStrategy)
                 {
-                    compareActualToExpectedUsing = CompareActualToExpectedUsing.ReferenceEquality;
-                }
-                else if (compareActualToExpectedUsing.GetType().IsValueType)
-                {
-                    compareActualToExpectedUsing = CompareActualToExpectedUsing.ValueEquality;
-                }
-                else
-                {
-                    compareActualToExpectedUsing = CompareActualToExpectedUsing.ReferenceEquality;
+                    if (expectedPropertyValue == null)
+                    {
+                        compareActualToExpectedUsing = CompareActualToExpectedUsing.ReferenceEquality;
+                    }
+                    else if (compareActualToExpectedUsing.GetType().IsValueType)
+                    {
+                        compareActualToExpectedUsing = CompareActualToExpectedUsing.ValueEquality;
+                    }
+                    else
+                    {
+                        compareActualToExpectedUsing = CompareActualToExpectedUsing.ReferenceEquality;
+                    }
                 }
             }
-
+            
             this.Id = id;
+            this.PropertyName = propertyName;
             this.SystemUnderTest = systemUnderTest;
             this.ExpectedPropertyValue = expectedPropertyValue;
-            this.PropertyGetterFunc = propertyGetterFunc;
+            this.Property = property;
             this.CompareActualToExpectedUsing = compareActualToExpectedUsing;
         }
 
@@ -79,6 +95,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Gets the identifier of the scenario.
         /// </summary>
         public string Id { get; }
+
+        /// <summary>
+        /// Gets the name of the property that is assigned a value by the constructor.
+        /// </summary>
+        public string PropertyName { get; }
 
         /// <summary>
         /// Gets the object to test.
@@ -91,9 +112,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public object ExpectedPropertyValue { get; }
 
         /// <summary>
-        /// Gets a func that calls the getter of the property that is assigned a value by the constructor.
+        /// Gets the property that is assigned a value by the constructor.
         /// </summary>
-        public Func<T, object> PropertyGetterFunc { get; }
+        public PropertyInfo Property { get; }
 
         /// <summary>
         /// Gets a specification of how to compare the actual property value to the expected property value.
