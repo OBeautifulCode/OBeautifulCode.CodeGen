@@ -68,7 +68,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
 
             var result = this.IntProperty.IsEqualTo(other.IntProperty)
-                      && this.StringProperty.Equals(other.StringProperty, StringComparison.Ordinal)
+                      && this.StringProperty.IsEqualTo(other.StringProperty, StringComparer.Ordinal)
                       && this.ReadOnlyCollectionOfStringProperty.IsEqualTo(other.ReadOnlyCollectionOfStringProperty);
 
             return result;

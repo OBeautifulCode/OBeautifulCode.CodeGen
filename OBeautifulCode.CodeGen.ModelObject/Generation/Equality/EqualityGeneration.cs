@@ -140,7 +140,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             new { propertyOfConcern }.AsArg().Must().NotBeNull();
 
             var result = (propertyOfConcern.PropertyType == typeof(string))
-                ? Invariant($"this.{propertyOfConcern.Name}.Equals(other.{propertyOfConcern.Name}, StringComparison.Ordinal)")
+                ? Invariant($"this.{propertyOfConcern.Name}.IsEqualTo(other.{propertyOfConcern.Name}, StringComparer.Ordinal)")
                 : Invariant($"this.{propertyOfConcern.Name}.IsEqualTo(other.{propertyOfConcern.Name})");
 
             return result;

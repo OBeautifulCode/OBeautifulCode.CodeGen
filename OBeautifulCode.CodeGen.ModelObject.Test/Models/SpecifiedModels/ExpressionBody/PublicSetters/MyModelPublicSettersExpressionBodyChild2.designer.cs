@@ -68,10 +68,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
 
             var result = this.ParentIntProperty.IsEqualTo(other.ParentIntProperty)
-                      && this.ParentStringProperty.Equals(other.ParentStringProperty, StringComparison.Ordinal)
+                      && this.ParentStringProperty.IsEqualTo(other.ParentStringProperty, StringComparer.Ordinal)
                       && this.ParentReadOnlyCollectionOfStringProperty.IsEqualTo(other.ParentReadOnlyCollectionOfStringProperty)
                       && this.ChildIntProperty.IsEqualTo(other.ChildIntProperty)
-                      && this.ChildStringProperty.Equals(other.ChildStringProperty, StringComparison.Ordinal)
+                      && this.ChildStringProperty.IsEqualTo(other.ChildStringProperty, StringComparer.Ordinal)
                       && this.ChildReadOnlyCollectionOfStringProperty.IsEqualTo(other.ChildReadOnlyCollectionOfStringProperty);
 
             return result;

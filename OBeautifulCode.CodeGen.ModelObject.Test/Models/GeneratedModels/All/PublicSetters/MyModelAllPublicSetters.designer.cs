@@ -69,7 +69,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var result = this.BoolProperty.IsEqualTo(other.BoolProperty)
                       && this.IntProperty.IsEqualTo(other.IntProperty)
-                      && this.StringProperty.Equals(other.StringProperty, StringComparison.Ordinal)
+                      && this.StringProperty.IsEqualTo(other.StringProperty, StringComparer.Ordinal)
                       && this.GuidProperty.IsEqualTo(other.GuidProperty)
                       && this.DateTimeProperty.IsEqualTo(other.DateTimeProperty)
                       && this.ModelEnumProperty.IsEqualTo(other.ModelEnumProperty)

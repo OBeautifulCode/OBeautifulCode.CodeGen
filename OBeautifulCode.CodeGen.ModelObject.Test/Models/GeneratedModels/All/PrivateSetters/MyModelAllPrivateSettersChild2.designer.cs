@@ -69,7 +69,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var result = this.ParentBoolProperty.IsEqualTo(other.ParentBoolProperty)
                       && this.ParentIntProperty.IsEqualTo(other.ParentIntProperty)
-                      && this.ParentStringProperty.Equals(other.ParentStringProperty, StringComparison.Ordinal)
+                      && this.ParentStringProperty.IsEqualTo(other.ParentStringProperty, StringComparer.Ordinal)
                       && this.ParentGuidProperty.IsEqualTo(other.ParentGuidProperty)
                       && this.ParentDateTimeProperty.IsEqualTo(other.ParentDateTimeProperty)
                       && this.ParentModelEnumProperty.IsEqualTo(other.ParentModelEnumProperty)
@@ -148,7 +148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
                       && this.Child2BoolProperty.IsEqualTo(other.Child2BoolProperty)
                       && this.Child2IntProperty.IsEqualTo(other.Child2IntProperty)
-                      && this.Child2StringProperty.Equals(other.Child2StringProperty, StringComparison.Ordinal)
+                      && this.Child2StringProperty.IsEqualTo(other.Child2StringProperty, StringComparer.Ordinal)
                       && this.Child2GuidProperty.IsEqualTo(other.Child2GuidProperty)
                       && this.Child2DateTimeProperty.IsEqualTo(other.Child2DateTimeProperty)
                       && this.Child2ModelEnumProperty.IsEqualTo(other.Child2ModelEnumProperty)
