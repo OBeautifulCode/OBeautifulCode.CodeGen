@@ -105,10 +105,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateCloningTestMethods(
             this ModelType modelType)
         {
-            var assertDeepCloneStatements = modelType.PropertiesOfConcern.Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string)).Select(_ => Invariant($"actual.{_.Name}.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.{_.Name});")).ToList();
+            var assertDeepCloneTemplate = typeof(CloningGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepClone);
+
+            var assertDeepCloneStatements = modelType
+                .PropertiesOfConcern
+                .Where(_ => !_.PropertyType.IsValueType && _.PropertyType != typeof(string))
+                .Select(_ => assertDeepCloneTemplate.Replace(Tokens.PropertyNameToken, _.Name))
+                .ToList();
 
             var assertDeepCloneStatementsCode = assertDeepCloneStatements.Any()
-                ? Environment.NewLine + "                " + string.Join(Environment.NewLine + "                ", assertDeepCloneStatements)
+                ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, assertDeepCloneStatements)
                 : string.Empty;
 
             var deepCloneWithTestCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Abstract))

@@ -8353,72 +8353,600 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-                actual.ModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ModelClassProperty);
-                actual.ArrayOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfBoolProperty);
-                actual.ArrayOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfIntProperty);
-                actual.ArrayOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfStringProperty);
-                actual.ArrayOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfGuidProperty);
-                actual.ArrayOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfDateTimeProperty);
-                actual.ArrayOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelEnumProperty);
-                actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelFlagsEnumProperty);
-                actual.ArrayOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelClassProperty);
-                actual.ArrayOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableBoolProperty);
-                actual.ArrayOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableIntProperty);
-                actual.ArrayOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableGuidProperty);
-                actual.ArrayOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableDateTimeProperty);
-                actual.ArrayOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelEnumProperty);
-                actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
-                actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
-                actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
-                actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
-                actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
-                actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
-                actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
-                actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
-                actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
-                actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
-                actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
-                actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
-                actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
-                actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
-                actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
-                actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
-                actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
-                actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
-                actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
-                actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
-                actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
-                actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
-                actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
-                actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
-                actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
-                actual.CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionInterfaceOfStringProperty);
-                actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
-                actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
-                actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
-                actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
-                actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
-                actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                if (systemUnderTest.ModelClassProperty == null)
+                {
+                    actual.ModelClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ModelClassProperty);
+                }
+
+                if (systemUnderTest.ArrayOfBoolProperty == null)
+                {
+                    actual.ArrayOfBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfBoolProperty);
+                }
+
+                if (systemUnderTest.ArrayOfIntProperty == null)
+                {
+                    actual.ArrayOfIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfIntProperty);
+                }
+
+                if (systemUnderTest.ArrayOfStringProperty == null)
+                {
+                    actual.ArrayOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfStringProperty);
+                }
+
+                if (systemUnderTest.ArrayOfGuidProperty == null)
+                {
+                    actual.ArrayOfGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfGuidProperty);
+                }
+
+                if (systemUnderTest.ArrayOfDateTimeProperty == null)
+                {
+                    actual.ArrayOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ArrayOfModelEnumProperty == null)
+                {
+                    actual.ArrayOfModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelEnumProperty);
+                }
+
+                if (systemUnderTest.ArrayOfModelFlagsEnumProperty == null)
+                {
+                    actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ArrayOfModelClassProperty == null)
+                {
+                    actual.ArrayOfModelClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfModelClassProperty);
+                }
+
+                if (systemUnderTest.ArrayOfNullableBoolProperty == null)
+                {
+                    actual.ArrayOfNullableBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableBoolProperty);
+                }
+
+                if (systemUnderTest.ArrayOfNullableIntProperty == null)
+                {
+                    actual.ArrayOfNullableIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableIntProperty);
+                }
+
+                if (systemUnderTest.ArrayOfNullableGuidProperty == null)
+                {
+                    actual.ArrayOfNullableGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableGuidProperty);
+                }
+
+                if (systemUnderTest.ArrayOfNullableDateTimeProperty == null)
+                {
+                    actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableDateTimeProperty);
+                }
+
+                if (systemUnderTest.ArrayOfNullableModelEnumProperty == null)
+                {
+                    actual.ArrayOfNullableModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelEnumProperty);
+                }
+
+                if (systemUnderTest.ArrayOfNullableModelFlagsEnumProperty == null)
+                {
+                    actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfModelClassProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableBoolProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableIntProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableGuidProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfNullableModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfBoolProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfBoolProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfIntProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfIntProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfStringProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfGuidProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfGuidProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfModelClassProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableBoolProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableIntProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableGuidProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfNullableModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfBoolProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfIntProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfGuidProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfModelClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfModelClassProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelEnumProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableModelFlagsEnumProperty);
+                }
+
+                if (systemUnderTest.CollectionInterfaceOfStringProperty == null)
+                {
+                    actual.CollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CollectionOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListInterfaceOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ListOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ListOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+                }
+
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                }
             }
 
             [Fact]

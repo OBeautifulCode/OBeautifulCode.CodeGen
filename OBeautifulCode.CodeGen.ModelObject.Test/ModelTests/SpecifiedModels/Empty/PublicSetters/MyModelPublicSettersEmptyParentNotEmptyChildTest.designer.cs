@@ -242,7 +242,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-                actual.ChildReadOnlyDictionaryOfStringString.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ChildReadOnlyDictionaryOfStringString);
+
+                if (systemUnderTest.ChildReadOnlyDictionaryOfStringString == null)
+                {
+                    actual.ChildReadOnlyDictionaryOfStringString.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ChildReadOnlyDictionaryOfStringString.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ChildReadOnlyDictionaryOfStringString);
+                }
             }
 
             [Fact]

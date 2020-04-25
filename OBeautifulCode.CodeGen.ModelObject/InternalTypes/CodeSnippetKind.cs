@@ -17,6 +17,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         None,
 
         /// <summary>
+        /// A code snippet for a DeepClone() method.
+        /// </summary>
+        DeepClone,
+
+        /// <summary>
         /// A code snippet for a DeepCloneWith() method.
         /// </summary>
         DeepCloneWith,

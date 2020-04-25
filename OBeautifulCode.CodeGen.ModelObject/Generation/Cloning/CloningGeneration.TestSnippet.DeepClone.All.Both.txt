@@ -1,0 +1,8 @@
+﻿                if (systemUnderTest.[property-name-here] == null)
+                {
+                    actual.[property-name-here].AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.[property-name-here].AsTest().Must().NotBeSameReferenceAs(systemUnderTest.[property-name-here]);
+                }

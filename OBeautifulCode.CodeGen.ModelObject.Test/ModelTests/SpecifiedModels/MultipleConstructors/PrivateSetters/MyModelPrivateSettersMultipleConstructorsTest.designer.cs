@@ -555,7 +555,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
-                actual.ReadOnlyCollectionOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfStringProperty);
+
+                if (systemUnderTest.ReadOnlyCollectionOfStringProperty == null)
+                {
+                    actual.ReadOnlyCollectionOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionOfStringProperty);
+                }
             }
 
             [Fact]
