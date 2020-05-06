@@ -1,0 +1,13 @@
+﻿            [Fact]
+[test-method-code-analysis-suppressions]
+            public static void [model-type-name-here]___Should_be_attributed_with_Serializable____When_reflecting()
+            {
+                // Arrange
+                var type = typeof([model-type-name-here]);
+
+                // Act
+                var actualAttributes = type.GetCustomAttributes(typeof(SerializableAttribute), false);
+
+                // Assert
+                actualAttributes.AsTest().Must().NotBeEmptyEnumerable();
+            }

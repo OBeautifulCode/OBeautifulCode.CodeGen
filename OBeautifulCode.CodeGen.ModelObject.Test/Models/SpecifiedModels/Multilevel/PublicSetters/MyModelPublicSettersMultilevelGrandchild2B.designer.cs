@@ -21,6 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using static global::System.FormattableString;
 
+    [Serializable]
     public partial class MyModelPublicSettersMultilevelGrandchild2B : IModel<MyModelPublicSettersMultilevelGrandchild2B>, IComparableForRelativeSortOrder<MyModelPublicSettersMultilevelGrandchild2B>
     {
         /// <summary>

@@ -21,6 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using static global::System.FormattableString;
 
+    [Serializable]
     public partial class MyModelCloningPublicSettersChild2 : IDeepCloneable<MyModelCloningPublicSettersChild2>
     {
         /// <inheritdoc />

@@ -45,6 +45,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 testMethodsCode = testMethodsCode + Environment.NewLine + Environment.NewLine + typeof(StructuralGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeclaresToStringTest);
             }
 
+            testMethodsCode = testMethodsCode + Environment.NewLine + Environment.NewLine + typeof(StructuralGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializableAttributeTest);
+
             var codeTemplate = typeof(StructuralGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate

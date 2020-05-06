@@ -147,6 +147,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         DeclaresToStringTest,
 
         /// <summary>
+        /// A code snippet that tests that the model type is attributed with Serializable.
+        /// </summary>
+        SerializableAttributeTest,
+
+        /// <summary>
         /// A code snippet for testing CompareTo().
         /// </summary>
         CompareToTests,
