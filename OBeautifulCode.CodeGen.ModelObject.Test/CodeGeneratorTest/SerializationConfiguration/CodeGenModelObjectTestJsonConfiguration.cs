@@ -13,15 +13,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Serialization.Json;
 
     /// <inheritdoc />
-    public class CodeGenModelObjectTestJsonConfiguration : JsonConfigurationBase
+    public class CodeGenModelObjectTestJsonConfiguration : JsonSerializationConfigurationBase
     {
         /// <inheritdoc />
-        protected override IReadOnlyCollection<Type> TypesToAutoRegister =>
+        protected override IReadOnlyCollection<TypeToRegisterForJson> TypesToRegisterForJson =>
             typeof(CodeGeneratorTest)
                 .Assembly
                 .GetTypes()
                 .Where(_ => _.Name.StartsWith(Settings.ModelBaseName, StringComparison.Ordinal))
                 .Where(_ => !_.Name.EndsWith(Settings.TestNameSuffix, StringComparison.Ordinal))
+                .Select(_ => _.ToTypeToRegisterForJson())
                 .ToList();
     }
 }

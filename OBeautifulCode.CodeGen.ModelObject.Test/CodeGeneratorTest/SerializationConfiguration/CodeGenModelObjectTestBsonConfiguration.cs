@@ -13,15 +13,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Serialization.Bson;
 
     /// <inheritdoc />
-    public class CodeGenModelObjectTestBsonConfiguration : BsonConfigurationBase
+    public class CodeGenModelObjectTestBsonConfiguration : BsonSerializationConfigurationBase
     {
         /// <inheritdoc />
-        protected override IReadOnlyCollection<Type> TypesToAutoRegister =>
+        protected override IReadOnlyCollection<TypeToRegisterForBson> TypesToRegisterForBson =>
             typeof(CodeGeneratorTest)
                 .Assembly
                 .GetTypes()
                 .Where(_ => _.Name.StartsWith(Settings.ModelBaseName, StringComparison.Ordinal))
                 .Where(_ => !_.Name.EndsWith(Settings.TestNameSuffix, StringComparison.Ordinal))
+                .Select(_ => _.ToTypeToRegisterForBson())
                 .ToList();
     }
 }
