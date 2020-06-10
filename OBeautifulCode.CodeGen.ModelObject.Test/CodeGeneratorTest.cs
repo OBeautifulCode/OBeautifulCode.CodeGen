@@ -500,7 +500,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             switch (generatedModelDeclaredFeature)
             {
-                case GeneratedModelDeclaredFeature.All:
+                case GeneratedModelDeclaredFeature.NoneDeclared:
                     interfaceStatement = nameof(IModelViaCodeGen);
                     break;
                 case GeneratedModelDeclaredFeature.Cloning:
@@ -634,7 +634,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         methodStatements.Add(Invariant($"        }}"));
                     }
 
-                    var generatedModelDeclaredFeatureNoneName = modelName.Replace(generatedModelDeclaredFeature.BuildNameToken(), GeneratedModelDeclaredFeature.All.BuildNameToken());
+                    var generatedModelDeclaredFeatureNoneName = modelName.Replace(generatedModelDeclaredFeature.BuildNameToken(), GeneratedModelDeclaredFeature.NoneDeclared.BuildNameToken());
 
                     var getEquivalentAllModelMethodStatements = new List<string>
                     {

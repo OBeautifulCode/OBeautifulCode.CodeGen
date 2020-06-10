@@ -10,7 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         NotApplicable,
 
-        All,
+        NoneDeclared,
 
         Equality,
 

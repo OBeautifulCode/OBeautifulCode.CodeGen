@@ -207,7 +207,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             switch (generatedModelDeclaredFeature)
             {
-                case GeneratedModelDeclaredFeature.All:
+                case GeneratedModelDeclaredFeature.NoneDeclared:
                     return "All";
                 default:
                     return generatedModelDeclaredFeature.ToString();
