@@ -157,7 +157,7 @@
     <Compile Include="CodeGeneratorTest\Enums\GeneratedModelHierarchyKind.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="CodeGeneratorTest\Enums\GeneratedModelScenario.cs" />
+    <Compile Include="CodeGeneratorTest\Enums\GeneratedModelDeclaredFeature.cs" />
     <Compile Include="CodeGeneratorTest\Enums\GenerationKind.cs" />
     <Compile Include="CodeGeneratorTest\Enums\SetterKind.cs" />
     <Compile Include="CodeGeneratorTest\Enums\SpecifiedModelKind.cs" />

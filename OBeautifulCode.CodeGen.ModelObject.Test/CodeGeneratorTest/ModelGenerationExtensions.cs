@@ -162,12 +162,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string BuildGeneratedModelName(
-            this GeneratedModelScenario generatedModelScenario,
+            this GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
             SetterKind setterKind,
             GeneratedModelHierarchyKind generatedModelHierarchyKind,
             string childIdentifier)
         {
-            var result = Invariant($"{Settings.ModelBaseName}{generatedModelScenario}{setterKind}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{Settings.ModelBaseName}{generatedModelDeclaredFeature.BuildNameToken()}{setterKind}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
@@ -197,6 +197,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return "Child";
                 default:
                     throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
+            }
+        }
+
+        public static string BuildNameToken(
+            this GeneratedModelDeclaredFeature generatedModelDeclaredFeature)
+        {
+            new { generatedModelDeclaredFeature }.AsArg().Must().NotBeEqualTo(GeneratedModelDeclaredFeature.NotApplicable);
+
+            switch (generatedModelDeclaredFeature)
+            {
+                case GeneratedModelDeclaredFeature.All:
+                    return "All";
+                default:
+                    return generatedModelDeclaredFeature.ToString();
             }
         }
 
@@ -293,7 +307,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static string GetGeneratedModelsDirectoryPath(
             this GenerationKind generationKind,
-            GeneratedModelScenario generatedModelScenario,
+            GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
             SetterKind setterKind)
         {
             string result;
@@ -301,10 +315,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = Settings.GeneratedModelsPath + generatedModelScenario + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = Settings.GeneratedModelsTestsPath + generatedModelScenario + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsTestsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This generation kind is not supported: " + generationKind);
