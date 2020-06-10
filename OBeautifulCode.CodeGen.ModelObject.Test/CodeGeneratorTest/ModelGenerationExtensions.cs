@@ -10,7 +10,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.String.Recipes;
@@ -165,34 +164,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static string BuildGeneratedModelName(
             this GeneratedModelScenario generatedModelScenario,
             SetterKind setterKind,
-            GeneratedModelPosition generatedModelPosition,
+            GeneratedModelHierarchyKind generatedModelHierarchyKind,
             string childIdentifier)
         {
-            var result = Invariant($"{Settings.ModelBaseName}{generatedModelScenario}{setterKind}{generatedModelPosition.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{Settings.ModelBaseName}{generatedModelScenario}{setterKind}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
 
         public static string BuildPropertyName(
             this Type type,
-            GeneratedModelPosition generatedModelPosition,
+            GeneratedModelHierarchyKind generatedModelHierarchyKind,
             string prefix)
         {
-            var result = Invariant($"{generatedModelPosition.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
+            var result = Invariant($"{generatedModelHierarchyKind.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
 
             return result;
         }
 
         public static string BuildNameToken(
-            this GeneratedModelPosition generatedModelPosition)
+            this GeneratedModelHierarchyKind generatedModelHierarchyKind)
         {
-            new { generatedModelPosition }.AsArg().Must().NotBeEqualTo(GeneratedModelPosition.NotApplicable);
+            new { generatedModelHierarchyKind }.AsArg().Must().NotBeEqualTo(GeneratedModelHierarchyKind.NotApplicable);
 
-            var result = generatedModelPosition == GeneratedModelPosition.Standalone
-                ? string.Empty
-                : generatedModelPosition.ToString();
-
-            return result;
+            switch (generatedModelHierarchyKind)
+            {
+                case GeneratedModelHierarchyKind.Standalone:
+                    return string.Empty;
+                case GeneratedModelHierarchyKind.AbstractBaseRoot:
+                    return "Parent";
+                case GeneratedModelHierarchyKind.ConcreteInherited:
+                    return "Child";
+                default:
+                    throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
+            }
         }
 
         public static string BuildNameToken(
