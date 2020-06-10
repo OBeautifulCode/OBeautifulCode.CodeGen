@@ -185,7 +185,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         var modelName = setterKind.BuildSpecifiedModelName(modelNameSuffix);
 
-                        eventHandler(generationKind, specifiedModelKind, GeneratedModelDeclaredFeature.NotApplicable, setterKind, GeneratedModelHierarchyKind.NotApplicable, null, modelName, directoryPath);
+                        eventHandler(generationKind, specifiedModelKind, GeneratedModelDeclaredFeature.NotApplicable, setterKind, GeneratedModelHierarchyKind.NotApplicable, TypeWrapperKind.NotApplicable, null, modelName, directoryPath);
                     }
                 }
             }
@@ -197,32 +197,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
 
-            foreach (var setterKind in setterKinds)
+            foreach (var typeWrapperKind in Settings.TypeWrapperKinds)
             {
-                var generatedModelDeclaredFeatures = EnumExtensions.GetDefinedEnumValues<GeneratedModelDeclaredFeature>().Where(_ => _ != GeneratedModelDeclaredFeature.NotApplicable).ToList();
-
-                foreach (var generatedModelDeclaredFeature in generatedModelDeclaredFeatures)
+                foreach (var setterKind in setterKinds)
                 {
-                    var directoryPath = generationKind.GetGeneratedModelsDirectoryPath(generatedModelDeclaredFeature, setterKind);
+                    var generatedModelDeclaredFeatures = EnumExtensions.GetDefinedEnumValues<GeneratedModelDeclaredFeature>().Where(_ => _ != GeneratedModelDeclaredFeature.NotApplicable).ToList();
 
-                    var generatedModelHierarchyKinds = EnumExtensions.GetDefinedEnumValues<GeneratedModelHierarchyKind>().Where(_ => _ != GeneratedModelHierarchyKind.NotApplicable).ToList();
-
-                    foreach (var generatedModelHierarchyKind in generatedModelHierarchyKinds)
+                    foreach (var generatedModelDeclaredFeature in generatedModelDeclaredFeatures)
                     {
-                        if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                        if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Comparing) && (typeWrapperKind != TypeWrapperKind.NotWrapped))
                         {
-                            foreach (var childIdentifier in Settings.ChildIdentifiers)
-                            {
-                                var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, childIdentifier);
-
-                                eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, childIdentifier, modelName, directoryPath);
-                            }
+                            break;
                         }
-                        else
-                        {
-                            var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, null);
 
-                            eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, null, modelName, directoryPath);
+                        var directoryPath = generationKind.GetGeneratedModelsDirectoryPath(generatedModelDeclaredFeature, setterKind, typeWrapperKind);
+
+                        var generatedModelHierarchyKinds = EnumExtensions.GetDefinedEnumValues<GeneratedModelHierarchyKind>().Where(_ => _ != GeneratedModelHierarchyKind.NotApplicable).ToList();
+
+                        foreach (var generatedModelHierarchyKind in generatedModelHierarchyKinds)
+                        {
+                            if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                            {
+                                foreach (var childIdentifier in Settings.ChildIdentifiers)
+                                {
+                                    var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier);
+
+                                    eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier, modelName, directoryPath);
+                                }
+                            }
+                            else
+                            {
+                                var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, typeWrapperKind, null);
+
+                                eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, null, modelName, directoryPath);
+                            }
                         }
                     }
                 }
@@ -235,6 +243,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
             SetterKind setterKind,
             GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
             string directoryPath)
@@ -338,6 +347,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
             SetterKind setterKind,
             GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
             string directoryPath)
@@ -376,6 +386,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
             SetterKind setterKind,
             GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
             string directoryPath)
@@ -386,19 +397,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var modelFilePath = directoryPath + modelName + ".cs";
 
             IReadOnlyCollection<Type> typesToWrap, additionalTypes, blacklistTypes;
-            IReadOnlyCollection<TypeWrapperKind> typeWrapperKinds;
 
             switch (generatedModelDeclaredFeature)
             {
                 case GeneratedModelDeclaredFeature.Comparing:
                     typesToWrap = Settings.ComparabilityTypes;
-                    typeWrapperKinds = new[] { TypeWrapperKind.None };
                     additionalTypes = new Type[0];
                     blacklistTypes = new Type[0];
                     break;
                 default:
                     typesToWrap = Settings.TypesToWrap;
-                    typeWrapperKinds = Settings.TypeWrapperKinds;
                     additionalTypes = Settings.AdditionalTypes;
                     blacklistTypes = Settings.BlacklistTypes;
                     break;
@@ -425,10 +433,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
 
             var typesToAddAsProperties = new List<Type>();
-            foreach (var typeWrapperKind in typeWrapperKinds)
-            {
-                typesToAddAsProperties.AddRange(typesToWrap.Select(_ => _.ToFullyWrappedType(typeWrapperKind)).Where(_ => _ != null));
-            }
+
+            typesToAddAsProperties.AddRange(typesToWrap.Select(_ => _.ToFullyWrappedType(typeWrapperKind)).Where(_ => _ != null));
 
             typesToAddAsProperties.AddRange(additionalTypes);
 
@@ -488,7 +494,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string baseClassName = null;
             if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
             {
-                baseClassName = $"{generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, GeneratedModelHierarchyKind.AbstractBaseRoot, childIdentifier: null)}";
+                baseClassName = $"{generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, GeneratedModelHierarchyKind.AbstractBaseRoot, typeWrapperKind, childIdentifier: null)}";
             }
 
             var derivativeStatement = baseClassName == null ? string.Empty : baseClassName + ", ";

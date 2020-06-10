@@ -69,7 +69,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             switch (typeWrapperKind)
             {
-                case TypeWrapperKind.None:
+                case TypeWrapperKind.NotWrapped:
                     result = type;
                     break;
                 case TypeWrapperKind.Nullable:
@@ -165,9 +165,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
             SetterKind setterKind,
             GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            TypeWrapperKind typeWrapperKind,
             string childIdentifier)
         {
-            var result = Invariant($"{Settings.ModelBaseName}{generatedModelDeclaredFeature.BuildNameToken()}{setterKind}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{Settings.ModelBaseName}{generatedModelDeclaredFeature.BuildNameToken()}{setterKind}{typeWrapperKind.BuildNameToken()}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
@@ -198,6 +199,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 default:
                     throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
             }
+        }
+
+        public static string BuildNameToken(
+            this TypeWrapperKind typeWrapperKind)
+        {
+            new { typeWrapperKind }.AsArg().Must().NotBeEqualTo(TypeWrapperKind.NotApplicable);
+
+            var result = typeWrapperKind.ToString();
+
+            return result;
         }
 
         public static string BuildNameToken(
@@ -308,17 +319,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static string GetGeneratedModelsDirectoryPath(
             this GenerationKind generationKind,
             GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
-            SetterKind setterKind)
+            SetterKind setterKind,
+            TypeWrapperKind typeWrapperKind)
         {
             string result;
 
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = Settings.GeneratedModelsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = Settings.GeneratedModelsTestsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\";
+                    result = Settings.GeneratedModelsTestsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This generation kind is not supported: " + generationKind);

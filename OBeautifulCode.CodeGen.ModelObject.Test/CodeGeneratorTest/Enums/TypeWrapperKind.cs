@@ -8,7 +8,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     public enum TypeWrapperKind
     {
-        None,
+        NotApplicable,
+
+        NotWrapped,
 
         Nullable,
 
