@@ -156,7 +156,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this SetterKind setterKind,
             string modelNameSuffix)
         {
-            var result = Invariant($"{Settings.ModelBaseName}{setterKind}{modelNameSuffix}");
+            var result = Invariant($"{Settings.ModelBaseName}{setterKind.BuildNameToken()}{modelNameSuffix}");
 
             return result;
         }
@@ -168,7 +168,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             TypeWrapperKind typeWrapperKind,
             string childIdentifier)
         {
-            var result = Invariant($"{Settings.ModelBaseName}{generatedModelDeclaredFeature.BuildNameToken()}{setterKind}{typeWrapperKind.BuildNameToken()}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{Settings.ModelBaseName}{generatedModelDeclaredFeature.BuildNameToken()}{setterKind.BuildNameToken()}{typeWrapperKind.BuildNameToken()}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
@@ -222,6 +222,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return "All";
                 default:
                     return generatedModelDeclaredFeature.ToString();
+            }
+        }
+
+        public static string BuildNameToken(
+            this SetterKind setterKind)
+        {
+            switch (setterKind)
+            {
+                case SetterKind.PrivateSetters:
+                    return "PrivateSet";
+                case SetterKind.PublicSetters:
+                    return "PublicSet";
+                default:
+                    throw new NotSupportedException("this setter kind is not supported: " + setterKind);
             }
         }
 
@@ -327,10 +341,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = Settings.GeneratedModelsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\" + typeWrapperKind.BuildNameToken() + "\\";
+                    result = Settings.GeneratedModelsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = Settings.GeneratedModelsTestsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind + "\\" + typeWrapperKind.BuildNameToken() + "\\";
+                    result = Settings.GeneratedModelsTestsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This generation kind is not supported: " + generationKind);
@@ -349,10 +363,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (generationKind)
             {
                 case GenerationKind.Model:
-                    result = Settings.SpecifiedModelsPath + specifiedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.SpecifiedModelsPath + specifiedModelKind + "\\" + setterKind.BuildNameToken() + "\\";
                     break;
                 case GenerationKind.Test:
-                    result = Settings.SpecifiedModelsTestPath + specifiedModelKind + "\\" + setterKind + "\\";
+                    result = Settings.SpecifiedModelsTestPath + specifiedModelKind + "\\" + setterKind.BuildNameToken() + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This kind is not supported: " + generationKind);
