@@ -18,7 +18,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public static class Settings
     {
-        public const string ModelBaseName = "MyModel";
+        public const string ModelBaseName = "Model";
 
         public const string TestNameSuffix = "Test";
 
