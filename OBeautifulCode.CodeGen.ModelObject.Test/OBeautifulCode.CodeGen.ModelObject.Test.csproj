@@ -174,724 +174,724 @@
     <Content Include=".analyzers\dictionary.xml" />
     <!-- START: FIND "Content" AND REPLACE WITH "Compile" FROM HERE TO THE ENDING COMMENT TO USE GENERATED MODELS AND TESTS -->
     <Content Include="DummyFactory.cs" />
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.cs" />
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.designer.cs">
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.cs" />
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructors.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructors.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1.cs" />
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1.designer.cs">
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1.cs" />
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2.cs" />
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2.designer.cs">
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2.cs" />
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParent.cs" />
-    <Content Include="Models\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParent.designer.cs">
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParent.cs" />
+    <Content Include="Models\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsParent.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsTest.designer.cs">
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsTest.cs" />
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1Test.designer.cs">
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1Test.cs" />
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild1Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2Test.designer.cs">
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2Test.cs" />
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsChild2Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParentTest.cs" />
+    <Content Include="ModelTests\Specified\MultipleConstructors\PrivateSetters\MyModelPrivateSettersMultipleConstructorsParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultipleConstructorsParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2B.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild2B.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2A.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2A.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2A.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2A.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild2A.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1B.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1B.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1B.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1B.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild1B.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1A.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1A.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1A.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1A.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild1A.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParent.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParent.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParent.cs" />
+    <Content Include="Models\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1A.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1A.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1A.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1A.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild1A.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1B.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1B.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1B.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1B.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild1B.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2A.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2A.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2A.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2A.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild2A.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2B.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2B.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2B.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2B.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild2B.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParent.cs" />
-    <Content Include="Models\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParent.designer.cs">
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParent.cs" />
+    <Content Include="Models\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParent.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelParent.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1Test.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1Test.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild1Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2Test.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2Test.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelChild2Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1ATest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1ATest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1ATest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1ATest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild1ATest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1BTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1BTest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1BTest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild1BTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild1BTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2ATest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2ATest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2ATest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2ATest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild2ATest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2BTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2BTest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2BTest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelGrandchild2BTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelGrandchild2BTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParentTest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PrivateSetters\MyModelPrivateSettersMultilevelParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersMultilevelParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1Test.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1Test.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild1Test.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2Test.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2Test.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelChild2Test.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1ATest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1ATest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1ATest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1ATest.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild1ATest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1BTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1BTest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1BTest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild1BTest.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild1BTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2ATest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2ATest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2ATest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2ATest.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild2ATest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2BTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2BTest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2BTest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelGrandchild2BTest.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelGrandchild2BTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParentTest.cs" />
+    <Content Include="ModelTests\Specified\Multilevel\PublicSetters\MyModelPublicSettersMultilevelParentTest.designer.cs">
       <DependentUpon>MyModelPublicSettersMultilevelParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmpty.cs" />
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmpty.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmpty.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChild.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChild.designer.cs">
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChild.cs" />
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyParentEmptyChild.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChild.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChild.designer.cs">
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChild.cs" />
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPrivateSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChild.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChild.designer.cs">
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChild.cs" />
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChild.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyParentNotEmptyChild.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParent.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParent.designer.cs">
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParent.cs" />
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersNotEmptyParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParent.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParent.designer.cs">
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParent.cs" />
+    <Content Include="Models\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmpty.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmpty.designer.cs">
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmpty.cs" />
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmpty.designer.cs">
       <DependentUpon>MyModelPublicSettersEmpty.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParent.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParent.designer.cs">
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParent.cs" />
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParent.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChild.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChild.designer.cs">
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChild.cs" />
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyParentEmptyChild.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChild.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChild.designer.cs">
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChild.cs" />
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyParentNotEmptyChild.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParent.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParent.designer.cs">
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParent.cs" />
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParent.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.cs" />
-    <Content Include="Models\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.cs" />
+    <Content Include="Models\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChild.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChild.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSetters.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSetters.designer.cs">
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSetters.cs" />
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSetters.designer.cs">
       <DependentUpon>MyModelComparingPrivateSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1.cs" />
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2.cs" />
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParent.designer.cs">
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersParent.cs" />
+    <Content Include="Models\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSetters.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSetters.designer.cs">
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSetters.cs" />
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSetters.designer.cs">
       <DependentUpon>MyModelComparingPublicSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild1.cs" />
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild2.cs" />
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParent.designer.cs">
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersParent.cs" />
+    <Content Include="Models\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersParent.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSetters.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSetters.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSetters.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSetters.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSetters.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParent.designer.cs">
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParent.cs" />
+    <Content Include="Models\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParent.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSetters.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSetters.designer.cs">
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSetters.cs" />
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSetters.designer.cs">
       <DependentUpon>MyModelHashingPrivateSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1.cs" />
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2.cs" />
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParent.designer.cs">
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersParent.cs" />
+    <Content Include="Models\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSetters.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSetters.designer.cs">
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSetters.cs" />
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSetters.designer.cs">
       <DependentUpon>MyModelHashingPublicSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild1.cs" />
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild2.cs" />
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParent.designer.cs">
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersParent.cs" />
+    <Content Include="Models\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersParent.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSetters.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSetters.designer.cs">
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSetters.cs" />
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSetters.designer.cs">
       <DependentUpon>MyModelCloningPrivateSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1.cs" />
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2.cs" />
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParent.designer.cs">
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersParent.cs" />
+    <Content Include="Models\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSetters.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSetters.designer.cs">
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSetters.cs" />
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSetters.designer.cs">
       <DependentUpon>MyModelCloningPublicSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild1.cs" />
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild2.cs" />
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParent.designer.cs">
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersParent.cs" />
+    <Content Include="Models\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersParent.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSetters.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSetters.designer.cs">
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSetters.cs" />
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSetters.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1.cs" />
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2.cs" />
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParent.designer.cs">
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersParent.cs" />
+    <Content Include="Models\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSetters.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSetters.designer.cs">
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSetters.cs" />
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSetters.designer.cs">
       <DependentUpon>MyModelEqualityPublicSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1.designer.cs">
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild1.cs" />
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2.designer.cs">
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild2.cs" />
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParent.designer.cs">
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersParent.cs" />
+    <Content Include="Models\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersParent.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSetters.cs" />
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSetters.designer.cs">
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSetters.cs" />
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSetters.designer.cs">
       <DependentUpon>MyModelAllPrivateSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild1.designer.cs">
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild1.cs" />
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild1.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild2.designer.cs">
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild2.cs" />
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild2.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersParent.designer.cs">
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSettersParent.cs" />
+    <Content Include="Models\Generated\All\PrivateSetters\MyModelAllPrivateSettersParent.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSetters.cs" />
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSetters.designer.cs">
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSetters.cs" />
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSetters.designer.cs">
       <DependentUpon>MyModelAllPublicSetters.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild1.cs" />
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild1.designer.cs">
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSettersChild1.cs" />
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSettersChild1.designer.cs">
       <DependentUpon>MyModelAllPublicSettersChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild2.cs" />
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild2.designer.cs">
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSettersChild2.cs" />
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSettersChild2.designer.cs">
       <DependentUpon>MyModelAllPublicSettersChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.cs" />
-    <Content Include="Models\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSettersParent.cs" />
+    <Content Include="Models\Generated\All\PublicSetters\MyModelAllPublicSettersParent.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParent.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PrivateSetters\MyModelComparingPrivateSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PrivateSetters\MyModelComparingPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelComparingPrivateSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Comparing\PublicSetters\MyModelComparingPublicSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Comparing\PublicSetters\MyModelComparingPublicSettersTest.designer.cs">
       <DependentUpon>MyModelComparingPublicSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PrivateSetters\MyModelStringRepresentationPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelStringRepresentationPrivateSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersTest.cs" />
+    <Content Include="ModelTests\Generated\StringRepresentation\PublicSetters\MyModelStringRepresentationPublicSettersTest.designer.cs">
       <DependentUpon>MyModelStringRepresentationPublicSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PrivateSetters\MyModelHashingPrivateSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PrivateSetters\MyModelHashingPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelHashingPrivateSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Hashing\PublicSetters\MyModelHashingPublicSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Hashing\PublicSetters\MyModelHashingPublicSettersTest.designer.cs">
       <DependentUpon>MyModelHashingPublicSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PrivateSetters\MyModelCloningPrivateSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PrivateSetters\MyModelCloningPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelCloningPrivateSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Cloning\PublicSetters\MyModelCloningPublicSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Cloning\PublicSetters\MyModelCloningPublicSettersTest.designer.cs">
       <DependentUpon>MyModelCloningPublicSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChildTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChildTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChildTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentEmptyChildTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyParentEmptyChildTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChildTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChildTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChildTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersEmptyParentNotEmptyChildTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersEmptyParentNotEmptyChildTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersNotEmptyParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChildTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChildTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChildTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PrivateSetters\MyModelPrivateSettersNotEmptyParentEmptyChildTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersNotEmptyParentEmptyChildTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChildTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChildTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChildTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentEmptyChildTest.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyParentEmptyChildTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChildTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChildTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChildTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentNotEmptyChildTest.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyParentNotEmptyChildTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyParentTest.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersEmptyTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersEmptyTest.designer.cs">
       <DependentUpon>MyModelPublicSettersEmptyTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChildTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChildTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChildTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentEmptyChildTest.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentEmptyChildTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentTest.cs" />
+    <Content Include="ModelTests\Specified\Empty\PublicSetters\MyModelPublicSettersNotEmptyParentTest.designer.cs">
       <DependentUpon>MyModelPublicSettersNotEmptyParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PrivateSetters\MyModelEqualityPrivateSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Equality\PrivateSetters\MyModelEqualityPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelEqualityPrivateSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\Equality\PublicSetters\MyModelEqualityPublicSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersTest.cs" />
+    <Content Include="ModelTests\Generated\Equality\PublicSetters\MyModelEqualityPublicSettersTest.designer.cs">
       <DependentUpon>MyModelEqualityPublicSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild1Test.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersChild2Test.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersParentTest.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PrivateSetters\MyModelAllPrivateSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersTest.cs" />
+    <Content Include="ModelTests\Generated\All\PrivateSetters\MyModelAllPrivateSettersTest.designer.cs">
       <DependentUpon>MyModelAllPrivateSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild1Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild1Test.designer.cs">
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersChild1Test.cs" />
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersChild1Test.designer.cs">
       <DependentUpon>MyModelAllPublicSettersChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild2Test.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersChild2Test.designer.cs">
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersChild2Test.cs" />
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersChild2Test.designer.cs">
       <DependentUpon>MyModelAllPublicSettersChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParentTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersParentTest.designer.cs">
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersParentTest.cs" />
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersParentTest.designer.cs">
       <DependentUpon>MyModelAllPublicSettersParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersTest.cs" />
-    <Content Include="ModelTests\GeneratedModels\All\PublicSetters\MyModelAllPublicSettersTest.designer.cs">
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersTest.cs" />
+    <Content Include="ModelTests\Generated\All\PublicSetters\MyModelAllPublicSettersTest.designer.cs">
       <DependentUpon>MyModelAllPublicSettersTest.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBody.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBody.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBody.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBody.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBody.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParent.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParent.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParent.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyParent.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBody.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBody.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBody.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBody.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBody.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParent.cs" />
-    <Content Include="Models\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParent.designer.cs">
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParent.cs" />
+    <Content Include="Models\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParent.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyParent.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyTest.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyTest.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1Test.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1Test.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild1Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2Test.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2Test.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyChild2Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParentTest.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PrivateSetters\MyModelPrivateSettersExpressionBodyParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersExpressionBodyParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyTest.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyTest.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyTest.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyTest.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1Test.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1Test.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild1Test.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2Test.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2Test.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyChild2Test.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParentTest.cs" />
+    <Content Include="ModelTests\Specified\ExpressionBody\PublicSetters\MyModelPublicSettersExpressionBodyParentTest.designer.cs">
       <DependentUpon>MyModelPublicSettersExpressionBodyParentTest.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1.cs" />
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1.designer.cs">
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1.cs" />
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyChild1.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3.cs" />
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3.designer.cs">
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3.cs" />
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyChild3.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2.cs" />
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2.designer.cs">
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2.cs" />
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyChild2.cs</DependentUpon>
     </Content>
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParent.cs" />
-    <Content Include="Models\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParent.designer.cs">
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParent.cs" />
+    <Content Include="Models\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParent.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyParent.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1Test.designer.cs">
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1Test.cs" />
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild1Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyChild1Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2Test.designer.cs">
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2Test.cs" />
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild2Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyChild2Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3Test.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3Test.designer.cs">
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3Test.cs" />
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyChild3Test.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyChild3Test.cs</DependentUpon>
     </Content>
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParentTest.cs" />
-    <Content Include="ModelTests\SpecifiedModels\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParentTest.designer.cs">
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParentTest.cs" />
+    <Content Include="ModelTests\Specified\ConstructorMissingProperty\PrivateSetters\MyModelPrivateSettersConstructorMissingPropertyParentTest.designer.cs">
       <DependentUpon>MyModelPrivateSettersConstructorMissingPropertyParentTest.cs</DependentUpon>
     </Content>
     <!-- END: FIND "Content" AND REPLACE WITH "Compile" FROM HERE TO THE ENDING COMMENT TO USE GENERATED MODELS AND TESTS -->
