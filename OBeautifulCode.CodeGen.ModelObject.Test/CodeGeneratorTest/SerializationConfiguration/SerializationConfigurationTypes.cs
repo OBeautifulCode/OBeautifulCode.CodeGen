@@ -6,12 +6,13 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
-    using System;
+    using OBeautifulCode.Serialization.Bson;
+    using OBeautifulCode.Serialization.Json;
 
     public static class SerializationConfigurationTypes
     {
-        public static Type BsonConfigurationType => typeof(CodeGenModelObjectTestBsonConfiguration);
+        public static BsonSerializationConfigurationType BsonConfigurationType => typeof(CodeGenModelObjectTestBsonConfiguration).ToBsonSerializationConfigurationType();
 
-        public static Type JsonConfigurationType => typeof(CodeGenModelObjectTestJsonConfiguration);
+        public static JsonSerializationConfigurationType JsonConfigurationType => typeof(CodeGenModelObjectTestJsonConfiguration).ToJsonSerializationConfigurationType();
     }
 }
