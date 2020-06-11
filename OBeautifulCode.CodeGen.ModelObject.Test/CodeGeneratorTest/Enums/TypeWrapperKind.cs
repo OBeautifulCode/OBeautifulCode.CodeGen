@@ -35,5 +35,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         // ReSharper disable once InconsistentNaming
         IReadOnlyDictionaryOfNullable,
+
+        AdditionalTypes,
     }
 }

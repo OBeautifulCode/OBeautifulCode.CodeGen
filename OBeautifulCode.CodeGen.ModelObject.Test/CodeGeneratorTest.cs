@@ -29,19 +29,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         public static readonly bool WriteFiles = false;
 
-        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelDeclaredFeature generatedModelDeclaredFeature, SetterKind setterKind, GeneratedModelHierarchyKind generatedModelHierarchyKind, string childIdentifier, string modelName, string directoryPath);
+        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelDeclaredFeature generatedModelDeclaredFeature, SetterKind setterKind, GeneratedModelHierarchyKind generatedModelHierarchyKind, TypeWrapperKind typeWrapperKind, string childIdentifier, string modelName, string directoryPath);
 
         [Fact(Skip = "for local testing only")]
         public void GenerateModel___Should_generate_models___When_called()
         {
             // Arrange
-            ExecuteForSpecifiedModels(GenerationKind.Model, ResetFile);
-
-            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
-
             ExecuteForGeneratedModels(GenerationKind.Model, ResetFile);
 
             ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
+
+            ExecuteForSpecifiedModels(GenerationKind.Model, ResetFile);
+
+            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
 
             WriteDummyFactory(string.Empty);
 
@@ -250,94 +250,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var testToken = generationKind == GenerationKind.Test ? Settings.TestNameSuffix : null;
 
-            var modelFilePath = directoryPath + modelName + $"{testToken}.designer.cs";
+            var modelFilePath = Path.Combine(directoryPath, modelName + $"{testToken}.cs");
+
+            var modelDesignerFilePath = Path.Combine(directoryPath, modelName + $"{testToken}.designer.cs");
 
             if (WriteFiles)
             {
-                var content = string.Empty;
-
-                if (generationKind == GenerationKind.Test)
+                if (!Directory.Exists(directoryPath))
                 {
-                    if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Equality) ||
-                        (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Hashing))
-                    {
-                        // this is necessary so that the project compiles when running unit
-                        // tests that precede the unit test that creates code generated model tests
-                        var codeLines = new List<string>
-                            {
-                                "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
-                                "{",
-                                "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                                Invariant($"    public static partial class {modelName}{testToken}"),
-                                "    {",
-                                Invariant($"        private static readonly EquatableTestScenarios<{modelName}> EquatableTestScenarios = new EquatableTestScenarios<{modelName}>();"),
-                                "    }",
-                                "}",
-                            };
-
-                        content = codeLines.ToNewLineDelimited();
-                    }
-                    else if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Comparing)
-                    {
-                        // this is necessary so that the project compiles when running unit
-                        // tests that precede the unit test that creates code generated model tests
-                        var codeLines = new List<string>
-                            {
-                                "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
-                                "{",
-                                "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                                Invariant($"    public static partial class {modelName}{testToken}"),
-                                "    {",
-                                Invariant($"        private static readonly ComparableTestScenarios<{modelName}> ComparableTestScenarios = new ComparableTestScenarios<{modelName}>();"),
-                                "    }",
-                                "}",
-                            };
-
-                        content = codeLines.ToNewLineDelimited();
-                    }
-                    else if (specifiedModelKind == SpecifiedModelKind.Multilevel)
-                    {
-                        // this is necessary so that the project compiles when running unit
-                        // tests that precede the unit test that creates code generated model tests
-                        var codeLines = new List<string>
-                        {
-                            "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
-                            "{",
-                            "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                            Invariant($"    public static partial class {modelName}{testToken}"),
-                            "    {",
-                            Invariant($"        private static readonly StringRepresentationTestScenarios<{modelName}> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<{modelName}>();"),
-                            string.Empty,
-                            Invariant($"        private static readonly ConstructorArgumentValidationTestScenarios<{modelName}> ConstructorArgumentValidationTestScenarios = new ConstructorArgumentValidationTestScenarios<{modelName}>();"),
-                            string.Empty,
-                            Invariant($"        private static readonly ComparableTestScenarios<{modelName}> ComparableTestScenarios = new ComparableTestScenarios<{modelName}>();"),
-                            "    }",
-                            "}",
-                        };
-
-                        content = codeLines.ToNewLineDelimited();
-                    }
-                    else if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.StringRepresentation)
-                    {
-                        // this is necessary so that the project compiles when running unit
-                        // tests that precede the unit test that creates code generated model tests
-                        var codeLines = new List<string>
-                        {
-                            "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
-                            "{",
-                            "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                            Invariant($"    public static partial class {modelName}{testToken}"),
-                            "    {",
-                            Invariant($"        private static readonly StringRepresentationTestScenarios<{modelName}> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<{modelName}>();"),
-                            "    }",
-                            "}",
-                        };
-
-                        content = codeLines.ToNewLineDelimited();
-                    }
+                    Directory.CreateDirectory(directoryPath);
                 }
 
-                File.WriteAllText(modelFilePath, content);
+                if (generationKind == GenerationKind.Model)
+                {
+                    // if this is a generated model, then write an empty model class file,
+                    // specified models should not be touched because we have hand-coded model file
+                    if (specifiedModelKind == SpecifiedModelKind.NotApplicable)
+                    {
+                        File.WriteAllBytes(modelFilePath, new byte[0]);
+                    }
+                }
+                else if (generationKind == GenerationKind.Test)
+                {
+                    // we have hand-coded some test class files for both specified and generated models
+                    // so for those we want to comment-out the file, otherwise we want to write an empty file
+                    if (!File.Exists(modelFilePath))
+                    {
+                        File.WriteAllBytes(modelFilePath, new byte[0]);
+                    }
+
+                    CommentOutFile(modelFilePath);
+                }
+                else
+                {
+                    throw new NotSupportedException("This generation kind is not supported: " + generationKind);
+                }
+
+                // for both generated and specified models, write an empty model/test designer file
+                File.WriteAllBytes(modelDesignerFilePath, new byte[0]);
             }
         }
 
@@ -396,18 +346,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var modelFilePath = directoryPath + modelName + ".cs";
 
-            IReadOnlyCollection<Type> typesToWrap, additionalTypes, blacklistTypes;
+            IReadOnlyCollection<Type> typesToWrap, blacklistTypes;
 
             switch (generatedModelDeclaredFeature)
             {
                 case GeneratedModelDeclaredFeature.Comparing:
                     typesToWrap = Settings.ComparabilityTypes;
-                    additionalTypes = new Type[0];
                     blacklistTypes = new Type[0];
                     break;
                 default:
                     typesToWrap = Settings.TypesToWrap;
-                    additionalTypes = Settings.AdditionalTypes;
                     blacklistTypes = Settings.BlacklistTypes;
                     break;
             }
@@ -434,9 +382,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var typesToAddAsProperties = new List<Type>();
 
-            typesToAddAsProperties.AddRange(typesToWrap.Select(_ => _.ToFullyWrappedType(typeWrapperKind)).Where(_ => _ != null));
-
-            typesToAddAsProperties.AddRange(additionalTypes);
+            typesToAddAsProperties.AddRange(typeWrapperKind == TypeWrapperKind.AdditionalTypes
+                ? Settings.AdditionalTypes
+                : typesToWrap.Select(_ => _.ToFullyWrappedType(typeWrapperKind)).Where(_ => _ != null));
 
             typesToAddAsProperties = typesToAddAsProperties.Where(_ => !blacklistTypes.Contains(_)).ToList();
 
@@ -879,6 +827,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             if (WriteFiles)
             {
                 File.WriteAllText(Settings.DummyFactoryFilePath, code);
+            }
+        }
+
+        private static void CommentOutFile(
+            string filePath)
+        {
+            var lines = File.ReadAllLines(filePath);
+
+            if (lines.Any())
+            {
+                var commentedOutLines = lines.Select(_ => _.StartsWith(Settings.Comment) ? _ : (Settings.Comment + _)).ToList().ToNewLineDelimited();
+
+                File.WriteAllText(filePath, commentedOutLines);
             }
         }
     }

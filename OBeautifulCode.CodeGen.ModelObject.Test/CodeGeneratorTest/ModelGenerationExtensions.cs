@@ -206,9 +206,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { typeWrapperKind }.AsArg().Must().NotBeEqualTo(TypeWrapperKind.NotApplicable);
 
-            var result = typeWrapperKind.ToString();
-
-            return result;
+            switch (typeWrapperKind)
+            {
+                case TypeWrapperKind.AdditionalTypes:
+                    return "Misc";
+                case TypeWrapperKind.ArrayOf:
+                    return "Array";
+                case TypeWrapperKind.ArrayOfNullable:
+                    return "ArrayOfNullable";
+                case TypeWrapperKind.IReadOnlyCollectionOf:
+                    return "ReadOnlyCollection";
+                case TypeWrapperKind.IReadOnlyCollectionOfNullable:
+                    return "ReadOnlyCollectionOfNullable";
+                case TypeWrapperKind.IReadOnlyDictionaryOf:
+                    return "ReadOnlyDictionary";
+                case TypeWrapperKind.IReadOnlyDictionaryOfNullable:
+                    return "ReadOnlyDictionaryOfNullable";
+                case TypeWrapperKind.IReadOnlyListOf:
+                    return "ReadOnlyList";
+                case TypeWrapperKind.IReadOnlyListOfNullable:
+                    return "ReadOnlyListOfNullable";
+                case TypeWrapperKind.NotWrapped:
+                    return "None";
+                case TypeWrapperKind.Nullable:
+                    return "Nullable";
+                default:
+                    throw new NotSupportedException("this type wrapper kind is not supported: " + typeWrapperKind);
+            }
         }
 
         public static string BuildNameToken(
