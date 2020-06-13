@@ -776,7 +776,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 UncommentFile(testCodeFilePath);
             }
 
-            if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.StringRepresentation)
+            if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.NoneDeclared)
+            {
+                if ((typeWrapperKind == TypeWrapperKind.Nullable) && (setterKind == SetterKind.PrivateSetters) && (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot))
+                {
+                    var statements = new List<string>
+                    {
+                        GetGeneratedCodeHeader(testClassName),
+                        "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                        "{",
+                        "    using System.Diagnostics.CodeAnalysis;",
+                        string.Empty,
+                        "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                        "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
+                        string.Empty,
+                        Invariant($"    public static partial class {testClassName}"),
+                        "    {",
+                        "        [SuppressMessage(\"Microsoft.Performance\", \"CA1810:InitializeReferenceTypeStaticFieldsInline\", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]",
+                        Invariant($"        static {testClassName}()"),
+                        "        {",
+                        Invariant($"            ConstructorArgumentValidationTestScenarios.AddScenario(ConstructorArgumentValidationTestScenario<{modelName}>.ConstructorCannotThrowScenario);"),
+                        "        }",
+                        "    }",
+                        "}",
+                    };
+
+                    File.WriteAllText(testCodeFilePath, statements.ToNewLineDelimited());
+                }
+            }
+            else if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.StringRepresentation)
             {
                 if (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot)
                 {
