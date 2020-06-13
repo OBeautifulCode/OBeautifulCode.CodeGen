@@ -19,7 +19,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMissingPropertyChild1(
             IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty,
             IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
-            : base(ModelEnum.SecondValue, parentReadOnlyCollectionOfStringProperty)
+            : base(CustomEnum.SecondValue, parentReadOnlyCollectionOfStringProperty)
         {
             new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 

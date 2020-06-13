@@ -102,6 +102,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         EquatableTestFields,
 
         /// <summary>
+        /// A code snippet for equatable-related test fields in user (non designer) code.
+        /// </summary>
+        EquatableTestFieldsInUserCode,
+
+        /// <summary>
         /// A code snippet for objects that derive from scenario type but are not of the same type as the reference object.
         /// </summary>
         EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject,

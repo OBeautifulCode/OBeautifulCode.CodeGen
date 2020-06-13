@@ -142,5 +142,24 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Generates equality test fields for use in user (non-designer) code.
+        /// </summary>
+        /// <param name="type">The type of the model object.</param>
+        /// <returns>
+        /// The equality test fields for use in user (non-designer) code.
+        /// </returns>
+        public static string GenerateEqualityTestFieldsInUserCode(
+            this Type type)
+        {
+            new { type }.AsArg().Must().NotBeNull();
+
+            var modelType = new ModelType(type);
+
+            var result = modelType.GenerateEqualityTestFieldsInUserCode();
+
+            return result;
+        }
     }
 }

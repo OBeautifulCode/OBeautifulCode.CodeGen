@@ -668,14 +668,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var systemUnderTest = A.Dummy<ModelPrivateSetConstructorMissingPropertyChild1>();
 
-                var parentEnumProperty = A.Dummy<ModelEnum>();
+                var parentEnumProperty = A.Dummy<CustomEnum>();
 
                 // Act
                 var actual = Record.Exception(()=> systemUnderTest.DeepCloneWithParentEnumProperty(parentEnumProperty));
 
                 // Assert
                 actual.AsTest().Must().BeOfType<NotSupportedException>();
-                actual.Message.AsTest().Must().BeEqualTo("The constructor in-use (by code gen) for ModelPrivateSetConstructorMissingPropertyChild1 does not have a parameter that corresponds with the 'ParentEnumProperty' property.  As such, this method, DeepCloneWithParentEnumProperty(ModelEnum parentEnumProperty), cannot utilize the specified 'parentEnumProperty' value for that property.");
+                actual.Message.AsTest().Must().BeEqualTo("The constructor in-use (by code gen) for ModelPrivateSetConstructorMissingPropertyChild1 does not have a parameter that corresponds with the 'ParentEnumProperty' property.  As such, this method, DeepCloneWithParentEnumProperty(CustomEnum parentEnumProperty), cannot utilize the specified 'parentEnumProperty' value for that property.");
             }
         }
 

@@ -1,0 +1,27 @@
+﻿        private static readonly [model-type-name-here] ReferenceObjectForEquatableTestScenarios = A.Dummy<[model-type-name-here]>();
+
+        private static readonly [model-type-name-here] ObjectThatIsEqualToButNotTheSameAsReferenceObject = A.Dummy<[model-type-name-here]>().Whose(_ => _.GetType() == ReferenceObjectForEquatableTestScenarios.GetType());
+
+        private static readonly EquatableTestScenarios<[model-type-name-here]> LocalEquatableTestScenarios = new EquatableTestScenarios<[model-type-name-here]>()
+            .AddScenario(() =>
+                new EquatableTestScenario<[model-type-name-here]>
+                {
+                    Name = "Default Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new [model-type-name-here][]
+                    {
+                        ObjectThatIsEqualToButNotTheSameAsReferenceObject,
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new [model-type-name-here][]
+                    {
+                        // no good way to do this without DeepCloneWith...()
+                    },[objects-that-derive-from-scenario-type-but-are-not-of-the-same-type-as-reference-object-here]
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });

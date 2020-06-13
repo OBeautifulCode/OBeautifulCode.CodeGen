@@ -17,7 +17,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         protected ModelPrivateSetConstructorMissingPropertyParent(
-            ModelEnum parentEnumProperty,
+            CustomEnum parentEnumProperty,
             IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty)
         {
             new { parentReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -27,7 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ModelEnum ParentEnumProperty { get; private set; }
+        public CustomEnum ParentEnumProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public IReadOnlyCollection<string> ParentReadOnlyCollectionOfStringProperty { get; private set; }

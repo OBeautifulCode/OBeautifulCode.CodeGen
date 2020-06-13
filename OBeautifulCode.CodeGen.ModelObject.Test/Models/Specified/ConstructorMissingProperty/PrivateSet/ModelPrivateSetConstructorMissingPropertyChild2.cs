@@ -18,8 +18,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public ModelPrivateSetConstructorMissingPropertyChild2(
             IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty,
-            ModelClass childClass)
-            : base(ModelEnum.ThirdValue, parentReadOnlyCollectionOfStringProperty)
+            CustomClass childClass)
+            : base(CustomEnum.ThirdValue, parentReadOnlyCollectionOfStringProperty)
         {
             new { childClass }.AsArg().Must().NotBeNull();
 
@@ -27,6 +27,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ModelClass ChildClass { get; private set; }
+        public CustomClass ChildClass { get; private set; }
     }
 }

@@ -64,40 +64,32 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? KeyMethodKinds.Declared
                 : KeyMethodKinds.Generated;
 
-            string codeTemplate;
-            var objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = string.Empty;
-            var objectsEqualToButNotTheSameAsReferenceObject = string.Empty;
-            var objectsNotEqualToReferenceObject = string.Empty;
-            var dummyAncestorConcreteDerivatives = string.Empty;
+            string result;
 
             if (keyMethodKinds == KeyMethodKinds.Declared)
             {
-                codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
+                result = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields)
+                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
             }
             else
             {
-                codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields);
-
-                objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypesCompilableStrings.Count() >= 2)
-                    ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
-                    : string.Empty;
-
-                var objectsEqualToButNotTheSameAsReferenceObjectMemberCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ReferenceObjectForEquatableTestScenarios." + _.Name)).ToList();
-                objectsEqualToButNotTheSameAsReferenceObject = modelType.GenerateModelInstantiation(objectsEqualToButNotTheSameAsReferenceObjectMemberCode, parameterPaddingLength: 32);
-
-                objectsNotEqualToReferenceObject = modelType.GetObjectsNotEqualToReferenceObject();
-
-                dummyAncestorConcreteDerivatives = modelType.AncestorConcreteDerivativesCompilableStrings.Any()
-                    ? Environment.NewLine + "                        " + modelType.AncestorConcreteDerivativesCompilableStrings.Select(_ => _.GenerateDummyConstructionCodeForType() + ",").ToDelimitedString(Environment.NewLine + "                        ")
-                    : string.Empty;
+                result = modelType.GetEqualityTestFieldsForGeneratedEquality(keyMethodKinds, CodeSnippetKind.EquatableTestFields);
             }
 
-            var result = codeTemplate
-                .Replace(Tokens.ScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObjectToken, objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject)
-                .Replace(Tokens.ObjectsEqualToButNotTheSameAsReferenceObjectToken, objectsEqualToButNotTheSameAsReferenceObject)
-                .Replace(Tokens.ObjectsNotEqualToReferenceObjectToken, objectsNotEqualToReferenceObject)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                .Replace(Tokens.DummyAncestorConcreteDerivativesToken, dummyAncestorConcreteDerivatives);
+            return result;
+        }
+
+        /// <summary>
+        /// Generates fields required to test equality in user (non-designer) code.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated fields required to test equality in user (non-designer) code.
+        /// </returns>
+        public static string GenerateEqualityTestFieldsInUserCode(
+            this ModelType modelType)
+        {
+            var result = modelType.GetEqualityTestFieldsForGeneratedEquality(KeyMethodKinds.Generated, CodeSnippetKind.EquatableTestFieldsInUserCode);
 
             return result;
         }
@@ -142,6 +134,36 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = (propertyOfConcern.PropertyType == typeof(string))
                 ? Invariant($"this.{propertyOfConcern.Name}.IsEqualTo(other.{propertyOfConcern.Name}, StringComparer.Ordinal)")
                 : Invariant($"this.{propertyOfConcern.Name}.IsEqualTo(other.{propertyOfConcern.Name})");
+
+            return result;
+        }
+
+        private static string GetEqualityTestFieldsForGeneratedEquality(
+            this ModelType modelType,
+            KeyMethodKinds keyMethodKinds,
+            CodeSnippetKind codeSnippetKind)
+        {
+            var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, codeSnippetKind);
+
+            var objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypesCompilableStrings.Count() >= 2)
+                ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
+                : string.Empty;
+
+            var objectsEqualToButNotTheSameAsReferenceObjectMemberCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ReferenceObjectForEquatableTestScenarios." + _.Name)).ToList();
+            var objectsEqualToButNotTheSameAsReferenceObject = modelType.GenerateModelInstantiation(objectsEqualToButNotTheSameAsReferenceObjectMemberCode, parameterPaddingLength: 32);
+
+            var objectsNotEqualToReferenceObject = modelType.GetObjectsNotEqualToReferenceObject();
+
+            var dummyAncestorConcreteDerivatives = modelType.AncestorConcreteDerivativesCompilableStrings.Any()
+                ? Environment.NewLine + "                        " + modelType.AncestorConcreteDerivativesCompilableStrings.Select(_ => _.GenerateDummyConstructionCodeForType() + ",").ToDelimitedString(Environment.NewLine + "                        ")
+                : string.Empty;
+
+            var result = codeTemplate
+                .Replace(Tokens.ScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObjectToken, objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject)
+                .Replace(Tokens.ObjectsEqualToButNotTheSameAsReferenceObjectToken, objectsEqualToButNotTheSameAsReferenceObject)
+                .Replace(Tokens.ObjectsNotEqualToReferenceObjectToken, objectsNotEqualToReferenceObject)
+                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.DummyAncestorConcreteDerivativesToken, dummyAncestorConcreteDerivatives);
 
             return result;
         }

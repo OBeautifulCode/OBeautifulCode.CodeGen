@@ -16,7 +16,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public ModelPrivateSetConstructorMissingPropertyChild3(
-            ModelEnum parentEnumProperty,
+            CustomEnum parentEnumProperty,
             IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty,
             int childIntProperty)
             : base(parentEnumProperty, parentReadOnlyCollectionOfStringProperty)

@@ -12,6 +12,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.ObjectModel;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using System.Text;
 
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Enum.Recipes;
@@ -22,7 +23,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public const string TestNameSuffix = "Test";
 
-        public const string Comment = "//*";
+        public const string Comment = "////";
+
+        public const string CommentOutFileExtension = ".commented-out";
+
+        public static readonly Encoding Encoding = Encoding.UTF8;
 
         public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
 
@@ -52,9 +57,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(string),
             typeof(Guid),
             typeof(DateTime),
-            typeof(ModelEnum),
-            typeof(ModelFlagsEnum),
-            typeof(ModelClass),
+            typeof(CustomEnum),
+            typeof(CustomFlagsEnum),
+            typeof(CustomClass),
 
             // OBC.Serialization doesn't support structs
             // typeof(ModelStruct),
@@ -82,7 +87,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(ReadOnlyDictionary<string, IReadOnlyList<DateTime>>),
             typeof(ConcurrentDictionary<string, IReadOnlyList<DateTime>>),
             typeof(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>),
-            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<ModelClass, IReadOnlyList<DateTime>>>>),
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>>),
         };
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]

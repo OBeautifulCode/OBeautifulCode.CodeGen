@@ -6,7 +6,6 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -17,11 +16,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         /// <inheritdoc />
         protected override IReadOnlyCollection<TypeToRegisterForJson> TypesToRegisterForJson =>
-            typeof(CodeGeneratorTest)
-                .Assembly
-                .GetTypes()
-                .Where(_ => _.Name.StartsWith(Settings.ModelBaseName, StringComparison.Ordinal))
-                .Where(_ => !_.Name.EndsWith(Settings.TestNameSuffix, StringComparison.Ordinal))
+            GenerateModelsExtensions
+                .GetModelTypes()
                 .Select(_ => _.ToTypeToRegisterForJson())
                 .ToList();
     }

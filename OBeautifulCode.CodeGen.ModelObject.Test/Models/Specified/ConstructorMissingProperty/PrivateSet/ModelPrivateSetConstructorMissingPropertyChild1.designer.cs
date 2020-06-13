@@ -103,9 +103,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public override ModelPrivateSetConstructorMissingPropertyParent DeepCloneWithParentEnumProperty(ModelEnum parentEnumProperty)
+        public override ModelPrivateSetConstructorMissingPropertyParent DeepCloneWithParentEnumProperty(CustomEnum parentEnumProperty)
         {
-            throw new NotSupportedException("The constructor in-use (by code gen) for ModelPrivateSetConstructorMissingPropertyChild1 does not have a parameter that corresponds with the 'ParentEnumProperty' property.  As such, this method, DeepCloneWithParentEnumProperty(ModelEnum parentEnumProperty), cannot utilize the specified 'parentEnumProperty' value for that property.");
+            throw new NotSupportedException("The constructor in-use (by code gen) for ModelPrivateSetConstructorMissingPropertyChild1 does not have a parameter that corresponds with the 'ParentEnumProperty' property.  As such, this method, DeepCloneWithParentEnumProperty(CustomEnum parentEnumProperty), cannot utilize the specified 'parentEnumProperty' value for that property.");
         }
 
         /// <inheritdoc />
