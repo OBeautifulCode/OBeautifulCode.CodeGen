@@ -29,50 +29,50 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         public static readonly bool WriteFiles = false;
 
-        private delegate void ExecuteForModelsEventHandler(GenerationKind generationKind, SpecifiedModelKind specifiedModelKind, GeneratedModelDeclaredFeature generatedModelDeclaredFeature, SetterKind setterKind, GeneratedModelHierarchyKind generatedModelHierarchyKind, TypeWrapperKind typeWrapperKind, string childIdentifier, string modelName, string directoryPath);
+        private delegate void ExecuteForModelsEventHandler(ModelOrTest modelOrTest, SpecifiedModelKind specifiedModelKind, DeclaredKeyMethod declaredKeyMethod, SetterKind setterKind, HierarchyKind hierarchyKind, TypeWrapperKind typeWrapperKind, string childIdentifier, string modelName, string directoryPath);
 
         [Fact(Skip = "for local testing only")]
         public void GenerateModel___Should_generate_models___When_called()
         {
             // Arrange
-            ExecuteForGeneratedModels(GenerationKind.Model, ResetFile);
+            ExecuteForGeneratedModels(ModelOrTest.Model, ResetFile);
 
-            ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
+            ExecuteForGeneratedModels(ModelOrTest.Test, ResetFile);
 
-            ExecuteForSpecifiedModels(GenerationKind.Model, ResetFile);
+            ExecuteForSpecifiedModels(ModelOrTest.Model, ResetFile);
 
-            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
+            ExecuteForSpecifiedModels(ModelOrTest.Test, ResetFile);
 
             WriteDummyFactory(string.Empty);
 
             // Act, Assert
-            ExecuteForGeneratedModels(GenerationKind.Model, GenerateModel);
+            ExecuteForGeneratedModels(ModelOrTest.Model, GenerateModel);
         }
 
         [Fact(Skip = "for local testing only")]
         public void GenerateForModel___Should_generate_model_implementation_partial_class___When_parameter_generateFor_is_ModelImplementationPartialClass()
         {
             // Arrange
-            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
+            ExecuteForSpecifiedModels(ModelOrTest.Test, ResetFile);
 
-            ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
+            ExecuteForGeneratedModels(ModelOrTest.Test, ResetFile);
 
             WriteDummyFactory(string.Empty);
 
             // Act, Assert
-            ExecuteForSpecifiedModels(GenerationKind.Model, RunCodeGen);
-            ExecuteForGeneratedModels(GenerationKind.Model, RunCodeGen);
+            ExecuteForSpecifiedModels(ModelOrTest.Model, RunCodeGen);
+            ExecuteForGeneratedModels(ModelOrTest.Model, RunCodeGen);
         }
 
         [Fact(Skip = "for local testing only")]
         public void GenerateForModel___Should_generate_dummy_factory___When_parameter_generateFor_is_ModelDummyFactorySnippet()
         {
             // Arrange
-            ExecuteForSpecifiedModels(GenerationKind.Test, ResetFile);
+            ExecuteForSpecifiedModels(ModelOrTest.Test, ResetFile);
 
-            ExecuteForGeneratedModels(GenerationKind.Test, ResetFile);
+            ExecuteForGeneratedModels(ModelOrTest.Test, ResetFile);
 
-            var types = GenerateModelsExtensions.GetModelTypes();
+            var types = CodeGeneratorTestExtensions.GetModelTypes();
 
             var dummyFactoryCode = GenerateDummyFactory(types);
 
@@ -84,13 +84,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateForModel___Should_generate_model_test_partial_class___When_parameter_generateFor_is_ModelImplementationTestsPartialClassWithSerialization()
         {
             // Arrange, Act, Assert
-            ExecuteForSpecifiedModels(GenerationKind.Test, GenerateModelTest);
+            ExecuteForSpecifiedModels(ModelOrTest.Test, GenerateModelTest);
 
-            ExecuteForSpecifiedModels(GenerationKind.Test, RunCodeGen);
+            ExecuteForSpecifiedModels(ModelOrTest.Test, RunCodeGen);
 
-            ExecuteForGeneratedModels(GenerationKind.Test, GenerateModelTest);
+            ExecuteForGeneratedModels(ModelOrTest.Test, GenerateModelTest);
 
-            ExecuteForGeneratedModels(GenerationKind.Test, RunCodeGen);
+            ExecuteForGeneratedModels(ModelOrTest.Test, RunCodeGen);
         }
 
         [Fact]
@@ -166,7 +166,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         private static void ExecuteForSpecifiedModels(
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             ExecuteForModelsEventHandler eventHandler)
         {
             var specifiedModelKinds = EnumExtensions.GetDefinedEnumValues<SpecifiedModelKind>().Where(_ => _ != SpecifiedModelKind.NotApplicable).ToList();
@@ -182,7 +182,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         continue;
                     }
 
-                    var directoryPath = specifiedModelKind.GetSpecifiedModelsDirectoryPath(setterKind, generationKind);
+                    var directoryPath = specifiedModelKind.GetSpecifiedModelsDirectoryPath(setterKind, modelOrTest);
 
                     var modelNameSuffixes = Settings.SpecifiedModelKindToModelNameSuffixMap[specifiedModelKind];
 
@@ -190,14 +190,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         var modelName = setterKind.BuildSpecifiedModelName(modelNameSuffix);
 
-                        eventHandler(generationKind, specifiedModelKind, GeneratedModelDeclaredFeature.NotApplicable, setterKind, GeneratedModelHierarchyKind.NotApplicable, TypeWrapperKind.NotApplicable, null, modelName, directoryPath);
+                        eventHandler(modelOrTest, specifiedModelKind, DeclaredKeyMethod.NotApplicable, setterKind, HierarchyKind.NotApplicable, TypeWrapperKind.NotApplicable, null, modelName, directoryPath);
                     }
                 }
             }
         }
 
         private static void ExecuteForGeneratedModels(
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             ExecuteForModelsEventHandler eventHandler)
         {
             var setterKinds = EnumExtensions.GetDefinedEnumValues<SetterKind>();
@@ -206,35 +206,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 foreach (var setterKind in setterKinds)
                 {
-                    var generatedModelDeclaredFeatures = EnumExtensions.GetDefinedEnumValues<GeneratedModelDeclaredFeature>().Where(_ => _ != GeneratedModelDeclaredFeature.NotApplicable).ToList();
+                    var generatedModelDeclaredFeatures = EnumExtensions.GetDefinedEnumValues<DeclaredKeyMethod>().Where(_ => _ != DeclaredKeyMethod.NotApplicable).ToList();
 
                     foreach (var generatedModelDeclaredFeature in generatedModelDeclaredFeatures)
                     {
-                        if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Comparing) && (typeWrapperKind != TypeWrapperKind.NotWrapped))
+                        if ((generatedModelDeclaredFeature == DeclaredKeyMethod.Comparing) && (typeWrapperKind != TypeWrapperKind.NotWrapped))
                         {
                             break;
                         }
 
-                        var directoryPath = generationKind.GetGeneratedModelsDirectoryPath(generatedModelDeclaredFeature, setterKind, typeWrapperKind);
+                        var directoryPath = modelOrTest.GetGeneratedModelsDirectoryPath(generatedModelDeclaredFeature, setterKind, typeWrapperKind);
 
-                        var generatedModelHierarchyKinds = EnumExtensions.GetDefinedEnumValues<GeneratedModelHierarchyKind>().Where(_ => _ != GeneratedModelHierarchyKind.NotApplicable).ToList();
+                        var generatedModelHierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>().Where(_ => _ != HierarchyKind.NotApplicable).ToList();
 
                         foreach (var generatedModelHierarchyKind in generatedModelHierarchyKinds)
                         {
-                            if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                            if (generatedModelHierarchyKind == HierarchyKind.ConcreteInherited)
                             {
                                 foreach (var childIdentifier in Settings.ChildIdentifiers)
                                 {
                                     var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier);
 
-                                    eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier, modelName, directoryPath);
+                                    eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier, modelName, directoryPath);
                                 }
                             }
                             else
                             {
                                 var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, typeWrapperKind, null);
 
-                                eventHandler(generationKind, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, null, modelName, directoryPath);
+                                eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, null, modelName, directoryPath);
                             }
                         }
                     }
@@ -243,19 +243,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         private static void ResetFile(
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             SpecifiedModelKind specifiedModelKind,
-            GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
+            DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
-            GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            HierarchyKind hierarchyKind,
             TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
             string directoryPath)
         {
-            var modelFilePath = modelName.GetUserCodeFilePath(generationKind, directoryPath);
+            var modelFilePath = modelName.GetUserCodeFilePath(modelOrTest, directoryPath);
 
-            var modelDesignerFilePath = modelName.GetDesignerFilePath(generationKind, directoryPath);
+            var modelDesignerFilePath = modelName.GetDesignerFilePath(modelOrTest, directoryPath);
 
             if (WriteFiles)
             {
@@ -264,7 +264,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     Directory.CreateDirectory(directoryPath);
                 }
 
-                if (generationKind == GenerationKind.Model)
+                if (modelOrTest == ModelOrTest.Model)
                 {
                     // if this is a generated model, then write an empty model class file,
                     // specified models should not be touched because we have hand-coded model file
@@ -273,7 +273,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         File.WriteAllBytes(modelFilePath, new byte[0]);
                     }
                 }
-                else if (generationKind == GenerationKind.Test)
+                else if (modelOrTest == ModelOrTest.Test)
                 {
                     // we have hand-coded some test class files specified models
                     // so for those we want to comment-out the file, otherwise we want to write an empty file
@@ -282,14 +282,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         File.WriteAllBytes(modelFilePath, new byte[0]);
                     }
 
-                    if (specifiedModelKind != SpecifiedModelKind.NotApplicable)
+                    if (specifiedModelKind == SpecifiedModelKind.NotApplicable)
                     {
-                        CommentOutFile(modelFilePath);
+                        File.WriteAllBytes(modelFilePath, new byte[0]);
+                    }
+                    else
+                    {
+                        modelFilePath.CommentOutFile();
                     }
                 }
                 else
                 {
-                    throw new NotSupportedException("This generation kind is not supported: " + generationKind);
+                    throw new NotSupportedException("This model or test is not supported: " + modelOrTest);
                 }
 
                 // for both generated and specified models, write an empty model/test designer file
@@ -298,11 +302,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         private static void RunCodeGen(
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             SpecifiedModelKind specifiedModelKind,
-            GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
+            DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
-            GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            HierarchyKind hierarchyKind,
             TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
@@ -310,19 +314,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var modelType = modelName.GetModelType();
 
-            var modelFilePath = modelName.GetDesignerFilePath(generationKind, directoryPath);
+            var modelFilePath = modelName.GetDesignerFilePath(modelOrTest, directoryPath);
 
             GenerateFor generateFor;
-            switch (generationKind)
+            switch (modelOrTest)
             {
-                case GenerationKind.Model:
+                case ModelOrTest.Model:
                     generateFor = GenerateFor.ModelImplementationPartialClass;
                     break;
-                case GenerationKind.Test:
+                case ModelOrTest.Test:
                     generateFor = GenerateFor.ModelImplementationTestsPartialClassWithSerialization;
                     break;
                 default:
-                    throw new NotSupportedException("This kind is not supported: " + generationKind);
+                    throw new NotSupportedException("This kind is not supported: " + modelOrTest);
             }
 
             var generatedCode = modelType.GenerateForModel(generateFor);
@@ -335,26 +339,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         [SuppressMessage("Microsoft.Performance", "CA1809:AvoidExcessiveLocals", Justification = ObcSuppressBecause.CA_ALL_AgreeWithAssessmentAndNeedsRefactoring)]
         private static void GenerateModel(
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             SpecifiedModelKind specifiedModelKind,
-            GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
+            DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
-            GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            HierarchyKind hierarchyKind,
             TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
             string directoryPath)
         {
-            new { generatedModelDeclaredFeature }.AsArg().Must().NotBeEqualTo(GeneratedModelDeclaredFeature.NotApplicable);
-            new { generatedModelHierarchyKind }.AsArg().Must().NotBeEqualTo(GeneratedModelHierarchyKind.NotApplicable);
+            new { declaredKeyMethod }.AsArg().Must().NotBeEqualTo(DeclaredKeyMethod.NotApplicable);
+            new { hierarchyKind }.AsArg().Must().NotBeEqualTo(HierarchyKind.NotApplicable);
 
             var modelFilePath = directoryPath + modelName + ".cs";
 
             IReadOnlyCollection<Type> typesToWrap, blacklistTypes;
 
-            switch (generatedModelDeclaredFeature)
+            switch (declaredKeyMethod)
             {
-                case GeneratedModelDeclaredFeature.Comparing:
+                case DeclaredKeyMethod.Comparing:
                     typesToWrap = Settings.ComparabilityTypes;
                     blacklistTypes = new Type[0];
                     break;
@@ -379,7 +383,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (setterKind.RequiresConstructor())
             {
-                var constructorAccessorModifier = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot ? "protected" : "public";
+                var constructorAccessorModifier = hierarchyKind == HierarchyKind.AbstractBaseRoot ? "protected" : "public";
 
                 constructorDeclarationStatement = Invariant($"        {constructorAccessorModifier} {modelName}(");
             }
@@ -396,7 +400,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 var typeCompilableString = typeToAddAsProperty.ToStringCompilable();
 
-                var propertyName = typeToAddAsProperty.BuildPropertyName(generatedModelHierarchyKind, childIdentifier);
+                var propertyName = typeToAddAsProperty.BuildPropertyName(hierarchyKind, childIdentifier);
 
                 propertyStatements.Add("        [SuppressMessage(\"Microsoft.Design\", \"CA1002: DoNotExposeGenericLists\")]");
                 propertyStatements.Add("        [SuppressMessage(\"Microsoft.Naming\", \"CA1720: IdentifiersShouldNotContainTypeNames\")]");
@@ -411,9 +415,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     var constructorParameterName = propertyName.ToLowerFirstCharacter();
                     constructorParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParameterName},"));
 
-                    if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
-                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(GeneratedModelHierarchyKind.AbstractBaseRoot, null).ToLowerFirstCharacter();
+                        var constructorParentParameterName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBaseRoot, null).ToLowerFirstCharacter();
                         constructorParentParameterNames.Add(constructorParentParameterName);
 
                         constructorParentParameterStatements.Add(Invariant($"            {typeCompilableString} {constructorParentParameterName},"));
@@ -431,9 +435,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 equalityStatements.Add(Invariant($"                this.{propertyName}.IsEqualTo(other.{propertyName}) &&"));
                 hashingStatements.Add(Invariant($"                .Hash(this.{propertyName})"));
 
-                if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                if (hierarchyKind == HierarchyKind.ConcreteInherited)
                 {
-                    var parentPropertyName = typeToAddAsProperty.BuildPropertyName(GeneratedModelHierarchyKind.AbstractBaseRoot, null);
+                    var parentPropertyName = typeToAddAsProperty.BuildPropertyName(HierarchyKind.AbstractBaseRoot, null);
                     equalityParentStatements.Add(Invariant($"                this.{parentPropertyName}.IsEqualTo(other.{parentPropertyName}) &&"));
                     hashingParentStatements.Add(Invariant($"                .Hash(this.{parentPropertyName})"));
                 }
@@ -441,12 +445,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             propertyStatements.RemoveAt(propertyStatements.Count - 1);
 
-            var abstractStatement = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot ? "abstract " : string.Empty;
+            var abstractStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot ? "abstract " : string.Empty;
 
             string baseClassName = null;
-            if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+            if (hierarchyKind == HierarchyKind.ConcreteInherited)
             {
-                baseClassName = $"{generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, GeneratedModelHierarchyKind.AbstractBaseRoot, typeWrapperKind, childIdentifier: null)}";
+                baseClassName = $"{declaredKeyMethod.BuildGeneratedModelName(setterKind, HierarchyKind.AbstractBaseRoot, typeWrapperKind, childIdentifier: null)}";
             }
 
             var derivativeStatement = baseClassName == null ? string.Empty : baseClassName + ", ";
@@ -456,13 +460,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var pragmaRestoreStatements = new List<string>();
             string classLevelCodeAnalysisSuppressions = null;
 
-            switch (generatedModelDeclaredFeature)
+            switch (declaredKeyMethod)
             {
-                case GeneratedModelDeclaredFeature.NoneDeclared:
+                case DeclaredKeyMethod.NoneDeclared:
                     interfaceStatement = nameof(IModelViaCodeGen);
                     break;
-                case GeneratedModelDeclaredFeature.Cloning:
-                    interfaceStatement = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot
+                case DeclaredKeyMethod.Cloning:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? Invariant($"{nameof(IDeepCloneableViaCodeGen)}, {typeof(IEquatable<>).ToStringWithoutGenericComponent()}<{modelName}>")
                         : Invariant($"{nameof(IDeepCloneableViaCodeGen)}, {typeof(IDeclareDeepCloneMethod<>).ToStringWithoutGenericComponent()}<{modelName}>, {typeof(IEquatable<>).ToStringWithoutGenericComponent()}<{modelName}>");
 
@@ -472,8 +476,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     pragmaRestoreStatements.Add("#pragma warning disable CS0659");
 
                     break;
-                case GeneratedModelDeclaredFeature.Equality:
-                    interfaceStatement = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot
+                case DeclaredKeyMethod.Equality:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IEquatableViaCodeGen)
                         : Invariant($"{nameof(IEquatableViaCodeGen)}, {typeof(IDeclareEqualsMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
 
@@ -484,29 +488,29 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     classLevelCodeAnalysisSuppressions = "    [SuppressMessage(\"Microsoft.Usage\", \"CA2218: OverrideGetHashCodeOnOverridingEquals\")]" + Environment.NewLine;
                     break;
-                case GeneratedModelDeclaredFeature.Hashing:
-                    interfaceStatement = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot
+                case DeclaredKeyMethod.Hashing:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IHashableViaCodeGen)
                         : Invariant($"{nameof(IHashableViaCodeGen)}, {nameof(IDeclareGetHashCodeMethod)}");
                     break;
-                case GeneratedModelDeclaredFeature.StringRepresentation:
-                    interfaceStatement = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot
+                case DeclaredKeyMethod.StringRepresentation:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IStringRepresentableViaCodeGen)
                         : Invariant($"{nameof(IStringRepresentableViaCodeGen)}, {nameof(IDeclareToStringMethod)}");
                     break;
-                case GeneratedModelDeclaredFeature.Comparing:
-                    interfaceStatement = generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot
+                case DeclaredKeyMethod.Comparing:
+                    interfaceStatement = hierarchyKind == HierarchyKind.AbstractBaseRoot
                         ? nameof(IComparableViaCodeGen)
                         : Invariant($"{nameof(IComparableViaCodeGen)}, {typeof(IDeclareCompareToForRelativeSortOrderMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
                     classLevelCodeAnalysisSuppressions = "    [SuppressMessage(\"Microsoft.Design\", \"CA1036: OverrideMethodsOnComparableTypes\")]" + Environment.NewLine;
                     break;
                 default:
-                    throw new NotSupportedException("This generated model kind is not supported: " + generatedModelDeclaredFeature);
+                    throw new NotSupportedException("This generated model kind is not supported: " + declaredKeyMethod);
             }
 
             var headerStatements = new List<string>
             {
-                GetGeneratedCodeHeader(modelName),
+                modelName.GetFileHeader(),
                 Invariant($"namespace {typeof(CodeGeneratorTest).Namespace}"),
                 "{",
                 "    using System;",
@@ -560,9 +564,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var methodStatements = new List<string>();
 
-            if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Cloning)
+            if (declaredKeyMethod == DeclaredKeyMethod.Cloning)
             {
-                if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot)
+                if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
                 {
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -572,7 +576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     methodStatements.Add(equalsMethodCode);
 
-                    if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
                         methodStatements.Add(string.Empty);
                         methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -584,7 +588,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         methodStatements.Add(Invariant($"        }}"));
                     }
 
-                    var generatedModelDeclaredFeatureNoneName = modelName.Replace(generatedModelDeclaredFeature.BuildNameToken(), GeneratedModelDeclaredFeature.NoneDeclared.BuildNameToken());
+                    var generatedModelDeclaredFeatureNoneName = modelName.Replace(declaredKeyMethod.BuildNameToken(), DeclaredKeyMethod.NoneDeclared.BuildNameToken());
 
                     var getEquivalentAllModelMethodStatements = new List<string>
                     {
@@ -618,7 +622,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"        /// <inheritdoc />"));
                     methodStatements.Add(
-                        generatedModelHierarchyKind == GeneratedModelHierarchyKind.Standalone
+                        hierarchyKind == HierarchyKind.Standalone
                             ? Invariant($"        public {modelName} DeepClone()")
                             : Invariant($"        {modelName} {typeof(IDeclareDeepCloneMethod<>).ToStringWithoutGenericComponent()}<{modelName}>.DeepClone()"));
                     methodStatements.Add(Invariant($"        {{"));
@@ -630,11 +634,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     methodStatements.AddRange(getEquivalentAllModelMethodStatements);
                 }
             }
-            else if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Equality) && (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot))
+            else if ((declaredKeyMethod == DeclaredKeyMethod.Equality) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 methodStatements.Add(equalsMethodCode);
             }
-            else if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Hashing) && (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot))
+            else if ((declaredKeyMethod == DeclaredKeyMethod.Hashing) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 methodStatements.Add(string.Empty);
                 methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -642,7 +646,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(new string[0].Concat(hashingParentStatements).Concat(hashingStatements).ToNewLineDelimited());
                 methodStatements.Add("                .Value;");
             }
-            else if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.StringRepresentation) && (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot))
+            else if ((declaredKeyMethod == DeclaredKeyMethod.StringRepresentation) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
                 methodStatements.Add(string.Empty);
                 methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -653,9 +657,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(Invariant($"            return result;"));
                 methodStatements.Add(Invariant($"        }}"));
             }
-            else if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Comparing) && (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot))
+            else if ((declaredKeyMethod == DeclaredKeyMethod.Comparing) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
             {
-                if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.Standalone)
+                if (hierarchyKind == HierarchyKind.Standalone)
                 {
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -679,7 +683,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     methodStatements.Add(Invariant($"            }}"));
                     methodStatements.Add(Invariant($"        }}"));
                 }
-                else if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                else if (hierarchyKind == HierarchyKind.ConcreteInherited)
                 {
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"        /// <inheritdoc />"));
@@ -711,7 +715,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
                 else
                 {
-                    throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
+                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
                 }
             }
 
@@ -728,7 +732,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 constructorParameterStatements[constructorParameterStatements.Count - 1] = constructorParameterStatements.Last().TrimEnd(',') + ")";
                 constructorStatements.AddRange(constructorParameterStatements);
 
-                if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                if (hierarchyKind == HierarchyKind.ConcreteInherited)
                 {
                     constructorStatements.Add(Invariant($"            : base({constructorParentParameterNames.ToDelimitedString(", ")})"));
                 }
@@ -757,32 +761,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         private static void GenerateModelTest(
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             SpecifiedModelKind specifiedModelKind,
-            GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
+            DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
-            GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            HierarchyKind hierarchyKind,
             TypeWrapperKind typeWrapperKind,
             string childIdentifier,
             string modelName,
             string directoryPath)
         {
-            var testCodeFilePath = modelName.GetUserCodeFilePath(generationKind, directoryPath);
+            var testCodeFilePath = modelName.GetUserCodeFilePath(modelOrTest, directoryPath);
 
-            var testClassName = modelName.GetClassName(generationKind);
+            var testClassName = modelName.GetClassName(modelOrTest);
 
             if (specifiedModelKind != SpecifiedModelKind.NotApplicable)
             {
-                UncommentFile(testCodeFilePath);
+                testCodeFilePath.UncommentFile();
             }
 
-            if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.NoneDeclared)
+            if (declaredKeyMethod == DeclaredKeyMethod.NoneDeclared)
             {
-                if ((typeWrapperKind == TypeWrapperKind.Nullable) && (setterKind == SetterKind.PrivateSetters) && (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot))
+                if ((typeWrapperKind == TypeWrapperKind.Nullable) && (setterKind == SetterKind.PrivateSetters) && (hierarchyKind != HierarchyKind.AbstractBaseRoot))
                 {
                     var statements = new List<string>
                     {
-                        GetGeneratedCodeHeader(testClassName),
+                        testClassName.GetFileHeader(),
                         "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                         "{",
                         "    using System.Diagnostics.CodeAnalysis;",
@@ -804,13 +808,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     File.WriteAllText(testCodeFilePath, statements.ToNewLineDelimited());
                 }
             }
-            else if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.StringRepresentation)
+            else if (declaredKeyMethod == DeclaredKeyMethod.StringRepresentation)
             {
-                if (generatedModelHierarchyKind != GeneratedModelHierarchyKind.AbstractBaseRoot)
+                if (hierarchyKind != HierarchyKind.AbstractBaseRoot)
                 {
                     var statements = new List<string>
                     {
-                        GetGeneratedCodeHeader(testClassName),
+                        testClassName.GetFileHeader(),
                         "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                         "{",
                         "    using System.Diagnostics.CodeAnalysis;",
@@ -832,13 +836,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     File.WriteAllText(testCodeFilePath, statements.ToNewLineDelimited());
                 }
             }
-            else if ((generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Equality) || (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Hashing))
+            else if ((declaredKeyMethod == DeclaredKeyMethod.Equality) || (declaredKeyMethod == DeclaredKeyMethod.Hashing))
             {
                 var equalityTestFields = modelName.GetModelType().GenerateEqualityTestFieldsInUserCode();
 
                 var constructorStatements = new List<string>();
 
-                if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot)
+                if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
                 {
                     constructorStatements.Add(string.Empty);
                     constructorStatements.Add("            var properties = ObjectThatIsEqualToButNotTheSameAsReferenceObject.GetType().GetProperties();");
@@ -852,7 +856,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var statements = new List<string>
                 {
-                    GetGeneratedCodeHeader(testClassName),
+                    testClassName.GetFileHeader(),
                     "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                     "{",
                     "    using System;",
@@ -880,13 +884,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 File.WriteAllText(testCodeFilePath, statements.ToNewLineDelimited());
             }
-            else if (generatedModelDeclaredFeature == GeneratedModelDeclaredFeature.Comparing)
+            else if (declaredKeyMethod == DeclaredKeyMethod.Comparing)
             {
                 var scenarioStatements = new List<string>();
 
                 if (setterKind == SetterKind.PrivateSetters)
                 {
-                    if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
                         var otherChildIdentifier = childIdentifier == "1" ? "2" : "1";
                         var otherChildModelName = modelName.Replace(childIdentifier, otherChildIdentifier);
@@ -897,7 +901,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         scenarioStatements.Add(Invariant($"                ObjectsThatAreGreaterThanReferenceObject = new[] {{ new {modelName}(9, 1), new {modelName}(5, 5), new {modelName}(-50, 100) }},"));
                         scenarioStatements.Add(Invariant($"                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[] {{ 1, \"dummy - string\", new {otherChildModelName}(5, 4) }},"));
                     }
-                    else if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot)
+                    else if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
                     {
                         var childModelName1 = modelName.Replace("Parent", "Child1");
                         var childModelName2 = modelName.Replace("Parent", "Child2");
@@ -909,7 +913,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         scenarioStatements.Add(Invariant($"                ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new[] {{ new {childModelName2}(5, 4) }},"));
                         scenarioStatements.Add(Invariant($"                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[] {{ 1, \"dummy - string\" }},"));
                     }
-                    else if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.Standalone)
+                    else if (hierarchyKind == HierarchyKind.Standalone)
                     {
                         var childModelName1 = modelName + "Child1";
                         var childModelName2 = modelName + "Child2";
@@ -922,12 +926,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     }
                     else
                     {
-                        throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
+                        throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
                     }
                 }
                 else if (setterKind == SetterKind.PublicSetters)
                 {
-                    if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.ConcreteInherited)
+                    if (hierarchyKind == HierarchyKind.ConcreteInherited)
                     {
                         var otherChildIdentifier = childIdentifier == "1" ? "2" : "1";
                         var otherChildModelName = modelName.Replace(childIdentifier, otherChildIdentifier);
@@ -938,7 +942,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         scenarioStatements.Add(Invariant($"                ObjectsThatAreGreaterThanReferenceObject = new[] {{ new {modelName} {{ Child{childIdentifier}IntProperty = 9, ParentIntProperty = 1 }}, new {modelName} {{ Child{childIdentifier}IntProperty = 5, ParentIntProperty = 5 }}, new {modelName} {{ Child{childIdentifier}IntProperty = -50, ParentIntProperty = 100 }} }},"));
                         scenarioStatements.Add(Invariant($"                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[] {{ 1, \"dummy-string\", new {otherChildModelName} {{ Child{otherChildIdentifier}IntProperty = 5, ParentIntProperty = 4 }} }},"));
                     }
-                    else if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.AbstractBaseRoot)
+                    else if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
                     {
                         var childModelName1 = modelName.Replace("Parent", "Child1");
                         var childModelName2 = modelName.Replace("Parent", "Child2");
@@ -950,7 +954,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         scenarioStatements.Add(Invariant($"                ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new[] {{ new {childModelName2} {{ Child2IntProperty = 5, ParentIntProperty = 4 }} }},"));
                         scenarioStatements.Add(Invariant($"                ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[] {{ 1, \"dummy-string\" }},"));
                     }
-                    else if (generatedModelHierarchyKind == GeneratedModelHierarchyKind.Standalone)
+                    else if (hierarchyKind == HierarchyKind.Standalone)
                     {
                         var childModelName1 = modelName + "Child1";
                         var childModelName2 = modelName + "Child2";
@@ -963,7 +967,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     }
                     else
                     {
-                        throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
+                        throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
                     }
                 }
                 else
@@ -973,7 +977,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var statements = new List<string>
                 {
-                    GetGeneratedCodeHeader(testClassName),
+                    testClassName.GetFileHeader(),
                     "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                     "{",
                     "    using System.Diagnostics.CodeAnalysis;",
@@ -1008,7 +1012,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var statements = new List<string>
             {
-                GetGeneratedCodeHeader("DummyFactory"),
+                "DummyFactory".GetFileHeader(),
                 Invariant($"namespace {typeof(CodeGeneratorTest).Namespace}"),
                 "{",
                 "    using System;",
@@ -1061,71 +1065,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 File.WriteAllText(Settings.DummyFactoryFilePath, code, Settings.Encoding);
             }
-        }
-
-        private static void CommentOutFile(
-            string filePath)
-        {
-            // this approach results in stylecop errors, so we are just going to move the file to a temp file
-            ////var lines = File.ReadAllLines(filePath);
-
-            ////if (lines.Any())
-            ////{
-            ////    var commentedOutLines = lines.Select(_ => _.StartsWith(Settings.Comment) ? _ : (Settings.Comment + _)).ToList().ToNewLineDelimited();
-
-            ////    File.WriteAllText(filePath, commentedOutLines, Settings.Encoding);
-            ////}
-            var tempFilePath = filePath + Settings.CommentOutFileExtension;
-
-            if (File.ReadAllBytes(filePath).Any())
-            {
-                File.Move(filePath, tempFilePath);
-
-                File.WriteAllBytes(filePath, new byte[0]);
-            }
-        }
-
-        private static void UncommentFile(
-            string filePath)
-        {
-            // this approach results in stylecop errors, so we are just going to move the file to a temp file
-            ////var lines = File.ReadAllLines(filePath);
-
-            ////if (lines.Any())
-            ////{
-            ////    var uncommentedLines = lines.Select(_ => _.StartsWith(Settings.Comment) ? _.Substring(Settings.Comment.Length, _.Length - Settings.Comment.Length) : _).ToList().ToNewLineDelimited();
-
-            ////    File.WriteAllText(filePath, uncommentedLines, Settings.Encoding);
-            ////}
-            var tempFilePath = filePath + Settings.CommentOutFileExtension;
-
-            if (File.Exists(tempFilePath))
-            {
-                File.Delete(filePath);
-
-                File.Move(tempFilePath, filePath);
-            }
-        }
-
-        private static string GetGeneratedCodeHeader(
-            string fileNameWithoutExtension)
-        {
-            var lines = new List<string>
-            {
-                "// --------------------------------------------------------------------------------------------------------------------",
-                Invariant($"// <copyright file=\"{fileNameWithoutExtension}.cs\" company=\"OBeautifulCode\">"),
-                "//   Copyright (c) OBeautifulCode 2018. All rights reserved.",
-                "// </copyright>",
-                "// <auto-generated>",
-                "//   Sourced from OBeautifulCode.CodeGen.ModelObject.Test.CodeGeneratorTest",
-                "// </auto-generated>",
-                "// --------------------------------------------------------------------------------------------------------------------",
-                string.Empty,
-            };
-
-            var result = lines.ToNewLineDelimited();
-
-            return result;
         }
     }
 }

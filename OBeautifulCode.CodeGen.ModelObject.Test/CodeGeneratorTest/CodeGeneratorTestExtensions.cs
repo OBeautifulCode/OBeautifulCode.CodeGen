@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="GenerateModelsExtensions.cs" company="OBeautifulCode">
+// <copyright file="CodeGeneratorTestExtensions.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -14,12 +14,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
-    public static class GenerateModelsExtensions
+    public static class CodeGeneratorTestExtensions
     {
         public static bool RequiresConstructor(
             this SetterKind setterKind)
@@ -164,42 +165,42 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string BuildGeneratedModelName(
-            this GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
+            this DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
-            GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            HierarchyKind hierarchyKind,
             TypeWrapperKind typeWrapperKind,
             string childIdentifier)
         {
-            var result = Invariant($"{Settings.ModelBaseName}{generatedModelDeclaredFeature.BuildNameToken()}{setterKind.BuildNameToken()}{typeWrapperKind.BuildNameToken()}{generatedModelHierarchyKind.BuildNameToken()}{childIdentifier}");
+            var result = Invariant($"{Settings.ModelBaseName}{declaredKeyMethod.BuildNameToken()}{setterKind.BuildNameToken()}{typeWrapperKind.BuildNameToken()}{hierarchyKind.BuildNameToken()}{childIdentifier}");
 
             return result;
         }
 
         public static string BuildPropertyName(
             this Type type,
-            GeneratedModelHierarchyKind generatedModelHierarchyKind,
+            HierarchyKind hierarchyKind,
             string prefix)
         {
-            var result = Invariant($"{generatedModelHierarchyKind.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
+            var result = Invariant($"{hierarchyKind.BuildNameToken()}{prefix}{type.BuildNameToken()}Property");
 
             return result;
         }
 
         public static string BuildNameToken(
-            this GeneratedModelHierarchyKind generatedModelHierarchyKind)
+            this HierarchyKind hierarchyKind)
         {
-            new { generatedModelHierarchyKind }.AsArg().Must().NotBeEqualTo(GeneratedModelHierarchyKind.NotApplicable);
+            new { hierarchyKind }.AsArg().Must().NotBeEqualTo(HierarchyKind.NotApplicable);
 
-            switch (generatedModelHierarchyKind)
+            switch (hierarchyKind)
             {
-                case GeneratedModelHierarchyKind.Standalone:
+                case HierarchyKind.Standalone:
                     return string.Empty;
-                case GeneratedModelHierarchyKind.AbstractBaseRoot:
+                case HierarchyKind.AbstractBaseRoot:
                     return "Parent";
-                case GeneratedModelHierarchyKind.ConcreteInherited:
+                case HierarchyKind.ConcreteInherited:
                     return "Child";
                 default:
-                    throw new NotSupportedException("This generated model hierarchy kind is not supported: " + generatedModelHierarchyKind);
+                    throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
             }
         }
 
@@ -238,16 +239,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string BuildNameToken(
-            this GeneratedModelDeclaredFeature generatedModelDeclaredFeature)
+            this DeclaredKeyMethod declaredKeyMethod)
         {
-            new { generatedModelDeclaredFeature }.AsArg().Must().NotBeEqualTo(GeneratedModelDeclaredFeature.NotApplicable);
+            new { declaredKeyMethod }.AsArg().Must().NotBeEqualTo(DeclaredKeyMethod.NotApplicable);
 
-            switch (generatedModelDeclaredFeature)
+            switch (declaredKeyMethod)
             {
-                case GeneratedModelDeclaredFeature.NoneDeclared:
+                case DeclaredKeyMethod.NoneDeclared:
                     return "All";
                 default:
-                    return generatedModelDeclaredFeature.ToString();
+                    return declaredKeyMethod.ToString();
             }
         }
 
@@ -357,23 +358,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         public static string GetGeneratedModelsDirectoryPath(
-            this GenerationKind generationKind,
-            GeneratedModelDeclaredFeature generatedModelDeclaredFeature,
+            this ModelOrTest modelOrTest,
+            DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
             TypeWrapperKind typeWrapperKind)
         {
             string result;
 
-            switch (generationKind)
+            switch (modelOrTest)
             {
-                case GenerationKind.Model:
-                    result = Settings.GeneratedModelsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
+                case ModelOrTest.Model:
+                    result = Settings.GeneratedModelsPath + declaredKeyMethod.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
-                case GenerationKind.Test:
-                    result = Settings.GeneratedModelsTestsPath + generatedModelDeclaredFeature.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
+                case ModelOrTest.Test:
+                    result = Settings.GeneratedModelsTestsPath + declaredKeyMethod.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 default:
-                    throw new NotSupportedException("This generation kind is not supported: " + generationKind);
+                    throw new NotSupportedException("This model or test is not supported: " + modelOrTest);
             }
 
             return result;
@@ -382,20 +383,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static string GetSpecifiedModelsDirectoryPath(
             this SpecifiedModelKind specifiedModelKind,
             SetterKind setterKind,
-            GenerationKind generationKind)
+            ModelOrTest modelOrTest)
         {
             string result;
 
-            switch (generationKind)
+            switch (modelOrTest)
             {
-                case GenerationKind.Model:
+                case ModelOrTest.Model:
                     result = Settings.SpecifiedModelsPath + specifiedModelKind + "\\" + setterKind.BuildNameToken() + "\\";
                     break;
-                case GenerationKind.Test:
+                case ModelOrTest.Test:
                     result = Settings.SpecifiedModelsTestPath + specifiedModelKind + "\\" + setterKind.BuildNameToken() + "\\";
                     break;
                 default:
-                    throw new NotSupportedException("This kind is not supported: " + generationKind);
+                    throw new NotSupportedException("This kind is not supported: " + modelOrTest);
             }
 
             return result;
@@ -415,10 +416,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static string GetUserCodeFilePath(
             this string modelName,
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             string directoryPath)
         {
-            var className = modelName.GetClassName(generationKind);
+            var className = modelName.GetClassName(modelOrTest);
 
             var result = Path.Combine(directoryPath, className + ".cs");
 
@@ -427,10 +428,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static string GetDesignerFilePath(
             this string modelName,
-            GenerationKind generationKind,
+            ModelOrTest modelOrTest,
             string directoryPath)
         {
-            var className = modelName.GetClassName(generationKind);
+            var className = modelName.GetClassName(modelOrTest);
 
             var result = Path.Combine(directoryPath, className + ".designer.cs");
 
@@ -439,9 +440,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static string GetClassName(
             this string modelName,
-            GenerationKind generationKind)
+            ModelOrTest modelOrTest)
         {
-            var testToken = generationKind == GenerationKind.Test ? Settings.TestNameSuffix : null;
+            var testToken = modelOrTest == ModelOrTest.Test ? Settings.TestNameSuffix : null;
 
             var result = modelName + testToken;
 
@@ -452,6 +453,71 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this string modelName)
         {
             var result = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
+
+            return result;
+        }
+
+        public static void CommentOutFile(
+            this string filePath)
+        {
+            // this approach results in stylecop errors, so we are just going to move the file to a temp file
+            ////var lines = File.ReadAllLines(filePath);
+
+            ////if (lines.Any())
+            ////{
+            ////    var commentedOutLines = lines.Select(_ => _.StartsWith(Settings.Comment) ? _ : (Settings.Comment + _)).ToList().ToNewLineDelimited();
+
+            ////    File.WriteAllText(filePath, commentedOutLines, Settings.Encoding);
+            ////}
+            var tempFilePath = filePath + Settings.CommentOutFileExtension;
+
+            if (File.ReadAllBytes(filePath).Any())
+            {
+                File.Move(filePath, tempFilePath);
+
+                File.WriteAllBytes(filePath, new byte[0]);
+            }
+        }
+
+        public static void UncommentFile(
+            this string filePath)
+        {
+            // this approach results in stylecop errors, so we are just going to move the file to a temp file
+            ////var lines = File.ReadAllLines(filePath);
+
+            ////if (lines.Any())
+            ////{
+            ////    var uncommentedLines = lines.Select(_ => _.StartsWith(Settings.Comment) ? _.Substring(Settings.Comment.Length, _.Length - Settings.Comment.Length) : _).ToList().ToNewLineDelimited();
+
+            ////    File.WriteAllText(filePath, uncommentedLines, Settings.Encoding);
+            ////}
+            var tempFilePath = filePath + Settings.CommentOutFileExtension;
+
+            if (File.Exists(tempFilePath))
+            {
+                File.Delete(filePath);
+
+                File.Move(tempFilePath, filePath);
+            }
+        }
+
+        public static string GetFileHeader(
+            this string fileNameWithoutExtension)
+        {
+            var lines = new List<string>
+            {
+                "// --------------------------------------------------------------------------------------------------------------------",
+                Invariant($"// <copyright file=\"{fileNameWithoutExtension}.cs\" company=\"OBeautifulCode\">"),
+                "//   Copyright (c) OBeautifulCode 2018. All rights reserved.",
+                "// </copyright>",
+                "// <auto-generated>",
+                "//   Sourced from OBeautifulCode.CodeGen.ModelObject.Test.CodeGeneratorTest",
+                "// </auto-generated>",
+                "// --------------------------------------------------------------------------------------------------------------------",
+                string.Empty,
+            };
+
+            var result = lines.ToNewLineDelimited();
 
             return result;
         }

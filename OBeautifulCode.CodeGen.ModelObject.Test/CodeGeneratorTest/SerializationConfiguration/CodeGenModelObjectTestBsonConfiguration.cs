@@ -16,7 +16,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         /// <inheritdoc />
         protected override IReadOnlyCollection<TypeToRegisterForBson> TypesToRegisterForBson =>
-            GenerateModelsExtensions
+            CodeGeneratorTestExtensions
                 .GetModelTypes()
                 .Select(_ => _.ToTypeToRegisterForBson())
                 .ToList();
