@@ -25,8 +25,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using global::OBeautifulCode.Math.Recipes;
     using global::OBeautifulCode.Representation.System;
     using global::OBeautifulCode.Serialization;
-    using global::OBeautifulCode.Serialization.Bson;
-    using global::OBeautifulCode.Serialization.Json;
+    using global::OBeautifulCode.Serialization.Recipes;
     using global::OBeautifulCode.Type;
 
     using global::Xunit;
@@ -35,10 +34,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     public static partial class ModelPublicSetMultilevelParentTest
     {
-        private static readonly ISerializeAndDeserialize BsonSerializer = new ObcBsonSerializer(SerializationConfigurationTypes.BsonConfigurationType);
-
-        private static readonly ISerializeAndDeserialize JsonSerializer = new ObcJsonSerializer(SerializationConfigurationTypes.JsonConfigurationType);
-
         private static readonly ModelPublicSetMultilevelParent ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelPublicSetMultilevelParent>();
 
         private static readonly EquatableTestScenarios<ModelPublicSetMultilevelParent> EquatableTestScenarios = new EquatableTestScenarios<ModelPublicSetMultilevelParent>()
@@ -258,15 +253,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelPublicSetMultilevelParent>();
 
-                var serializer = BsonSerializer;
-
-                var serializedBson = serializer.SerializeToString(expected);
-
-                // Act
-                var actual = serializer.Deserialize<ModelPublicSetMultilevelParent>(serializedBson);
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                // Act, Assert
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.String }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
             }
 
             [Fact]
@@ -288,15 +276,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelPublicSetMultilevelParent>();
 
-                var serializer = BsonSerializer;
-
-                var serializedBson = serializer.SerializeToBytes(expected);
-
-                // Act
-                var actual = serializer.Deserialize<ModelPublicSetMultilevelParent>(serializedBson);
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                // Act, Assert
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.Binary }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
             }
 
             [Fact]
@@ -318,15 +299,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelPublicSetMultilevelParent>();
 
-                var serializer = JsonSerializer;
-
-                var serializedJson = serializer.SerializeToString(expected);
-
-                // Act
-                var actual = serializer.Deserialize<ModelPublicSetMultilevelParent>(serializedJson);
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                // Act, Assert
+                expected.RoundtripSerializeViaJsonWithBeEqualToAssertion(SerializationConfigurationTypes.JsonConfigurationType, new[] { SerializationFormat.String }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
             }
 
             [Fact]
@@ -348,15 +322,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelPublicSetMultilevelParent>();
 
-                var serializer = JsonSerializer;
-
-                var serializedJson = serializer.SerializeToBytes(expected);
-
-                // Act
-                var actual = serializer.Deserialize<ModelPublicSetMultilevelParent>(serializedJson);
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                // Act, Assert
+                expected.RoundtripSerializeViaJsonWithBeEqualToAssertion(SerializationConfigurationTypes.JsonConfigurationType, new[] { SerializationFormat.Binary }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
             }
         }
 

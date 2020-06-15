@@ -25,8 +25,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using global::OBeautifulCode.Math.Recipes;
     using global::OBeautifulCode.Representation.System;
     using global::OBeautifulCode.Serialization;
-    using global::OBeautifulCode.Serialization.Bson;
-    using global::OBeautifulCode.Serialization.Json;
+    using global::OBeautifulCode.Serialization.Recipes;
     using global::OBeautifulCode.Type;
 
     using global::Xunit;

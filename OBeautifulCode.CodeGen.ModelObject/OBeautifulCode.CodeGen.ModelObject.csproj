@@ -145,8 +145,6 @@
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationJsonTests.All.Both.txt" />
     <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTests.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationBsonTestFields.All.Both.txt" />
-    <EmbeddedResource Include="Generation\Serialization\SerializationGeneration.TestSnippet.SerializationJsonTestFields.All.Both.txt" />
     <EmbeddedResource Include="Generation\StringRepresentation\StringRepresentationGeneration.Test.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Hashing\HashCodeGeneration.Test.All.Both.txt" />
     <EmbeddedResource Include="Generation\Equality\EqualityGeneration.TestSnippet.EquatableTestFieldsObjectNotEqualToReferenceObject.Abstract.Generated.txt" />

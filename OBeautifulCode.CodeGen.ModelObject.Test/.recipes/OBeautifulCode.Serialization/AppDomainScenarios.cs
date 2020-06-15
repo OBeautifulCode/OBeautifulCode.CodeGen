@@ -15,7 +15,13 @@ namespace OBeautifulCode.Serialization.Recipes
     /// Specifies various scenarios of serializing and de-serializing in the current App Domain or a new App Domain.
     /// </summary>
     [Flags]
-    public enum AppDomainScenarios
+#if !OBeautifulCodeSerializationRecipesProject
+    [System.CodeDom.Compiler.GeneratedCode("OBeautifulCode.Serialization.Recipes", "See package version number")]
+    internal
+#else
+    public
+#endif
+    enum AppDomainScenarios
     {
         /// <summary>
         /// None (default).

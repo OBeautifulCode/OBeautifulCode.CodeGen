@@ -5,15 +5,8 @@
                 // Arrange
                 var expected = A.Dummy<[model-type-name-here]>();
 
-                var serializer = BsonSerializer;
-
-                var serializedBson = serializer.SerializeToString(expected);
-
-                // Act
-                var actual = serializer.Deserialize<[model-type-name-here]>(serializedBson);
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                // Act, Assert
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.String }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
             }
 
             [Fact]
@@ -23,13 +16,6 @@
                 // Arrange
                 var expected = A.Dummy<[model-type-name-here]>();
 
-                var serializer = BsonSerializer;
-
-                var serializedBson = serializer.SerializeToBytes(expected);
-
-                // Act
-                var actual = serializer.Deserialize<[model-type-name-here]>(serializedBson);
-
-                // Assert
-                actual.AsTest().Must().BeEqualTo(expected);
+                // Act, Assert
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.Binary }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
             }

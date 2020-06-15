@@ -11,6 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
+    [Serializable]
     public class CustomClass : IEquatable<CustomClass>, IDeepCloneable<CustomClass>, IComparable<CustomClass>
     {
         public CustomClass(

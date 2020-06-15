@@ -18,29 +18,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class SerializationGeneration
     {
         /// <summary>
-        /// Generates fields required for serialization tests.
-        /// </summary>
-        /// <param name="modelType">The model type.</param>
-        /// <returns>
-        /// Generated fields required for serialization tests.
-        /// </returns>
-        public static string GenerateSerializationTestFields(
-            this ModelType modelType)
-        {
-            modelType.AsArg(nameof(modelType)).Must().NotBeNull();
-
-            var bsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationBsonTestFields);
-
-            var jsonSnippet = typeof(SerializationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.SerializationJsonTestFields);
-
-            var serializationFieldsCodeTemplate = bsonSnippet + Environment.NewLine + Environment.NewLine + jsonSnippet;
-
-            var result = serializationFieldsCodeTemplate;
-
-            return result;
-        }
-
-        /// <summary>
         /// Generates test methods to test serialization.
         /// </summary>
         /// <param name="modelType">The model type.</param>

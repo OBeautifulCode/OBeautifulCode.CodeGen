@@ -11,6 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
+    [Serializable]
     public struct CustomStruct : IEquatable<CustomStruct>, IDeepCloneable<CustomStruct>
     {
         public CustomStruct(

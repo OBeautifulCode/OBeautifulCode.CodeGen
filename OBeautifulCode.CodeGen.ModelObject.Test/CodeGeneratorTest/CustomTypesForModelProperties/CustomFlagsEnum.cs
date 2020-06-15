@@ -12,6 +12,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
 
     [Flags]
+    [Serializable]
     [SuppressMessage("Microsoft.Naming", "CA1714:FlagsEnumsShouldHavePluralNames", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
     [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix", Justification = ObcSuppressBecause.CA1711_IdentifiersShouldNotHaveIncorrectSuffix_TypeNameAddedAsSuffixForTestsWhereTypeIsPrimaryConcern)]
     [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Flags", Justification = ObcSuppressBecause.CA1726_UsePreferredTerms_FlagsAddedForTestsWhereEnumKindIsPrimaryConcern)]

@@ -112,15 +112,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var testImplementationItems = new List<string>();
 
-            if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) && modelType.RequiresModel)
-            {
-                var serializationFieldsCode = modelType.GenerateSerializationTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
-
-                testImplementationItems.Add(string.Empty);
-
-                testImplementationItems.Add(serializationFieldsCode);
-            }
-
             if (modelType.RequiresStringRepresentation)
             {
                 var stringFieldsCode = modelType.GenerateStringRepresentationTestFields().ReplaceCodeAnalysisSuppressionTokensInTestCode();
@@ -380,8 +371,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     new[]
                     {
                         "OBeautifulCode.Serialization",
-                        "OBeautifulCode.Serialization.Bson",
-                        "OBeautifulCode.Serialization.Json",
+                        "OBeautifulCode.Serialization.Recipes",
                     });
             }
 
