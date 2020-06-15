@@ -411,6 +411,7 @@ namespace OBeautifulCode.CodeGen
             }
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static void ThrowIfNotSupported(
             Type type,
             PropertiesOfConcernResult propertiesOfConcernResult)
@@ -831,16 +832,6 @@ namespace OBeautifulCode.CodeGen
             // per the note in the constructor, we are checking IHashableViaCodeGen in case
             // the type is not yet hashable, but will be after the first pass of code gen on the model
             var result = type.IsAssignableTo(typeof(IHashable)) || type.IsAssignableTo(typeof(IHashableViaCodeGen));
-
-            return result;
-        }
-
-        private static bool IsEquatableType(
-            Type type)
-        {
-            // per the note in the constructor, we are checking IEquatableViaCodeGen in case
-            // the type is not yet equatable, but will be after the first pass of code gen on the model
-            var result = type.IsAssignableTo(typeof(IEquatable<>), treatGenericTypeDefinitionAsAssignableTo: true) || type.IsAssignableTo(typeof(IEquatableViaCodeGen));
 
             return result;
         }

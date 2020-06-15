@@ -17,10 +17,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using FakeItEasy;
 
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
+    [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix", Justification = ObcSuppressBecause.CA1711_IdentifiersShouldNotHaveIncorrectSuffix_TypeNameAddedAsSuffixForTestsWhereTypeIsPrimaryConcern)]
     public partial class ModelHashingPublicSetMiscChild2 : ModelHashingPublicSetMiscParent, IHashableViaCodeGen, IDeclareGetHashCodeMethod
     {
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]

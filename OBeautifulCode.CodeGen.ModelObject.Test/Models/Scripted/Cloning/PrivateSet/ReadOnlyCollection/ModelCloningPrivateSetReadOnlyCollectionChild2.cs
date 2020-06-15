@@ -17,12 +17,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using FakeItEasy;
 
+    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 
 #pragma warning disable CS0659
 #pragma warning disable CS0661
+    [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix", Justification = ObcSuppressBecause.CA1711_IdentifiersShouldNotHaveIncorrectSuffix_TypeNameAddedAsSuffixForTestsWhereTypeIsPrimaryConcern)]
     public partial class ModelCloningPrivateSetReadOnlyCollectionChild2 : ModelCloningPrivateSetReadOnlyCollectionParent, IDeepCloneableViaCodeGen, IDeclareDeepCloneMethod<ModelCloningPrivateSetReadOnlyCollectionChild2>, IEquatable<ModelCloningPrivateSetReadOnlyCollectionChild2>
 #pragma warning disable CS0659
 #pragma warning disable CS0661

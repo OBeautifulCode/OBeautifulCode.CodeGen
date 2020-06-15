@@ -27,6 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public const string CommentOutFileExtension = ".commented-out";
 
+        [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly Encoding Encoding = Encoding.UTF8;
 
         public static readonly string SourceRoot = "d:\\src\\OBeautifulCode\\OBeautifulCode.CodeGen\\OBeautifulCode.CodeGen.ModelObject.Test\\";
