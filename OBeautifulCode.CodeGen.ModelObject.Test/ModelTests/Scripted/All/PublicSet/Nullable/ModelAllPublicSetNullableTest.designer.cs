@@ -527,8 +527,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelAllPublicSetNullable>();
 
+                var serializationConfigurationType = SerializationConfigurationTypes.BsonSerializationConfigurationType.ConcreteSerializationConfigurationDerivativeType;
+
+                var serializationFormats = new[] { SerializationFormat.String };
+
+                var appDomainScenarios = AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain;
+
                 // Act, Assert
-                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.String }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(serializationConfigurationType, serializationFormats, appDomainScenarios);
             }
 
             [Fact]
@@ -550,8 +556,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelAllPublicSetNullable>();
 
+                var serializationConfigurationType = SerializationConfigurationTypes.BsonSerializationConfigurationType.ConcreteSerializationConfigurationDerivativeType;
+
+                var serializationFormats = new[] { SerializationFormat.Binary };
+
+                var appDomainScenarios = AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain;
+
                 // Act, Assert
-                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.Binary }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(serializationConfigurationType, serializationFormats, appDomainScenarios);
             }
 
             [Fact]
@@ -573,8 +585,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelAllPublicSetNullable>();
 
+                var serializationConfigurationType = SerializationConfigurationTypes.JsonSerializationConfigurationType.ConcreteSerializationConfigurationDerivativeType;
+
+                var serializationFormats = new[] { SerializationFormat.String };
+
+                var appDomainScenarios = AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain;
+
                 // Act, Assert
-                expected.RoundtripSerializeViaJsonWithBeEqualToAssertion(SerializationConfigurationTypes.JsonConfigurationType, new[] { SerializationFormat.String }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
+                expected.RoundtripSerializeViaJsonWithBeEqualToAssertion(serializationConfigurationType, serializationFormats, appDomainScenarios);
             }
 
             [Fact]
@@ -596,8 +614,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var expected = A.Dummy<ModelAllPublicSetNullable>();
 
+                var serializationConfigurationType = SerializationConfigurationTypes.JsonSerializationConfigurationType.ConcreteSerializationConfigurationDerivativeType;
+
+                var serializationFormats = new[] { SerializationFormat.Binary };
+
+                var appDomainScenarios = AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain;
+
                 // Act, Assert
-                expected.RoundtripSerializeViaJsonWithBeEqualToAssertion(SerializationConfigurationTypes.JsonConfigurationType, new[] { SerializationFormat.Binary }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
+                expected.RoundtripSerializeViaJsonWithBeEqualToAssertion(serializationConfigurationType, serializationFormats, appDomainScenarios);
             }
         }
 

@@ -5,8 +5,14 @@
                 // Arrange
                 var expected = A.Dummy<[model-type-name-here]>();
 
+                var serializationConfigurationType = SerializationConfigurationTypes.BsonSerializationConfigurationType.ConcreteSerializationConfigurationDerivativeType;
+
+                var serializationFormats = new[] { SerializationFormat.String };
+
+                var appDomainScenarios = AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain;
+
                 // Act, Assert
-                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.String }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(serializationConfigurationType, serializationFormats, appDomainScenarios);
             }
 
             [Fact]
@@ -16,6 +22,12 @@
                 // Arrange
                 var expected = A.Dummy<[model-type-name-here]>();
 
+                var serializationConfigurationType = SerializationConfigurationTypes.BsonSerializationConfigurationType.ConcreteSerializationConfigurationDerivativeType;
+
+                var serializationFormats = new[] { SerializationFormat.Binary };
+
+                var appDomainScenarios = AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain;
+
                 // Act, Assert
-                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(SerializationConfigurationTypes.BsonConfigurationType, new[] { SerializationFormat.Binary }, AppDomainScenarios.RoundtripInCurrentAppDomain | AppDomainScenarios.SerializeInCurrentAppDomainAndDeserializeInNewAppDomain);
+                expected.RoundtripSerializeViaBsonWithBeEqualToAssertion(serializationConfigurationType, serializationFormats, appDomainScenarios);
             }

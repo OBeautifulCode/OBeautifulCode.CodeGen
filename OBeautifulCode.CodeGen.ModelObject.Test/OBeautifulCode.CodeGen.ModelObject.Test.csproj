@@ -3764,8 +3764,8 @@
     <Compile Include="CodeGeneratorTest\Enums\SetterKind.cs" />
     <Compile Include="CodeGeneratorTest\Enums\SpecifiedModelKind.cs" />
     <Compile Include="CodeGeneratorTest\Enums\TypeWrapperKind.cs" />
-    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestBsonConfiguration.cs" />
-    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestJsonConfiguration.cs" />
+    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestBsonSerializationConfiguration.cs" />
+    <Compile Include="CodeGeneratorTest\SerializationConfiguration\CodeGenModelObjectTestJsonSerializationConfiguration.cs" />
     <Compile Include="CodeGeneratorTest\SerializationConfiguration\SerializationConfigurationTypes.cs" />
     <Compile Include="CodeGeneratorTest\CodeGeneratorTestExtensions.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomClass.cs" />
