@@ -172,6 +172,8 @@
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomDerivedClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\Enums\HierarchyKind.cs" />
     <Compile Include="CodeGeneratorTest.cs" />
     <Compile Include="Models\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullable.cs" />

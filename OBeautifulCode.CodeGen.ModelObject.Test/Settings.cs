@@ -61,6 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(CustomEnum),
             typeof(CustomFlagsEnum),
             typeof(CustomClass),
+            typeof(CustomBaseClass),
 
             // OBC.Serialization doesn't support structs
             // typeof(ModelStruct),
