@@ -171,6 +171,10 @@
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="CodeGenDummyFactory.cs" />
+    <Compile Include="CodeGenDummyFactory.designer.cs">
+      <DependentUpon>CodeGenDummyFactory.cs</DependentUpon>
+    </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomDerivedClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomBaseClass.cs" />
@@ -3775,7 +3779,6 @@
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomFlagsEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DummyFactory.cs" />
     <Compile Include="Models\Specified\MultipleConstructors\PrivateSet\ModelPrivateSetMultipleConstructors.cs" />
     <Compile Include="Models\Specified\MultipleConstructors\PrivateSet\ModelPrivateSetMultipleConstructors.designer.cs">
       <DependentUpon>ModelPrivateSetMultipleConstructors.cs</DependentUpon>

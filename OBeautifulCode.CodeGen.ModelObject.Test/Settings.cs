@@ -7,9 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
-    using System.Collections.Concurrent;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Text;
@@ -48,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly string ScriptedModelsTestsPath = TestsPath + "Scripted\\";
 
-        public static readonly string DummyFactoryFilePath = SourceRoot + "DummyFactory.cs";
+        public static readonly string DummyFactoryFilePath = SourceRoot + "CodeGenDummyFactory.designer.cs";
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
         public static readonly IReadOnlyList<Type> TypesToWrap = new[]
