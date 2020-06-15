@@ -167,13 +167,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.ParentCollectionOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.ParentListInterfaceOfStringProperty == null)
                 {
-                    actual.ParentCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.ParentListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCollectionOfCollectionInterfaceOfStringProperty);
+                    actual.ParentListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentListInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty == null)
+                {
+                    actual.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.ParentListInterfaceOfCollectionInterfaceOfStringProperty == null)
@@ -185,22 +203,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentListInterfaceOfCollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.ParentListOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty == null)
                 {
-                    actual.ParentListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentListOfCollectionInterfaceOfStringProperty);
-                }
-
-                if (systemUnderTest.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty == null)
-                {
-                    actual.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+                    actual.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -212,31 +221,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty == null)
                 {
-                    actual.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty);
                 }
 
                 if (systemUnderTest.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -248,13 +239,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
                 {
-                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
                 if (systemUnderTest.Child1CollectionInterfaceOfStringProperty == null)
@@ -266,13 +257,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1CollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.Child1CollectionOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.Child1ListInterfaceOfStringProperty == null)
                 {
-                    actual.Child1CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.Child1ListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1CollectionOfCollectionInterfaceOfStringProperty);
+                    actual.Child1ListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ListInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty == null)
+                {
+                    actual.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.Child1ListInterfaceOfCollectionInterfaceOfStringProperty == null)
@@ -284,22 +293,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ListInterfaceOfCollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.Child1ListOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty == null)
                 {
-                    actual.Child1ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ListOfCollectionInterfaceOfStringProperty);
-                }
-
-                if (systemUnderTest.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty == null)
-                {
-                    actual.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+                    actual.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -311,31 +311,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty == null)
                 {
-                    actual.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty);
                 }
 
                 if (systemUnderTest.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -347,13 +329,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
                 {
-                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
             }
         }

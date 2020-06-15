@@ -51,7 +51,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetMiscChild1: ParentCollectionInterfaceOfStringProperty = {systemUnderTest.ParentCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentCollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.ParentCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.ParentListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListOfCollectionInterfaceOfStringProperty = {systemUnderTest.ParentListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1CollectionInterfaceOfStringProperty = {systemUnderTest.Child1CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1CollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.Child1CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ListInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.Child1ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ListOfCollectionInterfaceOfStringProperty = {systemUnderTest.Child1ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetMiscChild1: ParentCollectionInterfaceOfStringProperty = {systemUnderTest.ParentCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListInterfaceOfStringProperty = {systemUnderTest.ParentListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty = {systemUnderTest.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentListInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.ParentListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1CollectionInterfaceOfStringProperty = {systemUnderTest.Child1CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ListInterfaceOfStringProperty = {systemUnderTest.Child1ListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty = {systemUnderTest.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ListInterfaceOfCollectionInterfaceOfStringProperty = {systemUnderTest.Child1ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -69,27 +69,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              null,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -106,27 +104,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              new List<string>(),
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -143,27 +139,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              new string[0].Concat(referenceObject.ParentCollectionInterfaceOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.ParentCollectionInterfaceOfStringProperty).ToList(),
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -173,7 +167,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentCollectionOfCollectionInterfaceOfStringProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentListInterfaceOfStringProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -181,105 +175,309 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
                                              null,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentCollectionOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentListInterfaceOfStringProperty' is an empty enumerable scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             new Collection<ICollection<string>>(),
+                                             new List<string>(),
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", "is an empty enumerable" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentCollectionOfCollectionInterfaceOfStringProperty' contains a null element scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentListInterfaceOfStringProperty' contains a null element scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             new Collection<ICollection<string>>(new ICollection<string>[0].Concat(referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty).ToList()),
+                                             new string[0].Concat(referenceObject.ParentListInterfaceOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.ParentListInterfaceOfStringProperty).ToList(),
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             null,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             new List<ICollection<string>>(),
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             new ICollection<string>[0].Concat(referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty).ToList(),
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             null,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             new List<IReadOnlyList<string>>(),
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             new IReadOnlyList<string>[0].Concat(referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty).Concat(new IReadOnlyList<string>[] { null }).Concat(referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty).ToList(),
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "contains at least one null element" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -291,27 +489,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              null,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -328,27 +524,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              new List<ICollection<string>>(),
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -365,27 +559,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              new ICollection<string>[0].Concat(referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty).ToList(),
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -395,224 +587,107 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentListOfCollectionInterfaceOfStringProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyListInterfaceOfListInterfaceOfStringProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
                                              null,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentListOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentListOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyListInterfaceOfListInterfaceOfStringProperty' is an empty enumerable scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             new List<ICollection<string>>(),
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             new List<IList<string>>(),
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentListOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "is an empty enumerable" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentListOfCollectionInterfaceOfStringProperty' contains a null element scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyListInterfaceOfListInterfaceOfStringProperty' contains a null element scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             new ICollection<string>[0].Concat(referenceObject.ParentListOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.ParentListOfCollectionInterfaceOfStringProperty).ToList(),
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             new IList<string>[0].Concat(referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty).Concat(new IList<string>[] { null }).Concat(referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty).ToList(),
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentListOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty' is null scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             null,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             new ReadOnlyCollection<ICollection<string>>(new List<ICollection<string>>()),
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty' contains a null element scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             new ReadOnlyCollection<ICollection<string>>(new ICollection<string>[0].Concat(referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty).ToList()),
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "contains at least one null element" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -624,27 +699,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              null,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -661,27 +734,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              new Dictionary<string, IReadOnlyList<DateTime>>(),
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -704,27 +775,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              dictionaryWithNullValue,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -734,86 +803,82 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              null,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new Dictionary<string, IReadOnlyList<DateTime>>(),
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             new Dictionary<string, ICollection<DateTime>>(),
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "is an empty dictionary" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var dictionaryWithNullValue = referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
+                        var dictionaryWithNullValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
 
                         var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
 
@@ -821,266 +886,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              dictionaryWithNullValue,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             null,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(new Dictionary<string, IReadOnlyList<DateTime>>()),
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var dictionaryWithNullValue = referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
-
-                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
-
-                        dictionaryWithNullValue[randomKey] = null;
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(dictionaryWithNullValue),
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             null,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(new Dictionary<string, IReadOnlyList<DateTime>>()),
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var dictionaryWithNullValue = referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
-
-                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
-
-                        dictionaryWithNullValue[randomKey] = null;
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(dictionaryWithNullValue),
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -1092,27 +921,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              null,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1129,27 +956,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              new List<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>(),
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1166,27 +991,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              new IReadOnlyDictionary<string, IReadOnlyList<DateTime>>[0].Concat(referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty).Concat(new IReadOnlyDictionary<string, IReadOnlyList<DateTime>>[] { null }).Concat(referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty).ToList(),
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1196,86 +1019,82 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              null,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new Dictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>>(),
+                                             new Dictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>(),
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var dictionaryWithNullValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
+                        var dictionaryWithNullValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
 
                         var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
 
@@ -1283,32 +1102,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              dictionaryWithNullValue,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -1320,27 +1137,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              null,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1357,27 +1172,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              new List<string>(),
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1394,27 +1207,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              new string[0].Concat(referenceObject.Child1CollectionInterfaceOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.Child1CollectionInterfaceOfStringProperty).ToList(),
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1424,113 +1235,317 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1CollectionOfCollectionInterfaceOfStringProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ListInterfaceOfStringProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
                                              null,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1CollectionOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ListInterfaceOfStringProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1CollectionOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ListInterfaceOfStringProperty' is an empty enumerable scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             new Collection<ICollection<string>>(),
+                                             new List<string>(),
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1CollectionOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ListInterfaceOfStringProperty", "is an empty enumerable" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1CollectionOfCollectionInterfaceOfStringProperty' contains a null element scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ListInterfaceOfStringProperty' contains a null element scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             new Collection<ICollection<string>>(new ICollection<string>[0].Concat(referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty).ToList()),
+                                             new string[0].Concat(referenceObject.Child1ListInterfaceOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.Child1ListInterfaceOfStringProperty).ToList(),
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1CollectionOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child1ListInterfaceOfStringProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             null,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             new List<ICollection<string>>(),
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             new ICollection<string>[0].Concat(referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty).ToList(),
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             null,
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             new List<IReadOnlyList<string>>(),
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new ModelAllPrivateSetMiscChild1(
+                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             new IReadOnlyList<string>[0].Concat(referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty).Concat(new IReadOnlyList<string>[] { null }).Concat(referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty).ToList(),
+                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "contains at least one null element" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -1542,27 +1557,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              null,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1579,27 +1592,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              new List<ICollection<string>>(),
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1616,27 +1627,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              new ICollection<string>[0].Concat(referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty).ToList(),
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1646,224 +1655,107 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1ListOfCollectionInterfaceOfStringProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
                                              null,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ListOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ListOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty' is an empty enumerable scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             new List<ICollection<string>>(),
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             new List<IList<string>>(),
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ListOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "is an empty enumerable" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ListOfCollectionInterfaceOfStringProperty' contains a null element scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty' contains a null element scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             new ICollection<string>[0].Concat(referenceObject.Child1ListOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.Child1ListOfCollectionInterfaceOfStringProperty).ToList(),
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             new IList<string>[0].Concat(referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty).Concat(new IList<string>[] { null }).Concat(referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty).ToList(),
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ListOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty' is null scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             null,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty' is an empty enumerable scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             new ReadOnlyCollection<ICollection<string>>(new List<ICollection<string>>()),
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty' contains a null element scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             new ReadOnlyCollection<ICollection<string>>(new ICollection<string>[0].Concat(referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty).Concat(new ICollection<string>[] { null }).Concat(referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty).ToList()),
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "contains at least one null element" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -1875,27 +1767,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              null,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1912,27 +1802,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              new Dictionary<string, IReadOnlyList<DateTime>>(),
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1955,27 +1843,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              dictionaryWithNullValue,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -1985,86 +1871,82 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              null,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new Dictionary<string, IReadOnlyList<DateTime>>(),
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             new Dictionary<string, ICollection<DateTime>>(),
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "is an empty dictionary" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var dictionaryWithNullValue = referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
+                        var dictionaryWithNullValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
 
                         var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
 
@@ -2072,266 +1954,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              dictionaryWithNullValue,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             null,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(new Dictionary<string, IReadOnlyList<DateTime>>()),
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var dictionaryWithNullValue = referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
-
-                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
-
-                        dictionaryWithNullValue[randomKey] = null;
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(dictionaryWithNullValue),
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             null,
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(new Dictionary<string, IReadOnlyList<DateTime>>()),
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
-                })
-            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
-                    ConstructionFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var dictionaryWithNullValue = referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
-
-                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
-
-                        dictionaryWithNullValue[randomKey] = null;
-
-                        var result = new ModelAllPrivateSetMiscChild1(
-                                             referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(dictionaryWithNullValue),
-                                             referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-
-                        return result;
-                    },
-                    ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
@@ -2343,27 +1989,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              null,
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -2380,27 +2024,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              new List<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>(),
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -2417,27 +2059,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              new IReadOnlyDictionary<string, IReadOnlyList<DateTime>>[0].Concat(referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty).Concat(new IReadOnlyDictionary<string, IReadOnlyList<DateTime>>[] { null }).Concat(referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty).ToList(),
-                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
                         return result;
                     },
@@ -2447,86 +2087,82 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              null);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' is an empty dictionary scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             new Dictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>>());
+                                             new Dictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>());
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' contains a key-value pair with a null value scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var dictionaryWithNullValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
+                        var dictionaryWithNullValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.ToDictionary(_ => _.Key, _ => _.Value);
 
                         var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
 
@@ -2534,32 +2170,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelAllPrivateSetMiscChild1(
                                              referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentListInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ListInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                              referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                             referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                              referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                             referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                              referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                              dictionaryWithNullValue);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetMiscChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetMiscChild1>()
@@ -2575,27 +2209,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.ParentCollectionInterfaceOfStringProperty,
                         };
 
@@ -2606,7 +2238,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "ParentCollectionOfCollectionInterfaceOfStringProperty should return same 'parentCollectionOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    Name = "ParentListInterfaceOfStringProperty should return same 'parentListInterfaceOfStringProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -2615,33 +2247,107 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.ParentListInterfaceOfStringProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "ParentCollectionOfCollectionInterfaceOfStringProperty",
+                    PropertyName = "ParentListInterfaceOfStringProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty should return same 'parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
+                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty should return same 'parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
+                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -2655,27 +2361,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
                         };
 
@@ -2686,7 +2390,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "ParentListOfCollectionInterfaceOfStringProperty should return same 'parentListOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    Name = "ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty should return same 'parentReadOnlyListInterfaceOfListInterfaceOfStringProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -2695,73 +2399,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "ParentListOfCollectionInterfaceOfStringProperty",
-                })
-            .AddScenario(() =>
-                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty should return same 'parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
-                    SystemUnderTestExpectedPropertyValueFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
-                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                        };
-
-                        return result;
-                    },
-                    PropertyName = "ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
+                    PropertyName = "ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -2775,27 +2437,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
@@ -2806,7 +2466,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
+                    Name = "ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty should return same 'parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -2815,113 +2475,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                })
-            .AddScenario(() =>
-                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
-                    SystemUnderTestExpectedPropertyValueFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
-                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                    PropertyName = "ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                })
-            .AddScenario(() =>
-                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
-                    SystemUnderTestExpectedPropertyValueFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
-                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                    PropertyName = "ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    PropertyName = "ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -2935,27 +2513,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
@@ -2966,7 +2542,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
+                    Name = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should return same 'parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -2975,33 +2551,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    PropertyName = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -3015,27 +2589,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.Child1CollectionInterfaceOfStringProperty,
                         };
 
@@ -3046,7 +2618,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "Child1CollectionOfCollectionInterfaceOfStringProperty should return same 'child1CollectionOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    Name = "Child1ListInterfaceOfStringProperty should return same 'child1ListInterfaceOfStringProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -3055,33 +2627,107 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ListInterfaceOfStringProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "Child1CollectionOfCollectionInterfaceOfStringProperty",
+                    PropertyName = "Child1ListInterfaceOfStringProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty should return same 'child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
+                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty should return same 'child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
+                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -3095,27 +2741,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
                         };
 
@@ -3126,7 +2770,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "Child1ListOfCollectionInterfaceOfStringProperty should return same 'child1ListOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
+                    Name = "Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty should return same 'child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -3135,73 +2779,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "Child1ListOfCollectionInterfaceOfStringProperty",
-                })
-            .AddScenario(() =>
-                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty should return same 'child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty' parameter passed to constructor when getting",
-                    SystemUnderTestExpectedPropertyValueFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
-                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                        };
-
-                        return result;
-                    },
-                    PropertyName = "Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
+                    PropertyName = "Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -3215,27 +2817,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
@@ -3246,7 +2846,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
+                    Name = "Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty should return same 'child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -3255,113 +2855,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                })
-            .AddScenario(() =>
-                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
-                    SystemUnderTestExpectedPropertyValueFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
-                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                    PropertyName = "Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                })
-            .AddScenario(() =>
-                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
-                    SystemUnderTestExpectedPropertyValueFunc = () =>
-                    {
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = new ModelAllPrivateSetMiscChild1(
-                                                      referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                    PropertyName = "Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    PropertyName = "Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
@@ -3375,27 +2893,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                             ExpectedPropertyValue = referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
@@ -3406,7 +2922,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should return same 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
+                    Name = "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should return same 'child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>();
@@ -3415,33 +2931,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelAllPrivateSetMiscChild1(
                                                       referenceObject.ParentCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentListInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1CollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ListInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                                       referenceObject.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                                                      referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                                       referenceObject.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                                       referenceObject.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
                         return result;
                     },
-                    PropertyName = "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    PropertyName = "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                 });
 
         private static readonly DeepCloneWithTestScenarios<ModelAllPrivateSetMiscChild1> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<ModelAllPrivateSetMiscChild1>()
@@ -3468,18 +2982,58 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithParentCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentCollectionOfCollectionInterfaceOfStringProperty with the provided parentCollectionOfCollectionInterfaceOfStringProperty",
-                    WithPropertyName = "ParentCollectionOfCollectionInterfaceOfStringProperty",
+                    Name = "DeepCloneWithParentListInterfaceOfStringProperty should deep clone object and replace ParentListInterfaceOfStringProperty with the provided parentListInterfaceOfStringProperty",
+                    WithPropertyName = "ParentListInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(_.ParentCollectionOfCollectionInterfaceOfStringProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentListInterfaceOfStringProperty.IsEqualTo(_.ParentListInterfaceOfStringProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                            DeepCloneWithValue = referenceObject.ParentListInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty with the provided parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty",
+                    WithPropertyName = "ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(_.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "DeepCloneWithParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty should deep clone object and replace ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty with the provided parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty",
+                    WithPropertyName = "ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(_.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                         };
 
                         return result;
@@ -3508,38 +3062,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithParentListOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentListOfCollectionInterfaceOfStringProperty with the provided parentListOfCollectionInterfaceOfStringProperty",
-                    WithPropertyName = "ParentListOfCollectionInterfaceOfStringProperty",
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfListInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty with the provided parentReadOnlyListInterfaceOfListInterfaceOfStringProperty",
+                    WithPropertyName = "ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentListOfCollectionInterfaceOfStringProperty.IsEqualTo(_.ParentListOfCollectionInterfaceOfStringProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(_.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentListOfCollectionInterfaceOfStringProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "DeepCloneWithParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty with the provided parentReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
-                    WithPropertyName = "ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(_.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                         };
 
                         return result;
@@ -3568,58 +3102,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty with the provided parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty",
+                    WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(_.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "DeepCloneWithParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                         };
 
                         return result;
@@ -3648,18 +3142,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty with the provided parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
+                    WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
                         return result;
@@ -3688,18 +3182,58 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithChild1CollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace Child1CollectionOfCollectionInterfaceOfStringProperty with the provided child1CollectionOfCollectionInterfaceOfStringProperty",
-                    WithPropertyName = "Child1CollectionOfCollectionInterfaceOfStringProperty",
+                    Name = "DeepCloneWithChild1ListInterfaceOfStringProperty should deep clone object and replace Child1ListInterfaceOfStringProperty with the provided child1ListInterfaceOfStringProperty",
+                    WithPropertyName = "Child1ListInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(_.Child1CollectionOfCollectionInterfaceOfStringProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ListInterfaceOfStringProperty.IsEqualTo(_.Child1ListInterfaceOfStringProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                            DeepCloneWithValue = referenceObject.Child1ListInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "DeepCloneWithChild1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty should deep clone object and replace Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty with the provided child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty",
+                    WithPropertyName = "Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(_.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
+                {
+                    Name = "DeepCloneWithChild1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty should deep clone object and replace Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty with the provided child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty",
+                    WithPropertyName = "Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(_.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                         };
 
                         return result;
@@ -3728,38 +3262,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithChild1ListOfCollectionInterfaceOfStringProperty should deep clone object and replace Child1ListOfCollectionInterfaceOfStringProperty with the provided child1ListOfCollectionInterfaceOfStringProperty",
-                    WithPropertyName = "Child1ListOfCollectionInterfaceOfStringProperty",
+                    Name = "DeepCloneWithChild1ReadOnlyListInterfaceOfListInterfaceOfStringProperty should deep clone object and replace Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty with the provided child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty",
+                    WithPropertyName = "Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ListOfCollectionInterfaceOfStringProperty.IsEqualTo(_.Child1ListOfCollectionInterfaceOfStringProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(_.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1ListOfCollectionInterfaceOfStringProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "DeepCloneWithChild1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty should deep clone object and replace Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty with the provided child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
-                    WithPropertyName = "Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(_.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                            DeepCloneWithValue = referenceObject.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                         };
 
                         return result;
@@ -3788,58 +3302,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithChild1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    Name = "DeepCloneWithChild1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty should deep clone object and replace Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty with the provided child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty",
+                    WithPropertyName = "Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(_.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "DeepCloneWithChild1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                        };
-
-                        return result;
-                    },
-                })
-            .AddScenario(() =>
-                new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
-                {
-                    Name = "DeepCloneWithChild1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    SystemUnderTestDeepCloneWithValueFunc = () =>
-                    {
-                        var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
-
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
-
-                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
-                        {
-                            SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                            DeepCloneWithValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                         };
 
                         return result;
@@ -3868,18 +3342,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetMiscChild1>
                 {
-                    Name = "DeepCloneWithChild1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty with the provided child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
-                    WithPropertyName = "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty",
+                    Name = "DeepCloneWithChild1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty should deep clone object and replace Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty with the provided child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
+                    WithPropertyName = "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelAllPrivateSetMiscChild1>();
 
-                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty));
+                        var referenceObject = A.Dummy<ModelAllPrivateSetMiscChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(_.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetMiscChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                            DeepCloneWithValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                         };
 
                         return result;
@@ -3898,536 +3372,448 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPrivateSetMiscChild1[]
                     {
                         new ModelAllPrivateSetMiscChild1(
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty)).ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty)).ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty)).ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty)).ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                        new ModelAllPrivateSetMiscChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty)).ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                        new ModelAllPrivateSetMiscChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty)).ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentListOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty)).ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty)).ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty)).ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                        new ModelAllPrivateSetMiscChild1(
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty)).ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                        new ModelAllPrivateSetMiscChild1(
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                        new ModelAllPrivateSetMiscChild1(
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1CollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty)).Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty)).Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty)).Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty)).Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                        new ModelAllPrivateSetMiscChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty)).Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                        new ModelAllPrivateSetMiscChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty)).Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ListOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty)).Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty)).Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)).Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                        new ModelAllPrivateSetMiscChild1(
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty)).Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                        new ModelAllPrivateSetMiscChild1(
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
-                        new ModelAllPrivateSetMiscChild1(
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                         new ModelAllPrivateSetMiscChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1CollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ListInterfaceOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ListOfCollectionInterfaceOfStringProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)).Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty),
+                                A.Dummy<ModelAllPrivateSetMiscChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
@@ -4714,13 +4100,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.ParentCollectionOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.ParentListInterfaceOfStringProperty == null)
                 {
-                    actual.ParentCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.ParentListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCollectionOfCollectionInterfaceOfStringProperty);
+                    actual.ParentListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentListInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty == null)
+                {
+                    actual.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.ParentListInterfaceOfCollectionInterfaceOfStringProperty == null)
@@ -4732,22 +4136,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentListInterfaceOfCollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.ParentListOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty == null)
                 {
-                    actual.ParentListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentListOfCollectionInterfaceOfStringProperty);
-                }
-
-                if (systemUnderTest.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty == null)
-                {
-                    actual.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+                    actual.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -4759,31 +4154,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty == null)
                 {
-                    actual.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty);
                 }
 
                 if (systemUnderTest.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -4795,13 +4172,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
                 {
-                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
                 if (systemUnderTest.Child1CollectionInterfaceOfStringProperty == null)
@@ -4813,13 +4190,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1CollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1CollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.Child1CollectionOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.Child1ListInterfaceOfStringProperty == null)
                 {
-                    actual.Child1CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.Child1ListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1CollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1CollectionOfCollectionInterfaceOfStringProperty);
+                    actual.Child1ListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ListInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty == null)
+                {
+                    actual.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty);
+                }
+
+                if (systemUnderTest.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty == null)
+                {
+                    actual.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.Child1ListInterfaceOfCollectionInterfaceOfStringProperty == null)
@@ -4831,22 +4226,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ListInterfaceOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ListInterfaceOfCollectionInterfaceOfStringProperty);
                 }
 
-                if (systemUnderTest.Child1ListOfCollectionInterfaceOfStringProperty == null)
+                if (systemUnderTest.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty == null)
                 {
-                    actual.Child1ListOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
+                    actual.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1ListOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ListOfCollectionInterfaceOfStringProperty);
-                }
-
-                if (systemUnderTest.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty == null)
-                {
-                    actual.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty);
+                    actual.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty);
                 }
 
                 if (systemUnderTest.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -4858,31 +4244,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty == null)
                 {
-                    actual.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
-                }
-
-                if (systemUnderTest.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
-                {
-                    actual.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
-                }
-                else
-                {
-                    actual.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty);
                 }
 
                 if (systemUnderTest.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
@@ -4894,13 +4262,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
-                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty == null)
+                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty == null)
                 {
-                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
+                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                    actual.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
                 }
             }
 
@@ -4920,7 +4288,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentCollectionInterfaceOfStringProperty", "ParentCollectionOfCollectionInterfaceOfStringProperty", "ParentListInterfaceOfCollectionInterfaceOfStringProperty", "ParentListOfCollectionInterfaceOfStringProperty", "ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty", "ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "Child1CollectionInterfaceOfStringProperty", "Child1CollectionOfCollectionInterfaceOfStringProperty", "Child1ListInterfaceOfCollectionInterfaceOfStringProperty", "Child1ListOfCollectionInterfaceOfStringProperty", "Child1ReadOnlyCollectionOfCollectionInterfaceOfStringProperty", "Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "Child1DictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "Child1ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" };
+                var propertyNames = new string[] { "ParentCollectionInterfaceOfStringProperty", "ParentListInterfaceOfStringProperty", "ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "ParentListInterfaceOfCollectionInterfaceOfStringProperty", "ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "Child1CollectionInterfaceOfStringProperty", "Child1ListInterfaceOfStringProperty", "Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "Child1ListInterfaceOfCollectionInterfaceOfStringProperty", "Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 
@@ -5911,7 +5279,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Hashing
         {
-            [Fact]
+            [Fact(Skip = "It's possible (and even probable after a few runs of this test) that two dummy, unequal models will have the same hash code.  The model being tested contains at least one property who's type (or a type nested within the generic type, or a property of the IModel type) is a dictionary with keys that are not comparable or an unordered collection with elements that are not comparable.  In these cases the hashing method cannot hash the elements and must resort to hashing the element count.  Two dummies could easily have the same element count for such a type.")]
             [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
             [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]

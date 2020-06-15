@@ -40,7 +40,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public Collection<ICollection<string>> Child2CollectionOfCollectionInterfaceOfStringProperty { get; set; }
+        public IList<string> Child2ListInterfaceOfStringProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<ICollection<string>> Child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public ICollection<IReadOnlyList<string>> Child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
@@ -54,14 +68,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public List<ICollection<string>> Child2ListOfCollectionInterfaceOfStringProperty { get; set; }
-
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
-        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public ReadOnlyCollection<ICollection<string>> Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty { get; set; }
+        public IReadOnlyList<IList<string>> Child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
@@ -75,21 +82,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public Dictionary<string, IReadOnlyList<DateTime>> Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
-
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
-        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public ReadOnlyDictionary<string, IReadOnlyList<DateTime>> Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
-
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
-        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public ConcurrentDictionary<string, IReadOnlyList<DateTime>> Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+        public IReadOnlyDictionary<string, ICollection<DateTime>> Child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
@@ -103,7 +96,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>> Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
+        public IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>> Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty { get; set; }
 
         /// <inheritdoc />
         public bool Equals(ModelEqualityPublicSetMiscChild2 other)
@@ -120,27 +113,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var result = 
                 this.ParentCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentCollectionInterfaceOfStringProperty) &&
-                this.ParentCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentCollectionOfCollectionInterfaceOfStringProperty) &&
+                this.ParentListInterfaceOfStringProperty.IsEqualTo(other.ParentListInterfaceOfStringProperty) &&
+                this.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty) &&
+                this.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty) &&
                 this.ParentListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentListInterfaceOfCollectionInterfaceOfStringProperty) &&
-                this.ParentListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentListOfCollectionInterfaceOfStringProperty) &&
-                this.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyCollectionOfCollectionInterfaceOfStringProperty) &&
+                this.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty) &&
                 this.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty) &&
                 this.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
                 this.Child2CollectionInterfaceOfStringProperty.IsEqualTo(other.Child2CollectionInterfaceOfStringProperty) &&
-                this.Child2CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2CollectionOfCollectionInterfaceOfStringProperty) &&
+                this.Child2ListInterfaceOfStringProperty.IsEqualTo(other.Child2ListInterfaceOfStringProperty) &&
+                this.Child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty) &&
+                this.Child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.Child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty) &&
                 this.Child2ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ListInterfaceOfCollectionInterfaceOfStringProperty) &&
-                this.Child2ListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ListOfCollectionInterfaceOfStringProperty) &&
-                this.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyCollectionOfCollectionInterfaceOfStringProperty) &&
+                this.Child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty) &&
                 this.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2DictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty) &&
+                this.Child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty) &&
                 this.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty) &&
-                this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                this.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
             return result;
         }

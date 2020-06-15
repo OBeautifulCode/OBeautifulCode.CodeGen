@@ -69,16 +69,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
 
             var result = this.CollectionInterfaceOfStringProperty.IsEqualTo(other.CollectionInterfaceOfStringProperty)
-                      && this.CollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.CollectionOfCollectionInterfaceOfStringProperty)
+                      && this.ListInterfaceOfStringProperty.IsEqualTo(other.ListInterfaceOfStringProperty)
+                      && this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty)
+                      && this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty)
                       && this.ListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ListInterfaceOfCollectionInterfaceOfStringProperty)
-                      && this.ListOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ListOfCollectionInterfaceOfStringProperty)
-                      && this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+                      && this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyListInterfaceOfListInterfaceOfStringProperty)
                       && this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+                      && this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty)
                       && this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-                      && this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                      && this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
             return result;
         }
@@ -89,16 +88,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
             .Hash(this.CollectionInterfaceOfStringProperty)
-            .Hash(this.CollectionOfCollectionInterfaceOfStringProperty)
+            .Hash(this.ListInterfaceOfStringProperty)
+            .Hash(this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty)
+            .Hash(this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty)
             .Hash(this.ListInterfaceOfCollectionInterfaceOfStringProperty)
-            .Hash(this.ListOfCollectionInterfaceOfStringProperty)
-            .Hash(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty)
+            .Hash(this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty)
             .Hash(this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-            .Hash(this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-            .Hash(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-            .Hash(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+            .Hash(this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty)
             .Hash(this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
-            .Hash(this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+            .Hash(this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
             .Value;
 
         /// <inheritdoc />
@@ -109,16 +107,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
@@ -146,25 +143,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetMisc(
                                  collectionInterfaceOfStringProperty,
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="CollectionOfCollectionInterfaceOfStringProperty" />.
+        /// Deep clones this object with a new <see cref="ListInterfaceOfStringProperty" />.
         /// </summary>
-        /// <param name="collectionOfCollectionInterfaceOfStringProperty">The new <see cref="CollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="collectionOfCollectionInterfaceOfStringProperty" /> for <see cref="CollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="listInterfaceOfStringProperty">The new <see cref="ListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="listInterfaceOfStringProperty" /> for <see cref="ListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -179,20 +175,91 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithCollectionOfCollectionInterfaceOfStringProperty(Collection<ICollection<string>> collectionOfCollectionInterfaceOfStringProperty)
+        public ModelAllPrivateSetMisc DeepCloneWithListInterfaceOfStringProperty(IList<string> listInterfaceOfStringProperty)
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 collectionOfCollectionInterfaceOfStringProperty,
+                                 listInterfaceOfStringProperty,
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" />.
+        /// </summary>
+        /// <param name="readOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty">The new <see cref="ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" /> for <see cref="ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty(IReadOnlyCollection<ICollection<string>> readOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty)
+        {
+            var result = new ModelAllPrivateSetMisc(
+                                 this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 readOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty,
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
+                                 this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" />.
+        /// </summary>
+        /// <param name="collectionInterfaceOfReadOnlyListInterfaceOfStringProperty">The new <see cref="CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="collectionInterfaceOfReadOnlyListInterfaceOfStringProperty" /> for <see cref="CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public ModelAllPrivateSetMisc DeepCloneWithCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty(ICollection<IReadOnlyList<string>> collectionInterfaceOfReadOnlyListInterfaceOfStringProperty)
+        {
+            var result = new ModelAllPrivateSetMisc(
+                                 this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 collectionInterfaceOfReadOnlyListInterfaceOfStringProperty,
+                                 this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
+                                 this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
@@ -220,25 +287,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  listInterfaceOfCollectionInterfaceOfStringProperty,
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ListOfCollectionInterfaceOfStringProperty" />.
+        /// Deep clones this object with a new <see cref="ReadOnlyListInterfaceOfListInterfaceOfStringProperty" />.
         /// </summary>
-        /// <param name="listOfCollectionInterfaceOfStringProperty">The new <see cref="ListOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="listOfCollectionInterfaceOfStringProperty" /> for <see cref="ListOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="readOnlyListInterfaceOfListInterfaceOfStringProperty">The new <see cref="ReadOnlyListInterfaceOfListInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyListInterfaceOfListInterfaceOfStringProperty" /> for <see cref="ReadOnlyListInterfaceOfListInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -253,57 +319,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithListOfCollectionInterfaceOfStringProperty(List<ICollection<string>> listOfCollectionInterfaceOfStringProperty)
+        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyListInterfaceOfListInterfaceOfStringProperty(IReadOnlyList<IList<string>> readOnlyListInterfaceOfListInterfaceOfStringProperty)
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 listOfCollectionInterfaceOfStringProperty,
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 readOnlyListInterfaceOfListInterfaceOfStringProperty,
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-
-            return result;
-        }
-
-        /// <summary>
-        /// Deep clones this object with a new <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.
-        /// </summary>
-        /// <param name="readOnlyCollectionOfCollectionInterfaceOfStringProperty">The new <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyCollectionOfCollectionInterfaceOfStringProperty" /> for <see cref="ReadOnlyCollectionOfCollectionInterfaceOfStringProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
-        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyCollectionOfCollectionInterfaceOfStringProperty(ReadOnlyCollection<ICollection<string>> readOnlyCollectionOfCollectionInterfaceOfStringProperty)
-        {
-            var result = new ModelAllPrivateSetMisc(
-                                 this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
-                                 this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 readOnlyCollectionOfCollectionInterfaceOfStringProperty,
-                                 this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
@@ -331,25 +359,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  dictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
+        /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" />.
         /// </summary>
-        /// <param name="dictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="dictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="DictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="readOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -364,94 +391,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(Dictionary<string, IReadOnlyList<DateTime>> dictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, ICollection<DateTime>> readOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 dictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 readOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty,
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-
-            return result;
-        }
-
-        /// <summary>
-        /// Deep clones this object with a new <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
-        /// </summary>
-        /// <param name="readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
-        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ReadOnlyDictionary<string, IReadOnlyList<DateTime>> readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-        {
-            var result = new ModelAllPrivateSetMisc(
-                                 this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
-                                 this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
-                                 this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 readOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
-
-            return result;
-        }
-
-        /// <summary>
-        /// Deep clones this object with a new <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
-        /// </summary>
-        /// <param name="concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
-        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
-        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
-        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
-        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
-        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
-        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(ConcurrentDictionary<string, IReadOnlyList<DateTime>> concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
-        {
-            var result = new ModelAllPrivateSetMisc(
-                                 this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
-                                 this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
-                                 this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 concurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty,
-                                 this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
@@ -479,25 +431,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  readOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty,
-                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => new ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>(v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList())))));
+                                 this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>)v.Value?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IDictionary<CustomClass, IReadOnlyList<DateTime>>)v2.Value?.ToDictionary(k3 => k3.Key?.DeepClone(), v3 => (IReadOnlyList<DateTime>)v3.Value?.Select(i4 => i4).ToList()))));
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.
+        /// Deep clones this object with a new <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.
         /// </summary>
-        /// <param name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty">The new <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetMisc" /> using the specified <paramref name="readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> for <see cref="ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -512,20 +463,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>> readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty)
+        public ModelAllPrivateSetMisc DeepCloneWithReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>> readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetMisc(
                                  this.CollectionInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 new Collection<ICollection<string>>(this.CollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
+                                 this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.Select(i => (IReadOnlyList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.ListInterfaceOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 this.ListOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
-                                 new ReadOnlyCollection<ICollection<string>>(this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.Select(i => (ICollection<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList()),
+                                 this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.Select(i => (IList<string>)i?.Select(i2 => i2?.Clone().ToString()).ToList()).ToList(),
                                  this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList()),
-                                 new ReadOnlyDictionary<string, IReadOnlyList<DateTime>>(this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
-                                 new ConcurrentDictionary<string, IReadOnlyList<DateTime>>(this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (IReadOnlyList<DateTime>)v.Value?.Select(i2 => i2).ToList())),
+                                 this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => (ICollection<DateTime>)v.Value?.Select(i2 => i2).ToList()),
                                  this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.Select(i => (IReadOnlyDictionary<string, IReadOnlyList<DateTime>>)i?.ToDictionary(k2 => k2.Key?.Clone().ToString(), v2 => (IReadOnlyList<DateTime>)v2.Value?.Select(i3 => i3).ToList())).ToList(),
-                                 readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty);
+                                 readOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty);
 
             return result;
         }
@@ -533,7 +483,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetMisc: CollectionInterfaceOfStringProperty = {this.CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, CollectionOfCollectionInterfaceOfStringProperty = {this.CollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfCollectionInterfaceOfStringProperty = {this.ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListOfCollectionInterfaceOfStringProperty = {this.ListOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionOfCollectionInterfaceOfStringProperty = {this.ReadOnlyCollectionOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, DictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ConcurrentDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyDictionaryOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetMisc: CollectionInterfaceOfStringProperty = {this.CollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfStringProperty = {this.ListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty = {this.ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty = {this.CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ListInterfaceOfCollectionInterfaceOfStringProperty = {this.ListInterfaceOfCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfListInterfaceOfStringProperty = {this.ReadOnlyListInterfaceOfListInterfaceOfStringProperty?.ToString() ?? "<null>"}, DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = {this.ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

@@ -78,16 +78,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static readonly IReadOnlyList<Type> AdditionalTypes = new[]
         {
             typeof(ICollection<string>), // elements must be comparable for generated hashing unequal test to NOT be skipped
-            typeof(Collection<ICollection<string>>),
+            typeof(IList<string>),
+            typeof(IReadOnlyCollection<ICollection<string>>),
+            typeof(ICollection<IReadOnlyList<string>>),
             typeof(IList<ICollection<string>>),
-            typeof(List<ICollection<string>>),
-            typeof(ReadOnlyCollection<ICollection<string>>),
+            typeof(IReadOnlyList<IList<string>>),
             typeof(IDictionary<string, IReadOnlyList<DateTime>>),
-            typeof(Dictionary<string, IReadOnlyList<DateTime>>),
-            typeof(ReadOnlyDictionary<string, IReadOnlyList<DateTime>>),
-            typeof(ConcurrentDictionary<string, IReadOnlyList<DateTime>>),
+            typeof(IReadOnlyDictionary<string, ICollection<DateTime>>),
             typeof(IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>),
-            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, ReadOnlyDictionary<CustomClass, IReadOnlyList<DateTime>>>>),
+            typeof(IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>),
         };
 
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes", Justification = ObcSuppressBecause.CA2104_DoNotDeclareReadOnlyMutableReferenceTypes_TypeIsImmutable)]
