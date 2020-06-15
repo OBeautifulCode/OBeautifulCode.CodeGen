@@ -35,9 +35,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public void GenerateModel___Should_generate_models___When_called()
         {
             // Arrange
-            ExecuteForGeneratedModels(ModelOrTest.Model, ResetFile);
+            ExecuteForScriptedModels(ModelOrTest.Model, ResetFile);
 
-            ExecuteForGeneratedModels(ModelOrTest.Test, ResetFile);
+            ExecuteForScriptedModels(ModelOrTest.Test, ResetFile);
 
             ExecuteForSpecifiedModels(ModelOrTest.Model, ResetFile);
 
@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             WriteDummyFactory(string.Empty);
 
             // Act, Assert
-            ExecuteForGeneratedModels(ModelOrTest.Model, GenerateModel);
+            ExecuteForScriptedModels(ModelOrTest.Model, GenerateModel);
         }
 
         [Fact(Skip = "for local testing only")]
@@ -55,13 +55,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // Arrange
             ExecuteForSpecifiedModels(ModelOrTest.Test, ResetFile);
 
-            ExecuteForGeneratedModels(ModelOrTest.Test, ResetFile);
+            ExecuteForScriptedModels(ModelOrTest.Test, ResetFile);
 
             WriteDummyFactory(string.Empty);
 
             // Act, Assert
             ExecuteForSpecifiedModels(ModelOrTest.Model, RunCodeGen);
-            ExecuteForGeneratedModels(ModelOrTest.Model, RunCodeGen);
+            ExecuteForScriptedModels(ModelOrTest.Model, RunCodeGen);
         }
 
         [Fact(Skip = "for local testing only")]
@@ -70,7 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             // Arrange
             ExecuteForSpecifiedModels(ModelOrTest.Test, ResetFile);
 
-            ExecuteForGeneratedModels(ModelOrTest.Test, ResetFile);
+            ExecuteForScriptedModels(ModelOrTest.Test, ResetFile);
 
             var types = CodeGeneratorTestExtensions.GetModelTypes();
 
@@ -88,9 +88,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             ExecuteForSpecifiedModels(ModelOrTest.Test, RunCodeGen);
 
-            ExecuteForGeneratedModels(ModelOrTest.Test, GenerateModelTest);
+            ExecuteForScriptedModels(ModelOrTest.Test, GenerateModelTest);
 
-            ExecuteForGeneratedModels(ModelOrTest.Test, RunCodeGen);
+            ExecuteForScriptedModels(ModelOrTest.Test, RunCodeGen);
         }
 
         [Fact]
@@ -196,7 +196,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
         }
 
-        private static void ExecuteForGeneratedModels(
+        private static void ExecuteForScriptedModels(
             ModelOrTest modelOrTest,
             ExecuteForModelsEventHandler eventHandler)
         {
@@ -206,35 +206,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 foreach (var setterKind in setterKinds)
                 {
-                    var generatedModelDeclaredFeatures = EnumExtensions.GetDefinedEnumValues<DeclaredKeyMethod>().Where(_ => _ != DeclaredKeyMethod.NotApplicable).ToList();
+                    var declaredKeyMethods = EnumExtensions.GetDefinedEnumValues<DeclaredKeyMethod>().Where(_ => _ != DeclaredKeyMethod.NotApplicable).ToList();
 
-                    foreach (var generatedModelDeclaredFeature in generatedModelDeclaredFeatures)
+                    foreach (var declaredKeyMethod in declaredKeyMethods)
                     {
-                        if ((generatedModelDeclaredFeature == DeclaredKeyMethod.Comparing) && (typeWrapperKind != TypeWrapperKind.NotWrapped))
+                        if ((declaredKeyMethod == DeclaredKeyMethod.Comparing) && (typeWrapperKind != TypeWrapperKind.NotWrapped))
                         {
                             break;
                         }
 
-                        var directoryPath = modelOrTest.GetGeneratedModelsDirectoryPath(generatedModelDeclaredFeature, setterKind, typeWrapperKind);
+                        var directoryPath = modelOrTest.GetScriptedModelsDirectoryPath(declaredKeyMethod, setterKind, typeWrapperKind);
 
-                        var generatedModelHierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>().Where(_ => _ != HierarchyKind.NotApplicable).ToList();
+                        var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>().Where(_ => _ != HierarchyKind.NotApplicable).ToList();
 
-                        foreach (var generatedModelHierarchyKind in generatedModelHierarchyKinds)
+                        foreach (var hierarchyKind in hierarchyKinds)
                         {
-                            if (generatedModelHierarchyKind == HierarchyKind.ConcreteInherited)
+                            if (hierarchyKind == HierarchyKind.ConcreteInherited)
                             {
                                 foreach (var childIdentifier in Settings.ChildIdentifiers)
                                 {
-                                    var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier);
+                                    var modelName = declaredKeyMethod.BuildScriptedModelName(setterKind, hierarchyKind, typeWrapperKind, childIdentifier);
 
-                                    eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, childIdentifier, modelName, directoryPath);
+                                    eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, declaredKeyMethod, setterKind, hierarchyKind, typeWrapperKind, childIdentifier, modelName, directoryPath);
                                 }
                             }
                             else
                             {
-                                var modelName = generatedModelDeclaredFeature.BuildGeneratedModelName(setterKind, generatedModelHierarchyKind, typeWrapperKind, null);
+                                var modelName = declaredKeyMethod.BuildScriptedModelName(setterKind, hierarchyKind, typeWrapperKind, null);
 
-                                eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, generatedModelDeclaredFeature, setterKind, generatedModelHierarchyKind, typeWrapperKind, null, modelName, directoryPath);
+                                eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, declaredKeyMethod, setterKind, hierarchyKind, typeWrapperKind, null, modelName, directoryPath);
                             }
                         }
                     }
@@ -266,7 +266,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 if (modelOrTest == ModelOrTest.Model)
                 {
-                    // if this is a generated model, then write an empty model class file,
+                    // if this is a scripted model, then write an empty model class file,
                     // specified models should not be touched because we have hand-coded model file
                     if (specifiedModelKind == SpecifiedModelKind.NotApplicable)
                     {
@@ -296,7 +296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     throw new NotSupportedException("This model or test is not supported: " + modelOrTest);
                 }
 
-                // for both generated and specified models, write an empty model/test designer file
+                // for both scripted and specified models, write an empty model/test designer file
                 File.WriteAllBytes(modelDesignerFilePath, new byte[0]);
             }
         }
@@ -450,7 +450,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string baseClassName = null;
             if (hierarchyKind == HierarchyKind.ConcreteInherited)
             {
-                baseClassName = $"{declaredKeyMethod.BuildGeneratedModelName(setterKind, HierarchyKind.AbstractBaseRoot, typeWrapperKind, childIdentifier: null)}";
+                baseClassName = $"{declaredKeyMethod.BuildScriptedModelName(setterKind, HierarchyKind.AbstractBaseRoot, typeWrapperKind, childIdentifier: null)}";
             }
 
             var derivativeStatement = baseClassName == null ? string.Empty : baseClassName + ", ";
@@ -505,7 +505,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     classLevelCodeAnalysisSuppressions = "    [SuppressMessage(\"Microsoft.Design\", \"CA1036: OverrideMethodsOnComparableTypes\")]" + Environment.NewLine;
                     break;
                 default:
-                    throw new NotSupportedException("This generated model kind is not supported: " + declaredKeyMethod);
+                    throw new NotSupportedException("This declared key method kind is not supported: " + declaredKeyMethod);
             }
 
             var headerStatements = new List<string>
@@ -588,14 +588,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         methodStatements.Add(Invariant($"        }}"));
                     }
 
-                    var generatedModelDeclaredFeatureNoneName = modelName.Replace(declaredKeyMethod.BuildNameToken(), DeclaredKeyMethod.NoneDeclared.BuildNameToken());
+                    var declareKeyMethodNoneName = modelName.Replace(declaredKeyMethod.BuildNameToken(), DeclaredKeyMethod.NoneDeclared.BuildNameToken());
 
                     var getEquivalentAllModelMethodStatements = new List<string>
                     {
                         string.Empty,
                         Invariant($"        private {modelName} DeepCloneImplementation()"),
                         Invariant($"        {{"),
-                        Invariant($"            var referenceModel = A.Dummy<{generatedModelDeclaredFeatureNoneName}>();"),
+                        Invariant($"            var referenceModel = A.Dummy<{declareKeyMethodNoneName}>();"),
                         string.Empty,
                         Invariant($"            var referenceModelProperties = referenceModel.GetType().GetProperties();"),
                         string.Empty,
@@ -604,7 +604,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         Invariant($"                referenceModelProperty.DeclaringType.GetProperty(referenceModelProperty.Name).SetValue(referenceModel, this.GetType().GetProperty(referenceModelProperty.Name).GetValue(this));"),
                         Invariant($"            }}"),
                         string.Empty,
-                        Invariant($"            referenceModel = ({generatedModelDeclaredFeatureNoneName})referenceModel.GetType().GetMethod(\"DeepClone\").Invoke(referenceModel, new object[0]);"),
+                        Invariant($"            referenceModel = ({declareKeyMethodNoneName})referenceModel.GetType().GetMethod(\"DeepClone\").Invoke(referenceModel, new object[0]);"),
                         string.Empty,
                         Invariant($"            var thisModelProperties = this.GetType().GetProperties();"),
                         string.Empty,

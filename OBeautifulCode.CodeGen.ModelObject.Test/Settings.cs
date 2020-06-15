@@ -39,13 +39,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public static readonly string SpecifiedModelsPath = ModelsPath + "Specified\\";
 
-        public static readonly string GeneratedModelsPath = ModelsPath + "Generated\\";
+        public static readonly string ScriptedModelsPath = ModelsPath + "Scripted\\";
 
         public static readonly string TestsPath = SourceRoot + "ModelTests\\";
 
         public static readonly string SpecifiedModelsTestPath = TestsPath + "Specified\\";
 
-        public static readonly string GeneratedModelsTestsPath = TestsPath + "Generated\\";
+        public static readonly string ScriptedModelsTestsPath = TestsPath + "Scripted\\";
 
         public static readonly string DummyFactoryFilePath = SourceRoot + "DummyFactory.cs";
 

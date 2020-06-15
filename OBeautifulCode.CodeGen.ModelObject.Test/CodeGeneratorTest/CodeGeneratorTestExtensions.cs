@@ -164,7 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string BuildGeneratedModelName(
+        public static string BuildScriptedModelName(
             this DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
             HierarchyKind hierarchyKind,
@@ -357,7 +357,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string GetGeneratedModelsDirectoryPath(
+        public static string GetScriptedModelsDirectoryPath(
             this ModelOrTest modelOrTest,
             DeclaredKeyMethod declaredKeyMethod,
             SetterKind setterKind,
@@ -368,10 +368,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             switch (modelOrTest)
             {
                 case ModelOrTest.Model:
-                    result = Settings.GeneratedModelsPath + declaredKeyMethod.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
+                    result = Settings.ScriptedModelsPath + declaredKeyMethod.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 case ModelOrTest.Test:
-                    result = Settings.GeneratedModelsTestsPath + declaredKeyMethod.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
+                    result = Settings.ScriptedModelsTestsPath + declaredKeyMethod.BuildNameToken() + "\\" + setterKind.BuildNameToken() + "\\" + typeWrapperKind.BuildNameToken() + "\\";
                     break;
                 default:
                     throw new NotSupportedException("This model or test is not supported: " + modelOrTest);
