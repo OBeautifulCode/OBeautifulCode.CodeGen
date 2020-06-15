@@ -8,7 +8,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
     using System.CodeDom.Compiler;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Diagnostics.CodeAnalysis;
 
     using OBeautifulCode.Type;
@@ -113,7 +115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     [GeneratedCode("ignore", "ignore")]
     public class DictionaryKeyedOnDateTimeProperty2 : IModelViaCodeGen
     {
-        public List<List<Dictionary<string, Dictionary<DateTime, string>>>> Property1 { get; set; }
+        public IList<IList<IDictionary<string, IDictionary<DateTime, string>>>> Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
@@ -127,7 +129,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     [GeneratedCode("ignore", "ignore")]
     public abstract class DictionaryKeyedOnDateTimeProperty4Base : IModelViaCodeGen
     {
-        public List<List<Dictionary<Dictionary<DateTime, string>[], string>>>[] Property1 { get; set; }
+        public IList<IList<IDictionary<IDictionary<DateTime, string>[], string>>>[] Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
@@ -138,36 +140,125 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class EnumerableKeyedOnDateTimeProperty1 : IModelViaCodeGen
+    public class HasEnumerableProperty1 : IModelViaCodeGen
     {
         public IEnumerable<string> Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class EnumerableKeyedOnDateTimeProperty2 : IModelViaCodeGen
+    public class HasEnumerableProperty2 : IModelViaCodeGen
     {
-        public List<List<Dictionary<string, IEnumerable<string>>>> Property1 { get; set; }
+        public IList<IList<IDictionary<string, IEnumerable<string>>>> Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class EnumerableKeyedOnDateTimeProperty3 : IModelViaCodeGen
+    public abstract class HasEnumerableProperty3Base : IModelViaCodeGen
     {
-        public IEnumerable<string>[] Property1 { get; set; }
+        public IList<IList<IDictionary<IEnumerable<string>[], string>>>[] Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public abstract class EnumerableKeyedOnDateTimeProperty4Base : IModelViaCodeGen
+    public class HasEnumerableProperty3 : HasEnumerableProperty3Base, IModelViaCodeGen
     {
-        public List<List<Dictionary<IEnumerable<string>[], string>>>[] Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class EnumerableKeyedOnDateTimeProperty4 : EnumerableKeyedOnDateTimeProperty4Base, IModelViaCodeGen
+    public class HasNonInterfaceCollectionProperty1 : IModelViaCodeGen
     {
+        public Collection<string> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceCollectionProperty2 : IModelViaCodeGen
+    {
+        public ReadOnlyCollection<string> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceCollectionProperty3 : IModelViaCodeGen
+    {
+        public List<string> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceCollectionProperty4 : IModelViaCodeGen
+    {
+        public IList<IList<IDictionary<string, Collection<string>>>> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public abstract class HasNonInterfaceCollectionProperty5Base : IModelViaCodeGen
+    {
+        public IList<IList<IDictionary<ReadOnlyCollection<string>[], string>>>[] Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceCollectionProperty5 : HasNonInterfaceCollectionProperty5Base, IModelViaCodeGen
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceCollectionProperty6 : IModelViaCodeGen
+    {
+        public IList<IList<IDictionary<string, List<string>>>> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceDictionaryProperty1 : IModelViaCodeGen
+    {
+        public Dictionary<string, string> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceDictionaryProperty2 : IModelViaCodeGen
+    {
+        public ReadOnlyDictionary<string, string> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceDictionaryProperty3 : IModelViaCodeGen
+    {
+        public ConcurrentDictionary<string, string> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceDictionaryProperty4 : IModelViaCodeGen
+    {
+        public IList<IList<IDictionary<string, Dictionary<string, string>>>> Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public abstract class HasNonInterfaceDictionaryProperty5Base : IModelViaCodeGen
+    {
+        public IList<IList<IDictionary<ReadOnlyDictionary<string, string>[], string>>>[] Property1 { get; set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceDictionaryProperty5 : HasNonInterfaceDictionaryProperty5Base, IModelViaCodeGen
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasNonInterfaceDictionaryProperty6 : IModelViaCodeGen
+    {
+        public IList<IList<IDictionary<string, ConcurrentDictionary<string, string>>>> Property1 { get; set; }
     }
 
     [ExcludeFromCodeCoverage]

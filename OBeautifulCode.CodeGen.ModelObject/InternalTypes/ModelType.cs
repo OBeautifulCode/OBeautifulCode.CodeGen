@@ -364,7 +364,7 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an open type."));
             }
 
-            if (!CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)))
+            if (!IsCodeGeneratedType(type))
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it does not implement one of the following interfaces: {CodeGenerator.TypesThatIndicateCodeGenIsRequired.Select(_ => _.ToStringReadable()).ToCsv()}."));
             }
@@ -432,22 +432,32 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains properties of concern with inconsistent access modifiers on its setters."));
             }
 
-            var visitedTypes = new HashSet<Type>();
-
-            var dictionaryKeyedOnDateTimeProperties = propertiesOfConcern.Where(_ => IsOrContainsDictionaryKeyedOnDateTime(_.PropertyType, visitedTypes)).ToList();
+            var dictionaryKeyedOnDateTimeProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsDictionaryKeyedOnDateTime)).ToList();
 
             if (dictionaryKeyedOnDateTimeProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind)': {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind): {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            visitedTypes = new HashSet<Type>();
-
-            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsSystemEnumerable(_.PropertyType, visitedTypes)).ToList();
+            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, t => t.IsClosedSystemEnumerableType())).ToList();
 
             if (enumerableProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>; enumerables may have unintended side-effects when iterating (e.g. fetch objects from a database)': {enumerableProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>; enumerables may have unintended side-effects when iterating (e.g. fetch objects from a database): {enumerableProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+            }
+
+            var closedSystemCollectionNonInterfaceProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsClosedSystemCollectionNonInterfaceType)).ToList();
+
+            if (closedSystemCollectionNonInterfaceProperties.Any())
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a closed System Collection type that is not an interface; it's a best practice to use interfaces for these types: {closedSystemCollectionNonInterfaceProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+            }
+
+            var closedSystemDictionaryNonInterfaceProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsClosedSystemDictionaryNonInterfaceType)).ToList();
+
+            if (closedSystemDictionaryNonInterfaceProperties.Any())
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a closed System Dictionary type that is not an interface; it's a best practice to use interfaces for these types: {closedSystemDictionaryNonInterfaceProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
         }
 
@@ -643,12 +653,9 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private static bool IsOrContainsDictionaryKeyedOnDateTime(
-            Type type,
-            HashSet<Type> visitedTypes)
+        private static bool IsDictionaryKeyedOnDateTime(
+            Type type)
         {
-            visitedTypes.Add(type);
-
             if (type.IsClosedSystemDictionaryType())
             {
                 var keyType = type.GetClosedSystemDictionaryKeyType();
@@ -659,28 +666,15 @@ namespace OBeautifulCode.CodeGen
                 }
             }
 
-            if (type.IsGenericType)
+            return false;
+        }
+
+        private static bool IsClosedSystemCollectionNonInterfaceType(
+            Type type)
+        {
+            if (type.IsClosedSystemCollectionType())
             {
-                var genericTypeArguments = type.GenericTypeArguments;
-
-                foreach (var genericTypeArgument in genericTypeArguments)
-                {
-                    // if the argument is a model type then move on;
-                    // it will be validated when code gen is run for that model
-                    if ((!visitedTypes.Contains(genericTypeArgument)) && (!IsEquatableType(genericTypeArgument)) && IsOrContainsDictionaryKeyedOnDateTime(genericTypeArgument, visitedTypes))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            if (type.IsArray)
-            {
-                var elementType = type.GetElementType();
-
-                // if the argument is a model type then move on;
-                // it will be validated when code gen is run for that model
-                if ((!visitedTypes.Contains(elementType)) && (!IsEquatableType(elementType)) && IsOrContainsDictionaryKeyedOnDateTime(elementType, visitedTypes))
+                if (!type.IsInterface)
                 {
                     return true;
                 }
@@ -689,13 +683,39 @@ namespace OBeautifulCode.CodeGen
             return false;
         }
 
-        private static bool IsOrContainsSystemEnumerable(
+        private static bool IsClosedSystemDictionaryNonInterfaceType(
+            Type type)
+        {
+            if (type.IsClosedSystemDictionaryType())
+            {
+                if (!type.IsInterface)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool IsOrContainsMatchingType(
             Type type,
-            HashSet<Type> visitedTypes)
+            Func<Type, bool> isMatchingType)
+        {
+            var visitedTypes = new HashSet<Type>();
+
+            var result = IsOrContainsMatchingType(type, visitedTypes, isMatchingType);
+
+            return result;
+        }
+
+        private static bool IsOrContainsMatchingType(
+            Type type,
+            HashSet<Type> visitedTypes,
+            Func<Type, bool> isMatchingType)
         {
             visitedTypes.Add(type);
 
-            if (type.IsClosedSystemEnumerableType())
+            if (isMatchingType(type))
             {
                 return true;
             }
@@ -706,9 +726,9 @@ namespace OBeautifulCode.CodeGen
 
                 foreach (var genericTypeArgument in genericTypeArguments)
                 {
-                    // if the argument is a model type then move on;
-                    // it will be validated when code gen is run for that model
-                    if ((!visitedTypes.Contains(genericTypeArgument)) && IsOrContainsSystemEnumerable(genericTypeArgument, visitedTypes))
+                    // if the argument is a code generated type then move on;
+                    // it will be validated when code gen is run for that type
+                    if ((!visitedTypes.Contains(genericTypeArgument)) && (!IsCodeGeneratedType(genericTypeArgument)) && IsOrContainsMatchingType(genericTypeArgument, visitedTypes, isMatchingType))
                     {
                         return true;
                     }
@@ -719,9 +739,9 @@ namespace OBeautifulCode.CodeGen
             {
                 var elementType = type.GetElementType();
 
-                // if the argument is a model type then move on;
-                // it will be validated when code gen is run for that model
-                if ((!visitedTypes.Contains(elementType)) && IsOrContainsSystemEnumerable(elementType, visitedTypes))
+                // if the argument is a code generated type then move on;
+                // it will be validated when code gen is run for that type
+                if ((!visitedTypes.Contains(elementType)) && (!IsCodeGeneratedType(elementType)) && IsOrContainsMatchingType(elementType, visitedTypes, isMatchingType))
                 {
                     return true;
                 }
@@ -821,6 +841,14 @@ namespace OBeautifulCode.CodeGen
             // per the note in the constructor, we are checking IEquatableViaCodeGen in case
             // the type is not yet equatable, but will be after the first pass of code gen on the model
             var result = type.IsAssignableTo(typeof(IEquatable<>), treatGenericTypeDefinitionAsAssignableTo: true) || type.IsAssignableTo(typeof(IEquatableViaCodeGen));
+
+            return result;
+        }
+
+        private static bool IsCodeGeneratedType(
+            Type type)
+        {
+            var result = CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_));
 
             return result;
         }
