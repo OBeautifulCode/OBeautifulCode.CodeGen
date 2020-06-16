@@ -20,7 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public abstract class DefaultCodeGenDummyFactory : IDummyFactory
     {
-        public DefaultCodeGenDummyFactory()
+        protected DefaultCodeGenDummyFactory()
         {
             AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelAllPrivateSetArrayOfNullable(

@@ -1041,7 +1041,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     string.Empty,
                     "    public abstract class DefaultCodeGenDummyFactory : IDummyFactory",
                     "    {",
-                    "        public DefaultCodeGenDummyFactory()",
+                    "        protected DefaultCodeGenDummyFactory()",
                     "        {",
                     snippetsToken,
                     "        }",
