@@ -40,6 +40,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -47,6 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelHashingPublicSetReadOnlyDictionaryChild2[]
@@ -60,6 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -67,6 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -77,6 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -84,6 +89,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -94,6 +100,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -101,6 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -111,6 +119,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -118,6 +127,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -128,6 +138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -135,6 +146,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -145,6 +157,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -152,6 +165,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -162,6 +176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -169,6 +184,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -179,6 +195,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                            },
+                        new ModelHashingPublicSetReadOnlyDictionaryChild2
+                            {
+                                ParentReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ParentReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                ParentReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                ParentReadOnlyDictionaryInterfaceOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty)).Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -186,6 +222,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -196,6 +233,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty)).Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -203,6 +241,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -213,6 +252,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty)).Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -220,6 +260,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -230,6 +271,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -237,6 +279,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -247,6 +290,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -254,6 +298,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty)).Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -264,6 +309,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -271,6 +317,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetReadOnlyDictionaryChild2
                             {
@@ -281,6 +328,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
@@ -288,6 +336,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty)).Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                            },
+                        new ModelHashingPublicSetReadOnlyDictionaryChild2
+                            {
+                                ParentReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ParentReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                ParentReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                ParentReadOnlyDictionaryInterfaceOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfIntProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfStringProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]

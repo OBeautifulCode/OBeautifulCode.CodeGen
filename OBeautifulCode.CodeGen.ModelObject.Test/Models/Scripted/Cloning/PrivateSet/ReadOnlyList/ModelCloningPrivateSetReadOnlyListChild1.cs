@@ -41,6 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<CustomEnum> parentReadOnlyListInterfaceOfCustomEnumProperty,
             IReadOnlyList<CustomFlagsEnum> parentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyList<CustomClass> parentReadOnlyListInterfaceOfCustomClassProperty,
+            IReadOnlyList<CustomBaseClass> parentReadOnlyListInterfaceOfCustomBaseClassProperty,
             IReadOnlyList<bool> child1ReadOnlyListInterfaceOfBoolProperty,
             IReadOnlyList<int> child1ReadOnlyListInterfaceOfIntProperty,
             IReadOnlyList<string> child1ReadOnlyListInterfaceOfStringProperty,
@@ -48,8 +49,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<DateTime> child1ReadOnlyListInterfaceOfDateTimeProperty,
             IReadOnlyList<CustomEnum> child1ReadOnlyListInterfaceOfCustomEnumProperty,
             IReadOnlyList<CustomFlagsEnum> child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-            IReadOnlyList<CustomClass> child1ReadOnlyListInterfaceOfCustomClassProperty)
-            : base(parentReadOnlyListInterfaceOfBoolProperty, parentReadOnlyListInterfaceOfIntProperty, parentReadOnlyListInterfaceOfStringProperty, parentReadOnlyListInterfaceOfGuidProperty, parentReadOnlyListInterfaceOfDateTimeProperty, parentReadOnlyListInterfaceOfCustomEnumProperty, parentReadOnlyListInterfaceOfCustomFlagsEnumProperty, parentReadOnlyListInterfaceOfCustomClassProperty)
+            IReadOnlyList<CustomClass> child1ReadOnlyListInterfaceOfCustomClassProperty,
+            IReadOnlyList<CustomBaseClass> child1ReadOnlyListInterfaceOfCustomBaseClassProperty)
+            : base(parentReadOnlyListInterfaceOfBoolProperty, parentReadOnlyListInterfaceOfIntProperty, parentReadOnlyListInterfaceOfStringProperty, parentReadOnlyListInterfaceOfGuidProperty, parentReadOnlyListInterfaceOfDateTimeProperty, parentReadOnlyListInterfaceOfCustomEnumProperty, parentReadOnlyListInterfaceOfCustomFlagsEnumProperty, parentReadOnlyListInterfaceOfCustomClassProperty, parentReadOnlyListInterfaceOfCustomBaseClassProperty)
         {
             new { child1ReadOnlyListInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -59,6 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child1ReadOnlyListInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { child1ReadOnlyListInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.Child1ReadOnlyListInterfaceOfBoolProperty = child1ReadOnlyListInterfaceOfBoolProperty;
             this.Child1ReadOnlyListInterfaceOfIntProperty = child1ReadOnlyListInterfaceOfIntProperty;
@@ -68,6 +71,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ReadOnlyListInterfaceOfCustomEnumProperty = child1ReadOnlyListInterfaceOfCustomEnumProperty;
             this.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty = child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty;
             this.Child1ReadOnlyListInterfaceOfCustomClassProperty = child1ReadOnlyListInterfaceOfCustomClassProperty;
+            this.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty = child1ReadOnlyListInterfaceOfCustomBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -126,6 +130,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomClass> Child1ReadOnlyListInterfaceOfCustomClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomBaseClass> Child1ReadOnlyListInterfaceOfCustomBaseClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelCloningPrivateSetReadOnlyListChild1 other)
         {
@@ -148,6 +159,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomEnumProperty) &&
                 this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty) &&
                 this.ParentReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomClassProperty) &&
+                this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomBaseClassProperty) &&
                 this.Child1ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfBoolProperty) &&
                 this.Child1ReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfIntProperty) &&
                 this.Child1ReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfStringProperty) &&
@@ -155,7 +167,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child1ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfDateTimeProperty) &&
                 this.Child1ReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfCustomEnumProperty) &&
                 this.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty) &&
-                this.Child1ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfCustomClassProperty);
+                this.Child1ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfCustomClassProperty) &&
+                this.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty);
 
             return result;
         }

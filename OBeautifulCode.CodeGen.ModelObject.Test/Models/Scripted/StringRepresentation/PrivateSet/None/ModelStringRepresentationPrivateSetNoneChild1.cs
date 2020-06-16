@@ -37,6 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum parentCustomEnumProperty,
             CustomFlagsEnum parentCustomFlagsEnumProperty,
             CustomClass parentCustomClassProperty,
+            CustomBaseClass parentCustomBaseClassProperty,
             bool child1BoolProperty,
             int child1IntProperty,
             string child1StringProperty,
@@ -44,11 +45,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             DateTime child1DateTimeProperty,
             CustomEnum child1CustomEnumProperty,
             CustomFlagsEnum child1CustomFlagsEnumProperty,
-            CustomClass child1CustomClassProperty)
-            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentCustomEnumProperty, parentCustomFlagsEnumProperty, parentCustomClassProperty)
+            CustomClass child1CustomClassProperty,
+            CustomBaseClass child1CustomBaseClassProperty)
+            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentCustomEnumProperty, parentCustomFlagsEnumProperty, parentCustomClassProperty, parentCustomBaseClassProperty)
         {
             new { child1StringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { child1CustomClassProperty }.AsArg().Must().NotBeNull();
+            new { child1CustomBaseClassProperty }.AsArg().Must().NotBeNull();
 
             this.Child1BoolProperty = child1BoolProperty;
             this.Child1IntProperty = child1IntProperty;
@@ -58,6 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1CustomEnumProperty = child1CustomEnumProperty;
             this.Child1CustomFlagsEnumProperty = child1CustomFlagsEnumProperty;
             this.Child1CustomClassProperty = child1CustomClassProperty;
+            this.Child1CustomBaseClassProperty = child1CustomBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -115,6 +119,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomClass Child1CustomClassProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomBaseClass Child1CustomBaseClassProperty { get; private set; }
 
         /// <inheritdoc />
         public override string ToString()

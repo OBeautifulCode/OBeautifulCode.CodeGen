@@ -228,6 +228,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomClassProperty);
                 }
+
+                if (systemUnderTest.ArrayOfCustomBaseClassProperty == null)
+                {
+                    actual.ArrayOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomBaseClassProperty);
+                }
             }
         }
     }

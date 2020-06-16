@@ -74,6 +74,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomClass, CustomClass> Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfBoolProperty)
@@ -83,6 +90,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)
+                .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfBoolProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfIntProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfStringProperty)
@@ -90,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty)
+                .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
                 .Value;
     }
 }

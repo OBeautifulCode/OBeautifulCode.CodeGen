@@ -59,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomEnumProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomClassProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPublicSetReadOnlyDictionaryParent[]
                     {
@@ -258,6 +259,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty == null)
+                {
+                    actual.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty);
                 }
             }
         }

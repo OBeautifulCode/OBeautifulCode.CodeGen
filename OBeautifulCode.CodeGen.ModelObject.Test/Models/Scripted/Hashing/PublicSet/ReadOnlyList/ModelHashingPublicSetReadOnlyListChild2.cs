@@ -81,6 +81,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomClass> Child2ReadOnlyListInterfaceOfCustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomBaseClass> Child2ReadOnlyListInterfaceOfCustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentReadOnlyListInterfaceOfBoolProperty)
@@ -91,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomEnumProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomClassProperty)
+                .Hash(this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfBoolProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfIntProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfStringProperty)
@@ -99,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomEnumProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomClassProperty)
+                .Hash(this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty)
                 .Value;
     }
 }

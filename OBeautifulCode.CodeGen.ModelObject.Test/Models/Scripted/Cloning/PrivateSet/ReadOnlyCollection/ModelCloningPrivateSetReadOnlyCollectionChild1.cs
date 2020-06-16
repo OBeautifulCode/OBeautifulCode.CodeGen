@@ -41,6 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<CustomEnum> parentReadOnlyCollectionInterfaceOfCustomEnumProperty,
             IReadOnlyCollection<CustomFlagsEnum> parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyCollection<CustomClass> parentReadOnlyCollectionInterfaceOfCustomClassProperty,
+            IReadOnlyCollection<CustomBaseClass> parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
             IReadOnlyCollection<bool> child1ReadOnlyCollectionInterfaceOfBoolProperty,
             IReadOnlyCollection<int> child1ReadOnlyCollectionInterfaceOfIntProperty,
             IReadOnlyCollection<string> child1ReadOnlyCollectionInterfaceOfStringProperty,
@@ -48,8 +49,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<DateTime> child1ReadOnlyCollectionInterfaceOfDateTimeProperty,
             IReadOnlyCollection<CustomEnum> child1ReadOnlyCollectionInterfaceOfCustomEnumProperty,
             IReadOnlyCollection<CustomFlagsEnum> child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-            IReadOnlyCollection<CustomClass> child1ReadOnlyCollectionInterfaceOfCustomClassProperty)
-            : base(parentReadOnlyCollectionInterfaceOfBoolProperty, parentReadOnlyCollectionInterfaceOfIntProperty, parentReadOnlyCollectionInterfaceOfStringProperty, parentReadOnlyCollectionInterfaceOfGuidProperty, parentReadOnlyCollectionInterfaceOfDateTimeProperty, parentReadOnlyCollectionInterfaceOfCustomEnumProperty, parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty, parentReadOnlyCollectionInterfaceOfCustomClassProperty)
+            IReadOnlyCollection<CustomClass> child1ReadOnlyCollectionInterfaceOfCustomClassProperty,
+            IReadOnlyCollection<CustomBaseClass> child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
+            : base(parentReadOnlyCollectionInterfaceOfBoolProperty, parentReadOnlyCollectionInterfaceOfIntProperty, parentReadOnlyCollectionInterfaceOfStringProperty, parentReadOnlyCollectionInterfaceOfGuidProperty, parentReadOnlyCollectionInterfaceOfDateTimeProperty, parentReadOnlyCollectionInterfaceOfCustomEnumProperty, parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty, parentReadOnlyCollectionInterfaceOfCustomClassProperty, parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
         {
             new { child1ReadOnlyCollectionInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyCollectionInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -59,6 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child1ReadOnlyCollectionInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyCollectionInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.Child1ReadOnlyCollectionInterfaceOfBoolProperty = child1ReadOnlyCollectionInterfaceOfBoolProperty;
             this.Child1ReadOnlyCollectionInterfaceOfIntProperty = child1ReadOnlyCollectionInterfaceOfIntProperty;
@@ -68,6 +71,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ReadOnlyCollectionInterfaceOfCustomEnumProperty = child1ReadOnlyCollectionInterfaceOfCustomEnumProperty;
             this.Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty;
             this.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty = child1ReadOnlyCollectionInterfaceOfCustomClassProperty;
+            this.Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty = child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -126,6 +130,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomClass> Child1ReadOnlyCollectionInterfaceOfCustomClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomBaseClass> Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelCloningPrivateSetReadOnlyCollectionChild1 other)
         {
@@ -148,6 +159,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty) &&
                 this.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty) &&
                 this.ParentReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfCustomClassProperty) &&
+                this.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty) &&
                 this.Child1ReadOnlyCollectionInterfaceOfBoolProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfBoolProperty) &&
                 this.Child1ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfIntProperty) &&
                 this.Child1ReadOnlyCollectionInterfaceOfStringProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfStringProperty) &&
@@ -155,7 +167,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child1ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfDateTimeProperty) &&
                 this.Child1ReadOnlyCollectionInterfaceOfCustomEnumProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfCustomEnumProperty) &&
                 this.Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty) &&
-                this.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty);
+                this.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty) &&
+                this.Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(other.Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
 
             return result;
         }

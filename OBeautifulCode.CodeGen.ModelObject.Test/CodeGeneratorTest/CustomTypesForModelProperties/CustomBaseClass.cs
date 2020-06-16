@@ -6,10 +6,16 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System;
+
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
 
-    public abstract class CustomBaseClass : IModel<CustomBaseClass>
+    using static System.FormattableString;
+
+    [Serializable]
+    public abstract class CustomBaseClass : IModel<CustomBaseClass>, IComparableForRelativeSortOrder<CustomBaseClass>
     {
         protected CustomBaseClass(
             int baseItem1,
@@ -25,12 +31,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public string BaseItem2 { get; private set; }
 
-        /// <summary>
-        /// Determines whether two objects of type <see cref="CustomBaseClass"/> are equal.
-        /// </summary>
-        /// <param name="left">The object to the left of the equality operator.</param>
-        /// <param name="right">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items are equal; otherwise false.</returns>
         public static bool operator ==(CustomBaseClass left, CustomBaseClass right)
         {
             if (ReferenceEquals(left, right))
@@ -48,13 +48,69 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        /// <summary>
-        /// Determines whether two objects of type <see cref="CustomBaseClass"/> are not equal.
-        /// </summary>
-        /// <param name="left">The object to the left of the equality operator.</param>
-        /// <param name="right">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items are not equal; otherwise false.</returns>
         public static bool operator !=(CustomBaseClass left, CustomBaseClass right) => !(left == right);
+
+        public static bool operator <(CustomBaseClass left, CustomBaseClass right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(left, null))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'."));
+            }
+
+            var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
+
+            var result = relativeSortOrder == RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
+
+            return result;
+        }
+
+        public static bool operator >(CustomBaseClass left, CustomBaseClass right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(left, null))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(right, null))
+            {
+                return true;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'."));
+            }
+
+            var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
+
+            var result = relativeSortOrder == RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+
+            return result;
+        }
+
+        public static bool operator <=(CustomBaseClass left, CustomBaseClass right) => !(left > right);
+
+        public static bool operator >=(CustomBaseClass left, CustomBaseClass right) => !(left < right);
 
         /// <inheritdoc />
         public bool Equals(CustomBaseClass other) => this == other;
@@ -71,12 +127,35 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public CustomBaseClass DeepClone() => this.DeepCloneInternal();
 
-        /// <summary>
-        /// Creates a new object that is a deep clone of this instance.
-        /// </summary>
-        /// <returns>
-        /// A new object that is a deep clone of this instance.
-        /// </returns>
+        /// <inheritdoc />
+        public int CompareTo(CustomBaseClass other)
+        {
+            if (ReferenceEquals(other, null))
+            {
+                return 1;
+            }
+
+            var relativeSortOrder = this.CompareToForRelativeSortOrder(other);
+
+            switch (relativeSortOrder)
+            {
+                case RelativeSortOrder.ThisInstancePrecedesTheOtherInstance:
+                    return -1;
+                case RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance:
+                    return 0;
+                case RelativeSortOrder.ThisInstanceFollowsTheOtherInstance:
+                    return 1;
+                default:
+                    throw new NotSupportedException(Invariant($"This {nameof(RelativeSortOrder)} is not supported: {relativeSortOrder}."));
+            }
+        }
+
+        /// <inheritdoc />
+        public abstract int CompareTo(object obj);
+
+        /// <inheritdoc />
+        public abstract RelativeSortOrder CompareToForRelativeSortOrder(CustomBaseClass other);
+
         protected abstract CustomBaseClass DeepCloneInternal();
     }
 }

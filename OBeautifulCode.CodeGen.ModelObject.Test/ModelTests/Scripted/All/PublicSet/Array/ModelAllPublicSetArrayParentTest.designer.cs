@@ -60,6 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomEnumProperty(A.Dummy<ModelAllPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty)).ParentArrayOfCustomEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomFlagsEnumProperty(A.Dummy<ModelAllPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty)).ParentArrayOfCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomClassProperty(A.Dummy<ModelAllPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty)).ParentArrayOfCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomBaseClassProperty(A.Dummy<ModelAllPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty)).ParentArrayOfCustomBaseClassProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPublicSetArrayParent[]
                     {
@@ -268,6 +269,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.ParentArrayOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomClassProperty);
+                }
+
+                if (systemUnderTest.ParentArrayOfCustomBaseClassProperty == null)
+                {
+                    actual.ParentArrayOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomBaseClassProperty);
                 }
             }
         }

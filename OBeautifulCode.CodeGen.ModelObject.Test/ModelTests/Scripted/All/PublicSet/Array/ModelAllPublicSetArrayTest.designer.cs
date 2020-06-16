@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetArray>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArray: ArrayOfBoolProperty = {systemUnderTest.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {systemUnderTest.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {systemUnderTest.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {systemUnderTest.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {systemUnderTest.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {systemUnderTest.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {systemUnderTest.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {systemUnderTest.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArray: ArrayOfBoolProperty = {systemUnderTest.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {systemUnderTest.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {systemUnderTest.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {systemUnderTest.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {systemUnderTest.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {systemUnderTest.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {systemUnderTest.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {systemUnderTest.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {systemUnderTest.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -213,6 +213,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetArray>
+                {
+                    Name = "DeepCloneWithArrayOfCustomBaseClassProperty should deep clone object and replace ArrayOfCustomBaseClassProperty with the provided arrayOfCustomBaseClassProperty",
+                    WithPropertyName = "ArrayOfCustomBaseClassProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetArray>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetArray>().ThatIs(_ => !systemUnderTest.ArrayOfCustomBaseClassProperty.IsEqualTo(_.ArrayOfCustomBaseClassProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetArray>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ArrayOfCustomBaseClassProperty,
+                        };
+
+                        return result;
+                    },
                 });
 
         private static readonly ModelAllPublicSetArray ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelAllPublicSetArray>();
@@ -235,6 +255,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPublicSetArray[]
@@ -249,6 +270,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -260,6 +282,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -271,6 +294,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -282,6 +306,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -293,6 +318,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -304,6 +330,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty)).ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -315,6 +342,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty)).ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
@@ -326,6 +354,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
                                 ArrayOfCustomClassProperty     = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty)).ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                            },
+                        new ModelAllPublicSetArray
+                            {
+                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty)).ArrayOfCustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -565,6 +606,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomClassProperty);
                 }
+
+                if (systemUnderTest.ArrayOfCustomBaseClassProperty == null)
+                {
+                    actual.ArrayOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomBaseClassProperty);
+                }
             }
 
             [Fact]
@@ -583,7 +633,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ArrayOfBoolProperty", "ArrayOfIntProperty", "ArrayOfStringProperty", "ArrayOfGuidProperty", "ArrayOfDateTimeProperty", "ArrayOfCustomEnumProperty", "ArrayOfCustomFlagsEnumProperty", "ArrayOfCustomClassProperty" };
+                var propertyNames = new string[] { "ArrayOfBoolProperty", "ArrayOfIntProperty", "ArrayOfStringProperty", "ArrayOfGuidProperty", "ArrayOfDateTimeProperty", "ArrayOfCustomEnumProperty", "ArrayOfCustomFlagsEnumProperty", "ArrayOfCustomClassProperty", "ArrayOfCustomBaseClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

@@ -76,6 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentArrayOfCustomEnumProperty.IsEqualTo(other.ParentArrayOfCustomEnumProperty)
                       && this.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(other.ParentArrayOfCustomFlagsEnumProperty)
                       && this.ParentArrayOfCustomClassProperty.IsEqualTo(other.ParentArrayOfCustomClassProperty)
+                      && this.ParentArrayOfCustomBaseClassProperty.IsEqualTo(other.ParentArrayOfCustomBaseClassProperty)
                       && this.Child2ArrayOfBoolProperty.IsEqualTo(other.Child2ArrayOfBoolProperty)
                       && this.Child2ArrayOfIntProperty.IsEqualTo(other.Child2ArrayOfIntProperty)
                       && this.Child2ArrayOfStringProperty.IsEqualTo(other.Child2ArrayOfStringProperty)
@@ -83,7 +84,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.Child2ArrayOfDateTimeProperty.IsEqualTo(other.Child2ArrayOfDateTimeProperty)
                       && this.Child2ArrayOfCustomEnumProperty.IsEqualTo(other.Child2ArrayOfCustomEnumProperty)
                       && this.Child2ArrayOfCustomFlagsEnumProperty.IsEqualTo(other.Child2ArrayOfCustomFlagsEnumProperty)
-                      && this.Child2ArrayOfCustomClassProperty.IsEqualTo(other.Child2ArrayOfCustomClassProperty);
+                      && this.Child2ArrayOfCustomClassProperty.IsEqualTo(other.Child2ArrayOfCustomClassProperty)
+                      && this.Child2ArrayOfCustomBaseClassProperty.IsEqualTo(other.Child2ArrayOfCustomBaseClassProperty);
 
             return result;
         }
@@ -101,6 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ParentArrayOfCustomEnumProperty)
             .Hash(this.ParentArrayOfCustomFlagsEnumProperty)
             .Hash(this.ParentArrayOfCustomClassProperty)
+            .Hash(this.ParentArrayOfCustomBaseClassProperty)
             .Hash(this.Child2ArrayOfBoolProperty)
             .Hash(this.Child2ArrayOfIntProperty)
             .Hash(this.Child2ArrayOfStringProperty)
@@ -109,6 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Child2ArrayOfCustomEnumProperty)
             .Hash(this.Child2ArrayOfCustomFlagsEnumProperty)
             .Hash(this.Child2ArrayOfCustomClassProperty)
+            .Hash(this.Child2ArrayOfCustomBaseClassProperty)
             .Value;
 
         /// <inheritdoc />
@@ -140,6 +144,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -147,7 +152,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -178,6 +184,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -185,7 +192,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -216,6 +224,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -223,7 +232,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -254,6 +264,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -261,7 +272,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -292,6 +304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -299,7 +312,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -330,6 +344,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  parentArrayOfCustomEnumProperty,
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -337,7 +352,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -368,6 +384,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  parentArrayOfCustomFlagsEnumProperty,
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -375,7 +392,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -406,6 +424,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  parentArrayOfCustomClassProperty,
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -413,7 +432,48 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfCustomBaseClassProperty(CustomBaseClass[] parentArrayOfCustomBaseClassProperty)
+        {
+            var result = new ModelAllPrivateSetArrayChild2(
+                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 parentArrayOfCustomBaseClassProperty,
+                                 this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 this.Child2ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -448,6 +508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  child2ArrayOfBoolProperty,
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -455,7 +516,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -490,6 +552,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  child2ArrayOfIntProperty,
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -497,7 +560,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -532,6 +596,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  child2ArrayOfStringProperty,
@@ -539,7 +604,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -574,6 +640,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -581,7 +648,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -616,6 +684,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -623,7 +692,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  child2ArrayOfDateTimeProperty,
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -658,6 +728,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -665,7 +736,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  child2ArrayOfCustomEnumProperty,
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -700,6 +772,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -707,7 +780,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  child2ArrayOfCustomFlagsEnumProperty,
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -742,6 +816,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -749,7 +824,52 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 child2ArrayOfCustomClassProperty);
+                                 child2ArrayOfCustomClassProperty,
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Child2ArrayOfCustomBaseClassProperty" />.
+        /// </summary>
+        /// <param name="child2ArrayOfCustomBaseClassProperty">The new <see cref="Child2ArrayOfCustomBaseClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetArrayChild2" /> using the specified <paramref name="child2ArrayOfCustomBaseClassProperty" /> for <see cref="Child2ArrayOfCustomBaseClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public ModelAllPrivateSetArrayChild2 DeepCloneWithChild2ArrayOfCustomBaseClassProperty(CustomBaseClass[] child2ArrayOfCustomBaseClassProperty)
+        {
+            var result = new ModelAllPrivateSetArrayChild2(
+                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 this.Child2ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 child2ArrayOfCustomBaseClassProperty);
 
             return result;
         }
@@ -766,6 +886,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
                                  this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  this.Child2ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfIntProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
@@ -773,7 +894,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
                                  this.Child2ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child2ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.Child2ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray());
 
             return result;
         }
@@ -781,7 +903,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArrayChild2: ParentArrayOfBoolProperty = {this.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {this.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {this.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {this.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {this.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumProperty = {this.ParentArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomFlagsEnumProperty = {this.ParentArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomClassProperty = {this.ParentArrayOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {this.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {this.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {this.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {this.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {this.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumProperty = {this.Child2ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomFlagsEnumProperty = {this.Child2ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomClassProperty = {this.Child2ArrayOfCustomClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArrayChild2: ParentArrayOfBoolProperty = {this.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {this.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {this.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {this.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {this.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumProperty = {this.ParentArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomFlagsEnumProperty = {this.ParentArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomClassProperty = {this.ParentArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomBaseClassProperty = {this.ParentArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {this.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {this.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {this.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {this.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {this.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumProperty = {this.Child2ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomFlagsEnumProperty = {this.Child2ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomClassProperty = {this.Child2ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomBaseClassProperty = {this.Child2ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

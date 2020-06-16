@@ -228,6 +228,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomClassProperty);
                 }
+
+                if (systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty == null)
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty);
+                }
             }
         }
     }

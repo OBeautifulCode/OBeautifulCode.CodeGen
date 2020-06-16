@@ -229,6 +229,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomClassProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty == null)
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty);
+                }
+
                 if (systemUnderTest.Child1ReadOnlyListInterfaceOfBoolProperty == null)
                 {
                     actual.Child1ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeNull();
@@ -299,6 +308,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.Child1ReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfCustomClassProperty);
+                }
+
+                if (systemUnderTest.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty == null)
+                {
+                    actual.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty);
                 }
             }
         }

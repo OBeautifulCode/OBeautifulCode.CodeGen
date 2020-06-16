@@ -60,6 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfCustomEnumProperty(A.Dummy<ModelAllPublicSetReadOnlyListParent>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty)).ParentReadOnlyListInterfaceOfCustomEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfCustomFlagsEnumProperty(A.Dummy<ModelAllPublicSetReadOnlyListParent>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfCustomClassProperty(A.Dummy<ModelAllPublicSetReadOnlyListParent>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty)).ParentReadOnlyListInterfaceOfCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfCustomBaseClassProperty(A.Dummy<ModelAllPublicSetReadOnlyListParent>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)).ParentReadOnlyListInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPublicSetReadOnlyListParent[]
                     {
@@ -268,6 +269,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomClassProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty == null)
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty);
                 }
             }
         }

@@ -81,6 +81,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomClass> Child1ReadOnlyCollectionInterfaceOfCustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomBaseClass> Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfBoolProperty)
@@ -91,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomClassProperty)
+                .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfBoolProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfIntProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfStringProperty)
@@ -99,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfCustomEnumProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty)
+                .Hash(this.Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
                 .Value;
     }
 }

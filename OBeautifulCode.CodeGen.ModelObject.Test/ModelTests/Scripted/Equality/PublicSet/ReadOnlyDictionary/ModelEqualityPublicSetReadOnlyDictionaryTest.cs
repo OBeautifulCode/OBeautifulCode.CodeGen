@@ -40,6 +40,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelEqualityPublicSetReadOnlyDictionary[]
@@ -53,6 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelEqualityPublicSetReadOnlyDictionary
                             {
@@ -63,6 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelEqualityPublicSetReadOnlyDictionary
                             {
@@ -73,6 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelEqualityPublicSetReadOnlyDictionary
                             {
@@ -83,6 +87,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelEqualityPublicSetReadOnlyDictionary
                             {
@@ -93,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = A.Dummy<ModelEqualityPublicSetReadOnlyDictionary>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty)).ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelEqualityPublicSetReadOnlyDictionary
                             {
@@ -103,6 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = A.Dummy<ModelEqualityPublicSetReadOnlyDictionary>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                         new ModelEqualityPublicSetReadOnlyDictionary
                             {
@@ -113,6 +120,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty     = A.Dummy<ModelEqualityPublicSetReadOnlyDictionary>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty)).ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                            },
+                        new ModelEqualityPublicSetReadOnlyDictionary
+                            {
+                                ReadOnlyDictionaryInterfaceOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ReadOnlyDictionaryInterfaceOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfIntProperty,
+                                ReadOnlyDictionaryInterfaceOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfStringProperty,
+                                ReadOnlyDictionaryInterfaceOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = A.Dummy<ModelEqualityPublicSetReadOnlyDictionary>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]

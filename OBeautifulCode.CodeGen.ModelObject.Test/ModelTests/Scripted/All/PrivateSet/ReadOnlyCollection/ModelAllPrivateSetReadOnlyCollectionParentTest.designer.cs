@@ -60,6 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfCustomEnumProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty)).ParentReadOnlyCollectionInterfaceOfCustomEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfCustomClassProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCustomClassProperty)).ParentReadOnlyCollectionInterfaceOfCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty)).ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPrivateSetReadOnlyCollectionParent[]
                     {
@@ -268,6 +269,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.ParentReadOnlyCollectionInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfCustomClassProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty == null)
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
                 }
             }
         }

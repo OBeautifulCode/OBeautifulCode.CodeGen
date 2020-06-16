@@ -40,10 +40,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             DateTime dateTimeProperty,
             CustomEnum customEnumProperty,
             CustomFlagsEnum customFlagsEnumProperty,
-            CustomClass customClassProperty)
+            CustomClass customClassProperty,
+            CustomBaseClass customBaseClassProperty)
         {
             new { stringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { customClassProperty }.AsArg().Must().NotBeNull();
+            new { customBaseClassProperty }.AsArg().Must().NotBeNull();
 
             this.BoolProperty = boolProperty;
             this.IntProperty = intProperty;
@@ -53,6 +55,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.CustomEnumProperty = customEnumProperty;
             this.CustomFlagsEnumProperty = customFlagsEnumProperty;
             this.CustomClassProperty = customClassProperty;
+            this.CustomBaseClassProperty = customBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -111,6 +114,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomClass CustomClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomBaseClass CustomBaseClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelCloningPrivateSetNone other)
         {
@@ -132,7 +142,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.DateTimeProperty.IsEqualTo(other.DateTimeProperty) &&
                 this.CustomEnumProperty.IsEqualTo(other.CustomEnumProperty) &&
                 this.CustomFlagsEnumProperty.IsEqualTo(other.CustomFlagsEnumProperty) &&
-                this.CustomClassProperty.IsEqualTo(other.CustomClassProperty);
+                this.CustomClassProperty.IsEqualTo(other.CustomClassProperty) &&
+                this.CustomBaseClassProperty.IsEqualTo(other.CustomBaseClassProperty);
 
             return result;
         }

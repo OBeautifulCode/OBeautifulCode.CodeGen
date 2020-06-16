@@ -39,7 +39,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelEqualityPrivateSetReadOnlyList[]
                     {
@@ -51,7 +52,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty)).ReadOnlyListInterfaceOfIntProperty,
@@ -60,7 +62,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
@@ -69,7 +72,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
@@ -78,7 +82,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
@@ -87,7 +92,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty)).ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
@@ -96,7 +102,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty)).ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
@@ -105,7 +112,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty)).ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
                         new ModelEqualityPrivateSetReadOnlyList(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
@@ -114,7 +122,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty)).ReadOnlyListInterfaceOfCustomClassProperty),
+                                A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty)).ReadOnlyListInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty),
+                        new ModelEqualityPrivateSetReadOnlyList(
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomClassProperty,
+                                A.Dummy<ModelEqualityPrivateSetReadOnlyList>().Whose(_ => !_.ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyListInterfaceOfCustomBaseClassProperty)).ReadOnlyListInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {

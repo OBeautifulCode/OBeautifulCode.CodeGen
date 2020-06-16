@@ -36,14 +36,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<CustomEnum, CustomEnum> parentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyDictionary<CustomClass, CustomClass> parentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+            IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
             IReadOnlyDictionary<bool, bool> child1ReadOnlyDictionaryInterfaceOfBoolProperty,
             IReadOnlyDictionary<int, int> child1ReadOnlyDictionaryInterfaceOfIntProperty,
             IReadOnlyDictionary<string, string> child1ReadOnlyDictionaryInterfaceOfStringProperty,
             IReadOnlyDictionary<Guid, Guid> child1ReadOnlyDictionaryInterfaceOfGuidProperty,
             IReadOnlyDictionary<CustomEnum, CustomEnum> child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
-            IReadOnlyDictionary<CustomClass, CustomClass> child1ReadOnlyDictionaryInterfaceOfCustomClassProperty)
-            : base(parentReadOnlyDictionaryInterfaceOfBoolProperty, parentReadOnlyDictionaryInterfaceOfIntProperty, parentReadOnlyDictionaryInterfaceOfStringProperty, parentReadOnlyDictionaryInterfaceOfGuidProperty, parentReadOnlyDictionaryInterfaceOfCustomEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomClassProperty)
+            IReadOnlyDictionary<CustomClass, CustomClass> child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+            IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
+            : base(parentReadOnlyDictionaryInterfaceOfBoolProperty, parentReadOnlyDictionaryInterfaceOfIntProperty, parentReadOnlyDictionaryInterfaceOfStringProperty, parentReadOnlyDictionaryInterfaceOfGuidProperty, parentReadOnlyDictionaryInterfaceOfCustomEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomClassProperty, parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
         {
             new { child1ReadOnlyDictionaryInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
@@ -52,6 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
 
             this.Child1ReadOnlyDictionaryInterfaceOfBoolProperty = child1ReadOnlyDictionaryInterfaceOfBoolProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfIntProperty = child1ReadOnlyDictionaryInterfaceOfIntProperty;
@@ -60,6 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty = child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty = child1ReadOnlyDictionaryInterfaceOfCustomClassProperty;
+            this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -110,6 +114,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomClass, CustomClass> Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty { get; private set; }
 
         /// <inheritdoc />
         public override string ToString()

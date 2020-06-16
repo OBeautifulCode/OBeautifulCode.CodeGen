@@ -39,7 +39,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelHashingPrivateSetArray[]
                     {
@@ -51,7 +52,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty)).ArrayOfIntProperty,
@@ -60,7 +62,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
@@ -69,7 +72,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
@@ -78,7 +82,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
@@ -87,7 +92,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty)).ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
@@ -96,7 +102,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty)).ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
@@ -105,7 +112,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty)).ArrayOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetArray(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
@@ -114,7 +122,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty)).ArrayOfCustomClassProperty),
+                                A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty)).ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty),
+                        new ModelHashingPrivateSetArray(
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                A.Dummy<ModelHashingPrivateSetArray>().Whose(_ => !_.ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty)).ArrayOfCustomBaseClassProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {

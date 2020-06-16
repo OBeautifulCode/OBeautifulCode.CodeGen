@@ -165,6 +165,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.CustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CustomClassProperty);
                 }
+
+                if (systemUnderTest.CustomBaseClassProperty == null)
+                {
+                    actual.CustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.CustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CustomBaseClassProperty);
+                }
             }
         }
     }

@@ -85,6 +85,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomClass> Child2ReadOnlyListInterfaceOfCustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomBaseClass> Child2ReadOnlyListInterfaceOfCustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public bool Equals(ModelCloningPublicSetReadOnlyListChild2 other)
         {
@@ -107,6 +114,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomEnumProperty) &&
                 this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty) &&
                 this.ParentReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomClassProperty) &&
+                this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomBaseClassProperty) &&
                 this.Child2ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfBoolProperty) &&
                 this.Child2ReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfIntProperty) &&
                 this.Child2ReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfStringProperty) &&
@@ -114,7 +122,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child2ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfDateTimeProperty) &&
                 this.Child2ReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomEnumProperty) &&
                 this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty) &&
-                this.Child2ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomClassProperty);
+                this.Child2ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomClassProperty) &&
+                this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty);
 
             return result;
         }

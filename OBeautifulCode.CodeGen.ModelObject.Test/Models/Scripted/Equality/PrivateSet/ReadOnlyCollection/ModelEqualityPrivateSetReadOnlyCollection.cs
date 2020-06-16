@@ -41,7 +41,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<DateTime> readOnlyCollectionInterfaceOfDateTimeProperty,
             IReadOnlyCollection<CustomEnum> readOnlyCollectionInterfaceOfCustomEnumProperty,
             IReadOnlyCollection<CustomFlagsEnum> readOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-            IReadOnlyCollection<CustomClass> readOnlyCollectionInterfaceOfCustomClassProperty)
+            IReadOnlyCollection<CustomClass> readOnlyCollectionInterfaceOfCustomClassProperty,
+            IReadOnlyCollection<CustomBaseClass> readOnlyCollectionInterfaceOfCustomBaseClassProperty)
         {
             new { readOnlyCollectionInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -51,6 +52,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyCollectionInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { readOnlyCollectionInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.ReadOnlyCollectionInterfaceOfBoolProperty = readOnlyCollectionInterfaceOfBoolProperty;
             this.ReadOnlyCollectionInterfaceOfIntProperty = readOnlyCollectionInterfaceOfIntProperty;
@@ -60,6 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyCollectionInterfaceOfCustomEnumProperty = readOnlyCollectionInterfaceOfCustomEnumProperty;
             this.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = readOnlyCollectionInterfaceOfCustomFlagsEnumProperty;
             this.ReadOnlyCollectionInterfaceOfCustomClassProperty = readOnlyCollectionInterfaceOfCustomClassProperty;
+            this.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty = readOnlyCollectionInterfaceOfCustomBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -118,6 +121,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomClass> ReadOnlyCollectionInterfaceOfCustomClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomBaseClass> ReadOnlyCollectionInterfaceOfCustomBaseClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelEqualityPrivateSetReadOnlyCollection other)
         {
@@ -139,7 +149,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfDateTimeProperty) &&
                 this.ReadOnlyCollectionInterfaceOfCustomEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfCustomEnumProperty) &&
                 this.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty) &&
-                this.ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfCustomClassProperty);
+                this.ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfCustomClassProperty) &&
+                this.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
 
             return result;
         }

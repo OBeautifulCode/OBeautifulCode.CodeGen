@@ -81,6 +81,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomClass Child2CustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomBaseClass Child2CustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentBoolProperty)
@@ -91,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentCustomEnumProperty)
                 .Hash(this.ParentCustomFlagsEnumProperty)
                 .Hash(this.ParentCustomClassProperty)
+                .Hash(this.ParentCustomBaseClassProperty)
                 .Hash(this.Child2BoolProperty)
                 .Hash(this.Child2IntProperty)
                 .Hash(this.Child2StringProperty)
@@ -99,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2CustomEnumProperty)
                 .Hash(this.Child2CustomFlagsEnumProperty)
                 .Hash(this.Child2CustomClassProperty)
+                .Hash(this.Child2CustomBaseClassProperty)
                 .Value;
     }
 }

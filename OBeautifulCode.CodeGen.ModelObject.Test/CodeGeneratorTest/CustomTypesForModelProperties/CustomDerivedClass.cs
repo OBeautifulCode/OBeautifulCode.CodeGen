@@ -6,11 +6,17 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System;
+
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
 
-    public class CustomDerivedClass : CustomBaseClass, IModel<CustomDerivedClass>
+    using static System.FormattableString;
+
+    [Serializable]
+    public class CustomDerivedClass : CustomBaseClass, IModel<CustomDerivedClass>, IDeclareCompareToForRelativeSortOrderMethod<CustomDerivedClass>
     {
         public CustomDerivedClass(
             int baseItem1,
@@ -29,12 +35,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public string DerivedItem2 { get; private set; }
 
-        /// <summary>
-        /// Determines whether two objects of type <see cref="CustomDerivedClass"/> are equal.
-        /// </summary>
-        /// <param name="left">The object to the left of the equality operator.</param>
-        /// <param name="right">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items are equal; otherwise false.</returns>
         public static bool operator ==(CustomDerivedClass left, CustomDerivedClass right)
         {
             if (ReferenceEquals(left, right))
@@ -52,13 +52,69 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        /// <summary>
-        /// Determines whether two objects of type <see cref="CustomDerivedClass"/> are not equal.
-        /// </summary>
-        /// <param name="left">The object to the left of the equality operator.</param>
-        /// <param name="right">The object to the right of the equality operator.</param>
-        /// <returns>true if the two items are not equal; otherwise false.</returns>
         public static bool operator !=(CustomDerivedClass left, CustomDerivedClass right) => !(left == right);
+
+        public static bool operator <(CustomDerivedClass left, CustomDerivedClass right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(left, null))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(right, null))
+            {
+                return false;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'."));
+            }
+
+            var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
+
+            var result = relativeSortOrder == RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
+
+            return result;
+        }
+
+        public static bool operator >(CustomDerivedClass left, CustomDerivedClass right)
+        {
+            if (ReferenceEquals(left, right))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(left, null))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(right, null))
+            {
+                return true;
+            }
+
+            if (left.GetType() != right.GetType())
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  The left operand is of type '{left.GetType().ToStringReadable()}' whereas the right operand is of type '{right.GetType().ToStringReadable()}'."));
+            }
+
+            var relativeSortOrder = left.CompareToForRelativeSortOrder(right);
+
+            var result = relativeSortOrder == RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+
+            return result;
+        }
+
+        public static bool operator <=(CustomDerivedClass left, CustomDerivedClass right) => !(left > right);
+
+        public static bool operator >=(CustomDerivedClass left, CustomDerivedClass right) => !(left < right);
 
         /// <inheritdoc />
         public bool Equals(CustomDerivedClass other)
@@ -96,13 +152,99 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public new CustomDerivedClass DeepClone() => (CustomDerivedClass)this.DeepCloneInternal();
 
         /// <inheritdoc />
+        public RelativeSortOrder CompareToForRelativeSortOrder(CustomDerivedClass other)
+        {
+            if (other == null)
+            {
+                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+            }
+
+            var thisText = this.BaseItem1 + this.BaseItem2 + this.DerivedItem1 + this.DerivedItem2;
+
+            var otherText = other.BaseItem1 + other.BaseItem2 + other.DerivedItem1 + other.DerivedItem2;
+
+            var comparison = string.Compare(thisText, otherText, StringComparison.Ordinal);
+
+            if (comparison > 0)
+            {
+                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+            }
+            else if (comparison < 0)
+            {
+                return RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
+            }
+            else
+            {
+                return RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance;
+            }
+        }
+
+        public int CompareTo(CustomDerivedClass other)
+        {
+            if (ReferenceEquals(other, null))
+            {
+                return 1;
+            }
+
+            var relativeSortOrder = this.CompareToForRelativeSortOrder(other);
+
+            switch (relativeSortOrder)
+            {
+                case RelativeSortOrder.ThisInstancePrecedesTheOtherInstance:
+                    return -1;
+                case RelativeSortOrder.ThisInstanceOccursInTheSamePositionAsTheOtherInstance:
+                    return 0;
+                case RelativeSortOrder.ThisInstanceFollowsTheOtherInstance:
+                    return 1;
+                default:
+                    throw new NotSupportedException(Invariant($"This {nameof(RelativeSortOrder)} is not supported: {relativeSortOrder}."));
+            }
+        }
+
+        /// <inheritdoc />
+        public override int CompareTo(object obj)
+        {
+            if (ReferenceEquals(obj, null))
+            {
+                return 1;
+            }
+
+            if (!(obj is CustomDerivedClass other))
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'CustomDerivedClass' whereas the other object is of type '{obj.GetType().ToStringReadable()}'."));
+            }
+
+            var result = this.CompareTo(other);
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override RelativeSortOrder CompareToForRelativeSortOrder(CustomBaseClass other)
+        {
+            if (ReferenceEquals(other, null))
+            {
+                return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
+            }
+
+            if (!(other is CustomDerivedClass otherAsCustomDerivedClass))
+            {
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type 'CustomDerivedClass' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+            }
+
+            var result = this.CompareToForRelativeSortOrder(otherAsCustomDerivedClass);
+
+            return result;
+        }
+
+        /// <inheritdoc />
         protected override CustomBaseClass DeepCloneInternal()
         {
             var result = new CustomDerivedClass(
-                                 this.BaseItem1,
-                                 this.BaseItem2,
-                                 this.DerivedItem1,
-                                 this.DerivedItem2);
+                this.BaseItem1,
+                this.BaseItem2,
+                this.DerivedItem1,
+                this.DerivedItem2);
 
             return result;
         }

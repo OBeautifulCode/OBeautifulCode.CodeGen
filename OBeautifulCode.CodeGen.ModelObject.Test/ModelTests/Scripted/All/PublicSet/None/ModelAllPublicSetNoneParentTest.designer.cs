@@ -60,6 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomEnumProperty(A.Dummy<ModelAllPublicSetNoneParent>().Whose(_ => !_.ParentCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty)).ParentCustomEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomFlagsEnumProperty(A.Dummy<ModelAllPublicSetNoneParent>().Whose(_ => !_.ParentCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty)).ParentCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomClassProperty(A.Dummy<ModelAllPublicSetNoneParent>().Whose(_ => !_.ParentCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty)).ParentCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomBaseClassProperty(A.Dummy<ModelAllPublicSetNoneParent>().Whose(_ => !_.ParentCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty)).ParentCustomBaseClassProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPublicSetNoneParent[]
                     {
@@ -205,6 +206,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.ParentCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomClassProperty);
+                }
+
+                if (systemUnderTest.ParentCustomBaseClassProperty == null)
+                {
+                    actual.ParentCustomBaseClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomBaseClassProperty);
                 }
             }
         }

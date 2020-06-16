@@ -79,6 +79,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomClass, CustomClass> Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public bool Equals(ModelEqualityPublicSetReadOnlyDictionaryChild2 other)
         {
@@ -100,13 +107,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty) &&
                 this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty) &&
                 this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty) &&
+                this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty) &&
                 this.Child2ReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfBoolProperty) &&
                 this.Child2ReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfIntProperty) &&
                 this.Child2ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfStringProperty) &&
                 this.Child2ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfGuidProperty) &&
                 this.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty) &&
                 this.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty) &&
-                this.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty);
+                this.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty) &&
+                this.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(other.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty);
 
             return result;
         }

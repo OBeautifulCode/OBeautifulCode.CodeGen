@@ -39,7 +39,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelHashingPrivateSetReadOnlyCollection[]
                     {
@@ -51,7 +52,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty)).ReadOnlyCollectionInterfaceOfIntProperty,
@@ -60,7 +62,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -69,7 +72,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -78,7 +82,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -87,7 +92,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty)).ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -96,7 +102,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty)).ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -105,7 +112,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)).ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                         new ModelHashingPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -114,7 +122,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
-                                A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty)).ReadOnlyCollectionInterfaceOfCustomClassProperty),
+                                A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty)).ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                        new ModelHashingPrivateSetReadOnlyCollection(
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                A.Dummy<ModelHashingPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)).ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {

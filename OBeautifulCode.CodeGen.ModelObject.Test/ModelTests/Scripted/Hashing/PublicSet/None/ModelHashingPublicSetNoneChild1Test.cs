@@ -41,6 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -49,6 +50,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelHashingPublicSetNoneChild1[]
@@ -63,6 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -71,6 +74,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -82,6 +86,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -90,6 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -101,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -109,6 +116,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -120,6 +128,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -128,6 +137,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -139,6 +149,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -147,6 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -158,6 +170,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.ParentCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty)).ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -166,6 +179,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -177,6 +191,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.ParentCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty)).ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -185,6 +200,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -196,6 +212,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.ParentCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty)).ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -204,6 +221,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -215,6 +233,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.ParentCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty)).ParentCustomBaseClassProperty,
+                                Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
+                                Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
+                                Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
+                                Child1GuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
+                                Child1DateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
+                                Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
+                                Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
+                            },
+                        new ModelHashingPublicSetNoneChild1
+                            {
+                                ParentBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentBoolProperty,
+                                ParentIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentIntProperty,
+                                ParentStringProperty          = ReferenceObjectForEquatableTestScenarios.ParentStringProperty,
+                                ParentGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
+                                ParentDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
+                                ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
+                                ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1BoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1BoolProperty)).Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -223,6 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -234,6 +275,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1IntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1IntProperty)).Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -242,6 +284,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -253,6 +296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1StringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1StringProperty)).Child1StringProperty,
@@ -261,6 +305,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -272,6 +317,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -280,6 +326,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -291,6 +338,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -299,6 +347,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -310,6 +359,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -318,6 +368,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1CustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty)).Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -329,6 +380,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -337,6 +389,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1CustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty)).Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
                             },
                         new ModelHashingPublicSetNoneChild1
                             {
@@ -348,6 +401,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
                                 ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
                                 Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
                                 Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
                                 Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
@@ -356,6 +410,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
                                 Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty     = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1CustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty)).Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
+                            },
+                        new ModelHashingPublicSetNoneChild1
+                            {
+                                ParentBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentBoolProperty,
+                                ParentIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentIntProperty,
+                                ParentStringProperty          = ReferenceObjectForEquatableTestScenarios.ParentStringProperty,
+                                ParentGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
+                                ParentDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
+                                ParentCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
+                                ParentCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
+                                Child1BoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
+                                Child1IntProperty             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
+                                Child1StringProperty          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
+                                Child1GuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
+                                Child1DateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
+                                Child1CustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
+                                Child1CustomClassProperty     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty = A.Dummy<ModelHashingPublicSetNoneChild1>().Whose(_ => !_.Child1CustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty)).Child1CustomBaseClassProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]

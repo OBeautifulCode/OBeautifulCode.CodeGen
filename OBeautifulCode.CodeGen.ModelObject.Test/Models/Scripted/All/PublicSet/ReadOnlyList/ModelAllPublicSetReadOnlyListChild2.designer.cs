@@ -76,6 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomEnumProperty)
                       && this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                       && this.ParentReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomClassProperty)
+                      && this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)
                       && this.Child2ReadOnlyListInterfaceOfBoolProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfBoolProperty)
                       && this.Child2ReadOnlyListInterfaceOfIntProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfIntProperty)
                       && this.Child2ReadOnlyListInterfaceOfStringProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfStringProperty)
@@ -83,7 +84,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.Child2ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfDateTimeProperty)
                       && this.Child2ReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomEnumProperty)
                       && this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
-                      && this.Child2ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomClassProperty);
+                      && this.Child2ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomClassProperty)
+                      && this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty);
 
             return result;
         }
@@ -101,6 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ParentReadOnlyListInterfaceOfCustomEnumProperty)
             .Hash(this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
             .Hash(this.ParentReadOnlyListInterfaceOfCustomClassProperty)
+            .Hash(this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)
             .Hash(this.Child2ReadOnlyListInterfaceOfBoolProperty)
             .Hash(this.Child2ReadOnlyListInterfaceOfIntProperty)
             .Hash(this.Child2ReadOnlyListInterfaceOfStringProperty)
@@ -109,6 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Child2ReadOnlyListInterfaceOfCustomEnumProperty)
             .Hash(this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
             .Hash(this.Child2ReadOnlyListInterfaceOfCustomClassProperty)
+            .Hash(this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty)
             .Value;
 
         /// <inheritdoc />
@@ -141,6 +145,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -149,6 +154,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -181,6 +187,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -189,6 +196,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -221,6 +229,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -229,6 +238,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -261,6 +271,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -269,6 +280,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -301,6 +313,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -309,6 +322,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -341,6 +355,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = parentReadOnlyListInterfaceOfCustomEnumProperty,
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -349,6 +364,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -381,6 +397,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = parentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -389,6 +406,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -421,6 +439,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = parentReadOnlyListInterfaceOfCustomClassProperty,
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -429,6 +448,49 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                             };
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public override ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> parentReadOnlyListInterfaceOfCustomBaseClassProperty)
+        {
+            var result = new ModelAllPublicSetReadOnlyListChild2
+                             {
+                                 ParentReadOnlyListInterfaceOfBoolProperty            = this.ParentReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfIntProperty             = this.ParentReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfStringProperty          = this.ParentReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ParentReadOnlyListInterfaceOfGuidProperty            = this.ParentReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfDateTimeProperty        = this.ParentReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = parentReadOnlyListInterfaceOfCustomBaseClassProperty,
+                                 Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfGuidProperty            = this.Child2ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfDateTimeProperty        = this.Child2ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -465,6 +527,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = child2ReadOnlyListInterfaceOfBoolProperty,
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -473,6 +536,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -509,6 +573,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = child2ReadOnlyListInterfaceOfIntProperty,
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -517,6 +582,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -553,6 +619,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = child2ReadOnlyListInterfaceOfStringProperty,
@@ -561,6 +628,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -597,6 +665,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -605,6 +674,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -641,6 +711,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -649,6 +720,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -685,6 +757,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -693,6 +766,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = child2ReadOnlyListInterfaceOfCustomEnumProperty,
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -729,6 +803,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -737,6 +812,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -773,6 +849,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -781,6 +858,53 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = child2ReadOnlyListInterfaceOfCustomClassProperty,
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                             };
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Child2ReadOnlyListInterfaceOfCustomBaseClassProperty" />.
+        /// </summary>
+        /// <param name="child2ReadOnlyListInterfaceOfCustomBaseClassProperty">The new <see cref="Child2ReadOnlyListInterfaceOfCustomBaseClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPublicSetReadOnlyListChild2" /> using the specified <paramref name="child2ReadOnlyListInterfaceOfCustomBaseClassProperty" /> for <see cref="Child2ReadOnlyListInterfaceOfCustomBaseClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public ModelAllPublicSetReadOnlyListChild2 DeepCloneWithChild2ReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> child2ReadOnlyListInterfaceOfCustomBaseClassProperty)
+        {
+            var result = new ModelAllPublicSetReadOnlyListChild2
+                             {
+                                 ParentReadOnlyListInterfaceOfBoolProperty            = this.ParentReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfIntProperty             = this.ParentReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfStringProperty          = this.ParentReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ParentReadOnlyListInterfaceOfGuidProperty            = this.ParentReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfDateTimeProperty        = this.ParentReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfGuidProperty            = this.Child2ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfDateTimeProperty        = this.Child2ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = child2ReadOnlyListInterfaceOfCustomBaseClassProperty,
                              };
 
             return result;
@@ -799,6 +923,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyListInterfaceOfCustomEnumProperty      = this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  ParentReadOnlyListInterfaceOfCustomClassProperty     = this.ParentReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty = this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                                  Child2ReadOnlyListInterfaceOfBoolProperty            = this.Child2ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfIntProperty             = this.Child2ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfStringProperty          = this.Child2ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
@@ -807,6 +932,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child2ReadOnlyListInterfaceOfCustomEnumProperty      = this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
                                  Child2ReadOnlyListInterfaceOfCustomClassProperty     = this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
                              };
 
             return result;
@@ -815,7 +941,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyListChild2: ParentReadOnlyListInterfaceOfBoolProperty = {this.ParentReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfIntProperty = {this.ParentReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfStringProperty = {this.ParentReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfGuidProperty = {this.ParentReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomEnumProperty = {this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = {this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomClassProperty = {this.ParentReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfBoolProperty = {this.Child2ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfIntProperty = {this.Child2ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfStringProperty = {this.Child2ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfGuidProperty = {this.Child2ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomEnumProperty = {this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = {this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomClassProperty = {this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyListChild2: ParentReadOnlyListInterfaceOfBoolProperty = {this.ParentReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfIntProperty = {this.ParentReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfStringProperty = {this.ParentReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfGuidProperty = {this.ParentReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfDateTimeProperty = {this.ParentReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomEnumProperty = {this.ParentReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = {this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomClassProperty = {this.ParentReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomBaseClassProperty = {this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfBoolProperty = {this.Child2ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfIntProperty = {this.Child2ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfStringProperty = {this.Child2ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfGuidProperty = {this.Child2ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfDateTimeProperty = {this.Child2ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomEnumProperty = {this.Child2ReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty = {this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomClassProperty = {this.Child2ReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ReadOnlyListInterfaceOfCustomBaseClassProperty = {this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

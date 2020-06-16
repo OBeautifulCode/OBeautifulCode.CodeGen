@@ -86,6 +86,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomClass Child1CustomClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomBaseClass Child1CustomBaseClassProperty { get; set; }
+
         /// <inheritdoc />
         public bool Equals(ModelEqualityPublicSetNoneChild1 other)
         {
@@ -108,6 +115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentCustomEnumProperty.IsEqualTo(other.ParentCustomEnumProperty) &&
                 this.ParentCustomFlagsEnumProperty.IsEqualTo(other.ParentCustomFlagsEnumProperty) &&
                 this.ParentCustomClassProperty.IsEqualTo(other.ParentCustomClassProperty) &&
+                this.ParentCustomBaseClassProperty.IsEqualTo(other.ParentCustomBaseClassProperty) &&
                 this.Child1BoolProperty.IsEqualTo(other.Child1BoolProperty) &&
                 this.Child1IntProperty.IsEqualTo(other.Child1IntProperty) &&
                 this.Child1StringProperty.IsEqualTo(other.Child1StringProperty) &&
@@ -115,7 +123,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child1DateTimeProperty.IsEqualTo(other.Child1DateTimeProperty) &&
                 this.Child1CustomEnumProperty.IsEqualTo(other.Child1CustomEnumProperty) &&
                 this.Child1CustomFlagsEnumProperty.IsEqualTo(other.Child1CustomFlagsEnumProperty) &&
-                this.Child1CustomClassProperty.IsEqualTo(other.Child1CustomClassProperty);
+                this.Child1CustomClassProperty.IsEqualTo(other.Child1CustomClassProperty) &&
+                this.Child1CustomBaseClassProperty.IsEqualTo(other.Child1CustomBaseClassProperty);
 
             return result;
         }

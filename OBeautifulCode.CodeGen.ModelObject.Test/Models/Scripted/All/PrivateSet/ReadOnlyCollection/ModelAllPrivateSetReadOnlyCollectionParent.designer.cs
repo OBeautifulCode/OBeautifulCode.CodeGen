@@ -239,6 +239,27 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public abstract ModelAllPrivateSetReadOnlyCollectionParent DeepCloneWithParentReadOnlyCollectionInterfaceOfCustomClassProperty(IReadOnlyCollection<CustomClass> parentReadOnlyCollectionInterfaceOfCustomClassProperty);
 
         /// <summary>
+        /// Deep clones this object with a new <see cref="ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty" />.
+        /// </summary>
+        /// <param name="parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty">The new <see cref="ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetReadOnlyCollectionParent" /> using the specified <paramref name="parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty" /> for <see cref="ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        public abstract ModelAllPrivateSetReadOnlyCollectionParent DeepCloneWithParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty(IReadOnlyCollection<CustomBaseClass> parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+
+        /// <summary>
         /// Creates a new object that is a deep clone of this instance.
         /// </summary>
         /// <returns>

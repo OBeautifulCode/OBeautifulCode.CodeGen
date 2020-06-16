@@ -37,6 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum[] parentArrayOfCustomEnumProperty,
             CustomFlagsEnum[] parentArrayOfCustomFlagsEnumProperty,
             CustomClass[] parentArrayOfCustomClassProperty,
+            CustomBaseClass[] parentArrayOfCustomBaseClassProperty,
             bool[] child2ArrayOfBoolProperty,
             int[] child2ArrayOfIntProperty,
             string[] child2ArrayOfStringProperty,
@@ -44,8 +45,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             DateTime[] child2ArrayOfDateTimeProperty,
             CustomEnum[] child2ArrayOfCustomEnumProperty,
             CustomFlagsEnum[] child2ArrayOfCustomFlagsEnumProperty,
-            CustomClass[] child2ArrayOfCustomClassProperty)
-            : base(parentArrayOfBoolProperty, parentArrayOfIntProperty, parentArrayOfStringProperty, parentArrayOfGuidProperty, parentArrayOfDateTimeProperty, parentArrayOfCustomEnumProperty, parentArrayOfCustomFlagsEnumProperty, parentArrayOfCustomClassProperty)
+            CustomClass[] child2ArrayOfCustomClassProperty,
+            CustomBaseClass[] child2ArrayOfCustomBaseClassProperty)
+            : base(parentArrayOfBoolProperty, parentArrayOfIntProperty, parentArrayOfStringProperty, parentArrayOfGuidProperty, parentArrayOfDateTimeProperty, parentArrayOfCustomEnumProperty, parentArrayOfCustomFlagsEnumProperty, parentArrayOfCustomClassProperty, parentArrayOfCustomBaseClassProperty)
         {
             new { child2ArrayOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -55,6 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child2ArrayOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { child2ArrayOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.Child2ArrayOfBoolProperty = child2ArrayOfBoolProperty;
             this.Child2ArrayOfIntProperty = child2ArrayOfIntProperty;
@@ -64,6 +67,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2ArrayOfCustomEnumProperty = child2ArrayOfCustomEnumProperty;
             this.Child2ArrayOfCustomFlagsEnumProperty = child2ArrayOfCustomFlagsEnumProperty;
             this.Child2ArrayOfCustomClassProperty = child2ArrayOfCustomClassProperty;
+            this.Child2ArrayOfCustomBaseClassProperty = child2ArrayOfCustomBaseClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -122,6 +126,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomClass[] Child2ArrayOfCustomClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomBaseClass[] Child2ArrayOfCustomBaseClassProperty { get; private set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentArrayOfBoolProperty)
@@ -132,6 +143,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentArrayOfCustomEnumProperty)
                 .Hash(this.ParentArrayOfCustomFlagsEnumProperty)
                 .Hash(this.ParentArrayOfCustomClassProperty)
+                .Hash(this.ParentArrayOfCustomBaseClassProperty)
                 .Hash(this.Child2ArrayOfBoolProperty)
                 .Hash(this.Child2ArrayOfIntProperty)
                 .Hash(this.Child2ArrayOfStringProperty)
@@ -140,6 +152,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ArrayOfCustomEnumProperty)
                 .Hash(this.Child2ArrayOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ArrayOfCustomClassProperty)
+                .Hash(this.Child2ArrayOfCustomBaseClassProperty)
                 .Value;
     }
 }
