@@ -95,7 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var expected = typeof(ModelStringRepresentationPublicSetArrayOfNullableChild2);
 
                 // Act
-                var actual = expected.GetMethod(nameof(ToString));
+                var actual = expected.GetMethod(nameof(ToString), new Type[0]);
 
                 // Assert
                 actual.DeclaringType.AsTest().Must().BeEqualTo(expected);
