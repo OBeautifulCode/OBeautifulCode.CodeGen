@@ -124,6 +124,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyDictionaryOfNullable DeepCloneWithReadOnlyDictionaryInterfaceOfNullableBoolProperty(IReadOnlyDictionary<bool?, bool?> readOnlyDictionaryInterfaceOfNullableBoolProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
@@ -155,6 +156,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyDictionaryOfNullable DeepCloneWithReadOnlyDictionaryInterfaceOfNullableIntProperty(IReadOnlyDictionary<int?, int?> readOnlyDictionaryInterfaceOfNullableIntProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
@@ -186,6 +188,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyDictionaryOfNullable DeepCloneWithReadOnlyDictionaryInterfaceOfNullableGuidProperty(IReadOnlyDictionary<Guid?, Guid?> readOnlyDictionaryInterfaceOfNullableGuidProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
@@ -217,6 +220,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyDictionaryOfNullable DeepCloneWithReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty(IReadOnlyDictionary<CustomEnum?, CustomEnum?> readOnlyDictionaryInterfaceOfNullableCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
@@ -248,6 +252,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyDictionaryOfNullable DeepCloneWithReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty(IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> readOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(

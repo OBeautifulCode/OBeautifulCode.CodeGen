@@ -129,6 +129,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetArrayOfNullable DeepCloneWithArrayOfNullableBoolProperty(bool?[] arrayOfNullableBoolProperty)
         {
             var result = new ModelAllPublicSetArrayOfNullable
@@ -163,6 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetArrayOfNullable DeepCloneWithArrayOfNullableIntProperty(int?[] arrayOfNullableIntProperty)
         {
             var result = new ModelAllPublicSetArrayOfNullable
@@ -197,6 +199,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetArrayOfNullable DeepCloneWithArrayOfNullableGuidProperty(Guid?[] arrayOfNullableGuidProperty)
         {
             var result = new ModelAllPublicSetArrayOfNullable
@@ -231,6 +234,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetArrayOfNullable DeepCloneWithArrayOfNullableDateTimeProperty(DateTime?[] arrayOfNullableDateTimeProperty)
         {
             var result = new ModelAllPublicSetArrayOfNullable
@@ -265,6 +269,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetArrayOfNullable DeepCloneWithArrayOfNullableCustomEnumProperty(CustomEnum?[] arrayOfNullableCustomEnumProperty)
         {
             var result = new ModelAllPublicSetArrayOfNullable
@@ -299,6 +304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetArrayOfNullable DeepCloneWithArrayOfNullableCustomFlagsEnumProperty(CustomFlagsEnum?[] arrayOfNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPublicSetArrayOfNullable

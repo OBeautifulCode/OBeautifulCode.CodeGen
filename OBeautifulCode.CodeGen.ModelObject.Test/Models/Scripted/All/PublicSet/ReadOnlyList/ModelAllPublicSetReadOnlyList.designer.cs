@@ -138,6 +138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> readOnlyListInterfaceOfBoolProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -175,6 +176,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> readOnlyListInterfaceOfIntProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -212,6 +214,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> readOnlyListInterfaceOfStringProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -249,6 +252,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> readOnlyListInterfaceOfGuidProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -286,6 +290,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> readOnlyListInterfaceOfDateTimeProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -323,6 +328,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomEnumProperty(IReadOnlyList<CustomEnum> readOnlyListInterfaceOfCustomEnumProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -360,6 +366,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomFlagsEnumProperty(IReadOnlyList<CustomFlagsEnum> readOnlyListInterfaceOfCustomFlagsEnumProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -397,6 +404,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomClassProperty(IReadOnlyList<CustomClass> readOnlyListInterfaceOfCustomClassProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList
@@ -434,6 +442,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> readOnlyListInterfaceOfCustomBaseClassProperty)
         {
             var result = new ModelAllPublicSetReadOnlyList

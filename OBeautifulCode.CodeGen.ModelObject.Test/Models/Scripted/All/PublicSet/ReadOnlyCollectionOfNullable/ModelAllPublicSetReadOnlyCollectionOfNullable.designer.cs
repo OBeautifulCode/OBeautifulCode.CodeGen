@@ -129,6 +129,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableBoolProperty(IReadOnlyCollection<bool?> readOnlyCollectionInterfaceOfNullableBoolProperty)
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullable
@@ -163,6 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> readOnlyCollectionInterfaceOfNullableIntProperty)
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullable
@@ -197,6 +199,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> readOnlyCollectionInterfaceOfNullableGuidProperty)
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullable
@@ -231,6 +234,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> readOnlyCollectionInterfaceOfNullableDateTimeProperty)
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullable
@@ -265,6 +269,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableCustomEnumProperty(IReadOnlyCollection<CustomEnum?> readOnlyCollectionInterfaceOfNullableCustomEnumProperty)
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullable
@@ -299,6 +304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPublicSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty(IReadOnlyCollection<CustomFlagsEnum?> readOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullable

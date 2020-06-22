@@ -133,6 +133,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -173,6 +174,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -213,6 +215,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -253,6 +256,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -293,6 +297,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -333,6 +338,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomEnumProperty(IReadOnlyList<CustomEnum> parentReadOnlyListInterfaceOfCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -373,6 +379,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomFlagsEnumProperty(IReadOnlyList<CustomFlagsEnum> parentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -413,6 +420,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomClassProperty(IReadOnlyList<CustomClass> parentReadOnlyListInterfaceOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -453,6 +461,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public override ModelAllPrivateSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> parentReadOnlyListInterfaceOfCustomBaseClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -497,6 +506,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> child1ReadOnlyListInterfaceOfBoolProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -541,6 +551,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> child1ReadOnlyListInterfaceOfIntProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -585,6 +596,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> child1ReadOnlyListInterfaceOfStringProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -629,6 +641,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> child1ReadOnlyListInterfaceOfGuidProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -673,6 +686,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> child1ReadOnlyListInterfaceOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -717,6 +731,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfCustomEnumProperty(IReadOnlyList<CustomEnum> child1ReadOnlyListInterfaceOfCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -761,6 +776,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfCustomFlagsEnumProperty(IReadOnlyList<CustomFlagsEnum> child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -805,6 +821,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfCustomClassProperty(IReadOnlyList<CustomClass> child1ReadOnlyListInterfaceOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(
@@ -849,6 +866,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListChild1 DeepCloneWithChild1ReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> child1ReadOnlyListInterfaceOfCustomBaseClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListChild1(

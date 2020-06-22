@@ -127,6 +127,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListOfNullable DeepCloneWithReadOnlyListInterfaceOfNullableBoolProperty(IReadOnlyList<bool?> readOnlyListInterfaceOfNullableBoolProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListOfNullable(
@@ -159,6 +160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListOfNullable DeepCloneWithReadOnlyListInterfaceOfNullableIntProperty(IReadOnlyList<int?> readOnlyListInterfaceOfNullableIntProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListOfNullable(
@@ -191,6 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListOfNullable DeepCloneWithReadOnlyListInterfaceOfNullableGuidProperty(IReadOnlyList<Guid?> readOnlyListInterfaceOfNullableGuidProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListOfNullable(
@@ -223,6 +226,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListOfNullable DeepCloneWithReadOnlyListInterfaceOfNullableDateTimeProperty(IReadOnlyList<DateTime?> readOnlyListInterfaceOfNullableDateTimeProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListOfNullable(
@@ -255,6 +259,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListOfNullable DeepCloneWithReadOnlyListInterfaceOfNullableCustomEnumProperty(IReadOnlyList<CustomEnum?> readOnlyListInterfaceOfNullableCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListOfNullable(
@@ -287,6 +292,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public ModelAllPrivateSetReadOnlyListOfNullable DeepCloneWithReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty(IReadOnlyList<CustomFlagsEnum?> readOnlyListInterfaceOfNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyListOfNullable(
