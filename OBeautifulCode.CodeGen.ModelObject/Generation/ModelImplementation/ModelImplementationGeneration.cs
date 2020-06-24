@@ -334,7 +334,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "System.FormattableString",
             };
 
-            var result = modelType.PropertiesOfConcern.GetUsingStatements(modelType.TypeNamespace, statements, staticStatements);
+            var result = modelType.GetUsingStatements(modelType.TypeNamespace, statements, staticStatements);
 
             return result;
         }
@@ -380,7 +380,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "System.FormattableString",
             };
 
-            var result = modelType.PropertiesOfConcern.GetUsingStatements(modelType.TypeNamespace, statements, staticStatements);
+            var result = modelType.GetUsingStatements(modelType.TypeNamespace, statements, staticStatements);
 
             return result;
         }
@@ -403,21 +403,32 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var staticStatements = new string[0];
 
-            var result = modelTypes.SelectMany(_ => _.PropertiesOfConcern).ToList().GetUsingStatements(containingNamespace, statements, staticStatements);
+            var result = modelTypes.GetUsingStatements(containingNamespace, statements, staticStatements);
+
+            return result;
+        }
+
+        private static string GetUsingStatements(
+            this ModelType modelType,
+            string containingNamespace,
+            IReadOnlyCollection<string> statements,
+            IReadOnlyCollection<string> staticStatements)
+        {
+            var result = new[] { modelType }.GetUsingStatements(containingNamespace, statements, staticStatements);
 
             return result;
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static string GetUsingStatements(
-            this IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
+            this IReadOnlyCollection<ModelType> modelTypes,
             string containingNamespace,
             IReadOnlyCollection<string> statements,
             IReadOnlyCollection<string> staticStatements)
         {
             statements = new string[0]
                 .Concat(statements)
-                .Concat(propertiesOfConcern.Select(_ => _.PropertyType.Namespace))
+                .Concat(modelTypes.SelectMany(_ => _.NamespacesOfTypesInPropertiesOfConcern))
                 .Where(_ => _ != containingNamespace)
                 .Distinct()
                 .ToList();

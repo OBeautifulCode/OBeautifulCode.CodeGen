@@ -126,6 +126,8 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresToStringMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareToStringMethod));
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
+
+            this.NamespacesOfTypesInPropertiesOfConcern = GetNamespacesOfTypesInPropertiesOfConcern(propertiesOfConcern);
         }
 
         /// <summary>
@@ -331,6 +333,11 @@ namespace OBeautifulCode.CodeGen
         /// </summary>
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
         public bool DeclaresToStringMethodDirectlyOrInDerivative { get; }
+
+        /// <summary>
+        /// Gets the namespaces of the types in the properties of concern.
+        /// </summary>
+        public IReadOnlyCollection<string> NamespacesOfTypesInPropertiesOfConcern { get; }
 
         /// <summary>
         /// Determines if the specified property is declared by this model type.
@@ -961,6 +968,39 @@ namespace OBeautifulCode.CodeGen
                 default:
                     throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
             }
+        }
+
+        private static IReadOnlyCollection<string> GetNamespacesOfTypesInPropertiesOfConcern(
+            IReadOnlyList<PropertyOfConcern> propertiesOfConcern)
+        {
+            var types = propertiesOfConcern.Select(_ => _.PropertyType).Distinct().ToList();
+
+            var result = types.SelectMany(GetNamespacesOfTypesInPropertiesOfConcern).Distinct().ToList();
+
+            return result;
+        }
+
+        private static IReadOnlyCollection<string> GetNamespacesOfTypesInPropertiesOfConcern(
+            Type type)
+        {
+            var result = new List<string> { type.Namespace };
+
+            if (type.IsGenericType)
+            {
+                var genericArguments = type.GetGenericArguments();
+
+                foreach (var genericArgument in genericArguments)
+                {
+                    result.AddRange(GetNamespacesOfTypesInPropertiesOfConcern(genericArgument));
+                }
+            }
+
+            if (type.IsArray)
+            {
+                result.AddRange(GetNamespacesOfTypesInPropertiesOfConcern(type.GetElementType()));
+            }
+
+            return result;
         }
 
         private class PropertiesOfConcernResult
