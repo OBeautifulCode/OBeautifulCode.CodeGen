@@ -108,7 +108,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var name = propertyOfConcern.Name;
             var type = propertyOfConcern.PropertyType;
 
-            var takesFormatProvider = type.GetMethods().Where(_ => _.Name == "ToString").Where(_ => !_.IsObsolete()).Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
+            var takesFormatProviderType = type;
+
+            if (type.IsClosedNullableType())
+            {
+                takesFormatProviderType = Nullable.GetUnderlyingType(type);
+            }
+
+            // ReSharper disable once PossibleNullReferenceException
+            var takesFormatProvider = takesFormatProviderType.GetMethods().Where(_ => _.Name == "ToString").Where(_ => !_.IsObsolete()).Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
 
             var result = name + " = {" + (useSystemUnderTest ? "systemUnderTest" : "this") + "." + name + (type.IsAssignableToNull() ? "?" : string.Empty) + ".ToString(" + (takesFormatProvider ? "CultureInfo.InvariantCulture" : string.Empty) + ") ?? \"<null>\"}";
 

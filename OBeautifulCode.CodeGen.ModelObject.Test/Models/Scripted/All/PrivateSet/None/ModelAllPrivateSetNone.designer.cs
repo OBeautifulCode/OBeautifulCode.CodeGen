@@ -442,6 +442,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetNone: BoolProperty = {this.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {this.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {this.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, CustomEnumProperty = {this.CustomEnumProperty.ToString() ?? "<null>"}, CustomFlagsEnumProperty = {this.CustomFlagsEnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {this.CustomClassProperty?.ToString() ?? "<null>"}, CustomBaseClassProperty = {this.CustomBaseClassProperty?.ToString() ?? "<null>"}.");

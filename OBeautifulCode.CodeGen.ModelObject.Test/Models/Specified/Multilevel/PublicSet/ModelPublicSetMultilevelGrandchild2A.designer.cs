@@ -353,6 +353,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPublicSetMultilevelGrandchild2A: ParentInt = {this.ParentInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2Int = {this.Child2Int.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Grandchild2AInt = {this.Grandchild2AInt.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");

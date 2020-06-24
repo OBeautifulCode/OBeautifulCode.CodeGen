@@ -321,6 +321,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArrayOfNullable: ArrayOfNullableBoolProperty = {this.ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ArrayOfNullableIntProperty = {this.ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ArrayOfNullableGuidProperty = {this.ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ArrayOfNullableDateTimeProperty = {this.ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfNullableCustomEnumProperty = {this.ArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfNullableCustomFlagsEnumProperty = {this.ArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}.");

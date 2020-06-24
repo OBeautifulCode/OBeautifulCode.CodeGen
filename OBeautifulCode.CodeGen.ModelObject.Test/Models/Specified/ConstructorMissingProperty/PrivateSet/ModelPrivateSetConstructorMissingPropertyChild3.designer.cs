@@ -182,6 +182,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetConstructorMissingPropertyChild3: ParentEnumProperty = {this.ParentEnumProperty.ToString() ?? "<null>"}, ParentReadOnlyCollectionOfStringProperty = {this.ParentReadOnlyCollectionOfStringProperty?.ToString() ?? "<null>"}, ChildIntProperty = {this.ChildIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}.");

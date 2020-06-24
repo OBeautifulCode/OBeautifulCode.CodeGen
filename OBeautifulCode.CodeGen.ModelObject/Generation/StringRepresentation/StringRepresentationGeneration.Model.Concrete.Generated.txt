@@ -1,4 +1,5 @@
 ﻿        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = [to-string-statement-here];

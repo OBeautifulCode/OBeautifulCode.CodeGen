@@ -307,9 +307,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetNullable: NullableBoolProperty = {this.NullableBoolProperty?.ToString() ?? "<null>"}, NullableIntProperty = {this.NullableIntProperty?.ToString() ?? "<null>"}, NullableGuidProperty = {this.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {this.NullableDateTimeProperty?.ToString() ?? "<null>"}, NullableCustomEnumProperty = {this.NullableCustomEnumProperty?.ToString() ?? "<null>"}, NullableCustomFlagsEnumProperty = {this.NullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetNullable: NullableBoolProperty = {this.NullableBoolProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableIntProperty = {this.NullableIntProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableGuidProperty = {this.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {this.NullableDateTimeProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableCustomEnumProperty = {this.NullableCustomEnumProperty?.ToString() ?? "<null>"}, NullableCustomFlagsEnumProperty = {this.NullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

@@ -126,6 +126,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPublicSetEmptyParentNotEmptyChild: ChildReadOnlyDictionaryOfStringString = {this.ChildReadOnlyDictionaryOfStringString?.ToString() ?? "<null>"}.");

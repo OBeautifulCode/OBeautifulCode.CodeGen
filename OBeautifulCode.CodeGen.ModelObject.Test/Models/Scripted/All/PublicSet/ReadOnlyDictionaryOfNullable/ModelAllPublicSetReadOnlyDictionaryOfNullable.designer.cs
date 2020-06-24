@@ -278,6 +278,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
             var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyDictionaryOfNullable: ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}.");
