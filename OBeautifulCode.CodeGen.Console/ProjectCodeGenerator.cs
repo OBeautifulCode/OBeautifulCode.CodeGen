@@ -37,11 +37,13 @@ namespace OBeautifulCode.CodeGen.Console
         /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
         /// <param name="projectOutputDirectory">Directory where project outputs built files (e.g. ...\\bin\\debug\\)..</param>
         /// <param name="includeSerializationTesting">A value indicating whether to include serialization testing.</param>
+        /// <param name="recipeConditionalCompilationSymbol">The conditional compilation symbol to use for recipes.</param>
         public static void GenerateCodeForProject(
             string projectDirectory,
             string testProjectDirectory,
             string projectOutputDirectory,
-            bool includeSerializationTesting)
+            bool includeSerializationTesting,
+            string recipeConditionalCompilationSymbol)
         {
             if (!Directory.Exists(projectDirectory))
             {
@@ -117,7 +119,7 @@ namespace OBeautifulCode.CodeGen.Console
 
                 if (hasDummyFactory)
                 {
-                    WriteDummyFactoryFile(typesForDummyFactory, dummyFactoryFilePath, testNamespace, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder);
+                    WriteDummyFactoryFile(typesForDummyFactory, dummyFactoryFilePath, testNamespace, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder, recipeConditionalCompilationSymbol);
                 }
             }
         }
@@ -308,14 +310,15 @@ namespace OBeautifulCode.CodeGen.Console
             string testNamespace,
             string testProjectDirectory,
             IReadOnlyCollection<string> testProjectSourceFilePaths,
-            Func<string, string> fileHeaderBuilder)
+            Func<string, string> fileHeaderBuilder,
+            string recipeConditionalCompilationSymbol)
         {
             var dummyFactoryDesignerFilePath = GetDesignerFilePath(dummyFactoryFilePath);
 
             // ReSharper disable once PossibleNullReferenceException
             var dummyFactoryTypeName = Path.GetFileName(dummyFactoryFilePath).Replace(".cs", string.Empty);
 
-            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(typesForDummyFactory, testNamespace, dummyFactoryTypeName);
+            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(typesForDummyFactory, testNamespace, dummyFactoryTypeName, recipeConditionalCompilationSymbol);
 
             WriteFileWithWindowsNewLines(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents);
 

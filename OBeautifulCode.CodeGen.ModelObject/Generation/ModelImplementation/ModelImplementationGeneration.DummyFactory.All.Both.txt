@@ -14,7 +14,12 @@ namespace [dummy-factory-type-namespace-here]
     /// </summary>
     [ExcludeFromCodeCoverage]
     [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]
-    public abstract class Default[dummy-factory-type-name-here] : IDummyFactory
+#if ![recipe-conditional-compilation-symbol]
+    internal
+#else
+    public
+#endif 
+    abstract class Default[dummy-factory-type-name-here] : IDummyFactory
     {
         public Default[dummy-factory-type-name-here]()
         {[dummy-factory-snippets-here]

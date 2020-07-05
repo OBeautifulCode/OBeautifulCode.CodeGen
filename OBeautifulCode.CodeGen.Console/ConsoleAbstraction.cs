@@ -25,6 +25,7 @@ namespace OBeautifulCode.CodeGen.Console
         /// <param name="projectDirectory">Directory of the project to work on.</param>
         /// <param name="testProjectDirectory">Directory of the test project associated with the project to work on.</param>
         /// <param name="projectOutputDirectory">Directory where project outputs built files (e.g. ...\\bin\\debug\\).</param>
+        /// <param name="recipeConditionalCompilationSymbol">The conditional compilation symbol to use for recipes.</param>
         /// <param name="includeSerializationTesting">Optional value indicating whether to include serialization testing (default is true).</param>
         [Verb(Aliases = "model", IsDefault = false, Description = "Runs the generation logic for specified project.")]
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_MethodIsWiredIntoClapAsVerb)]
@@ -33,6 +34,7 @@ namespace OBeautifulCode.CodeGen.Console
             [Aliases("")] [Required] [Description("Directory of the project to work on.")] string projectDirectory,
             [Aliases("")] [Required] [Description("Directory of the test project associated with the project to work on.")] string testProjectDirectory,
             [Aliases("")] [Required] [Description("Directory where project outputs built files (e.g. ...\\bin\\debug\\).")] string projectOutputDirectory,
+            [Aliases("")] [Description("The conditional compilation symbol to use for recipes.")] string recipeConditionalCompilationSymbol,
             [Aliases("")] [Description("Indicates whether to include serialization testing.")] [DefaultValue(true)] bool includeSerializationTesting)
         {
             if (debug)
@@ -40,7 +42,7 @@ namespace OBeautifulCode.CodeGen.Console
                 Debugger.Launch();
             }
 
-            ProjectCodeGenerator.GenerateCodeForProject(projectDirectory, testProjectDirectory, projectOutputDirectory, includeSerializationTesting);
+            ProjectCodeGenerator.GenerateCodeForProject(projectDirectory, testProjectDirectory, projectOutputDirectory, includeSerializationTesting, recipeConditionalCompilationSymbol);
         }
     }
 }

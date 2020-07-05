@@ -265,13 +265,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="modelTypes">The model types.</param>
         /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
         /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
+        /// <param name="recipeConditionalCompilationSymbol">The conditional compilation symbol to use for recipes.</param>
         /// <returns>
         /// The dummy factory code.
         /// </returns>
         public static string GenerateCodeForDummyFactory(
             IReadOnlyCollection<ModelType> modelTypes,
             string dummyFactoryTypeNamespace,
-            string dummyFactoryTypeName)
+            string dummyFactoryTypeName,
+            string recipeConditionalCompilationSymbol)
         {
             var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.DummyFactory, KeyMethodKinds.Both);
 
@@ -281,6 +283,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.UsingStatementsToken, modelTypes.GetUsingStatementsForDummyFactory(dummyFactoryTypeNamespace))
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
+                .Replace(Tokens.RecipeConditionalCompilationSymbol, recipeConditionalCompilationSymbol)
                 .Replace(Tokens.DummyFactoryTypeNamespaceToken, dummyFactoryTypeNamespace)
                 .Replace(Tokens.DummyFactoryTypeNameToken, dummyFactoryTypeName)
                 .Replace(Tokens.DummyFactorySnippetsToken, dummyFactorySnippets.Any() ? Environment.NewLine + dummyFactorySnippets.ToDelimitedString(Environment.NewLine + Environment.NewLine) : string.Empty);

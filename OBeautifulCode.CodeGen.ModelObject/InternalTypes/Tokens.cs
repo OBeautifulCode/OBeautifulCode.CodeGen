@@ -275,5 +275,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Using statements.
         /// </summary>
         public const string UsingStatementsToken = "[using-statements-here]";
+
+        /// <summary>
+        /// Recipe conditional compilation symbol.
+        /// </summary>
+        public const string RecipeConditionalCompilationSymbol = "[recipe-conditional-compilation-symbol]";
     }
 }

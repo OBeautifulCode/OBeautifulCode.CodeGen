@@ -104,13 +104,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="types">The types to generic dummy factory snippets for.</param>
         /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
         /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
+        /// <param name="recipeConditionalCompilationSymbol">The conditional compilation symbol to use for recipes.</param>
         /// <returns>
         /// The dummy factory code.
         /// </returns>
         public static string GenerateDummyFactory(
             IReadOnlyCollection<Type> types,
             string dummyFactoryTypeNamespace,
-            string dummyFactoryTypeName)
+            string dummyFactoryTypeName,
+            string recipeConditionalCompilationSymbol)
         {
             new { types }.Must().NotBeNull().And().NotContainAnyNullElements();
             new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
@@ -118,7 +120,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var modelTypes = types.Select(_ => new ModelType(_)).ToList();
 
-            var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(modelTypes, dummyFactoryTypeNamespace, dummyFactoryTypeName);
+            var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(modelTypes, dummyFactoryTypeNamespace, dummyFactoryTypeName, recipeConditionalCompilationSymbol);
 
             return result;
         }
