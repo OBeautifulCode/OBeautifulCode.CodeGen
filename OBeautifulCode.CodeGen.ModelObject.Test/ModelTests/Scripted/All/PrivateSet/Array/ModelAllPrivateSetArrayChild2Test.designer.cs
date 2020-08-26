@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetArrayChild2>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArrayChild2: ParentArrayOfBoolProperty = {systemUnderTest.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {systemUnderTest.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {systemUnderTest.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {systemUnderTest.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {systemUnderTest.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumProperty = {systemUnderTest.ParentArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomBaseClassProperty = {systemUnderTest.ParentArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {systemUnderTest.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {systemUnderTest.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {systemUnderTest.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {systemUnderTest.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {systemUnderTest.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumProperty = {systemUnderTest.Child2ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomFlagsEnumProperty = {systemUnderTest.Child2ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomBaseClassProperty = {systemUnderTest.Child2ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArrayChild2: ParentArrayOfBoolProperty = {systemUnderTest.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {systemUnderTest.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {systemUnderTest.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {systemUnderTest.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {systemUnderTest.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumProperty = {systemUnderTest.ParentArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomBaseClassProperty = {systemUnderTest.ParentArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {systemUnderTest.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {systemUnderTest.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {systemUnderTest.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {systemUnderTest.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {systemUnderTest.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumProperty = {systemUnderTest.Child2ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomFlagsEnumProperty = {systemUnderTest.Child2ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomBaseClassProperty = {systemUnderTest.Child2ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -72,6 +72,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -80,7 +81,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -105,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -113,7 +116,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -138,6 +142,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -146,7 +151,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -171,6 +177,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -179,7 +186,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -204,6 +212,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -212,7 +221,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -237,6 +247,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -245,7 +256,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -270,6 +282,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -278,7 +291,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -303,6 +317,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -311,7 +326,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -336,6 +352,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -344,7 +361,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -369,6 +387,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -377,7 +396,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -402,6 +422,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -410,7 +431,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -435,6 +457,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -443,7 +466,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -468,6 +492,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -476,7 +501,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -501,6 +527,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -509,7 +536,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -534,6 +562,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new CustomFlagsEnum[0],
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -542,7 +571,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -567,6 +597,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              null,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -575,7 +606,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -600,6 +632,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              new CustomClass[0],
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -608,7 +641,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -633,6 +667,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              new CustomClass[0].Concat(referenceObject.ParentArrayOfCustomClassProperty).Concat(new CustomClass[] { null }).Concat(referenceObject.ParentArrayOfCustomClassProperty).ToArray(),
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -641,7 +676,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -666,6 +702,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              null,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -674,7 +711,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -699,6 +737,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              new CustomBaseClass[0],
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -707,7 +746,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -732,6 +772,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              new CustomBaseClass[0].Concat(referenceObject.ParentArrayOfCustomBaseClassProperty).Concat(new CustomBaseClass[] { null }).Concat(referenceObject.ParentArrayOfCustomBaseClassProperty).ToArray(),
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -740,12 +781,118 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentArrayOfCustomGenericClassOfCustomClassProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new ModelAllPrivateSetArrayChild2(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             null,
+                                             referenceObject.Child2ArrayOfBoolProperty,
+                                             referenceObject.Child2ArrayOfIntProperty,
+                                             referenceObject.Child2ArrayOfStringProperty,
+                                             referenceObject.Child2ArrayOfGuidProperty,
+                                             referenceObject.Child2ArrayOfDateTimeProperty,
+                                             referenceObject.Child2ArrayOfCustomEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentArrayOfCustomGenericClassOfCustomClassProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new ModelAllPrivateSetArrayChild2(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             new CustomGenericClass<CustomClass>[0],
+                                             referenceObject.Child2ArrayOfBoolProperty,
+                                             referenceObject.Child2ArrayOfIntProperty,
+                                             referenceObject.Child2ArrayOfStringProperty,
+                                             referenceObject.Child2ArrayOfGuidProperty,
+                                             referenceObject.Child2ArrayOfDateTimeProperty,
+                                             referenceObject.Child2ArrayOfCustomEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentArrayOfCustomGenericClassOfCustomClassProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new ModelAllPrivateSetArrayChild2(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             new CustomGenericClass<CustomClass>[0].Concat(referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty).Concat(new CustomGenericClass<CustomClass>[] { null }).Concat(referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty).ToArray(),
+                                             referenceObject.Child2ArrayOfBoolProperty,
+                                             referenceObject.Child2ArrayOfIntProperty,
+                                             referenceObject.Child2ArrayOfStringProperty,
+                                             referenceObject.Child2ArrayOfGuidProperty,
+                                             referenceObject.Child2ArrayOfDateTimeProperty,
+                                             referenceObject.Child2ArrayOfCustomEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", "contains at least one null element" },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
@@ -765,6 +912,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              null,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -773,7 +921,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -798,6 +947,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              new bool[0],
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -806,7 +956,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -831,6 +982,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              null,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -839,7 +991,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -864,6 +1017,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              new int[0],
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -872,7 +1026,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -897,6 +1052,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              null,
@@ -905,7 +1061,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -930,6 +1087,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              new string[0],
@@ -938,7 +1096,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -963,6 +1122,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              new string[0].Concat(referenceObject.Child2ArrayOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.Child2ArrayOfStringProperty).ToArray(),
@@ -971,7 +1131,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -996,6 +1157,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1004,7 +1166,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1029,6 +1192,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1037,7 +1201,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1062,6 +1227,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1070,7 +1236,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1095,6 +1262,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1103,7 +1271,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1128,6 +1297,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1136,7 +1306,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1161,6 +1332,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1169,7 +1341,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new CustomEnum[0],
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1194,6 +1367,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1202,7 +1376,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              null,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1227,6 +1402,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1235,7 +1411,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              new CustomFlagsEnum[0],
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1260,6 +1437,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1268,7 +1446,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              null,
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1293,6 +1472,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1301,7 +1481,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              new CustomClass[0],
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1326,6 +1507,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1334,7 +1516,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              new CustomClass[0].Concat(referenceObject.Child2ArrayOfCustomClassProperty).Concat(new CustomClass[] { null }).Concat(referenceObject.Child2ArrayOfCustomClassProperty).ToArray(),
-                                             referenceObject.Child2ArrayOfCustomBaseClassProperty);
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1359,6 +1542,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1367,7 +1551,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             null);
+                                             null,
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1392,6 +1577,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1400,7 +1586,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             new CustomBaseClass[0]);
+                                             new CustomBaseClass[0],
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -1425,6 +1612,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                              referenceObject.ParentArrayOfCustomClassProperty,
                                              referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                              referenceObject.Child2ArrayOfBoolProperty,
                                              referenceObject.Child2ArrayOfIntProperty,
                                              referenceObject.Child2ArrayOfStringProperty,
@@ -1433,12 +1621,118 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child2ArrayOfCustomEnumProperty,
                                              referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                              referenceObject.Child2ArrayOfCustomClassProperty,
-                                             new CustomBaseClass[0].Concat(referenceObject.Child2ArrayOfCustomBaseClassProperty).Concat(new CustomBaseClass[] { null }).Concat(referenceObject.Child2ArrayOfCustomBaseClassProperty).ToArray());
+                                             new CustomBaseClass[0].Concat(referenceObject.Child2ArrayOfCustomBaseClassProperty).Concat(new CustomBaseClass[] { null }).Concat(referenceObject.Child2ArrayOfCustomBaseClassProperty).ToArray(),
+                                             referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "child2ArrayOfCustomBaseClassProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'child2ArrayOfCustomGenericClassOfCustomClassProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new ModelAllPrivateSetArrayChild2(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfBoolProperty,
+                                             referenceObject.Child2ArrayOfIntProperty,
+                                             referenceObject.Child2ArrayOfStringProperty,
+                                             referenceObject.Child2ArrayOfGuidProperty,
+                                             referenceObject.Child2ArrayOfDateTimeProperty,
+                                             referenceObject.Child2ArrayOfCustomEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             null);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "child2ArrayOfCustomGenericClassOfCustomClassProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child2ArrayOfCustomGenericClassOfCustomClassProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new ModelAllPrivateSetArrayChild2(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfBoolProperty,
+                                             referenceObject.Child2ArrayOfIntProperty,
+                                             referenceObject.Child2ArrayOfStringProperty,
+                                             referenceObject.Child2ArrayOfGuidProperty,
+                                             referenceObject.Child2ArrayOfDateTimeProperty,
+                                             referenceObject.Child2ArrayOfCustomEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             new CustomGenericClass<CustomClass>[0]);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child2ArrayOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child2ArrayOfCustomGenericClassOfCustomClassProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new ModelAllPrivateSetArrayChild2(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfBoolProperty,
+                                             referenceObject.Child2ArrayOfIntProperty,
+                                             referenceObject.Child2ArrayOfStringProperty,
+                                             referenceObject.Child2ArrayOfGuidProperty,
+                                             referenceObject.Child2ArrayOfDateTimeProperty,
+                                             referenceObject.Child2ArrayOfCustomEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ArrayOfCustomClassProperty,
+                                             referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                             new CustomGenericClass<CustomClass>[0].Concat(referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty).Concat(new CustomGenericClass<CustomClass>[] { null }).Concat(referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty).ToArray());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child2ArrayOfCustomGenericClassOfCustomClassProperty", "contains at least one null element" },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetArrayChild2> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetArrayChild2>()
@@ -1462,6 +1756,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1470,7 +1765,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfBoolProperty,
                         };
 
@@ -1498,6 +1794,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1506,7 +1803,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfIntProperty,
                         };
 
@@ -1534,6 +1832,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1542,7 +1841,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfStringProperty,
                         };
 
@@ -1570,6 +1870,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1578,7 +1879,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfGuidProperty,
                         };
 
@@ -1606,6 +1908,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1614,7 +1917,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfDateTimeProperty,
                         };
 
@@ -1642,6 +1946,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1650,7 +1955,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfCustomEnumProperty,
                         };
 
@@ -1678,6 +1984,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1686,7 +1993,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                         };
 
@@ -1714,6 +2022,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1722,7 +2031,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfCustomClassProperty,
                         };
 
@@ -1750,6 +2060,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1758,13 +2069,52 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfCustomBaseClassProperty,
                         };
 
                         return result;
                     },
                     PropertyName = "ParentArrayOfCustomBaseClassProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "ParentArrayOfCustomGenericClassOfCustomClassProperty should return same 'parentArrayOfCustomGenericClassOfCustomClassProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetArrayChild2>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetArrayChild2(
+                                                      referenceObject.ParentArrayOfBoolProperty,
+                                                      referenceObject.ParentArrayOfIntProperty,
+                                                      referenceObject.ParentArrayOfStringProperty,
+                                                      referenceObject.ParentArrayOfGuidProperty,
+                                                      referenceObject.ParentArrayOfDateTimeProperty,
+                                                      referenceObject.ParentArrayOfCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                                      referenceObject.ParentArrayOfCustomClassProperty,
+                                                      referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                                      referenceObject.Child2ArrayOfBoolProperty,
+                                                      referenceObject.Child2ArrayOfIntProperty,
+                                                      referenceObject.Child2ArrayOfStringProperty,
+                                                      referenceObject.Child2ArrayOfGuidProperty,
+                                                      referenceObject.Child2ArrayOfDateTimeProperty,
+                                                      referenceObject.Child2ArrayOfCustomEnumProperty,
+                                                      referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                                      referenceObject.Child2ArrayOfCustomClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
+                            ExpectedPropertyValue = referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ParentArrayOfCustomGenericClassOfCustomClassProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayChild2>
@@ -1786,6 +2136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1794,7 +2145,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfBoolProperty,
                         };
 
@@ -1822,6 +2174,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1830,7 +2183,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfIntProperty,
                         };
 
@@ -1858,6 +2212,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1866,7 +2221,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfStringProperty,
                         };
 
@@ -1894,6 +2250,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1902,7 +2259,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfGuidProperty,
                         };
 
@@ -1930,6 +2288,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1938,7 +2297,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfDateTimeProperty,
                         };
 
@@ -1966,6 +2326,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -1974,7 +2335,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfCustomEnumProperty,
                         };
 
@@ -2002,6 +2364,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -2010,7 +2373,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                         };
 
@@ -2038,6 +2402,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -2046,7 +2411,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfCustomClassProperty,
                         };
 
@@ -2074,6 +2440,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentArrayOfCustomClassProperty,
                                                       referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                                       referenceObject.Child2ArrayOfBoolProperty,
                                                       referenceObject.Child2ArrayOfIntProperty,
                                                       referenceObject.Child2ArrayOfStringProperty,
@@ -2082,13 +2449,52 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child2ArrayOfCustomEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
                                                       referenceObject.Child2ArrayOfCustomClassProperty,
-                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty),
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.Child2ArrayOfCustomBaseClassProperty,
                         };
 
                         return result;
                     },
                     PropertyName = "Child2ArrayOfCustomBaseClassProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "Child2ArrayOfCustomGenericClassOfCustomClassProperty should return same 'child2ArrayOfCustomGenericClassOfCustomClassProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetArrayChild2>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetArrayChild2(
+                                                      referenceObject.ParentArrayOfBoolProperty,
+                                                      referenceObject.ParentArrayOfIntProperty,
+                                                      referenceObject.ParentArrayOfStringProperty,
+                                                      referenceObject.ParentArrayOfGuidProperty,
+                                                      referenceObject.ParentArrayOfDateTimeProperty,
+                                                      referenceObject.ParentArrayOfCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                                      referenceObject.ParentArrayOfCustomClassProperty,
+                                                      referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                                      referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                                      referenceObject.Child2ArrayOfBoolProperty,
+                                                      referenceObject.Child2ArrayOfIntProperty,
+                                                      referenceObject.Child2ArrayOfStringProperty,
+                                                      referenceObject.Child2ArrayOfGuidProperty,
+                                                      referenceObject.Child2ArrayOfDateTimeProperty,
+                                                      referenceObject.Child2ArrayOfCustomEnumProperty,
+                                                      referenceObject.Child2ArrayOfCustomFlagsEnumProperty,
+                                                      referenceObject.Child2ArrayOfCustomClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomBaseClassProperty,
+                                                      referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
+                            ExpectedPropertyValue = referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Child2ArrayOfCustomGenericClassOfCustomClassProperty",
                 });
 
         private static readonly DeepCloneWithTestScenarios<ModelAllPrivateSetArrayChild2> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<ModelAllPrivateSetArrayChild2>()
@@ -2275,6 +2681,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetArrayChild2>
                 {
+                    Name = "DeepCloneWithParentArrayOfCustomGenericClassOfCustomClassProperty should deep clone object and replace ParentArrayOfCustomGenericClassOfCustomClassProperty with the provided parentArrayOfCustomGenericClassOfCustomClassProperty",
+                    WithPropertyName = "ParentArrayOfCustomGenericClassOfCustomClassProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>().ThatIs(_ => !systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(_.ParentArrayOfCustomGenericClassOfCustomClassProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetArrayChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetArrayChild2>
+                {
                     Name = "DeepCloneWithChild2ArrayOfBoolProperty should deep clone object and replace Child2ArrayOfBoolProperty with the provided child2ArrayOfBoolProperty",
                     WithPropertyName = "Child2ArrayOfBoolProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -2451,6 +2877,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetArrayChild2>
+                {
+                    Name = "DeepCloneWithChild2ArrayOfCustomGenericClassOfCustomClassProperty should deep clone object and replace Child2ArrayOfCustomGenericClassOfCustomClassProperty with the provided child2ArrayOfCustomGenericClassOfCustomClassProperty",
+                    WithPropertyName = "Child2ArrayOfCustomGenericClassOfCustomClassProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetArrayChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild2>().ThatIs(_ => !systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(_.Child2ArrayOfCustomGenericClassOfCustomClassProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetArrayChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child2ArrayOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
                 });
 
         private static readonly ModelAllPrivateSetArrayChild2 ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelAllPrivateSetArrayChild2>();
@@ -2473,6 +2919,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2481,7 +2928,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPrivateSetArrayChild2[]
                     {
@@ -2495,6 +2943,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2503,7 +2952,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.ParentArrayOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty)).ParentArrayOfIntProperty,
@@ -2514,6 +2964,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2522,7 +2973,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2533,6 +2985,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2541,7 +2994,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2552,6 +3006,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2560,7 +3015,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2571,6 +3027,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2579,7 +3036,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2590,6 +3048,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2598,7 +3057,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2609,6 +3069,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty)).ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2617,7 +3078,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2628,6 +3090,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty)).ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2636,7 +3099,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2647,6 +3111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty)).ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2655,7 +3120,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2666,6 +3132,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty)).ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
+                        new ModelAllPrivateSetArrayChild2(
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty)).Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2674,7 +3162,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2685,6 +3174,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty)).Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2693,7 +3183,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2704,6 +3195,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty)).Child2ArrayOfStringProperty,
@@ -2712,7 +3204,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2723,6 +3216,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2731,7 +3225,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2742,6 +3237,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2750,7 +3246,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2761,6 +3258,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2769,7 +3267,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty)).Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2780,6 +3279,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2788,7 +3288,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty)).Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2799,6 +3300,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2807,7 +3309,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty)).Child2ArrayOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetArrayChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
@@ -2818,6 +3321,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
@@ -2826,7 +3330,29 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
-                                A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty)).Child2ArrayOfCustomBaseClassProperty),
+                                A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty)).Child2ArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty),
+                        new ModelAllPrivateSetArrayChild2(
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                A.Dummy<ModelAllPrivateSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty)).Child2ArrayOfCustomGenericClassOfCustomClassProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
@@ -3185,6 +3711,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomBaseClassProperty);
                 }
 
+                if (systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.ParentArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty);
+                }
+
                 if (systemUnderTest.Child2ArrayOfBoolProperty == null)
                 {
                     actual.Child2ArrayOfBoolProperty.AsTest().Must().BeNull();
@@ -3265,6 +3800,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ArrayOfCustomBaseClassProperty);
                 }
+
+                if (systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.Child2ArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child2ArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
+                }
             }
 
             [Fact]
@@ -3283,7 +3827,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentArrayOfBoolProperty", "ParentArrayOfIntProperty", "ParentArrayOfStringProperty", "ParentArrayOfGuidProperty", "ParentArrayOfDateTimeProperty", "ParentArrayOfCustomEnumProperty", "ParentArrayOfCustomFlagsEnumProperty", "ParentArrayOfCustomClassProperty", "ParentArrayOfCustomBaseClassProperty", "Child2ArrayOfBoolProperty", "Child2ArrayOfIntProperty", "Child2ArrayOfStringProperty", "Child2ArrayOfGuidProperty", "Child2ArrayOfDateTimeProperty", "Child2ArrayOfCustomEnumProperty", "Child2ArrayOfCustomFlagsEnumProperty", "Child2ArrayOfCustomClassProperty", "Child2ArrayOfCustomBaseClassProperty" };
+                var propertyNames = new string[] { "ParentArrayOfBoolProperty", "ParentArrayOfIntProperty", "ParentArrayOfStringProperty", "ParentArrayOfGuidProperty", "ParentArrayOfDateTimeProperty", "ParentArrayOfCustomEnumProperty", "ParentArrayOfCustomFlagsEnumProperty", "ParentArrayOfCustomClassProperty", "ParentArrayOfCustomBaseClassProperty", "ParentArrayOfCustomGenericClassOfCustomClassProperty", "Child2ArrayOfBoolProperty", "Child2ArrayOfIntProperty", "Child2ArrayOfStringProperty", "Child2ArrayOfGuidProperty", "Child2ArrayOfDateTimeProperty", "Child2ArrayOfCustomEnumProperty", "Child2ArrayOfCustomFlagsEnumProperty", "Child2ArrayOfCustomClassProperty", "Child2ArrayOfCustomBaseClassProperty", "Child2ArrayOfCustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

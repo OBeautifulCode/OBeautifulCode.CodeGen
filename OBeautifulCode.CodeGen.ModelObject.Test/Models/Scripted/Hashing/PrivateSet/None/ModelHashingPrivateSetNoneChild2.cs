@@ -38,6 +38,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomFlagsEnum parentCustomFlagsEnumProperty,
             CustomClass parentCustomClassProperty,
             CustomBaseClass parentCustomBaseClassProperty,
+            CustomGenericClass<CustomClass> parentCustomGenericClassOfCustomClassProperty,
             bool child2BoolProperty,
             int child2IntProperty,
             string child2StringProperty,
@@ -46,12 +47,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum child2CustomEnumProperty,
             CustomFlagsEnum child2CustomFlagsEnumProperty,
             CustomClass child2CustomClassProperty,
-            CustomBaseClass child2CustomBaseClassProperty)
-            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentCustomEnumProperty, parentCustomFlagsEnumProperty, parentCustomClassProperty, parentCustomBaseClassProperty)
+            CustomBaseClass child2CustomBaseClassProperty,
+            CustomGenericClass<CustomClass> child2CustomGenericClassOfCustomClassProperty)
+            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentCustomEnumProperty, parentCustomFlagsEnumProperty, parentCustomClassProperty, parentCustomBaseClassProperty, parentCustomGenericClassOfCustomClassProperty)
         {
             new { child2StringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { child2CustomClassProperty }.AsArg().Must().NotBeNull();
             new { child2CustomBaseClassProperty }.AsArg().Must().NotBeNull();
+            new { child2CustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNull();
 
             this.Child2BoolProperty = child2BoolProperty;
             this.Child2IntProperty = child2IntProperty;
@@ -62,6 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2CustomFlagsEnumProperty = child2CustomFlagsEnumProperty;
             this.Child2CustomClassProperty = child2CustomClassProperty;
             this.Child2CustomBaseClassProperty = child2CustomBaseClassProperty;
+            this.Child2CustomGenericClassOfCustomClassProperty = child2CustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -127,6 +131,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass Child2CustomBaseClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass> Child2CustomGenericClassOfCustomClassProperty { get; private set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentBoolProperty)
@@ -138,6 +149,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentCustomFlagsEnumProperty)
                 .Hash(this.ParentCustomClassProperty)
                 .Hash(this.ParentCustomBaseClassProperty)
+                .Hash(this.ParentCustomGenericClassOfCustomClassProperty)
                 .Hash(this.Child2BoolProperty)
                 .Hash(this.Child2IntProperty)
                 .Hash(this.Child2StringProperty)
@@ -147,6 +159,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2CustomFlagsEnumProperty)
                 .Hash(this.Child2CustomClassProperty)
                 .Hash(this.Child2CustomBaseClassProperty)
+                .Hash(this.Child2CustomGenericClassOfCustomClassProperty)
                 .Value;
     }
 }

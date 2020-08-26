@@ -88,6 +88,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomBaseClass> Child2ReadOnlyCollectionInterfaceOfCustomBaseClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomGenericClass<CustomClass>> Child2ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfBoolProperty)
@@ -99,6 +106,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomClassProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
+                .Hash(this.ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty)
                 .Hash(this.Child2ReadOnlyCollectionInterfaceOfBoolProperty)
                 .Hash(this.Child2ReadOnlyCollectionInterfaceOfIntProperty)
                 .Hash(this.Child2ReadOnlyCollectionInterfaceOfStringProperty)
@@ -108,6 +116,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ReadOnlyCollectionInterfaceOfCustomClassProperty)
                 .Hash(this.Child2ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
+                .Hash(this.Child2ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty)
                 .Value;
     }
 }

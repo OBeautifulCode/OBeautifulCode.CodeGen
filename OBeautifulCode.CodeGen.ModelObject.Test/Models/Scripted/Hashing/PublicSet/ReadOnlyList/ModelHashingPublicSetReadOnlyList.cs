@@ -88,6 +88,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomBaseClass> ReadOnlyListInterfaceOfCustomBaseClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomGenericClass<CustomClass>> ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ReadOnlyListInterfaceOfBoolProperty)
@@ -99,6 +106,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ReadOnlyListInterfaceOfCustomClassProperty)
                 .Hash(this.ReadOnlyListInterfaceOfCustomBaseClassProperty)
+                .Hash(this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
                 .Value;
     }
 }

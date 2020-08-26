@@ -41,11 +41,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum parentCustomEnumProperty,
             CustomFlagsEnum parentCustomFlagsEnumProperty,
             CustomClass parentCustomClassProperty,
-            CustomBaseClass parentCustomBaseClassProperty)
+            CustomBaseClass parentCustomBaseClassProperty,
+            CustomGenericClass<CustomClass> parentCustomGenericClassOfCustomClassProperty)
         {
             new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { parentCustomClassProperty }.AsArg().Must().NotBeNull();
             new { parentCustomBaseClassProperty }.AsArg().Must().NotBeNull();
+            new { parentCustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNull();
 
             this.ParentBoolProperty = parentBoolProperty;
             this.ParentIntProperty = parentIntProperty;
@@ -56,6 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentCustomFlagsEnumProperty = parentCustomFlagsEnumProperty;
             this.ParentCustomClassProperty = parentCustomClassProperty;
             this.ParentCustomBaseClassProperty = parentCustomBaseClassProperty;
+            this.ParentCustomGenericClassOfCustomClassProperty = parentCustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -120,6 +123,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass ParentCustomBaseClassProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass> ParentCustomGenericClassOfCustomClassProperty { get; private set; }
 
         /// <inheritdoc />
         public abstract bool Equals(ModelCloningPrivateSetNoneParent other);

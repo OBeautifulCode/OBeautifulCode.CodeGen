@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetArray>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArray: ArrayOfBoolProperty = {systemUnderTest.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {systemUnderTest.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {systemUnderTest.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {systemUnderTest.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {systemUnderTest.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {systemUnderTest.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {systemUnderTest.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {systemUnderTest.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {systemUnderTest.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArray: ArrayOfBoolProperty = {systemUnderTest.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {systemUnderTest.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {systemUnderTest.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {systemUnderTest.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {systemUnderTest.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {systemUnderTest.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {systemUnderTest.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {systemUnderTest.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {systemUnderTest.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -233,6 +233,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetArray>
+                {
+                    Name = "DeepCloneWithArrayOfCustomGenericClassOfCustomClassProperty should deep clone object and replace ArrayOfCustomGenericClassOfCustomClassProperty with the provided arrayOfCustomGenericClassOfCustomClassProperty",
+                    WithPropertyName = "ArrayOfCustomGenericClassOfCustomClassProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetArray>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetArray>().ThatIs(_ => !systemUnderTest.ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(_.ArrayOfCustomGenericClassOfCustomClassProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetArray>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ArrayOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
                 });
 
         private static readonly ModelAllPublicSetArray ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelAllPublicSetArray>();
@@ -247,126 +267,149 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPublicSetArray[]
                     {
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty)).ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty)).ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty)).ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty)).ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty)).ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty)).ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty)).ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty)).ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty)).ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty)).ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty)).ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty)).ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty)).ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty)).ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty)).ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty)).ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                         new ModelAllPublicSetArray
                             {
-                                ArrayOfBoolProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
-                                ArrayOfIntProperty             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
-                                ArrayOfStringProperty          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
-                                ArrayOfGuidProperty            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
-                                ArrayOfDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
-                                ArrayOfCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
-                                ArrayOfCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
-                                ArrayOfCustomClassProperty     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
-                                ArrayOfCustomBaseClassProperty = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty)).ArrayOfCustomBaseClassProperty,
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty)).ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetArray
+                            {
+                                ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfBoolProperty,
+                                ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ArrayOfIntProperty,
+                                ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ArrayOfStringProperty,
+                                ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ArrayOfGuidProperty,
+                                ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ArrayOfDateTimeProperty,
+                                ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomEnumProperty,
+                                ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomFlagsEnumProperty,
+                                ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomClassProperty,
+                                ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ArrayOfCustomBaseClassProperty,
+                                ArrayOfCustomGenericClassOfCustomClassProperty = A.Dummy<ModelAllPublicSetArray>().Whose(_ => !_.ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfCustomGenericClassOfCustomClassProperty)).ArrayOfCustomGenericClassOfCustomClassProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -615,6 +658,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomBaseClassProperty);
                 }
+
+                if (systemUnderTest.ArrayOfCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.ArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomGenericClassOfCustomClassProperty);
+                }
             }
 
             [Fact]
@@ -633,7 +685,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ArrayOfBoolProperty", "ArrayOfIntProperty", "ArrayOfStringProperty", "ArrayOfGuidProperty", "ArrayOfDateTimeProperty", "ArrayOfCustomEnumProperty", "ArrayOfCustomFlagsEnumProperty", "ArrayOfCustomClassProperty", "ArrayOfCustomBaseClassProperty" };
+                var propertyNames = new string[] { "ArrayOfBoolProperty", "ArrayOfIntProperty", "ArrayOfStringProperty", "ArrayOfGuidProperty", "ArrayOfDateTimeProperty", "ArrayOfCustomEnumProperty", "ArrayOfCustomFlagsEnumProperty", "ArrayOfCustomClassProperty", "ArrayOfCustomBaseClassProperty", "ArrayOfCustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

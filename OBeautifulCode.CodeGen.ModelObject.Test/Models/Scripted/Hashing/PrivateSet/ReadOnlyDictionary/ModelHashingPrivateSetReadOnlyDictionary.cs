@@ -36,7 +36,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<CustomEnum, CustomEnum> readOnlyDictionaryInterfaceOfCustomEnumProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyDictionary<CustomClass, CustomClass> readOnlyDictionaryInterfaceOfCustomClassProperty,
-            IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> readOnlyDictionaryInterfaceOfCustomBaseClassProperty)
+            IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> readOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+            IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>> readOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
             new { readOnlyDictionaryInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
@@ -46,6 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { readOnlyDictionaryInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { readOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
 
             this.ReadOnlyDictionaryInterfaceOfBoolProperty = readOnlyDictionaryInterfaceOfBoolProperty;
             this.ReadOnlyDictionaryInterfaceOfIntProperty = readOnlyDictionaryInterfaceOfIntProperty;
@@ -55,6 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty;
             this.ReadOnlyDictionaryInterfaceOfCustomClassProperty = readOnlyDictionaryInterfaceOfCustomClassProperty;
             this.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = readOnlyDictionaryInterfaceOfCustomBaseClassProperty;
+            this.ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = readOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -113,6 +116,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>> ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty { get; private set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ReadOnlyDictionaryInterfaceOfBoolProperty)
@@ -123,6 +133,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ReadOnlyDictionaryInterfaceOfCustomClassProperty)
                 .Hash(this.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
+                .Hash(this.ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
                 .Value;
     }
 }

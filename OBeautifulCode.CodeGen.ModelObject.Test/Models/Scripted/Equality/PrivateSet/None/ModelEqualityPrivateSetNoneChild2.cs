@@ -43,6 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomFlagsEnum parentCustomFlagsEnumProperty,
             CustomClass parentCustomClassProperty,
             CustomBaseClass parentCustomBaseClassProperty,
+            CustomGenericClass<CustomClass> parentCustomGenericClassOfCustomClassProperty,
             bool child2BoolProperty,
             int child2IntProperty,
             string child2StringProperty,
@@ -51,12 +52,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum child2CustomEnumProperty,
             CustomFlagsEnum child2CustomFlagsEnumProperty,
             CustomClass child2CustomClassProperty,
-            CustomBaseClass child2CustomBaseClassProperty)
-            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentCustomEnumProperty, parentCustomFlagsEnumProperty, parentCustomClassProperty, parentCustomBaseClassProperty)
+            CustomBaseClass child2CustomBaseClassProperty,
+            CustomGenericClass<CustomClass> child2CustomGenericClassOfCustomClassProperty)
+            : base(parentBoolProperty, parentIntProperty, parentStringProperty, parentGuidProperty, parentDateTimeProperty, parentCustomEnumProperty, parentCustomFlagsEnumProperty, parentCustomClassProperty, parentCustomBaseClassProperty, parentCustomGenericClassOfCustomClassProperty)
         {
             new { child2StringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { child2CustomClassProperty }.AsArg().Must().NotBeNull();
             new { child2CustomBaseClassProperty }.AsArg().Must().NotBeNull();
+            new { child2CustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNull();
 
             this.Child2BoolProperty = child2BoolProperty;
             this.Child2IntProperty = child2IntProperty;
@@ -67,6 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2CustomFlagsEnumProperty = child2CustomFlagsEnumProperty;
             this.Child2CustomClassProperty = child2CustomClassProperty;
             this.Child2CustomBaseClassProperty = child2CustomBaseClassProperty;
+            this.Child2CustomGenericClassOfCustomClassProperty = child2CustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -132,6 +136,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass Child2CustomBaseClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass> Child2CustomGenericClassOfCustomClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelEqualityPrivateSetNoneChild2 other)
         {
@@ -155,6 +166,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentCustomFlagsEnumProperty.IsEqualTo(other.ParentCustomFlagsEnumProperty) &&
                 this.ParentCustomClassProperty.IsEqualTo(other.ParentCustomClassProperty) &&
                 this.ParentCustomBaseClassProperty.IsEqualTo(other.ParentCustomBaseClassProperty) &&
+                this.ParentCustomGenericClassOfCustomClassProperty.IsEqualTo(other.ParentCustomGenericClassOfCustomClassProperty) &&
                 this.Child2BoolProperty.IsEqualTo(other.Child2BoolProperty) &&
                 this.Child2IntProperty.IsEqualTo(other.Child2IntProperty) &&
                 this.Child2StringProperty.IsEqualTo(other.Child2StringProperty) &&
@@ -163,7 +175,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child2CustomEnumProperty.IsEqualTo(other.Child2CustomEnumProperty) &&
                 this.Child2CustomFlagsEnumProperty.IsEqualTo(other.Child2CustomFlagsEnumProperty) &&
                 this.Child2CustomClassProperty.IsEqualTo(other.Child2CustomClassProperty) &&
-                this.Child2CustomBaseClassProperty.IsEqualTo(other.Child2CustomBaseClassProperty);
+                this.Child2CustomBaseClassProperty.IsEqualTo(other.Child2CustomBaseClassProperty) &&
+                this.Child2CustomGenericClassOfCustomClassProperty.IsEqualTo(other.Child2CustomGenericClassOfCustomClassProperty);
 
             return result;
         }

@@ -77,6 +77,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentCustomFlagsEnumProperty.IsEqualTo(other.ParentCustomFlagsEnumProperty)
                       && this.ParentCustomClassProperty.IsEqualTo(other.ParentCustomClassProperty)
                       && this.ParentCustomBaseClassProperty.IsEqualTo(other.ParentCustomBaseClassProperty)
+                      && this.ParentCustomGenericClassOfCustomClassProperty.IsEqualTo(other.ParentCustomGenericClassOfCustomClassProperty)
                       && this.Child2BoolProperty.IsEqualTo(other.Child2BoolProperty)
                       && this.Child2IntProperty.IsEqualTo(other.Child2IntProperty)
                       && this.Child2StringProperty.IsEqualTo(other.Child2StringProperty, StringComparer.Ordinal)
@@ -85,7 +86,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.Child2CustomEnumProperty.IsEqualTo(other.Child2CustomEnumProperty)
                       && this.Child2CustomFlagsEnumProperty.IsEqualTo(other.Child2CustomFlagsEnumProperty)
                       && this.Child2CustomClassProperty.IsEqualTo(other.Child2CustomClassProperty)
-                      && this.Child2CustomBaseClassProperty.IsEqualTo(other.Child2CustomBaseClassProperty);
+                      && this.Child2CustomBaseClassProperty.IsEqualTo(other.Child2CustomBaseClassProperty)
+                      && this.Child2CustomGenericClassOfCustomClassProperty.IsEqualTo(other.Child2CustomGenericClassOfCustomClassProperty);
 
             return result;
         }
@@ -104,6 +106,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ParentCustomFlagsEnumProperty)
             .Hash(this.ParentCustomClassProperty)
             .Hash(this.ParentCustomBaseClassProperty)
+            .Hash(this.ParentCustomGenericClassOfCustomClassProperty)
             .Hash(this.Child2BoolProperty)
             .Hash(this.Child2IntProperty)
             .Hash(this.Child2StringProperty)
@@ -113,6 +116,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Child2CustomFlagsEnumProperty)
             .Hash(this.Child2CustomClassProperty)
             .Hash(this.Child2CustomBaseClassProperty)
+            .Hash(this.Child2CustomGenericClassOfCustomClassProperty)
             .Value;
 
         /// <inheritdoc />
@@ -146,6 +150,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -154,7 +159,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -187,6 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -195,7 +202,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -228,6 +236,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -236,7 +245,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -269,6 +279,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -277,7 +288,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -310,6 +322,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -318,7 +331,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -351,6 +365,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -359,7 +374,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -392,6 +408,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  parentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -400,7 +417,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -433,6 +451,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  parentCustomClassProperty,
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -441,7 +460,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -474,6 +494,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  parentCustomBaseClassProperty,
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -482,7 +503,51 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public override ModelAllPrivateSetNoneParent DeepCloneWithParentCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass> parentCustomGenericClassOfCustomClassProperty)
+        {
+            var result = new ModelAllPrivateSetNoneChild2(
+                                 this.ParentBoolProperty,
+                                 this.ParentIntProperty,
+                                 this.ParentStringProperty?.Clone().ToString(),
+                                 this.ParentGuidProperty,
+                                 this.ParentDateTimeProperty,
+                                 this.ParentCustomEnumProperty,
+                                 this.ParentCustomFlagsEnumProperty,
+                                 this.ParentCustomClassProperty?.DeepClone(),
+                                 this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 parentCustomGenericClassOfCustomClassProperty,
+                                 this.Child2BoolProperty,
+                                 this.Child2IntProperty,
+                                 this.Child2StringProperty?.Clone().ToString(),
+                                 this.Child2GuidProperty,
+                                 this.Child2DateTimeProperty,
+                                 this.Child2CustomEnumProperty,
+                                 this.Child2CustomFlagsEnumProperty,
+                                 this.Child2CustomClassProperty?.DeepClone(),
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -519,6 +584,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -527,7 +593,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -564,6 +631,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -572,7 +640,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -609,6 +678,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  child2StringProperty,
@@ -617,7 +687,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -654,6 +725,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -662,7 +734,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -699,6 +772,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -707,7 +781,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -744,6 +819,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -752,7 +828,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -789,6 +866,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -797,7 +875,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -834,6 +913,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -842,7 +922,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  child2CustomClassProperty,
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -879,6 +960,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -887,7 +969,55 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 child2CustomBaseClassProperty);
+                                 child2CustomBaseClassProperty,
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Child2CustomGenericClassOfCustomClassProperty" />.
+        /// </summary>
+        /// <param name="child2CustomGenericClassOfCustomClassProperty">The new <see cref="Child2CustomGenericClassOfCustomClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetNoneChild2" /> using the specified <paramref name="child2CustomGenericClassOfCustomClassProperty" /> for <see cref="Child2CustomGenericClassOfCustomClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPrivateSetNoneChild2 DeepCloneWithChild2CustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass> child2CustomGenericClassOfCustomClassProperty)
+        {
+            var result = new ModelAllPrivateSetNoneChild2(
+                                 this.ParentBoolProperty,
+                                 this.ParentIntProperty,
+                                 this.ParentStringProperty?.Clone().ToString(),
+                                 this.ParentGuidProperty,
+                                 this.ParentDateTimeProperty,
+                                 this.ParentCustomEnumProperty,
+                                 this.ParentCustomFlagsEnumProperty,
+                                 this.ParentCustomClassProperty?.DeepClone(),
+                                 this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child2BoolProperty,
+                                 this.Child2IntProperty,
+                                 this.Child2StringProperty?.Clone().ToString(),
+                                 this.Child2GuidProperty,
+                                 this.Child2DateTimeProperty,
+                                 this.Child2CustomEnumProperty,
+                                 this.Child2CustomFlagsEnumProperty,
+                                 this.Child2CustomClassProperty?.DeepClone(),
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 child2CustomGenericClassOfCustomClassProperty);
 
             return result;
         }
@@ -905,6 +1035,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentCustomFlagsEnumProperty,
                                  this.ParentCustomClassProperty?.DeepClone(),
                                  this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  this.Child2BoolProperty,
                                  this.Child2IntProperty,
                                  this.Child2StringProperty?.Clone().ToString(),
@@ -913,7 +1044,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Child2CustomEnumProperty,
                                  this.Child2CustomFlagsEnumProperty,
                                  this.Child2CustomClassProperty?.DeepClone(),
-                                 this.Child2CustomBaseClassProperty?.DeepClone());
+                                 this.Child2CustomBaseClassProperty?.DeepClone(),
+                                 this.Child2CustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -922,7 +1054,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetNoneChild2: ParentBoolProperty = {this.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {this.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {this.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {this.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {this.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentCustomEnumProperty = {this.ParentCustomEnumProperty.ToString() ?? "<null>"}, ParentCustomFlagsEnumProperty = {this.ParentCustomFlagsEnumProperty.ToString() ?? "<null>"}, ParentCustomClassProperty = {this.ParentCustomClassProperty?.ToString() ?? "<null>"}, ParentCustomBaseClassProperty = {this.ParentCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2BoolProperty = {this.Child2BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2IntProperty = {this.Child2IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2StringProperty = {this.Child2StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2GuidProperty = {this.Child2GuidProperty.ToString() ?? "<null>"}, Child2DateTimeProperty = {this.Child2DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2CustomEnumProperty = {this.Child2CustomEnumProperty.ToString() ?? "<null>"}, Child2CustomFlagsEnumProperty = {this.Child2CustomFlagsEnumProperty.ToString() ?? "<null>"}, Child2CustomClassProperty = {this.Child2CustomClassProperty?.ToString() ?? "<null>"}, Child2CustomBaseClassProperty = {this.Child2CustomBaseClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetNoneChild2: ParentBoolProperty = {this.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {this.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {this.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {this.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {this.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentCustomEnumProperty = {this.ParentCustomEnumProperty.ToString() ?? "<null>"}, ParentCustomFlagsEnumProperty = {this.ParentCustomFlagsEnumProperty.ToString() ?? "<null>"}, ParentCustomClassProperty = {this.ParentCustomClassProperty?.ToString() ?? "<null>"}, ParentCustomBaseClassProperty = {this.ParentCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentCustomGenericClassOfCustomClassProperty = {this.ParentCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child2BoolProperty = {this.Child2BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2IntProperty = {this.Child2IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2StringProperty = {this.Child2StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2GuidProperty = {this.Child2GuidProperty.ToString() ?? "<null>"}, Child2DateTimeProperty = {this.Child2DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child2CustomEnumProperty = {this.Child2CustomEnumProperty.ToString() ?? "<null>"}, Child2CustomFlagsEnumProperty = {this.Child2CustomFlagsEnumProperty.ToString() ?? "<null>"}, Child2CustomClassProperty = {this.Child2CustomClassProperty?.ToString() ?? "<null>"}, Child2CustomBaseClassProperty = {this.Child2CustomBaseClassProperty?.ToString() ?? "<null>"}, Child2CustomGenericClassOfCustomClassProperty = {this.Child2CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

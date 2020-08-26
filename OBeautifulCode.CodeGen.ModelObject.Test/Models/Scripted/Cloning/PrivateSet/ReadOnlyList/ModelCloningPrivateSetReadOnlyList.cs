@@ -41,7 +41,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<CustomEnum> readOnlyListInterfaceOfCustomEnumProperty,
             IReadOnlyList<CustomFlagsEnum> readOnlyListInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyList<CustomClass> readOnlyListInterfaceOfCustomClassProperty,
-            IReadOnlyList<CustomBaseClass> readOnlyListInterfaceOfCustomBaseClassProperty)
+            IReadOnlyList<CustomBaseClass> readOnlyListInterfaceOfCustomBaseClassProperty,
+            IReadOnlyList<CustomGenericClass<CustomClass>> readOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
             new { readOnlyListInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyListInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -52,6 +53,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyListInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyListInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { readOnlyListInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { readOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.ReadOnlyListInterfaceOfBoolProperty = readOnlyListInterfaceOfBoolProperty;
             this.ReadOnlyListInterfaceOfIntProperty = readOnlyListInterfaceOfIntProperty;
@@ -62,6 +64,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty = readOnlyListInterfaceOfCustomFlagsEnumProperty;
             this.ReadOnlyListInterfaceOfCustomClassProperty = readOnlyListInterfaceOfCustomClassProperty;
             this.ReadOnlyListInterfaceOfCustomBaseClassProperty = readOnlyListInterfaceOfCustomBaseClassProperty;
+            this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = readOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -127,6 +130,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomBaseClass> ReadOnlyListInterfaceOfCustomBaseClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomGenericClass<CustomClass>> ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelCloningPrivateSetReadOnlyList other)
         {
@@ -149,7 +159,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfCustomEnumProperty) &&
                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ReadOnlyListInterfaceOfCustomFlagsEnumProperty) &&
                 this.ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(other.ReadOnlyListInterfaceOfCustomClassProperty) &&
-                this.ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ReadOnlyListInterfaceOfCustomBaseClassProperty);
+                this.ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ReadOnlyListInterfaceOfCustomBaseClassProperty) &&
+                this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.IsEqualTo(other.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty);
 
             return result;
         }

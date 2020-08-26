@@ -93,6 +93,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass[] ArrayOfCustomBaseClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass>[] ArrayOfCustomGenericClassOfCustomClassProperty { get; set; }
+
         /// <inheritdoc />
         public bool Equals(ModelEqualityPublicSetArray other)
         {
@@ -115,7 +122,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ArrayOfCustomEnumProperty.IsEqualTo(other.ArrayOfCustomEnumProperty) &&
                 this.ArrayOfCustomFlagsEnumProperty.IsEqualTo(other.ArrayOfCustomFlagsEnumProperty) &&
                 this.ArrayOfCustomClassProperty.IsEqualTo(other.ArrayOfCustomClassProperty) &&
-                this.ArrayOfCustomBaseClassProperty.IsEqualTo(other.ArrayOfCustomBaseClassProperty);
+                this.ArrayOfCustomBaseClassProperty.IsEqualTo(other.ArrayOfCustomBaseClassProperty) &&
+                this.ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(other.ArrayOfCustomGenericClassOfCustomClassProperty);
 
             return result;
         }

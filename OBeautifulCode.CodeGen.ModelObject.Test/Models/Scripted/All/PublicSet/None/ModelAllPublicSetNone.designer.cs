@@ -76,7 +76,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.CustomEnumProperty.IsEqualTo(other.CustomEnumProperty)
                       && this.CustomFlagsEnumProperty.IsEqualTo(other.CustomFlagsEnumProperty)
                       && this.CustomClassProperty.IsEqualTo(other.CustomClassProperty)
-                      && this.CustomBaseClassProperty.IsEqualTo(other.CustomBaseClassProperty);
+                      && this.CustomBaseClassProperty.IsEqualTo(other.CustomBaseClassProperty)
+                      && this.CustomGenericClassOfCustomClassProperty.IsEqualTo(other.CustomGenericClassOfCustomClassProperty);
 
             return result;
         }
@@ -95,6 +96,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.CustomFlagsEnumProperty)
             .Hash(this.CustomClassProperty)
             .Hash(this.CustomBaseClassProperty)
+            .Hash(this.CustomGenericClassOfCustomClassProperty)
             .Value;
 
         /// <inheritdoc />
@@ -105,15 +107,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -143,15 +146,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = boolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = boolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -181,15 +185,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = intProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = intProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -219,15 +224,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = stringProperty,
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = stringProperty,
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -257,15 +263,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = guidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = guidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -295,15 +302,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = dateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = dateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -333,15 +341,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = customEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = customEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -371,15 +380,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = customFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = customFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -409,15 +419,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = customClassProperty,
-                                 CustomBaseClassProperty = this.CustomBaseClassProperty?.DeepClone(),
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = customClassProperty,
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
                              };
 
             return result;
@@ -447,15 +458,55 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNone
                              {
-                                 BoolProperty            = this.BoolProperty,
-                                 IntProperty             = this.IntProperty,
-                                 StringProperty          = this.StringProperty?.Clone().ToString(),
-                                 GuidProperty            = this.GuidProperty,
-                                 DateTimeProperty        = this.DateTimeProperty,
-                                 CustomEnumProperty      = this.CustomEnumProperty,
-                                 CustomFlagsEnumProperty = this.CustomFlagsEnumProperty,
-                                 CustomClassProperty     = this.CustomClassProperty?.DeepClone(),
-                                 CustomBaseClassProperty = customBaseClassProperty,
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = customBaseClassProperty,
+                                 CustomGenericClassOfCustomClassProperty = this.CustomGenericClassOfCustomClassProperty?.DeepClone(),
+                             };
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="CustomGenericClassOfCustomClassProperty" />.
+        /// </summary>
+        /// <param name="customGenericClassOfCustomClassProperty">The new <see cref="CustomGenericClassOfCustomClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPublicSetNone" /> using the specified <paramref name="customGenericClassOfCustomClassProperty" /> for <see cref="CustomGenericClassOfCustomClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPublicSetNone DeepCloneWithCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass> customGenericClassOfCustomClassProperty)
+        {
+            var result = new ModelAllPublicSetNone
+                             {
+                                 BoolProperty                            = this.BoolProperty,
+                                 IntProperty                             = this.IntProperty,
+                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 GuidProperty                            = this.GuidProperty,
+                                 DateTimeProperty                        = this.DateTimeProperty,
+                                 CustomEnumProperty                      = this.CustomEnumProperty,
+                                 CustomFlagsEnumProperty                 = this.CustomFlagsEnumProperty,
+                                 CustomClassProperty                     = this.CustomClassProperty?.DeepClone(),
+                                 CustomBaseClassProperty                 = this.CustomBaseClassProperty?.DeepClone(),
+                                 CustomGenericClassOfCustomClassProperty = customGenericClassOfCustomClassProperty,
                              };
 
             return result;
@@ -465,7 +516,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNone: BoolProperty = {this.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {this.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {this.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, CustomEnumProperty = {this.CustomEnumProperty.ToString() ?? "<null>"}, CustomFlagsEnumProperty = {this.CustomFlagsEnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {this.CustomClassProperty?.ToString() ?? "<null>"}, CustomBaseClassProperty = {this.CustomBaseClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNone: BoolProperty = {this.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {this.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {this.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, CustomEnumProperty = {this.CustomEnumProperty.ToString() ?? "<null>"}, CustomFlagsEnumProperty = {this.CustomFlagsEnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {this.CustomClassProperty?.ToString() ?? "<null>"}, CustomBaseClassProperty = {this.CustomBaseClassProperty?.ToString() ?? "<null>"}, CustomGenericClassOfCustomClassProperty = {this.CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

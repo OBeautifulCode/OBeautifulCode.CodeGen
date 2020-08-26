@@ -42,7 +42,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<CustomEnum> parentReadOnlyCollectionInterfaceOfCustomEnumProperty,
             IReadOnlyCollection<CustomFlagsEnum> parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyCollection<CustomClass> parentReadOnlyCollectionInterfaceOfCustomClassProperty,
-            IReadOnlyCollection<CustomBaseClass> parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty)
+            IReadOnlyCollection<CustomBaseClass> parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+            IReadOnlyCollection<CustomGenericClass<CustomClass>> parentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
             new { parentReadOnlyCollectionInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -53,6 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.ParentReadOnlyCollectionInterfaceOfBoolProperty = parentReadOnlyCollectionInterfaceOfBoolProperty;
             this.ParentReadOnlyCollectionInterfaceOfIntProperty = parentReadOnlyCollectionInterfaceOfIntProperty;
@@ -63,6 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty;
             this.ParentReadOnlyCollectionInterfaceOfCustomClassProperty = parentReadOnlyCollectionInterfaceOfCustomClassProperty;
             this.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty = parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty;
+            this.ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = parentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -127,5 +130,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomBaseClass> ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomGenericClass<CustomClass>> ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty { get; private set; }
     }
 }

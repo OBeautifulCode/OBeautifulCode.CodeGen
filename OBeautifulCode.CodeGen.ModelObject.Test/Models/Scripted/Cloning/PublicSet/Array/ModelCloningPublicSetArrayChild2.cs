@@ -92,6 +92,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass[] Child2ArrayOfCustomBaseClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass>[] Child2ArrayOfCustomGenericClassOfCustomClassProperty { get; set; }
+
         /// <inheritdoc />
         public bool Equals(ModelCloningPublicSetArrayChild2 other)
         {
@@ -115,6 +122,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(other.ParentArrayOfCustomFlagsEnumProperty) &&
                 this.ParentArrayOfCustomClassProperty.IsEqualTo(other.ParentArrayOfCustomClassProperty) &&
                 this.ParentArrayOfCustomBaseClassProperty.IsEqualTo(other.ParentArrayOfCustomBaseClassProperty) &&
+                this.ParentArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(other.ParentArrayOfCustomGenericClassOfCustomClassProperty) &&
                 this.Child2ArrayOfBoolProperty.IsEqualTo(other.Child2ArrayOfBoolProperty) &&
                 this.Child2ArrayOfIntProperty.IsEqualTo(other.Child2ArrayOfIntProperty) &&
                 this.Child2ArrayOfStringProperty.IsEqualTo(other.Child2ArrayOfStringProperty) &&
@@ -123,7 +131,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child2ArrayOfCustomEnumProperty.IsEqualTo(other.Child2ArrayOfCustomEnumProperty) &&
                 this.Child2ArrayOfCustomFlagsEnumProperty.IsEqualTo(other.Child2ArrayOfCustomFlagsEnumProperty) &&
                 this.Child2ArrayOfCustomClassProperty.IsEqualTo(other.Child2ArrayOfCustomClassProperty) &&
-                this.Child2ArrayOfCustomBaseClassProperty.IsEqualTo(other.Child2ArrayOfCustomBaseClassProperty);
+                this.Child2ArrayOfCustomBaseClassProperty.IsEqualTo(other.Child2ArrayOfCustomBaseClassProperty) &&
+                this.Child2ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(other.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
 
             return result;
         }

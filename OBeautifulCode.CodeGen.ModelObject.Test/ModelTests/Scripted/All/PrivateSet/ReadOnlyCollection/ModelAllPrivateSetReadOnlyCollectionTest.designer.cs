@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetReadOnlyCollection>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyCollection: ReadOnlyCollectionInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfIntProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfStringProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomBaseClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyCollection: ReadOnlyCollectionInterfaceOfBoolProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfIntProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfIntProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfStringProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfStringProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfGuidProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfDateTimeProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomBaseClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -71,7 +71,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -95,7 +96,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -119,7 +121,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -143,7 +146,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -167,7 +171,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -191,7 +196,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -215,7 +221,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -239,7 +246,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -263,7 +271,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -287,7 +296,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -311,7 +321,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -335,7 +346,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -359,7 +371,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new List<CustomEnum>(),
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -383,7 +396,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              null,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -407,7 +421,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              new List<CustomFlagsEnum>(),
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -431,7 +446,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              null,
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -455,7 +471,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              new List<CustomClass>(),
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -479,7 +496,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              new CustomClass[0].Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty).Concat(new CustomClass[] { null }).Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty).ToList(),
-                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -503,7 +521,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             null);
+                                             null,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -527,7 +546,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             new List<CustomBaseClass>());
+                                             new List<CustomBaseClass>(),
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
@@ -551,12 +571,88 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                             new CustomBaseClass[0].Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty).Concat(new CustomBaseClass[] { null }).Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty).ToList());
+                                             new CustomBaseClass[0].Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty).Concat(new CustomBaseClass[] { null }).Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty).ToList(),
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "readOnlyCollectionInterfaceOfCustomBaseClassProperty", "contains at least one null element" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollection>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollection>();
+
+                        var result = new ModelAllPrivateSetReadOnlyCollection(
+                                             referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfIntProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfStringProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             null);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollection>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollection>();
+
+                        var result = new ModelAllPrivateSetReadOnlyCollection(
+                                             referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfIntProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfStringProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             new List<CustomGenericClass<CustomClass>>());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable" },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollection>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollection>();
+
+                        var result = new ModelAllPrivateSetReadOnlyCollection(
+                                             referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfIntProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfStringProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             new CustomGenericClass<CustomClass>[0].Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty).Concat(new CustomGenericClass<CustomClass>[] { null }).Concat(referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty).ToList());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty", "contains at least one null element" },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetReadOnlyCollection> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetReadOnlyCollection>()
@@ -579,7 +675,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty,
                         };
 
@@ -606,7 +703,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfIntProperty,
                         };
 
@@ -633,7 +731,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfStringProperty,
                         };
 
@@ -660,7 +759,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty,
                         };
 
@@ -687,7 +787,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty,
                         };
 
@@ -714,7 +815,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                         };
 
@@ -741,7 +843,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                         };
 
@@ -768,7 +871,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
                         };
 
@@ -795,13 +899,42 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
                         };
 
                         return result;
                     },
                     PropertyName = "ReadOnlyCollectionInterfaceOfCustomBaseClassProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyCollection>
+                {
+                    Name = "ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty should return same 'readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollection>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetReadOnlyCollection>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetReadOnlyCollection(
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfBoolProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfIntProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfStringProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfGuidProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
+                            ExpectedPropertyValue = referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty",
                 });
 
         private static readonly DeepCloneWithTestScenarios<ModelAllPrivateSetReadOnlyCollection> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<ModelAllPrivateSetReadOnlyCollection>()
@@ -984,6 +1117,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyCollection>
+                {
+                    Name = "DeepCloneWithReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty should deep clone object and replace ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty with the provided readOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty",
+                    WithPropertyName = "ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyCollection>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollection>().ThatIs(_ => !systemUnderTest.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty.IsEqualTo(_.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetReadOnlyCollection>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty,
+                        };
+
+                        return result;
+                    },
                 });
 
         private static readonly ModelAllPrivateSetReadOnlyCollection ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelAllPrivateSetReadOnlyCollection>();
@@ -1005,7 +1158,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPrivateSetReadOnlyCollection[]
                     {
@@ -1018,7 +1172,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty)).ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1028,7 +1183,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1038,7 +1194,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1048,7 +1205,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1058,7 +1216,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1068,7 +1227,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty)).ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1078,7 +1238,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)).ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1088,7 +1249,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty)).ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                         new ModelAllPrivateSetReadOnlyCollection(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
@@ -1098,7 +1260,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
-                                A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)).ReadOnlyCollectionInterfaceOfCustomBaseClassProperty),
+                                A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)).ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
+                        new ModelAllPrivateSetReadOnlyCollection(
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                A.Dummy<ModelAllPrivateSetReadOnlyCollection>().Whose(_ => !_.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty)).ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
@@ -1455,6 +1629,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty);
                 }
+
+                if (systemUnderTest.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
+                }
             }
 
             [Fact]
@@ -1473,7 +1656,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ReadOnlyCollectionInterfaceOfBoolProperty", "ReadOnlyCollectionInterfaceOfIntProperty", "ReadOnlyCollectionInterfaceOfStringProperty", "ReadOnlyCollectionInterfaceOfGuidProperty", "ReadOnlyCollectionInterfaceOfDateTimeProperty", "ReadOnlyCollectionInterfaceOfCustomEnumProperty", "ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty", "ReadOnlyCollectionInterfaceOfCustomClassProperty", "ReadOnlyCollectionInterfaceOfCustomBaseClassProperty" };
+                var propertyNames = new string[] { "ReadOnlyCollectionInterfaceOfBoolProperty", "ReadOnlyCollectionInterfaceOfIntProperty", "ReadOnlyCollectionInterfaceOfStringProperty", "ReadOnlyCollectionInterfaceOfGuidProperty", "ReadOnlyCollectionInterfaceOfDateTimeProperty", "ReadOnlyCollectionInterfaceOfCustomEnumProperty", "ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty", "ReadOnlyCollectionInterfaceOfCustomClassProperty", "ReadOnlyCollectionInterfaceOfCustomBaseClassProperty", "ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

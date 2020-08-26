@@ -42,11 +42,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum customEnumProperty,
             CustomFlagsEnum customFlagsEnumProperty,
             CustomClass customClassProperty,
-            CustomBaseClass customBaseClassProperty)
+            CustomBaseClass customBaseClassProperty,
+            CustomGenericClass<CustomClass> customGenericClassOfCustomClassProperty)
         {
             new { stringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { customClassProperty }.AsArg().Must().NotBeNull();
             new { customBaseClassProperty }.AsArg().Must().NotBeNull();
+            new { customGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNull();
 
             this.BoolProperty = boolProperty;
             this.IntProperty = intProperty;
@@ -57,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.CustomFlagsEnumProperty = customFlagsEnumProperty;
             this.CustomClassProperty = customClassProperty;
             this.CustomBaseClassProperty = customBaseClassProperty;
+            this.CustomGenericClassOfCustomClassProperty = customGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -122,6 +125,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass CustomBaseClassProperty { get; private set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass> CustomGenericClassOfCustomClassProperty { get; private set; }
+
         /// <inheritdoc />
         public bool Equals(ModelEqualityPrivateSetNone other)
         {
@@ -144,7 +154,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.CustomEnumProperty.IsEqualTo(other.CustomEnumProperty) &&
                 this.CustomFlagsEnumProperty.IsEqualTo(other.CustomFlagsEnumProperty) &&
                 this.CustomClassProperty.IsEqualTo(other.CustomClassProperty) &&
-                this.CustomBaseClassProperty.IsEqualTo(other.CustomBaseClassProperty);
+                this.CustomBaseClassProperty.IsEqualTo(other.CustomBaseClassProperty) &&
+                this.CustomGenericClassOfCustomClassProperty.IsEqualTo(other.CustomGenericClassOfCustomClassProperty);
 
             return result;
         }

@@ -121,6 +121,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             HashCodeHelper.Initialize()
                 .Hash(this.Item1)
                 .Hash(this.Item2)
+                .Hash(this.Item3)
                 .Value;
 
         public CustomGenericClass<T> DeepClone()

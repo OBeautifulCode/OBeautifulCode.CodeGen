@@ -42,7 +42,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum[] parentArrayOfCustomEnumProperty,
             CustomFlagsEnum[] parentArrayOfCustomFlagsEnumProperty,
             CustomClass[] parentArrayOfCustomClassProperty,
-            CustomBaseClass[] parentArrayOfCustomBaseClassProperty)
+            CustomBaseClass[] parentArrayOfCustomBaseClassProperty,
+            CustomGenericClass<CustomClass>[] parentArrayOfCustomGenericClassOfCustomClassProperty)
         {
             new { parentArrayOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -53,6 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { parentArrayOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { parentArrayOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentArrayOfCustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
 
             this.ParentArrayOfBoolProperty = parentArrayOfBoolProperty;
             this.ParentArrayOfIntProperty = parentArrayOfIntProperty;
@@ -63,6 +65,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentArrayOfCustomFlagsEnumProperty = parentArrayOfCustomFlagsEnumProperty;
             this.ParentArrayOfCustomClassProperty = parentArrayOfCustomClassProperty;
             this.ParentArrayOfCustomBaseClassProperty = parentArrayOfCustomBaseClassProperty;
+            this.ParentArrayOfCustomGenericClassOfCustomClassProperty = parentArrayOfCustomGenericClassOfCustomClassProperty;
         }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -127,5 +130,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomBaseClass[] ParentArrayOfCustomBaseClassProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomGenericClass<CustomClass>[] ParentArrayOfCustomGenericClassOfCustomClassProperty { get; private set; }
     }
 }

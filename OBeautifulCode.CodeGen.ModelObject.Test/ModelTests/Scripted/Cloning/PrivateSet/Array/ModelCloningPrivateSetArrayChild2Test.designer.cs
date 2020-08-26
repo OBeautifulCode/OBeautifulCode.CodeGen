@@ -238,6 +238,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomBaseClassProperty);
                 }
 
+                if (systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.ParentArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty);
+                }
+
                 if (systemUnderTest.Child2ArrayOfBoolProperty == null)
                 {
                     actual.Child2ArrayOfBoolProperty.AsTest().Must().BeNull();
@@ -317,6 +326,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.Child2ArrayOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ArrayOfCustomBaseClassProperty);
+                }
+
+                if (systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.Child2ArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.Child2ArrayOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty);
                 }
             }
         }

@@ -61,6 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomFlagsEnumProperty(A.Dummy<ModelAllPrivateSetNoneParent>().Whose(_ => !_.ParentCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty)).ParentCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomClassProperty(A.Dummy<ModelAllPrivateSetNoneParent>().Whose(_ => !_.ParentCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty)).ParentCustomClassProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomBaseClassProperty(A.Dummy<ModelAllPrivateSetNoneParent>().Whose(_ => !_.ParentCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty)).ParentCustomBaseClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCustomGenericClassOfCustomClassProperty(A.Dummy<ModelAllPrivateSetNoneParent>().Whose(_ => !_.ParentCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomGenericClassOfCustomClassProperty)).ParentCustomGenericClassOfCustomClassProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPrivateSetNoneParent[]
                     {
@@ -215,6 +216,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 else
                 {
                     actual.ParentCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomBaseClassProperty);
+                }
+
+                if (systemUnderTest.ParentCustomGenericClassOfCustomClassProperty == null)
+                {
+                    actual.ParentCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
+                }
+                else
+                {
+                    actual.ParentCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomGenericClassOfCustomClassProperty);
                 }
             }
         }

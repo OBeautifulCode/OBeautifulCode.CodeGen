@@ -81,6 +81,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty { get; set; }
 
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>> Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty { get; set; }
+
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfBoolProperty)
@@ -91,6 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
+                .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfBoolProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfIntProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfStringProperty)
@@ -99,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
+                .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
                 .Value;
     }
 }

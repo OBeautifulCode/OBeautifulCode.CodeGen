@@ -76,7 +76,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ArrayOfCustomEnumProperty.IsEqualTo(other.ArrayOfCustomEnumProperty)
                       && this.ArrayOfCustomFlagsEnumProperty.IsEqualTo(other.ArrayOfCustomFlagsEnumProperty)
                       && this.ArrayOfCustomClassProperty.IsEqualTo(other.ArrayOfCustomClassProperty)
-                      && this.ArrayOfCustomBaseClassProperty.IsEqualTo(other.ArrayOfCustomBaseClassProperty);
+                      && this.ArrayOfCustomBaseClassProperty.IsEqualTo(other.ArrayOfCustomBaseClassProperty)
+                      && this.ArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(other.ArrayOfCustomGenericClassOfCustomClassProperty);
 
             return result;
         }
@@ -95,6 +96,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ArrayOfCustomFlagsEnumProperty)
             .Hash(this.ArrayOfCustomClassProperty)
             .Hash(this.ArrayOfCustomBaseClassProperty)
+            .Hash(this.ArrayOfCustomGenericClassOfCustomClassProperty)
             .Value;
 
         /// <inheritdoc />
@@ -105,15 +107,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -143,15 +146,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = arrayOfBoolProperty,
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = arrayOfBoolProperty,
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -181,15 +185,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = arrayOfIntProperty,
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = arrayOfIntProperty,
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -219,15 +224,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = arrayOfStringProperty,
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = arrayOfStringProperty,
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -257,15 +263,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = arrayOfGuidProperty,
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = arrayOfGuidProperty,
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -295,15 +302,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = arrayOfDateTimeProperty,
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = arrayOfDateTimeProperty,
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -333,15 +341,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = arrayOfCustomEnumProperty,
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = arrayOfCustomEnumProperty,
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -371,15 +380,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = arrayOfCustomFlagsEnumProperty,
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = arrayOfCustomFlagsEnumProperty,
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -409,15 +419,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = arrayOfCustomClassProperty,
-                                 ArrayOfCustomBaseClassProperty = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = arrayOfCustomClassProperty,
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
                              };
 
             return result;
@@ -447,15 +458,55 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArray
                              {
-                                 ArrayOfBoolProperty            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 ArrayOfIntProperty             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
-                                 ArrayOfGuidProperty            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 ArrayOfDateTimeProperty        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomEnumProperty      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomFlagsEnumProperty = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 ArrayOfCustomClassProperty     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 ArrayOfCustomBaseClassProperty = arrayOfCustomBaseClassProperty,
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = arrayOfCustomBaseClassProperty,
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = this.ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                             };
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="ArrayOfCustomGenericClassOfCustomClassProperty" />.
+        /// </summary>
+        /// <param name="arrayOfCustomGenericClassOfCustomClassProperty">The new <see cref="ArrayOfCustomGenericClassOfCustomClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPublicSetArray" /> using the specified <paramref name="arrayOfCustomGenericClassOfCustomClassProperty" /> for <see cref="ArrayOfCustomGenericClassOfCustomClassProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPublicSetArray DeepCloneWithArrayOfCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass>[] arrayOfCustomGenericClassOfCustomClassProperty)
+        {
+            var result = new ModelAllPublicSetArray
+                             {
+                                 ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomFlagsEnumProperty                 = this.ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ArrayOfCustomClassProperty                     = this.ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomBaseClassProperty                 = this.ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = arrayOfCustomGenericClassOfCustomClassProperty,
                              };
 
             return result;
@@ -465,7 +516,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArray: ArrayOfBoolProperty = {this.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {this.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {this.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {this.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {this.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {this.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {this.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {this.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {this.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArray: ArrayOfBoolProperty = {this.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {this.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {this.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {this.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {this.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {this.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {this.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {this.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {this.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomGenericClassOfCustomClassProperty = {this.ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }

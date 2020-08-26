@@ -352,6 +352,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             else
             {
                 result = type.ToStringReadable().ToUpperFirstCharacter();
+
+                if (type.IsGenericType)
+                {
+                    result = result.Replace("<", "Of");
+
+                    result = result.Replace(">", string.Empty);
+                }
             }
 
             return result;
