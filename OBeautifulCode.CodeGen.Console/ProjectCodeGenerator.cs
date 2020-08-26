@@ -17,6 +17,7 @@ namespace OBeautifulCode.CodeGen.Console
 
     using OBeautifulCode.CodeGen.Console.Internal;
     using OBeautifulCode.CodeGen.ModelObject;
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
@@ -214,15 +215,19 @@ namespace OBeautifulCode.CodeGen.Console
 
             var modelFileName = type.Name + ".cs";
 
-            // ReSharper disable once PossibleNullReferenceException
-            var modelFilePath = projectSourceFilePaths.SingleOrDefault(_ => Path.GetFileName(_).Equals(modelFileName, StringComparison.OrdinalIgnoreCase));
+            var modelFilePaths = projectSourceFilePaths.Where(_ => Path.GetFileName(_).Equals(modelFileName, StringComparison.OrdinalIgnoreCase)).ToList();
 
-            if (modelFilePath == null)
+            if (!modelFilePaths.Any())
             {
                 throw new FileNotFoundException(Invariant($"Expected a source file for type {type.ToStringReadable()} named {modelFileName}"));
             }
 
-            var modelDesignerFilePath = GetDesignerFilePath(modelFilePath);
+            if (modelFilePaths.Count > 1)
+            {
+                throw new FileNotFoundException(Invariant($"Found multiple source files for type {type.ToStringReadable()} named {modelFileName}:{Environment.NewLine}{modelFilePaths.ToNewLineDelimited()}"));
+            }
+
+            var modelDesignerFilePath = GetDesignerFilePath(modelFilePaths.Single());
 
             WriteFileWithWindowsNewLines(modelDesignerFilePath, modelPartialClassContents);
         }
@@ -237,8 +242,14 @@ namespace OBeautifulCode.CodeGen.Console
         {
             var modelTestFileName = type.Name + "Test.cs";
 
-            // ReSharper disable once PossibleNullReferenceException
-            var modelTestFilePath = testProjectSourceFilePaths.SingleOrDefault(_ => Path.GetFileName(_).Equals(modelTestFileName, StringComparison.OrdinalIgnoreCase));
+            var modelTestFilePaths = testProjectSourceFilePaths.Where(_ => Path.GetFileName(_).Equals(modelTestFileName, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            if (modelTestFilePaths.Count > 1)
+            {
+                throw new FileNotFoundException(Invariant($"Found multiple test files for type {type.ToStringReadable()} named {modelTestFileName}:{Environment.NewLine}{modelTestFilePaths.ToNewLineDelimited()}"));
+            }
+
+            var modelTestFilePath = modelTestFilePaths.SingleOrDefault();
 
             if (modelTestFilePath == null)
             {
