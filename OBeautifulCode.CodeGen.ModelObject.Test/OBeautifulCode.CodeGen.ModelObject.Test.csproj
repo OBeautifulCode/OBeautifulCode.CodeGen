@@ -176,6 +176,7 @@
       <DependentUpon>CodeGenDummyFactory.cs</DependentUpon>
     </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomGenericClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomDerivedClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\Enums\HierarchyKind.cs" />
