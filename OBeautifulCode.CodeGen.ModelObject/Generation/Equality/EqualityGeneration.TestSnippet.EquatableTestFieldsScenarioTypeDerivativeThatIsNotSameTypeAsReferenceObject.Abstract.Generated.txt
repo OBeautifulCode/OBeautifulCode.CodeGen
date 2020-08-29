@@ -1,4 +1,4 @@
-﻿                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new [model-type-name-here][]
+﻿                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new [model-type-name-in-code-here][]
                     {
-                        A.Dummy<[model-type-name-here]>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                        A.Dummy<[model-type-name-in-code-here]>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
                     },

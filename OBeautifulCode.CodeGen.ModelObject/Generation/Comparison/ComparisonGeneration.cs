@@ -49,7 +49,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = codeTemplate
                 .Replace(Tokens.CompareToToken, compareToSnippet)
                 .Replace(Tokens.CompareToForRelativeSortOrderToken, compareToForRelativeSortOrderSnippets)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString);
 
             return result;
         }
@@ -65,7 +66,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this ModelType modelType)
         {
             var result = typeof(ComparisonGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ComparableTestFields)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
 
             return result;
         }
@@ -89,12 +90,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
             foreach (var typeCompilableString in modelType.DerivativePathFromRootToSelfCompilableStrings)
             {
                 var compareToItem = compareToTestTemplate
-                    .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
-                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
+                    .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)
+                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({typeCompilableString})"));
 
                 var compareToForRelativeSortOrderItem = compareToForRelativeSortOrderTestTemplate
-                    .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
-                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
+                    .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)
+                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({typeCompilableString})"));
 
                 compareToItems.Add(compareToItem);
                 compareToForRelativeSortOrderItems.Add(compareToForRelativeSortOrderItem);
@@ -103,7 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var codeTemplate = typeof(ComparisonGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.CompareToTestsToken, compareToItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine)
                 .Replace(Tokens.CompareToForRelativeSortOrderTestsToken, compareToForRelativeSortOrderItems.ToDelimitedString(Environment.NewLine + Environment.NewLine));
 

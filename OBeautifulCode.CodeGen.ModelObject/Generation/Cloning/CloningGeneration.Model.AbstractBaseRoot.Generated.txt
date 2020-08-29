@@ -2,7 +2,7 @@
         public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public [model-type-name-here] DeepClone() => this.DeepCloneInternal();[deep-clone-with-here]
+        public [model-type-name-in-code-here] DeepClone() => this.DeepCloneInternal();[deep-clone-with-here]
 
         /// <summary>
         /// Creates a new object that is a deep clone of this instance.
@@ -10,4 +10,4 @@
         /// <returns>
         /// A new object that is a deep clone of this instance.
         /// </returns>
-        protected abstract [model-type-name-here] DeepCloneInternal();
+        protected abstract [model-type-name-in-code-here] DeepCloneInternal();

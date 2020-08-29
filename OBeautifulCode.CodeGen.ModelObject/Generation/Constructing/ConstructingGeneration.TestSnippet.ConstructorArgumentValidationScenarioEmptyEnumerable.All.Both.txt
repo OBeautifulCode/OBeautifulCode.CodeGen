@@ -1,5 +1,5 @@
 ﻿            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<[model-type-name-here]>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-in-code-here]>
                 {
                     Name = "constructor should throw ArgumentException when parameter '[parameter-name-here]' is an empty enumerable scenario",
                     ConstructionFunc = () =>

@@ -19,12 +19,12 @@
                     }
 
                     // Act
-                    var actual = ([model-type-name-here])scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
+                    var actual = ([model-type-name-in-code-here])scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
 
                     // Assert
                     foreach(var propertyName in propertyNames)
                     {
-                        var property = typeof([model-type-name-here]).GetProperty(propertyName);
+                        var property = typeof([model-type-name-in-code-here]).GetProperty(propertyName);
 
                         var propertyType = property.PropertyType;
 

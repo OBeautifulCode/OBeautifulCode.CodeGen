@@ -19,7 +19,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 () => [new-dummy-here]);";
 
         private const string UseRandomConcreteSubclassCodeTemplate = @"
-            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<[model-type-name-here]>();";
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<[model-type-name-in-code-here]>();";
 
         /// <summary>
         /// Generates code for a dummy factory.
@@ -34,7 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             string result;
             if (modelType.IsAbstractBase)
             {
-                result = UseRandomConcreteSubclassCodeTemplate.Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                result = UseRandomConcreteSubclassCodeTemplate.Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
             }
             else
             {

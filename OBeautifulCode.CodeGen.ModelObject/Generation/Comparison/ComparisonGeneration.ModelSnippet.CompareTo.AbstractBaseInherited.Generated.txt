@@ -1,2 +1,2 @@
 ﻿        /// <inheritdoc />
-        public abstract RelativeSortOrder CompareToForRelativeSortOrder([model-type-name-here] other);
+        public abstract RelativeSortOrder CompareToForRelativeSortOrder([model-type-name-in-code-here] other);

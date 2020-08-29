@@ -19,5 +19,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         MultipleConstructors,
 
         ConstructorMissingProperty,
+
+        Generic,
     }
 }

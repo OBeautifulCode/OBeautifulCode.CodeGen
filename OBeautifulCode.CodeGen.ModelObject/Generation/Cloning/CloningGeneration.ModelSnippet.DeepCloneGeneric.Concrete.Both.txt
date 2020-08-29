@@ -1,0 +1,32 @@
+﻿        private [generic-type-parameter-name-here] DeepCloneGeneric([generic-type-parameter-name-here] value)
+        {
+            [generic-type-parameter-name-here] result;
+
+            var type = typeof([generic-type-parameter-name-here]);
+
+            if (type.IsValueType)
+            {
+                result = value;
+            }
+            else
+            {
+                if (ReferenceEquals(value, null))
+                {
+                    result = default;
+                }
+                else if (value is IDeepCloneable<[generic-type-parameter-name-here]> deepCloneableValue)
+                {
+                    result = deepCloneableValue.DeepClone();
+                }
+                else if (value is string stringValue)
+                {
+                    result = ([generic-type-parameter-name-here])(object)stringValue.Clone().ToString();
+                }
+                else
+                {
+                    throw new NotSupportedException(Invariant($"I do not know how to deep clone an object of type '{type.ToStringReadable()}'"));
+                }
+            }
+
+            return result;
+        }

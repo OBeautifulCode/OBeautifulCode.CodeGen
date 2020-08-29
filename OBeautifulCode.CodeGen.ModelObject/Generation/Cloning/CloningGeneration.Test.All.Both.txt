@@ -6,10 +6,10 @@
             public static void Clone___Should_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<[model-type-name-here]>();
+                var systemUnderTest = A.Dummy<[model-type-name-in-code-here]>();
 
                 // Act
-                var actual = ([model-type-name-here])systemUnderTest.Clone();
+                var actual = ([model-type-name-in-code-here])systemUnderTest.Clone();
 
                 // Assert
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
@@ -21,7 +21,7 @@
             public static void DeepClone___Should_deep_clone_object___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<[model-type-name-here]>();
+                var systemUnderTest = A.Dummy<[model-type-name-in-code-here]>();
 
                 // Act
                 var actual = systemUnderTest.DeepClone();

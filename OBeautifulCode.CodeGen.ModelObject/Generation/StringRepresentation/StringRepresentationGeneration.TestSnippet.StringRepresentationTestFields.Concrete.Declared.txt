@@ -1,1 +1,1 @@
-﻿        private static readonly StringRepresentationTestScenarios<[model-type-name-here]> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<[model-type-name-here]>();
+﻿        private static readonly StringRepresentationTestScenarios<[model-type-name-in-code-here]> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<[model-type-name-in-code-here]>();

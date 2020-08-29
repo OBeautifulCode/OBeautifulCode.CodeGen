@@ -2,5 +2,5 @@
 [deep-clone-with-code-analysis-suppressions]
         public override [model-ancestor-type-name-here] DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here])
         {
-            throw new NotSupportedException("The constructor in-use (by code gen) for [model-type-name-here] does not have a parameter that corresponds with the '[property-name-here]' property.  As such, this method, DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]), cannot utilize the specified '[parameter-name-here]' value for that property.");
+            throw new NotSupportedException("The constructor in-use (by code gen) for [model-type-name-in-code-here] does not have a parameter that corresponds with the '[property-name-here]' property.  As such, this method, DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]), cannot utilize the specified '[parameter-name-here]' value for that property.");
         }

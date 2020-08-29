@@ -6,8 +6,8 @@
             public static void EqualsOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                [model-type-name-here] systemUnderTest1 = null;
-                [model-type-name-here] systemUnderTest2 = null;
+                [model-type-name-in-code-here] systemUnderTest1 = null;
+                [model-type-name-in-code-here] systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 == systemUnderTest2;
@@ -25,7 +25,7 @@
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    [model-type-name-here] systemUnderTest = null;
+                    [model-type-name-in-code-here] systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest == scenario.ReferenceObject;
@@ -114,8 +114,8 @@
             public static void NotEqualsOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                [model-type-name-here] systemUnderTest1 = null;
-                [model-type-name-here] systemUnderTest2 = null;
+                [model-type-name-in-code-here] systemUnderTest1 = null;
+                [model-type-name-in-code-here] systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 != systemUnderTest2;
@@ -133,7 +133,7 @@
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    [model-type-name-here] systemUnderTest = null;
+                    [model-type-name-in-code-here] systemUnderTest = null;
 
                     // Act
                     var actual1 = systemUnderTest != scenario.ReferenceObject;

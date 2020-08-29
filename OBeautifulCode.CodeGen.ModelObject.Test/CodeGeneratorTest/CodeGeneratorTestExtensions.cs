@@ -12,6 +12,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.ObjectModel;
     using System.IO;
     using System.Linq;
+    using System.Text.RegularExpressions;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
@@ -459,6 +460,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public static Type GetModelType(
             this string modelName)
         {
+            var genericParameterRegex = new Regex("{(.*?)}$");
+
+            var genericParameterMatch = genericParameterRegex.Match(modelName);
+
+            if (genericParameterMatch.Success)
+            {
+                var numberOfGenericParameters = genericParameterMatch.Groups[1].ToString().Split(',').Length;
+
+                modelName = genericParameterRegex.Replace(modelName, Invariant($"`{numberOfGenericParameters}"));
+            }
+
             var result = typeof(CodeGeneratorTest).Assembly.GetTypes().Single(_ => _.Name == modelName);
 
             return result;

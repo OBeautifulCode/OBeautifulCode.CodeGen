@@ -1,15 +1,15 @@
 ﻿            .AddScenario(() =>
-                new DeepCloneWithTestScenario<[model-type-name-here]>
+                new DeepCloneWithTestScenario<[model-type-name-in-code-here]>
                 {
                     Name = "DeepCloneWith[property-name-here] should deep clone object and replace [property-name-here] with the provided [parameter-name-here]",
                     WithPropertyName = "[property-name-here]",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
-                        var systemUnderTest = A.Dummy<[model-type-name-here]>();
+                        var systemUnderTest = A.Dummy<[model-type-name-in-code-here]>();
 
-                        var referenceObject = A.Dummy<[model-type-name-here]>().ThatIs(_ => !systemUnderTest.[property-name-here].IsEqualTo(_.[property-name-here]));
+                        var referenceObject = A.Dummy<[model-type-name-in-code-here]>().ThatIs(_ => !systemUnderTest.[property-name-here].IsEqualTo(_.[property-name-here]));
 
-                        var result = new SystemUnderTestDeepCloneWithValue<[model-type-name-here]>
+                        var result = new SystemUnderTestDeepCloneWithValue<[model-type-name-in-code-here]>
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.[property-name-here],

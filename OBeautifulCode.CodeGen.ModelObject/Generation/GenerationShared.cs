@@ -161,11 +161,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var propertyInitializerCode = memberCode.Select(_ => Invariant($"{_.Name.PadRight(maxCharsInAnyPropertyName, ' ')} = {_.Code}")).ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                    result = "new " + modelType.TypeCompilableString + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + "," + Environment.NewLine + curlyBracketPadding + "}";
+                    result = "new " + modelType.TypeNameInCodeString + Environment.NewLine + curlyBracketPadding + "{" + Environment.NewLine + parameterPadding + propertyInitializerCode + "," + Environment.NewLine + curlyBracketPadding + "}";
                 }
                 else
                 {
-                    result = "new " + modelType.TypeCompilableString + "()";
+                    result = "new " + modelType.TypeNameInCodeString + "()";
                 }
             }
             else
@@ -179,7 +179,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Select(_ => propertyNameToCodeMap[_.Name])
                         .ToDelimitedString("," + Environment.NewLine + parameterPadding);
 
-                result = "new " + modelType.TypeCompilableString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
+                result = "new " + modelType.TypeNameInCodeString + "(" + (parameters.Any() ? Environment.NewLine + parameterPadding : string.Empty) + parameterCode + ")";
             }
 
             return result;
@@ -205,50 +205,50 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 var elementType = type.GetElementType();
 
-                result = Invariant($"new {elementType.ToStringCompilable()}[0]");
+                result = Invariant($"new {elementType.ToStringReadable()}[0]");
             }
-            else if (type.IsClosedSystemCollectionType())
+            else if (type.IsSystemCollectionType())
             {
-                var elementType = type.GetClosedSystemCollectionElementType();
+                var elementType = type.GetGenericArguments().First();
 
                 if (type.IsInterface || (type.GetGenericTypeDefinition() == typeof(List<>)))
                 {
-                    result = Invariant($"new List<{elementType.ToStringCompilable()}>({constructorParameterCode})");
+                    result = Invariant($"new List<{elementType.ToStringReadable()}>({constructorParameterCode})");
                 }
                 else if (type.GetGenericTypeDefinition() == typeof(Collection<>))
                 {
-                    result = Invariant($"new Collection<{elementType.ToStringCompilable()}>({constructorParameterCode})");
+                    result = Invariant($"new Collection<{elementType.ToStringReadable()}>({constructorParameterCode})");
                 }
                 else if (type.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))
                 {
-                    constructorParameterCode = constructorParameterCode ?? Invariant($"new List<{elementType.ToStringCompilable()}>()");
+                    constructorParameterCode = constructorParameterCode ?? Invariant($"new List<{elementType.ToStringReadable()}>()");
 
-                    result = Invariant($"new ReadOnlyCollection<{elementType.ToStringCompilable()}>({constructorParameterCode})");
+                    result = Invariant($"new ReadOnlyCollection<{elementType.ToStringReadable()}>({constructorParameterCode})");
                 }
                 else
                 {
                     throw new NotSupportedException("This System Collection type is not supported: " + type);
                 }
             }
-            else if (type.IsClosedSystemDictionaryType())
+            else if (type.IsSystemDictionaryType())
             {
-                var keyType = type.GetClosedSystemDictionaryKeyType();
+                var keyType = type.GetGenericArguments().First();
 
-                var valueType = type.GetClosedSystemDictionaryValueType();
+                var valueType = type.GetGenericArguments().Last();
 
-                result = Invariant($"new Dictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
+                result = Invariant($"new Dictionary<{keyType.ToStringReadable()}, {valueType.ToStringReadable()}>({constructorParameterCode})");
 
                 if (type.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>))
                 {
                     constructorParameterCode = constructorParameterCode ?? result;
 
-                    result = Invariant($"new ReadOnlyDictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
+                    result = Invariant($"new ReadOnlyDictionary<{keyType.ToStringReadable()}, {valueType.ToStringReadable()}>({constructorParameterCode})");
                 }
                 else if (type.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))
                 {
                     constructorParameterCode = constructorParameterCode ?? result;
 
-                    result = Invariant($"new ConcurrentDictionary<{keyType.ToStringCompilable()}, {valueType.ToStringCompilable()}>({constructorParameterCode})");
+                    result = Invariant($"new ConcurrentDictionary<{keyType.ToStringReadable()}, {valueType.ToStringReadable()}>({constructorParameterCode})");
                 }
             }
             else

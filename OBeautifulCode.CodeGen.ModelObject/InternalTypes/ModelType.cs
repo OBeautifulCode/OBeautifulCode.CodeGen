@@ -51,18 +51,18 @@ namespace OBeautifulCode.CodeGen
             var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, new HashSet<Type>());
             var constructor = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern);
 
-            var requiresComparability = type.IsAssignableTo(typeof(IComparableViaCodeGen));
-            var requiresDeepCloning = type.IsAssignableTo(typeof(IDeepCloneableViaCodeGen));
-            var requiresEquality = type.IsAssignableTo(typeof(IEquatableViaCodeGen));
-            var requiresHashing = type.IsAssignableTo(typeof(IHashableViaCodeGen));
-            var requiresModel = type.IsAssignableTo(typeof(IModelViaCodeGen));
-            var requiresStringRepresentation = type.IsAssignableTo(typeof(IStringRepresentableViaCodeGen));
+            var requiresComparability = typeof(IComparableViaCodeGen).IsAssignableFrom(type);
+            var requiresDeepCloning = typeof(IDeepCloneableViaCodeGen).IsAssignableFrom(type);
+            var requiresEquality = typeof(IEquatableViaCodeGen).IsAssignableFrom(type);
+            var requiresHashing = typeof(IHashableViaCodeGen).IsAssignableFrom(type);
+            var requiresModel = typeof(IModelViaCodeGen).IsAssignableFrom(type);
+            var requiresStringRepresentation = typeof(IStringRepresentableViaCodeGen).IsAssignableFrom(type);
 
-            var declaresCompareToMethod = type.IsAssignableTo(typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type));
-            var declaresDeepCloneMethod = type.IsAssignableTo(typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type));
-            var declaresEqualsMethod = type.IsAssignableTo(typeof(IDeclareEqualsMethod<>).MakeGenericType(type));
-            var declaresGetHashCodeMethod = type.IsAssignableTo(typeof(IDeclareGetHashCodeMethod));
-            var declaresToStringMethod = type.IsAssignableTo(typeof(IDeclareToStringMethod));
+            var declaresCompareToMethod = typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type).IsAssignableFrom(type);
+            var declaresDeepCloneMethod = typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type).IsAssignableFrom(type);
+            var declaresEqualsMethod = typeof(IDeclareEqualsMethod<>).MakeGenericType(type).IsAssignableFrom(type);
+            var declaresGetHashCodeMethod = typeof(IDeclareGetHashCodeMethod).IsAssignableFrom(type);
+            var declaresToStringMethod = typeof(IDeclareToStringMethod).IsAssignableFrom(type);
 
             ThrowIfNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
 
@@ -85,8 +85,11 @@ namespace OBeautifulCode.CodeGen
             this.AncestorConcreteDerivativesCompilableStrings = GetAncestorConcreteDerivatives(type).Select(_ => _.ToStringCompilable()).ToList();
             this.DerivativePathFromRootToSelfCompilableStrings = this.InheritancePathCompilableStrings.Reverse().Concat(new[] { type.ToStringCompilable() }).ToList();
 
-            this.TypeCompilableString = type.ToStringCompilable();
-            this.TypeReadableString = type.ToStringReadable();
+            this.GenericParameters = type.IsGenericType ? type.GetGenericArguments().ToList() : new List<Type>();
+
+            this.TypeNameInCodeString = type.ToStringReadable();
+            this.TypeNameInTestMethodNameString = type.ToStringWithoutGenericComponent();
+            this.TypeNameInXmlDocString = type.ToStringXmlDoc();
             this.TypeNamespace = type.Namespace;
             this.BaseTypeCompilableString = type.BaseType?.ToStringCompilable();
             this.BaseTypeReadableString = type.BaseType?.ToStringReadable();
@@ -136,14 +139,19 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyList<string> InheritancePathCompilableStrings { get; }
 
         /// <summary>
-        /// Gets a compilable string representation of the type.
+        /// Gets the name of the type as it should be used in generated code.
         /// </summary>
-        public string TypeCompilableString { get; }
+        public string TypeNameInCodeString { get; }
 
         /// <summary>
-        /// Gets a readability-optimized string representation of the type.
+        /// Gets the name of the type as it should be used in a test method name.
         /// </summary>
-        public string TypeReadableString { get; }
+        public string TypeNameInTestMethodNameString { get; }
+
+        /// <summary>
+        /// Gets the name of the type as it should be used in XML doc.
+        /// </summary>
+        public string TypeNameInXmlDocString { get; }
 
         /// <summary>
         /// Gets the namespace of the type.
@@ -340,6 +348,11 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyCollection<string> NamespacesOfTypesInPropertiesOfConcern { get; }
 
         /// <summary>
+        /// Gets the generic parameters.
+        /// </summary>
+        public IReadOnlyList<Type> GenericParameters { get; }
+
+        /// <summary>
         /// Determines if the specified property is declared by this model type.
         /// </summary>
         /// <param name="propertyOfConcern">The property.</param>
@@ -366,9 +379,9 @@ namespace OBeautifulCode.CodeGen
         private static void ThrowIfNotSupported(
             Type type)
         {
-            if (type.ContainsGenericParameters)
+            if (type.ContainsGenericParameters && (!type.IsGenericTypeDefinition))
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an open type."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an open type, but not a generic type definition."));
             }
 
             if (!IsCodeGeneratedType(type))
@@ -379,11 +392,6 @@ namespace OBeautifulCode.CodeGen
             if (!type.IsClass)
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a value type or interface type."));
-            }
-
-            if (type.IsGenericType)
-            {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a generic type."));
             }
 
             var loadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
@@ -407,11 +415,11 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is concrete and has a concrete type in its inheritance path (excluding Object)."));
             }
 
-            var codeGenTypesUsed = CodeGenerator.TypesThatIndicateCodeGenIsRequired.Where(_ => type.IsAssignableTo(_)).ToList();
+            var codeGenTypesUsed = CodeGenerator.TypesThatIndicateCodeGenIsRequired.Where(_ => _.IsAssignableFrom(type)).ToList();
 
             foreach (var inheritedType in inheritancePathExcludingObject)
             {
-                if (!codeGenTypesUsed.All(_ => inheritedType.IsAssignableTo(_)))
+                if (!codeGenTypesUsed.All(_ => _.IsAssignableFrom(inheritedType)))
                 {
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is a type in its inheritance path ({inheritedType.ToStringReadable()}) that does not implement all of the following code gen interfaces which are implemented by this type: {codeGenTypesUsed.Select(_ => _.ToStringReadable()).ToDelimitedString(", ")}."));
                 }
@@ -838,7 +846,7 @@ namespace OBeautifulCode.CodeGen
         {
             // per the note in the constructor, we are checking IHashableViaCodeGen in case
             // the type is not yet hashable, but will be after the first pass of code gen on the model
-            var result = type.IsAssignableTo(typeof(IHashable)) || type.IsAssignableTo(typeof(IHashableViaCodeGen));
+            var result = typeof(IHashable).IsAssignableFrom(type) || typeof(IHashableViaCodeGen).IsAssignableFrom(type);
 
             return result;
         }
@@ -846,7 +854,7 @@ namespace OBeautifulCode.CodeGen
         private static bool IsCodeGeneratedType(
             Type type)
         {
-            var result = CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_));
+            var result = CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => _.IsAssignableFrom(type));
 
             return result;
         }

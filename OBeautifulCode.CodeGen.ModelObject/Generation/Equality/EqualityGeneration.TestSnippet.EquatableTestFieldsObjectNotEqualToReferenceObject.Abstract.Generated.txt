@@ -1,1 +1,1 @@
-﻿// [cast-here]ReferenceObjectForEquatableTestScenarios.DeepCloneWith[property-name-here](A.Dummy<[model-type-name-here]>().Whose(_ => !_.[property-name-here].IsEqualTo(ReferenceObjectForEquatableTestScenarios.[property-name-here])).[property-name-here])
+﻿// [cast-here]ReferenceObjectForEquatableTestScenarios.DeepCloneWith[property-name-here](A.Dummy<[model-type-name-in-code-here]>().Whose(_ => !_.[property-name-here].IsEqualTo(ReferenceObjectForEquatableTestScenarios.[property-name-here])).[property-name-here])

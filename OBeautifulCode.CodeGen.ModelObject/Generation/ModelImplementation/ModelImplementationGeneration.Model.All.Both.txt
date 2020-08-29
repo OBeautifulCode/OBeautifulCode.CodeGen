@@ -9,7 +9,7 @@ namespace [model-type-namespace-here]
 [using-statements-here]
 
     [Serializable]
-    public partial class [model-type-name-here] : [required-interfaces-here]
+    public partial class [model-type-name-in-code-here] : [required-interfaces-here]
     {[model-implementation-here]
     }
 }

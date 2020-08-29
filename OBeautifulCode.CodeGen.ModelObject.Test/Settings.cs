@@ -120,6 +120,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 SpecifiedModelKind.ConstructorMissingProperty,
                 new[] { "ConstructorMissingPropertyParent", "ConstructorMissingPropertyChild1", "ConstructorMissingPropertyChild2", "ConstructorMissingPropertyChild3" }
             },
+            {
+                SpecifiedModelKind.Generic,
+                new[] { "Generic{TFirst, TSecond}" }
+            },
         };
     }
 }

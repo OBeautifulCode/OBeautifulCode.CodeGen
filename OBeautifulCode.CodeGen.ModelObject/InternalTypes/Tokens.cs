@@ -12,9 +12,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
     internal static class Tokens
     {
         /// <summary>
-        /// The name of the model Type.
+        /// The name of the model type when used in code.
         /// </summary>
-        public const string ModelTypeNameToken = "[model-type-name-here]";
+        public const string ModelTypeNameInCodeToken = "[model-type-name-in-code-here]";
+
+        /// <summary>
+        /// The name of the model type when used in XML Doc.
+        /// </summary>
+        public const string ModelTypeNameInXmlDocToken = "[model-type-name-in-xml-doc-here]";
 
         /// <summary>
         /// The namespace of the model Type.
@@ -45,6 +50,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The DeepCloneWith model instantiation code.
         /// </summary>
         public const string DeepCloneWithModelInstantiationToken = "[deep-clone-with-model-instantiation-here]";
+
+        /// <summary>
+        /// The code to deep clone a generic.
+        /// </summary>
+        public const string DeepCloneGenericToken = "[deep-clone-generic-here]";
+
+        /// <summary>
+        /// The name of a generic type parameter.
+        /// </summary>
+        public const string GenericTypeParameterNameToken = "[generic-type-parameter-name-here]";
 
         /// <summary>
         /// The property name.

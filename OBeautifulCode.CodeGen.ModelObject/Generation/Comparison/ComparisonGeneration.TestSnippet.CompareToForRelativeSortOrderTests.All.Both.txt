@@ -1,13 +1,13 @@
 ﻿            [Fact]
 [test-method-code-analysis-suppressions]
-            public static void CompareToForRelativeSortOrder_with_[model-type-name-here]___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
+            public static void CompareToForRelativeSortOrder_with_[model-type-name-in-code-here]___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    [model-type-name-here] other = null;
+                    [model-type-name-in-code-here] other = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(other);
@@ -19,7 +19,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void CompareToForRelativeSortOrder_with_[model-type-name-here]___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
+            public static void CompareToForRelativeSortOrder_with_[model-type-name-in-code-here]___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -35,7 +35,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void CompareToForRelativeSortOrder_with_[model-type-name-here]___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
+            public static void CompareToForRelativeSortOrder_with_[model-type-name-in-code-here]___Should_return_RelativeSortOrder_ThisInstanceOccursInTheSamePositionAsTheOtherInstance___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -51,7 +51,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void CompareToForRelativeSortOrder_with_[model-type-name-here]___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_[model-type-name-in-code-here]___Should_return_RelativeSortOrder_ThisInstancePrecedesTheOtherInstance___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -69,7 +69,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void CompareToForRelativeSortOrder_with_[model-type-name-here]___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
+            public static void CompareToForRelativeSortOrder_with_[model-type-name-in-code-here]___Should_return_RelativeSortOrder_ThisInstanceFollowsTheOtherInstance___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -87,7 +87,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void CompareToForRelativeSortOrder_with_[model-type-name-here]___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
+            public static void CompareToForRelativeSortOrder_with_[model-type-name-in-code-here]___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 

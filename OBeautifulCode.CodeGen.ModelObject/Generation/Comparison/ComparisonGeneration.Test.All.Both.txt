@@ -6,8 +6,8 @@
             public static void LessThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                [model-type-name-here] systemUnderTest1 = null;
-                [model-type-name-here] systemUnderTest2 = null;
+                [model-type-name-in-code-here] systemUnderTest1 = null;
+                [model-type-name-in-code-here] systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 < systemUnderTest2;
@@ -146,8 +146,8 @@
             public static void GreaterThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                [model-type-name-here] systemUnderTest1 = null;
-                [model-type-name-here] systemUnderTest2 = null;
+                [model-type-name-in-code-here] systemUnderTest1 = null;
+                [model-type-name-in-code-here] systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 > systemUnderTest2;
@@ -286,8 +286,8 @@
             public static void LessThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                [model-type-name-here] systemUnderTest1 = null;
-                [model-type-name-here] systemUnderTest2 = null;
+                [model-type-name-in-code-here] systemUnderTest1 = null;
+                [model-type-name-in-code-here] systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 <= systemUnderTest2;
@@ -426,8 +426,8 @@
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
-                [model-type-name-here] systemUnderTest1 = null;
-                [model-type-name-here] systemUnderTest2 = null;
+                [model-type-name-in-code-here] systemUnderTest1 = null;
+                [model-type-name-in-code-here] systemUnderTest2 = null;
 
                 // Act
                 var actual = systemUnderTest1 >= systemUnderTest2;

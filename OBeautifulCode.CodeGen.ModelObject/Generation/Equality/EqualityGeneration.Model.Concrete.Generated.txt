@@ -1,10 +1,10 @@
 ﻿        /// <summary>
-        /// Determines whether two objects of type <see cref="[model-type-name-here]"/> are equal.
+        /// Determines whether two objects of type <see cref="[model-type-name-in-xml-doc-here]"/> are equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are equal; otherwise false.</returns>
-        public static bool operator ==([model-type-name-here] left, [model-type-name-here] right)
+        public static bool operator ==([model-type-name-in-code-here] left, [model-type-name-in-code-here] right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -22,15 +22,15 @@
         }
 
         /// <summary>
-        /// Determines whether two objects of type <see cref="[model-type-name-here]"/> are not equal.
+        /// Determines whether two objects of type <see cref="[model-type-name-in-xml-doc-here]"/> are not equal.
         /// </summary>
         /// <param name="left">The object to the left of the equality operator.</param>
         /// <param name="right">The object to the right of the equality operator.</param>
         /// <returns>true if the two items are not equal; otherwise false.</returns>
-        public static bool operator !=([model-type-name-here] left, [model-type-name-here] right) => !(left == right);
+        public static bool operator !=([model-type-name-in-code-here] left, [model-type-name-in-code-here] right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals([model-type-name-here] other)
+        public bool Equals([model-type-name-in-code-here] other)
         {
             if (ReferenceEquals(this, other))
             {
@@ -48,4 +48,4 @@
         }
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => this == (obj as [model-type-name-here]);
+        public override bool Equals(object obj) => this == (obj as [model-type-name-in-code-here]);

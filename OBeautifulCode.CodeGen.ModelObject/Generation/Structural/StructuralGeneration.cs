@@ -51,7 +51,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                         .Replace(Tokens.StructuralTestsToken, testMethodsCode)
-                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                        .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
 
             return result;
         }
@@ -61,7 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             Type expectedInterfaceType)
         {
             var expectedInterfaceTypeInTestMethodString = expectedInterfaceType.IsGenericType
-                ? expectedInterfaceType.ToStringWithoutGenericComponent() + "_of_" + modelType.TypeReadableString
+                ? expectedInterfaceType.ToStringWithoutGenericComponent() + "_of_" + modelType.TypeNameInTestMethodNameString
                 : expectedInterfaceType.ToStringReadable();
 
             var result =

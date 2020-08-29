@@ -39,7 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.SerializationTestsToken, serializationTests)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
 
             return result;
         }

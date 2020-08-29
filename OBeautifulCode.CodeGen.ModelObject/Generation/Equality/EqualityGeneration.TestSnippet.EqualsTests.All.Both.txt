@@ -1,13 +1,13 @@
 ﻿            [Fact]
 [test-method-code-analysis-suppressions]
-            public static void Equals_with_[model-type-name-here]___Should_return_false___When_parameter_other_is_null()
+            public static void Equals_with_[model-type-name-in-code-here]___Should_return_false___When_parameter_other_is_null()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
                 foreach (var scenario in scenarios)
                 {
                     // Arrange
-                    [model-type-name-here] systemUnderTest = null;
+                    [model-type-name-in-code-here] systemUnderTest = null;
 
                     // Act
                     var actual = scenario.ReferenceObject.Equals([cast-here]systemUnderTest);
@@ -19,7 +19,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void Equals_with_[model-type-name-here]___Should_return_true___When_parameter_other_is_same_object()
+            public static void Equals_with_[model-type-name-in-code-here]___Should_return_true___When_parameter_other_is_same_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -35,7 +35,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void Equals_with_[model-type-name-here]___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
+            public static void Equals_with_[model-type-name-in-code-here]___Should_return_false___When_parameter_other_is_derived_from_the_same_type_but_is_not_of_the_same_type_as_this_object()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -51,7 +51,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void Equals_with_[model-type-name-here]___Should_return_false___When_objects_being_compared_have_different_property_values()
+            public static void Equals_with_[model-type-name-in-code-here]___Should_return_false___When_objects_being_compared_have_different_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 
@@ -67,7 +67,7 @@
 
             [Fact]
 [test-method-code-analysis-suppressions]
-            public static void Equals_with_[model-type-name-here]___Should_return_true___When_objects_being_compared_have_same_property_values()
+            public static void Equals_with_[model-type-name-in-code-here]___Should_return_true___When_objects_being_compared_have_same_property_values()
             {
                 var scenarios = EquatableTestScenarios.ValidateAndPrepareForTesting();
 

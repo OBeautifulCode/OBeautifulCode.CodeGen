@@ -6,12 +6,12 @@
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
 
-            if (!(other is [model-type-name-here] otherAs[model-type-name-here]))
+            if (!(other is [model-type-name-in-code-here] otherAs[model-type-name-in-code-here]))
             {
-                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '[model-type-name-here]' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
+                throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '[model-type-name-in-code-here]' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
-            var result = this.CompareToForRelativeSortOrder(otherAs[model-type-name-here]);
+            var result = this.CompareToForRelativeSortOrder(otherAs[model-type-name-in-code-here]);
 
             return result;
         }

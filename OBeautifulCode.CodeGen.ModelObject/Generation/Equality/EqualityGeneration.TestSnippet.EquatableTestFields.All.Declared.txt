@@ -1,1 +1,1 @@
-﻿        private static readonly EquatableTestScenarios<[model-type-name-here]> EquatableTestScenarios = new EquatableTestScenarios<[model-type-name-here]>();
+﻿        private static readonly EquatableTestScenarios<[model-type-name-in-code-here]> EquatableTestScenarios = new EquatableTestScenarios<[model-type-name-in-code-here]>();

@@ -90,8 +90,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
-                .Replace(Tokens.RequiredInterfacesToken, modelType.RequiredInterfaces.Select(_ => _.ToStringCompilable()).ToDelimitedString(", "))
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                .Replace(Tokens.RequiredInterfacesToken, modelType.RequiredInterfaces.Select(_ => _.ToStringReadable()).ToDelimitedString(", "))
                 .Replace(Tokens.ModelImplementationToken, modelImplementationCode);
 
             return result;
@@ -253,7 +253,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CodeGenAssemblyNameToken, GenerationShared.GetCodeGenAssemblyName())
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.TestImplementationToken, testImplementationCode);
 
             return result;

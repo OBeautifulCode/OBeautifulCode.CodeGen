@@ -3,7 +3,7 @@
             public static void DeepCloneWith[property-name-here]___Should_throw_NotSupportedException___When_called()
             {
                 // Arrange
-                var systemUnderTest = A.Dummy<[model-type-name-here]>();
+                var systemUnderTest = A.Dummy<[model-type-name-in-code-here]>();
 
                 var [parameter-name-here] = A.Dummy<[property-type-name-here]>();
 
@@ -12,5 +12,5 @@
 
                 // Assert
                 actual.AsTest().Must().BeOfType<NotSupportedException>();
-                actual.Message.AsTest().Must().BeEqualTo("The constructor in-use (by code gen) for [model-type-name-here] does not have a parameter that corresponds with the '[property-name-here]' property.  As such, this method, DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]), cannot utilize the specified '[parameter-name-here]' value for that property.");
+                actual.Message.AsTest().Must().BeEqualTo("The constructor in-use (by code gen) for [model-type-name-in-code-here] does not have a parameter that corresponds with the '[property-name-here]' property.  As such, this method, DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]), cannot utilize the specified '[parameter-name-here]' value for that property.");
             }

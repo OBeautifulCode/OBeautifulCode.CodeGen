@@ -2,9 +2,9 @@
         public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public [model-type-name-here] DeepClone()
+        public [model-type-name-in-code-here] DeepClone()
         {
             var result = [deep-clone-here];
 
             return result;
-        }[deep-clone-with-here]
+        }[deep-clone-with-here][deep-clone-generic-here]

@@ -2,6 +2,6 @@
         /// Deep clones this object with a new <see cref="[property-name-here]" />.
         /// </summary>
         /// <param name="[parameter-name-in-xml-doc-here]">The new <see cref="[property-name-here]" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="[model-type-name-here]" /> using the specified <paramref name="[parameter-name-in-xml-doc-here]" /> for <see cref="[property-name-here]" /> and a deep clone of every other property.</returns>
+        /// <returns>New <see cref="[model-type-name-in-xml-doc-here]" /> using the specified <paramref name="[parameter-name-in-xml-doc-here]" /> for <see cref="[property-name-here]" /> and a deep clone of every other property.</returns>
 [deep-clone-with-code-analysis-suppressions]
-        public abstract [model-type-name-here] DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]);
+        public abstract [model-type-name-in-code-here] DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]);

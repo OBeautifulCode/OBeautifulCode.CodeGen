@@ -37,6 +37,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var deepCloneCode = modelType.GenerateDeepCloneCode();
 
+            var deepCloneGenericCode = modelType.GenerateDeepCloneGenericCode();
+
             var deepCloneWithCode = modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative
                 ? string.Empty
                 : modelType.GenerateDeepCloneWithCode();
@@ -44,10 +46,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var codeTemplate = typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKind, CodeTemplateKind.Model, modelType.DeepCloneKeyMethodKinds);
 
             var result = codeTemplate
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeReadableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.ModelRootAncestorTypeNameToken, modelType.InheritancePathCompilableStrings.LastOrDefault())
                 .Replace(Tokens.DeepCloneToken, deepCloneCode)
-                .Replace(Tokens.DeepCloneWithToken, deepCloneWithCode);
+                .Replace(Tokens.DeepCloneWithToken, deepCloneWithCode)
+                .Replace(Tokens.DeepCloneGenericToken, deepCloneGenericCode);
 
             return result;
         }
@@ -78,7 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 if (!modelType.IsMissingCorrespondingConstructorParameter(property))
                 {
                     var scenario = typeof(CloningGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithScenario)
-                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                         .Replace(Tokens.PropertyNameToken, property.Name)
                         .Replace(Tokens.ParameterNameToken, property.ToParameterName());
 
@@ -89,7 +92,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var deepCloneWithScenariosCode = deepCloneWithScenarios.Any() ? Environment.NewLine + string.Join(Environment.NewLine, deepCloneWithScenarios) : string.Empty;
 
             var result = typeof(CloningGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithTestFields)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.DeepCloneWithTestScenariosToken, deepCloneWithScenariosCode);
 
             return result;
@@ -150,7 +153,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.DeepCloneWithTestToken, deepCloneWithTestCode)
                 .Replace(Tokens.DeepCloneWithThrowsTestsToken, deepCloneWithThrowsTestMethodsCode)
                 .Replace(Tokens.PropertiesOfConcernNamesHereToken, propertiesOfConcernNames)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
 
             return result;
         }
@@ -204,12 +207,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         : typeof(CloningGeneration).GetCodeTemplate(effectiveHierarchyKind, CodeTemplateKind.ModelSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWith);
 
                     var deepCloneWithMethod = deepCloneWithMethodTemplate
-                        .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                        .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                        .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString)
                         .Replace(Tokens.ModelAncestorTypeNameToken, property.DeclaringType.ToStringReadable())
                         .Replace(Tokens.PropertyNameToken, property.Name)
                         .Replace(Tokens.ParameterNameToken, property.ToParameterName())
                         .Replace(Tokens.ParameterNameInXmlDocToken, property.ToParameterName(forXmlDoc: true))
-                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
+                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringReadable())
                         .Replace(Tokens.DeepCloneWithModelInstantiationToken, deepCloneWithModelInstantiationCode);
 
                     deepCloneWithMethods.Add(deepCloneWithMethod);
@@ -237,16 +241,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var deepCloneableType = typeof(IDeepCloneable<>).MakeGenericType(type);
 
             string result;
-            if (type.IsAssignableTo(deepCloneableType))
+            if (deepCloneableType.IsAssignableFrom(type))
             {
                 result = type.IsValueType
                     ? Invariant($"{cloneCode}.DeepClone()")
                     : Invariant($"{cloneCode}?.DeepClone()");
             }
-            else if (type.IsClosedSystemDictionaryType())
+            else if (type.IsSystemDictionaryType())
             {
-                var keyType = type.GetClosedSystemDictionaryKeyType();
-                var valueType = type.GetClosedSystemDictionaryValueType();
+                var keyType = type.GetGenericArguments().First();
+                var valueType = type.GetGenericArguments().Last();
 
                 var keyExpressionParameter = "k".ToExpressionParameter(recursionDepth);
                 var valueExpressionParameter = "v".ToExpressionParameter(recursionDepth);
@@ -271,9 +275,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     result = cast + result;
                 }
             }
-            else if (type.IsClosedSystemCollectionType())
+            else if (type.IsSystemCollectionType())
             {
-                var elementType = type.GetClosedSystemCollectionElementType();
+                var elementType = type.GetGenericArguments().First();
 
                 var expressionParameter = "i".ToExpressionParameter(recursionDepth);
 
@@ -319,13 +323,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // https://stackoverflow.com/questions/3465377/whats-the-use-of-string-clone
                 result = Invariant($"{cloneCode}?.Clone().ToString()");
             }
-            else if (type.IsClosedNullableType())
+            else if (type.IsNullableType())
             {
                 var underlyingType = Nullable.GetUnderlyingType(type);
 
                 var deepCloneableUnderlyingType = typeof(IDeepCloneable<>).MakeGenericType(underlyingType);
 
-                result = underlyingType.IsAssignableTo(deepCloneableUnderlyingType)
+                result = deepCloneableUnderlyingType.IsAssignableFrom(underlyingType)
                     ? Invariant($"{cloneCode}?.DeepClone()")
                     : cloneCode;
             }
@@ -333,6 +337,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 // this is just a copy of the item anyway (like bool, int, Enumerations, structs like DateTime, etc.).
                 result = cloneCode;
+            }
+            else if (type.IsGenericParameter)
+            {
+                result = Invariant($"DeepCloneGeneric({cloneCode})");
             }
             else
             {
@@ -355,6 +363,27 @@ namespace OBeautifulCode.CodeGen.ModelObject
             else
             {
                 result = expressionParameter + recursionDepth.ToString(CultureInfo.InvariantCulture);
+            }
+
+            return result;
+        }
+
+        private static string GenerateDeepCloneGenericCode(
+            this ModelType modelType)
+        {
+            var codeSnippet = typeof(CloningGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneGeneric);
+
+            var result = string.Empty;
+
+            foreach (var genericParameter in modelType.GenericParameters)
+            {
+                // if the generic parameter is constrained to struct (e.g. public class MyClass<T> : where T : struct)
+                // then IsValueType will be true.  We do not need the CloneGeneric method because in GenerateCloningLogicCodeForType
+                // we first check IsValueType before we check type.IsGenericParameter
+                if (!genericParameter.IsValueType)
+                {
+                    result = result + Environment.NewLine + Environment.NewLine + codeSnippet.Replace(Tokens.GenericTypeParameterNameToken, genericParameter.Name);
+                }
             }
 
             return result;

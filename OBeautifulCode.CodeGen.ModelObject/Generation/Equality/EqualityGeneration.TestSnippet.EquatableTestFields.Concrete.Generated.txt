@@ -1,16 +1,16 @@
-﻿        private static readonly [model-type-name-here] ReferenceObjectForEquatableTestScenarios = A.Dummy<[model-type-name-here]>();
+﻿        private static readonly [model-type-name-in-code-here] ReferenceObjectForEquatableTestScenarios = A.Dummy<[model-type-name-in-code-here]>();
 
-        private static readonly EquatableTestScenarios<[model-type-name-here]> EquatableTestScenarios = new EquatableTestScenarios<[model-type-name-here]>()
+        private static readonly EquatableTestScenarios<[model-type-name-in-code-here]> EquatableTestScenarios = new EquatableTestScenarios<[model-type-name-in-code-here]>()
             .AddScenario(() =>
-                new EquatableTestScenario<[model-type-name-here]>
+                new EquatableTestScenario<[model-type-name-in-code-here]>
                 {
                     Name = "Default Code Generated Scenario",
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
-                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new [model-type-name-here][]
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new [model-type-name-in-code-here][]
                     {
                         [object-equal-to-but-not-same-as-reference-object-here],
                     },
-                    ObjectsThatAreNotEqualToReferenceObject = new [model-type-name-here][]
+                    ObjectsThatAreNotEqualToReferenceObject = new [model-type-name-in-code-here][]
                     {[objects-not-equal-to-reference-object-here]
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]

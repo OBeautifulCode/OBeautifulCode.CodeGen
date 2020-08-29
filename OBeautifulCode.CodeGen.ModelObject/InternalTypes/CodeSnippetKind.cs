@@ -32,6 +32,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         DeepCloneWithThrows,
 
         /// <summary>
+        /// A code snippet for deep cloning a generic item.
+        /// </summary>
+        DeepCloneGeneric,
+
+        /// <summary>
         /// A code snippet for test fields used to test the DeepCloneWith() methods.
         /// </summary>
         DeepCloneWithTestFields,

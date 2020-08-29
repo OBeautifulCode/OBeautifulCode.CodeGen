@@ -60,7 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
 
             var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.ToStringKeyMethodKinds, CodeSnippetKind.StringRepresentationTestFields)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.ToStringExpectedToken, toStringConstructionCode);
 
             return result;
@@ -96,7 +96,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? string.Join(", ", propertyToStrings)
                 : "<no properties>";
 
-            var result = Invariant($"Invariant($\"{modelType.TypeNamespace}.{modelType.TypeCompilableString}: {propertyToString}.\")");
+            var result = Invariant($"Invariant($\"{modelType.TypeNamespace}.{modelType.TypeNameInCodeString}: {propertyToString}.\")");
 
             return result;
         }
@@ -127,6 +127,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this MethodInfo methodInfo)
         {
             var result = methodInfo.GetCustomAttributes(false).OfType<ObsoleteAttribute>().Any();
+
+            return result;
+        }
+
+        private static bool IsAssignableToNull(
+            this Type type)
+        {
+            // note, specifically NOT using method of same name in OBC recipe
+            // because that one throws for generic type definitions.
+            var result = (!type.IsValueType) || type.IsClosedNullableType();
 
             return result;
         }

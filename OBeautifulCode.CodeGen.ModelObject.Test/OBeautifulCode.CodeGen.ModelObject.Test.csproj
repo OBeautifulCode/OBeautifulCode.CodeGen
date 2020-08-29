@@ -84,8 +84,8 @@
     <Reference Include="OBeautifulCode.Serialization.PropertyBag, Version=1.0.67.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.Serialization.PropertyBag.1.0.67\lib\net462\OBeautifulCode.Serialization.PropertyBag.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Type, Version=1.0.51.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Type.1.0.51\lib\net462\OBeautifulCode.Type.dll</HintPath>
+    <Reference Include="OBeautifulCode.Type, Version=1.0.54.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Type.1.0.54\lib\net462\OBeautifulCode.Type.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -170,13 +170,14 @@
     <Compile Include=".recipes\OBeautifulCode.Type\ArrayKind.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\SuppressBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Type\ToStringXmlDocOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
     <Compile Include="CodeGenDummyFactory.cs" />
     <Compile Include="CodeGenDummyFactory.designer.cs">
       <DependentUpon>CodeGenDummyFactory.cs</DependentUpon>
     </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
-    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomGenericClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomGenericClass{T}.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomDerivedClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\Enums\HierarchyKind.cs" />
@@ -1972,6 +1973,14 @@
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.cs" />
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGeneric{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGeneric{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPrivateSetGeneric{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGeneric{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGeneric{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPublicSetGeneric{TFirst, TSecond}.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.cs" />
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.designer.cs">
@@ -4141,6 +4150,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

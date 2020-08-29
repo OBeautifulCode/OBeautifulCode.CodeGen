@@ -1,5 +1,5 @@
 ﻿            .AddScenario(() =>
-                new ConstructorArgumentValidationTestScenario<[model-type-name-here]>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-in-code-here]>
                 {
                     Name = "constructor should throw ArgumentNullException when parameter '[parameter-name-here]' is null scenario",
                     ConstructionFunc = () =>

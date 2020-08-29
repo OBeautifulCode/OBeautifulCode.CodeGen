@@ -1,1 +1,1 @@
-﻿        private static readonly DeepCloneWithTestScenarios<[model-type-name-here]> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<[model-type-name-here]>()[deep-clone-with-test-scenarios-here];
+﻿        private static readonly DeepCloneWithTestScenarios<[model-type-name-in-code-here]> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<[model-type-name-in-code-here]>()[deep-clone-with-test-scenarios-here];

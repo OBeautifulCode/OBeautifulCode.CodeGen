@@ -43,7 +43,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 : "true";
 
             var result = codeTemplate
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString)
                 .Replace(Tokens.EqualityStatementsToken, equalityStatementsCode);
 
             return result;
@@ -69,7 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             if (keyMethodKinds == KeyMethodKinds.Declared)
             {
                 result = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFields)
-                    .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString);
+                    .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
             }
             else
             {
@@ -111,8 +112,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             foreach (var typeCompilableString in modelType.DerivativePathFromRootToSelfCompilableStrings)
             {
                 var equalsItem = equalsTestTemplate
-                    .Replace(Tokens.ModelTypeNameToken, typeCompilableString)
-                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeCompilableString ? string.Empty : Invariant($"({typeCompilableString})"));
+                    .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)
+                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({typeCompilableString})"));
 
                 equalsItems.Add(equalsItem);
             }
@@ -120,7 +121,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(CodeTemplateKind.Test, KeyMethodKinds.Both);
 
             var result = codeTemplate
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.EqualsTestsToken, equalsItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine);
 
             return result;
@@ -162,7 +163,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.ScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObjectToken, objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject)
                 .Replace(Tokens.ObjectsEqualToButNotTheSameAsReferenceObjectToken, objectsEqualToButNotTheSameAsReferenceObject)
                 .Replace(Tokens.ObjectsNotEqualToReferenceObjectToken, objectsNotEqualToReferenceObject)
-                .Replace(Tokens.ModelTypeNameToken, modelType.TypeCompilableString)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.DummyAncestorConcreteDerivativesToken, dummyAncestorConcreteDerivatives);
 
             return result;
@@ -181,7 +182,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 {
                     var cast = modelType.DeclaresProperty(property)
                         ? string.Empty
-                        : Invariant($"({modelType.TypeCompilableString})");
+                        : Invariant($"({modelType.TypeNameInCodeString})");
 
                     var code = objectNotEqualToReferenceObjectCodeSnippet
                         .Replace(Tokens.PropertyNameToken, property.Name)
