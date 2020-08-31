@@ -126,7 +126,6 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresDeepCloneMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareDeepCloneMethod<>));
             this.DeclaresEqualsMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
             this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
-            this.DeclaresToStringMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareToStringMethod));
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
 
@@ -336,13 +335,6 @@ namespace OBeautifulCode.CodeGen
         public bool DeclaresGetHashCodeMethodDirectlyOrInDerivative { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method
-        /// or has a derivative that does.
-        /// </summary>
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
-        public bool DeclaresToStringMethodDirectlyOrInDerivative { get; }
-
-        /// <summary>
         /// Gets the namespaces of the types in the properties of concern.
         /// </summary>
         public IReadOnlyCollection<string> NamespacesOfTypesInPropertiesOfConcern { get; }
@@ -455,25 +447,25 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a Dictionary that is keyed on DateTime; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind): {dictionaryKeyedOnDateTimeProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, t => t.IsClosedSystemEnumerableType())).ToList();
+            var enumerableProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, t => t.IsSystemEnumerableType())).ToList();
 
             if (enumerableProperties.Any())
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type an IEnumerable<T>; enumerables may have unintended side-effects when iterating (e.g. fetch objects from a database): {enumerableProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            var closedSystemCollectionNonInterfaceProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsClosedSystemCollectionNonInterfaceType)).ToList();
+            var systemCollectionNonInterfaceProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsSystemCollectionNonInterfaceType)).ToList();
 
-            if (closedSystemCollectionNonInterfaceProperties.Any())
+            if (systemCollectionNonInterfaceProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a closed System Collection type that is not an interface; it's a best practice to use interfaces for these types: {closedSystemCollectionNonInterfaceProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a System Collection type that is not an interface; it's a best practice to use interfaces for these types: {systemCollectionNonInterfaceProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
-            var closedSystemDictionaryNonInterfaceProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsClosedSystemDictionaryNonInterfaceType)).ToList();
+            var systemDictionaryNonInterfaceProperties = propertiesOfConcern.Where(_ => IsOrContainsMatchingType(_.PropertyType, IsSystemDictionaryNonInterfaceType)).ToList();
 
-            if (closedSystemDictionaryNonInterfaceProperties.Any())
+            if (systemDictionaryNonInterfaceProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a closed System Dictionary type that is not an interface; it's a best practice to use interfaces for these types: {closedSystemDictionaryNonInterfaceProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains one or more properties that are OR have within their generic argument tree or array element type a System Dictionary type that is not an interface; it's a best practice to use interfaces for these types: {systemDictionaryNonInterfaceProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
         }
 
@@ -685,10 +677,10 @@ namespace OBeautifulCode.CodeGen
             return false;
         }
 
-        private static bool IsClosedSystemCollectionNonInterfaceType(
+        private static bool IsSystemCollectionNonInterfaceType(
             Type type)
         {
-            if (type.IsClosedSystemCollectionType())
+            if (type.IsSystemCollectionType())
             {
                 if (!type.IsInterface)
                 {
@@ -699,10 +691,10 @@ namespace OBeautifulCode.CodeGen
             return false;
         }
 
-        private static bool IsClosedSystemDictionaryNonInterfaceType(
+        private static bool IsSystemDictionaryNonInterfaceType(
             Type type)
         {
-            if (type.IsClosedSystemDictionaryType())
+            if (type.IsSystemDictionaryType())
             {
                 if (!type.IsInterface)
                 {

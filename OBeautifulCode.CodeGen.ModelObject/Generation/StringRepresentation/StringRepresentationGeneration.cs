@@ -110,15 +110,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var takesFormatProviderType = type;
 
+            // an open nullable type will just result in the generic parameter as it's underlying type,
+            // which is why we purposefully only check for closed nullable types here.
             if (type.IsClosedNullableType())
             {
                 takesFormatProviderType = Nullable.GetUnderlyingType(type);
             }
 
             // ReSharper disable once PossibleNullReferenceException
-            var takesFormatProvider = takesFormatProviderType.GetMethods().Where(_ => _.Name == "ToString").Where(_ => !_.IsObsolete()).Where(_ => _.GetParameters().Length == 1).Any(_ => _.GetParameters().Single().ParameterType.IsAssignableTo(typeof(IFormatProvider)));
+            var takesFormatProvider = takesFormatProviderType.GetMethods().Where(_ => _.Name == "ToString").Where(_ => !_.IsObsolete()).Where(_ => _.GetParameters().Length == 1).Any(_ => typeof(IFormatProvider).IsAssignableFrom(_.GetParameters().Single().ParameterType));
 
-            var result = name + " = {" + (useSystemUnderTest ? "systemUnderTest" : "this") + "." + name + (type.IsAssignableToNull() ? "?" : string.Empty) + ".ToString(" + (takesFormatProvider ? "CultureInfo.InvariantCulture" : string.Empty) + ") ?? \"<null>\"}";
+            var result = name + " = {" + (useSystemUnderTest ? "systemUnderTest" : "this") + "." + name + (type.IsTypeAssignableToNull() ? "?" : string.Empty) + ".ToString(" + (takesFormatProvider ? "CultureInfo.InvariantCulture" : string.Empty) + ") ?? \"<null>\"}";
 
             return result;
         }
@@ -127,16 +129,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             this MethodInfo methodInfo)
         {
             var result = methodInfo.GetCustomAttributes(false).OfType<ObsoleteAttribute>().Any();
-
-            return result;
-        }
-
-        private static bool IsAssignableToNull(
-            this Type type)
-        {
-            // note, specifically NOT using method of same name in OBC recipe
-            // because that one throws for generic type definitions.
-            var result = (!type.IsValueType) || type.IsClosedNullableType();
 
             return result;
         }

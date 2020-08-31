@@ -27,12 +27,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             TFirst[] arrayProperty,
             TSecond? nullableProperty,
             CustomGenericClass<TSecond> genericClassProperty,
-            ReadOnlyCollection<TFirst> readOnlyCollectionProperty,
-            IReadOnlyList<TFirst> readOnlyListInterfaceProperty,
-            ReadOnlyDictionary<TFirst, TSecond> readOnlyDictionaryProperty,
-            IReadOnlyDictionary<TSecond, TFirst> readOnlyDictionaryInterfaceProperty,
-            ReadOnlyDictionary<string, TSecond> partiallyOpenReadOnlyDictionaryProperty,
-            IReadOnlyDictionary<TFirst, string> partiallyOpenReadOnlyDictionaryInterfaceProperty)
+            IReadOnlyCollection<TFirst> readOnlyCollectionProperty,
+            IReadOnlyList<TFirst> readOnlyListProperty,
+            IReadOnlyDictionary<TFirst, TSecond> closedReadOnlyDictionaryProperty1,
+            IReadOnlyDictionary<TSecond, TFirst> closedReadOnlyDictionaryProperty2,
+            IReadOnlyDictionary<string, TSecond> partiallyOpenReadOnlyDictionaryProperty1,
+            IReadOnlyDictionary<TFirst, string> partiallyOpenReadOnlyDictionaryProperty2)
         {
             this.StringProperty = stringProperty;
             this.IntProperty = intProperty;
@@ -43,12 +43,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.NullableProperty = nullableProperty;
             this.GenericClassProperty = genericClassProperty;
             this.ReadOnlyCollectionProperty = readOnlyCollectionProperty;
-            this.ReadOnlyCollectionProperty = readOnlyCollectionProperty;
-            this.ReadOnlyListInterfaceProperty = readOnlyListInterfaceProperty;
-            this.ReadOnlyDictionaryProperty = readOnlyDictionaryProperty;
-            this.ReadOnlyDictionaryInterfaceProperty = readOnlyDictionaryInterfaceProperty;
-            this.PartiallyOpenReadOnlyDictionaryProperty = partiallyOpenReadOnlyDictionaryProperty;
-            this.PartiallyOpenReadOnlyDictionaryInterfaceProperty = partiallyOpenReadOnlyDictionaryInterfaceProperty;
+            this.ReadOnlyListProperty = readOnlyListProperty;
+            this.ClosedReadOnlyDictionaryProperty1 = closedReadOnlyDictionaryProperty1;
+            this.ClosedReadOnlyDictionaryProperty2 = closedReadOnlyDictionaryProperty2;
+            this.PartiallyOpenReadOnlyDictionaryProperty1 = partiallyOpenReadOnlyDictionaryProperty1;
+            this.PartiallyOpenReadOnlyDictionaryProperty2 = partiallyOpenReadOnlyDictionaryProperty2;
         }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
@@ -76,22 +75,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public CustomGenericClass<TSecond> GenericClassProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ReadOnlyCollection<TFirst> ReadOnlyCollectionProperty { get; private set; }
+        public IReadOnlyCollection<TFirst> ReadOnlyCollectionProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyList<TFirst> ReadOnlyListInterfaceProperty { get; private set; }
+        public IReadOnlyList<TFirst> ReadOnlyListProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ReadOnlyDictionary<TFirst, TSecond> ReadOnlyDictionaryProperty { get; private set; }
+        public IReadOnlyDictionary<TFirst, TSecond> ClosedReadOnlyDictionaryProperty1 { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyDictionary<TSecond, TFirst> ReadOnlyDictionaryInterfaceProperty { get; private set; }
+        public IReadOnlyDictionary<TSecond, TFirst> ClosedReadOnlyDictionaryProperty2 { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ReadOnlyDictionary<string, TSecond> PartiallyOpenReadOnlyDictionaryProperty { get; private set; }
+        public IReadOnlyDictionary<string, TSecond> PartiallyOpenReadOnlyDictionaryProperty1 { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyDictionary<TFirst, string> PartiallyOpenReadOnlyDictionaryInterfaceProperty { get; private set; }
+        public IReadOnlyDictionary<TFirst, string> PartiallyOpenReadOnlyDictionaryProperty2 { get; private set; }
 
         /// <inheritdoc />
         public RelativeSortOrder CompareToForRelativeSortOrder(
