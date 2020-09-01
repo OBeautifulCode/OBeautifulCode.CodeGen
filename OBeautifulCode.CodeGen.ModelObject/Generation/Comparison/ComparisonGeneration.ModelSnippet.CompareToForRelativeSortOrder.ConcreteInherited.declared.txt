@@ -1,17 +1,17 @@
 ﻿        /// <inheritdoc />
-        public override RelativeSortOrder CompareToForRelativeSortOrder([model-ancestor-type-name-here] other)
+        public override RelativeSortOrder CompareToForRelativeSortOrder([model-ancestor-type-name-in-code-here] other)
         {
             if (ReferenceEquals(other, null))
             {
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
 
-            if (!(other is [model-type-name-in-code-here] otherAs[model-type-name-in-code-here]))
+            if (!(other is [model-type-name-in-code-here] otherAs[model-type-name-in-identifier-here]))
             {
                 throw new ArgumentException(Invariant($"Attempting to compare objects of different types.  This object is of type '[model-type-name-in-code-here]' whereas the other object is of type '{other.GetType().ToStringReadable()}'."));
             }
 
-            var result = this.CompareToForRelativeSortOrder(otherAs[model-type-name-in-code-here]);
+            var result = this.CompareToForRelativeSortOrder(otherAs[model-type-name-in-identifier-here]);
 
             return result;
         }

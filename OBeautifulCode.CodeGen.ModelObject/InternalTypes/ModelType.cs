@@ -80,19 +80,18 @@ namespace OBeautifulCode.CodeGen
             // consistency.  To that end, we contain the usage of the specified type to this
             // class, where we ensure that there are no dependencies on the added interfaces.
             this.underlyingType = type;
-            this.InheritancePathCompilableStrings = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringCompilable()).ToList();
+            this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
+            this.DerivativePathTypesNamesInCodeFromRootToSelf = this.InheritancePathTypeNamesInCode.Reverse().Concat(new[] { type.ToStringReadable() }).ToList();
             this.ConcreteDerivativeTypesCompilableStrings = GetConcreteDerivativeTypes(type).Select(_ => _.ToStringCompilable()).ToList();
             this.AncestorConcreteDerivativesCompilableStrings = GetAncestorConcreteDerivatives(type).Select(_ => _.ToStringCompilable()).ToList();
-            this.DerivativePathFromRootToSelfCompilableStrings = this.InheritancePathCompilableStrings.Reverse().Concat(new[] { type.ToStringCompilable() }).ToList();
 
             this.GenericParameters = type.IsGenericType ? type.GetGenericArguments().ToList() : new List<Type>();
 
             this.TypeNameInCodeString = type.ToStringReadable();
             this.TypeNameInTestMethodNameString = type.ToStringWithoutGenericComponent();
+            this.TypeNameInIdentifierString = type.ToStringWithoutGenericComponent();
             this.TypeNameInXmlDocString = type.ToStringXmlDoc();
             this.TypeNamespace = type.Namespace;
-            this.BaseTypeCompilableString = type.BaseType?.ToStringCompilable();
-            this.BaseTypeReadableString = type.BaseType?.ToStringReadable();
 
             this.HierarchyKind = hierarchyKind;
             this.ClassifiedHierarchyKind = Classify(hierarchyKind);
@@ -135,7 +134,7 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets the inheritance path as compilable string representations of the type.
         /// </summary>
-        public IReadOnlyList<string> InheritancePathCompilableStrings { get; }
+        public IReadOnlyList<string> InheritancePathTypeNamesInCode { get; }
 
         /// <summary>
         /// Gets the name of the type as it should be used in generated code.
@@ -148,6 +147,11 @@ namespace OBeautifulCode.CodeGen
         public string TypeNameInTestMethodNameString { get; }
 
         /// <summary>
+        /// Gets the name of the type as it should be used in an identifier.
+        /// </summary>
+        public string TypeNameInIdentifierString { get; }
+
+        /// <summary>
         /// Gets the name of the type as it should be used in XML doc.
         /// </summary>
         public string TypeNameInXmlDocString { get; }
@@ -158,18 +162,6 @@ namespace OBeautifulCode.CodeGen
         public string TypeNamespace { get; }
 
         /// <summary>
-        /// Gets a compilable string representation of the base type.
-        /// </summary>
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
-        public string BaseTypeCompilableString { get; }
-
-        /// <summary>
-        /// Gets a readability-optimized string representation of the base type.
-        /// </summary>
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
-        public string BaseTypeReadableString { get; }
-
-        /// <summary>
         /// Gets the compilable string representations of this model type's concrete derivative types.
         /// </summary>
         public IReadOnlyCollection<string> ConcreteDerivativeTypesCompilableStrings { get; }
@@ -178,7 +170,7 @@ namespace OBeautifulCode.CodeGen
         /// Gets the compilable string representations of this model's derivative path, starting
         /// at the root type and ending in the model type itself.
         /// </summary>
-        public IReadOnlyCollection<string> DerivativePathFromRootToSelfCompilableStrings { get; }
+        public IReadOnlyCollection<string> DerivativePathTypesNamesInCodeFromRootToSelf { get; }
 
         /// <summary>
         /// Gets the compilable string representations of this model type's ancestors' concrete derivative types
@@ -917,8 +909,7 @@ namespace OBeautifulCode.CodeGen
                 .GetTypesFromAssemblies()
                 .Where(_ => _.IsClass)
                 .Where(_ => !_.IsAbstract)
-                .Where(_ => !_.ContainsGenericParameters)
-                .Where(_ => _.IsAssignableTo(type))
+                .Where(_ => GetInheritancePathConvertingGenericsToGenericTypeDefinitions(_).Contains(type))
                 .ToList();
 
             return result;
@@ -927,8 +918,8 @@ namespace OBeautifulCode.CodeGen
         private static IReadOnlyCollection<Type> GetAncestorConcreteDerivatives(
             Type type)
         {
-            var oldestAncestorType = type
-                .GetInheritancePath()
+            var oldestAncestorType =
+                GetInheritancePathConvertingGenericsToGenericTypeDefinitions(type)
                 .Reverse()
                 .Skip(1) // typeof(object)
                 .FirstOrDefault();
@@ -939,6 +930,14 @@ namespace OBeautifulCode.CodeGen
             {
                 result = GetConcreteDerivativeTypes(oldestAncestorType).Where(_ => _ != type).ToList();
             }
+
+            return result;
+        }
+
+        private static IReadOnlyList<Type> GetInheritancePathConvertingGenericsToGenericTypeDefinitions(
+            Type type)
+        {
+            var result = type.GetInheritancePath().Select(_ => _.IsGenericType ? _.GetGenericTypeDefinition() : _).ToList();
 
             return result;
         }

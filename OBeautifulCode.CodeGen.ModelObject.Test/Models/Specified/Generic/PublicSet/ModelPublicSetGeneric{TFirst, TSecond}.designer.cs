@@ -71,17 +71,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = this.StringProperty.IsEqualTo(other.StringProperty, StringComparer.Ordinal)
                       && this.IntProperty.IsEqualTo(other.IntProperty)
                       && this.EnumProperty.IsEqualTo(other.EnumProperty)
-                      && this.ClassProperty.IsEqualTo(other.ClassProperty)
-                      && this.GenericProperty.IsEqualTo(other.GenericProperty)
-                      && this.ArrayProperty.IsEqualTo(other.ArrayProperty)
-                      && this.NullableProperty.IsEqualTo(other.NullableProperty)
-                      && this.GenericClassProperty.IsEqualTo(other.GenericClassProperty)
-                      && this.ReadOnlyCollectionProperty.IsEqualTo(other.ReadOnlyCollectionProperty)
-                      && this.ReadOnlyListProperty.IsEqualTo(other.ReadOnlyListProperty)
-                      && this.ClosedReadOnlyDictionaryProperty1.IsEqualTo(other.ClosedReadOnlyDictionaryProperty1)
-                      && this.ClosedReadOnlyDictionaryProperty2.IsEqualTo(other.ClosedReadOnlyDictionaryProperty2)
-                      && this.PartiallyOpenReadOnlyDictionaryProperty1.IsEqualTo(other.PartiallyOpenReadOnlyDictionaryProperty1)
-                      && this.PartiallyOpenReadOnlyDictionaryProperty2.IsEqualTo(other.PartiallyOpenReadOnlyDictionaryProperty2);
+                      && this.CustomClassProperty.IsEqualTo(other.CustomClassProperty)
+                      && this.GenericArgumentProperty.IsEqualTo(other.GenericArgumentProperty)
+                      && this.GenericArrayProperty.IsEqualTo(other.GenericArrayProperty)
+                      && this.GenericNullableProperty.IsEqualTo(other.GenericNullableProperty)
+                      && this.GenericCustomGenericClassProperty.IsEqualTo(other.GenericCustomGenericClassProperty)
+                      && this.GenericReadOnlyCollectionProperty.IsEqualTo(other.GenericReadOnlyCollectionProperty)
+                      && this.GenericReadOnlyListProperty.IsEqualTo(other.GenericReadOnlyListProperty)
+                      && this.GenericReadOnlyDictionaryProperty1.IsEqualTo(other.GenericReadOnlyDictionaryProperty1)
+                      && this.GenericReadOnlyDictionaryProperty2.IsEqualTo(other.GenericReadOnlyDictionaryProperty2)
+                      && this.GenericPartiallyClosedReadOnlyDictionaryProperty1.IsEqualTo(other.GenericPartiallyClosedReadOnlyDictionaryProperty1)
+                      && this.GenericPartiallyClosedReadOnlyDictionaryProperty2.IsEqualTo(other.GenericPartiallyClosedReadOnlyDictionaryProperty2);
 
             return result;
         }
@@ -221,17 +221,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.StringProperty)
             .Hash(this.IntProperty)
             .Hash(this.EnumProperty)
-            .Hash(this.ClassProperty)
-            .Hash(this.GenericProperty)
-            .Hash(this.ArrayProperty)
-            .Hash(this.NullableProperty)
-            .Hash(this.GenericClassProperty)
-            .Hash(this.ReadOnlyCollectionProperty)
-            .Hash(this.ReadOnlyListProperty)
-            .Hash(this.ClosedReadOnlyDictionaryProperty1)
-            .Hash(this.ClosedReadOnlyDictionaryProperty2)
-            .Hash(this.PartiallyOpenReadOnlyDictionaryProperty1)
-            .Hash(this.PartiallyOpenReadOnlyDictionaryProperty2)
+            .Hash(this.CustomClassProperty)
+            .Hash(this.GenericArgumentProperty)
+            .Hash(this.GenericArrayProperty)
+            .Hash(this.GenericNullableProperty)
+            .Hash(this.GenericCustomGenericClassProperty)
+            .Hash(this.GenericReadOnlyCollectionProperty)
+            .Hash(this.GenericReadOnlyListProperty)
+            .Hash(this.GenericReadOnlyDictionaryProperty1)
+            .Hash(this.GenericReadOnlyDictionaryProperty2)
+            .Hash(this.GenericPartiallyClosedReadOnlyDictionaryProperty1)
+            .Hash(this.GenericPartiallyClosedReadOnlyDictionaryProperty2)
             .Value;
 
         /// <inheritdoc />
@@ -242,20 +242,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
@@ -285,20 +285,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = stringProperty,
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = stringProperty,
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
@@ -328,20 +328,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = intProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = intProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
@@ -371,30 +371,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = enumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = enumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ClassProperty" />.
+        /// Deep clones this object with a new <see cref="CustomClassProperty" />.
         /// </summary>
-        /// <param name="classProperty">The new <see cref="ClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="classProperty" /> for <see cref="ClassProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="customClassProperty">The new <see cref="CustomClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="customClassProperty" /> for <see cref="CustomClassProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -410,34 +410,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithClassProperty(CustomClass classProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithCustomClassProperty(CustomClass customClassProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = classProperty,
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = customClassProperty,
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="GenericProperty" />.
+        /// Deep clones this object with a new <see cref="GenericArgumentProperty" />.
         /// </summary>
-        /// <param name="genericProperty">The new <see cref="GenericProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericProperty" /> for <see cref="GenericProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="genericArgumentProperty">The new <see cref="GenericArgumentProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericArgumentProperty" /> for <see cref="GenericArgumentProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -453,34 +453,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericProperty(TFirst genericProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericArgumentProperty(TFirst genericArgumentProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = genericProperty,
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = genericArgumentProperty,
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ArrayProperty" />.
+        /// Deep clones this object with a new <see cref="GenericArrayProperty" />.
         /// </summary>
-        /// <param name="arrayProperty">The new <see cref="ArrayProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="arrayProperty" /> for <see cref="ArrayProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="genericArrayProperty">The new <see cref="GenericArrayProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericArrayProperty" /> for <see cref="GenericArrayProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -496,34 +496,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithArrayProperty(TFirst[] arrayProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericArrayProperty(TFirst[] genericArrayProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = arrayProperty,
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = genericArrayProperty,
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="NullableProperty" />.
+        /// Deep clones this object with a new <see cref="GenericNullableProperty" />.
         /// </summary>
-        /// <param name="nullableProperty">The new <see cref="NullableProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="nullableProperty" /> for <see cref="NullableProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="genericNullableProperty">The new <see cref="GenericNullableProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericNullableProperty" /> for <see cref="GenericNullableProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -539,34 +539,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithNullableProperty(Nullable<TSecond> nullableProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericNullableProperty(Nullable<TSecond> genericNullableProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = nullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = genericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="GenericClassProperty" />.
+        /// Deep clones this object with a new <see cref="GenericCustomGenericClassProperty" />.
         /// </summary>
-        /// <param name="genericClassProperty">The new <see cref="GenericClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericClassProperty" /> for <see cref="GenericClassProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="genericCustomGenericClassProperty">The new <see cref="GenericCustomGenericClassProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericCustomGenericClassProperty" /> for <see cref="GenericCustomGenericClassProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -582,34 +582,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericClassProperty(CustomGenericClass<TSecond> genericClassProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericCustomGenericClassProperty(CustomGenericClass<TSecond> genericCustomGenericClassProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = genericClassProperty,
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = genericCustomGenericClassProperty,
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ReadOnlyCollectionProperty" />.
+        /// Deep clones this object with a new <see cref="GenericReadOnlyCollectionProperty" />.
         /// </summary>
-        /// <param name="readOnlyCollectionProperty">The new <see cref="ReadOnlyCollectionProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="readOnlyCollectionProperty" /> for <see cref="ReadOnlyCollectionProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="genericReadOnlyCollectionProperty">The new <see cref="GenericReadOnlyCollectionProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericReadOnlyCollectionProperty" /> for <see cref="GenericReadOnlyCollectionProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -625,34 +625,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithReadOnlyCollectionProperty(IReadOnlyCollection<TFirst> readOnlyCollectionProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericReadOnlyCollectionProperty(IReadOnlyCollection<TFirst> genericReadOnlyCollectionProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = readOnlyCollectionProperty,
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = genericReadOnlyCollectionProperty,
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ReadOnlyListProperty" />.
+        /// Deep clones this object with a new <see cref="GenericReadOnlyListProperty" />.
         /// </summary>
-        /// <param name="readOnlyListProperty">The new <see cref="ReadOnlyListProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="readOnlyListProperty" /> for <see cref="ReadOnlyListProperty" /> and a deep clone of every other property.</returns>
+        /// <param name="genericReadOnlyListProperty">The new <see cref="GenericReadOnlyListProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericReadOnlyListProperty" /> for <see cref="GenericReadOnlyListProperty" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -668,34 +668,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithReadOnlyListProperty(IReadOnlyList<TFirst> readOnlyListProperty)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericReadOnlyListProperty(IReadOnlyList<TFirst> genericReadOnlyListProperty)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = readOnlyListProperty,
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = genericReadOnlyListProperty,
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ClosedReadOnlyDictionaryProperty1" />.
+        /// Deep clones this object with a new <see cref="GenericReadOnlyDictionaryProperty1" />.
         /// </summary>
-        /// <param name="closedReadOnlyDictionaryProperty1">The new <see cref="ClosedReadOnlyDictionaryProperty1" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="closedReadOnlyDictionaryProperty1" /> for <see cref="ClosedReadOnlyDictionaryProperty1" /> and a deep clone of every other property.</returns>
+        /// <param name="genericReadOnlyDictionaryProperty1">The new <see cref="GenericReadOnlyDictionaryProperty1" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericReadOnlyDictionaryProperty1" /> for <see cref="GenericReadOnlyDictionaryProperty1" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -711,34 +711,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithClosedReadOnlyDictionaryProperty1(IReadOnlyDictionary<TFirst, TSecond> closedReadOnlyDictionaryProperty1)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericReadOnlyDictionaryProperty1(IReadOnlyDictionary<TFirst, TSecond> genericReadOnlyDictionaryProperty1)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = closedReadOnlyDictionaryProperty1,
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = genericReadOnlyDictionaryProperty1,
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="ClosedReadOnlyDictionaryProperty2" />.
+        /// Deep clones this object with a new <see cref="GenericReadOnlyDictionaryProperty2" />.
         /// </summary>
-        /// <param name="closedReadOnlyDictionaryProperty2">The new <see cref="ClosedReadOnlyDictionaryProperty2" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="closedReadOnlyDictionaryProperty2" /> for <see cref="ClosedReadOnlyDictionaryProperty2" /> and a deep clone of every other property.</returns>
+        /// <param name="genericReadOnlyDictionaryProperty2">The new <see cref="GenericReadOnlyDictionaryProperty2" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericReadOnlyDictionaryProperty2" /> for <see cref="GenericReadOnlyDictionaryProperty2" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -754,34 +754,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithClosedReadOnlyDictionaryProperty2(IReadOnlyDictionary<TSecond, TFirst> closedReadOnlyDictionaryProperty2)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericReadOnlyDictionaryProperty2(IReadOnlyDictionary<TSecond, TFirst> genericReadOnlyDictionaryProperty2)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = closedReadOnlyDictionaryProperty2,
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = genericReadOnlyDictionaryProperty2,
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="PartiallyOpenReadOnlyDictionaryProperty1" />.
+        /// Deep clones this object with a new <see cref="GenericPartiallyClosedReadOnlyDictionaryProperty1" />.
         /// </summary>
-        /// <param name="partiallyOpenReadOnlyDictionaryProperty1">The new <see cref="PartiallyOpenReadOnlyDictionaryProperty1" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="partiallyOpenReadOnlyDictionaryProperty1" /> for <see cref="PartiallyOpenReadOnlyDictionaryProperty1" /> and a deep clone of every other property.</returns>
+        /// <param name="genericPartiallyClosedReadOnlyDictionaryProperty1">The new <see cref="GenericPartiallyClosedReadOnlyDictionaryProperty1" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericPartiallyClosedReadOnlyDictionaryProperty1" /> for <see cref="GenericPartiallyClosedReadOnlyDictionaryProperty1" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -797,34 +797,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithPartiallyOpenReadOnlyDictionaryProperty1(IReadOnlyDictionary<string, TSecond> partiallyOpenReadOnlyDictionaryProperty1)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericPartiallyClosedReadOnlyDictionaryProperty1(IReadOnlyDictionary<string, TSecond> genericPartiallyClosedReadOnlyDictionaryProperty1)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = partiallyOpenReadOnlyDictionaryProperty1,
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = this.PartiallyOpenReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = genericPartiallyClosedReadOnlyDictionaryProperty1,
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
                              };
 
             return result;
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="PartiallyOpenReadOnlyDictionaryProperty2" />.
+        /// Deep clones this object with a new <see cref="GenericPartiallyClosedReadOnlyDictionaryProperty2" />.
         /// </summary>
-        /// <param name="partiallyOpenReadOnlyDictionaryProperty2">The new <see cref="PartiallyOpenReadOnlyDictionaryProperty2" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="partiallyOpenReadOnlyDictionaryProperty2" /> for <see cref="PartiallyOpenReadOnlyDictionaryProperty2" /> and a deep clone of every other property.</returns>
+        /// <param name="genericPartiallyClosedReadOnlyDictionaryProperty2">The new <see cref="GenericPartiallyClosedReadOnlyDictionaryProperty2" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPublicSetGeneric{TFirst, TSecond}" /> using the specified <paramref name="genericPartiallyClosedReadOnlyDictionaryProperty2" /> for <see cref="GenericPartiallyClosedReadOnlyDictionaryProperty2" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -840,24 +840,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithPartiallyOpenReadOnlyDictionaryProperty2(IReadOnlyDictionary<TFirst, string> partiallyOpenReadOnlyDictionaryProperty2)
+        public ModelPublicSetGeneric<TFirst, TSecond> DeepCloneWithGenericPartiallyClosedReadOnlyDictionaryProperty2(IReadOnlyDictionary<TFirst, string> genericPartiallyClosedReadOnlyDictionaryProperty2)
         {
             var result = new ModelPublicSetGeneric<TFirst, TSecond>
                              {
-                                 StringProperty                           = this.StringProperty?.Clone().ToString(),
-                                 IntProperty                              = this.IntProperty,
-                                 EnumProperty                             = this.EnumProperty,
-                                 ClassProperty                            = this.ClassProperty?.DeepClone(),
-                                 GenericProperty                          = DeepCloneGeneric(this.GenericProperty),
-                                 ArrayProperty                            = this.ArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 NullableProperty                         = this.NullableProperty,
-                                 GenericClassProperty                     = this.GenericClassProperty?.DeepClone(),
-                                 ReadOnlyCollectionProperty               = this.ReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ReadOnlyListProperty                     = this.ReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 ClosedReadOnlyDictionaryProperty1        = this.ClosedReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 ClosedReadOnlyDictionaryProperty2        = this.ClosedReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 PartiallyOpenReadOnlyDictionaryProperty1 = this.PartiallyOpenReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 PartiallyOpenReadOnlyDictionaryProperty2 = partiallyOpenReadOnlyDictionaryProperty2,
+                                 StringProperty                                    = this.StringProperty?.Clone().ToString(),
+                                 IntProperty                                       = this.IntProperty,
+                                 EnumProperty                                      = this.EnumProperty,
+                                 CustomClassProperty                               = this.CustomClassProperty?.DeepClone(),
+                                 GenericArgumentProperty                           = DeepCloneGeneric(this.GenericArgumentProperty),
+                                 GenericArrayProperty                              = this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 GenericNullableProperty                           = this.GenericNullableProperty,
+                                 GenericCustomGenericClassProperty                 = this.GenericCustomGenericClassProperty?.DeepClone(),
+                                 GenericReadOnlyCollectionProperty                 = this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyListProperty                       = this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 GenericReadOnlyDictionaryProperty1                = this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 GenericReadOnlyDictionaryProperty2                = this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty1 = this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 GenericPartiallyClosedReadOnlyDictionaryProperty2 = genericPartiallyClosedReadOnlyDictionaryProperty2,
                              };
 
             return result;
@@ -900,7 +900,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPublicSetGeneric<TFirst, TSecond>: StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, EnumProperty = {this.EnumProperty.ToString() ?? "<null>"}, ClassProperty = {this.ClassProperty?.ToString() ?? "<null>"}, GenericProperty = {this.GenericProperty?.ToString() ?? "<null>"}, ArrayProperty = {this.ArrayProperty?.ToString() ?? "<null>"}, NullableProperty = {this.NullableProperty?.ToString() ?? "<null>"}, GenericClassProperty = {this.GenericClassProperty?.ToString() ?? "<null>"}, ReadOnlyCollectionProperty = {this.ReadOnlyCollectionProperty?.ToString() ?? "<null>"}, ReadOnlyListProperty = {this.ReadOnlyListProperty?.ToString() ?? "<null>"}, ClosedReadOnlyDictionaryProperty1 = {this.ClosedReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, ClosedReadOnlyDictionaryProperty2 = {this.ClosedReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}, PartiallyOpenReadOnlyDictionaryProperty1 = {this.PartiallyOpenReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, PartiallyOpenReadOnlyDictionaryProperty2 = {this.PartiallyOpenReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPublicSetGeneric<TFirst, TSecond>: StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, EnumProperty = {this.EnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {this.CustomClassProperty?.ToString() ?? "<null>"}, GenericArgumentProperty = {this.GenericArgumentProperty?.ToString() ?? "<null>"}, GenericArrayProperty = {this.GenericArrayProperty?.ToString() ?? "<null>"}, GenericNullableProperty = {this.GenericNullableProperty?.ToString() ?? "<null>"}, GenericCustomGenericClassProperty = {this.GenericCustomGenericClassProperty?.ToString() ?? "<null>"}, GenericReadOnlyCollectionProperty = {this.GenericReadOnlyCollectionProperty?.ToString() ?? "<null>"}, GenericReadOnlyListProperty = {this.GenericReadOnlyListProperty?.ToString() ?? "<null>"}, GenericReadOnlyDictionaryProperty1 = {this.GenericReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, GenericReadOnlyDictionaryProperty2 = {this.GenericReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}, GenericPartiallyClosedReadOnlyDictionaryProperty1 = {this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, GenericPartiallyClosedReadOnlyDictionaryProperty2 = {this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}.");
 
             return result;
         }

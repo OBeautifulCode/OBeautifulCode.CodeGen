@@ -2,4 +2,4 @@
         public new [model-type-name-in-code-here] DeepClone() => ([model-type-name-in-code-here])this.DeepCloneInternal();[deep-clone-with-here]
 
         /// <inheritdoc />
-        protected override [model-root-ancestor-type-name-here] DeepCloneInternal() => ((IDeclareDeepCloneMethod<[model-type-name-in-code-here]>)this).DeepClone();[deep-clone-generic-here]
+        protected override [model-root-ancestor-type-name-in-code-here] DeepCloneInternal() => ((IDeclareDeepCloneMethod<[model-type-name-in-code-here]>)this).DeepClone();[deep-clone-generic-here]

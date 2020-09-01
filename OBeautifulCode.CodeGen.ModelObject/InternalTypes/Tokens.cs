@@ -22,6 +22,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ModelTypeNameInXmlDocToken = "[model-type-name-in-xml-doc-here]";
 
         /// <summary>
+        /// The name of the model type when used in an identifier.
+        /// </summary>
+        public const string ModelTypeNameInIdentifierToken = "[model-type-name-in-identifier-here]";
+
+        /// <summary>
         /// The namespace of the model Type.
         /// </summary>
         public const string ModelTypeNamespaceToken = "[model-type-namespace-here]";
@@ -29,12 +34,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// The name of the root ancestor Type of the model.
         /// </summary>
-        public const string ModelRootAncestorTypeNameToken = "[model-root-ancestor-type-name-here]";
+        public const string ModelRootAncestorTypeNameInCodeToken = "[model-root-ancestor-type-name-in-code-here]";
 
         /// <summary>
         /// The name of an ancestor Type of the model.
         /// </summary>
-        public const string ModelAncestorTypeNameToken = "[model-ancestor-type-name-here]";
+        public const string ModelAncestorTypeNameToken = "[model-ancestor-type-name-in-code-here]";
 
         /// <summary>
         /// The deep clone code.

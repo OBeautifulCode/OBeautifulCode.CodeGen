@@ -109,7 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var equalsItems = new List<string>();
 
-            foreach (var typeCompilableString in modelType.DerivativePathFromRootToSelfCompilableStrings)
+            foreach (var typeCompilableString in modelType.DerivativePathTypesNamesInCodeFromRootToSelf)
             {
                 var equalsItem = equalsTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)

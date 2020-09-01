@@ -1,111 +1,78 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ModelPrivateSetGeneric{TFirst, TSecond}.cs" company="OBeautifulCode">
+// <copyright file="ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using OBeautifulCode.Assertion.Recipes;
+
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
-    public partial class ModelPrivateSetGeneric<TFirst, TSecond> :
-        IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPrivateSetGeneric<TFirst, TSecond>>
-        where TSecond : struct
+    public partial class ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst> :
+        ModelPublicSetGenericParent<TFirst, Guid>, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>>
     {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ModelPrivateSetGeneric(
-            string stringProperty,
-            int intProperty,
-            CustomEnum enumProperty,
-            CustomClass customClassProperty,
-            TFirst genericArgumentProperty,
-            TFirst[] genericArrayProperty,
-            TSecond? genericNullableProperty,
-            CustomGenericClass<TSecond> genericCustomGenericClassProperty,
-            IReadOnlyCollection<TFirst> genericReadOnlyCollectionProperty,
-            IReadOnlyList<TFirst> genericReadOnlyListProperty,
-            IReadOnlyDictionary<TFirst, TSecond> genericReadOnlyDictionaryProperty1,
-            IReadOnlyDictionary<TSecond, TFirst> genericReadOnlyDictionaryProperty2,
-            IReadOnlyDictionary<string, TSecond> genericPartiallyClosedReadOnlyDictionaryProperty1,
-            IReadOnlyDictionary<TFirst, string> genericPartiallyClosedReadOnlyDictionaryProperty2)
-        {
-            this.StringProperty = stringProperty;
-            this.IntProperty = intProperty;
-            this.EnumProperty = enumProperty;
-            this.CustomClassProperty = customClassProperty;
-            this.GenericArgumentProperty = genericArgumentProperty;
-            this.GenericArrayProperty = genericArrayProperty;
-            this.GenericNullableProperty = genericNullableProperty;
-            this.GenericCustomGenericClassProperty = genericCustomGenericClassProperty;
-            this.GenericReadOnlyCollectionProperty = genericReadOnlyCollectionProperty;
-            this.GenericReadOnlyListProperty = genericReadOnlyListProperty;
-            this.GenericReadOnlyDictionaryProperty1 = genericReadOnlyDictionaryProperty1;
-            this.GenericReadOnlyDictionaryProperty2 = genericReadOnlyDictionaryProperty2;
-            this.GenericPartiallyClosedReadOnlyDictionaryProperty1 = genericPartiallyClosedReadOnlyDictionaryProperty1;
-            this.GenericPartiallyClosedReadOnlyDictionaryProperty2 = genericPartiallyClosedReadOnlyDictionaryProperty2;
-        }
+        public string ChildStringProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public string StringProperty { get; private set; }
+        public int ChildIntProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public int IntProperty { get; private set; }
+        public CustomEnum ChildEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public CustomEnum EnumProperty { get; private set; }
+        public CustomClass ChildCustomClassProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public CustomClass CustomClassProperty { get; private set; }
+        public TFirst ChildGenericArgumentProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public TFirst GenericArgumentProperty { get; private set; }
+        public TFirst[] ChildGenericArrayProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public TFirst[] GenericArrayProperty { get; private set; }
+        public Guid? ChildGenericNullableProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public TSecond? GenericNullableProperty { get; private set; }
+        public CustomGenericClass<TFirst> ChildGenericCustomGenericClassProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public CustomGenericClass<TSecond> GenericCustomGenericClassProperty { get; private set; }
+        public IReadOnlyCollection<TFirst> ChildGenericReadOnlyCollectionProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyCollection<TFirst> GenericReadOnlyCollectionProperty { get; private set; }
+        public IReadOnlyList<TFirst> ChildGenericReadOnlyListProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyList<TFirst> GenericReadOnlyListProperty { get; private set; }
+        public IReadOnlyDictionary<TFirst, Guid> ChildGenericReadOnlyDictionaryProperty1 { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyDictionary<TFirst, TSecond> GenericReadOnlyDictionaryProperty1 { get; private set; }
+        public IReadOnlyDictionary<Guid, TFirst> ChildGenericReadOnlyDictionaryProperty2 { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyDictionary<TSecond, TFirst> GenericReadOnlyDictionaryProperty2 { get; private set; }
+        public IReadOnlyDictionary<string, TFirst> ChildGenericPartiallyClosedReadOnlyDictionaryProperty1 { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyDictionary<string, TSecond> GenericPartiallyClosedReadOnlyDictionaryProperty1 { get; private set; }
-
-        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public IReadOnlyDictionary<TFirst, string> GenericPartiallyClosedReadOnlyDictionaryProperty2 { get; private set; }
+        public IReadOnlyDictionary<TFirst, string> ChildGenericPartiallyClosedReadOnlyDictionaryProperty2 { get; set; }
 
         /// <inheritdoc />
         public RelativeSortOrder CompareToForRelativeSortOrder(
-            ModelPrivateSetGeneric<TFirst, TSecond> other)
+            ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst> other)
         {
             if (other == null)
             {
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }
 
-            if (this.IntProperty < other.IntProperty)
+            if (this.ChildIntProperty < other.ChildIntProperty)
             {
                 return RelativeSortOrder.ThisInstancePrecedesTheOtherInstance;
             }
 
-            if (this.IntProperty > other.IntProperty)
+            if (this.ChildIntProperty > other.ChildIntProperty)
             {
                 return RelativeSortOrder.ThisInstanceFollowsTheOtherInstance;
             }

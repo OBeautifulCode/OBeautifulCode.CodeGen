@@ -40,7 +40,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var compareToForRelativeSortOrderSnippet = typeof(ComparisonGeneration).GetCodeTemplate(modelType.HierarchyKind, CodeTemplateKind.ModelSnippet, modelType.CompareToKeyMethodKinds, CodeSnippetKind.CompareToForRelativeSortOrder);
 
                 compareToForRelativeSortOrderSnippets = Environment.NewLine + Environment.NewLine + modelType
-                    .InheritancePathCompilableStrings
+                    .InheritancePathTypeNamesInCode
                     .Reverse()
                     .Select(_ => compareToForRelativeSortOrderSnippet.Replace(Tokens.ModelAncestorTypeNameToken, _))
                     .ToDelimitedString(Environment.NewLine + Environment.NewLine);
@@ -50,7 +50,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CompareToToken, compareToSnippet)
                 .Replace(Tokens.CompareToForRelativeSortOrderToken, compareToForRelativeSortOrderSnippets)
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString);
+                .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString)
+                .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString);
 
             return result;
         }
@@ -87,7 +88,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var compareToItems = new List<string>();
             var compareToForRelativeSortOrderItems = new List<string>();
 
-            foreach (var typeCompilableString in modelType.DerivativePathFromRootToSelfCompilableStrings)
+            foreach (var typeCompilableString in modelType.DerivativePathTypesNamesInCodeFromRootToSelf)
             {
                 var compareToItem = compareToTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)

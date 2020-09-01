@@ -1974,13 +1974,61 @@
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListParent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentNonGenericChild.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentNonGenericChild.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParentNonGenericChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParent{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParent{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParent{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentGenericChild{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentGenericChild{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPrivateSetNonGenericParentGenericChild{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParent.cs" />
+    <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParent.designer.cs">
+      <DependentUpon>ModelPrivateSetNonGenericParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGeneric{TFirst, TSecond}.cs" />
     <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGeneric{TFirst, TSecond}.designer.cs">
       <DependentUpon>ModelPrivateSetGeneric{TFirst, TSecond}.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericChild{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericChild{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParentGenericChild{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParentNonGenericChild.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParentNonGenericChild.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParentNonGenericChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParent{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGenericParent{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParent{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGeneric{TFirst, TSecond}.cs" />
     <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetGeneric{TFirst, TSecond}.designer.cs">
       <DependentUpon>ModelPublicSetGeneric{TFirst, TSecond}.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetNonGenericParent.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetNonGenericParent.designer.cs">
+      <DependentUpon>ModelPublicSetNonGenericParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChild{TFirst, TSecond}.cs" />
+    <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChild{TFirst, TSecond}.designer.cs">
+      <DependentUpon>ModelPublicSetNonGenericParentGenericChild{TFirst, TSecond}.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.cs" />
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.designer.cs">

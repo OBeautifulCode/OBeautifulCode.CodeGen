@@ -47,7 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                .Replace(Tokens.ModelRootAncestorTypeNameToken, modelType.InheritancePathCompilableStrings.LastOrDefault())
+                .Replace(Tokens.ModelRootAncestorTypeNameInCodeToken, modelType.InheritancePathTypeNamesInCode.LastOrDefault())
                 .Replace(Tokens.DeepCloneToken, deepCloneCode)
                 .Replace(Tokens.DeepCloneWithToken, deepCloneWithCode)
                 .Replace(Tokens.DeepCloneGenericToken, deepCloneGenericCode);
