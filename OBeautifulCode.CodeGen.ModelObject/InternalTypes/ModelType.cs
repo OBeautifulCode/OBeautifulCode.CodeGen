@@ -126,6 +126,8 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresEqualsMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
             this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
 
+            var test = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareCompareToForRelativeSortOrderMethod<>));
+
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
 
             this.NamespacesOfTypesInPropertiesOfConcern = GetNamespacesOfTypesInPropertiesOfConcern(propertiesOfConcern);
@@ -893,10 +895,13 @@ namespace OBeautifulCode.CodeGen
             Type type,
             Type methodInterfaceType)
         {
-            var result = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().Any(_ =>
-                (!_.ContainsGenericParameters) &&
-                _.IsAssignableTo(type) &&
-                _.IsAssignableTo(methodInterfaceType.IsGenericTypeDefinition ? methodInterfaceType.MakeGenericType(_) : methodInterfaceType));
+            // per ThrowIfNotSupported, declared methods can only go in concrete types
+            var typesToCheck = type.IsAbstract ? GetConcreteDerivativeTypes(type) : new[] { type };
+
+            var result = typesToCheck.Any(_ => _.GetInterfaces().Contains(
+                methodInterfaceType.IsGenericTypeDefinition
+                ? methodInterfaceType.MakeGenericType(_)
+                : methodInterfaceType));
 
             return result;
         }
