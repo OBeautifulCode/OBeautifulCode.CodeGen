@@ -51,7 +51,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                         .Replace(Tokens.StructuralTestsToken, testMethodsCode)
-                        .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
+                        .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                        .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString);
 
             return result;
         }

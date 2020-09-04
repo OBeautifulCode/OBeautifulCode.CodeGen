@@ -79,7 +79,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) || kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization))
             {
-                var tests = modelType.GenerateCodeForTests(kind);
+                var tests = modelType.ExampleClosedModelType.ToModelType().GenerateCodeForTests(kind);
 
                 generatedCode.Add(tests);
             }

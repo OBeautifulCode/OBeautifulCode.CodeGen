@@ -84,7 +84,10 @@ namespace OBeautifulCode.CodeGen
             ThrowIfNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
 
             this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
+            this.InheritancePathTypeNamesInIdentifier = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringWithoutGenericComponent()).ToList();
+
             this.DerivativePathTypesNamesInCodeFromRootToSelf = this.InheritancePathTypeNamesInCode.Reverse().Concat(new[] { type.ToStringReadable() }).ToList();
+            this.DerivativePathTypesNamesInIdentifierFromRootToSelf = this.InheritancePathTypeNamesInIdentifier.Reverse().Concat(new[] { type.ToStringWithoutGenericComponent() }).ToList();
             this.GenericParameters = type.IsGenericType ? type.GetGenericArguments().ToList() : new List<Type>();
 
             this.TypeNameInCodeString = type.ToStringReadable();
@@ -136,9 +139,14 @@ namespace OBeautifulCode.CodeGen
         }
 
         /// <summary>
-        /// Gets the inheritance path as compilable string representations of the type.
+        /// Gets the inheritance path type names as they should be used in generated code.
         /// </summary>
         public IReadOnlyList<string> InheritancePathTypeNamesInCode { get; }
+
+        /// <summary>
+        /// Gets the inheritance path types names as they should be used in identifiers.
+        /// </summary>
+        public IReadOnlyList<string> InheritancePathTypeNamesInIdentifier { get; }
 
         /// <summary>
         /// Gets the name of the type as it should be used in generated code.
@@ -174,7 +182,13 @@ namespace OBeautifulCode.CodeGen
         /// Gets the compilable string representations of this model's derivative path, starting
         /// at the root type and ending in the model type itself.
         /// </summary>
-        public IReadOnlyCollection<string> DerivativePathTypesNamesInCodeFromRootToSelf { get; }
+        public IReadOnlyList<string> DerivativePathTypesNamesInCodeFromRootToSelf { get; }
+
+        /// <summary>
+        /// Gets the identifier-compatible string representations of this model's derivative path, starting
+        /// at the root type and ending in the model type itself.
+        /// </summary>
+        public IReadOnlyList<string> DerivativePathTypesNamesInIdentifierFromRootToSelf { get; }
 
         /// <summary>
         /// Gets the compilable string representations of this model type's ancestors' concrete derivative types

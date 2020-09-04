@@ -1,6 +1,6 @@
 ﻿            [Fact]
 [test-method-code-analysis-suppressions]
-            public static void [model-type-name-in-code-here]___Should_declare_ToString_method___When_reflecting()
+            public static void [model-type-name-in-identifier-here]___Should_declare_ToString_method___When_reflecting()
             {
                 // Arrange
                 var expected = typeof([model-type-name-in-code-here]);

@@ -88,15 +88,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var compareToItems = new List<string>();
             var compareToForRelativeSortOrderItems = new List<string>();
 
-            foreach (var typeCompilableString in modelType.DerivativePathTypesNamesInCodeFromRootToSelf)
+            for (int x = 0; x < modelType.DerivativePathTypesNamesInCodeFromRootToSelf.Count; x++)
             {
+                var derivativeTypeNameInCode = modelType.DerivativePathTypesNamesInCodeFromRootToSelf[x];
+                var derivativeTypeNameInIdentifier = modelType.DerivativePathTypesNamesInIdentifierFromRootToSelf[x];
+
                 var compareToItem = compareToTestTemplate
-                    .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)
-                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({typeCompilableString})"));
+                    .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
+                    .Replace(Tokens.ModelTypeNameInIdentifierToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 var compareToForRelativeSortOrderItem = compareToForRelativeSortOrderTestTemplate
-                    .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)
-                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({typeCompilableString})"));
+                    .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
+                    .Replace(Tokens.ModelTypeNameInIdentifierToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 compareToItems.Add(compareToItem);
                 compareToForRelativeSortOrderItems.Add(compareToForRelativeSortOrderItem);
@@ -106,6 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString)
                 .Replace(Tokens.CompareToTestsToken, compareToItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine)
                 .Replace(Tokens.CompareToForRelativeSortOrderTestsToken, compareToForRelativeSortOrderItems.ToDelimitedString(Environment.NewLine + Environment.NewLine));
 

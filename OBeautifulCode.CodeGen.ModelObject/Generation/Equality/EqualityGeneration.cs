@@ -109,11 +109,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var equalsItems = new List<string>();
 
-            foreach (var typeCompilableString in modelType.DerivativePathTypesNamesInCodeFromRootToSelf)
+            for (int x = 0; x < modelType.DerivativePathTypesNamesInCodeFromRootToSelf.Count; x++)
             {
+                var derivativeTypeNameInCode = modelType.DerivativePathTypesNamesInCodeFromRootToSelf[x];
+                var derivativeTypeNameInIdentifier = modelType.DerivativePathTypesNamesInIdentifierFromRootToSelf[x];
+
                 var equalsItem = equalsTestTemplate
-                    .Replace(Tokens.ModelTypeNameInCodeToken, typeCompilableString)
-                    .Replace(Tokens.CastToken, typeCompilableString == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({typeCompilableString})"));
+                    .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
+                    .Replace(Tokens.ModelTypeNameInIdentifierToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 equalsItems.Add(equalsItem);
             }
@@ -122,6 +126,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString)
                 .Replace(Tokens.EqualsTestsToken, equalsItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine);
 
             return result;
