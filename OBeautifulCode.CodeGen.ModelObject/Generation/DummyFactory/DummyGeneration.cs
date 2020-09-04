@@ -6,21 +6,19 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
+    using System;
     using System.Linq;
 
+    using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Type.Recipes;
+
+    using static System.FormattableString;
 
     /// <summary>
     /// Generates code that creates model dummies.
     /// </summary>
     internal static class DummyGeneration
     {
-        private const string AddDummyCreatorCodeTemplate = @"            AutoFixtureBackedDummyFactory.AddDummyCreator(
-                () => [new-dummy-here]);";
-
-        private const string UseRandomConcreteSubclassCodeTemplate = @"
-            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<[model-type-name-in-code-here]>();";
-
         /// <summary>
         /// Generates code for a dummy factory.
         /// </summary>
@@ -31,18 +29,28 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateCodeForDummyFactory(
             this ModelType modelType)
         {
+            var codeTemplate = typeof(DummyGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.Model, KeyMethodKinds.Both);
+
             string result;
+
             if (modelType.IsAbstractBase)
             {
-                result = UseRandomConcreteSubclassCodeTemplate.Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
+                var concreteDerivativeTypeNamesCode = modelType
+                    .ExampleConcreteDerivativeTypeNamesInCodeStrings
+                    .Select(_ => Invariant($"typeof({_})"))
+                    .ToDelimitedString(Invariant($",{Environment.NewLine}                        "));
+
+                result = codeTemplate
+                    .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                    .Replace(Tokens.ConcreteDerivativeTypeNamesInCodeToken, concreteDerivativeTypeNamesCode);
             }
             else
             {
-                var propertyNameToCodeMap = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringCompilable().GenerateDummyConstructionCodeForType())).ToList();
+                var propertyNameToCodeMap = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringReadable().GenerateDummyConstructionCodeForType())).ToList();
 
                 var newDummyToken = modelType.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 
-                result = AddDummyCreatorCodeTemplate.Replace(Tokens.NewDummyToken, newDummyToken);
+                result = codeTemplate.Replace(Tokens.NewDummyToken, newDummyToken);
             }
 
             return result;

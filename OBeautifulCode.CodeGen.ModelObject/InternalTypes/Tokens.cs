@@ -42,6 +42,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ModelAncestorTypeNameToken = "[model-ancestor-type-name-in-code-here]";
 
         /// <summary>
+        /// The concrete derivative types names used in code.
+        /// </summary>
+        public const string ConcreteDerivativeTypeNamesInCodeToken = "[concrete-derivative-type-names-in-code-here]";
+
+        /// <summary>
         /// The deep clone code.
         /// </summary>
         public const string DeepCloneToken = "[deep-clone-here]";

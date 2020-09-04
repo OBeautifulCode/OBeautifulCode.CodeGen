@@ -146,7 +146,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var codeTemplate = typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, codeSnippetKind);
 
-            var objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ConcreteDerivativeTypesCompilableStrings.Count() >= 2)
+            var objectsThatDeriveFromScenarioTypeButAreNotOfSameTypeAsReferenceObject = (modelType.ExampleConcreteDerivativeTypeNamesInCodeStrings.Count() >= 2)
                 ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
                 : string.Empty;
 
@@ -155,8 +155,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var objectsNotEqualToReferenceObject = modelType.GetObjectsNotEqualToReferenceObject();
 
-            var dummyAncestorConcreteDerivatives = modelType.AncestorConcreteDerivativesCompilableStrings.Any()
-                ? Environment.NewLine + "                        " + modelType.AncestorConcreteDerivativesCompilableStrings.Select(_ => _.GenerateDummyConstructionCodeForType() + ",").ToDelimitedString(Environment.NewLine + "                        ")
+            var dummyAncestorConcreteDerivatives = modelType.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings.Any()
+                ? Environment.NewLine + "                        " + modelType.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings.Select(_ => _.GenerateDummyConstructionCodeForType() + ",").ToDelimitedString(Environment.NewLine + "                        ")
                 : string.Empty;
 
             var result = codeTemplate

@@ -226,6 +226,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\DummyFactory\DummyGeneration.Model.Concrete.Both.txt" />
+    <EmbeddedResource Include="Generation\DummyFactory\DummyGeneration.Model.Abstract.Both.txt" />
     <EmbeddedResource Include="Generation\Cloning\CloningGeneration.ModelSnippet.DeepCloneGeneric.Concrete.Both.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

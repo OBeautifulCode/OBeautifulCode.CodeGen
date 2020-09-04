@@ -1,0 +1,16 @@
+﻿            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        [concrete-derivative-type-names-in-code-here]
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = ([model-type-name-in-code-here])AD.ummy(randomType);
+
+                    return result;
+                });

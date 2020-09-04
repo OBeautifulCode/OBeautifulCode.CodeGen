@@ -22,28 +22,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
         None = 0,
 
         /// <summary>
-        /// The model dummy factory snippet.
-        /// </summary>
-        ModelDummyFactorySnippet = 1,
-
-        /// <summary>
         /// The model implementation partial class.
         /// </summary>
-        ModelImplementationPartialClass = 2,
+        ModelImplementationPartialClass = 1,
 
         /// <summary>
         /// The model implementation tests partial class with serialization.
         /// </summary>
-        ModelImplementationTestsPartialClassWithSerialization = 4,
+        ModelImplementationTestsPartialClassWithSerialization = 2,
 
         /// <summary>
         /// The model implementation tests partial class without serialization.
         /// </summary>
-        ModelImplementationTestsPartialClassWithoutSerialization = 8,
+        ModelImplementationTestsPartialClassWithoutSerialization = 4,
 
         /// <summary>
         /// All possible code.
         /// </summary>
-        AllPossibleCode = ModelDummyFactorySnippet | ModelImplementationPartialClass | ModelImplementationTestsPartialClassWithSerialization,
+        AllPossibleCode = ModelImplementationPartialClass | ModelImplementationTestsPartialClassWithSerialization,
     }
 }

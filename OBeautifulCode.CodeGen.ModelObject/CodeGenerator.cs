@@ -66,7 +66,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { type }.AsArg().Must().NotBeNull();
 
-            var modelType = new ModelType(type);
+            var modelType = type.ToModelType();
 
             var generatedCode = new List<string>();
 
@@ -75,13 +75,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var modelMethods = modelType.GenerateCodeForModelImplementation();
 
                 generatedCode.Add(modelMethods);
-            }
-
-            if (kind.HasFlag(GenerateFor.ModelDummyFactorySnippet))
-            {
-                var dummyFactorySnippet = modelType.GenerateCodeForDummyFactory();
-
-                generatedCode.Add(dummyFactorySnippet);
             }
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) || kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization))
@@ -118,7 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
             new { dummyFactoryTypeName }.Must().NotBeNullNorWhiteSpace();
 
-            var modelTypes = types.Select(_ => new ModelType(_)).ToList();
+            var modelTypes = types.Select(_ => _.ToModelType().ExampleClosedModelType.ToModelType()).ToList();
 
             var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(modelTypes, dummyFactoryTypeNamespace, dummyFactoryTypeName, recipeConditionalCompilationSymbol);
 
@@ -157,9 +150,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { type }.AsArg().Must().NotBeNull();
 
-            var modelType = new ModelType(type);
+            var result = type.ToModelType().GenerateEqualityTestFieldsInUserCode();
 
-            var result = modelType.GenerateEqualityTestFieldsInUserCode();
+            return result;
+        }
+
+        private static ModelType ToModelType(
+            this Type type)
+        {
+            var result = new ModelType(type);
 
             return result;
         }

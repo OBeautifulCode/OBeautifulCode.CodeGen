@@ -1,0 +1,2 @@
+﻿            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => [new-dummy-here]);

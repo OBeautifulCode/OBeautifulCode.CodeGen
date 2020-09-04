@@ -28,6 +28,8 @@ namespace OBeautifulCode.CodeGen
     /// </summary>
     internal class ModelType
     {
+        private static readonly IReadOnlyCollection<Type> LoadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
+
         private readonly Type underlyingType;
 
         /// <summary>
@@ -38,6 +40,21 @@ namespace OBeautifulCode.CodeGen
             Type type)
         {
             new { type }.AsArg().Must().NotBeNull();
+
+            // note: We are explicitly NOT exposing the passed-in type to avoid some issues:
+            // Before the first pass of code-gen, only user-defined model code will exist.
+            // On the first pass, we will augment the model code with generated code in
+            // a partial class designer file that will add interfaces to the model.
+            // Thus, CodeGenerator cannot rely on those interfaces to be in-place on the
+            // model and should not drive any logic based on their presence.  It's the same
+            // concern when CodeGenerator creates Test code.  We don't know whether the tests
+            // are generated alongside the model code or in a follow-up pass so we shouldn't
+            // rely on the added interfaces to be in-place.  Along the same lines, we want
+            // a second, third, etc. pass (where generated model and test code already exists
+            // and is compiling) to produce the same generated code as in a first pass for
+            // consistency.  To that end, we contain the usage of the specified type to this
+            // class, where we ensure that there are no dependencies on the added interfaces.
+            this.underlyingType = type;
 
             ThrowIfNotSupported(type);
 
@@ -66,25 +83,8 @@ namespace OBeautifulCode.CodeGen
 
             ThrowIfNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
 
-            // note: We are explicitly NOT exposing the passed-in type to avoid some issues:
-            // Before the first pass of code-gen, only user-defined model code will exist.
-            // On the first pass, we will augment the model code with generated code in
-            // a partial class designer file that will add interfaces to the model.
-            // Thus, CodeGenerator cannot rely on those interfaces to be in-place on the
-            // model and should not drive any logic based on their presence.  It's the same
-            // concern when CodeGenerator creates Test code.  We don't know whether the tests
-            // are generated alongside the model code or in a follow-up pass so we shouldn't
-            // rely on the added interfaces to be in-place.  Along the same lines, we want
-            // a second, third, etc. pass (where generated model and test code already exists
-            // and is compiling) to produce the same generated code as in a first pass for
-            // consistency.  To that end, we contain the usage of the specified type to this
-            // class, where we ensure that there are no dependencies on the added interfaces.
-            this.underlyingType = type;
             this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
             this.DerivativePathTypesNamesInCodeFromRootToSelf = this.InheritancePathTypeNamesInCode.Reverse().Concat(new[] { type.ToStringReadable() }).ToList();
-            this.ConcreteDerivativeTypesCompilableStrings = GetConcreteDerivativeTypes(type).Select(_ => _.ToStringCompilable()).ToList();
-            this.AncestorConcreteDerivativesCompilableStrings = GetAncestorConcreteDerivatives(type).Select(_ => _.ToStringCompilable()).ToList();
-
             this.GenericParameters = type.IsGenericType ? type.GetGenericArguments().ToList() : new List<Type>();
 
             this.TypeNameInCodeString = type.ToStringReadable();
@@ -126,7 +126,9 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresEqualsMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
             this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
 
-            var test = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareCompareToForRelativeSortOrderMethod<>));
+            this.ExampleClosedModelType = GetExampleClosedModelType(type);
+            this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(this.ExampleClosedModelType);
+            this.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings = GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(type);
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
 
@@ -166,7 +168,7 @@ namespace OBeautifulCode.CodeGen
         /// <summary>
         /// Gets the compilable string representations of this model type's concrete derivative types.
         /// </summary>
-        public IReadOnlyCollection<string> ConcreteDerivativeTypesCompilableStrings { get; }
+        public IReadOnlyCollection<string> ExampleConcreteDerivativeTypeNamesInCodeStrings { get; }
 
         /// <summary>
         /// Gets the compilable string representations of this model's derivative path, starting
@@ -178,7 +180,7 @@ namespace OBeautifulCode.CodeGen
         /// Gets the compilable string representations of this model type's ancestors' concrete derivative types
         /// (excluding this model type).
         /// </summary>
-        public IReadOnlyCollection<string> AncestorConcreteDerivativesCompilableStrings { get; }
+        public IReadOnlyCollection<string> ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings { get; }
 
         /// <summary>
         /// Gets the constructor or null if there is no constructor.
@@ -339,6 +341,11 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyList<Type> GenericParameters { get; }
 
         /// <summary>
+        /// Gets a closed version of the model type.
+        /// </summary>
+        public Type ExampleClosedModelType { get; }
+
+        /// <summary>
         /// Determines if the specified property is declared by this model type.
         /// </summary>
         /// <param name="propertyOfConcern">The property.</param>
@@ -380,9 +387,7 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a value type or interface type."));
             }
 
-            var loadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
-
-            var directDerivativeTypes = loadedTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
+            var directDerivativeTypes = LoadedTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
 
             if (directDerivativeTypes.Any() && (!type.IsAbstract))
             {
@@ -895,6 +900,14 @@ namespace OBeautifulCode.CodeGen
             Type type,
             Type methodInterfaceType)
         {
+            // We want to use the generic type definition here because we don't so much care
+            // to identify the specific closed derivatives; we want to know to know if any
+            // derivative implements methodInterfaceType.
+            if (type.IsClosedGenericType())
+            {
+                type = type.GetGenericTypeDefinition();
+            }
+
             // per ThrowIfNotSupported, declared methods can only go in concrete types
             var typesToCheck = type.IsAbstract ? GetConcreteDerivativeTypes(type) : new[] { type };
 
@@ -906,16 +919,49 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        private static IReadOnlyCollection<string> GetExampleConcreteDerivativeTypeNamesInCodeStrings(
+            Type type)
+        {
+            Type typeToUse = type;
+
+            if (type.IsClosedGenericType())
+            {
+                typeToUse = type.GetGenericTypeDefinition();
+            }
+
+            var result = GetConcreteDerivativeTypes(typeToUse)
+                .Select(GetExampleClosedModelType)
+                .Where(type.IsAssignableFrom)
+                .Select(_ => _.ToStringReadable())
+                .ToList();
+
+            return result;
+        }
+
+        private static IReadOnlyCollection<string> GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(
+            Type type)
+        {
+            if (type.IsClosedGenericType())
+            {
+                type = type.GetGenericTypeDefinition();
+            }
+
+            var result = GetAncestorConcreteDerivatives(type)
+                .Select(GetExampleClosedModelType)
+                .Select(_ => _.ToStringReadable())
+                .ToList();
+
+            return result;
+        }
+
         private static IReadOnlyCollection<Type> GetConcreteDerivativeTypes(
             Type type)
         {
-            var result = AssemblyLoader
-                .GetLoadedAssemblies()
-                .GetTypesFromAssemblies()
-                .Where(_ => _.IsClass)
-                .Where(_ => !_.IsAbstract)
-                .Where(_ => GetInheritancePathConvertingGenericsToGenericTypeDefinitions(_).Contains(type))
-                .ToList();
+            var result = LoadedTypes
+                    .Where(_ => _.IsClass)
+                    .Where(_ => !_.IsAbstract)
+                    .Where(_ => GetInheritancePathConvertingGenericsToGenericTypeDefinitions(_).Contains(type))
+                    .ToList();
 
             return result;
         }
@@ -925,16 +971,13 @@ namespace OBeautifulCode.CodeGen
         {
             var oldestAncestorType =
                 GetInheritancePathConvertingGenericsToGenericTypeDefinitions(type)
-                .Reverse()
-                .Skip(1) // typeof(object)
-                .FirstOrDefault();
+                    .Reverse()
+                    .Skip(1) // typeof(object)
+                    .FirstOrDefault();
 
-            var result = new List<Type>();
-
-            if (oldestAncestorType != null)
-            {
-                result = GetConcreteDerivativeTypes(oldestAncestorType).Where(_ => _ != type).ToList();
-            }
+            var result = oldestAncestorType == null
+                ? (IReadOnlyCollection<Type>)new Type[0]
+                : GetConcreteDerivativeTypes(oldestAncestorType).Where(_ => _ != type).ToList();
 
             return result;
         }
@@ -1003,6 +1046,96 @@ namespace OBeautifulCode.CodeGen
             {
                 result.AddRange(GetNamespacesOfTypesInPropertiesOfConcern(type.GetElementType()));
             }
+
+            return result;
+        }
+
+        private static Type GetExampleClosedModelType(
+            Type type)
+        {
+            if (!type.ContainsGenericParameters)
+            {
+                return type;
+            }
+
+            var genericArguments = type.GetGenericArguments();
+
+            // see: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
+            // class Test1<T> where T : struct
+            //    GenericParameterAttributes.NotNullableValueTypeConstraint, GenericParameterAttributes.DefaultConstructorConstraint | System.ValueType
+            //    works with T as one of { Guid }
+            // class Test2<T> where T : class
+            //    GenericParameterAttributes.ReferenceTypeConstraint | <none>
+            //    works with T as one of { System.Version, string }
+            // class Test3<T> where T : notnull
+            //    GenericParameterAttributes.None | <none>
+            //    works with T as one of { System.Version, Guid, string }
+            // class Test4<T> where T : unmanaged
+            //    GenericParameterAttributes.NotNullableValueTypeConstraint, GenericParameterAttributes.DefaultConstructorConstraint | System.ValueType
+            //    works with T as one of { Guid }
+            // class Test5<T> where T : new()
+            //    GenericParameterAttributes.DefaultConstructorConstraint | <none>
+            //    works with T as one of { System.Version, Guid }
+            // class Test6<T> where T : SomeBaseClass
+            //    GenericParameterAttributes.None | SomeBaseClass
+            //    works with T as one of { types assignable to SomeBaseClass }
+            // valid combos:  class, new()
+            // valid combos: notnull, new() - seems to allow Exception which is nullable so not sure
+            var resolvedGenericArguments = new List<Type>();
+
+            foreach (var genericArgument in genericArguments)
+            {
+                Type thisGenericArgumentType;
+
+                var attributes = genericArgument.GenericParameterAttributes;
+
+                var specialConstraints = attributes & GenericParameterAttributes.SpecialConstraintMask;
+
+                if (specialConstraints == GenericParameterAttributes.None)
+                {
+                    thisGenericArgumentType = typeof(Version);
+                }
+                else
+                {
+                    // these are not really mutually exclusive (per documentation above), but we need to pick a single type.
+                    if ((specialConstraints & GenericParameterAttributes.NotNullableValueTypeConstraint) != 0)
+                    {
+                        thisGenericArgumentType = typeof(Guid);
+                    }
+                    else if ((specialConstraints & GenericParameterAttributes.ReferenceTypeConstraint) != 0)
+                    {
+                        thisGenericArgumentType = typeof(Version);
+                    }
+                    else if ((specialConstraints & GenericParameterAttributes.DefaultConstructorConstraint) != 0)
+                    {
+                        thisGenericArgumentType = typeof(Version);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Should not get here.");
+                    }
+                }
+
+                var constraints = genericArgument.GetGenericParameterConstraints();
+
+                foreach (var constraint in constraints)
+                {
+                    if (constraint.ContainsGenericParameters)
+                    {
+                        throw new NotSupportedException(Invariant($"Cannot generate code for generic type '{type.ToStringReadable()}' because generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is an open generic type and this kind of constraint is not supported."));
+                    }
+
+                    if (!constraint.IsAssignableFrom(thisGenericArgumentType))
+                    {
+                        // need to find another type that will work
+                        throw new NotSupportedException("test");
+                    }
+                }
+
+                resolvedGenericArguments.Add(thisGenericArgumentType);
+            }
+
+            var result = type.MakeGenericType(resolvedGenericArguments.ToArray());
 
             return result;
         }

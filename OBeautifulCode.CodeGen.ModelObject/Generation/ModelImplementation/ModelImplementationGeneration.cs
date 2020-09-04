@@ -402,6 +402,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "System.Diagnostics.CodeAnalysis",
                 "FakeItEasy",
                 "OBeautifulCode.AutoFakeItEasy",
+                "OBeautifulCode.Math.Recipes",
             };
 
             var staticStatements = new string[0];

@@ -74,10 +74,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var types = CodeGeneratorTestExtensions.GetModelTypes();
 
-            var snippets = types.Select(_ => _.GenerateForModel(GenerateFor.ModelDummyFactorySnippet)).ToDelimitedString(Environment.NewLine + Environment.NewLine);
+            var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenRecipesProject");
 
             // Act, Assert
-            WriteDummyFactory(snippets);
+            WriteDummyFactory(code);
         }
 
         [Fact(Skip = "for local testing only")]
@@ -1019,55 +1019,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         private static void WriteDummyFactory(
-            string snippets)
+            string code)
         {
             if (WriteFiles)
             {
-                var snippetsToken = "<<SNIPPETS_HERE>>";
-
-                var statements = new List<string>
-                {
-                    "CodeGenDummyFactory.designer".GetFileHeader(),
-                    Invariant($"namespace {typeof(CodeGeneratorTest).Namespace}"),
-                    "{",
-                    "    using System;",
-                    "    using System.Collections.Concurrent;",
-                    "    using System.Collections.Generic;",
-                    "    using System.Collections.ObjectModel;",
-                    string.Empty,
-                    "    using FakeItEasy;",
-                    string.Empty,
-                    "    using OBeautifulCode.AutoFakeItEasy;",
-                    string.Empty,
-                    "    public abstract class DefaultCodeGenDummyFactory : IDummyFactory",
-                    "    {",
-                    "        protected DefaultCodeGenDummyFactory()",
-                    "        {",
-                    snippetsToken,
-                    "        }",
-                    string.Empty,
-                    "        /// <inheritdoc />",
-                    "        public Priority Priority => new FakeItEasy.Priority(1);",
-                    string.Empty,
-                    "        /// <inheritdoc />",
-                    "        public bool CanCreate(Type type)",
-                    "        {",
-                    "            return false;",
-                    "        }",
-                    string.Empty,
-                    "        /// <inheritdoc />",
-                    "        public object Create(Type type)",
-                    "        {",
-                    "            return null;",
-                    "        }",
-                    "    }",
-                    "}",
-                };
-
-                var code = statements
-                        .ToNewLineDelimited()
-                        .Replace(snippetsToken, snippets);
-
                 File.WriteAllText(Settings.DummyFactoryFilePath, code, Settings.Encoding);
             }
         }
