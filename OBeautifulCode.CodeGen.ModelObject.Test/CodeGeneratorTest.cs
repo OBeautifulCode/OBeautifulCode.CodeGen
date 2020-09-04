@@ -43,7 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             ExecuteForSpecifiedModels(ModelOrTest.Test, ResetFile);
 
-            WriteDummyFactory(string.Empty);
+            WriteDummyFactory(new Type[0]);
 
             // Act, Assert
             ExecuteForScriptedModels(ModelOrTest.Model, GenerateModel);
@@ -57,7 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             ExecuteForScriptedModels(ModelOrTest.Test, ResetFile);
 
-            WriteDummyFactory(string.Empty);
+            WriteDummyFactory(new Type[0]);
 
             // Act, Assert
             ExecuteForSpecifiedModels(ModelOrTest.Model, RunCodeGen);
@@ -74,10 +74,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var types = CodeGeneratorTestExtensions.GetModelTypes();
 
-            var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenRecipesProject");
-
             // Act, Assert
-            WriteDummyFactory(code);
+            WriteDummyFactory(types);
         }
 
         [Fact(Skip = "for local testing only")]
@@ -1019,10 +1017,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         private static void WriteDummyFactory(
-            string code)
+            IReadOnlyCollection<Type> types)
         {
             if (WriteFiles)
             {
+                var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenRecipesProject");
+
                 File.WriteAllText(Settings.DummyFactoryFilePath, code, Settings.Encoding);
             }
         }
