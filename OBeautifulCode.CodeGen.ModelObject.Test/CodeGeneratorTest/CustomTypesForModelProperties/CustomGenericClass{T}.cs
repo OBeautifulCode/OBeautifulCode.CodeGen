@@ -148,6 +148,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     item3Clone = (T)(object)stringValue.Clone().ToString();
                 }
+                else if (this.Item3 is System.Version valueAsVersion)
+                {
+                    item3Clone = (T)valueAsVersion.Clone();
+                }
                 else
                 {
                     throw new NotSupportedException("I do not know how to deep clone object of type: " + type);
