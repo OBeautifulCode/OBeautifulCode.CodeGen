@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var codeTemplate = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.Model, modelType.ToStringKeyMethodKinds);
 
-            var toStringStatement = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false);
+            var toStringStatement = modelType.GenerateToStringConstructionCode(useSystemUnderTest: false, forModelObject: true);
 
             var result = codeTemplate
                 .Replace(Tokens.ToStringStatementToken, toStringStatement);
@@ -57,7 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true);
+            var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true, forModelObject: false);
 
             var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.ToStringKeyMethodKinds, CodeSnippetKind.StringRepresentationTestFields)
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
@@ -88,7 +88,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private static string GenerateToStringConstructionCode(
             this ModelType modelType,
-            bool useSystemUnderTest)
+            bool useSystemUnderTest,
+            bool forModelObject)
         {
             var propertyToStrings = modelType.PropertiesOfConcern.Select(_ => _.GenerateToStringForProperty(useSystemUnderTest)).ToList();
 
@@ -96,7 +97,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? string.Join(", ", propertyToStrings)
                 : "<no properties>";
 
-            var result = Invariant($"Invariant($\"{modelType.TypeNamespace}.{modelType.TypeNameInCodeString}: {propertyToString}.\")");
+            var typeNameToUse = modelType.GenericParameters.Any() && forModelObject
+                ? Invariant($"{{this.GetType().ToStringReadable()}}")
+                : modelType.TypeNameInCodeString;
+
+            var result = Invariant($"Invariant($\"{modelType.TypeNamespace}.{typeNameToUse}: {propertyToString}.\")");
 
             return result;
         }

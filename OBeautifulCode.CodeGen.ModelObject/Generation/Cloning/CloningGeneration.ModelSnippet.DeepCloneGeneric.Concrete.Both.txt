@@ -18,9 +18,13 @@
                 {
                     result = deepCloneableValue.DeepClone();
                 }
-                else if (value is string stringValue)
+                else if (value is string valueAsString)
                 {
-                    result = ([generic-type-parameter-name-here])(object)stringValue.Clone().ToString();
+                    result = ([generic-type-parameter-name-here])(object)valueAsString.Clone().ToString();
+                }
+                else if (value is System.Version valueAsVersion)
+                {
+                    result = ([generic-type-parameter-name-here])valueAsVersion.Clone();
                 }
                 else
                 {

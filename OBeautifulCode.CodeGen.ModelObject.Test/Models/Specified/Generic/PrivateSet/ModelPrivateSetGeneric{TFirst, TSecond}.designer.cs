@@ -853,9 +853,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     result = deepCloneableValue.DeepClone();
                 }
-                else if (value is string stringValue)
+                else if (value is string valueAsString)
                 {
-                    result = (TFirst)(object)stringValue.Clone().ToString();
+                    result = (TFirst)(object)valueAsString.Clone().ToString();
+                }
+                else if (value is System.Version valueAsVersion)
+                {
+                    result = (TFirst)valueAsVersion.Clone();
                 }
                 else
                 {
@@ -870,7 +874,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetGeneric<TFirst, TSecond>: StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, EnumProperty = {this.EnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {this.CustomClassProperty?.ToString() ?? "<null>"}, GenericArgumentProperty = {this.GenericArgumentProperty?.ToString() ?? "<null>"}, GenericArrayProperty = {this.GenericArrayProperty?.ToString() ?? "<null>"}, GenericNullableProperty = {this.GenericNullableProperty?.ToString() ?? "<null>"}, GenericCustomGenericClassProperty = {this.GenericCustomGenericClassProperty?.ToString() ?? "<null>"}, GenericReadOnlyCollectionProperty = {this.GenericReadOnlyCollectionProperty?.ToString() ?? "<null>"}, GenericReadOnlyListProperty = {this.GenericReadOnlyListProperty?.ToString() ?? "<null>"}, GenericReadOnlyDictionaryProperty1 = {this.GenericReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, GenericReadOnlyDictionaryProperty2 = {this.GenericReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}, GenericPartiallyClosedReadOnlyDictionaryProperty1 = {this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, GenericPartiallyClosedReadOnlyDictionaryProperty2 = {this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.{this.GetType().ToStringReadable()}: StringProperty = {this.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {this.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, EnumProperty = {this.EnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {this.CustomClassProperty?.ToString() ?? "<null>"}, GenericArgumentProperty = {this.GenericArgumentProperty?.ToString() ?? "<null>"}, GenericArrayProperty = {this.GenericArrayProperty?.ToString() ?? "<null>"}, GenericNullableProperty = {this.GenericNullableProperty?.ToString() ?? "<null>"}, GenericCustomGenericClassProperty = {this.GenericCustomGenericClassProperty?.ToString() ?? "<null>"}, GenericReadOnlyCollectionProperty = {this.GenericReadOnlyCollectionProperty?.ToString() ?? "<null>"}, GenericReadOnlyListProperty = {this.GenericReadOnlyListProperty?.ToString() ?? "<null>"}, GenericReadOnlyDictionaryProperty1 = {this.GenericReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, GenericReadOnlyDictionaryProperty2 = {this.GenericReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}, GenericPartiallyClosedReadOnlyDictionaryProperty1 = {this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToString() ?? "<null>"}, GenericPartiallyClosedReadOnlyDictionaryProperty2 = {this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToString() ?? "<null>"}.");
 
             return result;
         }
