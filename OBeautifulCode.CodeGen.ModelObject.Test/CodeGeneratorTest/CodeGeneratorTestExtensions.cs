@@ -450,9 +450,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this string modelName,
             ModelOrTest modelOrTest)
         {
-            var testToken = modelOrTest == ModelOrTest.Test ? Settings.TestNameSuffix : null;
+            string result;
 
-            var result = modelName + testToken;
+            if (modelOrTest == ModelOrTest.Model)
+            {
+                result = modelName;
+            }
+            else
+            {
+                result = Regex.Replace(modelName, "{.*?}", string.Empty) + Settings.TestNameSuffix;
+            }
 
             return result;
         }
