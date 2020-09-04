@@ -96,8 +96,7 @@ namespace OBeautifulCode.CodeGen.Console
                     Console.WriteLine("Checking type: " + type.ToStringReadable());
 
                     var shouldGenerateCode =
-                        !type.ContainsGenericParameters &&
-                        CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => type.IsAssignableTo(_)) &&
+                        CodeGenerator.TypesThatIndicateCodeGenIsRequired.Any(_ => _.IsAssignableFrom(type)) &&
                         !type.IsInterface;
 
                     if (shouldGenerateCode)
