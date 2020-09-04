@@ -385,8 +385,6 @@ namespace OBeautifulCode.Type.Recipes
                 return false;
             }
 
-            new DateTime();
-
             var defaultConstructor = type.GetConstructors(BindingFlags.Public | BindingFlags.Instance).SingleOrDefault(_ => _.GetParameters().Length == 0);
 
             var result = defaultConstructor != null;
@@ -703,8 +701,8 @@ namespace OBeautifulCode.Type.Recipes
 
             var result =
                 type.IsClass
-                && (!type.IsClosedAnonymousType())
-                && (!type.ContainsGenericParameters);
+                && (!type.ContainsGenericParameters)
+                && (!type.IsAnonymousType());
 
             return result;
         }
