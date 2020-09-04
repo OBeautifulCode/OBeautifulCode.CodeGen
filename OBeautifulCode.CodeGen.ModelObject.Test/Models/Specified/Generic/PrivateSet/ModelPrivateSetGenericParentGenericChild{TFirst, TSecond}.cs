@@ -9,6 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
@@ -48,6 +49,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<TFirst, string> childGenericPartiallyClosedReadOnlyDictionaryProperty2)
             : base(parentStringProperty, parentIntProperty, parentEnumProperty, parentCustomClassProperty, parentGenericArgumentProperty, parentGenericArrayProperty, parentGenericNullableProperty, parentGenericCustomGenericClassProperty, parentGenericReadOnlyCollectionProperty, parentGenericReadOnlyListProperty, parentGenericReadOnlyDictionaryProperty1, parentGenericReadOnlyDictionaryProperty2, parentGenericPartiallyClosedReadOnlyDictionaryProperty1, parentGenericPartiallyClosedReadOnlyDictionaryProperty2)
         {
+            new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { childCustomClassProperty }.AsArg().Must().NotBeNull();
+            new { childGenericArgumentProperty }.AsArg().Must().NotBeNull();
+            new { childGenericArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childGenericCustomGenericClassProperty }.AsArg().Must().NotBeNull();
+            new { childGenericReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childGenericReadOnlyListProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childGenericReadOnlyDictionaryProperty1 }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { childGenericReadOnlyDictionaryProperty2 }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { childGenericPartiallyClosedReadOnlyDictionaryProperty1 }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { childGenericPartiallyClosedReadOnlyDictionaryProperty2 }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+
             this.ChildStringProperty = childStringProperty;
             this.ChildIntProperty = childIntProperty;
             this.ChildEnumProperty = childEnumProperty;

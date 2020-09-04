@@ -9,6 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
@@ -27,6 +28,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<string> parentReadOnlyCollectionProperty,
             IReadOnlyDictionary<string, string> parentReadOnlyDictionaryProperty)
         {
+            new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { parentCustomClassProperty }.AsArg().Must().NotBeNull();
+            new { parentArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentCustomGenericClassProperty }.AsArg().Must().NotBeNull();
+            new { parentReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyDictionaryProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+
             this.ParentStringProperty = parentStringProperty;
             this.ParentIntProperty = parentIntProperty;
             this.ParentEnumProperty = parentEnumProperty;

@@ -10,10 +10,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
-
-    using Xunit.Sdk;
 
     public partial class ModelPrivateSetGenericParentNonGenericChild :
         ModelPrivateSetGenericParent<CustomClass, Guid>, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPrivateSetGenericParentNonGenericChild>
@@ -45,6 +44,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, string> childReadOnlyDictionaryProperty)
         : base(parentStringProperty, parentIntProperty, parentEnumProperty, parentCustomClassProperty, parentGenericArgumentProperty, parentGenericArrayProperty, parentGenericNullableProperty, parentGenericCustomGenericClassProperty, parentGenericReadOnlyCollectionProperty, parentGenericReadOnlyListProperty, parentGenericReadOnlyDictionaryProperty1, parentGenericReadOnlyDictionaryProperty2, parentGenericPartiallyClosedReadOnlyDictionaryProperty1, parentGenericPartiallyClosedReadOnlyDictionaryProperty2)
         {
+            new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { childCustomClassProperty }.AsArg().Must().NotBeNull();
+            new { childArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childCustomGenericClassProperty }.AsArg().Must().NotBeNull();
+            new { childReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyDictionaryProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+
             this.ChildStringProperty = childStringProperty;
             this.ChildIntProperty = childIntProperty;
             this.ChildEnumProperty = childEnumProperty;

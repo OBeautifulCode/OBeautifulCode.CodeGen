@@ -9,6 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
@@ -33,6 +34,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, TSecond> parentGenericPartiallyClosedReadOnlyDictionaryProperty1,
             IReadOnlyDictionary<TFirst, string> parentGenericPartiallyClosedReadOnlyDictionaryProperty2)
         {
+            new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { parentCustomClassProperty }.AsArg().Must().NotBeNull();
+            new { parentGenericArgumentProperty }.AsArg().Must().NotBeNull();
+            new { parentGenericArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentGenericCustomGenericClassProperty }.AsArg().Must().NotBeNull();
+            new { parentGenericReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentGenericReadOnlyListProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentGenericReadOnlyDictionaryProperty1 }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentGenericReadOnlyDictionaryProperty2 }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { parentGenericPartiallyClosedReadOnlyDictionaryProperty1 }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentGenericPartiallyClosedReadOnlyDictionaryProperty2 }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+
             this.ParentStringProperty = parentStringProperty;
             this.ParentIntProperty = parentIntProperty;
             this.ParentEnumProperty = parentEnumProperty;

@@ -33,6 +33,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, TSecond> genericPartiallyClosedReadOnlyDictionaryProperty1,
             IReadOnlyDictionary<TFirst, string> genericPartiallyClosedReadOnlyDictionaryProperty2)
         {
+            new { stringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { customClassProperty }.AsArg().Must().NotBeNull();
+            new { genericArgumentProperty }.AsArg().Must().NotBeNull();
+            new { genericArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { genericCustomGenericClassProperty }.AsArg().Must().NotBeNull();
+            new { genericReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { genericReadOnlyListProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { genericReadOnlyDictionaryProperty1 }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { genericReadOnlyDictionaryProperty2 }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+            new { genericPartiallyClosedReadOnlyDictionaryProperty1 }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { genericPartiallyClosedReadOnlyDictionaryProperty2 }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
+
             this.StringProperty = stringProperty;
             this.IntProperty = intProperty;
             this.EnumProperty = enumProperty;
