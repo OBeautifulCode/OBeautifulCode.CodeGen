@@ -136,6 +136,8 @@ namespace OBeautifulCode.CodeGen
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
 
             this.NamespacesOfTypesInPropertiesOfConcern = GetNamespacesOfTypesInPropertiesOfConcern(propertiesOfConcern);
+
+            this.GenericParametersUsedAsKeyInDictionary = GetGenericParametersUsedAsKeyInDictionary(type, propertiesOfConcern);
         }
 
         /// <summary>
@@ -358,6 +360,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets a closed version of the model type.
         /// </summary>
         public Type ExampleClosedModelType { get; }
+
+        /// <summary>
+        /// Gets the generic parameters that are used as a key in a dictionary within the model.
+        /// </summary>
+        public IReadOnlyCollection<Type> GenericParametersUsedAsKeyInDictionary { get; }
 
         /// <summary>
         /// Determines if the specified property is declared by this model type.
@@ -672,6 +679,23 @@ namespace OBeautifulCode.CodeGen
             }
 
             return result;
+        }
+
+        private static bool IsDictionaryKeyedOnGenericTypeParameter(
+            Type type,
+            Type genericArgumentType)
+        {
+            if (type.IsSystemDictionaryType())
+            {
+                var keyType = type.GetGenericArguments().First();
+
+                if (keyType == genericArgumentType)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private static bool IsDictionaryKeyedOnDateTime(
@@ -1180,6 +1204,27 @@ namespace OBeautifulCode.CodeGen
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; cannot find suitable type(s) for the generic argument(s) that satisfy all constraints."));
             }
+        }
+
+        private static IReadOnlyCollection<Type> GetGenericParametersUsedAsKeyInDictionary(
+            Type type,
+            IReadOnlyList<PropertyOfConcern> propertiesOfConcern)
+        {
+            var genericArguments = type.GetGenericArguments();
+
+            var result = new List<Type>();
+
+            foreach (var genericArgument in genericArguments)
+            {
+                var dictionaryKeyedOnGenericArgument = propertiesOfConcern.Any(_ => IsOrContainsMatchingType(_.PropertyType, localType => IsDictionaryKeyedOnGenericTypeParameter(localType, genericArgument)));
+
+                if (dictionaryKeyedOnGenericArgument)
+                {
+                    result.Add(genericArgument);
+                }
+            }
+
+            return result;
         }
 
         private class PropertiesOfConcernResult

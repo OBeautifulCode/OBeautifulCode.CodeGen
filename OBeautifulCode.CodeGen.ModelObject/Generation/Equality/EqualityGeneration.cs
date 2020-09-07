@@ -42,10 +42,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? string.Join(Environment.NewLine + "                      && ", equalityStatements)
                 : "true";
 
+            var dateTimeUsedAsKeyInDictionaryCheckCode = string.Empty;
+
+            if ((modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Concrete) &&
+                (modelType.EqualsKeyMethodKinds == KeyMethodKinds.Generated) &&
+                modelType.GenericParametersUsedAsKeyInDictionary.Any())
+            {
+                dateTimeUsedAsKeyInDictionaryCheckCode =
+                    typeof(EqualityGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Declared, CodeSnippetKind.DateTimeUsedAsKeyInDictionaryCheck)
+                        .Replace(Tokens.GenericTypeParameterNamesToken, modelType.GenericParametersUsedAsKeyInDictionary.Select(_ => Invariant($"typeof({_.Name})")).ToDelimitedString(", "));
+            }
+
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString)
-                .Replace(Tokens.EqualityStatementsToken, equalityStatementsCode);
+                .Replace(Tokens.EqualityStatementsToken, equalityStatementsCode)
+                .Replace(Tokens.DateTimeUsedAsKeyInDictionaryCheck, dateTimeUsedAsKeyInDictionaryCheckCode);
 
             return result;
         }

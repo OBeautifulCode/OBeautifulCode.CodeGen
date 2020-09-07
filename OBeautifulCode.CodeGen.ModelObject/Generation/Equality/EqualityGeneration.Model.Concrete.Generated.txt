@@ -42,7 +42,7 @@
                 return false;
             }
 
-            var result = [equality-statements-here];
+            [date-time-used-as-key-in-dictionary-check-here]var result = [equality-statements-here];
 
             return result;
         }

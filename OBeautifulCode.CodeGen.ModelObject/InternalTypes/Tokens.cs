@@ -6,6 +6,8 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
+    using System;
+
     /// <summary>
     /// Replacement tokens.
     /// </summary>
@@ -70,6 +72,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The name of a generic type parameter.
         /// </summary>
         public const string GenericTypeParameterNameToken = "[generic-type-parameter-name-here]";
+
+        /// <summary>
+        /// The names of the generic type parameter.
+        /// </summary>
+        public const string GenericTypeParameterNamesToken = "[generic-type-parameter-names-here]";
 
         /// <summary>
         /// The property name.
@@ -305,5 +312,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Recipe conditional compilation symbol.
         /// </summary>
         public const string RecipeConditionalCompilationSymbol = "[recipe-conditional-compilation-symbol]";
+
+        /// <summary>
+        /// Checks whether <see cref="DateTime"/> is used as a key in a dictionary.
+        /// </summary>
+        public const string DateTimeUsedAsKeyInDictionaryCheck = "[date-time-used-as-key-in-dictionary-check-here]";
     }
 }

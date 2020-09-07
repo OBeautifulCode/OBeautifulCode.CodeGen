@@ -68,6 +68,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 return false;
             }
 
+            var genericArgumentsUsedAsKeyInDictionary = new[] { typeof(TFirst), typeof(TSecond) };
+
+            if (genericArgumentsUsedAsKeyInDictionary.Any(_=> (_ == typeof(DateTime)) || (_ == typeof(DateTime?))))
+            {
+                throw new NotSupportedException("This model contains one or more properties that are OR have within their generic argument tree or array element type a System Dictionary that is keyed on DateTime or DateTime?; IsEqualTo may do the wrong thing when comparing the keys of two such dictionaries (because it uses dictionary's embedded equality comparer, which is most likely the default comparer, which determines two DateTimes to be equal if they have the same Ticks, regardless of whether they have the same Kind).");
+            }
+
             var result = this.ParentStringProperty.IsEqualTo(other.ParentStringProperty, StringComparer.Ordinal)
                       && this.ParentIntProperty.IsEqualTo(other.ParentIntProperty)
                       && this.ParentEnumProperty.IsEqualTo(other.ParentEnumProperty)

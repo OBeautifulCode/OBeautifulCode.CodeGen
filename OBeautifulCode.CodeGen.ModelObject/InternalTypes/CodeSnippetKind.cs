@@ -6,6 +6,8 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject
 {
+    using System;
+
     /// <summary>
     /// Specifies a kind of code snippet.
     /// </summary>
@@ -190,5 +192,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for a DeepCloneWith test scenario.
         /// </summary>
         DeepCloneWithScenario,
+
+        /// <summary>
+        /// A code snippet for code that checks whether <see cref="DateTime"/> is used as a key in a dictionary.
+        /// </summary>
+        DateTimeUsedAsKeyInDictionaryCheck,
     }
 }
