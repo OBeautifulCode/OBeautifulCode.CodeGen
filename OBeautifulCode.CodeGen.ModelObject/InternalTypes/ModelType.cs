@@ -1132,26 +1132,54 @@ namespace OBeautifulCode.CodeGen
 
                 var constraints = genericArgument.GetGenericParameterConstraints();
 
+                // starting with a "dumb" heuristic for now - if thisGenericArgumentType doesn't
+                // satisfy the constraint then find another type that does and move on
+                // (without checking it against the prior constraints - hence the need for the try/catch below)
                 foreach (var constraint in constraints)
                 {
                     if (constraint.ContainsGenericParameters)
                     {
-                        throw new NotSupportedException(Invariant($"Cannot generate code for generic type '{type.ToStringReadable()}' because generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is an open generic type and this kind of constraint is not supported."));
+                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is an open generic type and this kind of constraint is not supported."));
+                    }
+
+                    if (constraint.IsClass && (!constraint.IsAbstract))
+                    {
+                        // This is super bad practice.  What does a non-abstract class constraint mean?  Why is the generic argument there to begin with
+                        // (instead of just hard-coding the class wherever the generic argument is used)?
+                        // Anyways, we don't allow non-abstract models to derive from other non-abstract models.
+                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is a non-abstract class.  Class constraints should be abstract."));
                     }
 
                     if (!constraint.IsAssignableFrom(thisGenericArgumentType))
                     {
-                        // need to find another type that will work
-                        throw new NotSupportedException("test");
+                        // We are specifically looking for a class that is assignable to the constraint, but is not equal to the constraint
+                        // itself.  If we cannot find one of these, then we cannot create a closed instance of this type.
+                        thisGenericArgumentType = LoadedTypes
+                            .Where(_ => !_.ContainsGenericParameters)
+                            .Where(_ => _.IsClass)
+                            .Where(_ => _ != constraint)
+                            .FirstOrDefault(_ => constraint.IsAssignableFrom(_));
+
+                        if (thisGenericArgumentType == null)
+                        {
+                            throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}', but none of the closed loaded class types are assignable to this constraint type."));
+                        }
                     }
                 }
 
                 resolvedGenericArguments.Add(thisGenericArgumentType);
             }
 
-            var result = type.MakeGenericType(resolvedGenericArguments.ToArray());
+            try
+            {
+                var result = type.MakeGenericType(resolvedGenericArguments.ToArray());
 
-            return result;
+                return result;
+            }
+            catch (Exception)
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; cannot find suitable type(s) for the generic argument(s) that satisfy all constraints."));
+            }
         }
 
         private class PropertiesOfConcernResult

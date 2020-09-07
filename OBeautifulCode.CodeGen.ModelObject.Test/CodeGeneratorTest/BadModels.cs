@@ -723,6 +723,64 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public DateTime Property3 { get; private set; }
     }
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class GenericClassWithGenericConstraint<T1, T2> : IModelViaCodeGen
+        where T2 : IReadOnlyCollection<T1>
+    {
+    }
+
+    public class NonAbstractBaseClass
+    {
+    }
+
+    public abstract class BaseClassWithNoDerivatives
+    {
+    }
+
+    public interface IInterfaceWithNoImplementors
+    {
+    }
+
+    public abstract class BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied
+    {
+    }
+
+    public class DerivativeClassForGenericArgumentWithConstraintsThatCannotBeSatisfied : BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied
+    {
+        public DerivativeClassForGenericArgumentWithConstraintsThatCannotBeSatisfied(int whatever)
+        {
+        }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class GenericClassWithNonAbstractBaseClassConstraint<T1, T2> : IModelViaCodeGen
+        where T2 : NonAbstractBaseClass
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class GenericClassWithConstraintHavingNoLoadedAssignableTypes1<T1, T2> : IModelViaCodeGen
+        where T2 : BaseClassWithNoDerivatives
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class GenericClassWithConstraintHavingNoLoadedAssignableTypes2<T1, T2> : IModelViaCodeGen
+        where T2 : IInterfaceWithNoImplementors
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class GenericClassWithConstraintsThatCannotBeSatisfied<T1, T2> : IModelViaCodeGen
+        where T2 : BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied, new()
+    {
+    }
+
 #pragma warning restore SA1201 // Elements should appear in the correct order
 #pragma warning restore SA1649 // File name should match first type name
 }
