@@ -164,7 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                             if (_.Name == parameter.Name)
                             {
-                                referenceObject = Invariant($"new {elementType.ToStringCompilable()}[0].Concat({referenceObject}).Concat(new {elementType.ToStringCompilable()}[] {{ null }}).Concat({referenceObject})");
+                                referenceObject = Invariant($"new {elementType.ToStringReadable()}[0].Concat({referenceObject}).Concat(new {elementType.ToStringReadable()}[] {{ null }}).Concat({referenceObject})");
 
                                 referenceObject = parameter.ParameterType.IsArray
                                     ? referenceObject + ".ToArray()"

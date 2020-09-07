@@ -191,7 +191,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var code = objectNotEqualToReferenceObjectCodeSnippet
                         .Replace(Tokens.PropertyNameToken, property.Name)
-                        .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
                         .Replace(Tokens.CastToken, cast);
 
                     unequalSet.Add(code);
@@ -207,8 +206,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             var memberCode = _.Name != property.Name
                                 ? referenceObject
                                 : objectNotEqualToReferenceObjectCodeSnippet
-                                    .Replace(Tokens.PropertyNameToken, property.Name)
-                                    .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable());
+                                    .Replace(Tokens.PropertyNameToken, property.Name);
 
                             return new MemberCode(_.Name, memberCode);
                         }).ToList();

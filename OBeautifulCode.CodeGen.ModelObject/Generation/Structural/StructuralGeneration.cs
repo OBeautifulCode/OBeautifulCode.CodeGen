@@ -67,7 +67,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result =
                 typeof(StructuralGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ExpectedInterfaceTest)
-                .Replace(Tokens.ExpectedInterfaceToken, expectedInterfaceType.ToStringCompilable())
+                .Replace(Tokens.ExpectedInterfaceToken, expectedInterfaceType.ToStringReadable())
                 .Replace(Tokens.ExpectedInterfaceTestMethodNameToken, expectedInterfaceTypeInTestMethodString);
 
             return result;

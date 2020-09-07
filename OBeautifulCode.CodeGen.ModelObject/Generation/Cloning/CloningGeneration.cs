@@ -135,7 +135,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     var deepCloneWithThrowsTestMethod =
                         typeof(CloningGeneration).GetCodeTemplate(modelType.HierarchyKind, CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithThrows)
                             .Replace(Tokens.PropertyNameToken, property.Name)
-                            .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringCompilable())
+                            .Replace(Tokens.PropertyTypeNameToken, property.PropertyType.ToStringReadable())
                             .Replace(Tokens.ParameterNameToken, property.ToParameterName());
 
                     deepCloneWithThrowsTestMethods.Add(deepCloneWithThrowsTestMethod);
