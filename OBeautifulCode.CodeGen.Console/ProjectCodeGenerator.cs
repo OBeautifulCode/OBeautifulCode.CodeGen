@@ -110,7 +110,7 @@ namespace OBeautifulCode.CodeGen.Console
                             WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder, includeSerializationTesting);
                         }
 
-                        if (type.IsAssignableTo(typeof(IModelViaCodeGen)))
+                        if (typeof(IModelViaCodeGen).IsAssignableFrom(type))
                         {
                             typesForDummyFactory.Add(type);
                         }
