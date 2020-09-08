@@ -3820,57 +3820,57 @@
     <Compile Include="ModelTests\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListTest.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChildTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChildTest.designer.cs">
-      <DependentUpon>ModelPrivateSetGenericParentGenericChildTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChildTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChildTest.designer.cs">
-      <DependentUpon>ModelPrivateSetGenericParentGenericPartiallyClosedChildTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}Test.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}Test.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentNonGenericChildTest.cs" />
     <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentNonGenericChildTest.designer.cs">
       <DependentUpon>ModelPrivateSetGenericParentNonGenericChildTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentTest.designer.cs">
-      <DependentUpon>ModelPrivateSetGenericParentTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParent{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParent{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPrivateSetGenericParent{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericTest.designer.cs">
-      <DependentUpon>ModelPrivateSetGenericTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGeneric{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGeneric{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPrivateSetGeneric{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentGenericChildTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentGenericChildTest.designer.cs">
-      <DependentUpon>ModelPrivateSetNonGenericParentGenericChildTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentGenericChild{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentGenericChild{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPrivateSetNonGenericParentGenericChild{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentTest.cs" />
     <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetNonGenericParentTest.designer.cs">
       <DependentUpon>ModelPrivateSetNonGenericParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericChildTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericChildTest.designer.cs">
-      <DependentUpon>ModelPublicSetGenericParentGenericChildTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericChild{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericChild{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParentGenericChild{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericPartiallyClosedChildTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericPartiallyClosedChildTest.designer.cs">
-      <DependentUpon>ModelPublicSetGenericParentGenericPartiallyClosedChildTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}Test.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParentGenericPartiallyClosedChild{TFirst}Test.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentNonGenericChildTest.cs" />
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentNonGenericChildTest.designer.cs">
       <DependentUpon>ModelPublicSetGenericParentNonGenericChildTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParentTest.designer.cs">
-      <DependentUpon>ModelPublicSetGenericParentTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParent{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericParent{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPublicSetGenericParent{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGenericTest.designer.cs">
-      <DependentUpon>ModelPublicSetGenericTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGeneric{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetGeneric{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPublicSetGeneric{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChildTest.cs" />
-    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChildTest.designer.cs">
-      <DependentUpon>ModelPublicSetNonGenericParentGenericChildTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChild{TFirst, TSecond}Test.cs" />
+    <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChild{TFirst, TSecond}Test.designer.cs">
+      <DependentUpon>ModelPublicSetNonGenericParentGenericChild{TFirst, TSecond}Test.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentTest.cs" />
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentTest.designer.cs">

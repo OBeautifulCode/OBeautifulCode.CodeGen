@@ -522,7 +522,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var headerStatements = new List<string>
             {
-                modelName.GetFileHeader(),
+                modelName.GetFileNameWithoutExtension(modelOrTest).GetFileHeader(),
                 Invariant($"namespace {typeof(CodeGeneratorTest).Namespace}"),
                 "{",
                 "    using System;",
@@ -787,6 +787,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var testCodeFilePath = modelName.GetUserCodeFilePath(modelOrTest, directoryPath);
 
+            var fileNameWithoutExtension = modelName.GetFileNameWithoutExtension(modelOrTest);
+
             var testClassName = modelName.GetClassName(modelOrTest);
 
             if (specifiedModelKind != SpecifiedModelKind.NotApplicable)
@@ -800,7 +802,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var statements = new List<string>
                     {
-                        testClassName.GetFileHeader(),
+                        fileNameWithoutExtension.GetFileHeader(),
                         "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                         "{",
                         "    using System.Diagnostics.CodeAnalysis;",
@@ -828,7 +830,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var statements = new List<string>
                     {
-                        testClassName.GetFileHeader(),
+                        fileNameWithoutExtension.GetFileHeader(),
                         "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                         "{",
                         "    using System.Diagnostics.CodeAnalysis;",
@@ -870,7 +872,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var statements = new List<string>
                 {
-                    testClassName.GetFileHeader(),
+                    fileNameWithoutExtension.GetFileHeader(),
                     "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                     "{",
                     "    using System;",
@@ -991,7 +993,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 var statements = new List<string>
                 {
-                    testClassName.GetFileHeader(),
+                    fileNameWithoutExtension.GetFileHeader(),
                     "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
                     "{",
                     "    using System.Diagnostics.CodeAnalysis;",

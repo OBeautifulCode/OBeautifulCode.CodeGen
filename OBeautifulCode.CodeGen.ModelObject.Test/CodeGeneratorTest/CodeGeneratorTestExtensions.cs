@@ -427,7 +427,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ModelOrTest modelOrTest,
             string directoryPath)
         {
-            var className = modelName.GetClassName(modelOrTest);
+            var className = modelName.GetFileNameWithoutExtension(modelOrTest);
 
             var result = Path.Combine(directoryPath, className + ".cs");
 
@@ -439,9 +439,20 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ModelOrTest modelOrTest,
             string directoryPath)
         {
-            var className = modelName.GetClassName(modelOrTest);
+            var className = modelName.GetFileNameWithoutExtension(modelOrTest);
 
             var result = Path.Combine(directoryPath, className + ".designer.cs");
+
+            return result;
+        }
+
+        public static string GetFileNameWithoutExtension(
+            this string modelName,
+            ModelOrTest modelOrTest)
+        {
+            var result = modelOrTest == ModelOrTest.Model
+                ? modelName
+                : modelName + Settings.TestNameSuffix;
 
             return result;
         }
