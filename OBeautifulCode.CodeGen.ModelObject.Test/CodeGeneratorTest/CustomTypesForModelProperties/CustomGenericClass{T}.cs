@@ -7,6 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
@@ -75,6 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = "For testing purposes")]
         public static int Compare(
             CustomGenericClass<T> left,
             CustomGenericClass<T> right)

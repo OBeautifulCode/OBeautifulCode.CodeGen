@@ -1,8 +1,8 @@
-﻿[nested-test-class-code-analysis-suppressions]
+﻿[nested-test-class-code-analysis-suppressions-here]
         public static class Comparability
         {
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
@@ -17,7 +17,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_true___When_parameter_left_is_null_and_parameter_right_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -33,7 +33,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_false___When_parameter_right_is_null_and_parameter_left_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -49,7 +49,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -67,7 +67,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_false___When_parameter_left_and_right_are_equal_but_not_the_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -85,7 +85,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_true___When_parameter_left_is_less_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -103,7 +103,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -121,7 +121,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -142,7 +142,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_false___When_both_sides_of_operator_are_null()
             {
                 // Arrange
@@ -157,7 +157,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_false___When_parameter_left_is_null_and_parameter_right_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -173,7 +173,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_true___When_parameter_right_is_null_and_parameter_left_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -189,7 +189,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_false___When_same_object_is_on_both_sides_of_operator()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -207,7 +207,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_false___When_parameter_left_and_right_are_equal_but_not_the_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -225,7 +225,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_false___When_parameter_left_is_less_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -243,7 +243,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -261,7 +261,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -282,7 +282,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
@@ -297,7 +297,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_true___When_parameter_left_is_null_and_parameter_right_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -313,7 +313,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_false___When_parameter_right_is_null_and_parameter_left_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -329,7 +329,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -347,7 +347,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_true___When_parameter_left_and_right_are_equal_but_not_the_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -365,7 +365,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_true___When_parameter_left_is_less_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -383,7 +383,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_return_false___When_parameter_left_is_greater_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -401,7 +401,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void LessThanOrEqualToOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -422,7 +422,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_both_sides_of_operator_are_null()
             {
                 // Arrange
@@ -437,7 +437,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_false___When_parameter_left_is_null_and_parameter_right_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -453,7 +453,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_right_is_null_and_parameter_left_is_not_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -469,7 +469,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_same_object_is_on_both_sides_of_operator()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -487,7 +487,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_left_and_right_are_equal_but_not_the_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -505,7 +505,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_false___When_parameter_left_is_less_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -523,7 +523,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_return_true___When_parameter_left_is_greater_than_parameter_right()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -541,7 +541,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void GreaterThanOrEqualToOperator___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -563,7 +563,7 @@
 
 [compare-to-tests-here]
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_Object___Should_return_1___When_parameter_obj_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -579,7 +579,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_Object___Should_return_0___When_parameter_obj_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -595,7 +595,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_Object___Should_return_0___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -611,7 +611,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_Object___Should_return_negative_1___When_object_is_less_than_parameter_obj()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -629,7 +629,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_Object___Should_return_1___When_object_is_greater_than_parameter_obj()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -647,7 +647,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_Object___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();

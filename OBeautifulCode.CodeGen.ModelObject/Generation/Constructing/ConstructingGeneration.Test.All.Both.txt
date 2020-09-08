@@ -1,8 +1,8 @@
-﻿[nested-test-class-code-analysis-suppressions]
+﻿[nested-test-class-code-analysis-suppressions-here]
         public static class Constructing
         {
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void Constructor___Should_throw___When_parameters_are_not_valid()
             {
                 var scenarios = ConstructorArgumentValidationTestScenarios.ValidateAndPrepareForTesting();
@@ -28,7 +28,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             [SuppressMessage("Microsoft.Performance", "CA1804:RemoveUnusedLocals", MessageId = "referenceObject")]
             public static void Properties___Should_be_assigned_by_constructor_to_expected_value___When_getting()
             {

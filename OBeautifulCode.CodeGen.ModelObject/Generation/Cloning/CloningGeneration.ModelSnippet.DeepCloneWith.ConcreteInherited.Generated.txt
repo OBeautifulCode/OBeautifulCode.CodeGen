@@ -1,5 +1,5 @@
 ﻿        /// <inheritdoc />
-[deep-clone-with-code-analysis-suppressions]
+[deep-clone-with-code-analysis-suppressions-here]
         public override [model-ancestor-type-name-in-code-here] DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here])
         {
             var result = [deep-clone-with-model-instantiation-here];

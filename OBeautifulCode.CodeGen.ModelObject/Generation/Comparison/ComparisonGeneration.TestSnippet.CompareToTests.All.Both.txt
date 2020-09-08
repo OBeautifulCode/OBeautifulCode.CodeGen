@@ -1,5 +1,5 @@
 ﻿            [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_[model-type-name-in-identifier-here]___Should_return_1___When_parameter_other_is_null()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -18,7 +18,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_[model-type-name-in-identifier-here]___Should_return_0___When_parameter_other_is_same_object()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -34,7 +34,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_[model-type-name-in-identifier-here]___Should_return_0___When_objects_being_compared_are_equal()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -50,7 +50,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_[model-type-name-in-identifier-here]___Should_return_negative_1___When_object_is_less_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -68,7 +68,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_[model-type-name-in-identifier-here]___Should_return_1___When_object_is_greater_than_parameter_other()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
@@ -86,7 +86,7 @@
             }
 
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void CompareTo_with_[model-type-name-in-identifier-here]___Should_throw_ArgumentException___When_objects_being_compared_are_of_different_types()
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();

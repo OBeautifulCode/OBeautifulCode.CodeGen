@@ -1,8 +1,8 @@
-﻿[nested-test-class-code-analysis-suppressions]
+﻿[nested-test-class-code-analysis-suppressions-here]
         public static class StringRepresentation
         {
             [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void ToString___Should_generate_friendly_string_representation_of_object___When_called()
             {
                 var scenarios = StringRepresentationTestScenarios.ValidateAndPrepareForTesting();

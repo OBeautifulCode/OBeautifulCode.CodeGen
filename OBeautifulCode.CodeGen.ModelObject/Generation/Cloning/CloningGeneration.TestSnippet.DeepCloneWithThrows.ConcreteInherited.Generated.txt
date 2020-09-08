@@ -1,5 +1,5 @@
 ﻿            [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void DeepCloneWith[property-name-here]___Should_throw_NotSupportedException___When_called()
             {
                 // Arrange

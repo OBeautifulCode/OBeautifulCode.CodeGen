@@ -1,5 +1,5 @@
 ﻿            [Fact]
-[test-method-code-analysis-suppressions]
+[test-method-code-analysis-suppressions-here]
             public static void [model-type-name-in-identifier-here]___Should_declare_ToString_method___When_reflecting()
             {
                 // Arrange

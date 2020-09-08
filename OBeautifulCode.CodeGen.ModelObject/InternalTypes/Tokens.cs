@@ -281,17 +281,22 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// The code analysis suppressions to add to a nested test class.
         /// </summary>
-        public const string NestedTestClassCodeAnalysisSuppressionsToken = "[nested-test-class-code-analysis-suppressions]";
+        public const string NestedTestClassCodeAnalysisSuppressionsToken = "[nested-test-class-code-analysis-suppressions-here]";
 
         /// <summary>
         /// The code analysis suppressions to add to a test method.
         /// </summary>
-        public const string TestMethodCodeAnalysisSuppressionsToken = "[test-method-code-analysis-suppressions]";
+        public const string TestMethodCodeAnalysisSuppressionsToken = "[test-method-code-analysis-suppressions-here]";
 
         /// <summary>
         /// The code analysis suppressions to add to a DeepCloneWith() method.
         /// </summary>
-        public const string DeepCloneWithCodeAnalysisSuppressionsToken = "[deep-clone-with-code-analysis-suppressions]";
+        public const string DeepCloneWithCodeAnalysisSuppressionsToken = "[deep-clone-with-code-analysis-suppressions-here]";
+
+        /// <summary>
+        /// The code analysis suppressions to add to an Equals() method.
+        /// </summary>
+        public const string EqualsCodeAnalysisSuppressionsToken = "[equals-code-analysis-suppressions-here]";
 
         /// <summary>
         /// The DeepConeWith... test scenarios.
@@ -311,7 +316,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <summary>
         /// Recipe conditional compilation symbol.
         /// </summary>
-        public const string RecipeConditionalCompilationSymbol = "[recipe-conditional-compilation-symbol]";
+        public const string RecipeConditionalCompilationSymbol = "[recipe-conditional-compilation-symbol-here]";
 
         /// <summary>
         /// Checks whether <see cref="DateTime"/> is used as a key in a dictionary.

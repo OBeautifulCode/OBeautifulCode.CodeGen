@@ -1,4 +1,4 @@
-﻿[nested-test-class-code-analysis-suppressions]
+﻿[nested-test-class-code-analysis-suppressions-here]
         public static class Structural
         {
 [structural-tests-here]

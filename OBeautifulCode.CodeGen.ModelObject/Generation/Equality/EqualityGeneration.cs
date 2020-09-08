@@ -43,6 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 : "true";
 
             var dateTimeUsedAsKeyInDictionaryCheckCode = string.Empty;
+            var equalsCodeAnalysisSuppressionsCode = string.Empty;
 
             if ((modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Concrete) &&
                 (modelType.EqualsKeyMethodKinds == KeyMethodKinds.Generated) &&
@@ -51,13 +52,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 dateTimeUsedAsKeyInDictionaryCheckCode =
                     typeof(EqualityGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Declared, CodeSnippetKind.DateTimeUsedAsKeyInDictionaryCheck)
                         .Replace(Tokens.GenericTypeParameterNamesToken, modelType.GenericParametersUsedAsKeyInDictionary.Select(_ => Invariant($"typeof({_.Name})")).ToDelimitedString(", "));
+
+                equalsCodeAnalysisSuppressionsCode = typeof(EqualityGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Declared, CodeSnippetKind.EqualsCodeAnalysisSuppressions);
             }
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.ModelTypeNameInXmlDocToken, modelType.TypeNameInXmlDocString)
                 .Replace(Tokens.EqualityStatementsToken, equalityStatementsCode)
-                .Replace(Tokens.DateTimeUsedAsKeyInDictionaryCheck, dateTimeUsedAsKeyInDictionaryCheckCode);
+                .Replace(Tokens.DateTimeUsedAsKeyInDictionaryCheck, dateTimeUsedAsKeyInDictionaryCheckCode)
+                .Replace(Tokens.EqualsCodeAnalysisSuppressionsToken, equalsCodeAnalysisSuppressionsCode);
 
             return result;
         }

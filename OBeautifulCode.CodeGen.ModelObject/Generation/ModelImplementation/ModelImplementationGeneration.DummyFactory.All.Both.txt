@@ -14,7 +14,7 @@ namespace [dummy-factory-type-namespace-here]
     /// </summary>
     [ExcludeFromCodeCoverage]
     [GeneratedCode("[code-gen-assembly-name-here]", "[code-gen-assembly-version-here]")]
-#if ![recipe-conditional-compilation-symbol]
+#if ![recipe-conditional-compilation-symbol-here]
     internal
 #else
     public

@@ -730,22 +730,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
     }
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
     public class NonAbstractBaseClass
     {
     }
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
     public abstract class BaseClassWithNoDerivatives
     {
     }
 
-    public interface IInterfaceWithNoImplementors
+    [GeneratedCode("ignore", "ignore")]
+    public interface IInterfaceWithNoImplementers
     {
     }
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
     public abstract class BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied
     {
     }
 
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
     public class DerivativeClassForGenericArgumentWithConstraintsThatCannotBeSatisfied : BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied
     {
         public DerivativeClassForGenericArgumentWithConstraintsThatCannotBeSatisfied(int whatever)
@@ -770,7 +779,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
     public class GenericClassWithConstraintHavingNoLoadedAssignableTypes2<T1, T2> : IModelViaCodeGen
-        where T2 : IInterfaceWithNoImplementors
+        where T2 : IInterfaceWithNoImplementers
     {
     }
 

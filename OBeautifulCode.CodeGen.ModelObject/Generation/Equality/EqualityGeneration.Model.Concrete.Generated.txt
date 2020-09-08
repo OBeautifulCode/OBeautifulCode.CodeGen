@@ -30,7 +30,7 @@
         public static bool operator !=([model-type-name-in-code-here] left, [model-type-name-in-code-here] right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals([model-type-name-in-code-here] other)
+        [equals-code-analysis-suppressions-here]public bool Equals([model-type-name-in-code-here] other)
         {
             if (ReferenceEquals(this, other))
             {
