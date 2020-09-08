@@ -162,7 +162,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new { Type = typeof(GenericClassWithGenericConstraint<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'IReadOnlyCollection<T1>' which itself is an open generic type and this kind of constraint is not supported" },
                 new { Type = typeof(GenericClassWithNonAbstractBaseClassConstraint<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'NonAbstractBaseClass' which itself is a non-abstract class.  Class constraints should be abstract." },
                 new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes1<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'BaseClassWithNoDerivatives', but none of the closed loaded class types are assignable to this constraint type" },
-                new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes2<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'IInterfaceWithNoImplementors', but none of the closed loaded class types are assignable to this constraint type" },
+                new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes2<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'IInterfaceWithNoImplementers', but none of the closed loaded class types are assignable to this constraint type" },
                 new { Type = typeof(GenericClassWithConstraintsThatCannotBeSatisfied<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
             };
 
