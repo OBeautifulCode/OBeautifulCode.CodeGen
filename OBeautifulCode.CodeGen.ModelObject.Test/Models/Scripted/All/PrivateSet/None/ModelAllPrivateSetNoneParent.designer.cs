@@ -61,13 +61,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <inheritdoc />
@@ -98,7 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentBoolProperty(bool parentBoolProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentIntProperty(int parentIntProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentStringProperty(string parentStringProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentGuidProperty(Guid parentGuidProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentDateTimeProperty(DateTime parentDateTimeProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentCustomEnumProperty(CustomEnum parentCustomEnumProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentCustomFlagsEnumProperty(CustomFlagsEnum parentCustomFlagsEnumProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentCustomClassProperty(CustomClass parentCustomClassProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentCustomBaseClassProperty(CustomBaseClass parentCustomBaseClassProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPrivateSetNoneParent DeepCloneWithParentCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass> parentCustomGenericClassOfCustomClassProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -334,13 +334,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </returns>
         protected virtual ModelAllPrivateSetNoneParent DeepCloneInternal()
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <inheritdoc />
         public override string ToString()
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
     }
 }

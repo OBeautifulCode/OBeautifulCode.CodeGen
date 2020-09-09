@@ -61,13 +61,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <inheritdoc />
@@ -98,7 +98,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfBoolProperty(IReadOnlyList<bool> parentReadOnlyListInterfaceOfBoolProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> parentReadOnlyListInterfaceOfIntProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> parentReadOnlyListInterfaceOfStringProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomEnumProperty(IReadOnlyList<CustomEnum> parentReadOnlyListInterfaceOfCustomEnumProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomFlagsEnumProperty(IReadOnlyList<CustomFlagsEnum> parentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomClassProperty(IReadOnlyList<CustomClass> parentReadOnlyListInterfaceOfCustomClassProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> parentReadOnlyListInterfaceOfCustomBaseClassProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         public virtual ModelAllPublicSetReadOnlyListParent DeepCloneWithParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty(IReadOnlyList<CustomGenericClass<CustomClass>> parentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <summary>
@@ -334,13 +334,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </returns>
         protected virtual ModelAllPublicSetReadOnlyListParent DeepCloneInternal()
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
 
         /// <inheritdoc />
         public override string ToString()
         {
-            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }
     }
 }
