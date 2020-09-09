@@ -1251,6 +1251,7 @@ namespace OBeautifulCode.CodeGen
                     var candidateDerivatives = LoadedTypes
                         .Where(_ => _.IsClass)
                         .Where(_ => !_.IsAbstract)
+                        .Where(_ => _.Namespace == modelType.Namespace)
                         .ToList();
 
                     if (closedConstraint.IsGenericType)
@@ -1264,7 +1265,7 @@ namespace OBeautifulCode.CodeGen
                             .ToList();
                     }
 
-                    result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_));
+                    result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_) && (!_.ContainsGenericParameters));
 
                     if (result == null)
                     {
