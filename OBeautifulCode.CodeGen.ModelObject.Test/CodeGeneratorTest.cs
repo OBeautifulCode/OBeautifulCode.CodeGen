@@ -583,9 +583,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     methodStatements.Add(string.Empty);
                     methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+                    methodStatements.Add(Invariant($"        [SuppressMessage(\"Microsoft.Design\", \"CA1065: DoNotRaiseExceptionsInUnexpectedLocations\")]"));
                     methodStatements.Add(Invariant($"        public virtual bool Equals({modelName} other)"));
                     methodStatements.Add(Invariant($"        {{"));
-                    methodStatements.Add(Invariant($"            throw new NotImplementedException(\"This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.\");"));
+                    methodStatements.Add(Invariant($"            throw new NotImplementedException(\"This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.\");"));
                     methodStatements.Add(Invariant($"        }}"));
                 }
                 else

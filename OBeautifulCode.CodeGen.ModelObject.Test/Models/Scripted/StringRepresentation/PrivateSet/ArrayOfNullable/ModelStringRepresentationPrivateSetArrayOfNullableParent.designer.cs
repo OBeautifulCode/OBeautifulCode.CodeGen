@@ -25,6 +25,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public partial class ModelStringRepresentationPrivateSetArrayOfNullableParent : IStringRepresentable
     {
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
         public override string ToString()
         {
             throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");

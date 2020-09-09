@@ -132,6 +132,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public CustomGenericClass<CustomClass> ParentCustomGenericClassOfCustomClassProperty { get; private set; }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1065: DoNotRaiseExceptionsInUnexpectedLocations")]
         public virtual bool Equals(ModelCloningPrivateSetNoneParent other)
         {
             throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
