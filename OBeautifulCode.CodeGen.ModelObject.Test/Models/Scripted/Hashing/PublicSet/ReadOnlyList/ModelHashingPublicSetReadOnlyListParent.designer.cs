@@ -25,6 +25,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public partial class ModelHashingPublicSetReadOnlyListParent : IHashable
     {
         /// <inheritdoc />
-        public abstract override int GetHashCode();
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
     }
 }

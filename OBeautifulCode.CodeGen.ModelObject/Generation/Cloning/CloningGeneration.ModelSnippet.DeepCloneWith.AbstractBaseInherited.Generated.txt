@@ -4,4 +4,7 @@
         /// <param name="[parameter-name-in-xml-doc-here]">The new <see cref="[property-name-here]" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="[model-type-name-in-xml-doc-here]" /> using the specified <paramref name="[parameter-name-in-xml-doc-here]" /> for <see cref="[property-name-here]" /> and a deep clone of every other property.</returns>
 [deep-clone-with-code-analysis-suppressions-here]
-        public abstract [model-type-name-in-code-here] DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here]);
+        public virtual [model-type-name-in-code-here] DeepCloneWith[property-name-here]([property-type-name-here] [parameter-name-here])
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }

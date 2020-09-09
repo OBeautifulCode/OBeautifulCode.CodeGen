@@ -59,7 +59,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public bool Equals(ModelPublicSetGenericParent<TFirst, TSecond> other) => this == other;
 
         /// <inheritdoc />
-        public abstract override bool Equals(object obj);
+        public override bool Equals(object obj)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Determines whether an object of type <see cref="ModelPublicSetGenericParent{TFirst, TSecond}"/> is less than another object of that type.
@@ -171,13 +174,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public abstract int CompareTo(object obj);
+        public virtual int CompareTo(object obj)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <inheritdoc />
-        public abstract RelativeSortOrder CompareToForRelativeSortOrder(ModelPublicSetGenericParent<TFirst, TSecond> other);
+        public virtual RelativeSortOrder CompareToForRelativeSortOrder(ModelPublicSetGenericParent<TFirst, TSecond> other)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <inheritdoc />
-        public abstract override int GetHashCode();
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <inheritdoc />
         public object Clone() => this.DeepClone();
@@ -205,7 +217,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentStringProperty(string parentStringProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentStringProperty(string parentStringProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentIntProperty" />.
@@ -227,7 +242,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentIntProperty(int parentIntProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentIntProperty(int parentIntProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentEnumProperty" />.
@@ -249,7 +267,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentEnumProperty(CustomEnum parentEnumProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentEnumProperty(CustomEnum parentEnumProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentCustomClassProperty" />.
@@ -271,7 +292,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentCustomClassProperty(CustomClass parentCustomClassProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentCustomClassProperty(CustomClass parentCustomClassProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericArgumentProperty" />.
@@ -293,7 +317,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericArgumentProperty(TFirst parentGenericArgumentProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericArgumentProperty(TFirst parentGenericArgumentProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericArrayProperty" />.
@@ -315,7 +342,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericArrayProperty(TFirst[] parentGenericArrayProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericArrayProperty(TFirst[] parentGenericArrayProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericNullableProperty" />.
@@ -337,7 +367,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericNullableProperty(Nullable<TSecond> parentGenericNullableProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericNullableProperty(Nullable<TSecond> parentGenericNullableProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericCustomGenericClassProperty" />.
@@ -359,7 +392,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericCustomGenericClassProperty(CustomGenericClass<TSecond> parentGenericCustomGenericClassProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericCustomGenericClassProperty(CustomGenericClass<TSecond> parentGenericCustomGenericClassProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericReadOnlyCollectionProperty" />.
@@ -381,7 +417,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyCollectionProperty(IReadOnlyCollection<TFirst> parentGenericReadOnlyCollectionProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyCollectionProperty(IReadOnlyCollection<TFirst> parentGenericReadOnlyCollectionProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericReadOnlyListProperty" />.
@@ -403,7 +442,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyListProperty(IReadOnlyList<TFirst> parentGenericReadOnlyListProperty);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyListProperty(IReadOnlyList<TFirst> parentGenericReadOnlyListProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericReadOnlyDictionaryProperty1" />.
@@ -425,7 +467,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyDictionaryProperty1(IReadOnlyDictionary<TFirst, TSecond> parentGenericReadOnlyDictionaryProperty1);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyDictionaryProperty1(IReadOnlyDictionary<TFirst, TSecond> parentGenericReadOnlyDictionaryProperty1)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericReadOnlyDictionaryProperty2" />.
@@ -447,7 +492,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyDictionaryProperty2(IReadOnlyDictionary<TSecond, TFirst> parentGenericReadOnlyDictionaryProperty2);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericReadOnlyDictionaryProperty2(IReadOnlyDictionary<TSecond, TFirst> parentGenericReadOnlyDictionaryProperty2)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericPartiallyClosedReadOnlyDictionaryProperty1" />.
@@ -469,7 +517,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericPartiallyClosedReadOnlyDictionaryProperty1(IReadOnlyDictionary<string, TSecond> parentGenericPartiallyClosedReadOnlyDictionaryProperty1);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericPartiallyClosedReadOnlyDictionaryProperty1(IReadOnlyDictionary<string, TSecond> parentGenericPartiallyClosedReadOnlyDictionaryProperty1)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Deep clones this object with a new <see cref="ParentGenericPartiallyClosedReadOnlyDictionaryProperty2" />.
@@ -491,7 +542,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericPartiallyClosedReadOnlyDictionaryProperty2(IReadOnlyDictionary<TFirst, string> parentGenericPartiallyClosedReadOnlyDictionaryProperty2);
+        public virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneWithParentGenericPartiallyClosedReadOnlyDictionaryProperty2(IReadOnlyDictionary<TFirst, string> parentGenericPartiallyClosedReadOnlyDictionaryProperty2)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <summary>
         /// Creates a new object that is a deep clone of this instance.
@@ -499,9 +553,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <returns>
         /// A new object that is a deep clone of this instance.
         /// </returns>
-        protected abstract ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneInternal();
+        protected virtual ModelPublicSetGenericParent<TFirst, TSecond> DeepCloneInternal()
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
 
         /// <inheritdoc />
-        public abstract override string ToString();
+        public override string ToString()
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
     }
 }

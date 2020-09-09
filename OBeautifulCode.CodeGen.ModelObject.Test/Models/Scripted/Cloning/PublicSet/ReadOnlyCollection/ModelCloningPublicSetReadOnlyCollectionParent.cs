@@ -100,6 +100,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public IReadOnlyCollection<CustomGenericClass<CustomClass>> ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty { get; set; }
 
         /// <inheritdoc />
-        public abstract bool Equals(ModelCloningPublicSetReadOnlyCollectionParent other);
+        public virtual bool Equals(ModelCloningPublicSetReadOnlyCollectionParent other)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overriden in the generated designer file.");
+        }
     }
 }
