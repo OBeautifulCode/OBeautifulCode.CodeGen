@@ -26,6 +26,7 @@ namespace OBeautifulCode.CodeGen
     /// <summary>
     /// Represents a type that is a Model type.
     /// </summary>
+    [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA1506_AvoidExcessiveClassCoupling_DisagreeWithAssessment)]
     internal class ModelType
     {
         private static readonly IReadOnlyCollection<Type> LoadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
