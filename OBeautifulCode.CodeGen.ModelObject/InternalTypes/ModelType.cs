@@ -136,6 +136,7 @@ namespace OBeautifulCode.CodeGen
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
 
+            this.NamespacesOfTypesInInheritancePath = GetNamespacesOfTypesInInheritancePath(type);
             this.NamespacesOfTypesInPropertiesOfConcern = GetNamespacesOfTypesInPropertiesOfConcern(propertiesOfConcern);
 
             this.GenericParametersUsedAsKeyInDictionary = GetGenericParametersUsedAsKeyInDictionary(type, propertiesOfConcern);
@@ -351,6 +352,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets the namespaces of the types in the properties of concern.
         /// </summary>
         public IReadOnlyCollection<string> NamespacesOfTypesInPropertiesOfConcern { get; }
+
+        /// <summary>
+        /// Gets the namespaces of the types in the inheritance path.
+        /// </summary>
+        public IReadOnlyCollection<string> NamespacesOfTypesInInheritancePath { get; }
 
         /// <summary>
         /// Gets the generic parameters.
@@ -1061,12 +1067,22 @@ namespace OBeautifulCode.CodeGen
         {
             var types = propertiesOfConcern.Select(_ => _.PropertyType).Distinct().ToList();
 
-            var result = types.SelectMany(GetNamespacesOfTypesInPropertiesOfConcern).Distinct().ToList();
+            var result = types.SelectMany(GetNamespacesInUse).Distinct().ToList();
 
             return result;
         }
 
-        private static IReadOnlyCollection<string> GetNamespacesOfTypesInPropertiesOfConcern(
+        private static IReadOnlyCollection<string> GetNamespacesOfTypesInInheritancePath(
+            Type type)
+        {
+            var types = type.GetInheritancePath().Except(new[] { typeof(object) }).ToList();
+
+            var result = types.SelectMany(GetNamespacesInUse).Distinct().ToList();
+
+            return result;
+        }
+
+        private static IReadOnlyCollection<string> GetNamespacesInUse(
             Type type)
         {
             var result = new List<string> { type.Namespace };
@@ -1077,13 +1093,13 @@ namespace OBeautifulCode.CodeGen
 
                 foreach (var genericArgument in genericArguments)
                 {
-                    result.AddRange(GetNamespacesOfTypesInPropertiesOfConcern(genericArgument));
+                    result.AddRange(GetNamespacesInUse(genericArgument));
                 }
             }
 
             if (type.IsArray)
             {
-                result.AddRange(GetNamespacesOfTypesInPropertiesOfConcern(type.GetElementType()));
+                result.AddRange(GetNamespacesInUse(type.GetElementType()));
             }
 
             return result;

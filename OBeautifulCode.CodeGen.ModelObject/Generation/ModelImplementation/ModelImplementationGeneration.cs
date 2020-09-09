@@ -433,6 +433,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             statements = new string[0]
                 .Concat(statements)
+                .Concat(modelTypes.SelectMany(_ => _.NamespacesOfTypesInInheritancePath))
                 .Concat(modelTypes.SelectMany(_ => _.NamespacesOfTypesInPropertiesOfConcern))
                 .Where(_ => _ != containingNamespace)
                 .Distinct()
