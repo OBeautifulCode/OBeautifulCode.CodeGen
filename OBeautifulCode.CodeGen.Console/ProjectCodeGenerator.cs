@@ -212,7 +212,7 @@ namespace OBeautifulCode.CodeGen.Console
         {
             var modelPartialClassContents = type.GenerateForModel(GenerateFor.ModelImplementationPartialClass);
 
-            var modelFileName = type.ToStringXmlDoc() + ".cs";
+            var modelFileName = type.ToStringXmlDoc().Replace(" ", string.Empty) + ".cs";
 
             var modelFilePaths = projectSourceFilePaths.Where(_ => Path.GetFileName(_).Equals(modelFileName, StringComparison.OrdinalIgnoreCase)).ToList();
 
@@ -239,7 +239,7 @@ namespace OBeautifulCode.CodeGen.Console
             Func<string, string> fileHeaderBuilder,
             bool includeSerializationTesting)
         {
-            var modelTestFileNameWithoutExtension = type.ToStringXmlDoc() + "Test";
+            var modelTestFileNameWithoutExtension = type.ToStringXmlDoc().Replace(" ", string.Empty) + "Test";
 
             var modelTestFileName = modelTestFileNameWithoutExtension + ".cs";
 
