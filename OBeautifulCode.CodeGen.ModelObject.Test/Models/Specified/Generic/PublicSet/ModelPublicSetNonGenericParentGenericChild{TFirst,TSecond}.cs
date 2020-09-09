@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ModelPublicSetGenericParentGenericChild{TFirst, TSecond}.cs" company="OBeautifulCode">
+// <copyright file="ModelPublicSetNonGenericParentGenericChild{TFirst,TSecond}.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -12,8 +12,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
-    public partial class ModelPublicSetGenericParentGenericChild<TFirst, TSecond> :
-        ModelPublicSetGenericParent<TFirst, TSecond>, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPublicSetGenericParentGenericChild<TFirst, TSecond>>
+    public partial class ModelPublicSetNonGenericParentGenericChild<TFirst, TSecond> :
+        ModelPublicSetNonGenericParent, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPublicSetNonGenericParentGenericChild<TFirst, TSecond>>
         where TSecond : struct
     {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
@@ -26,7 +26,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public CustomEnum ChildEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public CustomClass ChildCustomClassProperty { get; set; }
+        public CustomClass ChildClassProperty { get; set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public TFirst ChildGenericArgumentProperty { get; set; }
@@ -61,7 +61,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public RelativeSortOrder CompareToForRelativeSortOrder(
-            ModelPublicSetGenericParentGenericChild<TFirst, TSecond> other)
+            ModelPublicSetNonGenericParentGenericChild<TFirst, TSecond> other)
         {
             if (other == null)
             {

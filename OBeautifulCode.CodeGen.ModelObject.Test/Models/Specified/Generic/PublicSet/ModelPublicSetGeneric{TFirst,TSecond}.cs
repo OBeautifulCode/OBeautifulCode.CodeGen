@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ModelPublicSetGeneric{TFirst, TSecond}.cs" company="OBeautifulCode">
+// <copyright file="ModelPublicSetGeneric{TFirst,TSecond}.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------

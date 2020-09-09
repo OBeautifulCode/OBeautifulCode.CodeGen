@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ModelPrivateSetGenericParentGenericChild{TFirst, TSecond}.cs" company="OBeautifulCode">
+// <copyright file="ModelPrivateSetNonGenericParentGenericChild{TFirst,TSecond}.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -13,30 +13,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Type;
 
-    public partial class ModelPrivateSetGenericParentGenericChild<TFirst, TSecond> :
-        ModelPrivateSetGenericParent<TFirst, TSecond>, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPrivateSetGenericParentGenericChild<TFirst, TSecond>>
+    public partial class ModelPrivateSetNonGenericParentGenericChild<TFirst, TSecond> :
+        ModelPrivateSetNonGenericParent, IModelViaCodeGen, IComparableViaCodeGen, IDeclareCompareToForRelativeSortOrderMethod<ModelPrivateSetNonGenericParentGenericChild<TFirst, TSecond>>
         where TSecond : struct
     {
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public ModelPrivateSetGenericParentGenericChild(
+        public ModelPrivateSetNonGenericParentGenericChild(
             string parentStringProperty,
             int parentIntProperty,
             CustomEnum parentEnumProperty,
             CustomClass parentCustomClassProperty,
-            TFirst parentGenericArgumentProperty,
-            TFirst[] parentGenericArrayProperty,
-            TSecond? parentGenericNullableProperty,
-            CustomGenericClass<TSecond> parentGenericCustomGenericClassProperty,
-            IReadOnlyCollection<TFirst> parentGenericReadOnlyCollectionProperty,
-            IReadOnlyList<TFirst> parentGenericReadOnlyListProperty,
-            IReadOnlyDictionary<TFirst, TSecond> parentGenericReadOnlyDictionaryProperty1,
-            IReadOnlyDictionary<TSecond, TFirst> parentGenericReadOnlyDictionaryProperty2,
-            IReadOnlyDictionary<string, TSecond> parentGenericPartiallyClosedReadOnlyDictionaryProperty1,
-            IReadOnlyDictionary<TFirst, string> parentGenericPartiallyClosedReadOnlyDictionaryProperty2,
+            string[] parentArrayProperty,
+            decimal? parentNullableProperty,
+            CustomGenericClass<string> parentCustomGenericClassProperty,
+            IReadOnlyCollection<string> parentReadOnlyCollectionProperty,
+            IReadOnlyDictionary<string, string> parentReadOnlyDictionaryProperty,
             string childStringProperty,
             int childIntProperty,
             CustomEnum childEnumProperty,
-            CustomClass childCustomClassProperty,
+            CustomClass childClassProperty,
             TFirst childGenericArgumentProperty,
             TFirst[] childGenericArrayProperty,
             TSecond? childGenericNullableProperty,
@@ -47,10 +42,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<TSecond, TFirst> childGenericReadOnlyDictionaryProperty2,
             IReadOnlyDictionary<string, TSecond> childGenericPartiallyClosedReadOnlyDictionaryProperty1,
             IReadOnlyDictionary<TFirst, string> childGenericPartiallyClosedReadOnlyDictionaryProperty2)
-            : base(parentStringProperty, parentIntProperty, parentEnumProperty, parentCustomClassProperty, parentGenericArgumentProperty, parentGenericArrayProperty, parentGenericNullableProperty, parentGenericCustomGenericClassProperty, parentGenericReadOnlyCollectionProperty, parentGenericReadOnlyListProperty, parentGenericReadOnlyDictionaryProperty1, parentGenericReadOnlyDictionaryProperty2, parentGenericPartiallyClosedReadOnlyDictionaryProperty1, parentGenericPartiallyClosedReadOnlyDictionaryProperty2)
+        : base(parentStringProperty, parentIntProperty, parentEnumProperty, parentCustomClassProperty, parentArrayProperty, parentNullableProperty, parentCustomGenericClassProperty, parentReadOnlyCollectionProperty, parentReadOnlyDictionaryProperty)
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { childCustomClassProperty }.AsArg().Must().NotBeNull();
+            new { childClassProperty }.AsArg().Must().NotBeNull();
             new { childGenericArgumentProperty }.AsArg().Must().NotBeNull();
             new { childGenericArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { childGenericCustomGenericClassProperty }.AsArg().Must().NotBeNull();
@@ -64,7 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ChildStringProperty = childStringProperty;
             this.ChildIntProperty = childIntProperty;
             this.ChildEnumProperty = childEnumProperty;
-            this.ChildCustomClassProperty = childCustomClassProperty;
+            this.ChildClassProperty = childClassProperty;
             this.ChildGenericArgumentProperty = childGenericArgumentProperty;
             this.ChildGenericArrayProperty = childGenericArrayProperty;
             this.ChildGenericNullableProperty = childGenericNullableProperty;
@@ -87,7 +82,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public CustomEnum ChildEnumProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public CustomClass ChildCustomClassProperty { get; private set; }
+        public CustomClass ChildClassProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public TFirst ChildGenericArgumentProperty { get; private set; }
@@ -122,7 +117,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public RelativeSortOrder CompareToForRelativeSortOrder(
-            ModelPrivateSetGenericParentGenericChild<TFirst, TSecond> other)
+            ModelPrivateSetNonGenericParentGenericChild<TFirst, TSecond> other)
         {
             if (other == null)
             {

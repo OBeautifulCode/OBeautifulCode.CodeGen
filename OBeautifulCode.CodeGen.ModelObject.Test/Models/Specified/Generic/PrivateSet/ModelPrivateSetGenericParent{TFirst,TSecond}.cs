@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ModelPrivateSetGenericParent{TFirst, TSecond}.cs" company="OBeautifulCode">
+// <copyright file="ModelPrivateSetGenericParent{TFirst,TSecond}.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------

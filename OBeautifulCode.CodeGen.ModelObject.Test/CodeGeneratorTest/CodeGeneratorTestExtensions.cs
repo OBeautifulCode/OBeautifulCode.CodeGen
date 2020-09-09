@@ -450,6 +450,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this string modelName,
             ModelOrTest modelOrTest)
         {
+            modelName = modelName.Replace(" ", string.Empty);
+
             var result = modelOrTest == ModelOrTest.Model
                 ? modelName
                 : modelName + Settings.TestNameSuffix;
