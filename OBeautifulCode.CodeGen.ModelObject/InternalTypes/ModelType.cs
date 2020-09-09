@@ -1098,6 +1098,45 @@ namespace OBeautifulCode.CodeGen
 
             var genericArguments = type.GetGenericArguments();
 
+            // first, we get example types for all generic arguments, without consideration for constraints
+            var exampleUnconstrainedGenericArguments = GetExampleUnconstrainedGenericArguments(genericArguments);
+
+            // next, we iterate thru each generic argument and attempt to get a type that satisfies all constraints
+            // we keep doing this until we have a type that satisfies the constraints of all generic arguments
+            // or until we are no longer making progress towards that end.
+            var exampleConstrainedGenericArguments = new Type[genericArguments.Length];
+
+            int resolvedGenericArgumentsBefore, resolvedGenericArgumentsAfter;
+
+            do
+            {
+                resolvedGenericArgumentsBefore = exampleConstrainedGenericArguments.Count(_ => _ != null);
+
+                for (var x = 0; x < genericArguments.Length; x++)
+                {
+                    if (exampleConstrainedGenericArguments[x] == null)
+                    {
+                        var genericArgumentToConstrainedGenericArgumentMap = exampleConstrainedGenericArguments.Select((t, i) => new { Type = t, Index = i }).ToDictionary(_ => genericArguments[_.Index], _ => exampleConstrainedGenericArguments[_.Index]);
+
+                        exampleConstrainedGenericArguments[x] = GetExampleTypeThatSatisfiesGenericArgumentConstraints(type, genericArguments[x], exampleUnconstrainedGenericArguments[x], genericArgumentToConstrainedGenericArgumentMap);
+                    }
+                }
+
+                resolvedGenericArgumentsAfter = exampleConstrainedGenericArguments.Count(_ => _ != null);
+            }
+            while ((resolvedGenericArgumentsAfter > resolvedGenericArgumentsBefore) && (resolvedGenericArgumentsAfter != genericArguments.Length));
+
+            if (!type.TryMakeGenericType(out Type result, exampleConstrainedGenericArguments.ToArray()))
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; cannot find suitable type(s) for the generic argument(s) that satisfy all constraints."));
+            }
+
+            return result;
+        }
+
+        private static IReadOnlyList<Type> GetExampleUnconstrainedGenericArguments(
+            IReadOnlyList<Type> genericArguments)
+        {
             // see: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters
             // class Test1<T> where T : struct
             //    GenericParameterAttributes.NotNullableValueTypeConstraint, GenericParameterAttributes.DefaultConstructorConstraint | System.ValueType
@@ -1119,11 +1158,11 @@ namespace OBeautifulCode.CodeGen
             //    works with T as one of { types assignable to SomeBaseClass }
             // valid combos:  class, new()
             // valid combos: notnull, new() - seems to allow Exception which is nullable so not sure
-            var resolvedGenericArguments = new List<Type>();
+            var result = new List<Type>();
 
             foreach (var genericArgument in genericArguments)
             {
-                Type thisGenericArgumentType;
+                Type exampleUnconstrainedGenericArgument;
 
                 var attributes = genericArgument.GenericParameterAttributes;
 
@@ -1131,22 +1170,22 @@ namespace OBeautifulCode.CodeGen
 
                 if (specialConstraints == GenericParameterAttributes.None)
                 {
-                    thisGenericArgumentType = typeof(Version);
+                    exampleUnconstrainedGenericArgument = typeof(Version);
                 }
                 else
                 {
                     // these are not really mutually exclusive (per documentation above), but we need to pick a single type.
                     if ((specialConstraints & GenericParameterAttributes.NotNullableValueTypeConstraint) != 0)
                     {
-                        thisGenericArgumentType = typeof(Guid);
+                        exampleUnconstrainedGenericArgument = typeof(Guid);
                     }
                     else if ((specialConstraints & GenericParameterAttributes.ReferenceTypeConstraint) != 0)
                     {
-                        thisGenericArgumentType = typeof(Version);
+                        exampleUnconstrainedGenericArgument = typeof(Version);
                     }
                     else if ((specialConstraints & GenericParameterAttributes.DefaultConstructorConstraint) != 0)
                     {
-                        thisGenericArgumentType = typeof(Version);
+                        exampleUnconstrainedGenericArgument = typeof(Version);
                     }
                     else
                     {
@@ -1154,56 +1193,143 @@ namespace OBeautifulCode.CodeGen
                     }
                 }
 
-                var constraints = genericArgument.GetGenericParameterConstraints();
+                result.Add(exampleUnconstrainedGenericArgument);
+            }
 
-                // starting with a "dumb" heuristic for now - if thisGenericArgumentType doesn't
-                // satisfy the constraint then find another type that does and move on
-                // (without checking it against the prior constraints - hence the need for the try/catch below)
-                foreach (var constraint in constraints)
+            return result;
+        }
+
+        private static Type GetExampleTypeThatSatisfiesGenericArgumentConstraints(
+            Type modelType,
+            Type genericArgument,
+            Type exampleUnconstrainedGenericArgument,
+            IReadOnlyDictionary<Type, Type> genericArgumentToExampleConstrainedGenericArgumentMap)
+        {
+            var constraints = genericArgument.GetGenericParameterConstraints();
+
+            var result = exampleUnconstrainedGenericArgument;
+
+            foreach (var constraint in constraints)
+            {
+                if (constraint.IsClass && (!constraint.IsAbstract))
                 {
-                    if (constraint.ContainsGenericParameters)
+                    // This is super bad practice.  What does a non-abstract class constraint mean?  Why is the generic argument there to begin with
+                    // (instead of just hard-coding the class wherever the generic argument is used)?
+                    // Anyways, we don't allow non-abstract models to derive from other non-abstract models.
+                    throw new NotSupportedException(Invariant($"This type ({modelType.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is a non-abstract class.  Class constraints should be abstract."));
+                }
+
+                // If the constraint is an open type, the only possible generic parameters are the generic parameters
+                // of the model type itself (e.g. where T1 : BaseClass<T2>).  So check if the generic parameters in-use
+                // already have resolved/example types and close-up the constraint.
+                var closedConstraint = constraint;
+
+                if (constraint.ContainsGenericParameters)
+                {
+                    var genericParametersInUse = GetGenericParametersInUse(constraint);
+
+                    if (genericParametersInUse.Any(_ => genericArgumentToExampleConstrainedGenericArgumentMap[_] == null))
                     {
-                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is an open generic type and this kind of constraint is not supported."));
+                        return null;
                     }
 
-                    if (constraint.IsClass && (!constraint.IsAbstract))
+                    try
                     {
-                        // This is super bad practice.  What does a non-abstract class constraint mean?  Why is the generic argument there to begin with
-                        // (instead of just hard-coding the class wherever the generic argument is used)?
-                        // Anyways, we don't allow non-abstract models to derive from other non-abstract models.
-                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}' which itself is a non-abstract class.  Class constraints should be abstract."));
+                        closedConstraint = MakeClosedConstraintType(constraint, genericArgumentToExampleConstrainedGenericArgumentMap);
                     }
-
-                    if (!constraint.IsAssignableFrom(thisGenericArgumentType))
+                    catch (Exception)
                     {
-                        // We are specifically looking for a class that is assignable to the constraint, but is not equal to the constraint
-                        // itself.  If we cannot find one of these, then we cannot create a closed instance of this type.
-                        thisGenericArgumentType = LoadedTypes
-                            .Where(_ => !_.ContainsGenericParameters)
-                            .Where(_ => _.IsClass)
-                            .Where(_ => _ != constraint)
-                            .FirstOrDefault(_ => constraint.IsAssignableFrom(_));
-
-                        if (thisGenericArgumentType == null)
-                        {
-                            throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; generic argument '{genericArgument.Name}' is constrained to '{constraint.ToStringReadable()}', but none of the closed loaded class types are assignable to this constraint type."));
-                        }
+                        return null;
                     }
                 }
 
-                resolvedGenericArguments.Add(thisGenericArgumentType);
+                // Is the current candidate assignable to the the closed constraint?
+                // If not, we need to find a derivative of the closed constraint and make that the new candidate.
+                if (!closedConstraint.IsAssignableFrom(result))
+                {
+                    var candidateDerivatives = LoadedTypes
+                        .Where(_ => _.IsClass)
+                        .Where(_ => !_.IsAbstract)
+                        .ToList();
+
+                    if (closedConstraint.IsGenericType)
+                    {
+                        var constraintGenericTypeDefinition = closedConstraint.GetGenericTypeDefinition();
+
+                        candidateDerivatives = candidateDerivatives
+                            .Where(_ => GetInheritancePathConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintGenericTypeDefinition)) // constraint's generic type definition is an ancestor of the loaded type
+                            .Select(_ => _.ContainsGenericParameters ? _.MakeGenericTypeOrNull(closedConstraint.GetGenericArguments()) : _) // if closed, then use the closed type.  if open, then try to close it using the closed constraint's generic arguments
+                            .Where(_ => _ != null) // filter out nulls returned by MakeGenericTypeOrNull()
+                            .ToList();
+                    }
+
+                    result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_));
+
+                    if (result == null)
+                    {
+                        return null;
+                    }
+                }
             }
 
-            try
-            {
-                var result = type.MakeGenericType(resolvedGenericArguments.ToArray());
+            return result;
+        }
 
-                return result;
-            }
-            catch (Exception)
+        private static IReadOnlyCollection<Type> GetGenericParametersInUse(
+            Type type)
+        {
+            var genericArguments = type.GetGenericArguments();
+
+            var result = new List<Type>();
+
+            foreach (var genericArgument in genericArguments)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; cannot find suitable type(s) for the generic argument(s) that satisfy all constraints."));
+                if (genericArgument.IsGenericParameter)
+                {
+                    result.Add(genericArgument);
+                }
+                else if (genericArgument.IsGenericType)
+                {
+                    result.AddRange(GetGenericParametersInUse(genericArgument));
+                }
             }
+
+            result = result.Distinct().ToList();
+
+            return result;
+        }
+
+        private static Type MakeClosedConstraintType(
+            Type type,
+            IReadOnlyDictionary<Type, Type> genericArgumentToExampleConstrainedGenericArgumentMap)
+        {
+            Type result;
+
+            if (type.IsGenericParameter)
+            {
+                result = genericArgumentToExampleConstrainedGenericArgumentMap[type];
+            }
+            else if (type.ContainsGenericParameters)
+            {
+                var genericArguments = type.GetGenericArguments();
+
+                var genericArgumentsToUse = new List<Type>();
+
+                foreach (var genericArgument in genericArguments)
+                {
+                    var genericArgumentToUse = MakeClosedConstraintType(genericArgument, genericArgumentToExampleConstrainedGenericArgumentMap);
+
+                    genericArgumentsToUse.Add(genericArgumentToUse);
+                }
+
+                result = type.GetGenericTypeDefinition().MakeGenericType(genericArgumentsToUse.ToArray());
+            }
+            else
+            {
+                result = type;
+            }
+
+            return result;
         }
 
         private static IReadOnlyCollection<Type> GetGenericParametersUsedAsKeyInDictionary(

@@ -725,13 +725,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class GenericClassWithGenericConstraint<T1, T2> : IModelViaCodeGen
-        where T2 : IReadOnlyCollection<T1>
-    {
-    }
-
-    [ExcludeFromCodeCoverage]
-    [GeneratedCode("ignore", "ignore")]
     public class NonAbstractBaseClass
     {
     }
@@ -789,7 +782,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         where T2 : BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied, new()
     {
     }
-
 #pragma warning restore SA1201 // Elements should appear in the correct order
 #pragma warning restore SA1649 // File name should match first type name
 }

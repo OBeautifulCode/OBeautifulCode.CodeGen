@@ -159,10 +159,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new { Type = typeof(DefaultConstructorWithPrivateSetters), ExpectedExceptionMessageContains = "the constructor to use is the default constructor but there are properties declared on the type that have private setters" },
                 new { Type = typeof(ParameterizedConstructorWithPublicSetters), ExpectedExceptionMessageContains = "the constructor to use is parameterized but there are properties declared on the type with a public setter" },
                 new { Type = typeof(DeclaredPropertyNotInConstructor), ExpectedExceptionMessageContains = "the constructor to use is parameterized but one or more of the properties declared on the type does not match a parameter in that constructor" },
-                new { Type = typeof(GenericClassWithGenericConstraint<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'IReadOnlyCollection<T1>' which itself is an open generic type and this kind of constraint is not supported" },
                 new { Type = typeof(GenericClassWithNonAbstractBaseClassConstraint<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'NonAbstractBaseClass' which itself is a non-abstract class.  Class constraints should be abstract." },
-                new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes1<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'BaseClassWithNoDerivatives', but none of the closed loaded class types are assignable to this constraint type" },
-                new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes2<,>), ExpectedExceptionMessageContains = "generic argument 'T2' is constrained to 'IInterfaceWithNoImplementers', but none of the closed loaded class types are assignable to this constraint type" },
+                new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes1<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
+                new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes2<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
                 new { Type = typeof(GenericClassWithConstraintsThatCannotBeSatisfied<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
             };
 
