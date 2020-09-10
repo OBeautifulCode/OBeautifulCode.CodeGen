@@ -29,7 +29,7 @@ namespace OBeautifulCode.CodeGen
     [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA1506_AvoidExcessiveClassCoupling_DisagreeWithAssessment)]
     internal class ModelType
     {
-        private static readonly IReadOnlyCollection<Type> LoadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies();
+        private static readonly IReadOnlyCollection<Type> LoadedTypes = AssemblyLoader.GetLoadedAssemblies().GetTypesFromAssemblies().ToList();
 
         private readonly Type underlyingType;
 
@@ -131,7 +131,7 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
 
             this.ExampleClosedModelType = GetExampleClosedModelType(type);
-            this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(this.ExampleClosedModelType);
+            this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(type);
             this.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings = GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(type);
 
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
@@ -975,6 +975,7 @@ namespace OBeautifulCode.CodeGen
             }
 
             var result = GetConcreteDerivativeTypes(typeToUse)
+                .Where(_ => _.Namespace == type.Namespace)
                 .Select(GetExampleClosedModelType)
                 .Where(type.IsAssignableFrom)
                 .Select(_ => _.ToStringReadable())
@@ -992,6 +993,7 @@ namespace OBeautifulCode.CodeGen
             }
 
             var result = GetAncestorConcreteDerivatives(type)
+                .Where(_ => _.Namespace == type.Namespace)
                 .Select(GetExampleClosedModelType)
                 .Select(_ => _.ToStringReadable())
                 .ToList();
