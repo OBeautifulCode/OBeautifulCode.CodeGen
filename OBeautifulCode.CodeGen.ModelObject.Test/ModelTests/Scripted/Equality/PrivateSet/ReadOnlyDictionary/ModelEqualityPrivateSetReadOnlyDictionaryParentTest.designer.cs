@@ -34,7 +34,47 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     public static partial class ModelEqualityPrivateSetReadOnlyDictionaryParentTest
     {
-        private static readonly EquatableTestScenarios<ModelEqualityPrivateSetReadOnlyDictionaryParent> EquatableTestScenarios = new EquatableTestScenarios<ModelEqualityPrivateSetReadOnlyDictionaryParent>();
+        private static readonly ModelEqualityPrivateSetReadOnlyDictionaryParent ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>();
+
+        private static readonly EquatableTestScenarios<ModelEqualityPrivateSetReadOnlyDictionaryParent> EquatableTestScenarios = new EquatableTestScenarios<ModelEqualityPrivateSetReadOnlyDictionaryParent>()
+            .AddScenario(() =>
+                new EquatableTestScenario<ModelEqualityPrivateSetReadOnlyDictionaryParent>
+                {
+                    Name = "Default Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new ModelEqualityPrivateSetReadOnlyDictionaryParent[]
+                    {
+                        // ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new ModelEqualityPrivateSetReadOnlyDictionaryParent[]
+                    {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfBoolProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfBoolProperty)).ParentReadOnlyDictionaryInterfaceOfBoolProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfIntProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfIntProperty)).ParentReadOnlyDictionaryInterfaceOfIntProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty)).ParentReadOnlyDictionaryInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty)).ParentReadOnlyDictionaryInterfaceOfGuidProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomEnumProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomClassProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty(A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty),
+                    },
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelEqualityPrivateSetReadOnlyDictionaryParent[]
+                    {
+                        A.Dummy<ModelEqualityPrivateSetReadOnlyDictionaryParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]

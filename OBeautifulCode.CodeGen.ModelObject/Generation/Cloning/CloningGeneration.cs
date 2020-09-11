@@ -39,7 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var deepCloneGenericCode = modelType.GenerateDeepCloneGenericCode();
 
-            var deepCloneWithCode = modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative
+            var deepCloneWithCode = modelType.DeclaresDeepCloneMethod
                 ? string.Empty
                 : modelType.GenerateDeepCloneWithCode();
 
@@ -67,7 +67,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             new { modelType }.AsArg().Must().NotBeNull();
 
-            if (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Abstract))
+            if (modelType.DeclaresDeepCloneMethod || (!modelType.PropertiesOfConcern.Any()) || (modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Abstract))
             {
                 return null;
             }
@@ -120,7 +120,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? Environment.NewLine + Environment.NewLine + string.Join(Environment.NewLine + Environment.NewLine, assertDeepCloneStatements)
                 : string.Empty;
 
-            var deepCloneWithTestCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Abstract))
+            var deepCloneWithTestCode = (modelType.DeclaresDeepCloneMethod || (!modelType.PropertiesOfConcern.Any()) || (modelType.ClassifiedHierarchyKind == ClassifiedHierarchyKind.Abstract))
                 ? string.Empty
                 : Environment.NewLine + Environment.NewLine + typeof(CloningGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.DeepCloneKeyMethodKinds, CodeSnippetKind.DeepCloneWithTest);
 
@@ -142,7 +142,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
             }
 
-            var deepCloneWithThrowsTestMethodsCode = (modelType.DeclaresDeepCloneMethodDirectlyOrInDerivative || (!modelType.PropertiesOfConcern.Any()) || (!deepCloneWithThrowsTestMethods.Any()))
+            var deepCloneWithThrowsTestMethodsCode = (modelType.DeclaresDeepCloneMethod || (!modelType.PropertiesOfConcern.Any()) || (!deepCloneWithThrowsTestMethods.Any()))
                 ? string.Empty
                 : Environment.NewLine + Environment.NewLine + deepCloneWithThrowsTestMethods.ToDelimitedString(Environment.NewLine + Environment.NewLine);
 

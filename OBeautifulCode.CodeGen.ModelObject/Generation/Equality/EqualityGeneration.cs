@@ -12,7 +12,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
-    using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
 
@@ -76,8 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GenerateEqualityTestFields(
             this ModelType modelType)
         {
-            var keyMethodKinds = modelType.DeclaresEqualsMethodDirectlyOrInDerivative ||
-                                 modelType.DeclaresGetHashCodeMethodDirectlyOrInDerivative
+            var keyMethodKinds = modelType.DeclaresEqualsMethod || modelType.DeclaresGetHashCodeMethod
                 ? KeyMethodKinds.Declared
                 : KeyMethodKinds.Generated;
 
@@ -185,7 +183,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.ObjectsEqualToButNotTheSameAsReferenceObjectToken, objectsEqualToButNotTheSameAsReferenceObject)
                 .Replace(Tokens.ObjectsNotEqualToReferenceObjectToken, objectsNotEqualToReferenceObject)
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                .Replace(Tokens.DummyAncestorConcreteDerivativesToken, dummyAncestorConcreteDerivatives);
+                .Replace(Tokens.DummyAncestorConcreteDerivativesToken, dummyAncestorConcreteDerivatives)
+                .Replace(Tokens.CommentOutToken, modelType.RequiresDeepCloning ? string.Empty : "// ");
 
             return result;
         }

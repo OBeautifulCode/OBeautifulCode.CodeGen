@@ -34,7 +34,48 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     public static partial class ModelHashingPublicSetMiscParentTest
     {
-        private static readonly EquatableTestScenarios<ModelHashingPublicSetMiscParent> EquatableTestScenarios = new EquatableTestScenarios<ModelHashingPublicSetMiscParent>();
+        private static readonly ModelHashingPublicSetMiscParent ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelHashingPublicSetMiscParent>();
+
+        private static readonly EquatableTestScenarios<ModelHashingPublicSetMiscParent> EquatableTestScenarios = new EquatableTestScenarios<ModelHashingPublicSetMiscParent>()
+            .AddScenario(() =>
+                new EquatableTestScenario<ModelHashingPublicSetMiscParent>
+                {
+                    Name = "Default Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new ModelHashingPublicSetMiscParent[]
+                    {
+                        // ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new ModelHashingPublicSetMiscParent[]
+                    {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCollectionInterfaceOfStringProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfStringProperty)).ParentCollectionInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentListInterfaceOfStringProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfStringProperty)).ParentListInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty)).ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty)).ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentListInterfaceOfCollectionInterfaceOfStringProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentListInterfaceOfCollectionInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentListInterfaceOfCollectionInterfaceOfStringProperty)).ParentListInterfaceOfCollectionInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfListInterfaceOfStringProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty)).ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty)).ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty(A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty),
+                    },
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelHashingPublicSetMiscParent[]
+                    {
+                        A.Dummy<ModelHashingPublicSetMiscParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]

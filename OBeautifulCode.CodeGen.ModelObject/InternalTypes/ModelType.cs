@@ -126,10 +126,6 @@ namespace OBeautifulCode.CodeGen
             this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
             this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
 
-            this.DeclaresDeepCloneMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareDeepCloneMethod<>));
-            this.DeclaresEqualsMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareEqualsMethod<>));
-            this.DeclaresGetHashCodeMethodDirectlyOrInDerivative = DetermineIfDeclaresMethodDirectlyOrInDerivative(type, typeof(IDeclareGetHashCodeMethod));
-
             this.ExampleClosedModelType = GetExampleClosedModelType(type);
             this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(type);
             this.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings = GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(type);
@@ -329,24 +325,6 @@ namespace OBeautifulCode.CodeGen
         /// Gets the key method kind for the <see cref="IDeclareToStringMethod.ToString"/> method.
         /// </summary>
         public KeyMethodKinds ToStringKeyMethodKinds { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether the model declares a <see cref="IDeclareDeepCloneMethod{T}.DeepClone"/> method
-        /// or has a derivative that does.
-        /// </summary>
-        public bool DeclaresDeepCloneMethodDirectlyOrInDerivative { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether the model declares a <see cref="IDeclareEqualsMethod{T}.Equals(T)"/> method
-        /// or has a derivative that does.
-        /// </summary>
-        public bool DeclaresEqualsMethodDirectlyOrInDerivative { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether the model declares a <see cref="IDeclareGetHashCodeMethod.GetHashCode"/> method
-        /// or has a derivative that does.
-        /// </summary>
-        public bool DeclaresGetHashCodeMethodDirectlyOrInDerivative { get; }
 
         /// <summary>
         /// Gets the namespaces of the types in the properties of concern.
@@ -937,29 +915,6 @@ namespace OBeautifulCode.CodeGen
             {
                 result.Add(typeof(IComparableForRelativeSortOrder<>).MakeGenericType(type));
             }
-
-            return result;
-        }
-
-        private static bool DetermineIfDeclaresMethodDirectlyOrInDerivative(
-            Type type,
-            Type methodInterfaceType)
-        {
-            // We want to use the generic type definition here because we don't so much care
-            // to identify the specific closed derivatives; we want to know to know if any
-            // derivative implements methodInterfaceType.
-            if (type.IsClosedGenericType())
-            {
-                type = type.GetGenericTypeDefinition();
-            }
-
-            // per ThrowIfNotSupported, declared methods can only go in concrete types
-            var typesToCheck = type.IsAbstract ? GetConcreteDerivativeTypes(type) : new[] { type };
-
-            var result = typesToCheck.Any(_ => _.GetInterfaces().Contains(
-                methodInterfaceType.IsGenericTypeDefinition
-                ? methodInterfaceType.MakeGenericType(_)
-                : methodInterfaceType));
 
             return result;
         }

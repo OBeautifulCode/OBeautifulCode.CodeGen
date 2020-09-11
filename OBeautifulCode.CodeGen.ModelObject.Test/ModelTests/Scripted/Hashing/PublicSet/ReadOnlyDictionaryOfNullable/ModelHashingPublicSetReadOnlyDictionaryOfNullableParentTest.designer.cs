@@ -34,7 +34,43 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     public static partial class ModelHashingPublicSetReadOnlyDictionaryOfNullableParentTest
     {
-        private static readonly EquatableTestScenarios<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent> EquatableTestScenarios = new EquatableTestScenarios<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>();
+        private static readonly ModelHashingPublicSetReadOnlyDictionaryOfNullableParent ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>();
+
+        private static readonly EquatableTestScenarios<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent> EquatableTestScenarios = new EquatableTestScenarios<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>()
+            .AddScenario(() =>
+                new EquatableTestScenario<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>
+                {
+                    Name = "Default Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new ModelHashingPublicSetReadOnlyDictionaryOfNullableParent[]
+                    {
+                        // ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new ModelHashingPublicSetReadOnlyDictionaryOfNullableParent[]
+                    {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableBoolProperty(A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty)).ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableIntProperty(A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)).ParentReadOnlyDictionaryInterfaceOfNullableIntProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableGuidProperty(A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)).ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty(A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty(A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                    },
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelHashingPublicSetReadOnlyDictionaryOfNullableParent[]
+                    {
+                        A.Dummy<ModelHashingPublicSetReadOnlyDictionaryOfNullableParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]

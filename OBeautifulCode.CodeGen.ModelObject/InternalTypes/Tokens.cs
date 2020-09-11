@@ -322,5 +322,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Checks whether <see cref="DateTime"/> is used as a key in a dictionary.
         /// </summary>
         public const string DateTimeUsedAsKeyInDictionaryCheck = "[date-time-used-as-key-in-dictionary-check-here]";
+
+        /// <summary>
+        /// Comments out a line of code.
+        /// </summary>
+        public const string CommentOutToken = "[comment-out-here]";
     }
 }

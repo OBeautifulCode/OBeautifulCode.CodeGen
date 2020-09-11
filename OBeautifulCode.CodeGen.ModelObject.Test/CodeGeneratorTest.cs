@@ -857,51 +857,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else if ((declaredKeyMethod == DeclaredKeyMethod.Equality) || (declaredKeyMethod == DeclaredKeyMethod.Hashing))
             {
-                var equalityTestFields = modelName.GetModelType().GenerateEqualityTestFieldsInUserCode();
-
-                var constructorStatements = new List<string>();
-
-                if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
+                if (hierarchyKind != HierarchyKind.AbstractBaseRoot)
                 {
-                    constructorStatements.Add(string.Empty);
-                    constructorStatements.Add("            var properties = ObjectThatIsEqualToButNotTheSameAsReferenceObject.GetType().GetProperties();");
-                    constructorStatements.Add(string.Empty);
-                    constructorStatements.Add("            foreach (var property in properties)");
-                    constructorStatements.Add("            {");
-                    constructorStatements.Add("                property.DeclaringType.GetProperty(property.Name).SetValue(ObjectThatIsEqualToButNotTheSameAsReferenceObject, property.GetValue(ReferenceObjectForEquatableTestScenarios));");
-                    constructorStatements.Add("            }");
-                    constructorStatements.Add(string.Empty);
+                    var equalityTestFields = modelName.GetModelType().GenerateEqualityTestFieldsInUserCode();
+
+                    var statements = new List<string>
+                    {
+                        fileNameWithoutExtension.GetFileHeader(),
+                        "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
+                        "{",
+                        "    using System;",
+                        "    using System.Diagnostics.CodeAnalysis;",
+                        string.Empty,
+                        "    using FakeItEasy;",
+                        string.Empty,
+                        "    using OBeautifulCode.AutoFakeItEasy;",
+                        "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
+                        "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
+                        "    using OBeautifulCode.Equality.Recipes;",
+                        string.Empty,
+                        Invariant($"    public static partial class {testClassName}"),
+                        "    {",
+                        equalityTestFields,
+                        string.Empty,
+                        "        [SuppressMessage(\"Microsoft.Performance\", \"CA1810:InitializeReferenceTypeStaticFieldsInline\", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]",
+                        Invariant($"        static {testClassName}()"),
+                        Invariant($"        {{"),
+                        Invariant($"            EquatableTestScenarios.AddScenarios(LocalEquatableTestScenarios);"),
+                        "        }",
+                        "    }",
+                        "}",
+                    };
+
+                    File.WriteAllText(testCodeFilePath, statements.ToNewLineDelimited());
                 }
-
-                var statements = new List<string>
-                {
-                    fileNameWithoutExtension.GetFileHeader(),
-                    "namespace OBeautifulCode.CodeGen.ModelObject.Test.Test",
-                    "{",
-                    "    using System;",
-                    "    using System.Diagnostics.CodeAnalysis;",
-                    string.Empty,
-                    "    using FakeItEasy;",
-                    string.Empty,
-                    "    using OBeautifulCode.AutoFakeItEasy;",
-                    "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                    "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
-                    "    using OBeautifulCode.Equality.Recipes;",
-                    string.Empty,
-                    Invariant($"    public static partial class {testClassName}"),
-                    "    {",
-                    equalityTestFields,
-                    string.Empty,
-                    "        [SuppressMessage(\"Microsoft.Performance\", \"CA1810:InitializeReferenceTypeStaticFieldsInline\", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]",
-                    Invariant($"        static {testClassName}()"),
-                    Invariant($"        {{{constructorStatements.ToNewLineDelimited()}"),
-                    Invariant($"            EquatableTestScenarios.AddScenarios(LocalEquatableTestScenarios);"),
-                    "        }",
-                    "    }",
-                    "}",
-                };
-
-                File.WriteAllText(testCodeFilePath, statements.ToNewLineDelimited());
             }
             else if (declaredKeyMethod == DeclaredKeyMethod.Comparing)
             {

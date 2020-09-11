@@ -8,7 +8,7 @@
                     ReferenceObject = ReferenceObjectForEquatableTestScenarios,
                     ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new [model-type-name-in-code-here][]
                     {
-                        ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                        [comment-out-here]ReferenceObjectForEquatableTestScenarios.DeepClone(),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new [model-type-name-in-code-here][]
                     {

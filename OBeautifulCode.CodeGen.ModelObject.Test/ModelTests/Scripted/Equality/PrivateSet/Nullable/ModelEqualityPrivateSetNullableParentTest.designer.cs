@@ -34,7 +34,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     public static partial class ModelEqualityPrivateSetNullableParentTest
     {
-        private static readonly EquatableTestScenarios<ModelEqualityPrivateSetNullableParent> EquatableTestScenarios = new EquatableTestScenarios<ModelEqualityPrivateSetNullableParent>();
+        private static readonly ModelEqualityPrivateSetNullableParent ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelEqualityPrivateSetNullableParent>();
+
+        private static readonly EquatableTestScenarios<ModelEqualityPrivateSetNullableParent> EquatableTestScenarios = new EquatableTestScenarios<ModelEqualityPrivateSetNullableParent>()
+            .AddScenario(() =>
+                new EquatableTestScenario<ModelEqualityPrivateSetNullableParent>
+                {
+                    Name = "Default Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new ModelEqualityPrivateSetNullableParent[]
+                    {
+                        // ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new ModelEqualityPrivateSetNullableParent[]
+                    {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableBoolProperty(A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => !_.ParentNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentNullableBoolProperty)).ParentNullableBoolProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableIntProperty(A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => !_.ParentNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentNullableIntProperty)).ParentNullableIntProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableGuidProperty(A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => !_.ParentNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentNullableGuidProperty)).ParentNullableGuidProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableDateTimeProperty(A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => !_.ParentNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentNullableDateTimeProperty)).ParentNullableDateTimeProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableCustomEnumProperty(A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => !_.ParentNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentNullableCustomEnumProperty)).ParentNullableCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentNullableCustomFlagsEnumProperty(A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => !_.ParentNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentNullableCustomFlagsEnumProperty)).ParentNullableCustomFlagsEnumProperty),
+                    },
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelEqualityPrivateSetNullableParent[]
+                    {
+                        A.Dummy<ModelEqualityPrivateSetNullableParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]

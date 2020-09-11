@@ -34,7 +34,48 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     public static partial class ModelEqualityPublicSetArrayParentTest
     {
-        private static readonly EquatableTestScenarios<ModelEqualityPublicSetArrayParent> EquatableTestScenarios = new EquatableTestScenarios<ModelEqualityPublicSetArrayParent>();
+        private static readonly ModelEqualityPublicSetArrayParent ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelEqualityPublicSetArrayParent>();
+
+        private static readonly EquatableTestScenarios<ModelEqualityPublicSetArrayParent> EquatableTestScenarios = new EquatableTestScenarios<ModelEqualityPublicSetArrayParent>()
+            .AddScenario(() =>
+                new EquatableTestScenario<ModelEqualityPublicSetArrayParent>
+                {
+                    Name = "Default Code Generated Scenario",
+                    ReferenceObject = ReferenceObjectForEquatableTestScenarios,
+                    ObjectsThatAreEqualToButNotTheSameAsReferenceObject = new ModelEqualityPublicSetArrayParent[]
+                    {
+                        // ReferenceObjectForEquatableTestScenarios.DeepClone(),
+                    },
+                    ObjectsThatAreNotEqualToReferenceObject = new ModelEqualityPublicSetArrayParent[]
+                    {
+                        // DeepCloneWith___() methods implemented in concrete derivates throw NotSupportedException
+                        // when the derivative's constructor in-use (by code gen) does not have a parameter that
+                        // corresponds with the property who's value is provided in the DeepCloneWith___() method.
+                        // We do not know in advance if this will happen.  As such, the following objects are commented out.
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfBoolProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty)).ParentArrayOfBoolProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfIntProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty)).ParentArrayOfIntProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfStringProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfStringProperty)).ParentArrayOfStringProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfGuidProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty)).ParentArrayOfGuidProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfDateTimeProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty)).ParentArrayOfDateTimeProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomEnumProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty)).ParentArrayOfCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomFlagsEnumProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty)).ParentArrayOfCustomFlagsEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomClassProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty)).ParentArrayOfCustomClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomBaseClassProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty)).ParentArrayOfCustomBaseClassProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomGenericClassOfCustomClassProperty(A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomGenericClassOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty)).ParentArrayOfCustomGenericClassOfCustomClassProperty),
+                    },
+                    ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelEqualityPublicSetArrayParent[]
+                    {
+                        A.Dummy<ModelEqualityPublicSetArrayParent>().Whose(_ => _.GetType() != ReferenceObjectForEquatableTestScenarios.GetType()),
+                    },
+                    ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
+                    {
+                        A.Dummy<object>(),
+                        A.Dummy<string>(),
+                        A.Dummy<int>(),
+                        A.Dummy<int?>(),
+                        A.Dummy<Guid>(),
+                    },
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
