@@ -18,7 +18,7 @@ namespace [dummy-factory-type-namespace-here]
     internal
 #else
     public
-#endif 
+#endif
     abstract class Default[dummy-factory-type-name-here] : IDummyFactory
     {
         public Default[dummy-factory-type-name-here]()

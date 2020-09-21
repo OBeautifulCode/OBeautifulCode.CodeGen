@@ -10,7 +10,7 @@ namespace [dummy-factory-type-namespace-here]
     using global::System.Diagnostics.CodeAnalysis;
 
     using global::FakeItEasy;
-    
+
     using global::OBeautifulCode.Assertion.Recipes;
 
     using global::Xunit;
