@@ -10,7 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Type;
 
     public partial class ModelPublicSetExpressionBodyChild2 : ModelPublicSetExpressionBodyParent, IModelViaCodeGen

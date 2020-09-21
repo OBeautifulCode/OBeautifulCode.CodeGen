@@ -8,8 +8,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+
     using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Type;
 
     public partial class ModelPrivateSetGeneric<TFirst, TSecond> :

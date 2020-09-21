@@ -14,8 +14,8 @@ namespace OBeautifulCode.CodeGen
     using System.Runtime.CompilerServices;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
-    using OBeautifulCode.CodeGen.ModelObject.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type;

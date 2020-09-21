@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System;
     using System.Diagnostics.CodeAnalysis;
 
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
 
     [Flags]
     [Serializable]

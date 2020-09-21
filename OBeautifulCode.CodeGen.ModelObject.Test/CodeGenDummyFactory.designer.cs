@@ -24,7 +24,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     /// </summary>
     [ExcludeFromCodeCoverage]
     [GeneratedCode("OBeautifulCode.CodeGen.ModelObject", "1.0.0.0")]
-#if !OBeautifulCodeCodeGenRecipesProject
+#if !OBeautifulCodeCodeGenSolution
     internal
 #else
     public

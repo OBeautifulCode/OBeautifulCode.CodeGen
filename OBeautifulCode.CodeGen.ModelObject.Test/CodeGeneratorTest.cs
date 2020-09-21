@@ -13,8 +13,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.String.Recipes;
@@ -532,8 +532,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 string.Empty,
                 "    using FakeItEasy;",
                 string.Empty,
-                "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
                 "    using OBeautifulCode.Assertion.Recipes;",
+                "    using OBeautifulCode.CodeAnalysis.Recipes;",
                 "    using OBeautifulCode.Equality.Recipes;",
                 "    using OBeautifulCode.Type;",
                 string.Empty,
@@ -810,8 +810,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         "{",
                         "    using System.Diagnostics.CodeAnalysis;",
                         string.Empty,
+                        "    using OBeautifulCode.CodeAnalysis.Recipes;",
                         "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                        "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
                         string.Empty,
                         Invariant($"    public static partial class {testClassName}"),
                         "    {",
@@ -838,8 +838,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         "{",
                         "    using System.Diagnostics.CodeAnalysis;",
                         string.Empty,
+                        "    using OBeautifulCode.CodeAnalysis.Recipes;",
                         "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                        "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
                         string.Empty,
                         Invariant($"    public static partial class {testClassName}"),
                         "    {",
@@ -872,8 +872,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         "    using FakeItEasy;",
                         string.Empty,
                         "    using OBeautifulCode.AutoFakeItEasy;",
+                        "    using OBeautifulCode.CodeAnalysis.Recipes;",
                         "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                        "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
                         "    using OBeautifulCode.Equality.Recipes;",
                         string.Empty,
                         Invariant($"    public static partial class {testClassName}"),
@@ -990,8 +990,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     "{",
                     "    using System.Diagnostics.CodeAnalysis;",
                     string.Empty,
+                    "    using OBeautifulCode.CodeAnalysis.Recipes;",
                     "    using OBeautifulCode.CodeGen.ModelObject.Recipes;",
-                    "    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;",
                     string.Empty,
                     Invariant($"    public static partial class {testClassName}"),
                     "    {",
@@ -1018,7 +1018,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             if (WriteFiles)
             {
-                var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenRecipesProject");
+                var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenSolution");
 
                 File.WriteAllText(Settings.DummyFactoryFilePath, code, Settings.Encoding);
             }

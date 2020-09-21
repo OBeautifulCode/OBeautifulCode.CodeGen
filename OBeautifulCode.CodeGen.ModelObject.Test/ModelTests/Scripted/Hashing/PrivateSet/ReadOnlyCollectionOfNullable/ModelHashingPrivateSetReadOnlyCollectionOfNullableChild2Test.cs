@@ -15,8 +15,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using FakeItEasy;
 
     using OBeautifulCode.AutoFakeItEasy;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Equality.Recipes;
 
     public static partial class ModelHashingPrivateSetReadOnlyCollectionOfNullableChild2Test

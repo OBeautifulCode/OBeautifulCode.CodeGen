@@ -11,8 +11,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 {
     using System.Diagnostics.CodeAnalysis;
 
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
 
     public static partial class ModelStringRepresentationPrivateSetMiscChild1Test
     {

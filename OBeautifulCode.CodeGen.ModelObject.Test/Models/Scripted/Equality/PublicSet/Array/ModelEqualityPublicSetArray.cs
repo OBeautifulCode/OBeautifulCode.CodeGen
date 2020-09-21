@@ -17,8 +17,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using FakeItEasy;
 
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
     using OBeautifulCode.Assertion.Recipes;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
 

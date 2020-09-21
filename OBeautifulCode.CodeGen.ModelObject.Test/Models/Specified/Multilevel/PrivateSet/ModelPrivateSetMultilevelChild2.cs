@@ -8,7 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System.Diagnostics.CodeAnalysis;
 
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Type;
 
     public abstract partial class ModelPrivateSetMultilevelChild2 : ModelPrivateSetMultilevelParent, IModelViaCodeGen, IComparableViaCodeGen

@@ -6,11 +6,11 @@
     <tags>code gen test scenario</tags>
     <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen.ModelObject.Recipes/nuget-icon.png</iconUrl>
     <dependencies>
-      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.16" />
+      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.17" />
+      <dependency id="OBeautifulCode.CodeAnalysis.Recipes.SuppressBecause" version="1.0.6" />
     </dependencies>
   </metadata>
   <files>
-    <file src=".analyzers\SuppressBecause.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SuppressBecause.cs" />
     <file src="Comparable\ComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Comparable\ComparableTestScenario{T}.cs" />
     <file src="Comparable\ComparableTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Comparable\ComparableTestScenarios{T}.cs" />
     <file src="Comparable\ValidatedComparableTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\Comparable\ValidatedComparableTestScenario{T}.cs" />

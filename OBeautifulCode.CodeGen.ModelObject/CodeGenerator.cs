@@ -12,7 +12,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.CodeGen.ModelObject.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Type;
 
     /// <summary>

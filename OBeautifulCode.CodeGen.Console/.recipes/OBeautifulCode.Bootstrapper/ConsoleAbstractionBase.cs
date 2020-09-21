@@ -9,20 +9,20 @@
 
 namespace OBeautifulCode.Bootstrapper.Recipes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+    using global::System;
+    using global::System.Collections.Generic;
+    using global::System.Linq;
 
     using CLAP;
 
-    using static System.FormattableString;
+    using static global::System.FormattableString;
 
     /// <summary>
     /// Instance for use in CLAP.
     /// </summary>
-#if !OBeautifulCodeBootstrapperRecipesProject
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
-    [System.CodeDom.Compiler.GeneratedCode("OBeautifulCode.Bootstrapper.Recipes", "See package version number")]
+#if !OBeautifulCodeBootstrapperSolution
+    [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    [global::System.CodeDom.Compiler.GeneratedCode("OBeautifulCode.Bootstrapper.Recipes", "See package version number")]
     internal
 #else
     public

@@ -12,7 +12,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Linq;
     using System.Text;
 
-    using OBeautifulCode.CodeGen.ModelObject.Test.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Enum.Recipes;
 
     public static class Settings

@@ -15,7 +15,7 @@ namespace OBeautifulCode.CodeGen.Console
 
     using Newtonsoft.Json.Linq;
 
-    using OBeautifulCode.CodeGen.Console.Internal;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
