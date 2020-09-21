@@ -1,4 +1,4 @@
-﻿        private [generic-type-parameter-name-here] DeepCloneGeneric([generic-type-parameter-name-here] value)
+﻿        private static [generic-type-parameter-name-here] DeepCloneGeneric([generic-type-parameter-name-here] value)
         {
             [generic-type-parameter-name-here] result;
 
@@ -22,7 +22,7 @@
                 {
                     result = ([generic-type-parameter-name-here])(object)valueAsString.Clone().ToString();
                 }
-                else if (value is System.Version valueAsVersion)
+                else if (value is global::System.Version valueAsVersion)
                 {
                     result = ([generic-type-parameter-name-here])valueAsVersion.Clone();
                 }

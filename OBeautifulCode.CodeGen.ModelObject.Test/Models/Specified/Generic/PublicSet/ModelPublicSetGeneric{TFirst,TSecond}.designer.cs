@@ -872,7 +872,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        private TFirst DeepCloneGeneric(TFirst value)
+        private static TFirst DeepCloneGeneric(TFirst value)
         {
             TFirst result;
 
@@ -896,7 +896,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     result = (TFirst)(object)valueAsString.Clone().ToString();
                 }
-                else if (value is System.Version valueAsVersion)
+                else if (value is global::System.Version valueAsVersion)
                 {
                     result = (TFirst)valueAsVersion.Clone();
                 }
