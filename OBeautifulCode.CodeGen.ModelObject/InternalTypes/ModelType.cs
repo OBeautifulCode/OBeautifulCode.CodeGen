@@ -992,6 +992,25 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        private static IReadOnlyList<Type> GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(
+            Type type)
+        {
+            var inheritancePath = GetInheritancePathConvertingGenericsToGenericTypeDefinitions(type);
+
+            var result = inheritancePath.ToList();
+
+            foreach (var ancestorType in inheritancePath)
+            {
+                var interfaces = ancestorType.GetInterfaces().Select(_ => _.IsGenericType ? _.GetGenericTypeDefinition() : _).ToList();
+
+                result.AddRange(interfaces);
+            }
+
+            result = result.Distinct().ToList();
+
+            return result;
+        }
+
         private static bool IsAutoPropertyBasedOnGetter(
             PropertyInfo propertyInfo)
         {
@@ -1232,7 +1251,7 @@ namespace OBeautifulCode.CodeGen
                         var constraintGenericTypeDefinition = closedConstraint.GetGenericTypeDefinition();
 
                         candidateDerivatives = candidateDerivatives
-                            .Where(_ => GetInheritancePathConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintGenericTypeDefinition)) // constraint's generic type definition is an ancestor of the loaded type
+                            .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintGenericTypeDefinition)) // constraint's generic type definition is an ancestor (interfaces included) of the loaded type
                             .Select(_ => _.ContainsGenericParameters ? _.MakeGenericTypeOrNull(closedConstraint.GetGenericArguments()) : _) // if closed, then use the closed type.  if open, then try to close it using the closed constraint's generic arguments
                             .Where(_ => _ != null) // filter out nulls returned by MakeGenericTypeOrNull()
                             .ToList();
