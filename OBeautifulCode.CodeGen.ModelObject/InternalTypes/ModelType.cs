@@ -1246,16 +1246,21 @@ namespace OBeautifulCode.CodeGen
                         .Where(_ => _.Namespace == modelType.Namespace)
                         .ToList();
 
-                    if (closedConstraint.IsGenericType)
-                    {
-                        var constraintGenericTypeDefinition = closedConstraint.GetGenericTypeDefinition();
+                    var constraintTypeToSearchForInInheritancePath = closedConstraint.IsGenericType
+                        ? closedConstraint.GetGenericTypeDefinition()
+                        : closedConstraint;
 
-                        candidateDerivatives = candidateDerivatives
-                            .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintGenericTypeDefinition)) // constraint's generic type definition is an ancestor (interfaces included) of the loaded type
-                            .Select(_ => _.ContainsGenericParameters ? _.MakeGenericTypeOrNull(closedConstraint.GetGenericArguments()) : _) // if closed, then use the closed type.  if open, then try to close it using the closed constraint's generic arguments
-                            .Where(_ => _ != null) // filter out nulls returned by MakeGenericTypeOrNull()
-                            .ToList();
-                    }
+                    // constraintTypeToSearchForInInheritancePath is an ancestor (interfaces included) of the loaded type?
+                    candidateDerivatives = candidateDerivatives
+                        .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintTypeToSearchForInInheritancePath))
+                        .ToList();
+
+                    // If candidate is closed, then use the closed type.  If open, then try to close it using the closed constraint's generic arguments.
+                    // An improvement could be a call to GetExampleClosedModelType().
+                    candidateDerivatives = candidateDerivatives
+                        .Select(_ => _.ContainsGenericParameters ? _.MakeGenericTypeOrNull(closedConstraint.GetGenericArguments()) : _)
+                        .Where(_ => _ != null) // filter out nulls returned by MakeGenericTypeOrNull()
+                        .ToList();
 
                     result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_) && (!_.ContainsGenericParameters));
 
