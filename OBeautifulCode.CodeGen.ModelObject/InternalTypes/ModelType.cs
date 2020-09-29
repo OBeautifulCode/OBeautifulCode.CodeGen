@@ -931,7 +931,7 @@ namespace OBeautifulCode.CodeGen
 
             var result = GetConcreteDerivativeTypes(typeToUse)
                 .Where(_ => _.Namespace == type.Namespace)
-                .Select(GetExampleClosedModelType)
+                .Select(_ => GetExampleClosedModelType(_))
                 .Where(type.IsAssignableFrom)
                 .Select(_ => _.ToStringReadable())
                 .ToList();
@@ -949,7 +949,7 @@ namespace OBeautifulCode.CodeGen
 
             var result = GetAncestorConcreteDerivatives(type)
                 .Where(_ => _.Namespace == type.Namespace)
-                .Select(GetExampleClosedModelType)
+                .Select(_ => GetExampleClosedModelType(_))
                 .Select(_ => _.ToStringReadable())
                 .ToList();
 
@@ -1082,13 +1082,14 @@ namespace OBeautifulCode.CodeGen
         }
 
         private static Type GetExampleClosedModelTypeOrNull(
-            Type type)
+            Type type,
+            IReadOnlyCollection<Type> previouslySeenTypes)
         {
             Type result;
 
             try
             {
-                result = GetExampleClosedModelType(type);
+                result = GetExampleClosedModelType(type, previouslySeenTypes);
             }
             catch (Exception)
             {
@@ -1099,8 +1100,16 @@ namespace OBeautifulCode.CodeGen
         }
 
         private static Type GetExampleClosedModelType(
-            Type type)
+            Type type,
+            IReadOnlyCollection<Type> previouslySeenTypes = null)
         {
+            if ((previouslySeenTypes != null) && previouslySeenTypes.Contains(type))
+            {
+                throw new InvalidOperationException("This type has already been seen: " + previouslySeenTypes);
+            }
+
+            previouslySeenTypes = previouslySeenTypes?.Concat(new[] { type }).ToArray() ?? new Type[0];
+
             if (!type.ContainsGenericParameters)
             {
                 return type;
@@ -1128,7 +1137,7 @@ namespace OBeautifulCode.CodeGen
                     {
                         var genericArgumentToConstrainedGenericArgumentMap = exampleConstrainedGenericArguments.Select((t, i) => new { Type = t, Index = i }).ToDictionary(_ => genericArguments[_.Index], _ => exampleConstrainedGenericArguments[_.Index]);
 
-                        exampleConstrainedGenericArguments[x] = GetExampleTypeThatSatisfiesGenericArgumentConstraints(type, genericArguments[x], exampleUnconstrainedGenericArguments[x], genericArgumentToConstrainedGenericArgumentMap);
+                        exampleConstrainedGenericArguments[x] = GetExampleTypeThatSatisfiesGenericArgumentConstraints(type, genericArguments[x], exampleUnconstrainedGenericArguments[x], genericArgumentToConstrainedGenericArgumentMap, previouslySeenTypes);
                     }
                 }
 
@@ -1213,7 +1222,8 @@ namespace OBeautifulCode.CodeGen
             Type modelType,
             Type genericArgument,
             Type exampleUnconstrainedGenericArgument,
-            IReadOnlyDictionary<Type, Type> genericArgumentToExampleConstrainedGenericArgumentMap)
+            IReadOnlyDictionary<Type, Type> genericArgumentToExampleConstrainedGenericArgumentMap,
+            IReadOnlyCollection<Type> previouslySeenTypes)
         {
             var constraints = genericArgument.GetGenericParameterConstraints();
 
@@ -1275,7 +1285,7 @@ namespace OBeautifulCode.CodeGen
                     // If candidate is closed, then use the closed type.  If open, then try to close it using the closed constraint's generic arguments.
                     // An improvement could be a call to GetExampleClosedModelType().
                     candidateDerivatives = candidateDerivatives
-                        .Select(GetExampleClosedModelTypeOrNull)
+                        .Select(_ => GetExampleClosedModelTypeOrNull(_, previouslySeenTypes))
                         .Where(_ => _ != null)
                         .ToList();
 
