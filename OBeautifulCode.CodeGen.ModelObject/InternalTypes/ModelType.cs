@@ -1081,6 +1081,23 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        private static Type GetExampleClosedModelTypeOrNull(
+            Type type)
+        {
+            Type result;
+
+            try
+            {
+                result = GetExampleClosedModelType(type);
+            }
+            catch (Exception)
+            {
+                result = null;
+            }
+
+            return result;
+        }
+
         private static Type GetExampleClosedModelType(
             Type type)
         {
@@ -1258,11 +1275,11 @@ namespace OBeautifulCode.CodeGen
                     // If candidate is closed, then use the closed type.  If open, then try to close it using the closed constraint's generic arguments.
                     // An improvement could be a call to GetExampleClosedModelType().
                     candidateDerivatives = candidateDerivatives
-                        .Select(_ => _.ContainsGenericParameters ? _.MakeGenericTypeOrNull(closedConstraint.GetGenericArguments()) : _)
-                        .Where(_ => _ != null) // filter out nulls returned by MakeGenericTypeOrNull()
+                        .Select(GetExampleClosedModelTypeOrNull)
+                        .Where(_ => _ != null)
                         .ToList();
 
-                    result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_) && (!_.ContainsGenericParameters));
+                    result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_));
 
                     if (result == null)
                     {
