@@ -1282,13 +1282,13 @@ namespace OBeautifulCode.CodeGen
                         .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintTypeToSearchForInInheritancePath))
                         .ToList();
 
-                    // If candidate is closed, then use the closed type.  If open, then try to close it using the closed constraint's generic arguments.
-                    // An improvement could be a call to GetExampleClosedModelType().
+                    // The candidate may or may not be closed; get an example closed version of each.
                     candidateDerivatives = candidateDerivatives
                         .Select(_ => GetExampleClosedModelTypeOrNull(_, previouslySeenTypes))
                         .Where(_ => _ != null)
                         .ToList();
 
+                    // Take the first one that's assignable to the constraint.
                     result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_));
 
                     if (result == null)
