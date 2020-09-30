@@ -1267,7 +1267,7 @@ namespace OBeautifulCode.CodeGen
                 // If not, we need to find a derivative of the closed constraint and make that the new candidate.
                 if (!closedConstraint.IsAssignableFrom(result))
                 {
-                    var candidateDerivatives = LoadedTypes
+                    var candidateTypes = LoadedTypes
                         .Where(_ => _.IsClass)
                         .Where(_ => !_.IsAbstract)
                         .Where(_ => _.Namespace == modelType.Namespace)
@@ -1278,18 +1278,23 @@ namespace OBeautifulCode.CodeGen
                         : closedConstraint;
 
                     // constraintTypeToSearchForInInheritancePath is an ancestor (interfaces included) of the loaded type?
-                    candidateDerivatives = candidateDerivatives
+                    candidateTypes = candidateTypes
                         .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintTypeToSearchForInInheritancePath))
                         .ToList();
 
-                    // The candidate may or may not be closed; get an example closed version of each.
-                    candidateDerivatives = candidateDerivatives
-                        .Select(_ => GetExampleClosedModelTypeOrNull(_, previouslySeenTypes))
-                        .Where(_ => _ != null)
-                        .ToList();
+                    foreach (var candidateType in candidateTypes)
+                    {
+                        // The candidate may or may not be closed; get an example closed version
+                        var exampleClosedCandidateType = GetExampleClosedModelTypeOrNull(candidateType, previouslySeenTypes);
 
-                    // Take the first one that's assignable to the constraint.
-                    result = candidateDerivatives.FirstOrDefault(_ => closedConstraint.IsAssignableFrom(_));
+                        // Is it assignable to the constraint?
+                        if ((exampleClosedCandidateType != null) && closedConstraint.IsAssignableFrom(exampleClosedCandidateType))
+                        {
+                            result = exampleClosedCandidateType;
+
+                            break;
+                        }
+                    }
 
                     if (result == null)
                     {
