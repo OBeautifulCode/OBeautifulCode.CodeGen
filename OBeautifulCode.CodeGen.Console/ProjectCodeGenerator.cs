@@ -101,18 +101,25 @@ namespace OBeautifulCode.CodeGen.Console
 
                     if (shouldGenerateCode)
                     {
-                        Console.WriteLine("Generating code for type: " + type.ToStringReadable());
-
-                        WriteModelFile(type, projectSourceFilePaths);
-
-                        if (hasTestProject)
+                        if (typeof(IForsakeInheritedModelViaCodeGen).IsAssignableFrom(type))
                         {
-                            WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder, includeSerializationTesting);
+                            Console.WriteLine("Forsaking generating code for type: " + type.ToStringReadable());
                         }
-
-                        if (typeof(IModelViaCodeGen).IsAssignableFrom(type))
+                        else
                         {
-                            typesForDummyFactory.Add(type);
+                            Console.WriteLine("Generating code for type: " + type.ToStringReadable());
+
+                            WriteModelFile(type, projectSourceFilePaths);
+
+                            if (hasTestProject)
+                            {
+                                WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder, includeSerializationTesting);
+                            }
+
+                            if (typeof(IModelViaCodeGen).IsAssignableFrom(type))
+                            {
+                                typesForDummyFactory.Add(type);
+                            }
                         }
                     }
                 }
