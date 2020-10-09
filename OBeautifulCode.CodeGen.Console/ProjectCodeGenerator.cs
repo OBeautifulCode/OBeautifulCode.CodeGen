@@ -301,6 +301,8 @@ namespace OBeautifulCode.CodeGen.Console
                          + Environment.NewLine
                          + "    using System;"
                          + Environment.NewLine
+                         + "    using System.Diagnostics.CodeAnalysis;"
+                         + Environment.NewLine
                          + Environment.NewLine
                          + "    using FakeItEasy;"
                          + Environment.NewLine
@@ -315,6 +317,15 @@ namespace OBeautifulCode.CodeGen.Console
                          + typeName
                          + Environment.NewLine
                          + "    {"
+                         + "        [SuppressMessage(\"Microsoft.Maintainability\", \"CA1505: AvoidUnmaintainableCode\", Justification = ObcSuppressBecause.CA1505_AvoidUnmaintainableCode_DisagreeWithAssessment)]"
+                         + Environment.NewLine
+                         + "        [SuppressMessage(\"Microsoft.Performance\", \"CA1810: InitializeReferenceTypeStaticFieldsInline\", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]"
+                         + Environment.NewLine
+                         + "        static " + typeName + "()"
+                         + Environment.NewLine
+                         + "        {"
+                         + Environment.NewLine
+                         + "        }"
                          + Environment.NewLine
                          + "    }"
                          + Environment.NewLine
