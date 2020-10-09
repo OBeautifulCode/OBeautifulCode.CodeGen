@@ -309,6 +309,8 @@ namespace OBeautifulCode.CodeGen.Console
                          + Environment.NewLine
                          + "    using OBeautifulCode.AutoFakeItEasy;"
                          + Environment.NewLine
+                         + "    using OBeautifulCode.CodeAnalysis.Recipes;"
+                         + Environment.NewLine
                          + Environment.NewLine
                          + "    using Xunit;"
                          + Environment.NewLine
