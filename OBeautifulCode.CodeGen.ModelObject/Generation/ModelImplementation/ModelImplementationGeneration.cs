@@ -364,6 +364,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "OBeautifulCode.CodeGen.ModelObject.Recipes",
                 "OBeautifulCode.Equality.Recipes",
                 "OBeautifulCode.Math.Recipes",
+                "OBeautifulCode.Reflection.Recipes",
                 "OBeautifulCode.Representation.System",
                 "OBeautifulCode.Type",
                 "Xunit",

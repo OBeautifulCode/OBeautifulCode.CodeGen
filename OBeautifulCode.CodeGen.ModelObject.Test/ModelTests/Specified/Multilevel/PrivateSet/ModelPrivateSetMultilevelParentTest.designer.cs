@@ -23,6 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using global::OBeautifulCode.CodeGen.ModelObject.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Math.Recipes;
+    using global::OBeautifulCode.Reflection.Recipes;
     using global::OBeautifulCode.Representation.System;
     using global::OBeautifulCode.Serialization;
     using global::OBeautifulCode.Serialization.Recipes;
@@ -93,15 +94,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var type = typeof(ModelPrivateSetMultilevelParent);
 
-                var expectedModelMethods = typeof(IModel<ModelPrivateSetMultilevelParent>)
-                                          .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
-                                          .ToList();
+                var expectedModelMethods = typeof(IModel<ModelPrivateSetMultilevelParent>).GetInterfaceDeclaredAndImplementedMethods();
 
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
                 var actualInterfaces = type.GetInterfaces();
-                var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
+                var actualModelMethods = type.GetMethods(BindingFlagsFor.DeclaredAndInheritedPublicInstanceMembers).ToList();
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
@@ -128,15 +127,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 // Arrange
                 var type = typeof(ModelPrivateSetMultilevelParent);
 
-                var expectedModelMethods = typeof(IComparableForRelativeSortOrder<ModelPrivateSetMultilevelParent>)
-                                          .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy)
-                                          .ToList();
+                var expectedModelMethods = typeof(IComparableForRelativeSortOrder<ModelPrivateSetMultilevelParent>).GetInterfaceDeclaredAndImplementedMethods();
 
                 var expectedModelMethodHashes = expectedModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Act
                 var actualInterfaces = type.GetInterfaces();
-                var actualModelMethods = type.GetMethods(BindingFlags.Public | BindingFlags.Instance).Where(_ => _.DeclaringType == type).ToList();
+                var actualModelMethods = type.GetMethods(BindingFlagsFor.DeclaredAndInheritedPublicInstanceMembers).ToList();
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert

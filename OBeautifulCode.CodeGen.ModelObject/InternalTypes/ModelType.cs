@@ -534,7 +534,7 @@ namespace OBeautifulCode.CodeGen
             Type type,
             bool declaredOnly)
         {
-            var bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.DeclaredOnly;
+            var bindingFlags = BindingFlagsFor.DeclaredButNotInheritedPublicInstanceMembers;
 
             var properties = type.GetProperties(bindingFlags);
 
@@ -573,7 +573,7 @@ namespace OBeautifulCode.CodeGen
         {
             var constructors = type.GetConstructors();
 
-            // no constructors?
+            // no public constructors?
             if (!constructors.Any())
             {
                 return null;

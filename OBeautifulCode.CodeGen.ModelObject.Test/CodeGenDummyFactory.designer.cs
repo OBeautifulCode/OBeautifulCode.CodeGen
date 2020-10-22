@@ -28,7 +28,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     internal
 #else
     public
-#endif 
+#endif
     abstract class DefaultCodeGenDummyFactory : IDummyFactory
     {
         public DefaultCodeGenDummyFactory()
