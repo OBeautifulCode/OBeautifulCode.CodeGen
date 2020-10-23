@@ -590,11 +590,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // Assert
                     foreach(var propertyName in propertyNames)
                     {
-                        var property = typeof(ModelPrivateSetConstructorMissingPropertyChild3).GetProperty(propertyName);
+                        var propertyInfo = typeof(ModelPrivateSetConstructorMissingPropertyChild3).GetPropertyInfo(propertyName, BindingFlagsFor.PublicDeclaredAndInheritedInstanceMembers);
 
-                        var propertyType = property.PropertyType;
+                        var propertyType = propertyInfo.PropertyType;
 
-                        var actualPropertyValue = property.GetValue(actual);
+                        var actualPropertyValue = propertyInfo.GetValue(actual);
 
                         if (propertyName == scenario.WithPropertyName)
                         {
@@ -609,7 +609,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         }
                         else
                         {
-                            var systemUnderTestPropertyValue = property.GetValue(scenario.SystemUnderTest);
+                            var systemUnderTestPropertyValue = propertyInfo.GetValue(scenario.SystemUnderTest);
 
                             // Use reflection to call: actualPropertyValue.AsTest().Must().BeEqualTo(systemUnderTestPropertyValue, because: scenario.Id)
                             // We need to use reflection here to specify the 'subject' and 'comparisonValue' types.
