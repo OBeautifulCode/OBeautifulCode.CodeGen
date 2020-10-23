@@ -66,6 +66,8 @@
     <Compile Include=".recipes\OBeautifulCode.Assertion\Verifications.Workflow.cs" />
     <Compile Include=".recipes\OBeautifulCode.Assertion\WorkflowExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.CodeAnalysis\ObcSuppressBecause.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Collection\EnumerableExtensions.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Enum\EnumExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\DateTimeEqualityComparer.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\DictionaryEqualityComparer.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\EnumerableEqualityComparer.cs" />
@@ -74,6 +76,16 @@
     <Compile Include=".recipes\OBeautifulCode.Equality\EqualityExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\HashCodeHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\ReadOnlyDictionaryEqualityComparer.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\BindingFlagsFor.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Attribute.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Constructor.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Enum.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Field.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.MemberInfo.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Method.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Property.cs" />
+    <Compile Include=".recipes\OBeautifulCode.String\StringExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ArrayKind.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringXmlDocOptions.cs" />

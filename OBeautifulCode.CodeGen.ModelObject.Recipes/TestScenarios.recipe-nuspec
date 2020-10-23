@@ -8,6 +8,7 @@
     <dependencies>
       <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.17" />
       <dependency id="OBeautifulCode.CodeAnalysis.Recipes.SuppressBecause" version="1.0.7" />
+      <dependency id="OBeautifulCode.Reflection.Recipes.ReflectionHelper" version="1.0.93" />
     </dependencies>
   </metadata>
   <files>

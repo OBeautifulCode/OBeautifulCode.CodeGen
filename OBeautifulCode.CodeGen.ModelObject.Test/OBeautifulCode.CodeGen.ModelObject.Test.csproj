@@ -150,6 +150,7 @@
     <Compile Include=".recipes\OBeautifulCode.Reflection\BindingFlagsFor.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\DisposableAppDomain.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Attribute.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Constructor.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Enum.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\ReflectionHelper.Field.cs" />

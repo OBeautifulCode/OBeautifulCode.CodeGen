@@ -534,7 +534,7 @@ namespace OBeautifulCode.CodeGen
             Type type,
             bool declaredOnly)
         {
-            var bindingFlags = BindingFlagsFor.DeclaredButNotInheritedPublicInstanceMembers;
+            var bindingFlags = BindingFlagsFor.PublicDeclaredButNotInheritedInstanceMembers;
 
             var properties = type.GetProperties(bindingFlags);
 

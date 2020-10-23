@@ -3520,7 +3520,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                 // Act
                 var actualInterfaces = type.GetInterfaces();
-                var actualModelMethods = type.GetMethods(BindingFlagsFor.DeclaredAndInheritedPublicInstanceMembers).ToList();
+                var actualModelMethods = type.GetMethods(BindingFlagsFor.PublicDeclaredAndInheritedInstanceMembers).ToList();
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
@@ -3553,7 +3553,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                 // Act
                 var actualInterfaces = type.GetInterfaces();
-                var actualModelMethods = type.GetMethods(BindingFlagsFor.DeclaredAndInheritedPublicInstanceMembers).ToList();
+                var actualModelMethods = type.GetMethods(BindingFlagsFor.PublicDeclaredAndInheritedInstanceMembers).ToList();
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
