@@ -28,11 +28,48 @@ namespace OBeautifulCode.Reflection.Recipes
     static partial class ReflectionHelper
     {
         /// <summary>
+        /// Gets the fields of the specified type,
+        /// with various options to control the scope of fields included and optionally order the fields.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="memberRelationships">OPTIONAL value that scopes the search for members based on their relationship to <paramref name="type"/>.  DEFAULT is to include the members declared in or inherited by the specified type.</param>
+        /// <param name="memberOwners">OPTIONAL value that scopes the search for members based on who owns the member.  DEFAULT is to include members owned by an object or owned by the type itself.</param>
+        /// <param name="memberMutability">OPTIONAL value that scopes the search for members based on mutability.  DEFAULT is to include members where mutability is not applicable and where applicable, include members with any kind of mutability.</param>
+        /// <param name="memberAccessModifiers">OPTIONAL value that scopes the search for members based on access modifiers.  DEFAULT is to include members having any supported access modifier.</param>
+        /// <param name="memberAttributes">OPTIONAL value that scopes the search for members based on the presence or absence of certain attributes on those members.  DEFAULT is to include members having or not having all special attributes.</param>
+        /// <param name="orderMembersBy">OPTIONAL value that specifies how to the members.  DEFAULT is return the members in no particular order.</param>
+        /// <returns>
+        /// The fields in the specified order.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
+        public static IReadOnlyList<FieldInfo> GetFieldsFiltered(
+            this Type type,
+            MemberRelationships memberRelationships = MemberRelationships.DeclaredOrInherited,
+            MemberOwners memberOwners = MemberOwners.All,
+            MemberMutability memberMutability = MemberMutability.All,
+            MemberAccessModifiers memberAccessModifiers = MemberAccessModifiers.All,
+            MemberAttributes memberAttributes = MemberAttributes.All,
+            OrderMembersBy orderMembersBy = OrderMembersBy.None)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
+            }
+
+            var result = type
+                .GetMembersFiltered(memberRelationships, memberOwners, memberMutability, memberAccessModifiers, MemberKinds.Field, memberAttributes, orderMembersBy)
+                .Cast<FieldInfo>()
+                .ToList();
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if a type has a field of the specified field name.
         /// </summary>
         /// <param name="type">The type to check.</param>
         /// <param name="fieldName">The name of the field to check for.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// true if the type has a field of the specified field name, false if not.
         /// </returns>
@@ -43,7 +80,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static bool HasField(
             this Type type,
             string fieldName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -78,7 +115,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// Gets the name of all of the fields.
         /// </summary>
         /// <param name="type">The type.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The field names.
         /// </returns>
@@ -86,7 +123,7 @@ namespace OBeautifulCode.Reflection.Recipes
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Flags", Justification = ObcSuppressBecause.CA1726_UsePreferredTerms_NameOfTypeOfIdentifierUsesTheTermFlags)]
         public static IReadOnlyCollection<string> GetFieldNames(
             this Type type,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -105,7 +142,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// </summary>
         /// <param name="type">The type.</param>
         /// <param name="fieldName">The name of the field.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The <see cref="FieldInfo"/>.
         /// </returns>
@@ -118,7 +155,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static FieldInfo GetFieldInfo(
             this Type type,
             string fieldName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -160,7 +197,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// <typeparam name="T">The type of the field.</typeparam>
         /// <param name="item">The object.</param>
         /// <param name="fieldName">The name of the field.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the field.
         /// </returns>
@@ -175,7 +212,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static T GetFieldValue<T>(
             this object item,
             string fieldName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (item == null)
             {
@@ -196,7 +233,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// </summary>
         /// <param name="item">The object.</param>
         /// <param name="fieldName">The name of the field.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the field.
         /// </returns>
@@ -210,7 +247,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static object GetFieldValue(
             this object item,
             string fieldName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (item == null)
             {
@@ -230,7 +267,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// <typeparam name="T">The type of the field.</typeparam>
         /// <param name="type">The type that contains the field.</param>
         /// <param name="fieldName">The name of the field.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedStaticMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the field.
         /// </returns>
@@ -246,7 +283,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static T GetStaticFieldValue<T>(
             this Type type,
             string fieldName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedStaticMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -276,7 +313,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// </summary>
         /// <param name="type">The type that contains the field.</param>
         /// <param name="fieldName">The name of the field.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedStaticMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the field.
         /// </returns>
@@ -291,7 +328,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static object GetStaticFieldValue(
             this Type type,
             string fieldName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedStaticMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -315,12 +352,116 @@ namespace OBeautifulCode.Reflection.Recipes
         }
 
         /// <summary>
+        /// Determines if the specified field is const (not readonly).
+        /// </summary>
+        /// <param name="fieldInfo">The field.</param>
+        /// <returns>
+        /// true if the specified field is const (not readonly), otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="fieldInfo"/> is null.</exception>
+        public static bool IsConstField(
+            this FieldInfo fieldInfo)
+        {
+            if (fieldInfo == null)
+            {
+                throw new ArgumentNullException(nameof(fieldInfo));
+            }
+
+            var result = fieldInfo.IsLiteral && (!fieldInfo.IsInitOnly);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified field is not writable (is readonly or const).
+        /// </summary>
+        /// <param name="fieldInfo">The field.</param>
+        /// <returns>
+        /// true if the specified field is not writable, otherwise false.
+        /// </returns>
+        public static bool IsNotWritableField(
+            this FieldInfo fieldInfo)
+        {
+            if (fieldInfo == null)
+            {
+                throw new ArgumentNullException(nameof(fieldInfo));
+            }
+
+            var result = fieldInfo.IsReadOnlyOrConstField();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified field is readonly (not const).
+        /// </summary>
+        /// <param name="fieldInfo">The field.</param>
+        /// <returns>
+        /// true if the specified field is readonly (not const), otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="fieldInfo"/> is null.</exception>
+        public static bool IsReadOnlyField(
+            this FieldInfo fieldInfo)
+        {
+            if (fieldInfo == null)
+            {
+                throw new ArgumentNullException(nameof(fieldInfo));
+            }
+
+            var result = (!fieldInfo.IsLiteral) && fieldInfo.IsInitOnly;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified field is readonly or const.
+        /// </summary>
+        /// <param name="fieldInfo">The field.</param>
+        /// <returns>
+        /// true if the specified field is readonly or const, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="fieldInfo"/> is null.</exception>
+        public static bool IsReadOnlyOrConstField(
+            this FieldInfo fieldInfo)
+        {
+            if (fieldInfo == null)
+            {
+                throw new ArgumentNullException(nameof(fieldInfo));
+            }
+
+            var result = fieldInfo.IsReadOnlyField() || fieldInfo.IsConstField();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified field is writable (not readonly and not const).
+        /// </summary>
+        /// <param name="fieldInfo">The field.</param>
+        /// <returns>
+        /// true if the specified field is writable, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="fieldInfo"/> is null.</exception>
+        public static bool IsWritableField(
+            this FieldInfo fieldInfo)
+        {
+            if (fieldInfo == null)
+            {
+                throw new ArgumentNullException(nameof(fieldInfo));
+            }
+
+            var result = !fieldInfo.IsReadOnlyOrConstField();
+
+            return result;
+        }
+
+        /// <summary>
         /// Sets a field's value.
         /// </summary>
         /// <param name="item">The object.</param>
         /// <param name="fieldName">The name of the field.</param>
         /// <param name="value">The value to set the field to.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is null.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="fieldName"/> is null.</exception>
         /// <exception cref="ArgumentException"><paramref name="fieldName"/> is whitespace.</exception>
@@ -333,7 +474,7 @@ namespace OBeautifulCode.Reflection.Recipes
             this object item,
             string fieldName,
             object value,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (item == null)
             {
@@ -353,7 +494,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// <param name="type">The type that contains the field.</param>
         /// <param name="fieldName">The name of the field.</param>
         /// <param name="value">The value to set the field to.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedStaticMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="fieldName"/> is null.</exception>
         /// <exception cref="ArgumentException"><paramref name="fieldName"/> is whitespace.</exception>
@@ -367,7 +508,7 @@ namespace OBeautifulCode.Reflection.Recipes
             this Type type,
             string fieldName,
             object value,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedStaticMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {

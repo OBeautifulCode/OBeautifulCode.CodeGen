@@ -28,48 +28,38 @@ namespace OBeautifulCode.Reflection.Recipes
     static partial class ReflectionHelper
     {
         /// <summary>
-        /// Determines if a type has a property of the specified property name.
+        /// Gets the properties of the specified type,
+        /// with various options to control the scope of properties included and optionally order the properties.
         /// </summary>
-        /// <param name="type">The type to check.</param>
-        /// <param name="propertyName">The name of the property to check for.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="memberRelationships">OPTIONAL value that scopes the search for members based on their relationship to <paramref name="type"/>.  DEFAULT is to include the members declared in or inherited by the specified type.</param>
+        /// <param name="memberOwners">OPTIONAL value that scopes the search for members based on who owns the member.  DEFAULT is to include members owned by an object or owned by the type itself.</param>
+        /// <param name="memberMutability">OPTIONAL value that scopes the search for members based on mutability.  DEFAULT is to include members where mutability is not applicable and where applicable, include members with any kind of mutability.</param>
+        /// <param name="memberAccessModifiers">OPTIONAL value that scopes the search for members based on access modifiers.  DEFAULT is to include members having any supported access modifier.</param>
+        /// <param name="memberAttributes">OPTIONAL value that scopes the search for members based on the presence or absence of certain attributes on those members.  DEFAULT is to include members having or not having all special attributes.</param>
+        /// <param name="orderMembersBy">OPTIONAL value that specifies how to the members.  DEFAULT is return the members in no particular order.</param>
         /// <returns>
-        /// true if the type has a property of the specified property name, false if not.
+        /// The properties in the specified order.
         /// </returns>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
-        /// <exception cref="ArgumentNullException"><paramref name="propertyName"/> is null.</exception>
-        /// <exception cref="ArgumentException"><paramref name="propertyName"/> is whitespace.</exception>
-        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Flags", Justification = ObcSuppressBecause.CA1726_UsePreferredTerms_NameOfTypeOfIdentifierUsesTheTermFlags)]
-        public static bool HasProperty(
+        public static IReadOnlyList<PropertyInfo> GetPropertiesFiltered(
             this Type type,
-            string propertyName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            MemberRelationships memberRelationships = MemberRelationships.DeclaredOrInherited,
+            MemberOwners memberOwners = MemberOwners.All,
+            MemberMutability memberMutability = MemberMutability.All,
+            MemberAccessModifiers memberAccessModifiers = MemberAccessModifiers.All,
+            MemberAttributes memberAttributes = MemberAttributes.All,
+            OrderMembersBy orderMembersBy = OrderMembersBy.None)
         {
             if (type == null)
             {
                 throw new ArgumentNullException(nameof(type));
             }
 
-            if (propertyName == null)
-            {
-                throw new ArgumentNullException(nameof(propertyName));
-            }
-
-            if (string.IsNullOrWhiteSpace(propertyName))
-            {
-                throw new ArgumentException(Invariant($"{nameof(propertyName)} is white space."));
-            }
-
-            bool result;
-
-            try
-            {
-                result = type.GetProperty(propertyName, bindingFlags) != null;
-            }
-            catch (AmbiguousMatchException)
-            {
-                result = true;
-            }
+            var result = type
+                .GetMembersFiltered(memberRelationships, memberOwners, memberMutability, memberAccessModifiers, MemberKinds.Property, memberAttributes, orderMembersBy)
+                .Cast<PropertyInfo>()
+                .ToList();
 
             return result;
         }
@@ -78,7 +68,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// Gets the name of all of the properties.
         /// </summary>
         /// <param name="type">The type.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The property names.
         /// </returns>
@@ -86,7 +76,7 @@ namespace OBeautifulCode.Reflection.Recipes
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Flags", Justification = ObcSuppressBecause.CA1726_UsePreferredTerms_NameOfTypeOfIdentifierUsesTheTermFlags)]
         public static IReadOnlyCollection<string> GetPropertyNames(
             this Type type,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -105,7 +95,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// </summary>
         /// <param name="type">The type.</param>
         /// <param name="propertyName">The name of the property.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The <see cref="PropertyInfo"/>.
         /// </returns>
@@ -118,7 +108,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static PropertyInfo GetPropertyInfo(
             this Type type,
             string propertyName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -160,7 +150,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// <typeparam name="T">The type of the property.</typeparam>
         /// <param name="item">The object.</param>
         /// <param name="propertyName">The name of the property.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the property.
         /// </returns>
@@ -175,7 +165,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static T GetPropertyValue<T>(
             this object item,
             string propertyName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (item == null)
             {
@@ -196,7 +186,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// </summary>
         /// <param name="item">The object.</param>
         /// <param name="propertyName">The name of the property.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the property.
         /// </returns>
@@ -210,7 +200,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static object GetPropertyValue(
             this object item,
             string propertyName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (item == null)
             {
@@ -230,7 +220,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// <typeparam name="T">The type of the property.</typeparam>
         /// <param name="type">The type that contains the property.</param>
         /// <param name="propertyName">The name of the property.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedStaticMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the property.
         /// </returns>
@@ -246,7 +236,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static T GetStaticPropertyValue<T>(
             this Type type,
             string propertyName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedStaticMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -276,7 +266,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// </summary>
         /// <param name="type">The type that contains the property.</param>
         /// <param name="propertyName">The name of the property.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedStaticMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <returns>
         /// The value of the property.
         /// </returns>
@@ -291,7 +281,7 @@ namespace OBeautifulCode.Reflection.Recipes
         public static object GetStaticPropertyValue(
             this Type type,
             string propertyName,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedStaticMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {
@@ -315,12 +305,208 @@ namespace OBeautifulCode.Reflection.Recipes
         }
 
         /// <summary>
+        /// Determines if a type has a property of the specified property name.
+        /// </summary>
+        /// <param name="type">The type to check.</param>
+        /// <param name="propertyName">The name of the property to check for.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
+        /// <returns>
+        /// true if the type has a property of the specified property name, false if not.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyName"/> is null.</exception>
+        /// <exception cref="ArgumentException"><paramref name="propertyName"/> is whitespace.</exception>
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms", MessageId = "Flags", Justification = ObcSuppressBecause.CA1726_UsePreferredTerms_NameOfTypeOfIdentifierUsesTheTermFlags)]
+        public static bool HasProperty(
+            this Type type,
+            string propertyName,
+            BindingFlags bindingFlags)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
+            }
+
+            if (propertyName == null)
+            {
+                throw new ArgumentNullException(nameof(propertyName));
+            }
+
+            if (string.IsNullOrWhiteSpace(propertyName))
+            {
+                throw new ArgumentException(Invariant($"{nameof(propertyName)} is white space."));
+            }
+
+            bool result;
+
+            try
+            {
+                result = type.GetProperty(propertyName, bindingFlags) != null;
+            }
+            catch (AmbiguousMatchException)
+            {
+                result = true;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is not writable (is read-only).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is not writable, otherwise false.
+        /// </returns>
+        public static bool IsNotWritableProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            var result = propertyInfo.IsReadOnlyProperty();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is not readable (is write-only).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is not readable, otherwise false.
+        /// </returns>
+        public static bool IsNotReadableProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            var result = propertyInfo.IsWriteOnlyProperty();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is readable (has a getter).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is readable, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is null.</exception>
+        public static bool IsReadableProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            var result = propertyInfo.GetGetMethod(true) != null;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is a read-only (has no setter).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is read-only, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is null.</exception>
+        public static bool IsReadOnlyProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            var result = propertyInfo.GetSetMethod(true) == null;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is a read-only auto property
+        /// (i.e. MyProperty { get; }).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is a read-only auto-property, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is null.</exception>
+        public static bool IsReadOnlyAutoProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            // Is an auto-property (one with a backing field automatically generated by the compiler)?
+            // Note that expression body properties are NOT auto-properties.
+            // see: https://stackoverflow.com/a/60638810/356790
+            var result = propertyInfo.IsReadOnlyProperty() && propertyInfo.GetGetMethod(true).IsCompilerGenerated();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is writable (has a setter).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is writable, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is null.</exception>
+        public static bool IsWritableProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            var result = propertyInfo.GetSetMethod(true) != null;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified property is a write-only (has no getter).
+        /// </summary>
+        /// <param name="propertyInfo">The property.</param>
+        /// <returns>
+        /// true if the specified property is write-only, otherwise false.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"><paramref name="propertyInfo"/> is null.</exception>
+        public static bool IsWriteOnlyProperty(
+            this PropertyInfo propertyInfo)
+        {
+            if (propertyInfo == null)
+            {
+                throw new ArgumentNullException(nameof(propertyInfo));
+            }
+
+            var result = propertyInfo.GetGetMethod(true) == null;
+
+            return result;
+        }
+
+        /// <summary>
         /// Sets a property's value.
         /// </summary>
         /// <param name="item">The object.</param>
         /// <param name="propertyName">The name of the property.</param>
         /// <param name="value">The value to set the property to.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is null.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="propertyName"/> is null.</exception>
         /// <exception cref="ArgumentException"><paramref name="propertyName"/> is whitespace.</exception>
@@ -333,7 +519,7 @@ namespace OBeautifulCode.Reflection.Recipes
             this object item,
             string propertyName,
             object value,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedMembers)
+            BindingFlags bindingFlags)
         {
             if (item == null)
             {
@@ -353,7 +539,7 @@ namespace OBeautifulCode.Reflection.Recipes
         /// <param name="type">The type that contains the property.</param>
         /// <param name="propertyName">The name of the property.</param>
         /// <param name="value">The value to set the property to.</param>
-        /// <param name="bindingFlags">OPTIONAL binding flags to use when searching.  DEFAULT is to filter to <see cref="BindingFlagsFor.AllDeclaredAndInheritedStaticMembers"/>.</param>
+        /// <param name="bindingFlags">Binding flags to use when searching.  See <see cref="BindingFlagsFor" /> for commonly-used binding flags.</param>
         /// <exception cref="ArgumentNullException"><paramref name="type"/> is null.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="propertyName"/> is null.</exception>
         /// <exception cref="ArgumentException"><paramref name="propertyName"/> is whitespace.</exception>
@@ -367,7 +553,7 @@ namespace OBeautifulCode.Reflection.Recipes
             this Type type,
             string propertyName,
             object value,
-            BindingFlags bindingFlags = BindingFlagsFor.AllDeclaredAndInheritedStaticMembers)
+            BindingFlags bindingFlags)
         {
             if (type == null)
             {

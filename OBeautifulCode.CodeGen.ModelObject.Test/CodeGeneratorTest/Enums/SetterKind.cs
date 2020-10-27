@@ -9,7 +9,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public enum SetterKind
     {
         // not supported:
-        // GettersOnly,
+        // ReadOnlyAuto,
         PublicSetters,
 
         PrivateSetters,

@@ -428,9 +428,9 @@ namespace OBeautifulCode.CodeGen
             Type type,
             PropertiesOfConcernResult propertiesOfConcernResult)
         {
-            if (propertiesOfConcernResult.GetterOnlyProperties.Any())
+            if (propertiesOfConcernResult.ReadOnlyAutoProperties.Any())
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following getter-only properties: {propertiesOfConcernResult.GetterOnlyProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following read-only auto properties: {propertiesOfConcernResult.ReadOnlyAutoProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
             }
 
             var propertiesOfConcern = propertiesOfConcernResult.PropertiesOfConcern;
@@ -506,11 +506,11 @@ namespace OBeautifulCode.CodeGen
             HierarchyKind result;
             if (type.IsAbstract)
             {
-                result = DoesInheritFromObject(type)
+                result = type.HasObjectAsBaseType()
                     ? HierarchyKind.AbstractBaseRoot
                     : HierarchyKind.AbstractBaseInherited;
             }
-            else if (DoesInheritFromObject(type))
+            else if (type.HasObjectAsBaseType())
             {
                 result = HierarchyKind.Standalone;
             }
@@ -518,14 +518,6 @@ namespace OBeautifulCode.CodeGen
             {
                 result = HierarchyKind.ConcreteInherited;
             }
-
-            return result;
-        }
-
-        private static bool DoesInheritFromObject(
-            Type type)
-        {
-            var result = type.BaseType == typeof(object);
 
             return result;
         }
@@ -538,14 +530,13 @@ namespace OBeautifulCode.CodeGen
 
             var properties = type.GetProperties(bindingFlags);
 
-            var getterOnlyProperties = properties
-                .Where(_ => _.GetSetMethod(true) == null) // no set method
-                .Where(IsAutoPropertyBasedOnGetter) // is an auto-property (e.g. int MyProperty { get; }).  expression body properties are NOT auto-properties
+            var readOnlyAutoProperties = properties
+                .Where(_ => _.IsReadOnlyAutoProperty()) // is an auto-property (e.g. int MyProperty { get; }).  expression body properties are NOT auto-properties
                 .ToList();
 
             var result = new PropertiesOfConcernResult
             {
-                GetterOnlyProperties = getterOnlyProperties,
+                ReadOnlyAutoProperties = readOnlyAutoProperties,
                 PropertiesOfConcern = properties
                     .Where(_ => _.GetSetMethod(true) != null) // requires a setter.  based on the logic above, this will filter out expression body properties (e.g. int MyProperty => 5)
                     .Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, type, _.GetSetMethod(true).IsPrivate, _.GetSetMethod(true).IsPublic))
@@ -559,7 +550,7 @@ namespace OBeautifulCode.CodeGen
 
                 result.PropertiesOfConcern = new PropertyOfConcern[0].Concat(baseTypePropertiesOfConcernResult.PropertiesOfConcern).Concat(result.PropertiesOfConcern).ToList();
 
-                result.GetterOnlyProperties = new PropertyInfo[0].Concat(baseTypePropertiesOfConcernResult.GetterOnlyProperties).Concat(result.GetterOnlyProperties).ToList();
+                result.ReadOnlyAutoProperties = new PropertyInfo[0].Concat(baseTypePropertiesOfConcernResult.ReadOnlyAutoProperties).Concat(result.ReadOnlyAutoProperties).ToList();
             }
 
             return result;
@@ -1011,17 +1002,6 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private static bool IsAutoPropertyBasedOnGetter(
-            PropertyInfo propertyInfo)
-        {
-            new { propertyInfo }.Must().NotBeNull();
-
-            // see: https://stackoverflow.com/a/60638810/356790
-            var result = propertyInfo.GetGetMethod().GetCustomAttribute(typeof(CompilerGeneratedAttribute)) != null;
-
-            return result;
-        }
-
         private static ClassifiedHierarchyKind Classify(
             HierarchyKind hierarchyKind)
         {
@@ -1388,7 +1368,7 @@ namespace OBeautifulCode.CodeGen
         {
             public IReadOnlyList<PropertyOfConcern> PropertiesOfConcern { get; set; }
 
-            public IReadOnlyList<PropertyInfo> GetterOnlyProperties { get; set; }
+            public IReadOnlyList<PropertyInfo> ReadOnlyAutoProperties { get; set; }
         }
     }
 }

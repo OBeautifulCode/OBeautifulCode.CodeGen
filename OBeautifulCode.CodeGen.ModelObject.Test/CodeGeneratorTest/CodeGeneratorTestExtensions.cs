@@ -29,7 +29,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             bool result;
             switch (setterKind)
             {
-                ////case SetterKind.GettersOnly:
+                ////case SetterKind.ReadOnlyAuto:
                 case SetterKind.PrivateSetters:
                     result = true;
                     break;
@@ -49,7 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string result;
             switch (setterKind)
             {
-                ////case SetterKind.GettersOnly:
+                ////case SetterKind.ReadOnlyAuto:
                 ////    result = string.Empty;
                 ////    break;
                 case SetterKind.PrivateSetters:

@@ -311,16 +311,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class GetterOnlyProperties1 : IModelViaCodeGen
+    public class ReadOnlyAutoProperties1 : IModelViaCodeGen
     {
         public string Property1 { get; }
     }
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class GetterOnlyProperties2 : IModelViaCodeGen
+    public class ReadOnlyAutoProperties2 : IModelViaCodeGen
     {
-        public GetterOnlyProperties2(
+        public ReadOnlyAutoProperties2(
             string property1,
             string property2)
         {
@@ -336,9 +336,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public abstract class GetterOnlyPropertiesBase : IModelViaCodeGen
+    public abstract class ReadOnlyAutoPropertiesBase : IModelViaCodeGen
     {
-        protected GetterOnlyPropertiesBase(
+        protected ReadOnlyAutoPropertiesBase(
             string property1,
             string property2)
         {
@@ -354,9 +354,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class GetterOnlyProperties3 : GetterOnlyPropertiesBase, IModelViaCodeGen
+    public class ReadOnlyAutoProperties3 : ReadOnlyAutoPropertiesBase, IModelViaCodeGen
     {
-        public GetterOnlyProperties3(
+        public ReadOnlyAutoProperties3(
             string property1,
             string property2)
         : base(property1, property2)
@@ -366,7 +366,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
-    public class GetterOnlyProperties4 : IModelViaCodeGen
+    public class ReadOnlyAutoProperties4 : IModelViaCodeGen
     {
         public DateTime Property1 { get; } = DateTime.Now;
     }
