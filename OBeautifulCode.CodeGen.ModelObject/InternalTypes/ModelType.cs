@@ -11,7 +11,6 @@ namespace OBeautifulCode.CodeGen
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
-    using System.Runtime.CompilerServices;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
@@ -311,32 +310,27 @@ namespace OBeautifulCode.CodeGen
             Type type,
             bool declaredOnly)
         {
-            var bindingFlags = BindingFlagsFor.PublicDeclaredButNotInheritedInstanceMembers;
+            var memberRelationships = declaredOnly
+                ? MemberRelationships.DeclaredInType
+                : MemberRelationships.DeclaredInTypeOrAncestorTypes;
 
-            var properties = type.GetProperties(bindingFlags);
+            var allProperties = type
+                .GetPropertiesFiltered(memberRelationships, MemberOwners.Instance, MemberAccessModifiers.Public, orderMembersBy: OrderMembersBy.DeclaringTypeDerivationPath);
 
-            var readOnlyAutoProperties = properties
-                .Where(_ => _.IsReadOnlyAutoProperty()) // is an auto-property (e.g. int MyProperty { get; }).  expression body properties are NOT auto-properties
+            var readOnlyAutoProperties = allProperties
+                .Where(_ => _.IsReadOnlyAutoProperty())
+                .ToList();
+
+            var propertiesOfConcern = allProperties
+                .Where(_ => _.IsWritableProperty())
+                .Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, _.DeclaringType, _.SetMethod.IsPrivate, _.SetMethod.IsPublic))
                 .ToList();
 
             var result = new PropertiesOfConcernResult
             {
                 ReadOnlyAutoProperties = readOnlyAutoProperties,
-                PropertiesOfConcern = properties
-                    .Where(_ => _.GetSetMethod(true) != null) // requires a setter.  based on the logic above, this will filter out expression body properties (e.g. int MyProperty => 5)
-                    .Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, type, _.GetSetMethod(true).IsPrivate, _.GetSetMethod(true).IsPublic))
-                    .ToList(),
+                PropertiesOfConcern = propertiesOfConcern,
             };
-
-            if ((!declaredOnly) && (type.BaseType != typeof(object)))
-            {
-                // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-                var baseTypePropertiesOfConcernResult = GetPropertiesOfConcernFromType(type.BaseType, declaredOnly);
-
-                result.PropertiesOfConcern = new PropertyOfConcern[0].Concat(baseTypePropertiesOfConcernResult.PropertiesOfConcern).Concat(result.PropertiesOfConcern).ToList();
-
-                result.ReadOnlyAutoProperties = new PropertyInfo[0].Concat(baseTypePropertiesOfConcernResult.ReadOnlyAutoProperties).Concat(result.ReadOnlyAutoProperties).ToList();
-            }
 
             return result;
         }
