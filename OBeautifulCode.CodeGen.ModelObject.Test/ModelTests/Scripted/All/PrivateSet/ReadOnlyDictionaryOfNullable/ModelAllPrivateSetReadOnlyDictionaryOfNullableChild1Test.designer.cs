@@ -1215,7 +1215,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                 // Act
                 var actualInterfaces = type.GetInterfaces();
-                var actualModelMethods = type.GetMethods(BindingFlagsFor.PublicDeclaredAndInheritedInstanceMembers).ToList();
+                var actualModelMethods = type.GetMethodsFiltered(MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public).ToList();
                 var actualModelMethodHashes = actualModelMethods.Select(_ => _.GetSignatureHash());
 
                 // Assert
