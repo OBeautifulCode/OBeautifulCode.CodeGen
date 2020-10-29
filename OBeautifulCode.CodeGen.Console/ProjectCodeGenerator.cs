@@ -91,6 +91,8 @@ namespace OBeautifulCode.CodeGen.Console
 
                 var typesForDummyFactory = new List<Type>();
 
+                var codeGeneratedForTypes = new List<Type>();
+
                 foreach (var type in typesToCheck)
                 {
                     Console.WriteLine("Checking type: " + type.ToStringReadable());
@@ -120,9 +122,15 @@ namespace OBeautifulCode.CodeGen.Console
                             {
                                 typesForDummyFactory.Add(type);
                             }
+
+                            codeGeneratedForTypes.Add(type);
                         }
                     }
                 }
+
+                Console.WriteLine();
+
+                Console.WriteLine("Generated code for these types: " + Environment.NewLine + codeGeneratedForTypes.Select(_ => " - " +  _.ToStringReadable()).ToNewLineDelimited());
 
                 if (hasDummyFactory)
                 {
