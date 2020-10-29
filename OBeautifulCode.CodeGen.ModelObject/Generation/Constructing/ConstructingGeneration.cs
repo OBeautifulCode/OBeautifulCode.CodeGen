@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
+    using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;

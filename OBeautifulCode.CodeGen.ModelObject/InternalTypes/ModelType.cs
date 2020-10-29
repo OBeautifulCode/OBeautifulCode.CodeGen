@@ -54,18 +54,30 @@ namespace OBeautifulCode.CodeGen
             // class, where we ensure that there are no dependencies on the added interfaces.
             this.underlyingType = type;
 
-            ThrowIfNotSupported(type);
+            // Check the type
+            ThrowIfModelTypeNotSupported(type);
 
+            // Hierarchy and Classification
             var hierarchyKind = GetHierarchyKind(type);
-            var propertiesOfConcernResult = GetPropertiesOfConcernFromType(type, declaredOnly: false);
-            var declaredOnlyPropertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: true).PropertiesOfConcern;
+            this.HierarchyKind = hierarchyKind;
+            this.ClassifiedHierarchyKind = Classify(hierarchyKind);
+            this.IsAbstractBase = (hierarchyKind == HierarchyKind.AbstractBaseRoot) || (hierarchyKind == HierarchyKind.AbstractBaseInherited);
+            this.IsConcrete = (hierarchyKind == HierarchyKind.ConcreteInherited) || (hierarchyKind == HierarchyKind.Standalone);
 
-            ThrowIfNotSupported(type, propertiesOfConcernResult);
+            // Properties of Concern
+            var propertiesOfConcern = GetPropertiesOfConcernInOrder(type);
+            var declaredOnlyPropertiesOfConcern = propertiesOfConcern.Where(_ => _.DeclaringType == type).ToList();
 
-            var propertiesOfConcern = propertiesOfConcernResult.PropertiesOfConcern;
-            var canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, new HashSet<Type>());
-            var constructor = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern);
+            ThrowIfPropertiesOfConcernNotSupported(type, propertiesOfConcern);
 
+            this.PropertiesOfConcern = propertiesOfConcern.Select(ToPropertyOfConcern).ToList();
+            this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern.Select(ToPropertyOfConcern).ToList();
+
+            // Conditions About Properties
+            this.GenericParametersUsedAsKeyInDictionary = GetGenericParametersUsedAsKeyInDictionary(type, propertiesOfConcern);
+            this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, new HashSet<Type>());
+
+            // Required/Declared/Generated methods
             var requiresComparability = typeof(IComparableViaCodeGen).IsAssignableFrom(type);
             var requiresDeepCloning = typeof(IDeepCloneableViaCodeGen).IsAssignableFrom(type);
             var requiresEquality = typeof(IEquatableViaCodeGen).IsAssignableFrom(type);
@@ -79,8 +91,32 @@ namespace OBeautifulCode.CodeGen
             var declaresGetHashCodeMethod = typeof(IDeclareGetHashCodeMethod).IsAssignableFrom(type);
             var declaresToStringMethod = typeof(IDeclareToStringMethod).IsAssignableFrom(type);
 
-            ThrowIfNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
+            ThrowIfRequiredAndDeclaredMethodsNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
 
+            this.RequiresComparability = requiresComparability;
+            this.RequiresDeepCloning = requiresDeepCloning;
+            this.RequiresEquality = requiresEquality;
+            this.RequiresHashing = requiresHashing;
+            this.RequiresModel = requiresModel;
+            this.RequiresStringRepresentation = requiresStringRepresentation;
+            this.DeclaresCompareToMethod = declaresCompareToMethod;
+            this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
+            this.DeclaresEqualsMethod = declaresEqualsMethod;
+            this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
+            this.DeclaresToStringMethod = declaresToStringMethod;
+
+            this.RequiredInterfaces = DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
+
+            this.CompareToKeyMethodKinds = declaresCompareToMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.DeepCloneKeyMethodKinds = declaresDeepCloneMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.EqualsKeyMethodKinds = declaresEqualsMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+
+            // Constructor
+            this.Constructor = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern);
+
+            // Types Names
             this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
             this.InheritancePathTypeNamesInIdentifier = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringWithoutGenericComponent()).ToList();
 
@@ -94,45 +130,14 @@ namespace OBeautifulCode.CodeGen
             this.TypeNameInXmlDocString = type.ToStringXmlDoc();
             this.TypeNamespace = type.Namespace;
 
-            this.HierarchyKind = hierarchyKind;
-            this.ClassifiedHierarchyKind = Classify(hierarchyKind);
-            this.IsAbstractBase = (hierarchyKind == HierarchyKind.AbstractBaseRoot) || (hierarchyKind == HierarchyKind.AbstractBaseInherited);
-            this.IsConcrete = (hierarchyKind == HierarchyKind.ConcreteInherited) || (hierarchyKind == HierarchyKind.Standalone);
-            this.PropertiesOfConcern = propertiesOfConcern;
-            this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern;
-            this.Constructor = constructor;
-
-            this.RequiresComparability = requiresComparability;
-            this.RequiresDeepCloning = requiresDeepCloning;
-            this.RequiresEquality = requiresEquality;
-            this.RequiresHashing = requiresHashing;
-            this.RequiresModel = requiresModel;
-            this.RequiresStringRepresentation = requiresStringRepresentation;
-
-            this.RequiredInterfaces = DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
-
-            this.DeclaresCompareToMethod = declaresCompareToMethod;
-            this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
-            this.DeclaresEqualsMethod = declaresEqualsMethod;
-            this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
-            this.DeclaresToStringMethod = declaresToStringMethod;
-
-            this.CompareToKeyMethodKinds = declaresCompareToMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.DeepCloneKeyMethodKinds = declaresDeepCloneMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.EqualsKeyMethodKinds = declaresEqualsMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-
-            this.ExampleClosedModelType = GetExampleClosedModelType(type);
-            this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(type);
-            this.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings = GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(type);
-
-            this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = canHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode;
-
+            // Namespaces
             this.NamespacesOfTypesInInheritancePath = GetNamespacesOfTypesInInheritancePath(type);
             this.NamespacesOfTypesInPropertiesOfConcern = GetNamespacesOfTypesInPropertiesOfConcern(propertiesOfConcern);
 
-            this.GenericParametersUsedAsKeyInDictionary = GetGenericParametersUsedAsKeyInDictionary(type, propertiesOfConcern);
+            // Example Types
+            this.ExampleClosedModelType = GetExampleClosedModelType(type);
+            this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(type);
+            this.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings = GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(type);
         }
 
         /// <inheritdoc />
@@ -159,7 +164,7 @@ namespace OBeautifulCode.CodeGen
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
-        private static void ThrowIfNotSupported(
+        private static void ThrowIfModelTypeNotSupported(
             Type type)
         {
             if (type.ContainsGenericParameters && (!type.IsGenericTypeDefinition))
@@ -205,26 +210,30 @@ namespace OBeautifulCode.CodeGen
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is a type in its inheritance path ({inheritedType.ToStringReadable()}) that does not implement all of the following code gen interfaces which are implemented by this type: {codeGenTypesUsed.Select(_ => _.ToStringReadable()).ToDelimitedString(", ")}."));
                 }
             }
+
+            // We are OK with other kinds of read-only properties (e.g. expression-bodied properties),
+            // but a read-only auto property can be written-to via the constructor, and these properties don't play nice with BSON serialization.
+            var publicProperties = type.GetPropertiesFiltered(MemberRelationships.DeclaredInTypeOrAncestorTypes, MemberOwners.Instance, MemberAccessModifiers.Public);
+
+            var readOnlyAutoProperties = publicProperties.Where(_ => _.IsReadOnlyAutoProperty()).ToList();
+
+            if (readOnlyAutoProperties.Any())
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following read-only auto properties: {readOnlyAutoProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+            }
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
-        private static void ThrowIfNotSupported(
+        private static void ThrowIfPropertiesOfConcernNotSupported(
             Type type,
-            PropertiesOfConcernResult propertiesOfConcernResult)
+            IReadOnlyList<PropertyInfo> propertiesOfConcern)
         {
-            if (propertiesOfConcernResult.ReadOnlyAutoProperties.Any())
+            if (propertiesOfConcern.Any(_ => (!_.SetMethod.IsPublic) && (!_.SetMethod.IsPrivate)))
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains the following read-only auto properties: {propertiesOfConcernResult.ReadOnlyAutoProperties.Select(_ => _.Name).ToDelimitedString(", ")}."));
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains properties of concern that are neither private nor public; only private and public setters are supported."));
             }
 
-            var propertiesOfConcern = propertiesOfConcernResult.PropertiesOfConcern;
-
-            if (propertiesOfConcern.Any(_ => (!_.HasPublicSetter) && (!_.HasPrivateSetter)))
-            {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains properties of concern are neither private nor public; only private and public setters are supported."));
-            }
-
-            if ((propertiesOfConcern.GroupBy(_ => _.HasPrivateSetter).Count() > 1) || (propertiesOfConcern.GroupBy(_ => _.HasPublicSetter).Count() > 1))
+            if ((propertiesOfConcern.GroupBy(_ => _.SetMethod.IsPrivate).Count() > 1) || (propertiesOfConcern.GroupBy(_ => _.SetMethod.IsPublic).Count() > 1))
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it contains properties of concern with inconsistent access modifiers on its setters."));
             }
@@ -258,7 +267,25 @@ namespace OBeautifulCode.CodeGen
             }
         }
 
-        private static void ThrowIfNotSupported(
+        private static IReadOnlyList<PropertyInfo> GetPropertiesOfConcernInOrder(
+            Type type)
+        {
+            var publicProperties = type.GetPropertiesFiltered(MemberRelationships.DeclaredInTypeOrAncestorTypes, MemberOwners.Instance, MemberAccessModifiers.Public, orderMembersBy: OrderMembersBy.DeclaringTypeDerivationPath);
+
+            var result = publicProperties.Where(_ => _.IsWritableProperty()).ToList();
+
+            return result;
+        }
+
+        private static PropertyOfConcern ToPropertyOfConcern(
+            PropertyInfo propertyInfo)
+        {
+            var result = new PropertyOfConcern(propertyInfo.PropertyType, propertyInfo.Name, propertyInfo.DeclaringType);
+
+            return result;
+        }
+
+        private static void ThrowIfRequiredAndDeclaredMethodsNotSupported(
             Type type,
             bool requiresComparability,
             bool declaresCompareToMethod,
@@ -306,130 +333,80 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
-        private static PropertiesOfConcernResult GetPropertiesOfConcernFromType(
-            Type type,
-            bool declaredOnly)
-        {
-            var memberRelationships = declaredOnly
-                ? MemberRelationships.DeclaredInType
-                : MemberRelationships.DeclaredInTypeOrAncestorTypes;
-
-            var allProperties = type
-                .GetPropertiesFiltered(memberRelationships, MemberOwners.Instance, MemberAccessModifiers.Public, orderMembersBy: OrderMembersBy.DeclaringTypeDerivationPath);
-
-            var readOnlyAutoProperties = allProperties
-                .Where(_ => _.IsReadOnlyAutoProperty())
-                .ToList();
-
-            var propertiesOfConcern = allProperties
-                .Where(_ => _.IsWritableProperty())
-                .Select(_ => new PropertyOfConcern(_.PropertyType, _.Name, _.DeclaringType, _.SetMethod.IsPrivate, _.SetMethod.IsPublic))
-                .ToList();
-
-            var result = new PropertiesOfConcernResult
-            {
-                ReadOnlyAutoProperties = readOnlyAutoProperties,
-                PropertiesOfConcern = propertiesOfConcern,
-            };
-
-            return result;
-        }
-
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static ConstructorInfo GetConstructorAndThrowIfNotSupported(
             Type type,
-            IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
-            IReadOnlyList<PropertyOfConcern> declaredOnlyPropertiesOfConcern)
+            IReadOnlyList<PropertyInfo> propertiesOfConcern,
+            IReadOnlyList<PropertyInfo> declaredOnlyPropertiesOfConcern)
         {
-            var constructors = type.GetConstructors();
+            ConstructorInfo result;
 
-            // no public constructors?
-            if (!constructors.Any())
-            {
-                return null;
-            }
+            var publicConstructors = type.GetConstructorsFiltered(MemberRelationships.DeclaredInType, MemberOwners.Instance, MemberAccessModifiers.Public);
 
             if (type.IsAbstract)
             {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one public constructor, but the class is abstract.  Abstract classes should not have public constructors."));
-            }
+                if (publicConstructors.Any())
+                {
+                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one public constructor, but the class is abstract.  Abstract classes should not have public constructors."));
+                }
 
-            // only has default constructor?
-            ConstructorInfo result;
-
-            if ((constructors.Length == 1) && constructors.Single().IsDefaultConstructor())
-            {
-                result = constructors.Single();
+                result = null;
             }
             else
             {
-                var constructorsMatchingPropertiesOfConcern =
-                    constructors
-                    .Where(
-                        _ =>
-                        {
-                            var propertyNameTypeMap = propertiesOfConcern.ToDictionary(p => p.Name, p => p.PropertyType, StringComparer.OrdinalIgnoreCase);
+                if (!publicConstructors.Any())
+                {
+                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the class is concrete, but there are no public constructors.  Concrete classes should have at least one public constructor."));
+                }
 
-                            var parameters = _.GetParameters();
+                // We don't want a strict 1:1 match between constructor parameters and properties.  Consider these types:
+                // public class BaseClass
+                // {
+                //    public BaseClass(int property1, string property2) { ... }
+                // }
+                // public class DerivedClass : BaseClass
+                // {
+                //    public DerivedClass(string property2) : base(Constants.SomeIntConstant, property2) { ... }
+                // }
+                var candidateConstructors = type.GetConstructorsMatchedToProperties(propertiesOfConcern, ConstructorsMatchedToPropertiesStrategy.AllConstructorParametersHaveMatchingProperty, MemberAccessModifiers.Public, MemberRelationships.DeclaredInType);
 
-                            foreach (var parameter in parameters)
-                            {
-                                // property matching parameter by name?
-                                if (!propertyNameTypeMap.ContainsKey(parameter.Name))
-                                {
-                                    return false;
-                                }
-
-                                var propertyType = propertyNameTypeMap[parameter.Name];
-
-                                // property matches parameter by type?
-                                if (propertyType != parameter.ParameterType)
-                                {
-                                    return false;
-                                }
-                            }
-
-                            return true;
-                        })
-                    .ToList();
-
-                if (constructorsMatchingPropertiesOfConcern.Count == 0)
+                if (candidateConstructors.Count == 0)
                 {
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; none of its public constructors have parameters where all parameters have a matching property by name and type."));
                 }
 
-                var maxParameterCount = constructorsMatchingPropertiesOfConcern.Max(_ => _.GetParameters().Length);
+                var maxParameterCount = candidateConstructors.Max(_ => _.GetParameters().Length);
 
-                var candidateConstructors = constructorsMatchingPropertiesOfConcern.Where(_ => _.GetParameters().Length == maxParameterCount).ToList();
+                candidateConstructors = candidateConstructors.Where(_ => _.GetParameters().Length == maxParameterCount).ToList();
 
                 if (candidateConstructors.Count > 1)
                 {
-                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {candidateConstructors.Count} public constructors having {maxParameterCount} parameters that have a matching property by name type, whereas only 1 was expected."));
+                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {candidateConstructors.Count} public constructors having the most number of parameters ({maxParameterCount}) where all parameters have a matching property by name type, whereas only 1 was expected."));
                 }
 
                 result = candidateConstructors.Single();
-            }
 
-            if (result.IsDefaultConstructor())
-            {
-                if (declaredOnlyPropertiesOfConcern.Any(_ => _.HasPrivateSetter))
+                if (result.IsDefaultConstructor())
                 {
-                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the constructor to use is the default constructor but there are properties declared on the type that have private setters."));
+                    if (!propertiesOfConcern.All(_ => _.SetMethod.IsPublic))
+                    {
+                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the public constructor that best matches the properties of concern is the default (parameterless) constructor but one or more of these properties has a non-public setter."));
+                    }
                 }
-            }
-            else
-            {
-                if (declaredOnlyPropertiesOfConcern.Any(_ => _.HasPublicSetter))
+                else
                 {
-                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the constructor to use is parameterized but there are properties declared on the type with a public setter."));
-                }
+                    if (propertiesOfConcern.Any(_ => _.SetMethod.IsPublic))
+                    {
+                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the public constructor that best matches the properties of concern is parameterized but one or more of these properties has a public setter."));
+                    }
 
-                // all of the declared properties have to appear in the parameter list
-                var constructorParameterNames = new HashSet<string>(result.GetParameters().Select(_ => _.Name), StringComparer.OrdinalIgnoreCase);
+                    // all of the declared properties have to appear in the parameter list
+                    var constructorParameterNames = new HashSet<string>(result.GetParameters().Select(_ => _.Name), StringComparer.OrdinalIgnoreCase);
 
-                if (declaredOnlyPropertiesOfConcern.Any(_ => !constructorParameterNames.Contains(_.Name)))
-                {
-                    throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the constructor to use is parameterized but one or more of the properties declared on the type does not match a parameter in that constructor."));
+                    if (declaredOnlyPropertiesOfConcern.Any(_ => !constructorParameterNames.Contains(_.Name)))
+                    {
+                        throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the public constructor that best matches the properties of concern is parameterized but one or more of the properties declared on the type (not inherited) does not match a parameter in that constructor."));
+                    }
                 }
             }
 
@@ -551,7 +528,7 @@ namespace OBeautifulCode.CodeGen
         }
 
         private static bool CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(
-            IReadOnlyList<PropertyOfConcern> propertiesOfConcern,
+            IReadOnlyList<PropertyInfo> propertiesOfConcern,
             HashSet<Type> visitedTypes)
         {
             var result = propertiesOfConcern.Where(_ => !visitedTypes.Contains(_.PropertyType)).Any(_ => CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(_.PropertyType, visitedTypes));
@@ -595,7 +572,7 @@ namespace OBeautifulCode.CodeGen
                 {
                     if (IsHashableType(genericTypeArgument))
                     {
-                        var propertiesOfConcern = GetPropertiesOfConcernFromType(genericTypeArgument, declaredOnly: false).PropertiesOfConcern;
+                        var propertiesOfConcern = GetPropertiesOfConcernInOrder(genericTypeArgument);
 
                         if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, visitedTypes))
                         {
@@ -614,7 +591,7 @@ namespace OBeautifulCode.CodeGen
 
             if (IsHashableType(type))
             {
-                var propertiesOfConcern = GetPropertiesOfConcernFromType(type, declaredOnly: false).PropertiesOfConcern;
+                var propertiesOfConcern = GetPropertiesOfConcernInOrder(type);
 
                 if (CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, visitedTypes))
                 {
@@ -798,7 +775,7 @@ namespace OBeautifulCode.CodeGen
         }
 
         private static IReadOnlyCollection<string> GetNamespacesOfTypesInPropertiesOfConcern(
-            IReadOnlyList<PropertyOfConcern> propertiesOfConcern)
+            IReadOnlyList<PropertyInfo> propertiesOfConcern)
         {
             var types = propertiesOfConcern.Select(_ => _.PropertyType).Distinct().ToList();
 
@@ -1124,7 +1101,7 @@ namespace OBeautifulCode.CodeGen
 
         private static IReadOnlyCollection<Type> GetGenericParametersUsedAsKeyInDictionary(
             Type type,
-            IReadOnlyList<PropertyOfConcern> propertiesOfConcern)
+            IReadOnlyList<PropertyInfo> propertiesOfConcern)
         {
             var genericArguments = type.GetGenericArguments();
 
@@ -1141,13 +1118,6 @@ namespace OBeautifulCode.CodeGen
             }
 
             return result;
-        }
-
-        private class PropertiesOfConcernResult
-        {
-            public IReadOnlyList<PropertyOfConcern> PropertiesOfConcern { get; set; }
-
-            public IReadOnlyList<PropertyInfo> ReadOnlyAutoProperties { get; set; }
         }
     }
 }

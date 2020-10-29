@@ -84,6 +84,7 @@
     <Compile Include=".recipes\OBeautifulCode.Reflection\AssemblyLoader.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\BindingFlagsFor.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\CompressionMethod.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ConstructorsMatchedToPropertiesStrategy.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\MemberAccessModifiers.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\MemberAttributes.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\MemberKinds.cs" />

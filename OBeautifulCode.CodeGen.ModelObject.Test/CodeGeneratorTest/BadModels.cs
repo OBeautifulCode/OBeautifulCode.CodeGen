@@ -485,6 +485,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [ExcludeFromCodeCoverage]
     [GeneratedCode("ignore", "ignore")]
+    public class ConcreteClassWithNonPublicConstructor1 : IModelViaCodeGen
+    {
+        internal ConcreteClassWithNonPublicConstructor1()
+        {
+        }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class ConcreteClassWithNonPublicConstructor2 : IModelViaCodeGen
+    {
+        protected ConcreteClassWithNonPublicConstructor2(
+            string test)
+        {
+            this.Test = test;
+        }
+
+        public string Test { get; private set; }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
     public class ConstructorParameterWithoutMatchingProperty1 : IModelViaCodeGen
     {
         public ConstructorParameterWithoutMatchingProperty1(string property1, string property3)

@@ -378,23 +378,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified constructor is the default constructor.
-        /// </summary>
-        /// <param name="constructor">The constructor.</param>
-        /// <returns>
-        /// true if the specified constructor is the default constructor; otherwise false.
-        /// </returns>
-        public static bool IsDefaultConstructor(
-            this ConstructorInfo constructor)
-        {
-            new { constructor }.AsArg().Must().NotBeNull();
-
-            var result = constructor.GetParameters().Length == 0;
-
-            return result;
-        }
-
         private static string GetCodeTemplate(
             this Type generationType,
             string hierarchyKind,

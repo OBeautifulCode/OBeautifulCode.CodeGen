@@ -149,6 +149,7 @@
     <Compile Include=".recipes\OBeautifulCode.Reflection\AccessModifier.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\AppDomainHelper.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\BindingFlagsFor.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Reflection\ConstructorsMatchedToPropertiesStrategy.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\DisposableAppDomain.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\MemberAccessModifiers.cs" />
     <Compile Include=".recipes\OBeautifulCode.Reflection\MemberAttributes.cs" />
