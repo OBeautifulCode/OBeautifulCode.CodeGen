@@ -39,6 +39,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var deepCloneGenericCode = modelType.GenerateDeepCloneGenericCode();
 
+            var deepCloneInterfaceCode = deepCloneCode.Contains("DeepCloneInterface(")
+                ? typeof(CloningGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneInterface)
+                : string.Empty;
+
             var deepCloneWithCode = modelType.DeclaresDeepCloneMethod
                 ? string.Empty
                 : modelType.GenerateDeepCloneWithCode();
@@ -50,7 +54,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.ModelRootAncestorTypeNameInCodeToken, modelType.InheritancePathTypeNamesInCode.LastOrDefault())
                 .Replace(Tokens.DeepCloneToken, deepCloneCode)
                 .Replace(Tokens.DeepCloneWithToken, deepCloneWithCode)
-                .Replace(Tokens.DeepCloneGenericToken, deepCloneGenericCode);
+                .Replace(Tokens.DeepCloneGenericToken, deepCloneGenericCode)
+                .Replace(Tokens.DeepCloneInterfaceToken, deepCloneInterfaceCode);
 
             return result;
         }
@@ -337,6 +342,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 // this is just a copy of the item anyway (like bool, int, Enumerations, structs like DateTime, etc.).
                 result = cloneCode;
+            }
+            else if (type.IsInterface)
+            {
+                result = Invariant($"DeepCloneInterface({cloneCode})");
             }
             else if (type.IsGenericParameter)
             {

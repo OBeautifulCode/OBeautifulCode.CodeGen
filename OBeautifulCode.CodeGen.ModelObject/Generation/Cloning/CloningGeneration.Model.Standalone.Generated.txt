@@ -7,4 +7,4 @@
             var result = [deep-clone-here];
 
             return result;
-        }[deep-clone-with-here][deep-clone-generic-here]
+        }[deep-clone-with-here][deep-clone-generic-here][deep-clone-interface-here]
