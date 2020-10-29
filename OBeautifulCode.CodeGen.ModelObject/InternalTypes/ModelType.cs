@@ -34,6 +34,7 @@ namespace OBeautifulCode.CodeGen
         /// Initializes a new instance of the <see cref="ModelType"/> class.
         /// </summary>
         /// <param name="type">The model type.</param>
+        [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA1506_AvoidExcessiveClassCoupling_DisagreeWithAssessment)]
         public ModelType(
             Type type)
         {
