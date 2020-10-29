@@ -345,7 +345,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else if (type.IsInterface)
             {
-                result = Invariant($"DeepCloneInterface({cloneCode})");
+                result = Invariant($"({type.ToStringReadable()})DeepCloneInterface({cloneCode})");
             }
             else if (type.IsGenericParameter)
             {
