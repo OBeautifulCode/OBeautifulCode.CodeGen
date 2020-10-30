@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var expected = typeof(ModelHashingPublicSetReadOnlyDictionaryChild2);
 
                 // Act
-                var actual = expected.GetMethod(nameof(GetHashCode));
+                var actual = expected.GetMethodFiltered(nameof(GetHashCode), MemberRelationships.DeclaredInType, MemberOwners.Instance, MemberAccessModifiers.Public);
 
                 // Assert
                 actual.DeclaringType.AsTest().Must().BeEqualTo(expected);

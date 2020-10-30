@@ -94,7 +94,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 var expected = typeof(ModelStringRepresentationPrivateSetReadOnlyListOfNullable);
 
                 // Act
-                var actual = expected.GetMethod(nameof(ToString), new Type[0]);
+                var actual = expected.GetMethodsFiltered(MemberRelationships.DeclaredInType, MemberOwners.Instance, MemberAccessModifiers.Public).Single(_ => (_.Name == nameof(ToString)) && (!_.GetParameters().Any()));
 
                 // Assert
                 actual.DeclaringType.AsTest().Must().BeEqualTo(expected);

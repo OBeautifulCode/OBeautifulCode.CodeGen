@@ -30,7 +30,7 @@
 
                     if (deepCloneableInterface.IsAssignableFrom(type))
                     {
-                        var deepCloneMethod = deepCloneableInterface.GetMethod(nameof(IDeepCloneable<object>.DeepClone));
+                        var deepCloneMethod = deepCloneableInterface.GetMethodFiltered(nameof(IDeepCloneable<object>.DeepClone), MemberRelationships.DeclaredInType, MemberOwners.Instance, MemberAccessModifiers.Public);
 
                         result = deepCloneMethod.Invoke(value, null);
                     }

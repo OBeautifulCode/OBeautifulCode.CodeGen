@@ -6,7 +6,7 @@
                 var expected = typeof([model-type-name-in-code-here]);
 
                 // Act
-                var actual = expected.GetMethod(nameof(GetHashCode));
+                var actual = expected.GetMethodFiltered(nameof(GetHashCode), MemberRelationships.DeclaredInType, MemberOwners.Instance, MemberAccessModifiers.Public);
 
                 // Assert
                 actual.DeclaringType.AsTest().Must().BeEqualTo(expected);

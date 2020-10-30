@@ -34,9 +34,9 @@
             {
                 var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
 
-                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethodFiltered(nameof(WorkflowExtensions.AsTest), MemberRelationships.DeclaredInType, MemberOwners.Static, MemberAccessModifiers.Public);
 
-                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethodFiltered(nameof(Verifications.BeEqualTo), MemberRelationships.DeclaredInType, MemberOwners.Static, MemberAccessModifiers.Public);
 
                 foreach (var scenario in scenarios)
                 {

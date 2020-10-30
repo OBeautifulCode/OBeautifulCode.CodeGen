@@ -3680,9 +3680,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ConstructorPropertyAssignmentTestScenarios.ValidateAndPrepareForTesting();
 
-                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethodFiltered(nameof(WorkflowExtensions.AsTest), MemberRelationships.DeclaredInType, MemberOwners.Static, MemberAccessModifiers.Public);
 
-                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethodFiltered(nameof(Verifications.BeEqualTo), MemberRelationships.DeclaredInType, MemberOwners.Static, MemberAccessModifiers.Public);
 
                 foreach (var scenario in scenarios)
                 {
@@ -3941,9 +3941,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 
-                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethod(nameof(WorkflowExtensions.AsTest));
+                var obcAssertionAsTestMethod = typeof(WorkflowExtensions).GetMethodFiltered(nameof(WorkflowExtensions.AsTest), MemberRelationships.DeclaredInType, MemberOwners.Static, MemberAccessModifiers.Public);
 
-                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethod(nameof(Verifications.BeEqualTo));
+                var obcAssertionBeEqualToMethod = typeof(Verifications).GetMethodFiltered(nameof(Verifications.BeEqualTo), MemberRelationships.DeclaredInType, MemberOwners.Static, MemberAccessModifiers.Public);
 
                 foreach (var scenario in scenarios)
                 {
@@ -3959,7 +3959,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // Assert
                     foreach(var propertyName in propertyNames)
                     {
-                        var propertyInfo = typeof(ModelPrivateSetNonGenericParentGenericChild<Version, Guid>).GetPropertyInfo(propertyName, BindingFlagsFor.PublicDeclaredAndInheritedInstanceMembers);
+                        var propertyInfo = typeof(ModelPrivateSetNonGenericParentGenericChild<Version, Guid>).GetPropertyFiltered(propertyName, MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public);
 
                         var propertyType = propertyInfo.PropertyType;
 
