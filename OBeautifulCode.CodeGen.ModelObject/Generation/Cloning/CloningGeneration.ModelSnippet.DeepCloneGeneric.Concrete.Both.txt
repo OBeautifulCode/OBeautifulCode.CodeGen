@@ -1,6 +1,6 @@
 ﻿        private static [generic-type-parameter-name-here] DeepCloneGeneric([generic-type-parameter-name-here] value)
         {
-            [generic-type-parameter-name-here] result;
+            object result;
 
             var type = typeof([generic-type-parameter-name-here]);
 
@@ -20,11 +20,15 @@
                 }
                 else if (value is string valueAsString)
                 {
-                    result = ([generic-type-parameter-name-here])(object)valueAsString.Clone().ToString();
+                    result = valueAsString.DeepClone();
                 }
                 else if (value is global::System.Version valueAsVersion)
                 {
-                    result = ([generic-type-parameter-name-here])valueAsVersion.Clone();
+                    result = valueAsVersion.DeepClone();
+                }
+                else if (value is global::System.Uri valueAsUri)
+                {
+                    result = valueAsUri.DeepClone();
                 }
                 else
                 {
@@ -32,5 +36,5 @@
                 }
             }
 
-            return result;
+            return ([generic-type-parameter-name-here])result;
         }

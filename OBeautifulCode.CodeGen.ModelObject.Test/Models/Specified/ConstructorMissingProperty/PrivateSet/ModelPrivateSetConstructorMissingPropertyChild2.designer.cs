@@ -157,7 +157,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMissingPropertyChild2 DeepCloneWithChildClass(CustomClass childClass)
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild2(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  childClass);
 
             return result;
@@ -167,7 +167,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetConstructorMissingPropertyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild2(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  this.ChildClass?.DeepClone());
 
             return result;

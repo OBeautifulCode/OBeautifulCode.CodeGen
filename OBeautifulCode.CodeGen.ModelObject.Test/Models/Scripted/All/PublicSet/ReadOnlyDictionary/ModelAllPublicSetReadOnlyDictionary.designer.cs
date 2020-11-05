@@ -107,7 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -145,7 +145,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = readOnlyDictionaryInterfaceOfBoolProperty,
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -183,7 +183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = readOnlyDictionaryInterfaceOfIntProperty,
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -259,7 +259,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = readOnlyDictionaryInterfaceOfGuidProperty,
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -297,7 +297,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = readOnlyDictionaryInterfaceOfCustomEnumProperty,
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -335,7 +335,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
@@ -373,7 +373,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -411,7 +411,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
@@ -449,7 +449,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ReadOnlyDictionaryInterfaceOfBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfIntProperty                             = this.ReadOnlyDictionaryInterfaceOfIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = this.ReadOnlyDictionaryInterfaceOfStringProperty?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                                  ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ReadOnlyDictionaryInterfaceOfGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
                                  ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),

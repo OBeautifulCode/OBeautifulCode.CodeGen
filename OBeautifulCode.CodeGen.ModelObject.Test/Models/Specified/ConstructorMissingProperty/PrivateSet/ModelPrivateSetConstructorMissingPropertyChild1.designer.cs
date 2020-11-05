@@ -129,7 +129,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild1(
                                  parentReadOnlyCollectionOfStringProperty,
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
 
             return result;
         }
@@ -157,7 +157,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMissingPropertyChild1 DeepCloneWithChildReadOnlyCollectionOfStringProperty(IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild1(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  childReadOnlyCollectionOfStringProperty);
 
             return result;
@@ -167,8 +167,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetConstructorMissingPropertyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild1(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList());
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
 
             return result;
         }

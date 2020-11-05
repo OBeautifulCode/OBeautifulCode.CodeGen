@@ -109,7 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -148,7 +148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = arrayOfBoolProperty,
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -187,7 +187,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = arrayOfIntProperty,
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -265,7 +265,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = arrayOfGuidProperty,
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -304,7 +304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = arrayOfDateTimeProperty,
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -343,7 +343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = arrayOfCustomEnumProperty,
@@ -382,7 +382,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -421,7 +421,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -460,7 +460,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
@@ -499,7 +499,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ArrayOfBoolProperty                            = this.ArrayOfBoolProperty?.Select(i => i).ToArray(),
                                  ArrayOfIntProperty                             = this.ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.Clone().ToString()).ToArray(),
+                                 ArrayOfStringProperty                          = this.ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
                                  ArrayOfGuidProperty                            = this.ArrayOfGuidProperty?.Select(i => i).ToArray(),
                                  ArrayOfDateTimeProperty                        = this.ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
                                  ArrayOfCustomEnumProperty                      = this.ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),

@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
 
     [Serializable]
     public class CustomClass : IEquatable<CustomClass>, IDeepCloneable<CustomClass>, IComparable<CustomClass>
@@ -119,7 +120,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public CustomClass DeepClone()
         {
-            var result = new CustomClass(this.Item1, this.Item2?.Clone().ToString());
+            var result = new CustomClass(this.Item1, this.Item2?.DeepClone());
 
             return result;
         }

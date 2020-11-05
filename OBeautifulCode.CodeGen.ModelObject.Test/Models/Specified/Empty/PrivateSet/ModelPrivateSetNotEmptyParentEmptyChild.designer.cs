@@ -112,7 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetNotEmptyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetNotEmptyParentEmptyChild(
-                                 this.ParentReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()));
+                                 this.ParentReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()));
 
             return result;
         }

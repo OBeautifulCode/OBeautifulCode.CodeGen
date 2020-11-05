@@ -18,11 +18,15 @@
                 }
                 else if (value is string valueAsString)
                 {
-                    result = valueAsString.Clone().ToString();
+                    result = valueAsString.DeepClone();
                 }
                 else if (value is global::System.Version valueAsVersion)
                 {
-                    result = valueAsVersion.Clone();
+                    result = valueAsVersion.DeepClone();
+                }
+                else if (value is global::System.Uri valueAsUri)
+                {
+                    result = valueAsUri.DeepClone();
                 }
                 else
                 {

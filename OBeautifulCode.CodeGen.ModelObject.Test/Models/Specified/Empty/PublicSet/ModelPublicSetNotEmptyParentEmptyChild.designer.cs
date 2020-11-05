@@ -115,7 +115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetNotEmptyParentEmptyChild
                              {
-                                 ParentReadOnlyDictionaryOfStringString = this.ParentReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value?.Clone().ToString()),
+                                 ParentReadOnlyDictionaryOfStringString = this.ParentReadOnlyDictionaryOfStringString?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value?.DeepClone()),
                              };
 
             return result;

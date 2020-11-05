@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild3(
                                  parentEnumProperty,
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  this.ChildIntProperty);
 
             return result;
@@ -164,7 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild3(
                                  this.ParentEnumProperty,
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  childIntProperty);
 
             return result;
@@ -175,7 +175,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild3(
                                  this.ParentEnumProperty,
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  this.ChildIntProperty);
 
             return result;

@@ -109,7 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -148,7 +148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = readOnlyListInterfaceOfBoolProperty,
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -187,7 +187,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = readOnlyListInterfaceOfIntProperty,
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -265,7 +265,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = readOnlyListInterfaceOfGuidProperty,
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -304,7 +304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = readOnlyListInterfaceOfDateTimeProperty,
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -343,7 +343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = readOnlyListInterfaceOfCustomEnumProperty,
@@ -382,7 +382,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -421,7 +421,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -460,7 +460,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
@@ -499,7 +499,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ReadOnlyListInterfaceOfBoolProperty                            = this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfIntProperty                             = this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.Clone().ToString()).ToList(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
                                  ReadOnlyListInterfaceOfGuidProperty                            = this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfDateTimeProperty                        = this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
                                  ReadOnlyListInterfaceOfCustomEnumProperty                      = this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),

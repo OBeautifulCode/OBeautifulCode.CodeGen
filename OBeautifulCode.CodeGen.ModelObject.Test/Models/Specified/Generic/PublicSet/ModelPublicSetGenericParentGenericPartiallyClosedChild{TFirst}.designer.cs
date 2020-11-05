@@ -324,9 +324,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -338,8 +338,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -365,7 +365,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = parentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -377,9 +377,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -391,8 +391,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -418,7 +418,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = parentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -430,9 +430,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -444,8 +444,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -471,7 +471,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = parentCustomClassProperty,
@@ -483,9 +483,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -497,8 +497,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -524,7 +524,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -536,9 +536,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -550,8 +550,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -577,7 +577,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -589,9 +589,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -603,8 +603,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -630,7 +630,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -642,9 +642,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -656,8 +656,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -683,7 +683,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -695,9 +695,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -709,8 +709,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -736,7 +736,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -748,9 +748,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -762,8 +762,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -789,7 +789,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -801,9 +801,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = parentGenericReadOnlyListProperty,
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -815,8 +815,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -842,7 +842,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -854,9 +854,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = parentGenericReadOnlyDictionaryProperty1,
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -868,8 +868,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -895,7 +895,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -907,9 +907,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = parentGenericReadOnlyDictionaryProperty2,
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -921,8 +921,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -948,7 +948,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -961,8 +961,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
                                  ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = parentGenericPartiallyClosedReadOnlyDictionaryProperty1,
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -974,8 +974,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1001,7 +1001,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1013,9 +1013,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
                                  ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = parentGenericPartiallyClosedReadOnlyDictionaryProperty2,
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1027,8 +1027,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1058,7 +1058,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1070,8 +1070,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                                  ChildStringProperty                                     = childStringProperty,
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
@@ -1084,8 +1084,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1115,7 +1115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1127,9 +1127,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = childIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1141,8 +1141,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1172,7 +1172,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1184,9 +1184,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = childEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1198,8 +1198,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1229,7 +1229,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1241,9 +1241,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = childCustomClassProperty,
@@ -1255,8 +1255,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1286,7 +1286,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1298,9 +1298,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1312,8 +1312,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1343,7 +1343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1355,9 +1355,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1369,8 +1369,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1400,7 +1400,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1412,9 +1412,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1426,8 +1426,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1457,7 +1457,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1469,9 +1469,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1483,8 +1483,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1514,7 +1514,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1526,9 +1526,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1540,8 +1540,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1571,7 +1571,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1583,9 +1583,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1597,8 +1597,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = childGenericReadOnlyListProperty,
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1628,7 +1628,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1640,9 +1640,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1654,8 +1654,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = childGenericReadOnlyDictionaryProperty1,
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1685,7 +1685,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1697,9 +1697,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1711,8 +1711,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = childGenericReadOnlyDictionaryProperty2,
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1742,7 +1742,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1754,9 +1754,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1769,7 +1769,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
                                  ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = childGenericPartiallyClosedReadOnlyDictionaryProperty1,
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1799,7 +1799,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1811,9 +1811,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1825,7 +1825,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
                                  ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = childGenericPartiallyClosedReadOnlyDictionaryProperty2,
                              };
 
@@ -1837,7 +1837,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetGenericParentGenericPartiallyClosedChild<TFirst>
                              {
-                                 ParentStringProperty                                    = this.ParentStringProperty?.Clone().ToString(),
+                                 ParentStringProperty                                    = this.ParentStringProperty?.DeepClone(),
                                  ParentIntProperty                                       = this.ParentIntProperty,
                                  ParentEnumProperty                                      = this.ParentEnumProperty,
                                  ParentCustomClassProperty                               = this.ParentCustomClassProperty?.DeepClone(),
@@ -1849,9 +1849,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGenericReadOnlyListProperty                       = this.ParentGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ParentGenericReadOnlyDictionaryProperty1                = this.ParentGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ParentGenericReadOnlyDictionaryProperty2                = this.ParentGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => v.Value),
-                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
-                                 ChildStringProperty                                     = this.ChildStringProperty?.Clone().ToString(),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty1 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 ParentGenericPartiallyClosedReadOnlyDictionaryProperty2 = this.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
+                                 ChildStringProperty                                     = this.ChildStringProperty?.DeepClone(),
                                  ChildIntProperty                                        = this.ChildIntProperty,
                                  ChildEnumProperty                                       = this.ChildEnumProperty,
                                  ChildCustomClassProperty                                = this.ChildCustomClassProperty?.DeepClone(),
@@ -1863,8 +1863,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ChildGenericReadOnlyListProperty                        = this.ChildGenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
                                  ChildGenericReadOnlyDictionaryProperty1                 = this.ChildGenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
                                  ChildGenericReadOnlyDictionaryProperty2                 = this.ChildGenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.Clone().ToString(), v => DeepCloneGeneric(v.Value)),
-                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.Clone().ToString()),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty1  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => DeepCloneGeneric(v.Value)),
+                                 ChildGenericPartiallyClosedReadOnlyDictionaryProperty2  = this.ChildGenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()),
                              };
 
             return result;
@@ -1872,7 +1872,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private static TFirst DeepCloneGeneric(TFirst value)
         {
-            TFirst result;
+            object result;
 
             var type = typeof(TFirst);
 
@@ -1892,11 +1892,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
                 else if (value is string valueAsString)
                 {
-                    result = (TFirst)(object)valueAsString.Clone().ToString();
+                    result = valueAsString.DeepClone();
                 }
                 else if (value is global::System.Version valueAsVersion)
                 {
-                    result = (TFirst)valueAsVersion.Clone();
+                    result = valueAsVersion.DeepClone();
+                }
+                else if (value is global::System.Uri valueAsUri)
+                {
+                    result = valueAsUri.DeepClone();
                 }
                 else
                 {
@@ -1904,7 +1908,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
             }
 
-            return result;
+            return (TFirst)result;
         }
 
         /// <inheritdoc />

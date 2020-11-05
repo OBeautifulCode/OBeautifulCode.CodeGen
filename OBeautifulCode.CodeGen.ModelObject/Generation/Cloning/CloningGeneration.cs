@@ -320,14 +320,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 result = Invariant($"{cloneCode}?.Select({expressionParameter} => {valueClone}).ToArray()");
             }
-            else if (type == typeof(string))
-            {
-                // string should be cloned using it's existing interface.
-                // note that this just returns the same reference, it doesn't result in a new reference
-                // the ToString() is needed because Clone() returns an Object.
-                // https://stackoverflow.com/questions/3465377/whats-the-use-of-string-clone
-                result = Invariant($"{cloneCode}?.Clone().ToString()");
-            }
             else if (type.IsNullableType())
             {
                 var underlyingType = Nullable.GetUnderlyingType(type);
@@ -353,7 +345,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                // assume that we are driving the DeepClone convention and it exists.
+                // Assume that we are driving the DeepClone() convention and it exists.
+                // Could be an extension method in OBC.Type.Recipes.DeepCloneExtensions.
                 result = Invariant($"{cloneCode}?.DeepClone()");
             }
 

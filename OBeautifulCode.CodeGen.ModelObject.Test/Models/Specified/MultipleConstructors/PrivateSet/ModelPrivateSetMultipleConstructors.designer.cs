@@ -93,8 +93,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetMultipleConstructors(
                                  this.IntProperty,
-                                 this.StringProperty?.Clone().ToString(),
-                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList());
+                                 this.StringProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
 
             return result;
         }
@@ -123,8 +123,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetMultipleConstructors(
                                  intProperty,
-                                 this.StringProperty?.Clone().ToString(),
-                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList());
+                                 this.StringProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
 
             return result;
         }
@@ -154,7 +154,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelPrivateSetMultipleConstructors(
                                  this.IntProperty,
                                  stringProperty,
-                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.Clone().ToString()).ToList());
+                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
 
             return result;
         }
@@ -183,7 +183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetMultipleConstructors(
                                  this.IntProperty,
-                                 this.StringProperty?.Clone().ToString(),
+                                 this.StringProperty?.DeepClone(),
                                  readOnlyCollectionOfStringProperty);
 
             return result;

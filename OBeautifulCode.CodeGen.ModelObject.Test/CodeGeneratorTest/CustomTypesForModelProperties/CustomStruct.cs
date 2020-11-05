@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
 
     [Serializable]
     public struct CustomStruct : IEquatable<CustomStruct>, IDeepCloneable<CustomStruct>
@@ -57,7 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public CustomStruct DeepClone()
         {
-            var result = new CustomStruct(this.Item1, this.Item2?.Clone().ToString());
+            var result = new CustomStruct(this.Item1, this.Item2?.DeepClone());
 
             return result;
         }

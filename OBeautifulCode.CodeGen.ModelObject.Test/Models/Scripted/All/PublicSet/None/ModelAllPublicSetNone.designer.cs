@@ -109,7 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -148,7 +148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = boolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -187,7 +187,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = intProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -265,7 +265,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = guidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -304,7 +304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = dateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -343,7 +343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = customEnumProperty,
@@ -382,7 +382,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -421,7 +421,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -460,7 +460,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,
@@ -499,7 +499,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  BoolProperty                            = this.BoolProperty,
                                  IntProperty                             = this.IntProperty,
-                                 StringProperty                          = this.StringProperty?.Clone().ToString(),
+                                 StringProperty                          = this.StringProperty?.DeepClone(),
                                  GuidProperty                            = this.GuidProperty,
                                  DateTimeProperty                        = this.DateTimeProperty,
                                  CustomEnumProperty                      = this.CustomEnumProperty,

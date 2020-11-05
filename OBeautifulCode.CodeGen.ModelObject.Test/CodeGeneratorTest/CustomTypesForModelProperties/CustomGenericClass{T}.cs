@@ -11,6 +11,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
+    using OBeautifulCode.Type.Recipes;
 
     [Serializable]
     public class CustomGenericClass<T> : IEquatable<CustomGenericClass<T>>, IDeepCloneable<CustomGenericClass<T>>, IComparable<CustomGenericClass<T>>
@@ -128,7 +129,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public CustomGenericClass<T> DeepClone()
         {
-            T item3Clone;
+            object item3Clone;
 
             var type = typeof(T);
 
@@ -148,11 +149,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
                 else if (this.Item3 is string stringValue)
                 {
-                    item3Clone = (T)(object)stringValue.Clone().ToString();
+                    item3Clone = stringValue.DeepClone();
                 }
                 else if (this.Item3 is System.Version valueAsVersion)
                 {
-                    item3Clone = (T)valueAsVersion.Clone();
+                    item3Clone = valueAsVersion.DeepClone();
+                }
+                else if (this.Item3 is System.Uri valueAsUri)
+                {
+                    item3Clone = valueAsUri.DeepClone();
                 }
                 else
                 {
@@ -160,7 +165,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
             }
 
-            var result = new CustomGenericClass<T>(this.Item1, this.Item2?.Clone().ToString(), item3Clone);
+            var result = new CustomGenericClass<T>(this.Item1, this.Item2?.DeepClone(), (T)item3Clone);
 
             return result;
         }
