@@ -183,6 +183,11 @@ namespace OBeautifulCode.CodeGen
         public bool DeclaresToStringMethod { get; }
 
         /// <summary>
+        /// Gets a value indicating whether the model forsakes the generation of DeepCloneWith variant methods.
+        /// </summary>
+        public bool ForsakesDeepCloneWithVariantMethods { get; }
+
+        /// <summary>
         /// Gets the key method kind for the <see cref="IDeclareCompareToForRelativeSortOrderMethod{T}.CompareToForRelativeSortOrder(T)"/> method.
         /// </summary>
         public KeyMethodKinds CompareToKeyMethodKinds { get; }

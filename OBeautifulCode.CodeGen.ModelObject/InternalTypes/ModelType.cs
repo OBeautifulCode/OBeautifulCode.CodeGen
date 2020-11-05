@@ -86,6 +86,8 @@ namespace OBeautifulCode.CodeGen
             var requiresModel = typeof(IModelViaCodeGen).IsAssignableFrom(type);
             var requiresStringRepresentation = typeof(IStringRepresentableViaCodeGen).IsAssignableFrom(type);
 
+            var forsakesDeepCloneWithVariantMethods = typeof(IForsakeDeepCloneWithVariantsViaCodeGen).IsAssignableFrom(type);
+
             var declaresCompareToMethod = typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type).IsAssignableFrom(type);
             var declaresDeepCloneMethod = typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type).IsAssignableFrom(type);
             var declaresEqualsMethod = typeof(IDeclareEqualsMethod<>).MakeGenericType(type).IsAssignableFrom(type);
@@ -100,6 +102,7 @@ namespace OBeautifulCode.CodeGen
             this.RequiresHashing = requiresHashing;
             this.RequiresModel = requiresModel;
             this.RequiresStringRepresentation = requiresStringRepresentation;
+            this.ForsakesDeepCloneWithVariantMethods = forsakesDeepCloneWithVariantMethods;
             this.DeclaresCompareToMethod = declaresCompareToMethod;
             this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
             this.DeclaresEqualsMethod = declaresEqualsMethod;
