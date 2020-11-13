@@ -88,7 +88,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfBoolProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfBoolProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfBoolProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfBoolProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -158,7 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfIntProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfIntProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -193,7 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfIntProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfIntProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -228,7 +228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -263,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -298,7 +298,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -333,7 +333,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfGuidProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfGuidProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -368,7 +368,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfGuidProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfGuidProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -403,7 +403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -438,7 +438,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfDateTimeProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfDateTimeProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -473,7 +473,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -508,7 +508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -543,7 +543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomFlagsEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomFlagsEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -578,7 +578,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomFlagsEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomFlagsEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -613,7 +613,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -648,7 +648,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomClassProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomClassProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -683,7 +683,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomClassProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomClassProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -718,7 +718,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -753,7 +753,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -788,7 +788,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomBaseClassProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -823,7 +823,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -858,7 +858,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -893,7 +893,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfCustomGenericClassOfCustomClassProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -928,7 +928,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfBoolProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfBoolProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -963,7 +963,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfBoolProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfBoolProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -998,7 +998,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfIntProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfIntProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1033,7 +1033,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfIntProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfIntProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1068,7 +1068,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1103,7 +1103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1138,7 +1138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1173,7 +1173,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfGuidProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfGuidProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1208,7 +1208,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfGuidProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfGuidProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1243,7 +1243,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1278,7 +1278,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfDateTimeProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfDateTimeProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1313,7 +1313,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1348,7 +1348,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1383,7 +1383,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomFlagsEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomFlagsEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1418,7 +1418,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomFlagsEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomFlagsEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1453,7 +1453,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1488,7 +1488,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomClassProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomClassProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1523,7 +1523,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomClassProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomClassProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1558,7 +1558,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomBaseClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomBaseClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1593,7 +1593,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomBaseClassProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomBaseClassProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1628,7 +1628,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomBaseClassProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomBaseClassProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1663,7 +1663,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomGenericClassOfCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomGenericClassOfCustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1698,7 +1698,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomGenericClassOfCustomClassProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
@@ -1733,7 +1733,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomGenericClassOfCustomClassProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfCustomGenericClassOfCustomClassProperty", "contains at least one null element", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetArrayChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetArrayChild1>()

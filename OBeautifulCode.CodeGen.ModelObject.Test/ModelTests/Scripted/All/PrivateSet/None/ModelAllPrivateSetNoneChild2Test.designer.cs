@@ -88,7 +88,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentStringProperty", "white space" },
+                    ExpectedExceptionMessageContains = new[] { "parentStringProperty", "white space", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -158,7 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentCustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -193,7 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentCustomBaseClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentCustomBaseClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -228,7 +228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentCustomGenericClassOfCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentCustomGenericClassOfCustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -263,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2StringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2StringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -298,7 +298,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2StringProperty", "white space" },
+                    ExpectedExceptionMessageContains = new[] { "child2StringProperty", "white space", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -333,7 +333,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2CustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2CustomClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -368,7 +368,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2CustomBaseClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2CustomBaseClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetNoneChild2>
@@ -403,7 +403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2CustomGenericClassOfCustomClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2CustomGenericClassOfCustomClassProperty", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetNoneChild2> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetNoneChild2>()

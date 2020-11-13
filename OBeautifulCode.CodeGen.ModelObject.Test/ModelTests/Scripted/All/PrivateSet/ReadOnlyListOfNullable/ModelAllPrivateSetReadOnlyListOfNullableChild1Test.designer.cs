@@ -80,7 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableBoolProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableBoolProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -107,7 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableBoolProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableBoolProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -134,7 +134,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableIntProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableIntProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -161,7 +161,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableIntProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableIntProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -188,7 +188,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableGuidProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableGuidProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -215,7 +215,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableGuidProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableGuidProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -242,7 +242,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -269,7 +269,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableDateTimeProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableDateTimeProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -296,7 +296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -323,7 +323,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -350,7 +350,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -377,7 +377,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -404,7 +404,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableBoolProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableBoolProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -431,7 +431,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableBoolProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableBoolProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -458,7 +458,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableIntProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableIntProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -485,7 +485,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableIntProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableIntProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -512,7 +512,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableGuidProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableGuidProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -539,7 +539,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableGuidProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableGuidProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -566,7 +566,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -593,7 +593,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableDateTimeProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableDateTimeProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -620,7 +620,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -647,7 +647,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomEnumProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -674,7 +674,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyListOfNullableChild1>
@@ -701,7 +701,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty", "is an empty enumerable", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetReadOnlyListOfNullableChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetReadOnlyListOfNullableChild1>()

@@ -78,7 +78,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableBoolProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableBoolProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -103,7 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableBoolProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableBoolProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -128,7 +128,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableIntProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableIntProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -153,7 +153,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableIntProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableIntProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -178,7 +178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableGuidProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableGuidProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -203,7 +203,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableGuidProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableGuidProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -228,7 +228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -253,7 +253,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -278,7 +278,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -303,7 +303,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -328,7 +328,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -353,7 +353,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -378,7 +378,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableIntProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableIntProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -403,7 +403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableIntProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableIntProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -428,7 +428,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -453,7 +453,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -478,7 +478,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -503,7 +503,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -528,7 +528,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>
@@ -553,7 +553,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", "is an empty dictionary", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild1>()

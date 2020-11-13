@@ -70,7 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
@@ -87,7 +87,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
@@ -104,7 +104,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
@@ -121,7 +121,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
@@ -138,7 +138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
@@ -155,7 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "contains at least one null element", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetConstructorMissingPropertyChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetConstructorMissingPropertyChild1>()

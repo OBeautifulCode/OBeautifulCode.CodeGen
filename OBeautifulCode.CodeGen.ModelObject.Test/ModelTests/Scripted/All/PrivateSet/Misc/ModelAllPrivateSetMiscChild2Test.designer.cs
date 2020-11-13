@@ -88,7 +88,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -158,7 +158,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -193,7 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -228,7 +228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -263,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -298,7 +298,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -333,7 +333,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -368,7 +368,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -403,7 +403,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -438,7 +438,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -473,7 +473,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -508,7 +508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfCollectionInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -543,7 +543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -578,7 +578,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentListInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -613,7 +613,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -648,7 +648,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -683,7 +683,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfListInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -718,7 +718,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -753,7 +753,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -794,7 +794,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -829,7 +829,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -864,7 +864,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -905,7 +905,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -940,7 +940,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -975,7 +975,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1010,7 +1010,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1045,7 +1045,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1080,7 +1080,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1121,7 +1121,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1156,7 +1156,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1191,7 +1191,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1226,7 +1226,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1261,7 +1261,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1296,7 +1296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1331,7 +1331,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1366,7 +1366,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1401,7 +1401,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1436,7 +1436,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1471,7 +1471,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1506,7 +1506,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1541,7 +1541,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1576,7 +1576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfCollectionInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfCollectionInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1611,7 +1611,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfCollectionInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1646,7 +1646,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2ListInterfaceOfCollectionInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1681,7 +1681,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1716,7 +1716,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1751,7 +1751,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1786,7 +1786,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1821,7 +1821,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1862,7 +1862,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1897,7 +1897,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1932,7 +1932,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -1973,7 +1973,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -2008,7 +2008,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -2043,7 +2043,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -2078,7 +2078,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -2113,7 +2113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -2148,7 +2148,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetMiscChild2>
@@ -2189,7 +2189,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty", "contains at least one key-value pair with a null value", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetMiscChild2> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelAllPrivateSetMiscChild2>()

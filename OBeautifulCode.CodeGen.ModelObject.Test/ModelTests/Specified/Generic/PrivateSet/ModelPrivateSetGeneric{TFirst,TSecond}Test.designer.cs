@@ -82,7 +82,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "stringProperty" },
+                    ExpectedExceptionMessageContains = new[] { "stringProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -111,7 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "stringProperty", "white space" },
+                    ExpectedExceptionMessageContains = new[] { "stringProperty", "white space", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -140,7 +140,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "customClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "customClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -169,7 +169,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericArgumentProperty" },
+                    ExpectedExceptionMessageContains = new[] { "genericArgumentProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -198,7 +198,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericArrayProperty" },
+                    ExpectedExceptionMessageContains = new[] { "genericArrayProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -227,7 +227,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericArrayProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "genericArrayProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -256,7 +256,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericArrayProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "genericArrayProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -285,7 +285,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericCustomGenericClassProperty" },
+                    ExpectedExceptionMessageContains = new[] { "genericCustomGenericClassProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -314,7 +314,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyCollectionProperty" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyCollectionProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -343,7 +343,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyCollectionProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyCollectionProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -372,7 +372,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyCollectionProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyCollectionProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -401,7 +401,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyListProperty" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyListProperty", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -430,7 +430,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyListProperty", "is an empty enumerable" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyListProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -459,7 +459,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyListProperty", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyListProperty", "contains at least one null element", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -488,7 +488,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty1" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty1", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -517,7 +517,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty1", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty1", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -546,7 +546,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty2" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty2", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -575,7 +575,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty2", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty2", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -610,7 +610,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty2", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "genericReadOnlyDictionaryProperty2", "contains at least one key-value pair with a null value", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -639,7 +639,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty1" },
+                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty1", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -668,7 +668,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty1", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty1", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -697,7 +697,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty2" },
+                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty2", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -726,7 +726,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty2", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty2", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGeneric<Version, Guid>>
@@ -761,7 +761,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty2", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "genericPartiallyClosedReadOnlyDictionaryProperty2", "contains at least one key-value pair with a null value", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetGeneric<Version, Guid>> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetGeneric<Version, Guid>>()

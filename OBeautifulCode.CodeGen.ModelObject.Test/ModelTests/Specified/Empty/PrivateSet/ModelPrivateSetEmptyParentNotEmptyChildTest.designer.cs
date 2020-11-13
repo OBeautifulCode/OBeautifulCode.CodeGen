@@ -67,7 +67,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString" },
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetEmptyParentNotEmptyChild>
@@ -81,7 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetEmptyParentNotEmptyChild>
@@ -103,7 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "contains at least one key-value pair with a null value" },
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyDictionaryOfStringString", "contains at least one key-value pair with a null value", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetEmptyParentNotEmptyChild> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetEmptyParentNotEmptyChild>()
