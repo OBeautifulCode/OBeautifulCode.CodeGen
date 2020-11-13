@@ -309,7 +309,11 @@ namespace OBeautifulCode.CodeGen.Console
                          + Environment.NewLine
                          + "    using System;"
                          + Environment.NewLine
+                         + "    using System.Collections.Generic;"
+                         + Environment.NewLine
                          + "    using System.Diagnostics.CodeAnalysis;"
+                         + Environment.NewLine
+                         + "    using System.Linq;"
                          + Environment.NewLine
                          + Environment.NewLine
                          + "    using FakeItEasy;"
@@ -319,10 +323,19 @@ namespace OBeautifulCode.CodeGen.Console
                          + Environment.NewLine
                          + "    using OBeautifulCode.CodeAnalysis.Recipes;"
                          + Environment.NewLine
+                         + "    using OBeautifulCode.CodeGen.ModelObject.Recipes;"
+                         + Environment.NewLine
+                         + "    using OBeautifulCode.Math.Recipes;"
+                         + Environment.NewLine
                          + Environment.NewLine
                          + "    using Xunit;"
                          + Environment.NewLine
                          + Environment.NewLine
+                         + "    using static System.FormattableString;"
+                         + Environment.NewLine
+                         + Environment.NewLine
+                         + "    [SuppressMessage(\"Microsoft.Maintainability\", \"CA1505:AvoidUnmaintainableCode\", Justification = ObcSuppressBecause.CA1505_AvoidUnmaintainableCode_DisagreeWithAssessment)]"
+                          + Environment.NewLine
                          + "    public static partial class "
                          + typeName
                          + Environment.NewLine

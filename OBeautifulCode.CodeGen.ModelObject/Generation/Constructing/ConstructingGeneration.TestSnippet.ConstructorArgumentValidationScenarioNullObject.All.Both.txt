@@ -9,5 +9,5 @@
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]" },
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", },
                 })

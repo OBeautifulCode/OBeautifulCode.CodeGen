@@ -11,5 +11,5 @@
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "contains at least one null element" },
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "contains at least one null element", },
                 })

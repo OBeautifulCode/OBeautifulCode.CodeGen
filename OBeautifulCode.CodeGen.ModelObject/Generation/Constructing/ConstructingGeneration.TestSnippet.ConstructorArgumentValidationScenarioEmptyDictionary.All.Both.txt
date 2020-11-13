@@ -9,5 +9,5 @@
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
-                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "is an empty dictionary" },
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "is an empty dictionary", },
                 })
