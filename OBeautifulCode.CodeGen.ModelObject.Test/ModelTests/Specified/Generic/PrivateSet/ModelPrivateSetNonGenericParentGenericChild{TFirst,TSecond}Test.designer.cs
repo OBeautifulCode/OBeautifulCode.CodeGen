@@ -33,7 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static global::System.FormattableString;
 
-    public static partial class ModelPrivateSetNonGenericParentGenericChildTest
+    public static partial class ModelPrivateSetNonGenericParentGenericChildTFirstTSecondTest
     {
         private static readonly StringRepresentationTestScenarios<ModelPrivateSetNonGenericParentGenericChild<Version, Guid>> StringRepresentationTestScenarios = new StringRepresentationTestScenarios<ModelPrivateSetNonGenericParentGenericChild<Version, Guid>>()
             .AddScenario(() =>

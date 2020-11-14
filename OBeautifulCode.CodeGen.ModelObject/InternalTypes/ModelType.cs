@@ -131,6 +131,7 @@ namespace OBeautifulCode.CodeGen
             this.TypeNameInCodeString = type.ToStringReadable();
             this.TypeNameInTestMethodNameString = type.ToStringWithoutGenericComponent();
             this.TypeNameInIdentifierString = type.ToStringWithoutGenericComponent();
+            this.TypeNameInTestClassNameString = type.ToStringXmlDoc().Replace("{", string.Empty).Replace("}", string.Empty).Replace(",", string.Empty).Replace(" ", string.Empty);
             this.TypeNameInXmlDocString = type.ToStringXmlDoc();
             this.TypeNamespace = type.Namespace;
 

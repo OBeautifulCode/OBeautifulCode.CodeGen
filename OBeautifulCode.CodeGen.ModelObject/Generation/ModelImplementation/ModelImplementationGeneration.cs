@@ -254,7 +254,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.CodeGenAssemblyVersionToken, GenerationShared.GetCodeGenAssemblyVersion())
                 .Replace(Tokens.ModelTypeNamespaceToken, modelType.TypeNamespace)
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString)
+                .Replace(Tokens.ModelTypeNameInTestClassNameToken, modelType.TypeNameInTestClassNameString)
                 .Replace(Tokens.TestImplementationToken, testImplementationCode);
 
             return result;

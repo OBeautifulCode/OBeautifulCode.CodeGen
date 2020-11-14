@@ -45,6 +45,11 @@ namespace OBeautifulCode.CodeGen
         public string TypeNameInIdentifierString { get; }
 
         /// <summary>
+        /// Gets the name of the type as it should be used in the name of a test class.
+        /// </summary>
+        public string TypeNameInTestClassNameString { get; }
+
+        /// <summary>
         /// Gets the name of the type as it should be used in XML doc.
         /// </summary>
         public string TypeNameInXmlDocString { get; }

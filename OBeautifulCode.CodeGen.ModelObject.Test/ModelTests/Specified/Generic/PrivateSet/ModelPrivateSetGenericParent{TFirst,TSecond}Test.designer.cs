@@ -33,7 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
     using static global::System.FormattableString;
 
-    public static partial class ModelPrivateSetGenericParentTest
+    public static partial class ModelPrivateSetGenericParentTFirstTSecondTest
     {
         private static readonly ModelPrivateSetGenericParent<Version, Guid> ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelPrivateSetGenericParent<Version, Guid>>();
 

@@ -471,7 +471,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
             else
             {
-                result = Regex.Replace(modelName, "{.*?}", string.Empty) + Settings.TestNameSuffix;
+                result = modelName
+                    .Replace("{", string.Empty)
+                    .Replace("}", string.Empty)
+                    .Replace(",", string.Empty)
+                    .Replace(" ", string.Empty) + Settings.TestNameSuffix;
             }
 
             return result;

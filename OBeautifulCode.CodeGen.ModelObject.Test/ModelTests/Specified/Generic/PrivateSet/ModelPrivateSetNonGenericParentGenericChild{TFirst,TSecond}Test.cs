@@ -18,12 +18,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject.Recipes;
 
-    public static partial class ModelPrivateSetNonGenericParentGenericChildTest
+    public static partial class ModelPrivateSetNonGenericParentGenericChildTFirstTSecondTest
     {
         private static readonly ModelPrivateSetNonGenericParentGenericChild<Version, Guid> ReferenceObject = A.Dummy<ModelPrivateSetNonGenericParentGenericChild<Version, Guid>>();
 
         [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = ObcSuppressBecause.CA1810_InitializeReferenceTypeStaticFieldsInline_FieldsDeclaredInCodeGeneratedPartialTestClass)]
-        static ModelPrivateSetNonGenericParentGenericChildTest()
+        static ModelPrivateSetNonGenericParentGenericChildTFirstTSecondTest()
         {
             ComparableTestScenarios.AddScenario(new ComparableTestScenario<ModelPrivateSetNonGenericParentGenericChild<Version, Guid>>
             {

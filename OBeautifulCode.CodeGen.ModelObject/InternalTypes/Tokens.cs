@@ -29,6 +29,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string ModelTypeNameInIdentifierToken = "[model-type-name-in-identifier-here]";
 
         /// <summary>
+        /// The name of the model type when used as the name of a test class.
+        /// </summary>
+        public const string ModelTypeNameInTestClassNameToken = "[model-type-name-in-test-class-name-here]";
+
+        /// <summary>
         /// The namespace of the model Type.
         /// </summary>
         public const string ModelTypeNamespaceToken = "[model-type-namespace-here]";
