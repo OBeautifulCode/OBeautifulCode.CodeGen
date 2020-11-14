@@ -269,7 +269,7 @@ namespace OBeautifulCode.CodeGen.Console
 
             if (modelTestFilePath == null)
             {
-                var modelTestTypeName = type.ToStringWithoutGenericComponent() + "Test";
+                var modelTestTypeName = type.GetTestClassName();
 
                 modelTestFilePath = Path.Combine(testProjectDirectory, modelTestFileName);
 

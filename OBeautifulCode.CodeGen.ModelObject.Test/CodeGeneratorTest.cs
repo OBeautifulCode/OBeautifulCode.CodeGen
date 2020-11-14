@@ -794,7 +794,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             var fileNameWithoutExtension = modelName.GetFileNameWithoutExtension(modelOrTest);
 
-            var testClassName = modelName.GetClassName(modelOrTest);
+            var testClassName = modelName.GetTestClassName();
 
             if (specifiedModelKind != SpecifiedModelKind.NotApplicable)
             {

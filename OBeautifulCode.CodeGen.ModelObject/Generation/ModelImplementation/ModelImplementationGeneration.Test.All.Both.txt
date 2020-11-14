@@ -8,7 +8,7 @@ namespace [model-type-namespace-here].Test
 {
 [using-statements-here]
 
-    public static partial class [model-type-name-in-test-class-name-here]Test
+    public static partial class [model-type-name-in-test-class-name-here]
     {[test-implementation-here]
     }
 }

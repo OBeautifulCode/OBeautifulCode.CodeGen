@@ -459,28 +459,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string GetClassName(
-            this string modelName,
-            ModelOrTest modelOrTest)
-        {
-            string result;
-
-            if (modelOrTest == ModelOrTest.Model)
-            {
-                result = modelName;
-            }
-            else
-            {
-                result = modelName
-                    .Replace("{", string.Empty)
-                    .Replace("}", string.Empty)
-                    .Replace(",", string.Empty)
-                    .Replace(" ", string.Empty) + Settings.TestNameSuffix;
-            }
-
-            return result;
-        }
-
         public static Type GetModelType(
             this string modelName)
         {
