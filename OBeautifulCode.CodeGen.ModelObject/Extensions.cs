@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
 
+    using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     /// <summary>
@@ -25,6 +26,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GetTestClassName(
             this Type type)
         {
+            new { type }.AsArg().Must().NotBeNull();
+
             var result = type
                 .GetGenericTypeDefinitionOrSpecifiedType()
                 .ToStringXmlDoc()
@@ -43,6 +46,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public static string GetTestClassName(
             this string modelName)
         {
+            new { modelName }.AsArg().Must().NotBeNullNorWhiteSpace();
+
             var result = modelName
                 .Replace("{", string.Empty)
                 .Replace("}", string.Empty)
