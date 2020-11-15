@@ -751,9 +751,14 @@ namespace OBeautifulCode.CodeGen
 
             var result = inheritancePath.ToList();
 
-            foreach (var ancestorType in inheritancePath)
+            var typesToGetInterfaces = new Type[0]
+                .Concat(inheritancePath)
+                .Concat(new[] { type })
+                .ToList();
+
+            foreach (var typeToGetInterfaces in typesToGetInterfaces)
             {
-                var interfaces = ancestorType.GetInterfaces().Select(_ => _.IsGenericType ? _.GetGenericTypeDefinition() : _).ToList();
+                var interfaces = typeToGetInterfaces.GetInterfaces().Select(_ => _.IsGenericType ? _.GetGenericTypeDefinition() : _).ToList();
 
                 result.AddRange(interfaces);
             }
