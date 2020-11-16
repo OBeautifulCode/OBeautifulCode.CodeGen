@@ -964,6 +964,7 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "This needs refactoring.  At some point we're going to overhaul this heuristic to be more complete and we can tackle the refactor at that point.")]
         private static Type GetExampleTypeThatSatisfiesGenericArgumentConstraints(
             Type modelType,
             Type genericArgument,
@@ -1028,6 +1029,8 @@ namespace OBeautifulCode.CodeGen
                         .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintTypeToSearchForInInheritancePath))
                         .ToList();
 
+                    var passingTypes = new List<Type>();
+
                     foreach (var candidateType in candidateTypes)
                     {
                         // The candidate may or may not be closed; get an example closed version
@@ -1036,16 +1039,28 @@ namespace OBeautifulCode.CodeGen
                         // Is it assignable to the constraint?
                         if ((exampleClosedCandidateType != null) && closedConstraint.IsAssignableFrom(exampleClosedCandidateType))
                         {
-                            result = exampleClosedCandidateType;
-
-                            break;
+                            passingTypes.Add(exampleClosedCandidateType);
                         }
                     }
 
-                    if (result == null)
+                    if (!passingTypes.Any())
                     {
                         return null;
                     }
+
+                    // Note that a further improvement would actually test all passing types against the remaining constraints.
+                    // Also, we are choosing the type with the most number public properties so that it is more likely that we
+                    // can create two dummies of that type that are NOT equal (which we do a lot of in testing).
+                    result = passingTypes
+                        .Select(_ =>
+                            new
+                            {
+                                Type = _,
+                                NumberOfProperties = _.GetPropertiesFiltered(MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public).Count,
+                            })
+                        .OrderByDescending(_ => _.NumberOfProperties)
+                        .Select(_ => _.Type)
+                        .First();
                 }
             }
 
