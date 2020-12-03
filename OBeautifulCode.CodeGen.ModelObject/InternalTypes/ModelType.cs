@@ -1059,6 +1059,7 @@ namespace OBeautifulCode.CodeGen
                                 NumberOfProperties = _.GetPropertiesFiltered(MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public).Count,
                             })
                         .OrderByDescending(_ => _.NumberOfProperties)
+                        .ThenBy(_ => _.Type.Name)
                         .Select(_ => _.Type)
                         .First();
                 }
