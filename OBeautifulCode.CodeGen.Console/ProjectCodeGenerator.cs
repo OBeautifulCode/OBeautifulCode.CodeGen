@@ -13,7 +13,7 @@ namespace OBeautifulCode.CodeGen.Console
     using System.Linq;
     using System.Text;
 
-    using Newtonsoft.Json.Linq;
+    using NewtonsoftFork.Json.Linq;
 
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
