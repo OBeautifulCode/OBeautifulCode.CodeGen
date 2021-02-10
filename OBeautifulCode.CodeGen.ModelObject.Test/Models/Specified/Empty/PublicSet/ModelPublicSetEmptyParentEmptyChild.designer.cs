@@ -78,6 +78,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
+            .Hash("ModelPublicSetEmptyParentEmptyChild")
             .Value;
 
         /// <inheritdoc />

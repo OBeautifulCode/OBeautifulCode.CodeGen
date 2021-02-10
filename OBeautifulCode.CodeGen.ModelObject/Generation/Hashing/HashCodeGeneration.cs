@@ -31,7 +31,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var codeTemplate = typeof(HashCodeGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.Model, modelType.GetHashCodeKeyMethodKinds);
 
-            var hashStatements = modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToList();
+            var hashStatements = modelType.PropertiesOfConcern.Any()
+                ? modelType.PropertiesOfConcern.Select(_ => _.GenerateHashCodeMethodCodeForProperty()).ToArray()
+                : new[] { modelType.GenerateHashCodeMethodCodeForType() }; // if no properties just hash the name of the type
 
             var hashStatementsCode = hashStatements.Any()
                 ? new string[0].Concat(new[] { string.Empty }).Concat(hashStatements).ToDelimitedString(Environment.NewLine + "            .")
@@ -71,6 +73,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
             new { propertyOfConcern }.AsArg().Must().NotBeNull();
 
             var result = Invariant($"Hash(this.{propertyOfConcern.Name})");
+
+            return result;
+        }
+
+        private static string GenerateHashCodeMethodCodeForType(
+            this ModelType modelType)
+        {
+            new { modelType }.AsArg().Must().NotBeNull();
+
+            var result = Invariant($"Hash(\"{modelType.TypeNameInCodeString}\")");
 
             return result;
         }
