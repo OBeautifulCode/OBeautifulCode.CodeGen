@@ -7806,13 +7806,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                  A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomMultiChildClass>(),
+                                 A.Dummy<CustomMultilevelChildClass>(),
                                  A.Dummy<IReadOnlyCollection<string>>()));
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
                                  A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomMultiChildBaseClass>(),
+                                 A.Dummy<CustomMultilevelChildBaseClass>(),
                                  A.Dummy<CustomClass>()));
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(

@@ -54,7 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // corresponds with the property who's value is provided in the DeepCloneWith___() method.
                         // We do not know in advance if this will happen.  As such, the following objects are commented out.
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentEnumProperty(A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyParent>().Whose(_ => !_.ParentEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentEnumProperty)).ParentEnumProperty),
-                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithCustomMultiBaseClass(A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyParent>().Whose(_ => !_.CustomMultiBaseClass.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomMultiBaseClass)).CustomMultiBaseClass),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithCustomMultilevelBaseClass(A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyParent>().Whose(_ => !_.CustomMultilevelBaseClass.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomMultilevelBaseClass)).CustomMultilevelBaseClass),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelPrivateSetConstructorMoreDerivedThanPropertyParent[]
                     {
@@ -191,13 +191,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
 
-                if (systemUnderTest.CustomMultiBaseClass == null)
+                if (systemUnderTest.CustomMultilevelBaseClass == null)
                 {
-                    actual.CustomMultiBaseClass.AsTest().Must().BeNull();
+                    actual.CustomMultilevelBaseClass.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.CustomMultiBaseClass.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CustomMultiBaseClass);
+                    actual.CustomMultilevelBaseClass.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CustomMultilevelBaseClass);
                 }
             }
         }

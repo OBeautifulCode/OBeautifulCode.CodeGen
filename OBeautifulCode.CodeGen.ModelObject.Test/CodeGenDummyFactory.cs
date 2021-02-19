@@ -13,8 +13,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public CodeGenDummyFactory()
         {
             AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomBaseClass>();
-            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomMultiBaseClass>();
-            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomMultiChildBaseClass>();
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomMultilevelBaseClass>();
+            AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomMultilevelChildBaseClass>();
         }
     }
 }

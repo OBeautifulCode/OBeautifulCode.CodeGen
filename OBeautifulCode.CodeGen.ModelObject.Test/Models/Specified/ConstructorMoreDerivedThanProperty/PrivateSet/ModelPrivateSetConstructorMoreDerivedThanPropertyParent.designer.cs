@@ -104,10 +104,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
-        /// Deep clones this object with a new <see cref="CustomMultiBaseClass" />.
+        /// Deep clones this object with a new <see cref="CustomMultilevelBaseClass" />.
         /// </summary>
-        /// <param name="customMultiBaseClass">The new <see cref="CustomMultiBaseClass" />.  This object will NOT be deep cloned; it is used as-is.</param>
-        /// <returns>New <see cref="ModelPrivateSetConstructorMoreDerivedThanPropertyParent" /> using the specified <paramref name="customMultiBaseClass" /> for <see cref="CustomMultiBaseClass" /> and a deep clone of every other property.</returns>
+        /// <param name="customMultilevelBaseClass">The new <see cref="CustomMultilevelBaseClass" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPrivateSetConstructorMoreDerivedThanPropertyParent" /> using the specified <paramref name="customMultilevelBaseClass" /> for <see cref="CustomMultilevelBaseClass" /> and a deep clone of every other property.</returns>
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
@@ -123,7 +123,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public virtual ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneWithCustomMultiBaseClass(CustomMultiBaseClass customMultiBaseClass)
+        public virtual ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneWithCustomMultilevelBaseClass(CustomMultilevelBaseClass customMultilevelBaseClass)
         {
             throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
         }

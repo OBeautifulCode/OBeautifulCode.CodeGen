@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CustomMultiBaseClass.cs" company="OBeautifulCode">
+// <copyright file="CustomMultilevelBaseClass.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -12,9 +12,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.Type;
 
     [Serializable]
-    public abstract class CustomMultiBaseClass : IModel<CustomMultiBaseClass>
+    public abstract class CustomMultilevelBaseClass : IModel<CustomMultilevelBaseClass>
     {
-        protected CustomMultiBaseClass(
+        protected CustomMultilevelBaseClass(
             int rootItem1,
             string rootItem2)
         {
@@ -28,7 +28,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public string RootItem2 { get; private set; }
 
-        public static bool operator ==(CustomMultiBaseClass left, CustomMultiBaseClass right)
+        public static bool operator ==(CustomMultilevelBaseClass left, CustomMultilevelBaseClass right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -45,10 +45,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static bool operator !=(CustomMultiBaseClass left, CustomMultiBaseClass right) => !(left == right);
+        public static bool operator !=(CustomMultilevelBaseClass left, CustomMultilevelBaseClass right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(CustomMultiBaseClass other) => this == other;
+        public bool Equals(CustomMultilevelBaseClass other) => this == other;
 
         /// <inheritdoc />
         public abstract override bool Equals(object obj);
@@ -60,8 +60,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public object Clone() => this.DeepClone();
 
         /// <inheritdoc />
-        public CustomMultiBaseClass DeepClone() => this.DeepCloneInternal();
+        public CustomMultilevelBaseClass DeepClone() => this.DeepCloneInternal();
 
-        protected abstract CustomMultiBaseClass DeepCloneInternal();
+        protected abstract CustomMultilevelBaseClass DeepCloneInternal();
     }
 }

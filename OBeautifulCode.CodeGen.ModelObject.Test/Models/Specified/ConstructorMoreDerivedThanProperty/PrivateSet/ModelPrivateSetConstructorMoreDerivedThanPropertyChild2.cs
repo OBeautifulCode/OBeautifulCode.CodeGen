@@ -17,9 +17,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
             CustomEnum parentEnumProperty,
-            CustomMultiChildBaseClass customMultiBaseClass,
+            CustomMultilevelChildBaseClass customMultilevelBaseClass,
             CustomClass childCustomClass)
-            : base(parentEnumProperty, customMultiBaseClass)
+            : base(parentEnumProperty, customMultilevelBaseClass)
         {
             new { childCustomClass }.AsArg().Must().NotBeNull();
 

@@ -17,18 +17,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         protected ModelPrivateSetConstructorMoreDerivedThanPropertyParent(
             CustomEnum parentEnumProperty,
-            CustomMultiBaseClass customMultiBaseClass)
+            CustomMultilevelBaseClass customMultilevelBaseClass)
         {
-            new { customMultiBaseClass }.AsArg().Must().NotBeNull();
+            new { customMultilevelBaseClass }.AsArg().Must().NotBeNull();
 
             this.ParentEnumProperty = parentEnumProperty;
-            this.CustomMultiBaseClass = customMultiBaseClass;
+            this.CustomMultilevelBaseClass = customMultilevelBaseClass;
         }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
         public CustomEnum ParentEnumProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames", Justification = ObcSuppressBecause.CA1720_IdentifiersShouldNotContainTypeNames_TypeNameAddedToIdentifierForTestsWhereTypeIsPrimaryConcern)]
-        public CustomMultiBaseClass CustomMultiBaseClass { get; private set; }
+        public CustomMultilevelBaseClass CustomMultilevelBaseClass { get; private set; }
     }
 }

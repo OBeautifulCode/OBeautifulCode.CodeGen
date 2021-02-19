@@ -47,7 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetConstructorMoreDerivedThanPropertyChild1: ParentEnumProperty = {systemUnderTest.ParentEnumProperty.ToString() ?? "<null>"}, CustomMultiBaseClass = {systemUnderTest.CustomMultiBaseClass?.ToString() ?? "<null>"}, ChildReadOnlyCollectionOfStringProperty = {systemUnderTest.ChildReadOnlyCollectionOfStringProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetConstructorMoreDerivedThanPropertyChild1: ParentEnumProperty = {systemUnderTest.ParentEnumProperty.ToString() ?? "<null>"}, CustomMultilevelBaseClass = {systemUnderTest.CustomMultilevelBaseClass?.ToString() ?? "<null>"}, ChildReadOnlyCollectionOfStringProperty = {systemUnderTest.ChildReadOnlyCollectionOfStringProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -58,7 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
                 {
-                    Name = "constructor should throw ArgumentNullException when parameter 'customMultiBaseClass' is null scenario",
+                    Name = "constructor should throw ArgumentNullException when parameter 'customMultilevelBaseClass' is null scenario",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>();
@@ -71,7 +71,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentNullException),
-                    ExpectedExceptionMessageContains = new[] { "customMultiBaseClass", },
+                    ExpectedExceptionMessageContains = new[] { "customMultilevelBaseClass", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
@@ -83,7 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                              referenceObject.ParentEnumProperty,
-                                             (CustomMultiChildClass)referenceObject.CustomMultiBaseClass,
+                                             (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
                                              null);
 
                         return result;
@@ -101,7 +101,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                              referenceObject.ParentEnumProperty,
-                                             (CustomMultiChildClass)referenceObject.CustomMultiBaseClass,
+                                             (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
                                              new List<string>());
 
                         return result;
@@ -119,7 +119,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                              referenceObject.ParentEnumProperty,
-                                             (CustomMultiChildClass)referenceObject.CustomMultiBaseClass,
+                                             (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
                                              new string[0].Concat(referenceObject.ChildReadOnlyCollectionOfStringProperty).Concat(new string[] { null }).Concat(referenceObject.ChildReadOnlyCollectionOfStringProperty).ToList());
 
                         return result;
@@ -141,7 +141,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                                       referenceObject.ParentEnumProperty,
-                                                      (CustomMultiChildClass)referenceObject.CustomMultiBaseClass,
+                                                      (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
                                                       referenceObject.ChildReadOnlyCollectionOfStringProperty),
                             ExpectedPropertyValue = referenceObject.ParentEnumProperty,
                         };
@@ -153,7 +153,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
                 {
-                    Name = "CustomMultiBaseClass should return same 'customMultiBaseClass' parameter passed to constructor when getting",
+                    Name = "CustomMultilevelBaseClass should return same 'customMultilevelBaseClass' parameter passed to constructor when getting",
                     SystemUnderTestExpectedPropertyValueFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>();
@@ -162,14 +162,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                                       referenceObject.ParentEnumProperty,
-                                                      (CustomMultiChildClass)referenceObject.CustomMultiBaseClass,
+                                                      (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
                                                       referenceObject.ChildReadOnlyCollectionOfStringProperty),
-                            ExpectedPropertyValue = referenceObject.CustomMultiBaseClass,
+                            ExpectedPropertyValue = referenceObject.CustomMultilevelBaseClass,
                         };
 
                         return result;
                     },
-                    PropertyName = "CustomMultiBaseClass",
+                    PropertyName = "CustomMultilevelBaseClass",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
@@ -183,7 +183,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                                       referenceObject.ParentEnumProperty,
-                                                      (CustomMultiChildClass)referenceObject.CustomMultiBaseClass,
+                                                      (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
                                                       referenceObject.ChildReadOnlyCollectionOfStringProperty),
                             ExpectedPropertyValue = referenceObject.ChildReadOnlyCollectionOfStringProperty,
                         };
@@ -217,18 +217,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
                 {
-                    Name = "DeepCloneWithCustomMultiBaseClass should deep clone object and replace CustomMultiBaseClass with the provided customMultiBaseClass",
-                    WithPropertyName = "CustomMultiBaseClass",
+                    Name = "DeepCloneWithCustomMultilevelBaseClass should deep clone object and replace CustomMultilevelBaseClass with the provided customMultilevelBaseClass",
+                    WithPropertyName = "CustomMultilevelBaseClass",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
                     {
                         var systemUnderTest = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>();
 
-                        var referenceObject = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>().ThatIs(_ => !systemUnderTest.CustomMultiBaseClass.IsEqualTo(_.CustomMultiBaseClass));
+                        var referenceObject = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>().ThatIs(_ => !systemUnderTest.CustomMultilevelBaseClass.IsEqualTo(_.CustomMultilevelBaseClass));
 
                         var result = new SystemUnderTestDeepCloneWithValue<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            DeepCloneWithValue = referenceObject.CustomMultiBaseClass,
+                            DeepCloneWithValue = referenceObject.CustomMultilevelBaseClass,
                         };
 
                         return result;
@@ -267,22 +267,22 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentEnumProperty,
-                                (CustomMultiChildClass)ReferenceObjectForEquatableTestScenarios.CustomMultiBaseClass,
+                                (CustomMultilevelChildClass)ReferenceObjectForEquatableTestScenarios.CustomMultilevelBaseClass,
                                 ReferenceObjectForEquatableTestScenarios.ChildReadOnlyCollectionOfStringProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1[]
                     {
                         new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                 A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>().Whose(_ => !_.ParentEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentEnumProperty)).ParentEnumProperty,
-                                (CustomMultiChildClass)ReferenceObjectForEquatableTestScenarios.CustomMultiBaseClass,
+                                (CustomMultilevelChildClass)ReferenceObjectForEquatableTestScenarios.CustomMultilevelBaseClass,
                                 ReferenceObjectForEquatableTestScenarios.ChildReadOnlyCollectionOfStringProperty),
                         new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentEnumProperty,
-                                (CustomMultiChildClass)A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>().Whose(_ => !_.CustomMultiBaseClass.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomMultiBaseClass)).CustomMultiBaseClass,
+                                (CustomMultilevelChildClass)A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>().Whose(_ => !_.CustomMultilevelBaseClass.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomMultilevelBaseClass)).CustomMultilevelBaseClass,
                                 ReferenceObjectForEquatableTestScenarios.ChildReadOnlyCollectionOfStringProperty),
                         new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentEnumProperty,
-                                (CustomMultiChildClass)ReferenceObjectForEquatableTestScenarios.CustomMultiBaseClass,
+                                (CustomMultilevelChildClass)ReferenceObjectForEquatableTestScenarios.CustomMultilevelBaseClass,
                                 A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>().Whose(_ => !_.ChildReadOnlyCollectionOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ChildReadOnlyCollectionOfStringProperty)).ChildReadOnlyCollectionOfStringProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -559,13 +559,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 actual.AsTest().Must().BeEqualTo(systemUnderTest);
                 actual.AsTest().Must().NotBeSameReferenceAs(systemUnderTest);
 
-                if (systemUnderTest.CustomMultiBaseClass == null)
+                if (systemUnderTest.CustomMultilevelBaseClass == null)
                 {
-                    actual.CustomMultiBaseClass.AsTest().Must().BeNull();
+                    actual.CustomMultilevelBaseClass.AsTest().Must().BeNull();
                 }
                 else
                 {
-                    actual.CustomMultiBaseClass.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CustomMultiBaseClass);
+                    actual.CustomMultilevelBaseClass.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.CustomMultilevelBaseClass);
                 }
 
                 if (systemUnderTest.ChildReadOnlyCollectionOfStringProperty == null)
@@ -594,7 +594,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentEnumProperty", "CustomMultiBaseClass", "ChildReadOnlyCollectionOfStringProperty" };
+                var propertyNames = new string[] { "ParentEnumProperty", "CustomMultilevelBaseClass", "ChildReadOnlyCollectionOfStringProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

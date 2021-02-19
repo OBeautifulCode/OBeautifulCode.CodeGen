@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CustomMultiChildClass.cs" company="OBeautifulCode">
+// <copyright file="CustomMultilevelChildClass.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -16,9 +16,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using static System.FormattableString;
 
     [Serializable]
-    public class CustomMultiChildClass : CustomMultiBaseClass, IModel<CustomMultiChildClass>
+    public class CustomMultilevelChildClass : CustomMultilevelBaseClass, IModel<CustomMultilevelChildClass>
     {
-        public CustomMultiChildClass(
+        public CustomMultilevelChildClass(
             int rootItem1,
             string rootItem2,
             int childItem1,
@@ -35,7 +35,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public string ChildItem2 { get; private set; }
 
-        public static bool operator ==(CustomMultiChildClass left, CustomMultiChildClass right)
+        public static bool operator ==(CustomMultilevelChildClass left, CustomMultilevelChildClass right)
         {
             if (ReferenceEquals(left, right))
             {
@@ -52,10 +52,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static bool operator !=(CustomMultiChildClass left, CustomMultiChildClass right) => !(left == right);
+        public static bool operator !=(CustomMultilevelChildClass left, CustomMultilevelChildClass right) => !(left == right);
 
         /// <inheritdoc />
-        public bool Equals(CustomMultiChildClass other)
+        public bool Equals(CustomMultilevelChildClass other)
         {
             if (ReferenceEquals(this, other))
             {
@@ -76,7 +76,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => this == (obj as CustomMultiChildClass);
+        public override bool Equals(object obj) => this == (obj as CustomMultilevelChildClass);
 
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
@@ -87,12 +87,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Value;
 
         /// <inheritdoc />
-        public new CustomMultiChildClass DeepClone() => (CustomMultiChildClass)this.DeepCloneInternal();
+        public new CustomMultilevelChildClass DeepClone() => (CustomMultilevelChildClass)this.DeepCloneInternal();
 
         /// <inheritdoc />
-        protected override CustomMultiBaseClass DeepCloneInternal()
+        protected override CustomMultilevelBaseClass DeepCloneInternal()
         {
-            var result = new CustomMultiChildClass(
+            var result = new CustomMultilevelChildClass(
                 this.RootItem1,
                 this.RootItem2,
                 this.ChildItem1,

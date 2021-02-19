@@ -69,7 +69,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             }
 
             var result = this.ParentEnumProperty.IsEqualTo(other.ParentEnumProperty)
-                      && this.CustomMultiBaseClass.IsEqualTo(other.CustomMultiBaseClass)
+                      && this.CustomMultilevelBaseClass.IsEqualTo(other.CustomMultilevelBaseClass)
                       && this.ChildCustomClass.IsEqualTo(other.ChildCustomClass);
 
             return result;
@@ -81,7 +81,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public override int GetHashCode() => HashCodeHelper.Initialize()
             .Hash(this.ParentEnumProperty)
-            .Hash(this.CustomMultiBaseClass)
+            .Hash(this.CustomMultilevelBaseClass)
             .Hash(this.ChildCustomClass)
             .Value;
 
@@ -108,7 +108,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
                                  parentEnumProperty,
-                                 (CustomMultiChildBaseClass)this.CustomMultiBaseClass?.DeepClone(),
+                                 (CustomMultilevelChildBaseClass)this.CustomMultilevelBaseClass?.DeepClone(),
                                  this.ChildCustomClass?.DeepClone());
 
             return result;
@@ -130,11 +130,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public override ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneWithCustomMultiBaseClass(CustomMultiBaseClass customMultiBaseClass)
+        public override ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneWithCustomMultilevelBaseClass(CustomMultilevelBaseClass customMultilevelBaseClass)
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
                                  this.ParentEnumProperty,
-                                 (CustomMultiChildBaseClass)customMultiBaseClass,
+                                 (CustomMultilevelChildBaseClass)customMultilevelBaseClass,
                                  this.ChildCustomClass?.DeepClone());
 
             return result;
@@ -164,7 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
                                  this.ParentEnumProperty,
-                                 (CustomMultiChildBaseClass)this.CustomMultiBaseClass?.DeepClone(),
+                                 (CustomMultilevelChildBaseClass)this.CustomMultilevelBaseClass?.DeepClone(),
                                  childCustomClass);
 
             return result;
@@ -175,7 +175,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
                                  this.ParentEnumProperty,
-                                 (CustomMultiChildBaseClass)this.CustomMultiBaseClass?.DeepClone(),
+                                 (CustomMultilevelChildBaseClass)this.CustomMultilevelBaseClass?.DeepClone(),
                                  this.ChildCustomClass?.DeepClone());
 
             return result;
@@ -185,7 +185,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetConstructorMoreDerivedThanPropertyChild2: ParentEnumProperty = {this.ParentEnumProperty.ToString() ?? "<null>"}, CustomMultiBaseClass = {this.CustomMultiBaseClass?.ToString() ?? "<null>"}, ChildCustomClass = {this.ChildCustomClass?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetConstructorMoreDerivedThanPropertyChild2: ParentEnumProperty = {this.ParentEnumProperty.ToString() ?? "<null>"}, CustomMultilevelBaseClass = {this.CustomMultilevelBaseClass?.ToString() ?? "<null>"}, ChildCustomClass = {this.ChildCustomClass?.ToString() ?? "<null>"}.");
 
             return result;
         }
