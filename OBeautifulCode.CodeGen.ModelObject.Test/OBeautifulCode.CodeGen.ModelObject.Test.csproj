@@ -183,7 +183,7 @@
     </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiChildBaseClass.cs" />
-    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiGrandchildClass1.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiGrandchildClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiChildClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomGenericClass{T}.cs" />

@@ -20,19 +20,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             string rootItem2,
             int childBaseItem1,
             string childBaseItem2,
-            int grandChildItem1,
-            string grandChildItem2)
+            int grandchildItem1,
+            string grandchildItem2)
             : base(rootItem1, rootItem2, childBaseItem1, childBaseItem2)
         {
-            new { grandChildItem2 }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { grandchildItem2 }.AsArg().Must().NotBeNullNorWhiteSpace();
 
-            this.GrandChildItem1 = grandChildItem1;
-            this.GrandChildItem2 = grandChildItem2;
+            this.GrandchildItem1 = grandchildItem1;
+            this.GrandchildItem2 = grandchildItem2;
         }
 
-        public int GrandChildItem1 { get; private set; }
+        public int GrandchildItem1 { get; private set; }
 
-        public string GrandChildItem2 { get; private set; }
+        public string GrandchildItem2 { get; private set; }
 
         public static bool operator ==(CustomMultiGrandchildClass left, CustomMultiGrandchildClass right)
         {
@@ -70,8 +70,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.RootItem2.IsEqualTo(other.RootItem2)
                       && this.ChildBaseItem1.IsEqualTo(other.ChildBaseItem1)
                       && this.ChildBaseItem2.IsEqualTo(other.ChildBaseItem2)
-                      && this.GrandChildItem1.IsEqualTo(other.GrandChildItem1)
-                      && this.GrandChildItem2.IsEqualTo(other.GrandChildItem2);
+                      && this.GrandchildItem1.IsEqualTo(other.GrandchildItem1)
+                      && this.GrandchildItem2.IsEqualTo(other.GrandchildItem2);
 
             return result;
         }
@@ -85,8 +85,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.RootItem2)
             .Hash(this.ChildBaseItem1)
             .Hash(this.ChildBaseItem2)
-            .Hash(this.GrandChildItem1)
-            .Hash(this.GrandChildItem2)
+            .Hash(this.GrandchildItem1)
+            .Hash(this.GrandchildItem2)
             .Value;
 
         /// <inheritdoc />
@@ -100,8 +100,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.RootItem2,
                 this.ChildBaseItem1,
                 this.ChildBaseItem2,
-                this.GrandChildItem1,
-                this.GrandChildItem2);
+                this.GrandchildItem1,
+                this.GrandchildItem2);
 
             return result;
         }
