@@ -56,7 +56,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var parametersCode = parameters.Select(_ =>
                 {
-                    var referenceObject = "referenceObject." + _.ToPropertyName();
+                    var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                    var referenceObject = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
                     string code;
                     if (_.Name == parameter.Name)
@@ -88,7 +90,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var stringParameterCode = parameters.Select(_ =>
                     {
-                        var referenceObject = "referenceObject." + _.ToPropertyName();
+                        var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                        var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
                         string code;
 
@@ -98,7 +102,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         }
                         else
                         {
-                            code = referenceObject;
+                            code = referenceProperty;
                             referenceObjectUsed = true;
                         }
 
@@ -123,7 +127,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var collectionParameterCode = parameters.Select(_ =>
                     {
-                        var referenceObject = "referenceObject." + _.ToPropertyName();
+                        var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                        var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
                         string code;
 
@@ -133,7 +139,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         }
                         else
                         {
-                            code = referenceObject;
+                            code = referenceProperty;
                             referenceObjectUsed = true;
                         }
 
@@ -161,23 +167,25 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         collectionParameterCode = parameters.Select(_ =>
                         {
-                            var referenceObject = "referenceObject." + _.ToPropertyName();
+                            var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                            var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
                             if (_.Name == parameter.Name)
                             {
-                                referenceObject = Invariant($"new {elementType.ToStringReadable()}[0].Concat({referenceObject}).Concat(new {elementType.ToStringReadable()}[] {{ null }}).Concat({referenceObject})");
+                                referenceProperty = Invariant($"new {elementType.ToStringReadable()}[0].Concat({referenceProperty}).Concat(new {elementType.ToStringReadable()}[] {{ null }}).Concat({referenceProperty})");
 
-                                referenceObject = parameter.ParameterType.IsArray
-                                    ? referenceObject + ".ToArray()"
-                                    : referenceObject + ".ToList()";
+                                referenceProperty = parameter.ParameterType.IsArray
+                                    ? referenceProperty + ".ToArray()"
+                                    : referenceProperty + ".ToList()";
 
                                 if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
                                 {
-                                    referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
+                                    referenceProperty = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
                                 }
                             }
 
-                            return new MemberCode(_.Name, referenceObject);
+                            return new MemberCode(_.Name, referenceProperty);
                         }).ToList();
 
                         objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
@@ -198,7 +206,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     var dictionaryParameterCode = parameters.Select(_ =>
                     {
-                        var referenceObject = "referenceObject." + _.ToPropertyName();
+                        var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                        var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
                         string code;
 
@@ -208,7 +218,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         }
                         else
                         {
-                            code = referenceObject;
+                            code = referenceProperty;
                             referenceObjectUsed = true;
                         }
 
@@ -233,19 +243,21 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         dictionaryParameterCode = parameters.Select(_ =>
                         {
-                            var referenceObject = "referenceObject." + _.ToPropertyName();
+                            var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                            var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
                             if (_.Name == parameter.Name)
                             {
-                                referenceObject = "dictionaryWithNullValue";
+                                referenceProperty = "dictionaryWithNullValue";
 
                                 if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))))
                                 {
-                                    referenceObject = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceObject);
+                                    referenceProperty = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
                                 }
                             }
 
-                            return new MemberCode(_.Name, referenceObject);
+                            return new MemberCode(_.Name, referenceProperty);
                         }).ToList();
 
                         var setDictionaryValueToNullCode = Invariant($"var dictionaryWithNullValue = referenceObject.{parameter.ToPropertyName()}.ToDictionary(_ => _.Key, _ => _.Value);");
@@ -267,7 +279,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             foreach (var parameter in parameters)
             {
-                var parameterCode = parameters.Select(_ => new MemberCode(_.Name, "referenceObject." + _.ToPropertyName())).ToList();
+                var parameterCode = parameters
+                    .Select(_ =>
+                    {
+                        var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                        var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
+
+                        return new MemberCode(_.Name, referenceProperty);
+                    })
+                    .ToList();
 
                 var newObjectCode = modelType.GenerateModelInstantiation(parameterCode, parameterPaddingLength: 54);
 

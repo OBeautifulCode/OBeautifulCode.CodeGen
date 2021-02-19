@@ -160,6 +160,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     "NonGenericParentGenericChild{TFirst, TSecond}",
                 }
             },
+            {
+                SpecifiedModelKind.ConstructorMoreDerivedThanProperty,
+                new[]
+                {
+                    "ConstructorMoreDerivedThanPropertyParent",
+                    "ConstructorMoreDerivedThanPropertyChild1",
+                    "ConstructorMoreDerivedThanPropertyChild2",
+                }
+            },
         };
     }
 }

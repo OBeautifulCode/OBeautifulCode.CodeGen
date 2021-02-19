@@ -88,6 +88,16 @@ namespace OBeautifulCode.CodeGen
         public ConstructorInfo Constructor { get; }
 
         /// <summary>
+        /// Gets a map of property name to the type of it's matching constructor parameter.
+        /// </summary>
+        public IReadOnlyDictionary<string, Type> PropertyNameToConstructorParameterTypeMap { get; }
+
+        /// <summary>
+        /// Gets a map of constructor parameter name to property of concern.
+        /// </summary>
+        public IReadOnlyDictionary<string, PropertyOfConcern> CaseInsensitivePropertyNameToPropertyOfConcernMap { get; }
+
+        /// <summary>
         /// Gets the <see cref="HierarchyKind"/> of the model type.
         /// </summary>
         public HierarchyKind HierarchyKind { get; }

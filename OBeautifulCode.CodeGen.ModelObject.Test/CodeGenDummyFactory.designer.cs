@@ -7804,6 +7804,36 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomMultiChildClass>(),
+                                 A.Dummy<IReadOnlyCollection<string>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomMultiChildBaseClass>(),
+                                 A.Dummy<CustomClass>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPrivateSetConstructorMoreDerivedThanPropertyChild1),
+                        typeof(ModelPrivateSetConstructorMoreDerivedThanPropertyChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPrivateSetConstructorMoreDerivedThanPropertyParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetGenericParentGenericPartiallyClosedChild<Version>(
                                  A.Dummy<string>(),
                                  A.Dummy<int>(),

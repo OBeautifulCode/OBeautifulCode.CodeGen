@@ -378,6 +378,40 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }
 
+        /// <summary>
+        /// Gets the required cast statement, if any, to use the value of a property when constructing the model.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <param name="propertyOfConcern">The property of concern.</param>
+        /// <returns>
+        /// The cast statement, if any is required.
+        /// </returns>
+        public static string CastIfConstructorParameterIsOfDifferentType(
+            this ModelType modelType,
+            PropertyOfConcern propertyOfConcern)
+        {
+            string result;
+
+            var propertyName = propertyOfConcern.Name;
+
+            if (modelType.PropertyNameToConstructorParameterTypeMap.ContainsKey(propertyName))
+            {
+                var constructorParameterType = modelType.PropertyNameToConstructorParameterTypeMap[propertyName];
+
+                var propertyType = propertyOfConcern.PropertyType;
+
+                result = propertyType != constructorParameterType
+                    ? Invariant($"({constructorParameterType.ToStringReadable()})")
+                    : string.Empty;
+            }
+            else
+            {
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
         private static string GetCodeTemplate(
             this Type generationType,
             string hierarchyKind,

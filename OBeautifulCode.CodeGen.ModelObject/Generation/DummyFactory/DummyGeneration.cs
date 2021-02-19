@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
 
     using OBeautifulCode.Collection.Recipes;
+    using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -46,7 +47,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
             }
             else
             {
-                var propertyNameToCodeMap = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringReadable().GenerateDummyConstructionCodeForType())).ToList();
+                // Branch on having constructor here because constructor parameter type might be more derived than property type.
+                var propertyNameToCodeMap = modelType.Constructor.IsDefaultConstructor()
+                    ? modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringReadable().GenerateDummyConstructionCodeForType())).ToList()
+                    : modelType.Constructor.GetParameters().Select(_ => new MemberCode(_.Name, _.ParameterType.ToStringReadable().GenerateDummyConstructionCodeForType())).ToList();
 
                 var newDummyToken = modelType.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 

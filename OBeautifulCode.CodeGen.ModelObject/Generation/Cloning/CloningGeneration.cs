@@ -168,7 +168,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var deepCloneCodeForEachProperty = modelType
                 .PropertiesOfConcern
-                .Select(_ => new MemberCode(_.Name, _.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name)))
+                .Select(_ => new MemberCode(_.Name, Invariant($"{modelType.CastIfConstructorParameterIsOfDifferentType(_)}{_.PropertyType.GenerateCloningLogicCodeForType("this." + _.Name)}")))
                 .ToList();
 
             var result = modelType.GenerateModelInstantiation(deepCloneCodeForEachProperty, parameterPaddingLength: 33);
@@ -195,6 +195,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     var code = _.Name == property.Name
                         ? property.ToParameterName()
                         : referenceItemCloned;
+
+                    code = modelType.CastIfConstructorParameterIsOfDifferentType(_) + code;
 
                     return new MemberCode(_.Name, code);
                 }).ToList();

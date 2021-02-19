@@ -67,17 +67,17 @@
     <Reference Include="OBeautifulCode.Representation.System, Version=1.0.57.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.Representation.System.1.0.57\lib\net462\OBeautifulCode.Representation.System.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization, Version=1.0.99.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.1.0.99\lib\net462\OBeautifulCode.Serialization.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization, Version=1.0.104.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.1.0.104\lib\net462\OBeautifulCode.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.Bson, Version=1.0.99.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.Bson.1.0.99\lib\net462\OBeautifulCode.Serialization.Bson.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.Bson, Version=1.0.104.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.Bson.1.0.104\lib\net462\OBeautifulCode.Serialization.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.99.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.99\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.104.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.104\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.PropertyBag, Version=1.0.99.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.PropertyBag.1.0.99\lib\net462\OBeautifulCode.Serialization.PropertyBag.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.PropertyBag, Version=1.0.104.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.PropertyBag.1.0.104\lib\net462\OBeautifulCode.Serialization.PropertyBag.dll</HintPath>
     </Reference>
     <Reference Include="OBeautifulCode.Type, Version=1.0.78.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.Type.1.0.78\lib\net462\OBeautifulCode.Type.dll</HintPath>
@@ -182,6 +182,10 @@
       <DependentUpon>CodeGenDummyFactory.cs</DependentUpon>
     </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiChildBaseClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiGrandChildClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiChildClass.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultiBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomGenericClass{T}.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomDerivedClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomBaseClass.cs" />
@@ -1978,6 +1982,18 @@
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.cs" />
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.cs" />
+    <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild2.cs" />
+    <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild2.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyParent.cs" />
+    <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyParent.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}.cs" />
     <Compile Include="Models\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericPartiallyClosedChild{TFirst}.designer.cs">
@@ -3826,6 +3842,18 @@
     <Compile Include="ModelTests\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListTest.cs" />
     <Compile Include="ModelTests\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListTest.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.cs" />
+    <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild2Test.cs" />
+    <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild2Test.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyParentTest.cs" />
+    <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyParentTest.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyParentTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChild{TFirst,TSecond}Test.cs" />
     <Compile Include="ModelTests\Specified\Generic\PrivateSet\ModelPrivateSetGenericParentGenericChild{TFirst,TSecond}Test.designer.cs">

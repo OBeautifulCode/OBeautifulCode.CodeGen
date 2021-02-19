@@ -169,7 +169,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 ? Environment.NewLine + typeof(EqualityGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, keyMethodKinds, CodeSnippetKind.EquatableTestFieldsScenarioTypeDerivativeThatIsNotSameTypeAsReferenceObject, throwIfDoesNotExist: false)
                 : string.Empty;
 
-            var objectsEqualToButNotTheSameAsReferenceObjectMemberCode = modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, "ReferenceObjectForEquatableTestScenarios." + _.Name)).ToList();
+            var objectsEqualToButNotTheSameAsReferenceObjectMemberCode = modelType.PropertiesOfConcern
+                .Select(_ =>
+                {
+                    var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                    var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "ReferenceObjectForEquatableTestScenarios." + _.Name;
+
+                    return new MemberCode(_.Name, referenceProperty);
+                })
+                .ToList();
             var objectsEqualToButNotTheSameAsReferenceObject = modelType.GenerateModelInstantiation(objectsEqualToButNotTheSameAsReferenceObjectMemberCode, parameterPaddingLength: 32);
 
             var objectsNotEqualToReferenceObject = modelType.GetObjectsNotEqualToReferenceObject();
@@ -216,12 +225,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     {
                         var propertiesCode = modelType.PropertiesOfConcern.Select(_ =>
                         {
-                            var referenceObject = "ReferenceObjectForEquatableTestScenarios." + _.Name;
+                            var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                            var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "ReferenceObjectForEquatableTestScenarios." + _.Name;
+
+                            var dummyObject = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + objectNotEqualToReferenceObjectCodeSnippet.Replace(Tokens.PropertyNameToken, property.Name);
 
                             var memberCode = _.Name != property.Name
-                                ? referenceObject
-                                : objectNotEqualToReferenceObjectCodeSnippet
-                                    .Replace(Tokens.PropertyNameToken, property.Name);
+                                ? referenceProperty
+                                : dummyObject;
 
                             return new MemberCode(_.Name, memberCode);
                         }).ToList();

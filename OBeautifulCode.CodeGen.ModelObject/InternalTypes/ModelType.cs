@@ -73,6 +73,7 @@ namespace OBeautifulCode.CodeGen
 
             this.PropertiesOfConcern = propertiesOfConcern.Select(ToPropertyOfConcern).ToList();
             this.DeclaredOnlyPropertiesOfConcern = declaredOnlyPropertiesOfConcern.Select(ToPropertyOfConcern).ToList();
+            this.CaseInsensitivePropertyNameToPropertyOfConcernMap = this.PropertiesOfConcern.ToDictionary(_ => _.Name, _ => _, StringComparer.OrdinalIgnoreCase);
 
             // Conditions About Properties
             this.GenericParametersUsedAsKeyInDictionary = GetGenericParametersUsedAsKeyInDictionary(type, propertiesOfConcern);
@@ -118,7 +119,9 @@ namespace OBeautifulCode.CodeGen
             this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
 
             // Constructor
-            this.Constructor = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern);
+            var getConstructorResult = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern, this.CaseInsensitivePropertyNameToPropertyOfConcernMap);
+            this.Constructor = getConstructorResult.ConstructorInfo;
+            this.PropertyNameToConstructorParameterTypeMap = getConstructorResult.PropertyNameToConstructorParameterTypeMap;
 
             // Types Names
             this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
@@ -339,12 +342,15 @@ namespace OBeautifulCode.CodeGen
         }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
-        private static ConstructorInfo GetConstructorAndThrowIfNotSupported(
+        private static GetConstructorResult GetConstructorAndThrowIfNotSupported(
             Type type,
             IReadOnlyList<PropertyInfo> propertiesOfConcern,
-            IReadOnlyList<PropertyInfo> declaredOnlyPropertiesOfConcern)
+            IReadOnlyList<PropertyInfo> declaredOnlyPropertiesOfConcern,
+            IReadOnlyDictionary<string, PropertyOfConcern> caseInsensitivePropertyNameToPropertyOfConcernMap)
         {
-            ConstructorInfo result;
+            ConstructorInfo constructorInfo;
+
+            var propertyNameToConstructorParameterTypeMap = new Dictionary<string, Type>();
 
             var publicConstructors = type.GetConstructorsFiltered(MemberRelationships.DeclaredInType, MemberOwners.Instance, MemberAccessModifiers.Public);
 
@@ -355,7 +361,7 @@ namespace OBeautifulCode.CodeGen
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there is at least one public constructor, but the class is abstract.  Abstract classes should not have public constructors."));
                 }
 
-                result = null;
+                constructorInfo = null;
             }
             else
             {
@@ -389,9 +395,9 @@ namespace OBeautifulCode.CodeGen
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; there are {candidateConstructors.Count} public constructors having the most number of parameters ({maxParameterCount}) where all parameters have a matching property by name type, whereas only 1 was expected."));
                 }
 
-                result = candidateConstructors.Single();
+                constructorInfo = candidateConstructors.Single();
 
-                if (result.IsDefaultConstructor())
+                if (constructorInfo.IsDefaultConstructor())
                 {
                     if (!propertiesOfConcern.All(_ => _.SetMethod.IsPublic))
                     {
@@ -406,14 +412,27 @@ namespace OBeautifulCode.CodeGen
                     }
 
                     // all of the declared properties have to appear in the parameter list
-                    var constructorParameterNames = new HashSet<string>(result.GetParameters().Select(_ => _.Name), StringComparer.OrdinalIgnoreCase);
+                    var constructorParameterNames = new HashSet<string>(constructorInfo.GetParameters().Select(_ => _.Name), StringComparer.OrdinalIgnoreCase);
 
                     if (declaredOnlyPropertiesOfConcern.Any(_ => !constructorParameterNames.Contains(_.Name)))
                     {
                         throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; the public constructor that best matches the properties of concern is parameterized but one or more of the properties declared on the type (not inherited) does not match a parameter in that constructor."));
                     }
+
+                    foreach (var constructorParameter in constructorInfo.GetParameters())
+                    {
+                        var propertyOfConcern = caseInsensitivePropertyNameToPropertyOfConcernMap[constructorParameter.Name];
+
+                        propertyNameToConstructorParameterTypeMap.Add(propertyOfConcern.Name, constructorParameter.ParameterType);
+                    }
                 }
             }
+
+            var result = new GetConstructorResult
+            {
+                ConstructorInfo = constructorInfo,
+                PropertyNameToConstructorParameterTypeMap = propertyNameToConstructorParameterTypeMap,
+            };
 
             return result;
         }
@@ -1144,6 +1163,13 @@ namespace OBeautifulCode.CodeGen
             }
 
             return result;
+        }
+
+        private class GetConstructorResult
+        {
+            public ConstructorInfo ConstructorInfo { get; set; }
+
+            public IReadOnlyDictionary<string, Type> PropertyNameToConstructorParameterTypeMap { get; set; }
         }
     }
 }
