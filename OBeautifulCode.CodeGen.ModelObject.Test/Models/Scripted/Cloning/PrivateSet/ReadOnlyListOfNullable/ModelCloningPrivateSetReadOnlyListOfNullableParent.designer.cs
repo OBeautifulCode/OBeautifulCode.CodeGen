@@ -35,7 +35,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableBoolProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="ModelCloningPrivateSetReadOnlyListOfNullableParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableBoolProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableBoolProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
@@ -60,7 +62,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableIntProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="ModelCloningPrivateSetReadOnlyListOfNullableParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableIntProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableIntProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
@@ -85,7 +89,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableGuidProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="ModelCloningPrivateSetReadOnlyListOfNullableParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableGuidProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableGuidProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
@@ -110,7 +116,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableDateTimeProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="ModelCloningPrivateSetReadOnlyListOfNullableParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableDateTimeProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableDateTimeProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
@@ -135,7 +143,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableCustomEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableCustomEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="ModelCloningPrivateSetReadOnlyListOfNullableParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableCustomEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableCustomEnumProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
@@ -160,7 +170,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// </summary>
         /// <param name="parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty">The new <see cref="ParentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
         /// <returns>New <see cref="ModelCloningPrivateSetReadOnlyListOfNullableParent" /> using the specified <paramref name="parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty" /> for <see cref="ParentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty" /> and a deep clone of every other property.</returns>
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]

@@ -85,7 +85,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public new ModelPublicSetNotEmptyParentEmptyChild DeepClone() => (ModelPublicSetNotEmptyParentEmptyChild)this.DeepCloneInternal();
 
         /// <inheritdoc />
-        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
         [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
@@ -111,6 +113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         protected override ModelPublicSetNotEmptyParent DeepCloneInternal()
         {
             var result = new ModelPublicSetNotEmptyParentEmptyChild

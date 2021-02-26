@@ -85,6 +85,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public new ModelPrivateSetEmptyParentEmptyChild DeepClone() => (ModelPrivateSetEmptyParentEmptyChild)this.DeepCloneInternal();
 
         /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         protected override ModelPrivateSetEmptyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetEmptyParentEmptyChild();
