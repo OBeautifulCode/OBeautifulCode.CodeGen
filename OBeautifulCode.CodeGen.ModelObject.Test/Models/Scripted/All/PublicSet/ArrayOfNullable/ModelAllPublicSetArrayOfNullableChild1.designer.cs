@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -129,17 +130,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
                                  ParentArrayOfNullableBoolProperty            = parentArrayOfNullableBoolProperty,
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -167,18 +168,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
                                  ParentArrayOfNullableIntProperty             = parentArrayOfNullableIntProperty,
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -206,18 +207,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
                                  ParentArrayOfNullableGuidProperty            = parentArrayOfNullableGuidProperty,
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -245,18 +246,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
                                  ParentArrayOfNullableDateTimeProperty        = parentArrayOfNullableDateTimeProperty,
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -284,18 +285,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
                                  ParentArrayOfNullableCustomEnumProperty      = parentArrayOfNullableCustomEnumProperty,
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -323,18 +324,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
                                  ParentArrayOfNullableCustomFlagsEnumProperty = parentArrayOfNullableCustomFlagsEnumProperty,
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -366,18 +367,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ArrayOfNullableBoolProperty            = child1ArrayOfNullableBoolProperty,
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -409,18 +410,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
                                  Child1ArrayOfNullableIntProperty             = child1ArrayOfNullableIntProperty,
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -452,18 +453,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
                                  Child1ArrayOfNullableGuidProperty            = child1ArrayOfNullableGuidProperty,
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -495,18 +496,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
                                  Child1ArrayOfNullableDateTimeProperty        = child1ArrayOfNullableDateTimeProperty,
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -538,18 +539,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
                                  Child1ArrayOfNullableCustomEnumProperty      = child1ArrayOfNullableCustomEnumProperty,
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -581,17 +582,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
                                  Child1ArrayOfNullableCustomFlagsEnumProperty = child1ArrayOfNullableCustomFlagsEnumProperty,
                              };
 
@@ -604,18 +605,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetArrayOfNullableChild1
                              {
-                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 ParentArrayOfNullableBoolProperty            = this.ParentArrayOfNullableBoolProperty?.DeepClone(),
+                                 ParentArrayOfNullableIntProperty             = this.ParentArrayOfNullableIntProperty?.DeepClone(),
+                                 ParentArrayOfNullableGuidProperty            = this.ParentArrayOfNullableGuidProperty?.DeepClone(),
+                                 ParentArrayOfNullableDateTimeProperty        = this.ParentArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomEnumProperty      = this.ParentArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = this.ParentArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableBoolProperty            = this.Child1ArrayOfNullableBoolProperty?.DeepClone(),
+                                 Child1ArrayOfNullableIntProperty             = this.Child1ArrayOfNullableIntProperty?.DeepClone(),
+                                 Child1ArrayOfNullableGuidProperty            = this.Child1ArrayOfNullableGuidProperty?.DeepClone(),
+                                 Child1ArrayOfNullableDateTimeProperty        = this.Child1ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = this.Child1ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = this.Child1ArrayOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;

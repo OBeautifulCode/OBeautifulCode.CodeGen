@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -98,12 +99,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyCollectionOfNullable DeepClone()
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
-                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList());
+                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -134,11 +135,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
                                  readOnlyCollectionInterfaceOfNullableBoolProperty,
-                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList());
+                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -168,12 +169,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableIntProperty(IReadOnlyCollection<int?> readOnlyCollectionInterfaceOfNullableIntProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
-                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  readOnlyCollectionInterfaceOfNullableIntProperty,
-                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList());
+                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -203,12 +204,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableGuidProperty(IReadOnlyCollection<Guid?> readOnlyCollectionInterfaceOfNullableGuidProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
-                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  readOnlyCollectionInterfaceOfNullableGuidProperty,
-                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList());
+                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -238,12 +239,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableDateTimeProperty(IReadOnlyCollection<DateTime?> readOnlyCollectionInterfaceOfNullableDateTimeProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
-                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  readOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList());
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -273,12 +274,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableCustomEnumProperty(IReadOnlyCollection<CustomEnum?> readOnlyCollectionInterfaceOfNullableCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
-                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  readOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList());
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -308,11 +309,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyCollectionOfNullable DeepCloneWithReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty(IReadOnlyCollection<CustomFlagsEnum?> readOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyCollectionOfNullable(
-                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
                                  readOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;

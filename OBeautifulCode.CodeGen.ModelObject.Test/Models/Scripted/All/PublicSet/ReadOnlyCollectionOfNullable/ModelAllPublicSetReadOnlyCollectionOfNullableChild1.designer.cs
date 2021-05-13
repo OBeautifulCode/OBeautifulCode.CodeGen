@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -129,17 +130,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
                                  ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = parentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -167,18 +168,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = parentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -206,18 +207,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = parentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -245,18 +246,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -284,18 +285,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = parentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -323,18 +324,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
                                  ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = parentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -366,18 +367,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = child1ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -409,18 +410,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = child1ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -452,18 +453,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = child1ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -495,18 +496,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -538,18 +539,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -581,17 +582,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
                                  Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                              };
 
@@ -604,18 +605,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyCollectionOfNullableChild1
                              {
-                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;

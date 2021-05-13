@@ -328,6 +328,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "System.Diagnostics.CodeAnalysis",
                 "System.Globalization",
                 "System.Linq",
+                "OBeautifulCode.Cloning.Recipes",
                 "OBeautifulCode.Equality.Recipes",
                 "OBeautifulCode.Type",
                 "OBeautifulCode.Type.Recipes",

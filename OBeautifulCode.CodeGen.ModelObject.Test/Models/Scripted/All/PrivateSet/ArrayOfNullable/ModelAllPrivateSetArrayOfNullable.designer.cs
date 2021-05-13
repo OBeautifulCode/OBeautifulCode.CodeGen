@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -98,12 +99,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayOfNullable DeepClone()
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
-                                 this.ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray());
+                                 this.ArrayOfNullableBoolProperty?.DeepClone(),
+                                 this.ArrayOfNullableIntProperty?.DeepClone(),
+                                 this.ArrayOfNullableGuidProperty?.DeepClone(),
+                                 this.ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -134,11 +135,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
                                  arrayOfNullableBoolProperty,
-                                 this.ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray());
+                                 this.ArrayOfNullableIntProperty?.DeepClone(),
+                                 this.ArrayOfNullableGuidProperty?.DeepClone(),
+                                 this.ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -168,12 +169,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayOfNullable DeepCloneWithArrayOfNullableIntProperty(int?[] arrayOfNullableIntProperty)
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
-                                 this.ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
+                                 this.ArrayOfNullableBoolProperty?.DeepClone(),
                                  arrayOfNullableIntProperty,
-                                 this.ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray());
+                                 this.ArrayOfNullableGuidProperty?.DeepClone(),
+                                 this.ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -203,12 +204,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayOfNullable DeepCloneWithArrayOfNullableGuidProperty(Guid?[] arrayOfNullableGuidProperty)
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
-                                 this.ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
+                                 this.ArrayOfNullableBoolProperty?.DeepClone(),
+                                 this.ArrayOfNullableIntProperty?.DeepClone(),
                                  arrayOfNullableGuidProperty,
-                                 this.ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray());
+                                 this.ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -238,12 +239,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayOfNullable DeepCloneWithArrayOfNullableDateTimeProperty(DateTime?[] arrayOfNullableDateTimeProperty)
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
-                                 this.ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
+                                 this.ArrayOfNullableBoolProperty?.DeepClone(),
+                                 this.ArrayOfNullableIntProperty?.DeepClone(),
+                                 this.ArrayOfNullableGuidProperty?.DeepClone(),
                                  arrayOfNullableDateTimeProperty,
-                                 this.ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray());
+                                 this.ArrayOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -273,12 +274,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayOfNullable DeepCloneWithArrayOfNullableCustomEnumProperty(CustomEnum?[] arrayOfNullableCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
-                                 this.ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.ArrayOfNullableBoolProperty?.DeepClone(),
+                                 this.ArrayOfNullableIntProperty?.DeepClone(),
+                                 this.ArrayOfNullableGuidProperty?.DeepClone(),
+                                 this.ArrayOfNullableDateTimeProperty?.DeepClone(),
                                  arrayOfNullableCustomEnumProperty,
-                                 this.ArrayOfNullableCustomFlagsEnumProperty?.Select(i => i).ToArray());
+                                 this.ArrayOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -308,11 +309,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayOfNullable DeepCloneWithArrayOfNullableCustomFlagsEnumProperty(CustomFlagsEnum?[] arrayOfNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetArrayOfNullable(
-                                 this.ArrayOfNullableBoolProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableIntProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableGuidProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ArrayOfNullableCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.ArrayOfNullableBoolProperty?.DeepClone(),
+                                 this.ArrayOfNullableIntProperty?.DeepClone(),
+                                 this.ArrayOfNullableGuidProperty?.DeepClone(),
+                                 this.ArrayOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ArrayOfNullableCustomEnumProperty?.DeepClone(),
                                  arrayOfNullableCustomFlagsEnumProperty);
 
             return result;

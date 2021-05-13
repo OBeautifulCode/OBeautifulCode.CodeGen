@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -106,16 +107,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepClone()
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -146,15 +147,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetReadOnlyList(
                                  readOnlyListInterfaceOfBoolProperty,
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -184,16 +185,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfIntProperty(IReadOnlyList<int> readOnlyListInterfaceOfIntProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
                                  readOnlyListInterfaceOfIntProperty,
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -223,16 +224,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfStringProperty(IReadOnlyList<string> readOnlyListInterfaceOfStringProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
                                  readOnlyListInterfaceOfStringProperty,
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -262,16 +263,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfGuidProperty(IReadOnlyList<Guid> readOnlyListInterfaceOfGuidProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
                                  readOnlyListInterfaceOfGuidProperty,
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -301,16 +302,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfDateTimeProperty(IReadOnlyList<DateTime> readOnlyListInterfaceOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
                                  readOnlyListInterfaceOfDateTimeProperty,
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -340,16 +341,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomEnumProperty(IReadOnlyList<CustomEnum> readOnlyListInterfaceOfCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
                                  readOnlyListInterfaceOfCustomEnumProperty,
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -379,16 +380,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomFlagsEnumProperty(IReadOnlyList<CustomFlagsEnum> readOnlyListInterfaceOfCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
                                  readOnlyListInterfaceOfCustomFlagsEnumProperty,
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -418,16 +419,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomClassProperty(IReadOnlyList<CustomClass> readOnlyListInterfaceOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  readOnlyListInterfaceOfCustomClassProperty,
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -457,16 +458,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomBaseClassProperty(IReadOnlyList<CustomBaseClass> readOnlyListInterfaceOfCustomBaseClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
                                  readOnlyListInterfaceOfCustomBaseClassProperty,
-                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -496,15 +497,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetReadOnlyList DeepCloneWithReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty(IReadOnlyList<CustomGenericClass<CustomClass>> readOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetReadOnlyList(
-                                 this.ReadOnlyListInterfaceOfBoolProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfIntProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfGuidProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.Select(i => i).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ReadOnlyListInterfaceOfBoolProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfIntProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfStringProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfGuidProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfDateTimeProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomClassProperty?.DeepClone(),
+                                 this.ReadOnlyListInterfaceOfCustomBaseClassProperty?.DeepClone(),
                                  readOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty);
 
             return result;

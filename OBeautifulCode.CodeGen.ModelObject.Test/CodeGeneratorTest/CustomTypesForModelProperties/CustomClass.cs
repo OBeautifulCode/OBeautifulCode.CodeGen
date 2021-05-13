@@ -8,6 +8,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
 
+    using OBeautifulCode.Cloning.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
@@ -120,7 +121,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public CustomClass DeepClone()
         {
-            var result = new CustomClass(this.Item1, this.Item2?.DeepClone());
+            var result = new CustomClass(this.Item1.DeepClone(), this.Item2?.DeepClone());
 
             return result;
         }

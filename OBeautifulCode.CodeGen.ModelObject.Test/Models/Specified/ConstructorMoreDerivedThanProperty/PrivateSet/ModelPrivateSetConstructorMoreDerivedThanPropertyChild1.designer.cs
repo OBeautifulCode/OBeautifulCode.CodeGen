@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -111,7 +112,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                  parentEnumProperty,
                                  (CustomMultilevelChildClass)this.CustomMultilevelBaseClass?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -137,9 +138,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneWithCustomMultilevelBaseClass(CustomMultilevelBaseClass customMultilevelBaseClass)
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
-                                 this.ParentEnumProperty,
+                                 this.ParentEnumProperty.DeepClone(),
                                  (CustomMultilevelChildClass)customMultilevelBaseClass,
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -169,7 +170,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMoreDerivedThanPropertyChild1 DeepCloneWithChildReadOnlyCollectionOfStringProperty(IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
-                                 this.ParentEnumProperty,
+                                 this.ParentEnumProperty.DeepClone(),
                                  (CustomMultilevelChildClass)this.CustomMultilevelBaseClass?.DeepClone(),
                                  childReadOnlyCollectionOfStringProperty);
 
@@ -181,9 +182,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
-                                 this.ParentEnumProperty,
+                                 this.ParentEnumProperty.DeepClone(),
                                  (CustomMultilevelChildClass)this.CustomMultilevelBaseClass?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }

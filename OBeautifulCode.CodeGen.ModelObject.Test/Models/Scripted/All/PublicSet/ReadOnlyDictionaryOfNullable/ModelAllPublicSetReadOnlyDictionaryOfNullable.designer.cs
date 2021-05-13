@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -97,11 +98,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyDictionaryOfNullable
                              {
-                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -134,10 +135,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelAllPublicSetReadOnlyDictionaryOfNullable
                              {
                                  ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = readOnlyDictionaryInterfaceOfNullableBoolProperty,
-                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -169,11 +170,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyDictionaryOfNullable
                              {
-                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.DeepClone(),
                                  ReadOnlyDictionaryInterfaceOfNullableIntProperty             = readOnlyDictionaryInterfaceOfNullableIntProperty,
-                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -205,11 +206,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyDictionaryOfNullable
                              {
-                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.DeepClone(),
                                  ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = readOnlyDictionaryInterfaceOfNullableGuidProperty,
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -241,11 +242,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyDictionaryOfNullable
                              {
-                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.DeepClone(),
                                  ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = readOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -277,10 +278,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyDictionaryOfNullable
                              {
-                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToDictionary(k => k.Key, v => v.Value),
-                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToDictionary(k => k.Key, v => v.Value),
+                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = this.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.DeepClone(),
                                  ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = readOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                              };
 

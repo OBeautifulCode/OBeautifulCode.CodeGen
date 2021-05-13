@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -274,8 +275,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelPublicSetMultilevelGrandchild2B
                              {
                                  ParentInt       = parentInt,
-                                 Child2Int       = this.Child2Int,
-                                 Grandchild2BInt = this.Grandchild2BInt,
+                                 Child2Int       = this.Child2Int.DeepClone(),
+                                 Grandchild2BInt = this.Grandchild2BInt.DeepClone(),
                              };
 
             return result;
@@ -303,9 +304,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetMultilevelGrandchild2B
                              {
-                                 ParentInt       = this.ParentInt,
+                                 ParentInt       = this.ParentInt.DeepClone(),
                                  Child2Int       = child2Int,
-                                 Grandchild2BInt = this.Grandchild2BInt,
+                                 Grandchild2BInt = this.Grandchild2BInt.DeepClone(),
                              };
 
             return result;
@@ -337,8 +338,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetMultilevelGrandchild2B
                              {
-                                 ParentInt       = this.ParentInt,
-                                 Child2Int       = this.Child2Int,
+                                 ParentInt       = this.ParentInt.DeepClone(),
+                                 Child2Int       = this.Child2Int.DeepClone(),
                                  Grandchild2BInt = grandchild2BInt,
                              };
 
@@ -351,9 +352,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetMultilevelGrandchild2B
                              {
-                                 ParentInt       = this.ParentInt,
-                                 Child2Int       = this.Child2Int,
-                                 Grandchild2BInt = this.Grandchild2BInt,
+                                 ParentInt       = this.ParentInt.DeepClone(),
+                                 Child2Int       = this.Child2Int.DeepClone(),
+                                 Grandchild2BInt = this.Grandchild2BInt.DeepClone(),
                              };
 
             return result;

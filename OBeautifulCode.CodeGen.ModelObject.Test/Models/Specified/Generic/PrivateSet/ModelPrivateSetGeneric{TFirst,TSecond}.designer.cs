@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -251,19 +252,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -294,19 +295,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  stringProperty,
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -338,18 +339,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
                                  intProperty,
-                                 this.EnumProperty,
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -380,19 +381,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
+                                 this.IntProperty.DeepClone(),
                                  enumProperty,
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -423,19 +424,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  customClassProperty,
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -466,19 +467,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  genericArgumentProperty,
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -509,19 +510,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
                                  genericArrayProperty,
-                                 this.GenericNullableProperty,
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -552,19 +553,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
                                  genericNullableProperty,
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -595,19 +596,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  genericCustomGenericClassProperty,
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -638,19 +639,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
                                  genericReadOnlyCollectionProperty,
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -681,19 +682,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
                                  genericReadOnlyListProperty,
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -724,19 +725,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
                                  genericReadOnlyDictionaryProperty1,
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -767,19 +768,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
                                  genericReadOnlyDictionaryProperty2,
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -810,19 +811,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
                                  genericPartiallyClosedReadOnlyDictionaryProperty1,
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value?.DeepClone()));
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty2?.DeepClone());
 
             return result;
         }
@@ -853,62 +854,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetGeneric<TFirst, TSecond>(
                                  this.StringProperty?.DeepClone(),
-                                 this.IntProperty,
-                                 this.EnumProperty,
+                                 this.IntProperty.DeepClone(),
+                                 this.EnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
-                                 DeepCloneGeneric(this.GenericArgumentProperty),
-                                 this.GenericArrayProperty?.Select(i => DeepCloneGeneric(i)).ToArray(),
-                                 this.GenericNullableProperty,
+                                 this.GenericArgumentProperty == null ? default : this.GenericArgumentProperty.DeepClone(),
+                                 this.GenericArrayProperty?.DeepClone(),
+                                 this.GenericNullableProperty.DeepClone(),
                                  this.GenericCustomGenericClassProperty?.DeepClone(),
-                                 this.GenericReadOnlyCollectionProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyListProperty?.Select(i => DeepCloneGeneric(i)).ToList(),
-                                 this.GenericReadOnlyDictionaryProperty1?.ToDictionary(k => DeepCloneGeneric(k.Key), v => v.Value),
-                                 this.GenericReadOnlyDictionaryProperty2?.ToDictionary(k => k.Key, v => DeepCloneGeneric(v.Value)),
-                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.ToDictionary(k => k.Key?.DeepClone(), v => v.Value),
+                                 this.GenericReadOnlyCollectionProperty?.DeepClone(),
+                                 this.GenericReadOnlyListProperty?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty1?.DeepClone(),
+                                 this.GenericReadOnlyDictionaryProperty2?.DeepClone(),
+                                 this.GenericPartiallyClosedReadOnlyDictionaryProperty1?.DeepClone(),
                                  genericPartiallyClosedReadOnlyDictionaryProperty2);
 
             return result;
-        }
-
-        private static TFirst DeepCloneGeneric(TFirst value)
-        {
-            object result;
-
-            var type = typeof(TFirst);
-
-            if (type.IsValueType)
-            {
-                result = value;
-            }
-            else
-            {
-                if (ReferenceEquals(value, null))
-                {
-                    result = default;
-                }
-                else if (value is IDeepCloneable<TFirst> deepCloneableValue)
-                {
-                    result = deepCloneableValue.DeepClone();
-                }
-                else if (value is string valueAsString)
-                {
-                    result = valueAsString.DeepClone();
-                }
-                else if (value is global::System.Version valueAsVersion)
-                {
-                    result = valueAsVersion.DeepClone();
-                }
-                else if (value is global::System.Uri valueAsUri)
-                {
-                    result = valueAsUri.DeepClone();
-                }
-                else
-                {
-                    throw new NotSupportedException(Invariant($"I do not know how to deep clone an object of type '{type.ToStringReadable()}'"));
-                }
-            }
-
-            return (TFirst)result;
         }
 
         /// <inheritdoc />

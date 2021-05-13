@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -106,13 +107,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepClone()
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -146,12 +147,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetNone(
                                  boolProperty,
-                                 this.IntProperty,
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -184,13 +185,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithIntProperty(int intProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
+                                 this.BoolProperty.DeepClone(),
                                  intProperty,
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -223,13 +224,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithStringProperty(string stringProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  stringProperty,
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -262,13 +263,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithGuidProperty(Guid guidProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
                                  guidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -301,13 +302,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithDateTimeProperty(DateTime dateTimeProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
+                                 this.GuidProperty.DeepClone(),
                                  dateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -340,13 +341,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithCustomEnumProperty(CustomEnum customEnumProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
                                  customEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -379,12 +380,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithCustomFlagsEnumProperty(CustomFlagsEnum customFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
                                  customFlagsEnumProperty,
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
@@ -418,13 +419,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithCustomClassProperty(CustomClass customClassProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  customClassProperty,
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -457,13 +458,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithCustomBaseClassProperty(CustomBaseClass customBaseClassProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  customBaseClassProperty,
                                  this.CustomGenericClassOfCustomClassProperty?.DeepClone());
@@ -496,13 +497,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNone DeepCloneWithCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass> customGenericClassOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetNone(
-                                 this.BoolProperty,
-                                 this.IntProperty,
+                                 this.BoolProperty.DeepClone(),
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.GuidProperty,
-                                 this.DateTimeProperty,
-                                 this.CustomEnumProperty,
-                                 this.CustomFlagsEnumProperty,
+                                 this.GuidProperty.DeepClone(),
+                                 this.DateTimeProperty.DeepClone(),
+                                 this.CustomEnumProperty.DeepClone(),
+                                 this.CustomFlagsEnumProperty.DeepClone(),
                                  this.CustomClassProperty?.DeepClone(),
                                  this.CustomBaseClassProperty?.DeepClone(),
                                  customGenericClassOfCustomClassProperty);

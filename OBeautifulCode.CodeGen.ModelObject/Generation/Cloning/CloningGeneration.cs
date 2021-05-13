@@ -7,15 +7,11 @@
 namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
-    using System.Collections.Concurrent;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Globalization;
     using System.Linq;
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
-    using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
 
     using static System.FormattableString;
@@ -37,12 +33,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         {
             var deepCloneCode = modelType.GenerateDeepCloneCode();
 
-            var deepCloneGenericCode = modelType.GenerateDeepCloneGenericCode();
-
-            var deepCloneInterfaceCode = deepCloneCode.Contains("DeepCloneInterface(")
-                ? typeof(CloningGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneInterface)
-                : string.Empty;
-
             var deepCloneWithCode = modelType.ShouldGenerateDeepCloneWithMethods()
                 ? modelType.GenerateDeepCloneWithCode()
                 : string.Empty;
@@ -53,9 +43,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.ModelRootAncestorTypeNameInCodeToken, modelType.InheritancePathTypeNamesInCode.LastOrDefault())
                 .Replace(Tokens.DeepCloneToken, deepCloneCode)
-                .Replace(Tokens.DeepCloneWithToken, deepCloneWithCode)
-                .Replace(Tokens.DeepCloneGenericToken, deepCloneGenericCode)
-                .Replace(Tokens.DeepCloneInterfaceToken, deepCloneInterfaceCode);
+                .Replace(Tokens.DeepCloneWithToken, deepCloneWithCode);
 
             return result;
         }
@@ -236,155 +224,23 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
         private static string GenerateCloningLogicCodeForType(
             this Type type,
-            string cloneCode,
-            int recursionDepth = 0)
+            string cloneCode)
         {
             type.AsArg(nameof(type)).Must().NotBeNull();
-            recursionDepth++;
-
-            var deepCloneableType = typeof(IDeepCloneable<>).MakeGenericType(type);
 
             string result;
-            if (deepCloneableType.IsAssignableFrom(type))
+
+            if (type.IsGenericParameter)
             {
-                result = type.IsValueType
-                    ? Invariant($"{cloneCode}.DeepClone()")
-                    : Invariant($"{cloneCode}?.DeepClone()");
-            }
-            else if (type.IsSystemDictionaryType())
-            {
-                var keyType = type.GetGenericArguments().First();
-                var valueType = type.GetGenericArguments().Last();
-
-                var keyExpressionParameter = "k".ToExpressionParameter(recursionDepth);
-                var valueExpressionParameter = "v".ToExpressionParameter(recursionDepth);
-
-                var keyClone = keyType.GenerateCloningLogicCodeForType(Invariant($"{keyExpressionParameter}.Key"), recursionDepth);
-                var valueClone = valueType.GenerateCloningLogicCodeForType(Invariant($"{valueExpressionParameter}.Value"), recursionDepth);
-
-                string cast = null;
-                if (recursionDepth > 1)
-                {
-                    cast = "(" + type.ToStringReadable() + ")";
-                }
-
-                result = Invariant($"{cloneCode}?.ToDictionary({keyExpressionParameter} => {keyClone}, {valueExpressionParameter} => {valueClone})");
-
-                if ((type.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (type.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>)))
-                {
-                    result = type.GenerateSystemTypeInstantiationCode(result);
-                }
-                else
-                {
-                    result = cast + result;
-                }
-            }
-            else if (type.IsSystemCollectionType())
-            {
-                var elementType = type.GetGenericArguments().First();
-
-                var expressionParameter = "i".ToExpressionParameter(recursionDepth);
-
-                var valueClone = elementType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
-
-                string cast = null;
-                if (recursionDepth > 1)
-                {
-                    cast = "(" + type.ToStringReadable() + ")";
-                }
-
-                // note: List<T> is assignable to all System collection types except Collection<T> and ReadOnlyCollection<T>.
-                // In general no properties of a model should use those types.  If we do want to support this in the future,
-                // we need to wrap the List<T>:
-                // - cloneCode == null ? null : new Collection<T>(cloneCode.Select(...).ToList())
-                // - cloneCode == null ? null : new ReadOnlyCollection<T>(cloneCode.Select(...).ToList())
-                result = Invariant($"{cloneCode}?.Select({expressionParameter} => {valueClone}).ToList()");
-
-                if ((type.GetGenericTypeDefinition() == typeof(Collection<>)) || (type.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>)))
-                {
-                    result = type.GenerateSystemTypeInstantiationCode(result);
-                }
-                else
-                {
-                    result = cast + result;
-                }
-            }
-            else if (type.IsArray)
-            {
-                var elementType = type.GetElementType();
-
-                var expressionParameter = "i".ToExpressionParameter(recursionDepth);
-
-                var valueClone = elementType.GenerateCloningLogicCodeForType(expressionParameter, recursionDepth);
-
-                result = Invariant($"{cloneCode}?.Select({expressionParameter} => {valueClone}).ToArray()");
-            }
-            else if (type.IsNullableType())
-            {
-                var underlyingType = Nullable.GetUnderlyingType(type);
-
-                var deepCloneableUnderlyingType = typeof(IDeepCloneable<>).MakeGenericType(underlyingType);
-
-                result = deepCloneableUnderlyingType.IsAssignableFrom(underlyingType)
-                    ? Invariant($"{cloneCode}?.DeepClone()")
-                    : cloneCode;
+                result = Invariant($"{cloneCode} == null ? default : {cloneCode}.DeepClone()");
             }
             else if (type.IsValueType)
             {
-                // this is just a copy of the item anyway (like bool, int, Enumerations, structs like DateTime, etc.).
-                result = cloneCode;
-            }
-            else if (type.IsInterface)
-            {
-                result = Invariant($"({type.ToStringReadable()})DeepCloneInterface({cloneCode})");
-            }
-            else if (type.IsGenericParameter)
-            {
-                result = Invariant($"DeepCloneGeneric({cloneCode})");
+                result = Invariant($"{cloneCode}.DeepClone()");
             }
             else
             {
-                // Assume that we are driving the DeepClone() convention and it exists.
-                // Could be an extension method in OBC.Type.Recipes.DeepCloneExtensions.
                 result = Invariant($"{cloneCode}?.DeepClone()");
-            }
-
-            return result;
-        }
-
-        private static string ToExpressionParameter(
-            this string expressionParameter,
-            int recursionDepth)
-        {
-            string result;
-            if (recursionDepth == 1)
-            {
-                result = expressionParameter;
-            }
-            else
-            {
-                result = expressionParameter + recursionDepth.ToString(CultureInfo.InvariantCulture);
-            }
-
-            return result;
-        }
-
-        private static string GenerateDeepCloneGenericCode(
-            this ModelType modelType)
-        {
-            var codeSnippet = typeof(CloningGeneration).GetCodeTemplate(ClassifiedHierarchyKind.Concrete, CodeTemplateKind.ModelSnippet, KeyMethodKinds.Both, CodeSnippetKind.DeepCloneGeneric);
-
-            var result = string.Empty;
-
-            foreach (var genericParameter in modelType.GenericParameters)
-            {
-                // if the generic parameter is constrained to struct (e.g. public class MyClass<T> : where T : struct)
-                // then IsValueType will be true.  We do not need the CloneGeneric method because in GenerateCloningLogicCodeForType
-                // we first check IsValueType before we check type.IsGenericParameter
-                if (!genericParameter.IsValueType)
-                {
-                    result = result + Environment.NewLine + Environment.NewLine + codeSnippet.Replace(Tokens.GenericTypeParameterNameToken, genericParameter.Name);
-                }
             }
 
             return result;

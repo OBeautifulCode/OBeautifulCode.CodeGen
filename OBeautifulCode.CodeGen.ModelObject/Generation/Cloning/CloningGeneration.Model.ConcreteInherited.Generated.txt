@@ -8,4 +8,4 @@
             var result = [deep-clone-here];
 
             return result;
-        }[deep-clone-generic-here][deep-clone-interface-here]
+        }

@@ -1,2 +1,2 @@
 ﻿        /// <inheritdoc />
-        public object Clone() => this.DeepClone();[deep-clone-generic-here][deep-clone-interface-here]
+        public object Clone() => this.DeepClone();

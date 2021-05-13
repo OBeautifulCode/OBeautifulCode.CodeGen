@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -163,7 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMissingPropertyChild2 DeepCloneWithChildClass(CustomClass childClass)
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild2(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
                                  childClass);
 
             return result;
@@ -174,7 +175,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetConstructorMissingPropertyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild2(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
                                  this.ChildClass?.DeepClone());
 
             return result;

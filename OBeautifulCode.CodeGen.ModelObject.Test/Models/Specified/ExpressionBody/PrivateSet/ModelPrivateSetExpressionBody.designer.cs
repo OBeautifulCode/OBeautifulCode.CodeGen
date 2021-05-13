@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -92,9 +93,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetExpressionBody DeepClone()
         {
             var result = new ModelPrivateSetExpressionBody(
-                                 this.IntProperty,
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
-                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -126,7 +127,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelPrivateSetExpressionBody(
                                  intProperty,
                                  this.StringProperty?.DeepClone(),
-                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -156,9 +157,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetExpressionBody DeepCloneWithStringProperty(string stringProperty)
         {
             var result = new ModelPrivateSetExpressionBody(
-                                 this.IntProperty,
+                                 this.IntProperty.DeepClone(),
                                  stringProperty,
-                                 this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -188,7 +189,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetExpressionBody DeepCloneWithReadOnlyCollectionOfStringProperty(IReadOnlyCollection<string> readOnlyCollectionOfStringProperty)
         {
             var result = new ModelPrivateSetExpressionBody(
-                                 this.IntProperty,
+                                 this.IntProperty.DeepClone(),
                                  this.StringProperty?.DeepClone(),
                                  readOnlyCollectionOfStringProperty);
 

@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -118,10 +119,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  ParentIntProperty                        = parentIntProperty,
                                  ParentStringProperty                     = this.ParentStringProperty?.DeepClone(),
-                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 ChildIntProperty                         = this.ChildIntProperty,
+                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 ChildIntProperty                         = this.ChildIntProperty.DeepClone(),
                                  ChildStringProperty                      = this.ChildStringProperty?.DeepClone(),
-                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -149,12 +150,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBodyChild2
                              {
-                                 ParentIntProperty                        = this.ParentIntProperty,
+                                 ParentIntProperty                        = this.ParentIntProperty.DeepClone(),
                                  ParentStringProperty                     = parentStringProperty,
-                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 ChildIntProperty                         = this.ChildIntProperty,
+                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 ChildIntProperty                         = this.ChildIntProperty.DeepClone(),
                                  ChildStringProperty                      = this.ChildStringProperty?.DeepClone(),
-                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -182,12 +183,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBodyChild2
                              {
-                                 ParentIntProperty                        = this.ParentIntProperty,
+                                 ParentIntProperty                        = this.ParentIntProperty.DeepClone(),
                                  ParentStringProperty                     = this.ParentStringProperty?.DeepClone(),
                                  ParentReadOnlyCollectionOfStringProperty = parentReadOnlyCollectionOfStringProperty,
-                                 ChildIntProperty                         = this.ChildIntProperty,
+                                 ChildIntProperty                         = this.ChildIntProperty.DeepClone(),
                                  ChildStringProperty                      = this.ChildStringProperty?.DeepClone(),
-                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -219,12 +220,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBodyChild2
                              {
-                                 ParentIntProperty                        = this.ParentIntProperty,
+                                 ParentIntProperty                        = this.ParentIntProperty.DeepClone(),
                                  ParentStringProperty                     = this.ParentStringProperty?.DeepClone(),
-                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
                                  ChildIntProperty                         = childIntProperty,
                                  ChildStringProperty                      = this.ChildStringProperty?.DeepClone(),
-                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -256,12 +257,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBodyChild2
                              {
-                                 ParentIntProperty                        = this.ParentIntProperty,
+                                 ParentIntProperty                        = this.ParentIntProperty.DeepClone(),
                                  ParentStringProperty                     = this.ParentStringProperty?.DeepClone(),
-                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 ChildIntProperty                         = this.ChildIntProperty,
+                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 ChildIntProperty                         = this.ChildIntProperty.DeepClone(),
                                  ChildStringProperty                      = childStringProperty,
-                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -293,10 +294,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBodyChild2
                              {
-                                 ParentIntProperty                        = this.ParentIntProperty,
+                                 ParentIntProperty                        = this.ParentIntProperty.DeepClone(),
                                  ParentStringProperty                     = this.ParentStringProperty?.DeepClone(),
-                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 ChildIntProperty                         = this.ChildIntProperty,
+                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 ChildIntProperty                         = this.ChildIntProperty.DeepClone(),
                                  ChildStringProperty                      = this.ChildStringProperty?.DeepClone(),
                                  ChildReadOnlyCollectionOfStringProperty  = childReadOnlyCollectionOfStringProperty,
                              };
@@ -310,12 +311,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBodyChild2
                              {
-                                 ParentIntProperty                        = this.ParentIntProperty,
+                                 ParentIntProperty                        = this.ParentIntProperty.DeepClone(),
                                  ParentStringProperty                     = this.ParentStringProperty?.DeepClone(),
-                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 ChildIntProperty                         = this.ChildIntProperty,
+                                 ParentReadOnlyCollectionOfStringProperty = this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 ChildIntProperty                         = this.ChildIntProperty.DeepClone(),
                                  ChildStringProperty                      = this.ChildStringProperty?.DeepClone(),
-                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ChildReadOnlyCollectionOfStringProperty  = this.ChildReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;

@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -144,25 +145,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetArrayChild1(
                                  parentArrayOfBoolProperty,
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -188,26 +189,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfIntProperty(int[] parentArrayOfIntProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
                                  parentArrayOfIntProperty,
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -233,26 +234,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfStringProperty(string[] parentArrayOfStringProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
                                  parentArrayOfStringProperty,
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -278,26 +279,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfGuidProperty(Guid[] parentArrayOfGuidProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
                                  parentArrayOfGuidProperty,
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -323,26 +324,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfDateTimeProperty(DateTime[] parentArrayOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
                                  parentArrayOfDateTimeProperty,
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -368,26 +369,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfCustomEnumProperty(CustomEnum[] parentArrayOfCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
                                  parentArrayOfCustomEnumProperty,
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -413,26 +414,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfCustomFlagsEnumProperty(CustomFlagsEnum[] parentArrayOfCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
                                  parentArrayOfCustomFlagsEnumProperty,
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -458,26 +459,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfCustomClassProperty(CustomClass[] parentArrayOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  parentArrayOfCustomClassProperty,
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -503,26 +504,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfCustomBaseClassProperty(CustomBaseClass[] parentArrayOfCustomBaseClassProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
                                  parentArrayOfCustomBaseClassProperty,
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -548,26 +549,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetArrayParent DeepCloneWithParentArrayOfCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass>[] parentArrayOfCustomGenericClassOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
                                  parentArrayOfCustomGenericClassOfCustomClassProperty,
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -597,26 +598,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfBoolProperty(bool[] child1ArrayOfBoolProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
                                  child1ArrayOfBoolProperty,
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -646,26 +647,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfIntProperty(int[] child1ArrayOfIntProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
                                  child1ArrayOfIntProperty,
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -695,26 +696,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfStringProperty(string[] child1ArrayOfStringProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
                                  child1ArrayOfStringProperty,
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -744,26 +745,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfGuidProperty(Guid[] child1ArrayOfGuidProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
                                  child1ArrayOfGuidProperty,
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -793,26 +794,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfDateTimeProperty(DateTime[] child1ArrayOfDateTimeProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
                                  child1ArrayOfDateTimeProperty,
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -842,26 +843,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfCustomEnumProperty(CustomEnum[] child1ArrayOfCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
                                  child1ArrayOfCustomEnumProperty,
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -891,26 +892,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfCustomFlagsEnumProperty(CustomFlagsEnum[] child1ArrayOfCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
                                  child1ArrayOfCustomFlagsEnumProperty,
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -940,26 +941,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfCustomClassProperty(CustomClass[] child1ArrayOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  child1ArrayOfCustomClassProperty,
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -989,26 +990,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfCustomBaseClassProperty(CustomBaseClass[] child1ArrayOfCustomBaseClassProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
                                  child1ArrayOfCustomBaseClassProperty,
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }
@@ -1038,25 +1039,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetArrayChild1 DeepCloneWithChild1ArrayOfCustomGenericClassOfCustomClassProperty(CustomGenericClass<CustomClass>[] child1ArrayOfCustomGenericClassOfCustomClassProperty)
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
                                  child1ArrayOfCustomGenericClassOfCustomClassProperty);
 
             return result;
@@ -1067,26 +1068,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelAllPrivateSetArrayParent DeepCloneInternal()
         {
             var result = new ModelAllPrivateSetArrayChild1(
-                                 this.ParentArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.ParentArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfBoolProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfIntProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfStringProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfGuidProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfDateTimeProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomFlagsEnumProperty?.Select(i => i).ToArray(),
-                                 this.Child1ArrayOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomBaseClassProperty?.Select(i => i?.DeepClone()).ToArray(),
-                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.Select(i => i?.DeepClone()).ToArray());
+                                 this.ParentArrayOfBoolProperty?.DeepClone(),
+                                 this.ParentArrayOfIntProperty?.DeepClone(),
+                                 this.ParentArrayOfStringProperty?.DeepClone(),
+                                 this.ParentArrayOfGuidProperty?.DeepClone(),
+                                 this.ParentArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ParentArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfBoolProperty?.DeepClone(),
+                                 this.Child1ArrayOfIntProperty?.DeepClone(),
+                                 this.Child1ArrayOfStringProperty?.DeepClone(),
+                                 this.Child1ArrayOfGuidProperty?.DeepClone(),
+                                 this.Child1ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.Child1ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
 
             return result;
         }

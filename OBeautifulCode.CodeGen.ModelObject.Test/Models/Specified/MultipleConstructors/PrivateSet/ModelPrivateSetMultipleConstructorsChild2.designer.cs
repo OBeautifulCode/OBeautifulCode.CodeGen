@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -117,10 +118,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelPrivateSetMultipleConstructorsChild2(
                                  parentIntProperty,
                                  this.ParentStringProperty?.DeepClone(),
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ChildIntProperty,
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 this.ChildIntProperty.DeepClone(),
                                  this.ChildStringProperty?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -146,12 +147,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelPrivateSetMultipleConstructorsParent DeepCloneWithParentStringProperty(string parentStringProperty)
         {
             var result = new ModelPrivateSetMultipleConstructorsChild2(
-                                 this.ParentIntProperty,
+                                 this.ParentIntProperty.DeepClone(),
                                  parentStringProperty,
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ChildIntProperty,
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 this.ChildIntProperty.DeepClone(),
                                  this.ChildStringProperty?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -177,12 +178,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelPrivateSetMultipleConstructorsParent DeepCloneWithParentReadOnlyCollectionOfStringProperty(IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty)
         {
             var result = new ModelPrivateSetMultipleConstructorsChild2(
-                                 this.ParentIntProperty,
+                                 this.ParentIntProperty.DeepClone(),
                                  this.ParentStringProperty?.DeepClone(),
                                  parentReadOnlyCollectionOfStringProperty,
-                                 this.ChildIntProperty,
+                                 this.ChildIntProperty.DeepClone(),
                                  this.ChildStringProperty?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -212,12 +213,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetMultipleConstructorsChild2 DeepCloneWithChildIntProperty(int childIntProperty)
         {
             var result = new ModelPrivateSetMultipleConstructorsChild2(
-                                 this.ParentIntProperty,
+                                 this.ParentIntProperty.DeepClone(),
                                  this.ParentStringProperty?.DeepClone(),
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
                                  childIntProperty,
                                  this.ChildStringProperty?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -247,12 +248,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetMultipleConstructorsChild2 DeepCloneWithChildStringProperty(string childStringProperty)
         {
             var result = new ModelPrivateSetMultipleConstructorsChild2(
-                                 this.ParentIntProperty,
+                                 this.ParentIntProperty.DeepClone(),
                                  this.ParentStringProperty?.DeepClone(),
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ChildIntProperty,
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 this.ChildIntProperty.DeepClone(),
                                  childStringProperty,
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -282,10 +283,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetMultipleConstructorsChild2 DeepCloneWithChildReadOnlyCollectionOfStringProperty(IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
         {
             var result = new ModelPrivateSetMultipleConstructorsChild2(
-                                 this.ParentIntProperty,
+                                 this.ParentIntProperty.DeepClone(),
                                  this.ParentStringProperty?.DeepClone(),
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ChildIntProperty,
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 this.ChildIntProperty.DeepClone(),
                                  this.ChildStringProperty?.DeepClone(),
                                  childReadOnlyCollectionOfStringProperty);
 
@@ -297,12 +298,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetMultipleConstructorsParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetMultipleConstructorsChild2(
-                                 this.ParentIntProperty,
+                                 this.ParentIntProperty.DeepClone(),
                                  this.ParentStringProperty?.DeepClone(),
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ChildIntProperty,
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 this.ChildIntProperty.DeepClone(),
                                  this.ChildStringProperty?.DeepClone(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }

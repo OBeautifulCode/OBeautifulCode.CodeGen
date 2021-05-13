@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -137,7 +138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneWithCustomMultilevelBaseClass(CustomMultilevelBaseClass customMultilevelBaseClass)
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
-                                 this.ParentEnumProperty,
+                                 this.ParentEnumProperty.DeepClone(),
                                  (CustomMultilevelChildBaseClass)customMultilevelBaseClass,
                                  this.ChildCustomClass?.DeepClone());
 
@@ -169,7 +170,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMoreDerivedThanPropertyChild2 DeepCloneWithChildCustomClass(CustomClass childCustomClass)
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
-                                 this.ParentEnumProperty,
+                                 this.ParentEnumProperty.DeepClone(),
                                  (CustomMultilevelChildBaseClass)this.CustomMultilevelBaseClass?.DeepClone(),
                                  childCustomClass);
 
@@ -181,7 +182,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetConstructorMoreDerivedThanPropertyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild2(
-                                 this.ParentEnumProperty,
+                                 this.ParentEnumProperty.DeepClone(),
                                  (CustomMultilevelChildBaseClass)this.CustomMultilevelBaseClass?.DeepClone(),
                                  this.ChildCustomClass?.DeepClone());
 

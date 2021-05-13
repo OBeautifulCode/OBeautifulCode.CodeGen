@@ -9,9 +9,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System;
     using System.Diagnostics.CodeAnalysis;
 
+    using OBeautifulCode.Cloning.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
-    using OBeautifulCode.Type.Recipes;
 
     [Serializable]
     public class CustomGenericClass<T> : IEquatable<CustomGenericClass<T>>, IDeepCloneable<CustomGenericClass<T>>, IComparable<CustomGenericClass<T>>
@@ -129,43 +129,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public CustomGenericClass<T> DeepClone()
         {
-            object item3Clone;
-
-            var type = typeof(T);
-
-            if (type.IsValueType)
-            {
-                item3Clone = this.Item3;
-            }
-            else
-            {
-                if (ReferenceEquals(this.Item3, null))
-                {
-                    item3Clone = default;
-                }
-                else if (this.Item3 is IDeepCloneable<T> deepCloneableValue)
-                {
-                    item3Clone = deepCloneableValue.DeepClone();
-                }
-                else if (this.Item3 is string stringValue)
-                {
-                    item3Clone = stringValue.DeepClone();
-                }
-                else if (this.Item3 is System.Version valueAsVersion)
-                {
-                    item3Clone = valueAsVersion.DeepClone();
-                }
-                else if (this.Item3 is System.Uri valueAsUri)
-                {
-                    item3Clone = valueAsUri.DeepClone();
-                }
-                else
-                {
-                    throw new NotSupportedException("I do not know how to deep clone object of type: " + type);
-                }
-            }
-
-            var result = new CustomGenericClass<T>(this.Item1, this.Item2?.DeepClone(), (T)item3Clone);
+            var result = new CustomGenericClass<T>(
+                this.Item1.DeepClone(),
+                this.Item2?.DeepClone(),
+                this.Item3 == null ? default : this.Item3.DeepClone());
 
             return result;
         }

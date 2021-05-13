@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -133,7 +134,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild1(
                                  parentReadOnlyCollectionOfStringProperty,
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }
@@ -163,7 +164,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorMissingPropertyChild1 DeepCloneWithChildReadOnlyCollectionOfStringProperty(IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild1(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
                                  childReadOnlyCollectionOfStringProperty);
 
             return result;
@@ -174,8 +175,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetConstructorMissingPropertyParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetConstructorMissingPropertyChild1(
-                                 this.ParentReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
-                                 this.ChildReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList());
+                                 this.ParentReadOnlyCollectionOfStringProperty?.DeepClone(),
+                                 this.ChildReadOnlyCollectionOfStringProperty?.DeepClone());
 
             return result;
         }

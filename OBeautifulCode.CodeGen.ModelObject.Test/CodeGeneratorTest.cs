@@ -31,7 +31,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         private delegate void ExecuteForModelsEventHandler(ModelOrTest modelOrTest, SpecifiedModelKind specifiedModelKind, DeclaredKeyMethod declaredKeyMethod, SetterKind setterKind, HierarchyKind hierarchyKind, TypeWrapperKind typeWrapperKind, string childIdentifier, string modelName, string directoryPath);
 
-        [Fact(Skip = "for local testing only")]
+        [Fact]
         public void GenerateModel___Should_generate_models___When_called()
         {
             // Arrange

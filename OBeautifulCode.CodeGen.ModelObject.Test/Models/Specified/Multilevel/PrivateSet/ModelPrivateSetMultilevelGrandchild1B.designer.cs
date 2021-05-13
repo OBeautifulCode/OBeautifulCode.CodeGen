@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -273,8 +274,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPrivateSetMultilevelGrandchild1B(
                                  parentInt,
-                                 this.Child1Int,
-                                 this.Grandchild1BInt);
+                                 this.Child1Int.DeepClone(),
+                                 this.Grandchild1BInt.DeepClone());
 
             return result;
         }
@@ -300,9 +301,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelPrivateSetMultilevelChild1 DeepCloneWithChild1Int(int child1Int)
         {
             var result = new ModelPrivateSetMultilevelGrandchild1B(
-                                 this.ParentInt,
+                                 this.ParentInt.DeepClone(),
                                  child1Int,
-                                 this.Grandchild1BInt);
+                                 this.Grandchild1BInt.DeepClone());
 
             return result;
         }
@@ -332,8 +333,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetMultilevelGrandchild1B DeepCloneWithGrandchild1BInt(int grandchild1BInt)
         {
             var result = new ModelPrivateSetMultilevelGrandchild1B(
-                                 this.ParentInt,
-                                 this.Child1Int,
+                                 this.ParentInt.DeepClone(),
+                                 this.Child1Int.DeepClone(),
                                  grandchild1BInt);
 
             return result;
@@ -344,9 +345,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelPrivateSetMultilevelParent DeepCloneInternal()
         {
             var result = new ModelPrivateSetMultilevelGrandchild1B(
-                                 this.ParentInt,
-                                 this.Child1Int,
-                                 this.Grandchild1BInt);
+                                 this.ParentInt.DeepClone(),
+                                 this.Child1Int.DeepClone(),
+                                 this.Grandchild1BInt.DeepClone());
 
             return result;
         }

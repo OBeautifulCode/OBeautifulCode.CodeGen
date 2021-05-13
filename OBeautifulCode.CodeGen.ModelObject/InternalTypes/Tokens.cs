@@ -69,16 +69,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
         public const string DeepCloneWithModelInstantiationToken = "[deep-clone-with-model-instantiation-here]";
 
         /// <summary>
-        /// The code to deep clone a generic.
-        /// </summary>
-        public const string DeepCloneGenericToken = "[deep-clone-generic-here]";
-
-        /// <summary>
-        /// The code to deep clone an interface.
-        /// </summary>
-        public const string DeepCloneInterfaceToken = "[deep-clone-interface-here]";
-
-        /// <summary>
         /// The name of a generic type parameter.
         /// </summary>
         public const string GenericTypeParameterNameToken = "[generic-type-parameter-name-here]";

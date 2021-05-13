@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -93,9 +94,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBody
                              {
-                                 IntProperty                        = this.IntProperty,
+                                 IntProperty                        = this.IntProperty.DeepClone(),
                                  StringProperty                     = this.StringProperty?.DeepClone(),
-                                 ReadOnlyCollectionOfStringProperty = this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ReadOnlyCollectionOfStringProperty = this.ReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -129,7 +130,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              {
                                  IntProperty                        = intProperty,
                                  StringProperty                     = this.StringProperty?.DeepClone(),
-                                 ReadOnlyCollectionOfStringProperty = this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ReadOnlyCollectionOfStringProperty = this.ReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -161,9 +162,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBody
                              {
-                                 IntProperty                        = this.IntProperty,
+                                 IntProperty                        = this.IntProperty.DeepClone(),
                                  StringProperty                     = stringProperty,
-                                 ReadOnlyCollectionOfStringProperty = this.ReadOnlyCollectionOfStringProperty?.Select(i => i?.DeepClone()).ToList(),
+                                 ReadOnlyCollectionOfStringProperty = this.ReadOnlyCollectionOfStringProperty?.DeepClone(),
                              };
 
             return result;
@@ -195,7 +196,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelPublicSetExpressionBody
                              {
-                                 IntProperty                        = this.IntProperty,
+                                 IntProperty                        = this.IntProperty.DeepClone(),
                                  StringProperty                     = this.StringProperty?.DeepClone(),
                                  ReadOnlyCollectionOfStringProperty = readOnlyCollectionOfStringProperty,
                              };

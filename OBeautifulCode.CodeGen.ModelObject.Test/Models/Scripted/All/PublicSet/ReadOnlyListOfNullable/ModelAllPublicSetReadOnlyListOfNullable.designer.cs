@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using global::System.Globalization;
     using global::System.Linq;
 
+    using global::OBeautifulCode.Cloning.Recipes;
     using global::OBeautifulCode.Equality.Recipes;
     using global::OBeautifulCode.Type;
     using global::OBeautifulCode.Type.Recipes;
@@ -99,12 +100,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
-                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -137,11 +138,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
                                  ReadOnlyListInterfaceOfNullableBoolProperty            = readOnlyListInterfaceOfNullableBoolProperty,
-                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -173,12 +174,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
-                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.DeepClone(),
                                  ReadOnlyListInterfaceOfNullableIntProperty             = readOnlyListInterfaceOfNullableIntProperty,
-                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -210,12 +211,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
-                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.DeepClone(),
                                  ReadOnlyListInterfaceOfNullableGuidProperty            = readOnlyListInterfaceOfNullableGuidProperty,
-                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -247,12 +248,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
-                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.DeepClone(),
                                  ReadOnlyListInterfaceOfNullableDateTimeProperty        = readOnlyListInterfaceOfNullableDateTimeProperty,
-                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -284,12 +285,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
-                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  ReadOnlyListInterfaceOfNullableCustomEnumProperty      = readOnlyListInterfaceOfNullableCustomEnumProperty,
-                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = this.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -321,11 +322,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetReadOnlyListOfNullable
                              {
-                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.Select(i => i).ToList(),
-                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.Select(i => i).ToList(),
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = this.ReadOnlyListInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = this.ReadOnlyListInterfaceOfNullableIntProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = this.ReadOnlyListInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = this.ReadOnlyListInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = this.ReadOnlyListInterfaceOfNullableCustomEnumProperty?.DeepClone(),
                                  ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = readOnlyListInterfaceOfNullableCustomFlagsEnumProperty,
                              };
 
