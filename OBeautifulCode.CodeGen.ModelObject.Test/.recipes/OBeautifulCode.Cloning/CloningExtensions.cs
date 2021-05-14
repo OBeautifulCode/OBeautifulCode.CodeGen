@@ -220,6 +220,12 @@ namespace OBeautifulCode.Cloning.Recipes
                         throw new NotSupportedException(Invariant($"I do not know how to deep clone this type of dictionary '{runtimeType.ToStringReadable()}'."));
                     }
                 }
+                else if (declaredType.IsArray || runtimeType.IsArray)
+                {
+                    var elementType = runtimeType.GetElementType();
+
+                    result = DeepCloneArrayMethod.MakeGenericMethod(elementType).Invoke(null, new object[] { value });
+                }
                 else if (declaredType.IsSystemCollectionType() || runtimeType.IsSystemCollectionType())
                 {
                     var elementType = runtimeType.GetClosedSystemCollectionElementType();
@@ -242,12 +248,6 @@ namespace OBeautifulCode.Cloning.Recipes
                     {
                         throw new NotSupportedException(Invariant($"I do not know how to deep clone this type of collection '{runtimeType.ToStringReadable()}'."));
                     }
-                }
-                else if (declaredType.IsArray || runtimeType.IsArray)
-                {
-                    var elementType = runtimeType.GetElementType();
-
-                    result = DeepCloneArrayMethod.MakeGenericMethod(elementType).Invoke(null, new object[] { value });
                 }
                 else if (value is string valueAsString)
                 {
