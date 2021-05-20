@@ -100,12 +100,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNullable
                              {
-                                 NullableBoolProperty            = this.NullableBoolProperty.DeepClone(),
-                                 NullableIntProperty             = this.NullableIntProperty.DeepClone(),
-                                 NullableGuidProperty            = this.NullableGuidProperty.DeepClone(),
-                                 NullableDateTimeProperty        = this.NullableDateTimeProperty.DeepClone(),
-                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty.DeepClone(),
-                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty.DeepClone(),
+                                 NullableBoolProperty            = this.NullableBoolProperty?.DeepClone(),
+                                 NullableIntProperty             = this.NullableIntProperty?.DeepClone(),
+                                 NullableGuidProperty            = this.NullableGuidProperty?.DeepClone(),
+                                 NullableDateTimeProperty        = this.NullableDateTimeProperty?.DeepClone(),
+                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty?.DeepClone(),
+                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -138,11 +138,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new ModelAllPublicSetNullable
                              {
                                  NullableBoolProperty            = nullableBoolProperty,
-                                 NullableIntProperty             = this.NullableIntProperty.DeepClone(),
-                                 NullableGuidProperty            = this.NullableGuidProperty.DeepClone(),
-                                 NullableDateTimeProperty        = this.NullableDateTimeProperty.DeepClone(),
-                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty.DeepClone(),
-                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty.DeepClone(),
+                                 NullableIntProperty             = this.NullableIntProperty?.DeepClone(),
+                                 NullableGuidProperty            = this.NullableGuidProperty?.DeepClone(),
+                                 NullableDateTimeProperty        = this.NullableDateTimeProperty?.DeepClone(),
+                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty?.DeepClone(),
+                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -174,12 +174,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNullable
                              {
-                                 NullableBoolProperty            = this.NullableBoolProperty.DeepClone(),
+                                 NullableBoolProperty            = this.NullableBoolProperty?.DeepClone(),
                                  NullableIntProperty             = nullableIntProperty,
-                                 NullableGuidProperty            = this.NullableGuidProperty.DeepClone(),
-                                 NullableDateTimeProperty        = this.NullableDateTimeProperty.DeepClone(),
-                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty.DeepClone(),
-                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty.DeepClone(),
+                                 NullableGuidProperty            = this.NullableGuidProperty?.DeepClone(),
+                                 NullableDateTimeProperty        = this.NullableDateTimeProperty?.DeepClone(),
+                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty?.DeepClone(),
+                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -211,12 +211,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNullable
                              {
-                                 NullableBoolProperty            = this.NullableBoolProperty.DeepClone(),
-                                 NullableIntProperty             = this.NullableIntProperty.DeepClone(),
+                                 NullableBoolProperty            = this.NullableBoolProperty?.DeepClone(),
+                                 NullableIntProperty             = this.NullableIntProperty?.DeepClone(),
                                  NullableGuidProperty            = nullableGuidProperty,
-                                 NullableDateTimeProperty        = this.NullableDateTimeProperty.DeepClone(),
-                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty.DeepClone(),
-                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty.DeepClone(),
+                                 NullableDateTimeProperty        = this.NullableDateTimeProperty?.DeepClone(),
+                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty?.DeepClone(),
+                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -248,12 +248,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNullable
                              {
-                                 NullableBoolProperty            = this.NullableBoolProperty.DeepClone(),
-                                 NullableIntProperty             = this.NullableIntProperty.DeepClone(),
-                                 NullableGuidProperty            = this.NullableGuidProperty.DeepClone(),
+                                 NullableBoolProperty            = this.NullableBoolProperty?.DeepClone(),
+                                 NullableIntProperty             = this.NullableIntProperty?.DeepClone(),
+                                 NullableGuidProperty            = this.NullableGuidProperty?.DeepClone(),
                                  NullableDateTimeProperty        = nullableDateTimeProperty,
-                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty.DeepClone(),
-                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty.DeepClone(),
+                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty?.DeepClone(),
+                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -285,12 +285,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNullable
                              {
-                                 NullableBoolProperty            = this.NullableBoolProperty.DeepClone(),
-                                 NullableIntProperty             = this.NullableIntProperty.DeepClone(),
-                                 NullableGuidProperty            = this.NullableGuidProperty.DeepClone(),
-                                 NullableDateTimeProperty        = this.NullableDateTimeProperty.DeepClone(),
+                                 NullableBoolProperty            = this.NullableBoolProperty?.DeepClone(),
+                                 NullableIntProperty             = this.NullableIntProperty?.DeepClone(),
+                                 NullableGuidProperty            = this.NullableGuidProperty?.DeepClone(),
+                                 NullableDateTimeProperty        = this.NullableDateTimeProperty?.DeepClone(),
                                  NullableCustomEnumProperty      = nullableCustomEnumProperty,
-                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty.DeepClone(),
+                                 NullableCustomFlagsEnumProperty = this.NullableCustomFlagsEnumProperty?.DeepClone(),
                              };
 
             return result;
@@ -322,11 +322,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPublicSetNullable
                              {
-                                 NullableBoolProperty            = this.NullableBoolProperty.DeepClone(),
-                                 NullableIntProperty             = this.NullableIntProperty.DeepClone(),
-                                 NullableGuidProperty            = this.NullableGuidProperty.DeepClone(),
-                                 NullableDateTimeProperty        = this.NullableDateTimeProperty.DeepClone(),
-                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty.DeepClone(),
+                                 NullableBoolProperty            = this.NullableBoolProperty?.DeepClone(),
+                                 NullableIntProperty             = this.NullableIntProperty?.DeepClone(),
+                                 NullableGuidProperty            = this.NullableGuidProperty?.DeepClone(),
+                                 NullableDateTimeProperty        = this.NullableDateTimeProperty?.DeepClone(),
+                                 NullableCustomEnumProperty      = this.NullableCustomEnumProperty?.DeepClone(),
                                  NullableCustomFlagsEnumProperty = nullableCustomFlagsEnumProperty,
                              };
 

@@ -234,13 +234,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 result = Invariant($"{cloneCode} == null ? default : {cloneCode}.DeepClone()");
             }
-            else if (type.IsValueType)
+            else if (type.IsTypeAssignableToNull())
             {
-                result = Invariant($"{cloneCode}.DeepClone()");
+                result = Invariant($"{cloneCode}?.DeepClone()");
             }
             else
             {
-                result = Invariant($"{cloneCode}?.DeepClone()");
+                result = Invariant($"{cloneCode}.DeepClone()");
             }
 
             return result;

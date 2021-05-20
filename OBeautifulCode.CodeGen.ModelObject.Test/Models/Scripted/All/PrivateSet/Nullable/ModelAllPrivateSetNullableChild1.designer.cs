@@ -129,17 +129,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var result = new ModelAllPrivateSetNullableChild1(
                                  parentNullableBoolProperty,
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -165,18 +165,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetNullableParent DeepCloneWithParentNullableIntProperty(int? parentNullableIntProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
                                  parentNullableIntProperty,
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -202,18 +202,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetNullableParent DeepCloneWithParentNullableGuidProperty(Guid? parentNullableGuidProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
                                  parentNullableGuidProperty,
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -239,18 +239,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetNullableParent DeepCloneWithParentNullableDateTimeProperty(DateTime? parentNullableDateTimeProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
                                  parentNullableDateTimeProperty,
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -276,18 +276,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetNullableParent DeepCloneWithParentNullableCustomEnumProperty(CustomEnum? parentNullableCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
                                  parentNullableCustomEnumProperty,
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -313,18 +313,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public override ModelAllPrivateSetNullableParent DeepCloneWithParentNullableCustomFlagsEnumProperty(CustomFlagsEnum? parentNullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
                                  parentNullableCustomFlagsEnumProperty,
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -354,18 +354,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNullableChild1 DeepCloneWithChild1NullableBoolProperty(bool? child1NullableBoolProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
                                  child1NullableBoolProperty,
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -395,18 +395,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNullableChild1 DeepCloneWithChild1NullableIntProperty(int? child1NullableIntProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
                                  child1NullableIntProperty,
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -436,18 +436,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNullableChild1 DeepCloneWithChild1NullableGuidProperty(Guid? child1NullableGuidProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
                                  child1NullableGuidProperty,
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -477,18 +477,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNullableChild1 DeepCloneWithChild1NullableDateTimeProperty(DateTime? child1NullableDateTimeProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
                                  child1NullableDateTimeProperty,
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -518,18 +518,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNullableChild1 DeepCloneWithChild1NullableCustomEnumProperty(CustomEnum? child1NullableCustomEnumProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
                                  child1NullableCustomEnumProperty,
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
@@ -559,17 +559,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelAllPrivateSetNullableChild1 DeepCloneWithChild1NullableCustomFlagsEnumProperty(CustomFlagsEnum? child1NullableCustomFlagsEnumProperty)
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
                                  child1NullableCustomFlagsEnumProperty);
 
             return result;
@@ -580,18 +580,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         protected override ModelAllPrivateSetNullableParent DeepCloneInternal()
         {
             var result = new ModelAllPrivateSetNullableChild1(
-                                 this.ParentNullableBoolProperty.DeepClone(),
-                                 this.ParentNullableIntProperty.DeepClone(),
-                                 this.ParentNullableGuidProperty.DeepClone(),
-                                 this.ParentNullableDateTimeProperty.DeepClone(),
-                                 this.ParentNullableCustomEnumProperty.DeepClone(),
-                                 this.ParentNullableCustomFlagsEnumProperty.DeepClone(),
-                                 this.Child1NullableBoolProperty.DeepClone(),
-                                 this.Child1NullableIntProperty.DeepClone(),
-                                 this.Child1NullableGuidProperty.DeepClone(),
-                                 this.Child1NullableDateTimeProperty.DeepClone(),
-                                 this.Child1NullableCustomEnumProperty.DeepClone(),
-                                 this.Child1NullableCustomFlagsEnumProperty.DeepClone());
+                                 this.ParentNullableBoolProperty?.DeepClone(),
+                                 this.ParentNullableIntProperty?.DeepClone(),
+                                 this.ParentNullableGuidProperty?.DeepClone(),
+                                 this.ParentNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child1NullableBoolProperty?.DeepClone(),
+                                 this.Child1NullableIntProperty?.DeepClone(),
+                                 this.Child1NullableGuidProperty?.DeepClone(),
+                                 this.Child1NullableDateTimeProperty?.DeepClone(),
+                                 this.Child1NullableCustomEnumProperty?.DeepClone(),
+                                 this.Child1NullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
         }
