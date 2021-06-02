@@ -160,8 +160,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfNullableBoolProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ArrayOfNullableBoolProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ArrayOfNullableBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableBoolProperty);
                 }
 
@@ -169,8 +172,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfNullableIntProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ArrayOfNullableIntProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ArrayOfNullableIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableIntProperty);
                 }
 
@@ -178,8 +184,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfNullableGuidProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ArrayOfNullableGuidProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ArrayOfNullableGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableGuidProperty);
                 }
 
@@ -187,8 +196,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfNullableDateTimeProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ArrayOfNullableDateTimeProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ArrayOfNullableDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableDateTimeProperty);
                 }
 
@@ -196,8 +208,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfNullableCustomEnumProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ArrayOfNullableCustomEnumProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ArrayOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableCustomEnumProperty);
                 }
 
@@ -205,8 +220,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ArrayOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ArrayOfNullableCustomFlagsEnumProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ArrayOfNullableCustomFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfNullableCustomFlagsEnumProperty);
                 }
             }

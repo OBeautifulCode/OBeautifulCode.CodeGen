@@ -160,8 +160,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfBoolProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfBoolProperty);
                 }
 
@@ -169,8 +172,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfIntProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfIntProperty);
                 }
 
@@ -178,8 +184,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfStringProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfStringProperty);
                 }
 
@@ -187,8 +196,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfGuidProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfGuidProperty);
                 }
 
@@ -196,8 +208,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfDateTimeProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
@@ -205,8 +220,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfCustomEnumProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumProperty);
                 }
 
@@ -214,8 +232,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty);
                 }
 
@@ -223,8 +244,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfCustomClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomClassProperty);
                 }
 
@@ -232,8 +256,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty);
                 }
 
@@ -241,8 +268,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty);
                 }
 
@@ -250,8 +280,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfBoolProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfBoolProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfBoolProperty);
                 }
 
@@ -259,8 +292,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfIntProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfIntProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfIntProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfIntProperty);
                 }
 
@@ -268,8 +304,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfStringProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfStringProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfStringProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfStringProperty);
                 }
 
@@ -277,8 +316,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfGuidProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfGuidProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfGuidProperty);
                 }
 
@@ -286,8 +328,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfDateTimeProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfDateTimeProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfDateTimeProperty);
                 }
 
@@ -295,8 +340,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfCustomEnumProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfCustomEnumProperty);
                 }
 
@@ -304,8 +352,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty);
                 }
 
@@ -313,8 +364,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfCustomClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfCustomClassProperty);
                 }
 
@@ -322,8 +376,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty);
                 }
 
@@ -331,8 +388,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.Child2ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.Child2ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty);
                 }
             }

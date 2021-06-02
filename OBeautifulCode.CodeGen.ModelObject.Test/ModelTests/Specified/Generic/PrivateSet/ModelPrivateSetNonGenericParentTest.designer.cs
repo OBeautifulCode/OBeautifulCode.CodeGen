@@ -233,8 +233,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentCustomClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentCustomClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomClassProperty);
                 }
 
@@ -242,8 +245,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentArrayProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentArrayProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentArrayProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayProperty);
                 }
 
@@ -251,8 +257,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentCustomGenericClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentCustomGenericClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentCustomGenericClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomGenericClassProperty);
                 }
 
@@ -260,8 +269,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyCollectionProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyCollectionProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyCollectionProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionProperty);
                 }
 
@@ -269,8 +281,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentReadOnlyDictionaryProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentReadOnlyDictionaryProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyDictionaryProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryProperty);
                 }
             }

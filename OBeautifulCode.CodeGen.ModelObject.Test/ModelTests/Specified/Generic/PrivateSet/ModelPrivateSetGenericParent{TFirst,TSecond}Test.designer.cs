@@ -242,8 +242,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentCustomClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentCustomClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentCustomClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentCustomClassProperty);
                 }
 
@@ -251,8 +254,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericArgumentProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericArgumentProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericArgumentProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericArgumentProperty);
                 }
 
@@ -260,8 +266,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericArrayProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericArrayProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericArrayProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericArrayProperty);
                 }
 
@@ -269,8 +278,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericCustomGenericClassProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericCustomGenericClassProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericCustomGenericClassProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericCustomGenericClassProperty);
                 }
 
@@ -278,8 +290,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericReadOnlyCollectionProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericReadOnlyCollectionProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericReadOnlyCollectionProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericReadOnlyCollectionProperty);
                 }
 
@@ -287,8 +302,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericReadOnlyListProperty.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericReadOnlyListProperty.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericReadOnlyListProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericReadOnlyListProperty);
                 }
 
@@ -296,8 +314,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericReadOnlyDictionaryProperty1.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericReadOnlyDictionaryProperty1.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericReadOnlyDictionaryProperty1.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericReadOnlyDictionaryProperty1);
                 }
 
@@ -305,8 +326,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericReadOnlyDictionaryProperty2.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericReadOnlyDictionaryProperty2.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericReadOnlyDictionaryProperty2.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericReadOnlyDictionaryProperty2);
                 }
 
@@ -314,8 +338,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1);
                 }
 
@@ -323,8 +350,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     actual.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2.AsTest().Must().BeNull();
                 }
-                else
+                else if (!actual.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2.GetType().IsValueType)
                 {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
                     actual.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2);
                 }
             }
