@@ -39,6 +39,7 @@ namespace OBeautifulCode.CodeGen.Console
         /// <param name="projectOutputDirectory">Directory where project outputs built files (e.g. ...\\bin\\debug\\)..</param>
         /// <param name="includeSerializationTesting">A value indicating whether to include serialization testing.</param>
         /// <param name="recipeConditionalCompilationSymbol">The conditional compilation symbol to use for recipes.</param>
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         public static void GenerateCodeForProject(
             string projectDirectory,
             string testProjectDirectory,
