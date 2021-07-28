@@ -7926,8 +7926,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var availableTypes = new[]
                     {
-                        typeof(ModelPrivateSetGenericParentGenericPartiallyClosedChild<Version>),
-                        typeof(ModelPrivateSetGenericParentGenericChild<Version, Guid>)
+                        typeof(ModelPrivateSetGenericParentGenericChild<Version, Guid>),
+                        typeof(ModelPrivateSetGenericParentGenericPartiallyClosedChild<Version>)
                     };
 
                     var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
@@ -8246,8 +8246,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var availableTypes = new[]
                     {
-                        typeof(ModelPrivateSetMultilevelGrandchild2B),
-                        typeof(ModelPrivateSetMultilevelGrandchild2A)
+                        typeof(ModelPrivateSetMultilevelGrandchild2A),
+                        typeof(ModelPrivateSetMultilevelGrandchild2B)
                     };
 
                     var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
@@ -8264,8 +8264,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var availableTypes = new[]
                     {
-                        typeof(ModelPrivateSetMultilevelGrandchild1B),
-                        typeof(ModelPrivateSetMultilevelGrandchild1A)
+                        typeof(ModelPrivateSetMultilevelGrandchild1A),
+                        typeof(ModelPrivateSetMultilevelGrandchild1B)
                     };
 
                     var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
@@ -8282,10 +8282,10 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     var availableTypes = new[]
                     {
-                        typeof(ModelPrivateSetMultilevelGrandchild2B),
-                        typeof(ModelPrivateSetMultilevelGrandchild2A),
+                        typeof(ModelPrivateSetMultilevelGrandchild1A),
                         typeof(ModelPrivateSetMultilevelGrandchild1B),
-                        typeof(ModelPrivateSetMultilevelGrandchild1A)
+                        typeof(ModelPrivateSetMultilevelGrandchild2A),
+                        typeof(ModelPrivateSetMultilevelGrandchild2B)
                     };
 
                     var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
@@ -8599,8 +8599,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     var availableTypes = new[]
                     {
                         typeof(ModelPrivateSetConstructorMissingPropertyChild1),
-                        typeof(ModelPrivateSetConstructorMissingPropertyChild3),
-                        typeof(ModelPrivateSetConstructorMissingPropertyChild2)
+                        typeof(ModelPrivateSetConstructorMissingPropertyChild2),
+                        typeof(ModelPrivateSetConstructorMissingPropertyChild3)
                     };
 
                     var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);

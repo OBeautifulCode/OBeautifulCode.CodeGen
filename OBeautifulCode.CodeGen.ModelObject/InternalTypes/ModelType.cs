@@ -705,6 +705,7 @@ namespace OBeautifulCode.CodeGen
                 .Select(_ => GetExampleClosedModelType(_))
                 .Where(type.IsAssignableFrom)
                 .Select(_ => _.ToStringReadable())
+                .OrderBy(_ => _)
                 .ToList();
 
             return result;
@@ -722,6 +723,7 @@ namespace OBeautifulCode.CodeGen
                 .Where(_ => _.Namespace == type.Namespace)
                 .Select(_ => GetExampleClosedModelType(_))
                 .Select(_ => _.ToStringReadable())
+                .OrderBy(_ => _)
                 .ToList();
 
             return result;

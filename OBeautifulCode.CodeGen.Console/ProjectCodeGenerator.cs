@@ -132,6 +132,8 @@ namespace OBeautifulCode.CodeGen.Console
 
                 Console.WriteLine("Generated code for these types: " + Environment.NewLine + codeGeneratedForTypes.Select(_ => " - " +  _.ToStringReadable()).ToNewLineDelimited());
 
+                typesForDummyFactory = typesForDummyFactory.OrderBy(_ => _.ToStringReadable()).ToList();
+
                 if (hasDummyFactory)
                 {
                     WriteDummyFactoryFile(typesForDummyFactory, dummyFactoryFilePath, testNamespace, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder, recipeConditionalCompilationSymbol);

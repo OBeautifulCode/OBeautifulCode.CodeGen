@@ -220,9 +220,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         A.Dummy<int>(),
                         A.Dummy<int?>(),
                         A.Dummy<Guid>(),
-                        A.Dummy<ModelPrivateSetMultilevelGrandchild2B>(),
-                        A.Dummy<ModelPrivateSetMultilevelGrandchild2A>(),
                         A.Dummy<ModelPrivateSetMultilevelGrandchild1B>(),
+                        A.Dummy<ModelPrivateSetMultilevelGrandchild2A>(),
+                        A.Dummy<ModelPrivateSetMultilevelGrandchild2B>(),
                     },
                 });
 
