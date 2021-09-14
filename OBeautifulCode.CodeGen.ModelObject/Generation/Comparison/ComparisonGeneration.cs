@@ -88,19 +88,19 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var compareToItems = new List<string>();
             var compareToForRelativeSortOrderItems = new List<string>();
 
-            for (int x = 0; x < modelType.DerivativePathTypesNamesInCodeFromRootToSelf.Count; x++)
+            for (var x = 0; x < modelType.DerivativePathTypesNamesInCodeFromRootToSelf.Count; x++)
             {
                 var derivativeTypeNameInCode = modelType.DerivativePathTypesNamesInCodeFromRootToSelf[x];
-                var derivativeTypeNameInIdentifier = modelType.DerivativePathTypesNamesInIdentifierFromRootToSelf[x];
+                var derivativeTypeNameInTestMethodName = modelType.DerivativePathTypesNamesInTestMethodNamesFromRootToSelf[x];
 
                 var compareToItem = compareToTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
-                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInTestMethodName)
                     .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 var compareToForRelativeSortOrderItem = compareToForRelativeSortOrderTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
-                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInTestMethodName)
                     .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 compareToItems.Add(compareToItem);

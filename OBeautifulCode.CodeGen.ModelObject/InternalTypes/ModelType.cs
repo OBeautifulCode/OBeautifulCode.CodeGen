@@ -125,10 +125,10 @@ namespace OBeautifulCode.CodeGen
 
             // Types Names
             this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
-            this.InheritancePathTypeNamesInIdentifier = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringWithoutGenericComponent()).ToList();
+            this.InheritancePathTypeNamesInTestMethodNames = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.GetTypeNameInTestMethodName()).ToList();
 
             this.DerivativePathTypesNamesInCodeFromRootToSelf = this.InheritancePathTypeNamesInCode.Reverse().Concat(new[] { type.ToStringReadable() }).ToList();
-            this.DerivativePathTypesNamesInIdentifierFromRootToSelf = this.InheritancePathTypeNamesInIdentifier.Reverse().Concat(new[] { type.ToStringWithoutGenericComponent() }).ToList();
+            this.DerivativePathTypesNamesInTestMethodNamesFromRootToSelf = this.InheritancePathTypeNamesInTestMethodNames.Reverse().Concat(new[] { type.GetTypeNameInTestMethodName() }).ToList();
             this.GenericParameters = type.IsGenericType ? type.GetGenericArguments().ToList() : new List<Type>();
 
             this.TypeNameInCodeString = type.ToStringReadable();

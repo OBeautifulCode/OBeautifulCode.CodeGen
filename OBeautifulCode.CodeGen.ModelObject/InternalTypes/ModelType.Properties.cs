@@ -25,9 +25,9 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyList<string> InheritancePathTypeNamesInCode { get; }
 
         /// <summary>
-        /// Gets the inheritance path types names as they should be used in identifiers.
+        /// Gets the inheritance path types names as they should be used in test method names.
         /// </summary>
-        public IReadOnlyList<string> InheritancePathTypeNamesInIdentifier { get; }
+        public IReadOnlyList<string> InheritancePathTypeNamesInTestMethodNames { get; }
 
         /// <summary>
         /// Gets the name of the type as it should be used in generated code.
@@ -71,10 +71,10 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyList<string> DerivativePathTypesNamesInCodeFromRootToSelf { get; }
 
         /// <summary>
-        /// Gets the identifier-compatible string representations of this model's derivative path, starting
-        /// at the root type and ending in the model type itself.
+        /// Gets the names the model's derivative path as they should appear in test method names,
+        /// starting at the root type and ending in the model type itself.
         /// </summary>
-        public IReadOnlyList<string> DerivativePathTypesNamesInIdentifierFromRootToSelf { get; }
+        public IReadOnlyList<string> DerivativePathTypesNamesInTestMethodNamesFromRootToSelf { get; }
 
         /// <summary>
         /// Gets the compilable string representations of this model type's ancestors' concrete derivative types
