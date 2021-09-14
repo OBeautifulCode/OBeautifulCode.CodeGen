@@ -3507,7 +3507,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-            public static void ModelPrivateSetNonGenericParentGenericChild___Should_implement_IModel_of_ModelPrivateSetNonGenericParentGenericChild___When_reflecting()
+            public static void ModelPrivateSetNonGenericParentGenericChild_of_Version_Guid___Should_implement_IModel_of_ModelPrivateSetNonGenericParentGenericChild_of_Version_Guid___When_reflecting()
             {
                 // Arrange
                 var type = typeof(ModelPrivateSetNonGenericParentGenericChild<Version, Guid>);
@@ -3540,7 +3540,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-            public static void ModelPrivateSetNonGenericParentGenericChild___Should_implement_IComparableForRelativeSortOrder_of_ModelPrivateSetNonGenericParentGenericChild___When_reflecting()
+            public static void ModelPrivateSetNonGenericParentGenericChild_of_Version_Guid___Should_implement_IComparableForRelativeSortOrder_of_ModelPrivateSetNonGenericParentGenericChild_of_Version_Guid___When_reflecting()
             {
                 // Arrange
                 var type = typeof(ModelPrivateSetNonGenericParentGenericChild<Version, Guid>);
@@ -3573,7 +3573,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-            public static void ModelPrivateSetNonGenericParentGenericChild___Should_be_attributed_with_Serializable____When_reflecting()
+            public static void ModelPrivateSetNonGenericParentGenericChild_of_Version_Guid___Should_be_attributed_with_Serializable____When_reflecting()
             {
                 // Arrange
                 var type = typeof(ModelPrivateSetNonGenericParentGenericChild<Version, Guid>);

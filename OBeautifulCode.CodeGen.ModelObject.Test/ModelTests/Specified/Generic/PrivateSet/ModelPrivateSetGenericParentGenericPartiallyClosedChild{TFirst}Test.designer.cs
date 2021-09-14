@@ -4932,7 +4932,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-            public static void ModelPrivateSetGenericParentGenericPartiallyClosedChild___Should_implement_IModel_of_ModelPrivateSetGenericParentGenericPartiallyClosedChild___When_reflecting()
+            public static void ModelPrivateSetGenericParentGenericPartiallyClosedChild_of_Version___Should_implement_IModel_of_ModelPrivateSetGenericParentGenericPartiallyClosedChild_of_Version___When_reflecting()
             {
                 // Arrange
                 var type = typeof(ModelPrivateSetGenericParentGenericPartiallyClosedChild<Version>);
@@ -4965,7 +4965,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-            public static void ModelPrivateSetGenericParentGenericPartiallyClosedChild___Should_implement_IComparableForRelativeSortOrder_of_ModelPrivateSetGenericParentGenericPartiallyClosedChild___When_reflecting()
+            public static void ModelPrivateSetGenericParentGenericPartiallyClosedChild_of_Version___Should_implement_IComparableForRelativeSortOrder_of_ModelPrivateSetGenericParentGenericPartiallyClosedChild_of_Version___When_reflecting()
             {
                 // Arrange
                 var type = typeof(ModelPrivateSetGenericParentGenericPartiallyClosedChild<Version>);
@@ -4998,7 +4998,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
             [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-            public static void ModelPrivateSetGenericParentGenericPartiallyClosedChild___Should_be_attributed_with_Serializable____When_reflecting()
+            public static void ModelPrivateSetGenericParentGenericPartiallyClosedChild_of_Version___Should_be_attributed_with_Serializable____When_reflecting()
             {
                 // Arrange
                 var type = typeof(ModelPrivateSetGenericParentGenericPartiallyClosedChild<Version>);

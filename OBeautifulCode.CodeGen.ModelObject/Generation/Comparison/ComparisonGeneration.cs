@@ -95,12 +95,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var compareToItem = compareToTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
-                    .Replace(Tokens.ModelTypeNameInIdentifierToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInIdentifier)
                     .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 var compareToForRelativeSortOrderItem = compareToForRelativeSortOrderTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
-                    .Replace(Tokens.ModelTypeNameInIdentifierToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInIdentifier)
                     .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 compareToItems.Add(compareToItem);
@@ -111,7 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString)
+                .Replace(Tokens.ModelTypeNameInTestMethodNameToken, modelType.TypeNameInIdentifierString)
                 .Replace(Tokens.CompareToTestsToken, compareToItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine)
                 .Replace(Tokens.CompareToForRelativeSortOrderTestsToken, compareToForRelativeSortOrderItems.ToDelimitedString(Environment.NewLine + Environment.NewLine));
 

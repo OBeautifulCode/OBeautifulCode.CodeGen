@@ -130,7 +130,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var equalsItem = equalsTestTemplate
                     .Replace(Tokens.ModelTypeNameInCodeToken, derivativeTypeNameInCode)
-                    .Replace(Tokens.ModelTypeNameInIdentifierToken, derivativeTypeNameInIdentifier)
+                    .Replace(Tokens.ModelTypeNameInTestMethodNameToken, derivativeTypeNameInIdentifier)
                     .Replace(Tokens.CastToken, derivativeTypeNameInCode == modelType.TypeNameInCodeString ? string.Empty : Invariant($"({derivativeTypeNameInCode})"));
 
                 equalsItems.Add(equalsItem);
@@ -140,7 +140,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var result = codeTemplate
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString)
+                .Replace(Tokens.ModelTypeNameInTestMethodNameToken, modelType.TypeNameInIdentifierString)
                 .Replace(Tokens.EqualsTestsToken, equalsItems.ToDelimitedString(Environment.NewLine + Environment.NewLine) + Environment.NewLine);
 
             return result;

@@ -132,7 +132,7 @@ namespace OBeautifulCode.CodeGen
             this.GenericParameters = type.IsGenericType ? type.GetGenericArguments().ToList() : new List<Type>();
 
             this.TypeNameInCodeString = type.ToStringReadable();
-            this.TypeNameInTestMethodNameString = type.ToStringWithoutGenericComponent();
+            this.TypeNameInTestMethodNameString = type.GetTypeNameInTestMethodName();
             this.TypeNameInIdentifierString = type.ToStringWithoutGenericComponent();
             this.TypeNameInTestClassNameString = type.GetTestClassName();
             this.TypeNameInXmlDocString = type.ToStringXmlDoc();

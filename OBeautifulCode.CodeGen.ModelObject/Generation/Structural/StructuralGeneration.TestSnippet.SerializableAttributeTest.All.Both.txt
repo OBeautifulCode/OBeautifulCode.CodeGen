@@ -1,6 +1,6 @@
 ﻿            [Fact]
 [test-method-code-analysis-suppressions-here]
-            public static void [model-type-name-in-identifier-here]___Should_be_attributed_with_Serializable____When_reflecting()
+            public static void [model-type-name-in-test-method-name-here]___Should_be_attributed_with_Serializable____When_reflecting()
             {
                 // Arrange
                 var type = typeof([model-type-name-in-code-here]);

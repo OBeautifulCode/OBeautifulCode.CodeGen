@@ -32,7 +32,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var testMethodsCode = modelType
                 .RequiredInterfaces
-                .Select(modelType.GetExpectedInterfaceTestMethodCode)
+                .Select(_ => _.GetExpectedInterfaceTestMethodCode())
                 .ToDelimitedString(Environment.NewLine + Environment.NewLine);
 
             if (modelType.DeclaresGetHashCodeMethod)
@@ -52,23 +52,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
             var result = codeTemplate
                         .Replace(Tokens.StructuralTestsToken, testMethodsCode)
                         .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                        .Replace(Tokens.ModelTypeNameInIdentifierToken, modelType.TypeNameInIdentifierString);
+                        .Replace(Tokens.ModelTypeNameInTestMethodNameToken, modelType.TypeNameInTestMethodNameString);
 
             return result;
         }
 
         private static string GetExpectedInterfaceTestMethodCode(
-            this ModelType modelType,
-            Type expectedInterfaceType)
+            this Type expectedInterfaceType)
         {
-            var expectedInterfaceTypeInTestMethodString = expectedInterfaceType.IsGenericType
-                ? expectedInterfaceType.ToStringWithoutGenericComponent() + "_of_" + modelType.TypeNameInTestMethodNameString
-                : expectedInterfaceType.ToStringReadable();
-
             var result =
                 typeof(StructuralGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ExpectedInterfaceTest)
                 .Replace(Tokens.ExpectedInterfaceToken, expectedInterfaceType.ToStringReadable())
-                .Replace(Tokens.ExpectedInterfaceTestMethodNameToken, expectedInterfaceTypeInTestMethodString);
+                .Replace(Tokens.ExpectedInterfaceTestMethodNameToken, expectedInterfaceType.GetTypeNameInTestMethodName());
 
             return result;
         }
