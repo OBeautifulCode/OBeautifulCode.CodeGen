@@ -1035,20 +1035,7 @@ namespace OBeautifulCode.CodeGen
                 // If not, we need to find a derivative of the closed constraint and make that the new candidate.
                 if (!closedConstraint.IsAssignableFrom(result))
                 {
-                    var candidateTypes = LoadedTypes
-                        .Where(_ => _.IsClass)
-                        .Where(_ => !_.IsAbstract)
-                        .Where(_ => _.Namespace == modelType.Namespace)
-                        .ToList();
-
-                    var constraintTypeToSearchForInInheritancePath = closedConstraint.IsGenericType
-                        ? closedConstraint.GetGenericTypeDefinition()
-                        : closedConstraint;
-
-                    // constraintTypeToSearchForInInheritancePath is an ancestor (interfaces included) of the loaded type?
-                    candidateTypes = candidateTypes
-                        .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintTypeToSearchForInInheritancePath))
-                        .ToList();
+                    var candidateTypes = GetClosedConstraintCandidateDerivativeType(closedConstraint);
 
                     var passingTypes = new List<Type>();
 
@@ -1079,12 +1066,33 @@ namespace OBeautifulCode.CodeGen
                                 Type = _,
                                 NumberOfProperties = _.GetPropertiesFiltered(MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public).Count,
                             })
-                        .OrderByDescending(_ => _.NumberOfProperties)
+                        .OrderByDescending(_ => _.Type.Namespace == modelType.Namespace ? 1 : 0) // prefer types in the model's namespace
+                        .ThenByDescending(_ => _.NumberOfProperties)
                         .ThenBy(_ => _.Type.Name)
                         .Select(_ => _.Type)
                         .First();
                 }
             }
+
+            return result;
+        }
+
+        private static List<Type> GetClosedConstraintCandidateDerivativeType(
+            Type closedConstraint)
+        {
+            var result = LoadedTypes
+                .Where(_ => _.IsClass)
+                .Where(_ => !_.IsAbstract)
+                .ToList();
+
+            var constraintTypeToSearchForInInheritancePath = closedConstraint.IsGenericType
+                ? closedConstraint.GetGenericTypeDefinition()
+                : closedConstraint;
+
+            // constraintTypeToSearchForInInheritancePath is an ancestor (interfaces included) of the loaded type?
+            result = result
+                .Where(_ => GetInheritancePathWithInterfacesConvertingGenericsToGenericTypeDefinitions(_).Contains(constraintTypeToSearchForInInheritancePath))
+                .ToList();
 
             return result;
         }
