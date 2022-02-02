@@ -144,6 +144,8 @@ namespace OBeautifulCode.CodeGen
 
             // Example Types
             this.ExampleClosedModelType = GetExampleClosedModelType(type);
+            this.NamespacesOfTypesInExampleClosedModelType = GetNamespacesInUse(this.ExampleClosedModelType);
+
             this.ExampleConcreteDerivativeTypeNamesInCodeStrings = GetExampleConcreteDerivativeTypeNamesInCodeStrings(type);
             this.ExampleAncestorConcreteDerivativeTypeNamesInCodeStrings = GetExampleAncestorConcreteDerivativeTypeNamesInCodeStrings(type);
         }

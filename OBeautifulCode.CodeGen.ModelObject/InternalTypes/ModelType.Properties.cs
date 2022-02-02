@@ -238,6 +238,11 @@ namespace OBeautifulCode.CodeGen
         public IReadOnlyCollection<string> NamespacesOfTypesInInheritancePath { get; }
 
         /// <summary>
+        /// Gets the namespaces of the types in the example closed model type.
+        /// </summary>
+        public IReadOnlyCollection<string> NamespacesOfTypesInExampleClosedModelType { get; }
+
+        /// <summary>
         /// Gets the generic parameters.
         /// </summary>
         public IReadOnlyList<Type> GenericParameters { get; }

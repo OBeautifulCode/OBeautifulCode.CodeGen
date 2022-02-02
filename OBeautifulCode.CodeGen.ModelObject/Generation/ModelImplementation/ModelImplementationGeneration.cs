@@ -437,6 +437,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 .Concat(statements)
                 .Concat(modelTypes.SelectMany(_ => _.NamespacesOfTypesInInheritancePath))
                 .Concat(modelTypes.SelectMany(_ => _.NamespacesOfTypesInPropertiesOfConcern))
+                .Concat(modelTypes.SelectMany(_ => _.NamespacesOfTypesInExampleClosedModelType))
                 .Where(_ => _ != containingNamespace)
                 .Distinct()
                 .ToList();
