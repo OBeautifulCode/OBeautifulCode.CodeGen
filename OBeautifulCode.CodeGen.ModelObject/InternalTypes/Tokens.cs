@@ -332,5 +332,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Comments out a line of code.
         /// </summary>
         public const string CommentOutToken = "[comment-out-here]";
+
+        /// <summary>
+        /// The name of the Unknown enum value.
+        /// </summary>
+        public const string EnumValueNamedUnknownToken = "[enum-value-named-unknown]";
     }
 }

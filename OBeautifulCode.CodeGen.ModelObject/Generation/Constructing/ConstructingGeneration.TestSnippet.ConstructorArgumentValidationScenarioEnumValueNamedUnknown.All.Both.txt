@@ -1,0 +1,13 @@
+﻿            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-in-code-here]>
+                {
+                    Name = "constructor should throw ArgumentOutOfRangeException when parameter '[parameter-name-here]' is [property-type-name-here].[enum-value-named-unknown]",
+                    ConstructionFunc = () =>
+                    {
+                        [reference-object-here]var result = [construct-object-here];
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentOutOfRangeException),
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "[enum-value-named-unknown]", },
+                })

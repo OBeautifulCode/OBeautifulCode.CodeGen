@@ -176,6 +176,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     "OptionalConstructorParameters",
                 }
             },
+            {
+                SpecifiedModelKind.ConstructorParameterEnumValueNamedUnknown,
+                new[]
+                {
+                    "ConstructorParameterEnumValueNamedUnknown",
+                }
+            },
         };
     }
 }

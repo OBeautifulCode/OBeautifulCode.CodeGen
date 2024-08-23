@@ -192,6 +192,7 @@
       <DependentUpon>CodeGenDummyFactory.cs</DependentUpon>
     </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomEnumWithUnknown.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultilevelChildBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultilevelGrandchildClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultilevelChildClass.cs" />
@@ -2061,6 +2062,10 @@
     <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChild{TFirst,TSecond}.designer.cs">
       <DependentUpon>ModelPublicSetNonGenericParentGenericChild{TFirst,TSecond}.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknown.cs" />
+    <Compile Include="Models\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknown.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorParameterEnumValueNamedUnknown.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParameters.designer.cs">
       <DependentUpon>ModelPrivateSetOptionalConstructorParameters.cs</DependentUpon>
     </Compile>
@@ -3923,6 +3928,10 @@
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentTest.cs" />
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentTest.designer.cs">
       <DependentUpon>ModelPublicSetNonGenericParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknownTest.cs" />
+    <Compile Include="ModelTests\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknownTest.designer.cs">
+      <DependentUpon>ModelPrivateSetConstructorParameterEnumValueNamedUnknownTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.cs" />
     <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.designer.cs">

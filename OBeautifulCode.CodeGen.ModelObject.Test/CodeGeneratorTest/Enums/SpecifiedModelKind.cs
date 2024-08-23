@@ -25,5 +25,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         ConstructorMoreDerivedThanProperty,
 
         OptionalConstructorParameters,
+
+        ConstructorParameterEnumValueNamedUnknown,
     }
 }

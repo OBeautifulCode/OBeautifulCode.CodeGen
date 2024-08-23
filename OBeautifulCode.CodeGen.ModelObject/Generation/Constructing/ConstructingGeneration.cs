@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
+    using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type.Recipes;
 
@@ -25,6 +26,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
     /// </summary>
     internal static class ConstructingGeneration
     {
+        private const string UnknownEnumValueName = "Unknown";
+
+        private static readonly ConcurrentDictionary<Type, bool> EnumTypeToHasUnknownValueMapCache = new ConcurrentDictionary<Type, bool>();
+
         /// <summary>
         /// Generates fields required to test a model's constructor.
         /// </summary>
@@ -51,7 +56,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var referenceObjectDummyCode = "var referenceObject = A.Dummy<[model-type-name-in-code-here]>();" + Environment.NewLine + Environment.NewLine + "                        ";
 
-            foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
+            foreach (var parameter in parameters)
             {
                 // If the parameter is optional and it's default value is null
                 // then we don't generate a constructor argument validation scenario.
@@ -62,42 +67,48 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     continue;
                 }
 
-                var referenceObjectUsed = false;
+                // Don't test for null value on Nullable types; often enough it's ok for those to be null.
+                var parameterType = parameter.ParameterType;
 
-                var parametersCode = parameters.Select(_ =>
+                if (!parameterType.IsValueType)
                 {
-                    var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+                    var referenceObjectUsed = false;
 
-                    var referenceObject = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
-
-                    string code;
-                    if (_.Name == parameter.Name)
+                    var parametersCode = parameters.Select(_ =>
                     {
-                        code = "null";
-                    }
-                    else
-                    {
-                        code = referenceObject;
-                        referenceObjectUsed = true;
-                    }
+                        var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
 
-                    return new MemberCode(_.Name, code);
-                }).ToList();
+                        var referenceObject = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
 
-                var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 45);
+                        string code;
+                        if (_.Name == parameter.Name)
+                        {
+                            code = "null";
+                        }
+                        else
+                        {
+                            code = referenceObject;
+                            referenceObjectUsed = true;
+                        }
 
-                var scenario = typeof(ConstructingGeneration)
-                    .GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
-                    .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
-                    .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                    .Replace(Tokens.ParameterNameToken, parameter.Name)
-                    .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+                        return new MemberCode(_.Name, code);
+                    }).ToList();
 
-                argumentValidationScenarios.Add(scenario);
+                    var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 45);
 
-                if (parameter.ParameterType == typeof(string))
+                    var scenario = typeof(ConstructingGeneration)
+                        .GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
+                        .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
+                        .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                        .Replace(Tokens.ParameterNameToken, parameter.Name)
+                        .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                    argumentValidationScenarios.Add(scenario);
+                }
+
+                if (parameterType == typeof(string))
                 {
-                    referenceObjectUsed = false;
+                    var referenceObjectUsed = false;
 
                     var stringParameterCode = parameters.Select(_ =>
                     {
@@ -120,9 +131,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         return new MemberCode(_.Name, code);
                     }).ToList();
 
-                    objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 45);
+                    var objectInstantiationCode = modelType.GenerateModelInstantiation(stringParameterCode, parameterPaddingLength: 45);
 
-                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioWhiteSpaceString)
+                    var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioWhiteSpaceString)
                         .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -131,10 +142,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     argumentValidationScenarios.Add(scenario);
                 }
 
-                if (parameter.ParameterType.IsClosedSystemCollectionType() || parameter.ParameterType.IsArray)
+                if (parameterType.IsClosedSystemCollectionType() || parameterType.IsArray)
                 {
                     // add test for empty collection or array
-                    referenceObjectUsed = false;
+                    var referenceObjectUsed = false;
 
                     var collectionParameterCode = parameters.Select(_ =>
                     {
@@ -146,7 +157,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         if (_.Name == parameter.Name)
                         {
-                            code = parameter.ParameterType.GenerateSystemTypeInstantiationCode();
+                            code = parameterType.GenerateSystemTypeInstantiationCode();
                         }
                         else
                         {
@@ -157,9 +168,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         return new MemberCode(_.Name, code);
                     }).ToList();
 
-                    objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
+                    var objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
 
-                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyEnumerable)
+                    var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyEnumerable)
                         .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -169,9 +180,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     // add test for collection or array containing null element
                     // we are specifically EXCLUDING nullable types here
-                    var elementType = parameter.ParameterType.IsArray
-                        ? parameter.ParameterType.GetElementType()
-                        : parameter.ParameterType.GetClosedSystemCollectionElementType();
+                    var elementType = parameterType.IsArray
+                        ? parameterType.GetElementType()
+                        : parameterType.GetClosedSystemCollectionElementType();
 
                     // ReSharper disable once PossibleNullReferenceException
                     if (!elementType.IsValueType)
@@ -186,13 +197,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             {
                                 referenceProperty = Invariant($"new {elementType.ToStringReadable()}[0].Concat({referenceProperty}).Concat(new {elementType.ToStringReadable()}[] {{ null }}).Concat({referenceProperty})");
 
-                                referenceProperty = parameter.ParameterType.IsArray
+                                referenceProperty = parameterType.IsArray
                                     ? referenceProperty + ".ToArray()"
                                     : referenceProperty + ".ToList()";
 
-                                if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
+                                if (parameterType.IsGenericType && ((parameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
                                 {
-                                    referenceProperty = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
+                                    referenceProperty = parameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
                                 }
                             }
 
@@ -210,10 +221,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
                     }
                 }
 
-                if (parameter.ParameterType.IsClosedSystemDictionaryType())
+                if (parameterType.IsClosedSystemDictionaryType())
                 {
                     // add test for empty dictionary
-                    referenceObjectUsed = false;
+                    var referenceObjectUsed = false;
 
                     var dictionaryParameterCode = parameters.Select(_ =>
                     {
@@ -225,7 +236,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         if (_.Name == parameter.Name)
                         {
-                            code = parameter.ParameterType.GenerateSystemTypeInstantiationCode();
+                            code = parameterType.GenerateSystemTypeInstantiationCode();
                         }
                         else
                         {
@@ -236,9 +247,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         return new MemberCode(_.Name, code);
                     }).ToList();
 
-                    objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 45);
+                    var objectInstantiationCode = modelType.GenerateModelInstantiation(dictionaryParameterCode, parameterPaddingLength: 45);
 
-                    scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyDictionary)
+                    var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEmptyDictionary)
                         .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
                         .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                         .Replace(Tokens.ParameterNameToken, parameter.Name)
@@ -248,7 +259,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                     // add test for dictionary containing null value
                     // we are specifically EXCLUDING nullable types here
-                    var valueType = parameter.ParameterType.GetClosedSystemDictionaryValueType();
+                    var valueType = parameterType.GetClosedSystemDictionaryValueType();
 
                     if (!valueType.IsValueType)
                     {
@@ -262,9 +273,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             {
                                 referenceProperty = "dictionaryWithNullValue";
 
-                                if (parameter.ParameterType.IsGenericType && ((parameter.ParameterType.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (parameter.ParameterType.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))))
+                                if (parameterType.IsGenericType && ((parameterType.GetGenericTypeDefinition() == typeof(ReadOnlyDictionary<,>)) || (parameterType.GetGenericTypeDefinition() == typeof(ConcurrentDictionary<,>))))
                                 {
-                                    referenceProperty = parameter.ParameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
+                                    referenceProperty = parameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
                                 }
                             }
 
@@ -280,6 +291,63 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                             .Replace(Tokens.ParameterNameToken, parameter.Name)
                             .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                        argumentValidationScenarios.Add(scenario);
+                    }
+                }
+
+                // For Enum or Nullable Enum, check that it doesn't equal "Unknown".
+                var enumTypeToCheck = parameterType.IsNullableType()
+                    ? Nullable.GetUnderlyingType(parameterType)
+                    : parameterType;
+
+                // ReSharper disable once PossibleNullReferenceException
+                if (enumTypeToCheck.IsEnum && (!enumTypeToCheck.IsFlagsEnum()))
+                {
+                    var referenceObjectUsed = false;
+
+                    if (!EnumTypeToHasUnknownValueMapCache.TryGetValue(enumTypeToCheck, out var hasUnknownValue))
+                    {
+                        hasUnknownValue = enumTypeToCheck
+                            .GetAllPossibleEnumValues()
+                            .Select(_ => Enum.GetName(enumTypeToCheck, _))
+                            .Contains(UnknownEnumValueName);
+
+                        EnumTypeToHasUnknownValueMapCache.TryAdd(enumTypeToCheck, hasUnknownValue);
+                    }
+
+                    if (hasUnknownValue)
+                    {
+                        var enumParameterCode = parameters.Select(_ =>
+                        {
+                            var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                            var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
+
+                            string code;
+
+                            if (_.Name == parameter.Name)
+                            {
+                                code = Invariant($"{enumTypeToCheck.ToStringReadable()}.{UnknownEnumValueName}");
+                            }
+                            else
+                            {
+                                code = referenceProperty;
+                                referenceObjectUsed = true;
+                            }
+
+                            return new MemberCode(_.Name, code);
+                        }).ToList();
+
+                        var objectInstantiationCode = modelType.GenerateModelInstantiation(enumParameterCode, parameterPaddingLength: 45);
+
+                        var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEnumValueNamedUnknown)
+                            .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
+                            .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                            .Replace(Tokens.ParameterNameToken, parameter.Name)
+                            .Replace(Tokens.PropertyTypeNameToken, enumTypeToCheck.ToStringReadable())
+                            .Replace(Tokens.ConstructObjectToken, objectInstantiationCode)
+                            .Replace(Tokens.EnumValueNamedUnknownToken, UnknownEnumValueName);
 
                         argumentValidationScenarios.Add(scenario);
                     }

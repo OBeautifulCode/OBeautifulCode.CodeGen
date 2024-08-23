@@ -89,6 +89,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ConstructorArgumentValidationScenarioDictionaryWithNullValue,
 
         /// <summary>
+        /// A code snippet for a constructor argument validation scenario that tests a enum value whose name is Unknown.
+        /// </summary>
+        ConstructorArgumentValidationScenarioEnumValueNamedUnknown,
+
+        /// <summary>
         /// A code snippet for a constructor property assignment test scenario.
         /// </summary>
         ConstructorParameterAssignmentScenario,

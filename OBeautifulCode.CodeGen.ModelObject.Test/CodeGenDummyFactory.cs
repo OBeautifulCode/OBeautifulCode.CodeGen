@@ -15,6 +15,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomBaseClass>();
             AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomMultilevelBaseClass>();
             AutoFixtureBackedDummyFactory.UseRandomConcreteSubclassForDummy<CustomMultilevelChildBaseClass>();
+            AutoFixtureBackedDummyFactory.ConstrainDummyToExclude(CustomEnumWithUnknown.Unknown);
         }
     }
 }
