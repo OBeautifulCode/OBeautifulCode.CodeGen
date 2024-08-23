@@ -169,6 +169,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     "ConstructorMoreDerivedThanPropertyChild2",
                 }
             },
+            {
+                SpecifiedModelKind.OptionalConstructorParameters,
+                new[]
+                {
+                    "OptionalConstructorParameters",
+                }
+            },
         };
     }
 }

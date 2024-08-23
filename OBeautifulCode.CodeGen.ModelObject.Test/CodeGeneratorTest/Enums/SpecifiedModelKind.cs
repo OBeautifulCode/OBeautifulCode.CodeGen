@@ -23,5 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         Generic,
 
         ConstructorMoreDerivedThanProperty,
+
+        OptionalConstructorParameters,
     }
 }

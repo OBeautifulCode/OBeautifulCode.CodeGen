@@ -8176,6 +8176,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                              });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPrivateSetOptionalConstructorParameters(
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<CustomDerivedClass>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetMultipleConstructors(
                                  A.Dummy<int>(),
                                  A.Dummy<string>(),

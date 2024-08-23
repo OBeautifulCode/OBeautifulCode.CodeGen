@@ -192,6 +192,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     if (((specifiedModelKind == SpecifiedModelKind.MultipleConstructors) ||
                          (specifiedModelKind == SpecifiedModelKind.ConstructorMissingProperty) ||
+                         (specifiedModelKind == SpecifiedModelKind.OptionalConstructorParameters) ||
                          (specifiedModelKind == SpecifiedModelKind.ConstructorMoreDerivedThanProperty)) && (setterKind != SetterKind.PrivateSetters))
                     {
                         continue;

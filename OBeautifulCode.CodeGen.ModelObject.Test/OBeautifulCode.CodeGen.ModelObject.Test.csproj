@@ -2061,6 +2061,9 @@
     <Compile Include="Models\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentGenericChild{TFirst,TSecond}.designer.cs">
       <DependentUpon>ModelPublicSetNonGenericParentGenericChild{TFirst,TSecond}.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParameters.designer.cs">
+      <DependentUpon>ModelPrivateSetOptionalConstructorParameters.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.cs" />
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.designer.cs">
       <DependentUpon>ModelAllPrivateSetArrayOfNullableChild1Test.cs</DependentUpon>
@@ -3921,6 +3924,10 @@
     <Compile Include="ModelTests\Specified\Generic\PublicSet\ModelPublicSetNonGenericParentTest.designer.cs">
       <DependentUpon>ModelPublicSetNonGenericParentTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.cs" />
+    <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.designer.cs">
+      <DependentUpon>ModelPrivateSetOptionalConstructorParametersTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\ProjectInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="CodeGeneratorTest\Enums\DeclaredKeyMethod.cs" />
@@ -3933,6 +3940,7 @@
     <Compile Include="CodeGeneratorTest\SerializationConfiguration\SerializationConfigurationTypes.cs" />
     <Compile Include="CodeGeneratorTest\CodeGeneratorTestExtensions.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomClass.cs" />
+    <Compile Include="Models\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParameters.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomFlagsEnum.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomStruct.cs" />
@@ -4298,6 +4306,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

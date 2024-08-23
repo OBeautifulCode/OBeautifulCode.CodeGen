@@ -53,6 +53,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             foreach (var parameter in parameters.Where(_ => !_.ParameterType.IsValueType))
             {
+                // If the parameter is optional and it's default value is null
+                // then we don't generate a constructor argument validation scenario.
+                // If the default value is not null then we assume the rules below apply
+                // (e.g. if a string is set to a constant value then we validate that it cannot be assigned to null).
+                if (parameter.IsOptional && (parameter.RawDefaultValue == null))
+                {
+                    continue;
+                }
+
                 var referenceObjectUsed = false;
 
                 var parametersCode = parameters.Select(_ =>
@@ -77,11 +86,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                 var objectInstantiationCode = modelType.GenerateModelInstantiation(parametersCode, parameterPaddingLength: 45);
 
-                var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
-                                .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
-                                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
-                                .Replace(Tokens.ParameterNameToken, parameter.Name)
-                                .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+                var scenario = typeof(ConstructingGeneration)
+                    .GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioNullObject)
+                    .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
+                    .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                    .Replace(Tokens.ParameterNameToken, parameter.Name)
+                    .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
                 argumentValidationScenarios.Add(scenario);
 
