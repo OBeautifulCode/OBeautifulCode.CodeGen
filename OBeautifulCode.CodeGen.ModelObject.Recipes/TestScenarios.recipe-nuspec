@@ -6,8 +6,8 @@
     <tags>code gen test scenario</tags>
     <iconUrl>https://raw.githubusercontent.com/OBeautifulCode/OBeautifulCode.CodeGen/master/OBeautifulCode.CodeGen.ModelObject.Recipes/nuget-icon.png</iconUrl>
     <dependencies>
-      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.33" />
-      <dependency id="OBeautifulCode.CodeAnalysis.Recipes.SuppressBecause" version="1.0.17" />
+      <dependency id="OBeautifulCode.Assertion.Recipes.Must" version="1.0.36" />
+      <dependency id="OBeautifulCode.CodeAnalysis.Recipes.SuppressBecause" version="1.0.19" />
       <dependency id="OBeautifulCode.Reflection.Recipes.ReflectionHelper" version="1.0.111" />
     </dependencies>
   </metadata>
