@@ -72,7 +72,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = this.Item1.IsEqualTo(other.Item1)
                       && this.Item2.IsEqualTo(other.Item2, StringComparer.Ordinal)
                       && this.Item3.IsEqualTo(other.Item3, StringComparer.Ordinal)
-                      && this.Item4.IsEqualTo(other.Item4);
+                      && this.Item4.IsEqualTo(other.Item4)
+                      && this.Item5.IsEqualTo(other.Item5)
+                      && this.Item6.IsEqualTo(other.Item6);
 
             return result;
         }
@@ -86,6 +88,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Item2)
             .Hash(this.Item3)
             .Hash(this.Item4)
+            .Hash(this.Item5)
+            .Hash(this.Item6)
             .Value;
 
         /// <inheritdoc />
@@ -98,7 +102,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Item1.DeepClone(),
                                  this.Item2?.DeepClone(),
                                  this.Item3?.DeepClone(),
-                                 this.Item4?.DeepClone());
+                                 this.Item4?.DeepClone(),
+                                 this.Item5?.DeepClone(),
+                                 this.Item6?.DeepClone());
 
             return result;
         }
@@ -131,7 +137,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  item1,
                                  this.Item2?.DeepClone(),
                                  this.Item3?.DeepClone(),
-                                 this.Item4?.DeepClone());
+                                 this.Item4?.DeepClone(),
+                                 this.Item5?.DeepClone(),
+                                 this.Item6?.DeepClone());
 
             return result;
         }
@@ -164,7 +172,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Item1.DeepClone(),
                                  item2,
                                  this.Item3?.DeepClone(),
-                                 this.Item4?.DeepClone());
+                                 this.Item4?.DeepClone(),
+                                 this.Item5?.DeepClone(),
+                                 this.Item6?.DeepClone());
 
             return result;
         }
@@ -197,7 +207,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Item1.DeepClone(),
                                  this.Item2?.DeepClone(),
                                  item3,
-                                 this.Item4?.DeepClone());
+                                 this.Item4?.DeepClone(),
+                                 this.Item5?.DeepClone(),
+                                 this.Item6?.DeepClone());
 
             return result;
         }
@@ -230,7 +242,79 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.Item1.DeepClone(),
                                  this.Item2?.DeepClone(),
                                  this.Item3?.DeepClone(),
-                                 item4);
+                                 item4,
+                                 this.Item5?.DeepClone(),
+                                 this.Item6?.DeepClone());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Item5" />.
+        /// </summary>
+        /// <param name="item5">The new <see cref="Item5" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPrivateSetOptionalConstructorParameters" /> using the specified <paramref name="item5" /> for <see cref="Item5" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelPrivateSetOptionalConstructorParameters DeepCloneWithItem5(IReadOnlyCollection<CustomClass> item5)
+        {
+            var result = new ModelPrivateSetOptionalConstructorParameters(
+                                 this.Item1.DeepClone(),
+                                 this.Item2?.DeepClone(),
+                                 this.Item3?.DeepClone(),
+                                 this.Item4?.DeepClone(),
+                                 item5,
+                                 this.Item6?.DeepClone());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Item6" />.
+        /// </summary>
+        /// <param name="item6">The new <see cref="Item6" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelPrivateSetOptionalConstructorParameters" /> using the specified <paramref name="item6" /> for <see cref="Item6" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelPrivateSetOptionalConstructorParameters DeepCloneWithItem6(IReadOnlyDictionary<string, CustomClass> item6)
+        {
+            var result = new ModelPrivateSetOptionalConstructorParameters(
+                                 this.Item1.DeepClone(),
+                                 this.Item2?.DeepClone(),
+                                 this.Item3?.DeepClone(),
+                                 this.Item4?.DeepClone(),
+                                 this.Item5?.DeepClone(),
+                                 item6);
 
             return result;
         }
@@ -239,7 +323,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetOptionalConstructorParameters: Item1 = {this.Item1.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item2 = {this.Item2?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item3 = {this.Item3?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item4 = {this.Item4?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetOptionalConstructorParameters: Item1 = {this.Item1.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item2 = {this.Item2?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item3 = {this.Item3?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item4 = {this.Item4?.ToString() ?? "<null>"}, Item5 = {this.Item5?.ToString() ?? "<null>"}, Item6 = {this.Item6?.ToString() ?? "<null>"}.");
 
             return result;
         }

@@ -8187,7 +8187,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  A.Dummy<int>(),
                                  A.Dummy<string>(),
                                  A.Dummy<string>(),
-                                 A.Dummy<CustomDerivedClass>()));
+                                 A.Dummy<CustomDerivedClass>(),
+                                 A.Dummy<IReadOnlyCollection<CustomClass>>(),
+                                 A.Dummy<IReadOnlyDictionary<string, CustomClass>>()));
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetMultipleConstructors(

@@ -47,7 +47,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelPrivateSetOptionalConstructorParameters>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetOptionalConstructorParameters: Item1 = {systemUnderTest.Item1.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item2 = {systemUnderTest.Item2?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item3 = {systemUnderTest.Item3?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item4 = {systemUnderTest.Item4?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelPrivateSetOptionalConstructorParameters: Item1 = {systemUnderTest.Item1.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item2 = {systemUnderTest.Item2?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item3 = {systemUnderTest.Item3?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Item4 = {systemUnderTest.Item4?.ToString() ?? "<null>"}, Item5 = {systemUnderTest.Item5?.ToString() ?? "<null>"}, Item6 = {systemUnderTest.Item6?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -67,7 +67,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Item1,
                                              referenceObject.Item2,
                                              null,
-                                             referenceObject.Item4);
+                                             referenceObject.Item4,
+                                             referenceObject.Item5,
+                                             referenceObject.Item6);
 
                         return result;
                     },
@@ -86,12 +88,62 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Item1,
                                              referenceObject.Item2,
                                              Invariant($"  {Environment.NewLine}  "),
-                                             referenceObject.Item4);
+                                             referenceObject.Item4,
+                                             referenceObject.Item5,
+                                             referenceObject.Item6);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "item3", "white space", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetOptionalConstructorParameters>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'item5' contains a null element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
+
+                        var result = new ModelPrivateSetOptionalConstructorParameters(
+                                             referenceObject.Item1,
+                                             referenceObject.Item2,
+                                             referenceObject.Item3,
+                                             referenceObject.Item4,
+                                             new CustomClass[0].Concat(referenceObject.Item5).Concat(new CustomClass[] { null }).Concat(referenceObject.Item5).ToList(),
+                                             referenceObject.Item6);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "item5", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetOptionalConstructorParameters>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'item6' contains a key-value pair with a null value scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
+
+                        var dictionaryWithNullValue = referenceObject.Item6.ToDictionary(_ => _.Key, _ => _.Value);
+
+                        var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
+
+                        dictionaryWithNullValue[randomKey] = null;
+
+                        var result = new ModelPrivateSetOptionalConstructorParameters(
+                                             referenceObject.Item1,
+                                             referenceObject.Item2,
+                                             referenceObject.Item3,
+                                             referenceObject.Item4,
+                                             referenceObject.Item5,
+                                             dictionaryWithNullValue);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "item6", "contains at least one key-value pair with a null value", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetOptionalConstructorParameters> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetOptionalConstructorParameters>()
@@ -109,7 +161,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Item1,
                                                       referenceObject.Item2,
                                                       referenceObject.Item3,
-                                                      referenceObject.Item4),
+                                                      referenceObject.Item4,
+                                                      referenceObject.Item5,
+                                                      referenceObject.Item6),
                             ExpectedPropertyValue = referenceObject.Item1,
                         };
 
@@ -131,7 +185,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Item1,
                                                       referenceObject.Item2,
                                                       referenceObject.Item3,
-                                                      referenceObject.Item4),
+                                                      referenceObject.Item4,
+                                                      referenceObject.Item5,
+                                                      referenceObject.Item6),
                             ExpectedPropertyValue = referenceObject.Item2,
                         };
 
@@ -153,7 +209,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Item1,
                                                       referenceObject.Item2,
                                                       referenceObject.Item3,
-                                                      referenceObject.Item4),
+                                                      referenceObject.Item4,
+                                                      referenceObject.Item5,
+                                                      referenceObject.Item6),
                             ExpectedPropertyValue = referenceObject.Item3,
                         };
 
@@ -175,13 +233,63 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Item1,
                                                       referenceObject.Item2,
                                                       referenceObject.Item3,
-                                                      referenceObject.Item4),
+                                                      referenceObject.Item4,
+                                                      referenceObject.Item5,
+                                                      referenceObject.Item6),
                             ExpectedPropertyValue = referenceObject.Item4,
                         };
 
                         return result;
                     },
                     PropertyName = "Item4",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelPrivateSetOptionalConstructorParameters>
+                {
+                    Name = "Item5 should return same 'item5' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelPrivateSetOptionalConstructorParameters>
+                        {
+                            SystemUnderTest = new ModelPrivateSetOptionalConstructorParameters(
+                                                      referenceObject.Item1,
+                                                      referenceObject.Item2,
+                                                      referenceObject.Item3,
+                                                      referenceObject.Item4,
+                                                      referenceObject.Item5,
+                                                      referenceObject.Item6),
+                            ExpectedPropertyValue = referenceObject.Item5,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Item5",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelPrivateSetOptionalConstructorParameters>
+                {
+                    Name = "Item6 should return same 'item6' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelPrivateSetOptionalConstructorParameters>
+                        {
+                            SystemUnderTest = new ModelPrivateSetOptionalConstructorParameters(
+                                                      referenceObject.Item1,
+                                                      referenceObject.Item2,
+                                                      referenceObject.Item3,
+                                                      referenceObject.Item4,
+                                                      referenceObject.Item5,
+                                                      referenceObject.Item6),
+                            ExpectedPropertyValue = referenceObject.Item6,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Item6",
                 });
 
         private static readonly DeepCloneWithTestScenarios<ModelPrivateSetOptionalConstructorParameters> DeepCloneWithTestScenarios = new DeepCloneWithTestScenarios<ModelPrivateSetOptionalConstructorParameters>()
@@ -264,6 +372,46 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                         return result;
                     },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelPrivateSetOptionalConstructorParameters>
+                {
+                    Name = "DeepCloneWithItem5 should deep clone object and replace Item5 with the provided item5",
+                    WithPropertyName = "Item5",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
+
+                        var referenceObject = A.Dummy<ModelPrivateSetOptionalConstructorParameters>().ThatIs(_ => !systemUnderTest.Item5.IsEqualTo(_.Item5));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelPrivateSetOptionalConstructorParameters>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Item5,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelPrivateSetOptionalConstructorParameters>
+                {
+                    Name = "DeepCloneWithItem6 should deep clone object and replace Item6 with the provided item6",
+                    WithPropertyName = "Item6",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
+
+                        var referenceObject = A.Dummy<ModelPrivateSetOptionalConstructorParameters>().ThatIs(_ => !systemUnderTest.Item6.IsEqualTo(_.Item6));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelPrivateSetOptionalConstructorParameters>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Item6,
+                        };
+
+                        return result;
+                    },
                 });
 
         private static readonly ModelPrivateSetOptionalConstructorParameters ReferenceObjectForEquatableTestScenarios = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
@@ -280,7 +428,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Item1,
                                 ReferenceObjectForEquatableTestScenarios.Item2,
                                 ReferenceObjectForEquatableTestScenarios.Item3,
-                                ReferenceObjectForEquatableTestScenarios.Item4),
+                                ReferenceObjectForEquatableTestScenarios.Item4,
+                                ReferenceObjectForEquatableTestScenarios.Item5,
+                                ReferenceObjectForEquatableTestScenarios.Item6),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelPrivateSetOptionalConstructorParameters[]
                     {
@@ -288,22 +438,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item1.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item1)).Item1,
                                 ReferenceObjectForEquatableTestScenarios.Item2,
                                 ReferenceObjectForEquatableTestScenarios.Item3,
-                                ReferenceObjectForEquatableTestScenarios.Item4),
+                                ReferenceObjectForEquatableTestScenarios.Item4,
+                                ReferenceObjectForEquatableTestScenarios.Item5,
+                                ReferenceObjectForEquatableTestScenarios.Item6),
                         new ModelPrivateSetOptionalConstructorParameters(
                                 ReferenceObjectForEquatableTestScenarios.Item1,
                                 A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item2.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item2)).Item2,
                                 ReferenceObjectForEquatableTestScenarios.Item3,
-                                ReferenceObjectForEquatableTestScenarios.Item4),
+                                ReferenceObjectForEquatableTestScenarios.Item4,
+                                ReferenceObjectForEquatableTestScenarios.Item5,
+                                ReferenceObjectForEquatableTestScenarios.Item6),
                         new ModelPrivateSetOptionalConstructorParameters(
                                 ReferenceObjectForEquatableTestScenarios.Item1,
                                 ReferenceObjectForEquatableTestScenarios.Item2,
                                 A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item3.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item3)).Item3,
-                                ReferenceObjectForEquatableTestScenarios.Item4),
+                                ReferenceObjectForEquatableTestScenarios.Item4,
+                                ReferenceObjectForEquatableTestScenarios.Item5,
+                                ReferenceObjectForEquatableTestScenarios.Item6),
                         new ModelPrivateSetOptionalConstructorParameters(
                                 ReferenceObjectForEquatableTestScenarios.Item1,
                                 ReferenceObjectForEquatableTestScenarios.Item2,
                                 ReferenceObjectForEquatableTestScenarios.Item3,
-                                A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item4.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item4)).Item4),
+                                A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item4.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item4)).Item4,
+                                ReferenceObjectForEquatableTestScenarios.Item5,
+                                ReferenceObjectForEquatableTestScenarios.Item6),
+                        new ModelPrivateSetOptionalConstructorParameters(
+                                ReferenceObjectForEquatableTestScenarios.Item1,
+                                ReferenceObjectForEquatableTestScenarios.Item2,
+                                ReferenceObjectForEquatableTestScenarios.Item3,
+                                ReferenceObjectForEquatableTestScenarios.Item4,
+                                A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item5.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item5)).Item5,
+                                ReferenceObjectForEquatableTestScenarios.Item6),
+                        new ModelPrivateSetOptionalConstructorParameters(
+                                ReferenceObjectForEquatableTestScenarios.Item1,
+                                ReferenceObjectForEquatableTestScenarios.Item2,
+                                ReferenceObjectForEquatableTestScenarios.Item3,
+                                ReferenceObjectForEquatableTestScenarios.Item4,
+                                ReferenceObjectForEquatableTestScenarios.Item5,
+                                A.Dummy<ModelPrivateSetOptionalConstructorParameters>().Whose(_ => !_.Item6.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Item6)).Item6),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
                     {
@@ -596,6 +768,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // a deep clone of a value type object is the same object.
                     actual.Item4.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Item4);
                 }
+
+                if (systemUnderTest.Item5 == null)
+                {
+                    actual.Item5.AsTest().Must().BeNull();
+                }
+                else if (!actual.Item5.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Item5.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Item5);
+                }
+
+                if (systemUnderTest.Item6 == null)
+                {
+                    actual.Item6.AsTest().Must().BeNull();
+                }
+                else if (!actual.Item6.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Item6.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Item6);
+                }
             }
 
             [Fact]
@@ -614,7 +810,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "Item1", "Item2", "Item3", "Item4" };
+                var propertyNames = new string[] { "Item1", "Item2", "Item3", "Item4", "Item5", "Item6" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 
