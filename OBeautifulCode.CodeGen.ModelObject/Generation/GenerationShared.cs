@@ -263,13 +263,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Generates code that constructs a dummy model.
         /// </summary>
         /// <param name="typeCompilableString">The type's compilable string representation.</param>
+        /// <param name="memberName">OPTIONAL name of the member.  DEFAULT is not applicable.</param>
         /// <returns>
         /// Generated code that constructs a dummy model.
         /// </returns>
         public static string GenerateDummyConstructionCodeForType(
-            this string typeCompilableString)
+            this string typeCompilableString,
+            string memberName = null)
         {
             new { typeCompilableString }.AsArg().Must().NotBeNullNorWhiteSpace();
+
+            // Here we intercept DateTime and DateTime? and use UtcDateTime when the member name contains "utc"
+            // There's no easy to way handle the case where the type is a IReadOnlyCollection<DateTime> or other collection or nullable variations.
+            // That's because a IReadOnlyCollection<UtcDateTime> is not assignable to a IReadOnlyCollection<DateTime>.
+            if ((typeCompilableString == typeof(DateTime).ToStringReadable()) || (typeCompilableString == typeof(DateTime?).ToStringReadable()))
+            {
+                if ((memberName != null) && memberName.ToUpperInvariant().Contains("UTC"))
+                {
+                    typeCompilableString = "UtcDateTime";
+                }
+            }
 
             var result = "A.Dummy<" + typeCompilableString + ">()";
 

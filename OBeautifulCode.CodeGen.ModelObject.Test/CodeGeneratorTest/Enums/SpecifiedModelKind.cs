@@ -27,5 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         OptionalConstructorParameters,
 
         ConstructorParameterEnumValueNamedUnknown,
+
+        UtcDateTime,
     }
 }

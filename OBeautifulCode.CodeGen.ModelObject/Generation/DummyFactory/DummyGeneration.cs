@@ -49,8 +49,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
             {
                 // Branch on having constructor here because constructor parameter type might be more derived than property type.
                 var propertyNameToCodeMap = modelType.Constructor.IsDefaultConstructor()
-                    ? modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringReadable().GenerateDummyConstructionCodeForType())).ToList()
-                    : modelType.Constructor.GetParameters().Select(_ => new MemberCode(_.Name, _.ParameterType.ToStringReadable().GenerateDummyConstructionCodeForType())).ToList();
+                    ? modelType.PropertiesOfConcern.Select(_ => new MemberCode(_.Name, _.PropertyType.ToStringReadable().GenerateDummyConstructionCodeForType(_.Name))).ToList()
+                    : modelType.Constructor.GetParameters().Select(_ => new MemberCode(_.Name, _.ParameterType.ToStringReadable().GenerateDummyConstructionCodeForType(_.Name))).ToList();
 
                 var newDummyToken = modelType.GenerateModelInstantiation(propertyNameToCodeMap, parameterPaddingLength: 33);
 

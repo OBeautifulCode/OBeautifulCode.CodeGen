@@ -94,6 +94,16 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ConstructorArgumentValidationScenarioEnumValueNamedUnknown,
 
         /// <summary>
+        /// A code snippet for a constructor argument validation scenario that tests a UTC date/time against a Local date/time.
+        /// </summary>
+        ConstructorArgumentValidationScenarioUtcDateTimeIsLocal,
+
+        /// <summary>
+        /// A code snippet for a constructor argument validation scenario that tests a UTC date/time against an Unspecified date/time.
+        /// </summary>
+        ConstructorArgumentValidationScenarioUtcDateTimeIsUnspecified,
+
+        /// <summary>
         /// A code snippet for a constructor property assignment test scenario.
         /// </summary>
         ConstructorParameterAssignmentScenario,

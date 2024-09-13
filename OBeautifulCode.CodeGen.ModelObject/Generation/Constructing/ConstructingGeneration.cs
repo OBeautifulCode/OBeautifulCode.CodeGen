@@ -14,6 +14,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
+    using OBeautifulCode.DateTime.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type.Recipes;
@@ -36,6 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <returns>
         /// Generated test fields.
         /// </returns>
+        [SuppressMessage("Microsoft.Performance", "CA1809:AvoidExcessiveLocals", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
         [SuppressMessage("Microsoft.Maintainability", "CA1505:AvoidUnmaintainableCode", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA_ALL_SeeOtherSuppressionMessages)]
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
@@ -136,6 +138,73 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
 
                     argumentValidationScenarios.Add(scenario);
+                }
+
+                if ((parameterType == typeof(DateTime)) || (parameterType == typeof(DateTime?)))
+                {
+                    // NOTES FOR FUTURE IMPROVEMENTS
+                    // -----------------------------
+                    // For DateTime, what scenarios do we want to check to guard against bad deserialization?
+                    // If DateTime, we could check that the value is not default(DateTime)
+                    // default(DateTime?) is null, so maybe we don't need to protect against that?
+                    // Although if the value is not null, it seems fishy if it's 0 ticks (default(DateTime)).
+                    // Maybe we should always just check for 0 ticks?
+                    if (parameter.Name.ToUpperInvariant().Contains("UTC"))
+                    {
+                        // If the parameter has "utc" in it's name we assume that a UTC DateTime is expected.
+                        // For collections, we don't yet have a good way to check whether an ...Each().BeUtcDateTime() is called
+                        // because we don't yet add argument validation based on the collection element type (same for dictionaries).
+                        // This is why for IReadOnlyCollection<string> we don't check whether elements are null or whitespace; we just check null.
+                        var referenceObjectUsed = false;
+
+                        IReadOnlyList<MemberCode> GetDateTimeParameterCode(bool isLocal)
+                        {
+                            var dateTimeParameterCode = parameters.Select(_ =>
+                            {
+                                var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                                var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
+
+                                string code;
+
+                                if (_.Name == parameter.Name)
+                                {
+                                    code = isLocal
+                                        ? Invariant($"{nameof(DateTime)}.{nameof(DateTime.Now)}")
+                                        : Invariant($"{nameof(DateTime)}.{nameof(DateTime.UtcNow)}.{nameof(DateTimeExtensions.ToUnspecified)}()");
+                                }
+                                else
+                                {
+                                    code = referenceProperty;
+                                    referenceObjectUsed = true;
+                                }
+
+                                return new MemberCode(_.Name, code);
+                            }).ToList();
+
+                            return dateTimeParameterCode;
+                        }
+
+                        var objectInstantiationCode = modelType.GenerateModelInstantiation(GetDateTimeParameterCode(true), parameterPaddingLength: 45);
+
+                        var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioUtcDateTimeIsLocal)
+                            .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
+                            .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                            .Replace(Tokens.ParameterNameToken, parameter.Name)
+                            .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                        argumentValidationScenarios.Add(scenario);
+
+                        objectInstantiationCode = modelType.GenerateModelInstantiation(GetDateTimeParameterCode(false), parameterPaddingLength: 45);
+
+                        scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioUtcDateTimeIsUnspecified)
+                            .Replace(Tokens.ReferenceObjectToken, referenceObjectUsed ? referenceObjectDummyCode : null)
+                            .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                            .Replace(Tokens.ParameterNameToken, parameter.Name)
+                            .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                        argumentValidationScenarios.Add(scenario);
+                    }
                 }
 
                 if (parameterType.IsClosedSystemCollectionType() || parameterType.IsArray)

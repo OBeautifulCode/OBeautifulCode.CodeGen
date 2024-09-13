@@ -136,6 +136,7 @@
     <Compile Include=".recipes\OBeautifulCode.Compression\CompressorFactory.cs" />
     <Compile Include=".recipes\OBeautifulCode.Compression\DotNetZipCompressor.cs" />
     <Compile Include=".recipes\OBeautifulCode.Compression\NullCompressor.cs" />
+    <Compile Include=".recipes\OBeautifulCode.DateTime\DateTimeExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Enum\EnumExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\ByteArrayEqualityComparer.cs" />
     <Compile Include=".recipes\OBeautifulCode.Equality\ColorEqualityComparer.cs" />
@@ -2066,8 +2067,16 @@
     <Compile Include="Models\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknown.designer.cs">
       <DependentUpon>ModelPrivateSetConstructorParameterEnumValueNamedUnknown.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specified\UtcDateTime\PrivateSet\ModelPrivateSetUtcDateTime.designer.cs">
+      <DependentUpon>ModelPrivateSetUtcDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\UtcDateTime\PublicSet\ModelPublicSetUtcDateTime.cs" />
+    <Compile Include="Models\Specified\UtcDateTime\PrivateSet\ModelPrivateSetUtcDateTime.cs" />
     <Compile Include="Models\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParameters.designer.cs">
       <DependentUpon>ModelPrivateSetOptionalConstructorParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\UtcDateTime\PublicSet\ModelPublicSetUtcDateTime.designer.cs">
+      <DependentUpon>ModelPublicSetUtcDateTime.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.cs" />
     <Compile Include="ModelTests\Scripted\All\PrivateSet\ArrayOfNullable\ModelAllPrivateSetArrayOfNullableChild1Test.designer.cs">
@@ -3936,6 +3945,14 @@
     <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.cs" />
     <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.designer.cs">
       <DependentUpon>ModelPrivateSetOptionalConstructorParametersTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\UtcDateTime\PrivateSet\ModelPrivateSetUtcDateTimeTest.designer.cs">
+      <DependentUpon>ModelPrivateSetUtcDateTimeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\UtcDateTime\PublicSet\ModelPublicSetUtcDateTimeTest.cs" />
+    <Compile Include="ModelTests\Specified\UtcDateTime\PrivateSet\ModelPrivateSetUtcDateTimeTest.cs" />
+    <Compile Include="ModelTests\Specified\UtcDateTime\PublicSet\ModelPublicSetUtcDateTimeTest.designer.cs">
+      <DependentUpon>ModelPublicSetUtcDateTimeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\ProjectInfo.cs" />
     <Compile Include="Settings.cs" />

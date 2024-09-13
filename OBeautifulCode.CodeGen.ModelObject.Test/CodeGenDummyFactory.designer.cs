@@ -8183,6 +8183,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  A.Dummy<CustomEnumWithUnknown?>()));
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPrivateSetUtcDateTime(
+                                 A.Dummy<DateTime>(),
+                                 A.Dummy<DateTime?>(),
+                                 A.Dummy<UtcDateTime>(),
+                                 A.Dummy<UtcDateTime>(),
+                                 A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 A.Dummy<IReadOnlyCollection<DateTime?>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetUtcDateTime
+                             {
+                                 Item1    = A.Dummy<DateTime>(),
+                                 Item2    = A.Dummy<DateTime?>(),
+                                 Item3Utc = A.Dummy<UtcDateTime>(),
+                                 Item4Utc = A.Dummy<UtcDateTime>(),
+                                 Item5Utc = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 Item6Utc = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 Item7    = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 Item8    = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetOptionalConstructorParameters(
                                  A.Dummy<int>(),
                                  A.Dummy<string>(),

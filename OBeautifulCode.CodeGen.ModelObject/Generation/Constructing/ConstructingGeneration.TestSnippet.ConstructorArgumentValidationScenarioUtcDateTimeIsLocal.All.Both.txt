@@ -1,0 +1,13 @@
+﻿            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-in-code-here]>
+                {
+                    Name = "constructor should throw ArgumentException when parameter '[parameter-name-here]' is not a UTC DateTime (it's Local)",
+                    ConstructionFunc = () =>
+                    {
+                        [reference-object-here]var result = [construct-object-here];
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "Kind that is not DateTimeKind.Utc", "DateTimeKind.Local" },
+                })

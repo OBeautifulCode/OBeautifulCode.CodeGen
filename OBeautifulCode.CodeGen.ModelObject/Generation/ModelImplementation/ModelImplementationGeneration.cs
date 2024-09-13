@@ -363,6 +363,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 "OBeautifulCode.Assertion.Recipes",
                 "OBeautifulCode.AutoFakeItEasy",
                 "OBeautifulCode.CodeGen.ModelObject.Recipes",
+                "OBeautifulCode.DateTime.Recipes",
                 "OBeautifulCode.Equality.Recipes",
                 "OBeautifulCode.Math.Recipes",
                 "OBeautifulCode.Reflection.Recipes",
