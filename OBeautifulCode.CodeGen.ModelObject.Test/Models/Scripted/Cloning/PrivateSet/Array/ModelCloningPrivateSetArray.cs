@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { arrayOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { arrayOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
-            new { arrayOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { arrayOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { arrayOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { arrayOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { arrayOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();

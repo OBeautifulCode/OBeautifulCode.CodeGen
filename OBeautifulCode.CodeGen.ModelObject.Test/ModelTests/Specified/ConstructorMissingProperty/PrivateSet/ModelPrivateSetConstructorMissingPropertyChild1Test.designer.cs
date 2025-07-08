@@ -110,6 +110,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
                 {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetConstructorMissingPropertyChild1>();
+
+                        var result = new ModelPrivateSetConstructorMissingPropertyChild1(
+                                             new string[0].Concat(referenceObject.ParentReadOnlyCollectionOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ParentReadOnlyCollectionOfStringProperty).ToList(),
+                                             referenceObject.ChildReadOnlyCollectionOfStringProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionOfStringProperty", "contains an element that is white space", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
+                {
                     Name = "constructor should throw ArgumentNullException when parameter 'childReadOnlyCollectionOfStringProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
@@ -157,6 +174,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMissingPropertyChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'childReadOnlyCollectionOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetConstructorMissingPropertyChild1>();
+
+                        var result = new ModelPrivateSetConstructorMissingPropertyChild1(
+                                             referenceObject.ParentReadOnlyCollectionOfStringProperty,
+                                             new string[0].Concat(referenceObject.ChildReadOnlyCollectionOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ChildReadOnlyCollectionOfStringProperty).ToList());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "contains an element that is white space", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetConstructorMissingPropertyChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetConstructorMissingPropertyChild1>()

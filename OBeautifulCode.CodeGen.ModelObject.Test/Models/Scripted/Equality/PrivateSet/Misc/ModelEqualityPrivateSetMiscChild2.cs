@@ -56,8 +56,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>> child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
             : base(parentCollectionInterfaceOfStringProperty, parentListInterfaceOfStringProperty, parentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty, parentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty, parentListInterfaceOfCollectionInterfaceOfStringProperty, parentReadOnlyListInterfaceOfListInterfaceOfStringProperty, parentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty, parentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty, parentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty, parentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty)
         {
-            new { child2CollectionInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
-            new { child2ListInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { child2CollectionInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
+            new { child2ListInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { child2ListInterfaceOfCollectionInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();

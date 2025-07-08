@@ -23,7 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty)
         {
             new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { parentReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ParentIntProperty = parentIntProperty;
             this.ParentStringProperty = parentStringProperty;

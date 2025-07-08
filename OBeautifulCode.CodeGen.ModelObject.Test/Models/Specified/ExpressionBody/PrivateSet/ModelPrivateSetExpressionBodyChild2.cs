@@ -27,7 +27,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             : base(parentIntProperty, parentStringProperty, parentReadOnlyCollectionOfStringProperty)
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildIntProperty = childIntProperty;
             this.ChildStringProperty = childStringProperty;

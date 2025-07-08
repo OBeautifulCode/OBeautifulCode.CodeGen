@@ -46,9 +46,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { childCustomClassProperty }.AsArg().Must().NotBeNull();
-            new { childArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { childCustomGenericClassProperty }.AsArg().Must().NotBeNull();
-            new { childReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { childReadOnlyDictionaryProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
 
             this.ChildStringProperty = childStringProperty;

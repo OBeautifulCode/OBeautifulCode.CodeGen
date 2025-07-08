@@ -79,6 +79,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ConstructorArgumentValidationScenarioEnumerableWithNullElement,
 
         /// <summary>
+        /// A code snippet for a constructor argument validation scenario that tests an enumerable with a white space element.
+        /// </summary>
+        ConstructorArgumentValidationScenarioEnumerableWithWhiteSpaceElement,
+
+        /// <summary>
         /// A code snippet for a constructor argument validation scenario that tests an empty dictionary.
         /// </summary>
         ConstructorArgumentValidationScenarioEmptyDictionary,

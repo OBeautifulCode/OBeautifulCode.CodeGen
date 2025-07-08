@@ -1,0 +1,15 @@
+﻿            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<[model-type-name-in-code-here]>
+                {
+                    Name = "constructor should throw ArgumentException when parameter '[parameter-name-here]' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<[model-type-name-in-code-here]>();
+
+                        var result = [construct-object-here];
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "[parameter-name-here]", "contains an element that is white space", },
+                })

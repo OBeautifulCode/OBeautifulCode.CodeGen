@@ -1211,6 +1211,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGenericParentNonGenericChild>
                 {
+                    Name = "constructor should throw ArgumentException when parameter 'childArrayProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetGenericParentNonGenericChild>();
+
+                        var result = new ModelPrivateSetGenericParentNonGenericChild(
+                                             referenceObject.ParentStringProperty,
+                                             referenceObject.ParentIntProperty,
+                                             referenceObject.ParentEnumProperty,
+                                             referenceObject.ParentCustomClassProperty,
+                                             referenceObject.ParentGenericArgumentProperty,
+                                             referenceObject.ParentGenericArrayProperty,
+                                             referenceObject.ParentGenericNullableProperty,
+                                             referenceObject.ParentGenericCustomGenericClassProperty,
+                                             referenceObject.ParentGenericReadOnlyCollectionProperty,
+                                             referenceObject.ParentGenericReadOnlyListProperty,
+                                             referenceObject.ParentGenericReadOnlyDictionaryProperty1,
+                                             referenceObject.ParentGenericReadOnlyDictionaryProperty2,
+                                             referenceObject.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1,
+                                             referenceObject.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2,
+                                             referenceObject.ChildStringProperty,
+                                             referenceObject.ChildIntProperty,
+                                             referenceObject.ChildEnumProperty,
+                                             referenceObject.ChildCustomClassProperty,
+                                             new string[0].Concat(referenceObject.ChildArrayProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ChildArrayProperty).ToArray(),
+                                             referenceObject.ChildNullableProperty,
+                                             referenceObject.ChildCustomGenericClassProperty,
+                                             referenceObject.ChildReadOnlyCollectionProperty,
+                                             referenceObject.ChildReadOnlyDictionaryProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "childArrayProperty", "contains an element that is white space", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetGenericParentNonGenericChild>
+                {
                     Name = "constructor should throw ArgumentNullException when parameter 'childCustomGenericClassProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
@@ -1359,6 +1397,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionProperty", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetGenericParentNonGenericChild>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'childReadOnlyCollectionProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetGenericParentNonGenericChild>();
+
+                        var result = new ModelPrivateSetGenericParentNonGenericChild(
+                                             referenceObject.ParentStringProperty,
+                                             referenceObject.ParentIntProperty,
+                                             referenceObject.ParentEnumProperty,
+                                             referenceObject.ParentCustomClassProperty,
+                                             referenceObject.ParentGenericArgumentProperty,
+                                             referenceObject.ParentGenericArrayProperty,
+                                             referenceObject.ParentGenericNullableProperty,
+                                             referenceObject.ParentGenericCustomGenericClassProperty,
+                                             referenceObject.ParentGenericReadOnlyCollectionProperty,
+                                             referenceObject.ParentGenericReadOnlyListProperty,
+                                             referenceObject.ParentGenericReadOnlyDictionaryProperty1,
+                                             referenceObject.ParentGenericReadOnlyDictionaryProperty2,
+                                             referenceObject.ParentGenericPartiallyClosedReadOnlyDictionaryProperty1,
+                                             referenceObject.ParentGenericPartiallyClosedReadOnlyDictionaryProperty2,
+                                             referenceObject.ChildStringProperty,
+                                             referenceObject.ChildIntProperty,
+                                             referenceObject.ChildEnumProperty,
+                                             referenceObject.ChildCustomClassProperty,
+                                             referenceObject.ChildArrayProperty,
+                                             referenceObject.ChildNullableProperty,
+                                             referenceObject.ChildCustomGenericClassProperty,
+                                             new string[0].Concat(referenceObject.ChildReadOnlyCollectionProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ChildReadOnlyCollectionProperty).ToList(),
+                                             referenceObject.ChildReadOnlyDictionaryProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionProperty", "contains an element that is white space", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetGenericParentNonGenericChild>

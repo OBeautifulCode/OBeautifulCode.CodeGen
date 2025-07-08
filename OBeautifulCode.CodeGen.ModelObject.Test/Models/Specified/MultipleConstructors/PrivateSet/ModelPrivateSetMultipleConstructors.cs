@@ -37,7 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<string> readOnlyCollectionOfStringProperty)
         {
             new { stringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { readOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { readOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.IntProperty = intProperty;
             this.StringProperty = stringProperty;

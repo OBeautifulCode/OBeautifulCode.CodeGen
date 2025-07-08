@@ -258,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEnumerableWithWhiteSpaceElement.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioUtcDateTimeIsLocal.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioUtcDateTimeIsUnspecified.All.Both.txt" />
     <EmbeddedResource Include="Generation\Constructing\ConstructingGeneration.TestSnippet.ConstructorArgumentValidationScenarioEnumValueNamedUnknown.All.Both.txt" />

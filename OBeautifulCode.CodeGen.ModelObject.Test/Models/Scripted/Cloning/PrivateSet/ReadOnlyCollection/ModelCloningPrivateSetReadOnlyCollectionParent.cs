@@ -46,7 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { parentReadOnlyCollectionInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
-            new { parentReadOnlyCollectionInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { parentReadOnlyCollectionInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();

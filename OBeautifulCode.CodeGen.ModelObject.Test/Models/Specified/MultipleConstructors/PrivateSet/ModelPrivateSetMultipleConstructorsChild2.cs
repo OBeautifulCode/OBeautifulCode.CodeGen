@@ -23,7 +23,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             : base(5)
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildIntProperty = childIntProperty;
             this.ChildStringProperty = childStringProperty;
@@ -39,7 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             : base(parentIntProperty)
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildIntProperty = childIntProperty;
             this.ChildStringProperty = childStringProperty;
@@ -56,7 +56,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             : base(parentIntProperty, parentStringProperty)
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildIntProperty = childIntProperty;
             this.ChildStringProperty = childStringProperty;
@@ -95,7 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             : base(parentIntProperty, parentStringProperty, parentReadOnlyCollectionOfStringProperty)
         {
             new { childStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildIntProperty = childIntProperty;
             this.ChildStringProperty = childStringProperty;

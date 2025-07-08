@@ -304,6 +304,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
                 {
+                    Name = "constructor should throw ArgumentException when parameter 'parentArrayOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild1>();
+
+                        var result = new ModelAllPrivateSetArrayChild1(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             new string[0].Concat(referenceObject.ParentArrayOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ParentArrayOfStringProperty).ToArray(),
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child1ArrayOfBoolProperty,
+                                             referenceObject.Child1ArrayOfIntProperty,
+                                             referenceObject.Child1ArrayOfStringProperty,
+                                             referenceObject.Child1ArrayOfGuidProperty,
+                                             referenceObject.Child1ArrayOfDateTimeProperty,
+                                             referenceObject.Child1ArrayOfCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child1ArrayOfCustomClassProperty,
+                                             referenceObject.Child1ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child1ArrayOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfStringProperty", "contains an element that is white space", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
+                {
                     Name = "constructor should throw ArgumentNullException when parameter 'parentArrayOfGuidProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
@@ -1140,6 +1175,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1ArrayOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayChild1>();
+
+                        var result = new ModelAllPrivateSetArrayChild1(
+                                             referenceObject.ParentArrayOfBoolProperty,
+                                             referenceObject.ParentArrayOfIntProperty,
+                                             referenceObject.ParentArrayOfStringProperty,
+                                             referenceObject.ParentArrayOfGuidProperty,
+                                             referenceObject.ParentArrayOfDateTimeProperty,
+                                             referenceObject.ParentArrayOfCustomEnumProperty,
+                                             referenceObject.ParentArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentArrayOfCustomClassProperty,
+                                             referenceObject.ParentArrayOfCustomBaseClassProperty,
+                                             referenceObject.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child1ArrayOfBoolProperty,
+                                             referenceObject.Child1ArrayOfIntProperty,
+                                             new string[0].Concat(referenceObject.Child1ArrayOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.Child1ArrayOfStringProperty).ToArray(),
+                                             referenceObject.Child1ArrayOfGuidProperty,
+                                             referenceObject.Child1ArrayOfDateTimeProperty,
+                                             referenceObject.Child1ArrayOfCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.Child1ArrayOfCustomClassProperty,
+                                             referenceObject.Child1ArrayOfCustomBaseClassProperty,
+                                             referenceObject.Child1ArrayOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfStringProperty", "contains an element that is white space", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayChild1>

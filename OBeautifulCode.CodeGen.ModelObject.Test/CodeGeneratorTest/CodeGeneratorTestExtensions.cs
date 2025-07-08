@@ -156,6 +156,36 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
+        public static string GetMustEachValidationMethodName(
+            this Type type)
+        {
+            string result = null;
+
+            if (type.IsClosedSystemDictionaryType())
+            {
+                // no-op for now
+            }
+            else if (type.IsClosedSystemCollectionType())
+            {
+                var elementType = type.GetClosedSystemCollectionElementType();
+
+                result = elementType == typeof(string)
+                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)
+                    : null;
+            }
+            else if (type.IsArray)
+            {
+                var elementType = type.GetElementType();
+
+                // ReSharper disable once PossibleNullReferenceException
+                result = elementType == typeof(string)
+                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)
+                    : null;
+            }
+
+            return result;
+        }
+
         public static string BuildSpecifiedModelName(
             this SetterKind setterKind,
             string modelNameSuffix)

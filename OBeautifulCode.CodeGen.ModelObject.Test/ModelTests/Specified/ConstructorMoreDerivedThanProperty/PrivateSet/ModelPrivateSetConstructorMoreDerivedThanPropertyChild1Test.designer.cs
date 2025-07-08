@@ -127,6 +127,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'childReadOnlyCollectionOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>();
+
+                        var result = new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
+                                             referenceObject.ParentEnumProperty,
+                                             (CustomMultilevelChildClass)referenceObject.CustomMultilevelBaseClass,
+                                             new string[0].Concat(referenceObject.ChildReadOnlyCollectionOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ChildReadOnlyCollectionOfStringProperty).ToList());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "childReadOnlyCollectionOfStringProperty", "contains an element that is white space", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>()

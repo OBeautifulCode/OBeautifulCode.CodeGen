@@ -22,7 +22,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
             : base(parentEnumProperty, customMultilevelBaseClass)
         {
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildReadOnlyCollectionOfStringProperty = childReadOnlyCollectionOfStringProperty;
         }

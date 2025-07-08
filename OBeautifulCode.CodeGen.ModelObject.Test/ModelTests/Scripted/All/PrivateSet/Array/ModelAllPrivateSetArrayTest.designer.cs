@@ -234,6 +234,31 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArray>
                 {
+                    Name = "constructor should throw ArgumentException when parameter 'arrayOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArray>();
+
+                        var result = new ModelAllPrivateSetArray(
+                                             referenceObject.ArrayOfBoolProperty,
+                                             referenceObject.ArrayOfIntProperty,
+                                             new string[0].Concat(referenceObject.ArrayOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ArrayOfStringProperty).ToArray(),
+                                             referenceObject.ArrayOfGuidProperty,
+                                             referenceObject.ArrayOfDateTimeProperty,
+                                             referenceObject.ArrayOfCustomEnumProperty,
+                                             referenceObject.ArrayOfCustomFlagsEnumProperty,
+                                             referenceObject.ArrayOfCustomClassProperty,
+                                             referenceObject.ArrayOfCustomBaseClassProperty,
+                                             referenceObject.ArrayOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "arrayOfStringProperty", "contains an element that is white space", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArray>
+                {
                     Name = "constructor should throw ArgumentNullException when parameter 'arrayOfGuidProperty' is null scenario",
                     ConstructionFunc = () =>
                     {

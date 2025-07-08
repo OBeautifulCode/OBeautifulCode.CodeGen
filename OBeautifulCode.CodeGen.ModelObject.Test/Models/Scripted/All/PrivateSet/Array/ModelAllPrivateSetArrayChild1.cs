@@ -53,7 +53,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { child1ArrayOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
-            new { child1ArrayOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { child1ArrayOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { child1ArrayOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();

@@ -30,9 +30,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
             new { parentCustomClassProperty }.AsArg().Must().NotBeNull();
-            new { parentArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentArrayProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { parentCustomGenericClassProperty }.AsArg().Must().NotBeNull();
-            new { parentReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
             new { parentReadOnlyDictionaryProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
 
             this.ParentStringProperty = parentStringProperty;

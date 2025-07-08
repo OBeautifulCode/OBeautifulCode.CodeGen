@@ -145,6 +145,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "readOnlyCollectionOfStringProperty", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelPrivateSetMultipleConstructors>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'readOnlyCollectionOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelPrivateSetMultipleConstructors>();
+
+                        var result = new ModelPrivateSetMultipleConstructors(
+                                             referenceObject.IntProperty,
+                                             referenceObject.StringProperty,
+                                             new string[0].Concat(referenceObject.ReadOnlyCollectionOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ReadOnlyCollectionOfStringProperty).ToList());
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "readOnlyCollectionOfStringProperty", "contains an element that is white space", },
                 });
 
         private static readonly ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetMultipleConstructors> ConstructorPropertyAssignmentTestScenarios = new ConstructorPropertyAssignmentTestScenarios<ModelPrivateSetMultipleConstructors>()

@@ -21,7 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<string> childReadOnlyCollectionOfStringProperty)
             : base(CustomEnum.SecondValue, parentReadOnlyCollectionOfStringProperty)
         {
-            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { childReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ChildReadOnlyCollectionOfStringProperty = childReadOnlyCollectionOfStringProperty;
         }

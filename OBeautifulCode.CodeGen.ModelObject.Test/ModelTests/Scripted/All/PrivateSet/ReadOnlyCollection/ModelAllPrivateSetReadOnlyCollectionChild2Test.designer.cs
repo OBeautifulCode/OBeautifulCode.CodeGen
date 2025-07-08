@@ -304,6 +304,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollectionChild2>
                 {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyCollectionInterfaceOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollectionChild2>();
+
+                        var result = new ModelAllPrivateSetReadOnlyCollectionChild2(
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfIntProperty,
+                                             new string[0].Concat(referenceObject.ParentReadOnlyCollectionInterfaceOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.ParentReadOnlyCollectionInterfaceOfStringProperty).ToList(),
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfIntProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfStringProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyCollectionInterfaceOfStringProperty", "contains an element that is white space", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollectionChild2>
+                {
                     Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyCollectionInterfaceOfGuidProperty' is null scenario",
                     ConstructionFunc = () =>
                     {
@@ -1140,6 +1175,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfStringProperty", "contains at least one null element", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollectionChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child2ReadOnlyCollectionInterfaceOfStringProperty' contains a white space element scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyCollectionChild2>();
+
+                        var result = new ModelAllPrivateSetReadOnlyCollectionChild2(
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfIntProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfBoolProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfIntProperty,
+                                             new string[0].Concat(referenceObject.Child2ReadOnlyCollectionInterfaceOfStringProperty).Concat(new string[] { "  \r\n  " }).Concat(referenceObject.Child2ReadOnlyCollectionInterfaceOfStringProperty).ToList(),
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfGuidProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfDateTimeProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomClassProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.Child2ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyCollectionInterfaceOfStringProperty", "contains an element that is white space", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyCollectionChild2>

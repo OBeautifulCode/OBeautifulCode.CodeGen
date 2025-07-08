@@ -445,7 +445,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     var mustValidationMethodName = typeToAddAsProperty.GetMustValidationMethodName();
                     if (mustValidationMethodName != null)
                     {
-                        constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}();"));
+                        var eachValidationName = typeToAddAsProperty.GetMustEachValidationMethodName();
+
+                        var eachValidationStatement = eachValidationName == null
+                            ? null
+                            : Invariant($".And().Each().{eachValidationName}()");
+
+                        constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}(){eachValidationStatement};"));
                     }
                 }
 

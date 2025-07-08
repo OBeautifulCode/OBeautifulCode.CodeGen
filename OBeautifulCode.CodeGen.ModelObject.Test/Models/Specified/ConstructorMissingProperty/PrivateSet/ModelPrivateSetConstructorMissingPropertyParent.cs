@@ -20,7 +20,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             CustomEnum parentEnumProperty,
             IReadOnlyCollection<string> parentReadOnlyCollectionOfStringProperty)
         {
-            new { parentReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
+            new { parentReadOnlyCollectionOfStringProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls().And().Each().NotBeNullNorWhiteSpace();
 
             this.ParentEnumProperty = parentEnumProperty;
             this.ParentReadOnlyCollectionOfStringProperty = parentReadOnlyCollectionOfStringProperty;

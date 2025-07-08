@@ -287,6 +287,41 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
                         argumentValidationScenarios.Add(scenario);
                     }
+
+                    if (elementType == typeof(string))
+                    {
+                        var collectionParameterCode = parameters.Select(_ =>
+                        {
+                            var propertyOfConcern = modelType.CaseInsensitivePropertyNameToPropertyOfConcernMap[_.Name];
+
+                            var referenceProperty = modelType.CastIfConstructorParameterIsOfDifferentType(propertyOfConcern) + "referenceObject." + _.ToPropertyName();
+
+                            if (_.Name == parameter.Name)
+                            {
+                                referenceProperty = Invariant($"new {elementType.ToStringReadable()}[0].Concat({referenceProperty}).Concat(new {elementType.ToStringReadable()}[] {{ \"  \\r\\n  \" }}).Concat({referenceProperty})");
+
+                                referenceProperty = parameterType.IsArray
+                                    ? referenceProperty + ".ToArray()"
+                                    : referenceProperty + ".ToList()";
+
+                                if (parameterType.IsGenericType && ((parameterType.GetGenericTypeDefinition() == typeof(Collection<>)) || (parameterType.GetGenericTypeDefinition() == typeof(ReadOnlyCollection<>))))
+                                {
+                                    referenceProperty = parameterType.GenerateSystemTypeInstantiationCode(referenceProperty);
+                                }
+                            }
+
+                            return new MemberCode(_.Name, referenceProperty);
+                        }).ToList();
+
+                        var objectInstantiationCode = modelType.GenerateModelInstantiation(collectionParameterCode, parameterPaddingLength: 45);
+
+                        var scenario = typeof(ConstructingGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.ConstructorArgumentValidationScenarioEnumerableWithWhiteSpaceElement)
+                            .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
+                            .Replace(Tokens.ParameterNameToken, parameter.Name)
+                            .Replace(Tokens.ConstructObjectToken, objectInstantiationCode);
+
+                        argumentValidationScenarios.Add(scenario);
+                    }
                 }
 
                 if (parameterType.IsClosedSystemDictionaryType())
