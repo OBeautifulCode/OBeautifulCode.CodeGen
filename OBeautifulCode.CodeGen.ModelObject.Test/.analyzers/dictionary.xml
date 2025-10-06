@@ -129,6 +129,9 @@
       <!-- Refers to some piece of data that typically has an associated version number but where the current instance is missing the version -->
       <Word>unversioned</Word>
 
+      <!-- Refers to an object that can be validated -->
+      <Word>validatable</Word>
+
       <!-- Refers to some piece of data that typically has an associated version number but where the current instance is missing the version -->
       <Word>versionless</Word>
 
