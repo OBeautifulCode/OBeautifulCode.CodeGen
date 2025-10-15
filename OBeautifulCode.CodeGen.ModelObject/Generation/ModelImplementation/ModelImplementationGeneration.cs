@@ -81,6 +81,13 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 }
             }
 
+            if (modelType.RequiresValidation)
+            {
+                modelImplementationItems.Add(string.Empty);
+
+                modelImplementationItems.Add(modelType.GenerateValidationMethods());
+            }
+
             var modelImplementationCode = modelImplementationItems.Where(_ => _ != null).ToNewLineDelimited();
 
             var codeTemplate = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.Model, KeyMethodKinds.Both);

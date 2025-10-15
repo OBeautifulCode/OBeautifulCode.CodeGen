@@ -190,6 +190,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     "UtcDateTime",
                 }
             },
+            {
+                SpecifiedModelKind.MultiLevelDeclaredValidation1,
+                new[]
+                {
+                    "MultilevelDeclaredValidation1Parent",
+                    "MultilevelDeclaredValidation1Child1",
+                    "MultilevelDeclaredValidation1Child2",
+                    "MultilevelDeclaredValidation1Grandchild1A",
+                    "MultilevelDeclaredValidation1Grandchild1B",
+                    "MultilevelDeclaredValidation1Grandchild2A",
+                    "MultilevelDeclaredValidation1Grandchild2B",
+                }
+            },
+            {
+                SpecifiedModelKind.MultiLevelDeclaredValidation2,
+                new[]
+                {
+                    "MultilevelDeclaredValidation2Parent",
+                    "MultilevelDeclaredValidation2Child1",
+                    "MultilevelDeclaredValidation2Child2",
+                    "MultilevelDeclaredValidation2Grandchild1A",
+                    "MultilevelDeclaredValidation2Grandchild1B",
+                    "MultilevelDeclaredValidation2Grandchild2A",
+                    "MultilevelDeclaredValidation2Grandchild2B",
+                }
+            },
         };
     }
 }

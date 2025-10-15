@@ -139,6 +139,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         EquatableTestFieldsObjectNotEqualToReferenceObject,
 
         /// <summary>
+        /// A code snippet for a GetSelfValidationFailures() method.
+        /// </summary>
+        GetSelfValidationFailures,
+
+        /// <summary>
         /// A code snippet for the BSON serialization tests.
         /// </summary>
         SerializationBsonTests,
@@ -217,5 +222,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for code analysis suppressions to add to an Equals() method.
         /// </summary>
         EqualsCodeAnalysisSuppressions,
+
+        /// <summary>
+        /// A code snippet for getting validation failures on a single property.
+        /// </summary>
+        GetValidationFailuresSingleProperty,
     }
 }

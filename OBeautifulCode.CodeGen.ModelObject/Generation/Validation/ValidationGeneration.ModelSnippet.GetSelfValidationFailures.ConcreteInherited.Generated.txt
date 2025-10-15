@@ -1,0 +1,7 @@
+﻿        /// <inheritdoc />
+        public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            var result = base.GetSelfValidationFailures();
+
+            return result;
+        }

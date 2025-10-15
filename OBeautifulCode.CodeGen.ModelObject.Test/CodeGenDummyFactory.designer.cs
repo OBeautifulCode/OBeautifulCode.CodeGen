@@ -8183,6 +8183,182 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  A.Dummy<CustomEnumWithUnknown?>()));
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild1A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild1B)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPublicSetMultilevelDeclaredValidation1Child1)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild2A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild2B)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPublicSetMultilevelDeclaredValidation1Child2)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation1Grandchild1A
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child1Int       = A.Dummy<int>(),
+                                 Grandchild1AInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation1Grandchild1B
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child1Int       = A.Dummy<int>(),
+                                 Grandchild1BInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation1Grandchild2A
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child2Int       = A.Dummy<int>(),
+                                 Grandchild2AInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation1Grandchild2B
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child2Int       = A.Dummy<int>(),
+                                 Grandchild2BInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild1A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild1B),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild2A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation1Grandchild2B)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPublicSetMultilevelDeclaredValidation1Parent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild1A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild1B)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPublicSetMultilevelDeclaredValidation2Child1)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild2A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild2B)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPublicSetMultilevelDeclaredValidation2Child2)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation2Grandchild1A
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child1Int       = A.Dummy<int>(),
+                                 Grandchild1AInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation2Grandchild1B
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child1Int       = A.Dummy<int>(),
+                                 Grandchild1BInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation2Grandchild2A
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child2Int       = A.Dummy<int>(),
+                                 Grandchild2AInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelPublicSetMultilevelDeclaredValidation2Grandchild2B
+                             {
+                                 ParentInt       = A.Dummy<int>(),
+                                 Child2Int       = A.Dummy<int>(),
+                                 Grandchild2BInt = A.Dummy<int>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild1A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild1B),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild2A),
+                        typeof(ModelPublicSetMultilevelDeclaredValidation2Grandchild2B)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelPublicSetMultilevelDeclaredValidation2Parent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetUtcDateTime(
                                  A.Dummy<DateTime>(),
                                  A.Dummy<DateTime?>(),

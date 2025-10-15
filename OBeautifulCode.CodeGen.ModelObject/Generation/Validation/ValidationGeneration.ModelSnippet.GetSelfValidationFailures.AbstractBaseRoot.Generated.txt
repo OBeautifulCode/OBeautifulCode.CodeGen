@@ -1,0 +1,7 @@
+﻿        /// <inheritdoc />
+        public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            var result = new SelfValidationFailure[0];
+
+            return result;
+        }

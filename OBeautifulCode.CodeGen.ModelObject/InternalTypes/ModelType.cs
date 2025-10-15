@@ -11,7 +11,8 @@ namespace OBeautifulCode.CodeGen
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
-
+    using Microsoft.CodeAnalysis;
+    using Microsoft.CodeAnalysis.CSharp;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
@@ -86,6 +87,7 @@ namespace OBeautifulCode.CodeGen
             var requiresHashing = typeof(IHashableViaCodeGen).IsAssignableFrom(type);
             var requiresModel = typeof(IModelViaCodeGen).IsAssignableFrom(type);
             var requiresStringRepresentation = typeof(IStringRepresentableViaCodeGen).IsAssignableFrom(type);
+            var requiresValidation = typeof(IValidatableViaCodeGen).IsAssignableFrom(type);
 
             var forsakesDeepCloneWithVariantMethods = typeof(IForsakeDeepCloneWithVariantsViaCodeGen).IsAssignableFrom(type);
 
@@ -93,9 +95,23 @@ namespace OBeautifulCode.CodeGen
             var declaresDeepCloneMethod = typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type).IsAssignableFrom(type);
             var declaresEqualsMethod = typeof(IDeclareEqualsMethod<>).MakeGenericType(type).IsAssignableFrom(type);
             var declaresGetHashCodeMethod = typeof(IDeclareGetHashCodeMethod).IsAssignableFrom(type);
+            var directlyImplementsGetHashCodeMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetHashCodeMethod));
             var declaresToStringMethod = typeof(IDeclareToStringMethod).IsAssignableFrom(type);
+            var directlyImplementsToStringMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareToStringMethod));
+            var directlyImplementsGetSelfValidationFailuresMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetSelfValidationFailuresMethod));
+            var declaresGetSelfValidationFailuresMethod = directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsInterface;
 
-            ThrowIfRequiredAndDeclaredMethodsNotSupported(type, requiresComparability, declaresCompareToMethod, declaresDeepCloneMethod, declaresEqualsMethod, declaresGetHashCodeMethod, declaresToStringMethod);
+            ThrowIfRequiredAndDeclaredMethodsNotSupported(
+                type,
+                requiresComparability,
+                declaresCompareToMethod,
+                declaresDeepCloneMethod,
+                declaresEqualsMethod,
+                declaresGetHashCodeMethod,
+                directlyImplementsGetHashCodeMethodResult,
+                declaresToStringMethod,
+                directlyImplementsToStringMethodResult,
+                directlyImplementsGetSelfValidationFailuresMethodResult);
 
             this.RequiresComparability = requiresComparability;
             this.RequiresDeepCloning = requiresDeepCloning;
@@ -103,12 +119,14 @@ namespace OBeautifulCode.CodeGen
             this.RequiresHashing = requiresHashing;
             this.RequiresModel = requiresModel;
             this.RequiresStringRepresentation = requiresStringRepresentation;
+            this.RequiresValidation = requiresValidation;
             this.ForsakesDeepCloneWithVariantMethods = forsakesDeepCloneWithVariantMethods;
             this.DeclaresCompareToMethod = declaresCompareToMethod;
             this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
             this.DeclaresEqualsMethod = declaresEqualsMethod;
             this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
             this.DeclaresToStringMethod = declaresToStringMethod;
+            this.DeclaresGetSelfValidationFailuresMethod = declaresGetSelfValidationFailuresMethod;
 
             this.RequiredInterfaces = DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
 
@@ -117,6 +135,7 @@ namespace OBeautifulCode.CodeGen
             this.EqualsKeyMethodKinds = declaresEqualsMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
             this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
             this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.ValidationKeyMethodKinds = declaresGetSelfValidationFailuresMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
 
             // Constructor
             var getConstructorResult = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern, this.CaseInsensitivePropertyNameToPropertyOfConcernMap);
@@ -190,6 +209,11 @@ namespace OBeautifulCode.CodeGen
             if (!type.IsClass)
             {
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a value type or interface type."));
+            }
+
+            if (type.IsArray)
+            {
+                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an array."));
             }
 
             var directDerivativeTypes = LoadedTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
@@ -302,8 +326,13 @@ namespace OBeautifulCode.CodeGen
             bool declaresDeepCloneMethod,
             bool declaresEqualsMethod,
             bool declaresGetHashCodeMethod,
-            bool declaresToStringMethod)
+            DirectlyImplementsKeyMethodInterfaceResult directlyImplementsGetHashCodeMethodResult,
+            bool declaresToStringMethod,
+            DirectlyImplementsKeyMethodInterfaceResult directlyImplementsToStringMethodResult,
+            DirectlyImplementsKeyMethodInterfaceResult directlyImplementsGetSelfValidationFailuresMethodResult)
         {
+            // note: declaresGetSelfValidationFailuresMethod can be added to an abstract type to validate the type's properties.
+            // however unlike comparability, the method does not need to be declared if the type is concrete.
             if (declaresCompareToMethod || declaresDeepCloneMethod || declaresEqualsMethod || declaresGetHashCodeMethod || declaresToStringMethod)
             {
                 if (type.IsAbstract)
@@ -318,6 +347,31 @@ namespace OBeautifulCode.CodeGen
                 {
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a concrete class that implements IComparableViaCodeGen but does not implement IDeclareCompareToForRelativeSortOrderMethod."));
                 }
+            }
+
+            // It's possible for the caller to implement IDeclareGetHashCodeMethod, but not implement
+            // the GetHashCode() method.  This could happen simply because GetHashCode() is already a virtual method on Object.
+            // So there would be no build break if the current class doesn't implement that method.  But it's still wrong and we catch this here.
+            if (declaresGetHashCodeMethod && (!directlyImplementsGetHashCodeMethodResult.DirectlyImplementsKeyMethod))
+            {
+                throw new InvalidOperationException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetHashCodeMethod)}, but does not directly implement the {nameof(IDeclareGetHashCodeMethod.GetHashCode)} method."));
+            }
+
+            // It's possible for the caller to implement IDeclareGetHashCodeMethod, but not implement
+            // the GetHashCode() method.  This could happen simply because GetHashCode() is already a virtual method on Object.
+            // So there would be no build break if the current class doesn't implement that method.  But it's still wrong and we catch this here.
+            if (declaresToStringMethod && (!directlyImplementsToStringMethodResult.DirectlyImplementsKeyMethod))
+            {
+                throw new InvalidOperationException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareToStringMethod)}, but does not directly implement the {nameof(IDeclareToStringMethod.ToString)} method."));
+            }
+
+            // It's possible for the caller to implement IDeclareGetSelfValidationFailuresMethod, but not implement
+            // the GetSelfValidationFailures() method.  This could happen if a base class implements IDeclareGetSelfValidationFailuresMethod
+            // as a virtual method, thus making the current class an IDeclareGetSelfValidationFailuresMethod.  So there would be no build break.
+            // But it's still wrong and we catch this here.
+            if (directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsInterface && (!directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsKeyMethod))
+            {
+                throw new InvalidOperationException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetSelfValidationFailuresMethod)}, but does not directly implement the {nameof(IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures)} method."));
             }
         }
 
@@ -1177,11 +1231,153 @@ namespace OBeautifulCode.CodeGen
             return result;
         }
 
+        private static DirectlyImplementsKeyMethodInterfaceResult DirectlyImplementsKeyMethodInterface(
+            Type modelType,
+            Type interfaceType)
+        {
+            if (!interfaceType.IsInterface)
+            {
+                throw new InvalidOperationException(Invariant($"{nameof(interfaceType)} is not an interface"));
+            }
+
+            // Create metadata references for all assemblies
+            var metadataReferences =
+                GetAllTypesInUse(modelType)
+                    .Concat(new[] { interfaceType })
+                    .Select(_ => _.Assembly.Location)
+                    .Distinct()
+                    .Select(_ => MetadataReference.CreateFromFile(_))
+                    .ToList();
+
+            // Create compilation
+            var compilation = CSharpCompilation.Create(
+                assemblyName: "TempCompilation",
+                references: metadataReferences);
+
+            var modelTypeSymbol = GetTypeSymbol(compilation, modelType);
+            if (modelTypeSymbol == null)
+            {
+                throw new InvalidOperationException(Invariant($"Could not get model type symbol for type {modelType.ToStringReadable()} from compilation."));
+            }
+
+            // Get the interface symbol
+            var interfaceTypeSymbol = GetTypeSymbol(compilation, interfaceType);
+            if (interfaceTypeSymbol == null)
+            {
+                throw new InvalidOperationException(Invariant($"Could not get interface type symbol for type {interfaceType.ToStringReadable()} from compilation."));
+            }
+
+            // Check if the interface is directly implemented.
+            var directlyImplementsInterface = modelTypeSymbol.Interfaces.Contains(interfaceTypeSymbol, SymbolEqualityComparer.Default);
+
+            // Check if key method is implemented directly.
+            bool directlyImplementsKeyMethod;
+            if (directlyImplementsInterface)
+            {
+                var keyMethodName = interfaceType.GetMethods().First().Name;
+
+                var interfaceMethod = interfaceTypeSymbol
+                    .GetMembers(keyMethodName)
+                    .OfType<IMethodSymbol>()
+                    .First();
+
+                var keyMethodImplementation = modelTypeSymbol.FindImplementationForInterfaceMember(interfaceMethod);
+
+                directlyImplementsKeyMethod =
+                    (keyMethodImplementation != null) &&
+                    SymbolEqualityComparer.Default.Equals(keyMethodImplementation.ContainingType, modelTypeSymbol);
+            }
+            else
+            {
+                directlyImplementsKeyMethod = false;
+            }
+
+            var result = new DirectlyImplementsKeyMethodInterfaceResult
+            {
+                DirectlyImplementsInterface = directlyImplementsInterface,
+                DirectlyImplementsKeyMethod = directlyImplementsKeyMethod,
+            };
+
+            return result;
+        }
+
+        private static IReadOnlyCollection<Type> GetAllTypesInUse(
+            Type type)
+        {
+            var result = new List<Type>
+            {
+                type,
+            };
+
+            // Create metadata references for all assemblies
+            if (type.IsClosedGenericType())
+            {
+                var genericTypeArguments = type.GenericTypeArguments;
+
+                foreach (var genericTypeArgument in genericTypeArguments)
+                {
+                    var genericTypeArgumentTypesInUse = GetAllTypesInUse(genericTypeArgument);
+
+                    result.AddRange(genericTypeArgumentTypesInUse);
+                }
+            }
+
+            return result;
+        }
+
+        private static INamedTypeSymbol GetTypeSymbol(
+            CSharpCompilation compilation,
+            Type type)
+        {
+            INamedTypeSymbol result;
+
+            // For closed generic types, we need to get the open generic and construct the closed one
+            if (type.IsClosedGenericType())
+            {
+                // Get the generic type definition (e.g., List<T> from List<int>)
+                var genericTypeDefinition = type.GetGenericTypeDefinition();
+
+                // Get the open generic type symbol
+                var openGenericSymbol = compilation.GetTypeByMetadataName(genericTypeDefinition.FullName);
+                if (openGenericSymbol == null)
+                {
+                    throw new InvalidOperationException(Invariant($"Could not get type symbol for open generic type {genericTypeDefinition.ToStringReadable()} from compilation."));
+                }
+
+                // Recursively get type symbols for each generic argument
+                var typeArguments = type.GetGenericArguments()
+                    .Select(t => GetTypeSymbol(compilation, t))
+                    .ToArray();
+
+                // Construct the closed generic type
+                result = openGenericSymbol.Construct(typeArguments);
+            }
+            else
+            {
+                // For non-generic types or open generics, use GetTypeByMetadataName directly
+                result = compilation.GetTypeByMetadataName(type.FullName);
+
+                if (result == null)
+                {
+                    throw new InvalidOperationException($"Could not find type {type.FullName}");
+                }
+            }
+
+            return result;
+        }
+
         private class GetConstructorResult
         {
             public ConstructorInfo ConstructorInfo { get; set; }
 
             public IReadOnlyDictionary<string, Type> PropertyNameToConstructorParameterTypeMap { get; set; }
+        }
+
+        private class DirectlyImplementsKeyMethodInterfaceResult
+        {
+            public bool DirectlyImplementsInterface { get; set; }
+
+            public bool DirectlyImplementsKeyMethod { get; set; }
         }
     }
 }

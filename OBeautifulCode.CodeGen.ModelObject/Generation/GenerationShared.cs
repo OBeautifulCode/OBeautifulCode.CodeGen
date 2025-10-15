@@ -13,15 +13,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Globalization;
     using System.Linq;
     using System.Reflection;
-
     using Microsoft.CSharp;
-
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
-
     using static System.FormattableString;
 
     /// <summary>
@@ -73,7 +70,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
             CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
             bool throwIfDoesNotExist = true)
         {
-            var result = generationType.GetCodeTemplate("All", codeTemplateKind, keyMethodKinds, codeSnippetKind, throwIfDoesNotExist);
+            var result = generationType.GetCodeTemplate(
+                "All",
+                codeTemplateKind,
+                keyMethodKinds,
+                codeSnippetKind,
+                throwIfDoesNotExist);
 
             return result;
         }
@@ -98,7 +100,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
             CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
             bool throwIfDoesNotExist = true)
         {
-            var result = generationType.GetCodeTemplate(hierarchyKind.ToString(), codeTemplateKind, keyMethodKinds, codeSnippetKind, throwIfDoesNotExist);
+            var result = generationType.GetCodeTemplate(
+                hierarchyKind.ToString(),
+                codeTemplateKind,
+                keyMethodKinds,
+                codeSnippetKind,
+                throwIfDoesNotExist);
 
             return result;
         }
@@ -123,7 +130,12 @@ namespace OBeautifulCode.CodeGen.ModelObject
             CodeSnippetKind codeSnippetKind = CodeSnippetKind.None,
             bool throwIfDoesNotExist = true)
         {
-            var result = generationType.GetCodeTemplate(classifiedHierarchyKind.ToString(), codeTemplateKind, keyMethodKinds, codeSnippetKind, throwIfDoesNotExist);
+            var result = generationType.GetCodeTemplate(
+                classifiedHierarchyKind.ToString(),
+                codeTemplateKind,
+                keyMethodKinds,
+                codeSnippetKind,
+                throwIfDoesNotExist);
 
             return result;
         }

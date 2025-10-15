@@ -337,5 +337,20 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// The name of the Unknown enum value.
         /// </summary>
         public const string EnumValueNamedUnknownToken = "[enum-value-named-unknown]";
+
+        /// <summary>
+        /// The method overriding keyword (e.g. 'virtual', override).
+        /// </summary>
+        public const string MethodOverridingKeywordToken = "[method-overriding-keyword-here]";
+
+        /// <summary>
+        /// The GetSelfValidationFailures() method.
+        /// </summary>
+        public const string GetSelfValidationFailuresMethodToken = "[get-self-validation-failures-method-here]";
+
+        /// <summary>
+        /// Validate individual properties in a GetValidationFailures() method.
+        /// </summary>
+        public const string ValidatePropertiesToken = "[validate-properties-here]";
     }
 }

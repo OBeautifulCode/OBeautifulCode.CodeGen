@@ -170,6 +170,11 @@ namespace OBeautifulCode.CodeGen
         public bool RequiresStringRepresentation { get; }
 
         /// <summary>
+        /// Gets a value indicating whether the model requires generated code for validation.
+        /// </summary>
+        public bool RequiresValidation { get; }
+
+        /// <summary>
         /// Gets a value indicating whether the model declares a <see cref="IDeclareCompareToForRelativeSortOrderMethod{T}.CompareToForRelativeSortOrder(T)"/> method.
         /// </summary>
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = ObcSuppressBecause.CA1811_AvoidUncalledPrivateCode_PropertyExistsForCompleteness)]
@@ -196,6 +201,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets a value indicating whether the model declares a <see cref="IDeclareToStringMethod.ToString"/> method.
         /// </summary>
         public bool DeclaresToStringMethod { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model declares a <see cref="IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures"/> method.
+        /// </summary>
+        public bool DeclaresGetSelfValidationFailuresMethod { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model forsakes the generation of DeepCloneWith variant methods.
@@ -226,6 +236,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets the key method kind for the <see cref="IDeclareToStringMethod.ToString"/> method.
         /// </summary>
         public KeyMethodKinds ToStringKeyMethodKinds { get; }
+
+        /// <summary>
+        /// Gets the key method kind for the <see cref="IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures"/> method.
+        /// </summary>
+        public KeyMethodKinds ValidationKeyMethodKinds { get; }
 
         /// <summary>
         /// Gets the namespaces of the types in the properties of concern.

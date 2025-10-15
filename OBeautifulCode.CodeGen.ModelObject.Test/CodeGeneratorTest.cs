@@ -182,6 +182,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             ModelOrTest modelOrTest,
             ExecuteForModelsEventHandler eventHandler)
         {
+            var onlyProcessPrivateSetters = new[]
+            {
+                SpecifiedModelKind.MultipleConstructors,
+                SpecifiedModelKind.ConstructorMissingProperty,
+                SpecifiedModelKind.OptionalConstructorParameters,
+                SpecifiedModelKind.ConstructorParameterEnumValueNamedUnknown,
+                SpecifiedModelKind.ConstructorMoreDerivedThanProperty,
+            };
+
+            var onlyProcessPublicSetters = new[]
+            {
+                SpecifiedModelKind.MultiLevelDeclaredValidation1,
+                SpecifiedModelKind.MultiLevelDeclaredValidation2,
+            };
+
             var specifiedModelKinds = EnumExtensions.GetDefinedEnumValues<SpecifiedModelKind>().Where(_ => _ != SpecifiedModelKind.NotApplicable).ToList();
 
             foreach (var specifiedModelKind in specifiedModelKinds)
@@ -190,11 +205,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 foreach (var setterKind in setterKinds)
                 {
-                    if (((specifiedModelKind == SpecifiedModelKind.MultipleConstructors) ||
-                         (specifiedModelKind == SpecifiedModelKind.ConstructorMissingProperty) ||
-                         (specifiedModelKind == SpecifiedModelKind.OptionalConstructorParameters) ||
-                         (specifiedModelKind == SpecifiedModelKind.ConstructorParameterEnumValueNamedUnknown) ||
-                         (specifiedModelKind == SpecifiedModelKind.ConstructorMoreDerivedThanProperty)) && (setterKind != SetterKind.PrivateSetters))
+                    if ((setterKind != SetterKind.PrivateSetters) && onlyProcessPrivateSetters.Contains(specifiedModelKind))
+                    {
+                        continue;
+                    }
+
+                    if ((setterKind != SetterKind.PublicSetters) && onlyProcessPublicSetters.Contains(specifiedModelKind))
                     {
                         continue;
                     }
@@ -289,6 +305,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         File.WriteAllBytes(modelFilePath, new byte[0]);
                     }
+                    else if (specifiedModelKind == SpecifiedModelKind.MultiLevelDeclaredValidation2)
+                    {
+                        // Removing the designer file code, makes it so that there isn't a code generated
+                        // virtual GetSelfValidationFailures method on the root base class, and thus there's
+                        // no method to override.  So we having special handling logic here that
+                        // changes the method modifiers so that the project will compile.
+                        if (modelName == "ModelPublicSetMultilevelDeclaredValidation2Child1")
+                        {
+                            var modelFileCode = File.ReadAllText(modelFilePath);
+
+                            modelFileCode = modelFileCode.Replace(
+                                "public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures",
+                                "public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures");
+
+                            File.WriteAllText(modelFilePath, modelFileCode, Settings.Encoding);
+                        }
+                        else if (modelName == "ModelPublicSetMultilevelDeclaredValidation2Grandchild2A")
+                        {
+                            var modelFileCode = File.ReadAllText(modelFilePath);
+
+                            modelFileCode = modelFileCode.Replace(
+                                "public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures",
+                                "public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures");
+
+                            File.WriteAllText(modelFilePath, modelFileCode, Settings.Encoding);
+                        }
+                    }
                 }
                 else if (modelOrTest == ModelOrTest.Test)
                 {
@@ -331,7 +374,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             var modelType = modelName.GetModelType();
 
-            var modelFilePath = modelName.GetDesignerFilePath(modelOrTest, directoryPath);
+            var modelDesignerFilePath = modelName.GetDesignerFilePath(modelOrTest, directoryPath);
 
             GenerateFor generateFor;
             switch (modelOrTest)
@@ -350,7 +393,37 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             if (WriteFiles)
             {
-                File.WriteAllText(modelFilePath, generatedCode, Settings.Encoding);
+                File.WriteAllText(modelDesignerFilePath, generatedCode, Settings.Encoding);
+
+                var modelFilePath = modelName.GetUserCodeFilePath(modelOrTest, directoryPath);
+
+                if (specifiedModelKind == SpecifiedModelKind.MultiLevelDeclaredValidation2)
+                {
+                    // Adding the designer file code, makes it so that there is now a code generated
+                    // virtual GetSelfValidationFailures method on the root base class, and thus there's
+                    // a method that needs to be overridden.  So we having special handling logic here that
+                    // changes the method modifiers so that the project will compile.
+                    if (modelName == "ModelPublicSetMultilevelDeclaredValidation2Child1")
+                    {
+                        var modelFileCode = File.ReadAllText(modelFilePath);
+
+                        modelFileCode = modelFileCode.Replace(
+                            "public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures",
+                            "public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures");
+
+                        File.WriteAllText(modelFilePath, modelFileCode, Settings.Encoding);
+                    }
+                    else if (modelName == "ModelPublicSetMultilevelDeclaredValidation2Grandchild2A")
+                    {
+                        var modelFileCode = File.ReadAllText(modelFilePath);
+
+                        modelFileCode = modelFileCode.Replace(
+                            "public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures",
+                            "public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures");
+
+                        File.WriteAllText(modelFilePath, modelFileCode, Settings.Encoding);
+                    }
+                }
             }
         }
 

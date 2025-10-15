@@ -61,26 +61,26 @@
     <Reference Include="OBeautifulCode.AutoFakeItEasy, Version=1.0.141.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.AutoFakeItEasy.1.0.141\lib\net462\OBeautifulCode.AutoFakeItEasy.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Compression, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Compression.1.0.29\lib\net462\OBeautifulCode.Compression.dll</HintPath>
+    <Reference Include="OBeautifulCode.Compression, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Compression.1.0.30\lib\net462\OBeautifulCode.Compression.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Representation.System, Version=1.0.69.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Representation.System.1.0.69\lib\net462\OBeautifulCode.Representation.System.dll</HintPath>
+    <Reference Include="OBeautifulCode.Representation.System, Version=1.0.70.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Representation.System.1.0.70\lib\net462\OBeautifulCode.Representation.System.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization, Version=1.0.150.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.1.0.150\lib\net462\OBeautifulCode.Serialization.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization, Version=1.0.151.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.1.0.151\lib\net462\OBeautifulCode.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.Bson, Version=1.0.150.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.Bson.1.0.150\lib\net462\OBeautifulCode.Serialization.Bson.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.Bson, Version=1.0.151.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.Bson.1.0.151\lib\net462\OBeautifulCode.Serialization.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.150.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.150\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.Json, Version=1.0.151.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.Json.1.0.151\lib\net462\OBeautifulCode.Serialization.Json.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Serialization.PropertyBag, Version=1.0.150.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Serialization.PropertyBag.1.0.150\lib\net462\OBeautifulCode.Serialization.PropertyBag.dll</HintPath>
+    <Reference Include="OBeautifulCode.Serialization.PropertyBag, Version=1.0.151.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Serialization.PropertyBag.1.0.151\lib\net462\OBeautifulCode.Serialization.PropertyBag.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Type, Version=1.0.144.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Type.1.0.144\lib\net462\OBeautifulCode.Type.dll</HintPath>
+    <Reference Include="OBeautifulCode.Type, Version=1.0.146.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Type.1.0.146\lib\net462\OBeautifulCode.Type.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -2067,6 +2067,62 @@
     <Compile Include="Models\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknown.designer.cs">
       <DependentUpon>ModelPrivateSetConstructorParameterEnumValueNamedUnknown.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child1.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child1.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Child1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child2.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child2.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Child2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1A.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1A.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild1A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1B.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1B.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild1B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2A.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2A.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild2A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2B.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2B.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild2B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Parent.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Parent.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Parent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child1.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child1.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Child1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child2.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child2.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Child2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1A.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1A.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild1A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1B.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1B.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild1B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2A.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2A.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild2A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2B.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2B.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild2B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Parent.cs" />
+    <Compile Include="Models\Specified\MultilevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Parent.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Parent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Specified\UtcDateTime\PrivateSet\ModelPrivateSetUtcDateTime.designer.cs">
       <DependentUpon>ModelPrivateSetUtcDateTime.cs</DependentUpon>
     </Compile>
@@ -3942,6 +3998,62 @@
     <Compile Include="ModelTests\Specified\ConstructorParameterEnumValueNamedUnknown\PrivateSet\ModelPrivateSetConstructorParameterEnumValueNamedUnknownTest.designer.cs">
       <DependentUpon>ModelPrivateSetConstructorParameterEnumValueNamedUnknownTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child1Test.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child1Test.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Child1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child2Test.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Child2Test.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Child2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1ATest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1ATest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild1ATest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1BTest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild1BTest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild1BTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2ATest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2ATest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild2ATest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2BTest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1Grandchild2BTest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1Grandchild2BTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1ParentTest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation1\PublicSet\ModelPublicSetMultilevelDeclaredValidation1ParentTest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation1ParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child1Test.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child1Test.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Child1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child2Test.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Child2Test.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Child2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1ATest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1ATest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild1ATest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1BTest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild1BTest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild1BTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2ATest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2ATest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild2ATest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2BTest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2Grandchild2BTest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2Grandchild2BTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2ParentTest.cs" />
+    <Compile Include="ModelTests\Specified\MultiLevelDeclaredValidation2\PublicSet\ModelPublicSetMultilevelDeclaredValidation2ParentTest.designer.cs">
+      <DependentUpon>ModelPublicSetMultilevelDeclaredValidation2ParentTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.cs" />
     <Compile Include="ModelTests\Specified\OptionalConstructorParameters\PrivateSet\ModelPrivateSetOptionalConstructorParametersTest.designer.cs">
       <DependentUpon>ModelPrivateSetOptionalConstructorParametersTest.cs</DependentUpon>
@@ -4332,6 +4444,7 @@
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -7,7 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
-
+    using System.Collections.Generic;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
@@ -155,6 +155,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public abstract RelativeSortOrder CompareToForRelativeSortOrder(CustomBaseClass other);
+
+        /// <inheritdoc />
+        public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            var result = new SelfValidationFailure[0];
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public abstract IReadOnlyList<ValidationFailure> GetValidationFailures(ValidationOptions options = null, PropertyPathTracker propertyPathTracker = null);
 
         protected abstract CustomBaseClass DeepCloneInternal();
     }

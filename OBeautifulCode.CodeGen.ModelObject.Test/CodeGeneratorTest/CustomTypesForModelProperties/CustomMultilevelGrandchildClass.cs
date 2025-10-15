@@ -7,7 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject.Test
 {
     using System;
-
+    using System.Collections.Generic;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Equality.Recipes;
     using OBeautifulCode.Type;
@@ -91,6 +91,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         /// <inheritdoc />
         public new CustomMultilevelGrandchildClass DeepClone() => (CustomMultilevelGrandchildClass)this.DeepCloneInternal();
+
+        /// <inheritdoc />
+        public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            var result = base.GetSelfValidationFailures();
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public override IReadOnlyList<ValidationFailure> GetValidationFailures(
+            ValidationOptions options = null,
+            PropertyPathTracker propertyPathTracker = null)
+        {
+            var result = new ValidationFailure[0];
+
+            return result;
+        }
 
         /// <inheritdoc />
         protected override CustomMultilevelBaseClass DeepCloneInternal()

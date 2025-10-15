@@ -1,0 +1,6 @@
+﻿                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.[property-name-here], options, propertyPathTracker, nameof(this.[property-name-here]));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }

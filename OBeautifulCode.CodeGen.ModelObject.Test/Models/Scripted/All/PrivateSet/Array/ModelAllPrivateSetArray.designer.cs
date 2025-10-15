@@ -519,5 +519,183 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             return result;
         }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        public IReadOnlyList<ValidationFailure> GetValidationFailures(
+            ValidationOptions options = null,
+            PropertyPathTracker propertyPathTracker = null)
+        {
+            options = options ?? new ValidationOptions();
+            propertyPathTracker = propertyPathTracker ?? new PropertyPathTracker();
+
+            bool stopOnFirstObjectWithFailures;
+            switch (options.ValidateUntil)
+            {
+                case ValidateUntil.FullyTraversed:
+                    stopOnFirstObjectWithFailures = false;
+                    break;
+                case ValidateUntil.FirstInvalidObject:
+                    stopOnFirstObjectWithFailures = true;
+                    break;
+                default:
+                    throw new NotSupportedException(Invariant($"This {nameof(ValidateUntil)} is not supported: {options.ValidateUntil}."));
+            }
+
+            bool validateProperties;
+            switch (options.ValidationScope)
+            {
+                case ValidationScope.SelfAndProperties:
+                    validateProperties = true;
+                    break;
+                case ValidationScope.SelfOnly:
+                    validateProperties = false;
+                    break;
+                default:
+                    throw new NotSupportedException(Invariant($"This {nameof(ValidationScope)} is not supported: {options.ValidationScope}."));
+            }
+
+            var result = new List<ValidationFailure>();
+
+            void ValidateProperties()
+            {
+                IReadOnlyList<ValidationFailure> localValidationFailures;
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfBoolProperty, options, propertyPathTracker, nameof(this.ArrayOfBoolProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfIntProperty, options, propertyPathTracker, nameof(this.ArrayOfIntProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfStringProperty, options, propertyPathTracker, nameof(this.ArrayOfStringProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfGuidProperty, options, propertyPathTracker, nameof(this.ArrayOfGuidProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfDateTimeProperty, options, propertyPathTracker, nameof(this.ArrayOfDateTimeProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomEnumProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomFlagsEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomClassProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomClassProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomBaseClassProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomBaseClassProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomGenericClassOfCustomClassProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomGenericClassOfCustomClassProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+            }
+
+            void ValidateSelf()
+            {
+                var segmentSeparator = propertyPathTracker.HasSegments ? propertyPathTracker.SegmentSeparator : string.Empty;
+
+                var selfValidationFailures = (this.GetSelfValidationFailures() ?? new SelfValidationFailure[0])
+                    .Where(_ => _ != null)
+                    .Select(_ =>
+                    {
+                        var propertyNames = _.PropertyNames.Count > 1
+                            ? Invariant($"({string.Join("|", _.PropertyNames)})")
+                            : _.PropertyNames.Single();
+
+                        return new ValidationFailure(
+                            this.GetType().ToStringReadable(),
+                            Invariant($"{propertyPathTracker.FullPath}{segmentSeparator}{propertyNames}"),
+                            _.Message);
+                    })
+                    .ToList();
+
+                result.AddRange(selfValidationFailures);
+            }
+
+            if (options.ValidationOrder == ValidationOrder.PropertiesThenSelf)
+            {
+                if (validateProperties)
+                {
+                    ValidateProperties();
+                }
+
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return result;
+                }
+
+                ValidateSelf();
+            }
+            else if (options.ValidationOrder == ValidationOrder.SelfThenProperties)
+            {
+                ValidateSelf();
+
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return result;
+                }
+
+                if (validateProperties)
+                {
+                    ValidateProperties();
+                }
+            }
+            else
+            {
+                throw new NotSupportedException(Invariant($"This {nameof(ValidationOrder)} is not supported: {options.ValidationOrder}."));
+            }
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            var result = new SelfValidationFailure[0];
+
+            return result;
+        }
     }
 }

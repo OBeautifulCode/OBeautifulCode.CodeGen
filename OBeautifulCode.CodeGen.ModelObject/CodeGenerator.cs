@@ -10,7 +10,6 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Type;
@@ -32,6 +31,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             typeof(IHashableViaCodeGen),
             typeof(IModelViaCodeGen),
             typeof(IStringRepresentableViaCodeGen),
+            typeof(IValidatableViaCodeGen),
         };
 
         /// <summary>
