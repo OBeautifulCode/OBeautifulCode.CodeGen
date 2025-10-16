@@ -87,5 +87,53 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             return result;
         }
+
+        /// <summary>
+        /// Generates fields required to test validation.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated fields required to test validation.
+        /// </returns>
+        public static string GenerateValidationTestFields(
+            this ModelType modelType)
+        {
+            if (!modelType.IsConcrete)
+            {
+                return null;
+            }
+
+            var result = typeof(ValidationGeneration).GetCodeTemplate(
+                    modelType.ClassifiedHierarchyKind,
+                    CodeTemplateKind.TestSnippet,
+                    KeyMethodKinds.Both,
+                    CodeSnippetKind.ValidModelTestFields)
+                .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates tests for validation methods.
+        /// </summary>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// Generated tests for the validation methods.
+        /// </returns>
+        public static string GenerateValidationTestMethods(
+            this ModelType modelType)
+        {
+            if (!modelType.IsConcrete)
+            {
+                return null;
+            }
+
+            var result = typeof(ValidationGeneration).GetCodeTemplate(
+                modelType.ClassifiedHierarchyKind,
+                CodeTemplateKind.Test,
+                KeyMethodKinds.Both);
+
+            return result;
+        }
     }
 }

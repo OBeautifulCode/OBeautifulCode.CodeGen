@@ -1,0 +1,12 @@
+﻿        private static readonly ValidModelTestScenarios<[model-type-name-in-code-here]> ValidModelTestScenarios = new ValidModelTestScenarios<[model-type-name-in-code-here]>()
+            .AddScenario(() =>
+                new ValidModelTestScenario<[model-type-name-in-code-here]>
+                {
+                    Name = "a dummy [model-type-name-in-code-here] should be valid",
+                    SystemUnderTestFunc = () =>
+                    {
+                        var result = A.Dummy<[model-type-name-in-code-here]>();
+
+                        return result;
+                    },
+                });

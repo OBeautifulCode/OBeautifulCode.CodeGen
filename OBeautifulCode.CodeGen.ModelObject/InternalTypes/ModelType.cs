@@ -211,11 +211,6 @@ namespace OBeautifulCode.CodeGen
                 throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a value type or interface type."));
             }
 
-            if (type.IsArray)
-            {
-                throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is an array."));
-            }
-
             var directDerivativeTypes = LoadedTypes.Where(_ => (_ != type) && (_.BaseType == type)).ToList();
 
             if (directDerivativeTypes.Any() && (!type.IsAbstract))
@@ -354,7 +349,7 @@ namespace OBeautifulCode.CodeGen
             // So there would be no build break if the current class doesn't implement that method.  But it's still wrong and we catch this here.
             if (declaresGetHashCodeMethod && (!directlyImplementsGetHashCodeMethodResult.DirectlyImplementsKeyMethod))
             {
-                throw new InvalidOperationException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetHashCodeMethod)}, but does not directly implement the {nameof(IDeclareGetHashCodeMethod.GetHashCode)} method."));
+                throw new NotSupportedException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetHashCodeMethod)}, but does not directly implement the {nameof(IDeclareGetHashCodeMethod.GetHashCode)} method."));
             }
 
             // It's possible for the caller to implement IDeclareGetHashCodeMethod, but not implement
@@ -362,7 +357,7 @@ namespace OBeautifulCode.CodeGen
             // So there would be no build break if the current class doesn't implement that method.  But it's still wrong and we catch this here.
             if (declaresToStringMethod && (!directlyImplementsToStringMethodResult.DirectlyImplementsKeyMethod))
             {
-                throw new InvalidOperationException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareToStringMethod)}, but does not directly implement the {nameof(IDeclareToStringMethod.ToString)} method."));
+                throw new NotSupportedException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareToStringMethod)}, but does not directly implement the {nameof(IDeclareToStringMethod.ToString)} method."));
             }
 
             // It's possible for the caller to implement IDeclareGetSelfValidationFailuresMethod, but not implement
@@ -371,7 +366,7 @@ namespace OBeautifulCode.CodeGen
             // But it's still wrong and we catch this here.
             if (directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsInterface && (!directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsKeyMethod))
             {
-                throw new InvalidOperationException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetSelfValidationFailuresMethod)}, but does not directly implement the {nameof(IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures)} method."));
+                throw new NotSupportedException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetSelfValidationFailuresMethod)}, but does not directly implement the {nameof(IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures)} method."));
             }
         }
 

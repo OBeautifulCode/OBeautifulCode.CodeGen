@@ -139,6 +139,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
         EquatableTestFieldsObjectNotEqualToReferenceObject,
 
         /// <summary>
+        /// A code snippet for valid model test fields.
+        /// </summary>
+        ValidModelTestFields,
+
+        /// <summary>
         /// A code snippet for a GetSelfValidationFailures() method.
         /// </summary>
         GetSelfValidationFailures,

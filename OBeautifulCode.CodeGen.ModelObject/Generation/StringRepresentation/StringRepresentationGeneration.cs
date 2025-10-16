@@ -57,9 +57,15 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var toStringConstructionCode = modelType.GenerateToStringConstructionCode(useSystemUnderTest: true, forModelObject: false);
+            var toStringConstructionCode = modelType.GenerateToStringConstructionCode(
+                useSystemUnderTest: true,
+                forModelObject: false);
 
-            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(modelType.ClassifiedHierarchyKind, CodeTemplateKind.TestSnippet, modelType.ToStringKeyMethodKinds, CodeSnippetKind.StringRepresentationTestFields)
+            var result = typeof(StringRepresentationGeneration).GetCodeTemplate(
+                    modelType.ClassifiedHierarchyKind,
+                    CodeTemplateKind.TestSnippet,
+                    modelType.ToStringKeyMethodKinds,
+                    CodeSnippetKind.StringRepresentationTestFields)
                 .Replace(Tokens.ModelTypeNameInCodeToken, modelType.TypeNameInCodeString)
                 .Replace(Tokens.ToStringExpectedToken, toStringConstructionCode);
 

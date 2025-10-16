@@ -316,8 +316,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 return null;
             }
 
-            var nestedTestClassCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.NestedTestClassCodeAnalysisSuppressions);
-            var testMethodCodeAnalysisSuppressions = typeof(ModelImplementationGeneration).GetCodeTemplate(CodeTemplateKind.TestSnippet, KeyMethodKinds.Both, CodeSnippetKind.TestMethodCodeAnalysisSuppressions);
+            var nestedTestClassCodeAnalysisSuppressions = typeof(ModelImplementationGeneration)
+                .GetCodeTemplate(
+                    CodeTemplateKind.TestSnippet,
+                    KeyMethodKinds.Both,
+                    CodeSnippetKind.NestedTestClassCodeAnalysisSuppressions);
+
+            var testMethodCodeAnalysisSuppressions = typeof(ModelImplementationGeneration)
+                .GetCodeTemplate(
+                    CodeTemplateKind.TestSnippet,
+                    KeyMethodKinds.Both,
+                    CodeSnippetKind.TestMethodCodeAnalysisSuppressions);
 
             var result = code
                 .Replace(Tokens.NestedTestClassCodeAnalysisSuppressionsToken, nestedTestClassCodeAnalysisSuppressions)

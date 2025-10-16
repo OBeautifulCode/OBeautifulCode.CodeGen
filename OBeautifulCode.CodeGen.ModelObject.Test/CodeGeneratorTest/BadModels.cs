@@ -804,6 +804,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         where T2 : BaseClassForGenericArgumentWithConstraintsThatCannotBeSatisfied, new()
     {
     }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class MissingGetHashCodeMethod : IModelViaCodeGen, IDeclareGetHashCodeMethod
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class MissingToStringMethod : IModelViaCodeGen, IDeclareToStringMethod
+    {
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public abstract class MissingGetSelfValidationFailuresMethodBase : IModelViaCodeGen, IDeclareGetSelfValidationFailuresMethod
+    {
+        public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            return new SelfValidationFailure[0];
+        }
+    }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public abstract class MissingGetSelfValidationFailuresMethod : MissingGetSelfValidationFailuresMethodBase, IDeclareGetSelfValidationFailuresMethod
+    {
+    }
 #pragma warning restore SA1201 // Elements should appear in the correct order
 #pragma warning restore SA1649 // File name should match first type name
 }

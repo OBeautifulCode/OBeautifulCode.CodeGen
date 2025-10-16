@@ -170,6 +170,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
         private static readonly ComparableTestScenarios<ModelPublicSetMultilevelGrandchild1A> ComparableTestScenarios = new ComparableTestScenarios<ModelPublicSetMultilevelGrandchild1A>();
 
+        private static readonly ValidModelTestScenarios<ModelPublicSetMultilevelGrandchild1A> ValidModelTestScenarios = new ValidModelTestScenarios<ModelPublicSetMultilevelGrandchild1A>()
+            .AddScenario(() =>
+                new ValidModelTestScenario<ModelPublicSetMultilevelGrandchild1A>
+                {
+                    Name = "a dummy ModelPublicSetMultilevelGrandchild1A should be valid",
+                    SystemUnderTestFunc = () =>
+                    {
+                        var result = A.Dummy<ModelPublicSetMultilevelGrandchild1A>();
+
+                        return result;
+                    },
+                });
+
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Structural
@@ -3733,6 +3746,39 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // Assert
                     actuals.AsTest().Must().Each().BeOfType<ArgumentException>(because: scenario.Id);
                     actuals.Select(_ => _.Message).AsTest().Must().Each().StartWith("Attempting to compare objects of different types.");
+                }
+            }
+        }
+
+        [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
+        [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
+        public static class Validation
+        {
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+            public static void GetValidationFailures___Should_return_empty_list___When_model_is_valid()
+            {
+                var scenarios = ValidModelTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.SystemUnderTest.GetValidationFailures();
+
+                    // Assert
+                    actual.AsTest().Must().BeEmptyEnumerable();
                 }
             }
         }

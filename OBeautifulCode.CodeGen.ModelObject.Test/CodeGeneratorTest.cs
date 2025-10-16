@@ -165,6 +165,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes1<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
                 new { Type = typeof(GenericClassWithConstraintHavingNoLoadedAssignableTypes2<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
                 new { Type = typeof(GenericClassWithConstraintsThatCannotBeSatisfied<,>), ExpectedExceptionMessageContains = "cannot find suitable type(s) for the generic argument(s) that satisfy all constraints" },
+                new { Type = typeof(MissingGetHashCodeMethod), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(MissingGetHashCodeMethod).ToStringReadable()}) directly implements {nameof(IDeclareGetHashCodeMethod)}, but does not directly implement the {nameof(IDeclareGetHashCodeMethod.GetHashCode)} method.") },
+                new { Type = typeof(MissingToStringMethod), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(MissingToStringMethod).ToStringReadable()}) directly implements {nameof(IDeclareToStringMethod)}, but does not directly implement the {nameof(IDeclareToStringMethod.ToString)} method.") },
+                new { Type = typeof(MissingGetSelfValidationFailuresMethod), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(MissingGetSelfValidationFailuresMethod).ToStringReadable()}) directly implements {nameof(IDeclareGetSelfValidationFailuresMethod)}, but does not directly implement the {nameof(IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures)} method.") },
             };
 
             // Act

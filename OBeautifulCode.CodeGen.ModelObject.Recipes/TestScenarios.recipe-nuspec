@@ -34,5 +34,8 @@
     <file src="StringRepresentation\StringRepresentationTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\StringRepresentation\StringRepresentationTestScenarios{T}.cs" />
     <file src="StringRepresentation\ValidatedStringRepresentationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\StringRepresentation\ValidatedStringRepresentationTestScenario{T}.cs" />
     <file src="StringRepresentation\SystemUnderTestExpectedStringRepresentation{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\StringRepresentation\SystemUnderTestExpectedStringRepresentation{T}.cs" />
+    <file src="ValidModel\ValidModelTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidModel\ValidModelTestScenario{T}.cs" />
+    <file src="ValidModel\ValidModelTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidModel\ValidModelTestScenarios{T}.cs" />
+    <file src="ValidModel\ValidatedValidModelTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidModel\ValidatedValidModelTestScenario{T}.cs" />
   </files>
 </package>
