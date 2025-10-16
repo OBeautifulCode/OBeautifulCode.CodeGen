@@ -1549,12 +1549,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPublicSetGenericParentGenericPartiallyClosedChild<Version>>
                 {
                     Name = "a dummy ModelPublicSetGenericParentGenericPartiallyClosedChild<Version> should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPublicSetGenericParentGenericPartiallyClosedChild<Version>>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPublicSetGenericParentGenericPartiallyClosedChild<Version>>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

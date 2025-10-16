@@ -321,12 +321,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>
                 {
                     Name = "a dummy ModelPrivateSetConstructorParameterEnumValueNamedUnknown should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

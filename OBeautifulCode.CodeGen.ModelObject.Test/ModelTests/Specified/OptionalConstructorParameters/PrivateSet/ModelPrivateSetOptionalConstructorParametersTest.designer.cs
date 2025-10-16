@@ -493,12 +493,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPrivateSetOptionalConstructorParameters>
                 {
                     Name = "a dummy ModelPrivateSetOptionalConstructorParameters should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPrivateSetOptionalConstructorParameters>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPrivateSetOptionalConstructorParameters>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

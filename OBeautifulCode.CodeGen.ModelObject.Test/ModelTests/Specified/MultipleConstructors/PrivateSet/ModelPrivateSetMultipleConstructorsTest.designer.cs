@@ -337,12 +337,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPrivateSetMultipleConstructors>
                 {
                     Name = "a dummy ModelPrivateSetMultipleConstructors should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPrivateSetMultipleConstructors>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPrivateSetMultipleConstructors>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

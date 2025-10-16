@@ -1508,12 +1508,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelAllPrivateSetReadOnlyCollectionOfNullableChild2>
                 {
                     Name = "a dummy ModelAllPrivateSetReadOnlyCollectionOfNullableChild2 should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableChild2>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableChild2>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

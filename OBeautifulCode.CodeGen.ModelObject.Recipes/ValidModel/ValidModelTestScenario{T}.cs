@@ -33,9 +33,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets a func that returns the object being tested.
+        /// Gets or sets the object being tested.
         /// </summary>
-        public Func<T> SystemUnderTestFunc { get; set; }
+        public T SystemUnderTest { get; set; }
 
         /// <summary>
         /// Gets a scenario to use when you need to force the consuming unit tests to pass and you intend to write your own unit tests.

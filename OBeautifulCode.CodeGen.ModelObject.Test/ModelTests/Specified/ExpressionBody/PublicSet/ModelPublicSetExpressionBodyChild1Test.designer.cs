@@ -270,12 +270,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPublicSetExpressionBodyChild1>
                 {
                     Name = "a dummy ModelPublicSetExpressionBodyChild1 should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPublicSetExpressionBodyChild1>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPublicSetExpressionBodyChild1>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

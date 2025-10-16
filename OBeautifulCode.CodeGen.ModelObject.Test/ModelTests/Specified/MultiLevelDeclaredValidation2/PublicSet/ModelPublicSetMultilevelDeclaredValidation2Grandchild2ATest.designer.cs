@@ -173,12 +173,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPublicSetMultilevelDeclaredValidation2Grandchild2A>
                 {
                     Name = "a dummy ModelPublicSetMultilevelDeclaredValidation2Grandchild2A should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPublicSetMultilevelDeclaredValidation2Grandchild2A>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPublicSetMultilevelDeclaredValidation2Grandchild2A>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

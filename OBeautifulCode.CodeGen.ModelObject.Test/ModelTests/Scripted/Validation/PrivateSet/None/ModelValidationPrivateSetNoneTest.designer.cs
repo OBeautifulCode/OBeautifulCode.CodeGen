@@ -41,12 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelValidationPrivateSetNone>
                 {
                     Name = "a dummy ModelValidationPrivateSetNone should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelValidationPrivateSetNone>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelValidationPrivateSetNone>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

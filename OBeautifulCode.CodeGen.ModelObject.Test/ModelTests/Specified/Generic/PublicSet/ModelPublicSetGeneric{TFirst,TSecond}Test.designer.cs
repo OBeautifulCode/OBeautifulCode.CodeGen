@@ -623,12 +623,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPublicSetGeneric<Version, Guid>>
                 {
                     Name = "a dummy ModelPublicSetGeneric<Version, Guid> should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPublicSetGeneric<Version, Guid>>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPublicSetGeneric<Version, Guid>>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

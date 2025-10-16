@@ -320,12 +320,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>
                 {
                     Name = "a dummy ModelPrivateSetConstructorMoreDerivedThanPropertyChild1 should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPrivateSetConstructorMoreDerivedThanPropertyChild1>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

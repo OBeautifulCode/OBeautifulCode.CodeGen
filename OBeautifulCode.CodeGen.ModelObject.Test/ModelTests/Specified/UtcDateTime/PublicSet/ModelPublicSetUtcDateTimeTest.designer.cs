@@ -345,12 +345,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPublicSetUtcDateTime>
                 {
                     Name = "a dummy ModelPublicSetUtcDateTime should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPublicSetUtcDateTime>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]

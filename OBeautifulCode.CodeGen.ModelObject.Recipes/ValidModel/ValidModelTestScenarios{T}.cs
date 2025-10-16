@@ -142,6 +142,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
                 {
                     var scenario = this.scenarios[x].Value;
 
+                    // Unlike the most of the other test scenario objects, there's no good way to create a validated
+                    // version that will pass the unit tests, because we cannot easily create a T object whose
+                    // GetValidationFailures() returns an empty list.  We've already check above that there is at
+                    // least one scenario to test and throw if not.  So if we get here, we can just simply skip the
+                    // scenario.  The unit test will iterate over an empty list and pass.
+                    if ((scenario.Name == ValidModelTestScenario<T>.ForceGeneratedTestsToPassAndWriteMyOwnScenario.Name) ||
+                        (scenario.Name == ValidModelTestScenario<T>.ModelCannotBeValidScenario.Name))
+                    {
+                        continue;
+                    }
+
                     var scenarioNumber = x + 1;
 
                     var scenarioName = string.IsNullOrWhiteSpace(scenario.Name) ? "<Unnamed Scenario>" : scenario.Name;
@@ -150,7 +161,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 
                     var validatedScenario = new ValidatedValidModelTestScenario<T>(
                         scenarioId,
-                        scenario.SystemUnderTestFunc);
+                        scenario.SystemUnderTest);
 
                     result.Add(validatedScenario);
                 }

@@ -30,14 +30,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// Initializes a new instance of the <see cref="ValidatedValidModelTestScenario{T}"/> class.
         /// </summary>
         /// <param name="id">The identifier of the scenario.</param>
-        /// <param name="systemUnderTestFunc">A func that returns the object to test.</param>
+        /// <param name="systemUnderTest">The object to test.</param>
         public ValidatedValidModelTestScenario(
             string id,
-            Func<T> systemUnderTestFunc)
+            T systemUnderTest)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
-
-            T systemUnderTest = systemUnderTestFunc();
+            new { systemUnderTest }.AsTest().Must().NotBeNull();
 
             this.Id = id;
             this.SystemUnderTest = systemUnderTest;

@@ -303,12 +303,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 new ValidModelTestScenario<ModelPrivateSetConstructorMissingPropertyChild3>
                 {
                     Name = "a dummy ModelPrivateSetConstructorMissingPropertyChild3 should be valid",
-                    SystemUnderTestFunc = () =>
-                    {
-                        var result = A.Dummy<ModelPrivateSetConstructorMissingPropertyChild3>();
-
-                        return result;
-                    },
+                    SystemUnderTest = A.Dummy<ModelPrivateSetConstructorMissingPropertyChild3>(),
                 });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
