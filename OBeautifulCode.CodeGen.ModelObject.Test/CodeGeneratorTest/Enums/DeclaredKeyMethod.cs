@@ -21,5 +21,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         StringRepresentation,
 
         Comparing,
+
+        Validation,
     }
 }

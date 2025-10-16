@@ -29,7 +29,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     {
         public static readonly bool WriteFiles = false;
 
-        private delegate void ExecuteForModelsEventHandler(ModelOrTest modelOrTest, SpecifiedModelKind specifiedModelKind, DeclaredKeyMethod declaredKeyMethod, SetterKind setterKind, HierarchyKind hierarchyKind, TypeWrapperKind typeWrapperKind, string childIdentifier, string modelName, string directoryPath);
+        private delegate void ExecuteForModelsEventHandler(
+            ModelOrTest modelOrTest,
+            SpecifiedModelKind specifiedModelKind,
+            DeclaredKeyMethod declaredKeyMethod,
+            SetterKind setterKind,
+            HierarchyKind hierarchyKind,
+            TypeWrapperKind typeWrapperKind,
+            string childIdentifier,
+            string modelName,
+            string directoryPath);
 
         [Fact(Skip = "for local testing only")]
         public void GenerateModel___Should_generate_models___When_called()
@@ -242,7 +251,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 foreach (var setterKind in setterKinds)
                 {
-                    var declaredKeyMethods = EnumExtensions.GetDefinedEnumValues<DeclaredKeyMethod>().Where(_ => _ != DeclaredKeyMethod.NotApplicable).ToList();
+                    var declaredKeyMethods = EnumExtensions.GetDefinedEnumValues<DeclaredKeyMethod>()
+                        .Where(_ => _ != DeclaredKeyMethod.NotApplicable)
+                        .ToList();
 
                     foreach (var declaredKeyMethod in declaredKeyMethods)
                     {
@@ -251,9 +262,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                             break;
                         }
 
-                        var directoryPath = modelOrTest.GetScriptedModelsDirectoryPath(declaredKeyMethod, setterKind, typeWrapperKind);
+                        var directoryPath = modelOrTest.GetScriptedModelsDirectoryPath(
+                            declaredKeyMethod,
+                            setterKind,
+                            typeWrapperKind);
 
-                        var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>().Where(_ => _ != HierarchyKind.NotApplicable).ToList();
+                        var hierarchyKinds = EnumExtensions.GetDefinedEnumValues<HierarchyKind>()
+                            .Where(_ => _ != HierarchyKind.NotApplicable)
+                            .ToList();
 
                         foreach (var hierarchyKind in hierarchyKinds)
                         {
@@ -261,16 +277,42 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                             {
                                 foreach (var childIdentifier in Settings.ChildIdentifiers)
                                 {
-                                    var modelName = declaredKeyMethod.BuildScriptedModelName(setterKind, hierarchyKind, typeWrapperKind, childIdentifier);
+                                    var modelName = declaredKeyMethod.BuildScriptedModelName(
+                                        setterKind,
+                                        hierarchyKind,
+                                        typeWrapperKind,
+                                        childIdentifier);
 
-                                    eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, declaredKeyMethod, setterKind, hierarchyKind, typeWrapperKind, childIdentifier, modelName, directoryPath);
+                                    eventHandler(
+                                        modelOrTest,
+                                        SpecifiedModelKind.NotApplicable,
+                                        declaredKeyMethod,
+                                        setterKind,
+                                        hierarchyKind,
+                                        typeWrapperKind,
+                                        childIdentifier,
+                                        modelName,
+                                        directoryPath);
                                 }
                             }
                             else
                             {
-                                var modelName = declaredKeyMethod.BuildScriptedModelName(setterKind, hierarchyKind, typeWrapperKind, null);
+                                var modelName = declaredKeyMethod.BuildScriptedModelName(
+                                    setterKind,
+                                    hierarchyKind,
+                                    typeWrapperKind,
+                                    childIdentifier: null);
 
-                                eventHandler(modelOrTest, SpecifiedModelKind.NotApplicable, declaredKeyMethod, setterKind, hierarchyKind, typeWrapperKind, null, modelName, directoryPath);
+                                eventHandler(
+                                    modelOrTest,
+                                    SpecifiedModelKind.NotApplicable,
+                                    declaredKeyMethod,
+                                    setterKind,
+                                    hierarchyKind,
+                                    typeWrapperKind,
+                                    null,
+                                    modelName,
+                                    directoryPath);
                             }
                         }
                     }
@@ -603,6 +645,9 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         : Invariant($"{nameof(IComparableViaCodeGen)}, {typeof(IDeclareCompareToForRelativeSortOrderMethod<>).ToStringWithoutGenericComponent()}<{modelName}>");
                     classLevelCodeAnalysisSuppressions = "    [SuppressMessage(\"Microsoft.Design\", \"CA1036: OverrideMethodsOnComparableTypes\")]" + Environment.NewLine;
                     break;
+                case DeclaredKeyMethod.Validation:
+                    interfaceStatement = Invariant($"{nameof(IValidatableViaCodeGen)}, {nameof(IDeclareGetSelfValidationFailuresMethod)}");
+                    break;
                 default:
                     throw new NotSupportedException("This declared key method kind is not supported: " + declaredKeyMethod);
             }
@@ -822,6 +867,34 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 {
                     throw new NotSupportedException("This hierarchy kind is not supported: " + hierarchyKind);
                 }
+            }
+            else if (declaredKeyMethod == DeclaredKeyMethod.Validation)
+            {
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"        /// <inheritdoc />"));
+
+                if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
+                {
+                    methodStatements.Add(Invariant($"        public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
+                    methodStatements.Add(Invariant($"        {{"));
+                    methodStatements.Add(Invariant($"            var result = new SelfValidationFailure[0];"));
+                }
+                else if (hierarchyKind == HierarchyKind.ConcreteInherited)
+                {
+                    methodStatements.Add(Invariant($"        public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
+                    methodStatements.Add(Invariant($"        {{"));
+                    methodStatements.Add(Invariant($"            var result = base.GetSelfValidationFailures();"));
+                }
+                else if (hierarchyKind == HierarchyKind.Standalone)
+                {
+                    methodStatements.Add(Invariant($"        public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
+                    methodStatements.Add(Invariant($"        {{"));
+                    methodStatements.Add(Invariant($"            var result = new SelfValidationFailure[0];"));
+                }
+
+                methodStatements.Add(string.Empty);
+                methodStatements.Add(Invariant($"            return result;"));
+                methodStatements.Add(Invariant($"        }}"));
             }
 
             var constructorStatements = new List<string>();

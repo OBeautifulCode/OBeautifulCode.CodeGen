@@ -1995,6 +1995,38 @@
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListParent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNone.cs" />
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNone.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParent.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNone.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNone.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.cs" />
     <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.designer.cs">
       <DependentUpon>ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.cs</DependentUpon>
@@ -3925,6 +3957,38 @@
     <Compile Include="ModelTests\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListTest.cs" />
     <Compile Include="ModelTests\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListTest.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParentTest.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneTest.designer.cs">
+      <DependentUpon>ModelValidationPrivateSetNoneTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNoneTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.cs" />
     <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.designer.cs">

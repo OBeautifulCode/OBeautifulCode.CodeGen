@@ -128,7 +128,15 @@ namespace OBeautifulCode.CodeGen
             this.DeclaresToStringMethod = declaresToStringMethod;
             this.DeclaresGetSelfValidationFailuresMethod = declaresGetSelfValidationFailuresMethod;
 
-            this.RequiredInterfaces = DetermineRequiredInterfaces(type, requiresModel, requiresDeepCloning, requiresEquality, requiresHashing, requiresStringRepresentation, requiresComparability);
+            this.RequiredInterfaces = DetermineRequiredInterfaces(
+                type,
+                requiresModel,
+                requiresDeepCloning,
+                requiresEquality,
+                requiresHashing,
+                requiresStringRepresentation,
+                requiresComparability,
+                requiresValidation);
 
             this.CompareToKeyMethodKinds = declaresCompareToMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
             this.DeepCloneKeyMethodKinds = declaresDeepCloneMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
@@ -702,7 +710,8 @@ namespace OBeautifulCode.CodeGen
             bool requiresEquality,
             bool requiresHashing,
             bool requiresStringRepresentation,
-            bool requiresComparability)
+            bool requiresComparability,
+            bool requiresValidation)
         {
             var result = new List<Type>();
 
@@ -730,6 +739,11 @@ namespace OBeautifulCode.CodeGen
                 if (requiresStringRepresentation)
                 {
                     result.Add(typeof(IStringRepresentable));
+                }
+
+                if (requiresValidation)
+                {
+                    result.Add(typeof(IValidatable));
                 }
             }
 

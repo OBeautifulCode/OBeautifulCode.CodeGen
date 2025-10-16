@@ -7804,6 +7804,166 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPrivateSetNone(
+                                 A.Dummy<bool>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<Guid>(),
+                                 A.Dummy<DateTime>(),
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomFlagsEnum>(),
+                                 A.Dummy<CustomClass>(),
+                                 A.Dummy<CustomBaseClass>(),
+                                 A.Dummy<CustomGenericClass<CustomClass>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPrivateSetNoneChild1(
+                                 A.Dummy<bool>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<Guid>(),
+                                 A.Dummy<DateTime>(),
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomFlagsEnum>(),
+                                 A.Dummy<CustomClass>(),
+                                 A.Dummy<CustomBaseClass>(),
+                                 A.Dummy<CustomGenericClass<CustomClass>>(),
+                                 A.Dummy<bool>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<Guid>(),
+                                 A.Dummy<DateTime>(),
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomFlagsEnum>(),
+                                 A.Dummy<CustomClass>(),
+                                 A.Dummy<CustomBaseClass>(),
+                                 A.Dummy<CustomGenericClass<CustomClass>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPrivateSetNoneChild2(
+                                 A.Dummy<bool>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<Guid>(),
+                                 A.Dummy<DateTime>(),
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomFlagsEnum>(),
+                                 A.Dummy<CustomClass>(),
+                                 A.Dummy<CustomBaseClass>(),
+                                 A.Dummy<CustomGenericClass<CustomClass>>(),
+                                 A.Dummy<bool>(),
+                                 A.Dummy<int>(),
+                                 A.Dummy<string>(),
+                                 A.Dummy<Guid>(),
+                                 A.Dummy<DateTime>(),
+                                 A.Dummy<CustomEnum>(),
+                                 A.Dummy<CustomFlagsEnum>(),
+                                 A.Dummy<CustomClass>(),
+                                 A.Dummy<CustomBaseClass>(),
+                                 A.Dummy<CustomGenericClass<CustomClass>>()));
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPrivateSetNoneChild1),
+                        typeof(ModelValidationPrivateSetNoneChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPrivateSetNoneParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetNone
+                             {
+                                 BoolProperty                            = A.Dummy<bool>(),
+                                 IntProperty                             = A.Dummy<int>(),
+                                 StringProperty                          = A.Dummy<string>(),
+                                 GuidProperty                            = A.Dummy<Guid>(),
+                                 DateTimeProperty                        = A.Dummy<DateTime>(),
+                                 CustomEnumProperty                      = A.Dummy<CustomEnum>(),
+                                 CustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum>(),
+                                 CustomClassProperty                     = A.Dummy<CustomClass>(),
+                                 CustomBaseClassProperty                 = A.Dummy<CustomBaseClass>(),
+                                 CustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetNoneChild1
+                             {
+                                 ParentBoolProperty                            = A.Dummy<bool>(),
+                                 ParentIntProperty                             = A.Dummy<int>(),
+                                 ParentStringProperty                          = A.Dummy<string>(),
+                                 ParentGuidProperty                            = A.Dummy<Guid>(),
+                                 ParentDateTimeProperty                        = A.Dummy<DateTime>(),
+                                 ParentCustomEnumProperty                      = A.Dummy<CustomEnum>(),
+                                 ParentCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum>(),
+                                 ParentCustomClassProperty                     = A.Dummy<CustomClass>(),
+                                 ParentCustomBaseClassProperty                 = A.Dummy<CustomBaseClass>(),
+                                 ParentCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>>(),
+                                 Child1BoolProperty                            = A.Dummy<bool>(),
+                                 Child1IntProperty                             = A.Dummy<int>(),
+                                 Child1StringProperty                          = A.Dummy<string>(),
+                                 Child1GuidProperty                            = A.Dummy<Guid>(),
+                                 Child1DateTimeProperty                        = A.Dummy<DateTime>(),
+                                 Child1CustomEnumProperty                      = A.Dummy<CustomEnum>(),
+                                 Child1CustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum>(),
+                                 Child1CustomClassProperty                     = A.Dummy<CustomClass>(),
+                                 Child1CustomBaseClassProperty                 = A.Dummy<CustomBaseClass>(),
+                                 Child1CustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetNoneChild2
+                             {
+                                 ParentBoolProperty                            = A.Dummy<bool>(),
+                                 ParentIntProperty                             = A.Dummy<int>(),
+                                 ParentStringProperty                          = A.Dummy<string>(),
+                                 ParentGuidProperty                            = A.Dummy<Guid>(),
+                                 ParentDateTimeProperty                        = A.Dummy<DateTime>(),
+                                 ParentCustomEnumProperty                      = A.Dummy<CustomEnum>(),
+                                 ParentCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum>(),
+                                 ParentCustomClassProperty                     = A.Dummy<CustomClass>(),
+                                 ParentCustomBaseClassProperty                 = A.Dummy<CustomBaseClass>(),
+                                 ParentCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>>(),
+                                 Child2BoolProperty                            = A.Dummy<bool>(),
+                                 Child2IntProperty                             = A.Dummy<int>(),
+                                 Child2StringProperty                          = A.Dummy<string>(),
+                                 Child2GuidProperty                            = A.Dummy<Guid>(),
+                                 Child2DateTimeProperty                        = A.Dummy<DateTime>(),
+                                 Child2CustomEnumProperty                      = A.Dummy<CustomEnum>(),
+                                 Child2CustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum>(),
+                                 Child2CustomClassProperty                     = A.Dummy<CustomClass>(),
+                                 Child2CustomBaseClassProperty                 = A.Dummy<CustomBaseClass>(),
+                                 Child2CustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetNoneChild1),
+                        typeof(ModelValidationPublicSetNoneChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetNoneParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () => new ModelPrivateSetConstructorMoreDerivedThanPropertyChild1(
                                  A.Dummy<CustomEnum>(),
                                  A.Dummy<CustomMultilevelChildClass>(),
