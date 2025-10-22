@@ -32,7 +32,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
         /// to indicate, when validating the scenario, that the scenario should always pass.
         /// </summary>
         // ReSharper disable once StaticMemberInGenericType
-        public static readonly string AlwaysPassingFailurePropertyName = "ALWAYS_PASSING_FAILURE_PROPERTY_NAME";
+        [SuppressMessage("Microsoft.Design", "CA1000:DoNotDeclareStaticMembersOnGenericTypes", Justification = ObcSuppressBecause.CA1000_DoNotDeclareStaticMembersOnGenericTypes_StaticPropertyReturnsInstanceOfContainingGenericClassAndIsConvenientAndMostDiscoverableWhereDeclared)]
+        public const string AlwaysPassingFailurePropertyName = "ALWAYS_PASSING_FAILURE_PROPERTY_NAME";
 
         /// <summary>
         /// Gets or sets the name of the scenario.

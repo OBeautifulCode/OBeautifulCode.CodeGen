@@ -10,7 +10,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.Type.Recipes;
@@ -191,6 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
             return result;
         }
 
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = ObcSuppressBecause.CA1502_AvoidExcessiveComplexity_DisagreeWithAssessment)]
         private static IReadOnlyList<string> BuildTestScenarios(
             ModelType modelType,
             PropertyOfConcern propertyOfConcern)
