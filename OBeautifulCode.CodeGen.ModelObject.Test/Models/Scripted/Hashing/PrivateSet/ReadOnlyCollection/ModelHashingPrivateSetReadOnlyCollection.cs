@@ -34,6 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<Guid> readOnlyCollectionInterfaceOfGuidProperty,
             IReadOnlyCollection<DateTime> readOnlyCollectionInterfaceOfDateTimeProperty,
             IReadOnlyCollection<CustomEnum> readOnlyCollectionInterfaceOfCustomEnumProperty,
+            IReadOnlyCollection<CustomEnumValidatedNotDefault> readOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyCollection<CustomFlagsEnum> readOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyCollection<CustomClass> readOnlyCollectionInterfaceOfCustomClassProperty,
             IReadOnlyCollection<CustomBaseClass> readOnlyCollectionInterfaceOfCustomBaseClassProperty,
@@ -45,6 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyCollectionInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { readOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { readOnlyCollectionInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -56,6 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyCollectionInterfaceOfGuidProperty = readOnlyCollectionInterfaceOfGuidProperty;
             this.ReadOnlyCollectionInterfaceOfDateTimeProperty = readOnlyCollectionInterfaceOfDateTimeProperty;
             this.ReadOnlyCollectionInterfaceOfCustomEnumProperty = readOnlyCollectionInterfaceOfCustomEnumProperty;
+            this.ReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty = readOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = readOnlyCollectionInterfaceOfCustomFlagsEnumProperty;
             this.ReadOnlyCollectionInterfaceOfCustomClassProperty = readOnlyCollectionInterfaceOfCustomClassProperty;
             this.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty = readOnlyCollectionInterfaceOfCustomBaseClassProperty;
@@ -109,6 +112,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomEnumValidatedNotDefault> ReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomFlagsEnum> ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -140,6 +150,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ReadOnlyCollectionInterfaceOfGuidProperty)
                 .Hash(this.ReadOnlyCollectionInterfaceOfDateTimeProperty)
                 .Hash(this.ReadOnlyCollectionInterfaceOfCustomEnumProperty)
+                .Hash(this.ReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ReadOnlyCollectionInterfaceOfCustomClassProperty)
                 .Hash(this.ReadOnlyCollectionInterfaceOfCustomBaseClassProperty)

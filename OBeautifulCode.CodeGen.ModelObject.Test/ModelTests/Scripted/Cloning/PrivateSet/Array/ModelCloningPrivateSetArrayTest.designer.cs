@@ -229,6 +229,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ArrayOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ArrayOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ArrayOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ArrayOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ArrayOfCustomFlagsEnumProperty == null)
                 {
                     actual.ArrayOfCustomFlagsEnumProperty.AsTest().Must().BeNull();

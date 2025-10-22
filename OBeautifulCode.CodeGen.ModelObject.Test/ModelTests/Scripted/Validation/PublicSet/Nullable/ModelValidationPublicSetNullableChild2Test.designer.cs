@@ -44,7 +44,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     SystemUnderTest = A.Dummy<ModelValidationPublicSetNullableChild2>(),
                 });
 
-        private static readonly SelfValidationTestScenarios<ModelValidationPublicSetNullableChild2> SelfValidationTestScenarios = new SelfValidationTestScenarios<ModelValidationPublicSetNullableChild2>();
+        private static readonly SelfValidationTestScenarios<ModelValidationPublicSetNullableChild2> SelfValidationTestScenarios = new SelfValidationTestScenarios<ModelValidationPublicSetNullableChild2>()
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNullableChild2>();
+
+                    systemUnderTest.ParentNullableCustomEnumValidatedNotDefaultProperty = CustomEnumValidatedNotDefault.Unknown;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNullableChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentNullableCustomEnumValidatedNotDefaultProperty' is CustomEnumValidatedNotDefault.Unknown scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentNullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentNullableCustomEnumValidatedNotDefaultProperty", "Unknown", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNullableChild2>();
+
+                    systemUnderTest.Child2NullableCustomEnumValidatedNotDefaultProperty = CustomEnumValidatedNotDefault.Unknown;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNullableChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2NullableCustomEnumValidatedNotDefaultProperty' is CustomEnumValidatedNotDefault.Unknown scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2NullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2NullableCustomEnumValidatedNotDefaultProperty", "Unknown", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]

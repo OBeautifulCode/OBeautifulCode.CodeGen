@@ -205,6 +205,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -263,6 +275,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // The object could be a boxed value type, which will fail this asseration because
                     // a deep clone of a value type object is the same object.
                     actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty);
+                }
+
+                if (systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
                 }
 
                 if (systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty == null)

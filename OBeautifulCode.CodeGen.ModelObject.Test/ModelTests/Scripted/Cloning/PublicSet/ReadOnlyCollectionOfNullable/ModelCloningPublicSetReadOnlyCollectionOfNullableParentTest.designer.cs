@@ -217,6 +217,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();

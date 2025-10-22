@@ -59,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableGuidProperty(A.Dummy<ModelAllPublicSetArrayOfNullableParent>().Whose(_ => !_.ParentArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty)).ParentArrayOfNullableGuidProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableDateTimeProperty(A.Dummy<ModelAllPublicSetArrayOfNullableParent>().Whose(_ => !_.ParentArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty)).ParentArrayOfNullableDateTimeProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableCustomEnumProperty(A.Dummy<ModelAllPublicSetArrayOfNullableParent>().Whose(_ => !_.ParentArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty)).ParentArrayOfNullableCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableCustomEnumValidatedNotDefaultProperty(A.Dummy<ModelAllPublicSetArrayOfNullableParent>().Whose(_ => !_.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty)).ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfNullableCustomFlagsEnumProperty(A.Dummy<ModelAllPublicSetArrayOfNullableParent>().Whose(_ => !_.ParentArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty)).ParentArrayOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPublicSetArrayOfNullableParent[]
@@ -254,6 +255,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // The object could be a boxed value type, which will fail this asseration because
                     // a deep clone of a value type object is the same object.
                     actual.ParentArrayOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfNullableCustomEnumProperty);
+                }
+
+                if (systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty);
                 }
 
                 if (systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty == null)

@@ -37,18 +37,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<int?, int?> readOnlyDictionaryInterfaceOfNullableIntProperty,
             IReadOnlyDictionary<Guid?, Guid?> readOnlyDictionaryInterfaceOfNullableGuidProperty,
             IReadOnlyDictionary<CustomEnum?, CustomEnum?> readOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> readOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
         {
             new { readOnlyDictionaryInterfaceOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
 
             this.ReadOnlyDictionaryInterfaceOfNullableBoolProperty = readOnlyDictionaryInterfaceOfNullableBoolProperty;
             this.ReadOnlyDictionaryInterfaceOfNullableIntProperty = readOnlyDictionaryInterfaceOfNullableIntProperty;
             this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty = readOnlyDictionaryInterfaceOfNullableGuidProperty;
             this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = readOnlyDictionaryInterfaceOfNullableCustomEnumProperty;
+            this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty;
             this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = readOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty;
         }
 
@@ -85,6 +88,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty { get; private set; }
 
         /// <inheritdoc />
@@ -105,6 +115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableIntProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableGuidProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;

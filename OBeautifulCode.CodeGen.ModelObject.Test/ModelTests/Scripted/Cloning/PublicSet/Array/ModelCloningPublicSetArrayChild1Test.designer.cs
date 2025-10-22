@@ -229,6 +229,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentArrayOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentArrayOfCustomFlagsEnumProperty == null)
                 {
                     actual.ParentArrayOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -347,6 +359,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // The object could be a boxed value type, which will fail this asseration because
                     // a deep clone of a value type object is the same object.
                     actual.Child1ArrayOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ArrayOfCustomEnumProperty);
+                }
+
+                if (systemUnderTest.Child1ArrayOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child1ArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child1ArrayOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child1ArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ArrayOfCustomEnumValidatedNotDefaultProperty);
                 }
 
                 if (systemUnderTest.Child1ArrayOfCustomFlagsEnumProperty == null)

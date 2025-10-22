@@ -219,6 +219,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyListOfNullable>();
 
+                    systemUnderTest.ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyListOfNullable>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyListOfNullable>();
+
+                    systemUnderTest.ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = new List<CustomEnumValidatedNotDefault?>();
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyListOfNullable>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyListOfNullable>();
+
                     systemUnderTest.ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = null;
 
                     var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyListOfNullable>

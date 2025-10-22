@@ -287,6 +287,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     var systemUnderTest = A.Dummy<ModelValidationPublicSetArrayChild2>();
 
+                    systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetArrayChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentArrayOfCustomEnumValidatedNotDefaultProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentArrayOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentArrayOfCustomEnumValidatedNotDefaultProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetArrayChild2>();
+
+                    systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty = new CustomEnumValidatedNotDefault[0];
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetArrayChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentArrayOfCustomEnumValidatedNotDefaultProperty' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentArrayOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentArrayOfCustomEnumValidatedNotDefaultProperty", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetArrayChild2>();
+
                     systemUnderTest.ParentArrayOfCustomFlagsEnumProperty = null;
 
                     var result = new SelfValidationTestScenario<ModelValidationPublicSetArrayChild2>
@@ -703,6 +737,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         SystemUnderTest = systemUnderTest,
                         ExpectedFailurePropertyNames = new[] { "Child2ArrayOfCustomEnumProperty" },
                         ExpectedFailureMessageContains = new[] { "Child2ArrayOfCustomEnumProperty", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetArrayChild2>();
+
+                    systemUnderTest.Child2ArrayOfCustomEnumValidatedNotDefaultProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetArrayChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2ArrayOfCustomEnumValidatedNotDefaultProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2ArrayOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2ArrayOfCustomEnumValidatedNotDefaultProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetArrayChild2>();
+
+                    systemUnderTest.Child2ArrayOfCustomEnumValidatedNotDefaultProperty = new CustomEnumValidatedNotDefault[0];
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetArrayChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2ArrayOfCustomEnumValidatedNotDefaultProperty' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2ArrayOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2ArrayOfCustomEnumValidatedNotDefaultProperty", "is an empty enumerable", },
                         ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
                     };
 

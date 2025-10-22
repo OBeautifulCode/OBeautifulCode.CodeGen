@@ -34,6 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid[] parentArrayOfGuidProperty,
             DateTime[] parentArrayOfDateTimeProperty,
             CustomEnum[] parentArrayOfCustomEnumProperty,
+            CustomEnumValidatedNotDefault[] parentArrayOfCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum[] parentArrayOfCustomFlagsEnumProperty,
             CustomClass[] parentArrayOfCustomClassProperty,
             CustomBaseClass[] parentArrayOfCustomBaseClassProperty,
@@ -45,6 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { parentArrayOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentArrayOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentArrayOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { parentArrayOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -56,6 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentArrayOfGuidProperty = parentArrayOfGuidProperty;
             this.ParentArrayOfDateTimeProperty = parentArrayOfDateTimeProperty;
             this.ParentArrayOfCustomEnumProperty = parentArrayOfCustomEnumProperty;
+            this.ParentArrayOfCustomEnumValidatedNotDefaultProperty = parentArrayOfCustomEnumValidatedNotDefaultProperty;
             this.ParentArrayOfCustomFlagsEnumProperty = parentArrayOfCustomFlagsEnumProperty;
             this.ParentArrayOfCustomClassProperty = parentArrayOfCustomClassProperty;
             this.ParentArrayOfCustomBaseClassProperty = parentArrayOfCustomBaseClassProperty;
@@ -103,6 +106,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomEnum[] ParentArrayOfCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault[] ParentArrayOfCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

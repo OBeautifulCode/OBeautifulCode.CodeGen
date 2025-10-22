@@ -37,14 +37,17 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid? parentNullableGuidProperty,
             DateTime? parentNullableDateTimeProperty,
             CustomEnum? parentNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault? parentNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum? parentNullableCustomFlagsEnumProperty)
         {
+            new { parentNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeEqualTo((CustomEnumValidatedNotDefault?)CustomEnumValidatedNotDefault.Unknown);
 
             this.ParentNullableBoolProperty = parentNullableBoolProperty;
             this.ParentNullableIntProperty = parentNullableIntProperty;
             this.ParentNullableGuidProperty = parentNullableGuidProperty;
             this.ParentNullableDateTimeProperty = parentNullableDateTimeProperty;
             this.ParentNullableCustomEnumProperty = parentNullableCustomEnumProperty;
+            this.ParentNullableCustomEnumValidatedNotDefaultProperty = parentNullableCustomEnumValidatedNotDefaultProperty;
             this.ParentNullableCustomFlagsEnumProperty = parentNullableCustomFlagsEnumProperty;
         }
 
@@ -82,6 +85,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomEnum? ParentNullableCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault? ParentNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

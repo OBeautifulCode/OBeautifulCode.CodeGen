@@ -33,6 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty,
             IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty,
             IReadOnlyDictionary<CustomEnum, CustomEnum> parentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyDictionary<CustomClass, CustomClass> parentReadOnlyDictionaryInterfaceOfCustomClassProperty,
             IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -42,17 +43,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, string> child1ReadOnlyDictionaryInterfaceOfStringProperty,
             IReadOnlyDictionary<Guid, Guid> child1ReadOnlyDictionaryInterfaceOfGuidProperty,
             IReadOnlyDictionary<CustomEnum, CustomEnum> child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyDictionary<CustomClass, CustomClass> child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
             IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
             IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>> child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
-            : base(parentReadOnlyDictionaryInterfaceOfBoolProperty, parentReadOnlyDictionaryInterfaceOfIntProperty, parentReadOnlyDictionaryInterfaceOfStringProperty, parentReadOnlyDictionaryInterfaceOfGuidProperty, parentReadOnlyDictionaryInterfaceOfCustomEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomClassProperty, parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty, parentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
+            : base(parentReadOnlyDictionaryInterfaceOfBoolProperty, parentReadOnlyDictionaryInterfaceOfIntProperty, parentReadOnlyDictionaryInterfaceOfStringProperty, parentReadOnlyDictionaryInterfaceOfGuidProperty, parentReadOnlyDictionaryInterfaceOfCustomEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty, parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty, parentReadOnlyDictionaryInterfaceOfCustomClassProperty, parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty, parentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
             new { child1ReadOnlyDictionaryInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { child1ReadOnlyDictionaryInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
@@ -63,6 +66,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ReadOnlyDictionaryInterfaceOfStringProperty = child1ReadOnlyDictionaryInterfaceOfStringProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty = child1ReadOnlyDictionaryInterfaceOfGuidProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty = child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty;
+            this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty = child1ReadOnlyDictionaryInterfaceOfCustomClassProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty;
@@ -103,6 +107,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomEnum, CustomEnum> Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

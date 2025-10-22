@@ -74,12 +74,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)
                       && this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
                       && this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)
+                      && this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                       && this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
                       && this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)
                       && this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty)
                       && this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)
                       && this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
                       && this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)
+                      && this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                       && this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;
@@ -95,12 +97,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)
             .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
             .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)
+            .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
             .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
             .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)
             .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty)
             .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)
             .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
             .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)
+            .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
             .Hash(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
             .Value;
 
@@ -133,12 +137,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -170,12 +176,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -207,12 +215,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  parentReadOnlyCollectionInterfaceOfNullableGuidProperty,
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -244,12 +254,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  parentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -281,12 +293,53 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  parentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public override ModelAllPrivateSetReadOnlyCollectionOfNullableParent DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty(IReadOnlyCollection<CustomEnumValidatedNotDefault?> parentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPrivateSetReadOnlyCollectionOfNullableChild2(
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 parentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -318,12 +371,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  parentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -359,12 +414,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -400,12 +457,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -441,12 +500,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -482,12 +543,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -523,12 +586,57 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" />.
+        /// </summary>
+        /// <param name="child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty">The new <see cref="Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetReadOnlyCollectionOfNullableChild2" /> using the specified <paramref name="child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" /> for <see cref="Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPrivateSetReadOnlyCollectionOfNullableChild2 DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty(IReadOnlyCollection<CustomEnumValidatedNotDefault?> child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPrivateSetReadOnlyCollectionOfNullableChild2(
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -564,12 +672,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;
@@ -585,12 +695,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.DeepClone(),
+                                 this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.DeepClone());
 
             return result;
@@ -600,7 +712,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyCollectionOfNullableChild2: ParentReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableIntProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableIntProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyCollectionOfNullableChild2: ParentReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableIntProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableIntProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {this.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }
@@ -681,6 +793,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return;
                 }
 
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
@@ -717,6 +836,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty, options, propertyPathTracker, nameof(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
                 {

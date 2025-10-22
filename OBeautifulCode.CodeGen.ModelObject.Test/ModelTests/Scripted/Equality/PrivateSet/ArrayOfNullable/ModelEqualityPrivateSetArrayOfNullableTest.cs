@@ -37,6 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelEqualityPrivateSetArrayOfNullable[]
@@ -47,6 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelEqualityPrivateSetArrayOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableBoolProperty,
@@ -54,6 +56,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelEqualityPrivateSetArrayOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableBoolProperty,
@@ -61,6 +64,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelEqualityPrivateSetArrayOfNullable>().Whose(_ => !_.ArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty)).ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelEqualityPrivateSetArrayOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableBoolProperty,
@@ -68,6 +72,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
                                 A.Dummy<ModelEqualityPrivateSetArrayOfNullable>().Whose(_ => !_.ArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty)).ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelEqualityPrivateSetArrayOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableBoolProperty,
@@ -75,6 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
                                 A.Dummy<ModelEqualityPrivateSetArrayOfNullable>().Whose(_ => !_.ArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty)).ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelEqualityPrivateSetArrayOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableBoolProperty,
@@ -82,6 +88,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                A.Dummy<ModelEqualityPrivateSetArrayOfNullable>().Whose(_ => !_.ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty)).ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty),
+                        new ModelEqualityPrivateSetArrayOfNullable(
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelEqualityPrivateSetArrayOfNullable>().Whose(_ => !_.ArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ArrayOfNullableCustomFlagsEnumProperty)).ArrayOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]

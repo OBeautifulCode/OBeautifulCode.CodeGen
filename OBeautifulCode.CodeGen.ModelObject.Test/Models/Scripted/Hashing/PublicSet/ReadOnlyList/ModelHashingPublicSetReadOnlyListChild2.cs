@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomEnumValidatedNotDefault> Child2ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomFlagsEnum> Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -102,6 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyListInterfaceOfGuidProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfDateTimeProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomEnumProperty)
+                .Hash(this.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomClassProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)
@@ -112,6 +120,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ReadOnlyListInterfaceOfGuidProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfDateTimeProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomEnumProperty)
+                .Hash(this.Child2ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomClassProperty)
                 .Hash(this.Child2ReadOnlyListInterfaceOfCustomBaseClassProperty)

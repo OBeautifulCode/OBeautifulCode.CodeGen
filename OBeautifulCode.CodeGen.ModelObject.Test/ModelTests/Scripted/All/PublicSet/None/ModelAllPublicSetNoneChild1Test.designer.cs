@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetNoneChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNoneChild1: ParentBoolProperty = {systemUnderTest.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {systemUnderTest.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {systemUnderTest.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {systemUnderTest.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {systemUnderTest.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentCustomEnumProperty = {systemUnderTest.ParentCustomEnumProperty.ToString() ?? "<null>"}, ParentCustomFlagsEnumProperty = {systemUnderTest.ParentCustomFlagsEnumProperty.ToString() ?? "<null>"}, ParentCustomClassProperty = {systemUnderTest.ParentCustomClassProperty?.ToString() ?? "<null>"}, ParentCustomBaseClassProperty = {systemUnderTest.ParentCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1BoolProperty = {systemUnderTest.Child1BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1IntProperty = {systemUnderTest.Child1IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1StringProperty = {systemUnderTest.Child1StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1GuidProperty = {systemUnderTest.Child1GuidProperty.ToString() ?? "<null>"}, Child1DateTimeProperty = {systemUnderTest.Child1DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1CustomEnumProperty = {systemUnderTest.Child1CustomEnumProperty.ToString() ?? "<null>"}, Child1CustomFlagsEnumProperty = {systemUnderTest.Child1CustomFlagsEnumProperty.ToString() ?? "<null>"}, Child1CustomClassProperty = {systemUnderTest.Child1CustomClassProperty?.ToString() ?? "<null>"}, Child1CustomBaseClassProperty = {systemUnderTest.Child1CustomBaseClassProperty?.ToString() ?? "<null>"}, Child1CustomGenericClassOfCustomClassProperty = {systemUnderTest.Child1CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNoneChild1: ParentBoolProperty = {systemUnderTest.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {systemUnderTest.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {systemUnderTest.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {systemUnderTest.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {systemUnderTest.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentCustomEnumProperty = {systemUnderTest.ParentCustomEnumProperty.ToString() ?? "<null>"}, ParentCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentCustomEnumValidatedNotDefaultProperty.ToString() ?? "<null>"}, ParentCustomFlagsEnumProperty = {systemUnderTest.ParentCustomFlagsEnumProperty.ToString() ?? "<null>"}, ParentCustomClassProperty = {systemUnderTest.ParentCustomClassProperty?.ToString() ?? "<null>"}, ParentCustomBaseClassProperty = {systemUnderTest.ParentCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1BoolProperty = {systemUnderTest.Child1BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1IntProperty = {systemUnderTest.Child1IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1StringProperty = {systemUnderTest.Child1StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1GuidProperty = {systemUnderTest.Child1GuidProperty.ToString() ?? "<null>"}, Child1DateTimeProperty = {systemUnderTest.Child1DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1CustomEnumProperty = {systemUnderTest.Child1CustomEnumProperty.ToString() ?? "<null>"}, Child1CustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child1CustomEnumValidatedNotDefaultProperty.ToString() ?? "<null>"}, Child1CustomFlagsEnumProperty = {systemUnderTest.Child1CustomFlagsEnumProperty.ToString() ?? "<null>"}, Child1CustomClassProperty = {systemUnderTest.Child1CustomClassProperty?.ToString() ?? "<null>"}, Child1CustomBaseClassProperty = {systemUnderTest.Child1CustomBaseClassProperty?.ToString() ?? "<null>"}, Child1CustomGenericClassOfCustomClassProperty = {systemUnderTest.Child1CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -171,6 +171,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetNoneChild1>
+                {
+                    Name = "DeepCloneWithParentCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentCustomEnumValidatedNotDefaultProperty with the provided parentCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetNoneChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetNoneChild1>().ThatIs(_ => !systemUnderTest.ParentCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetNoneChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -379,6 +399,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetNoneChild1>
                 {
+                    Name = "DeepCloneWithChild1CustomEnumValidatedNotDefaultProperty should deep clone object and replace Child1CustomEnumValidatedNotDefaultProperty with the provided child1CustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child1CustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetNoneChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetNoneChild1>().ThatIs(_ => !systemUnderTest.Child1CustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child1CustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetNoneChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1CustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetNoneChild1>
+                {
                     Name = "DeepCloneWithChild1CustomFlagsEnumProperty should deep clone object and replace Child1CustomFlagsEnumProperty with the provided child1CustomFlagsEnumProperty",
                     WithPropertyName = "Child1CustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -475,6 +515,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -485,6 +526,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -501,6 +543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -511,6 +554,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -524,6 +568,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -534,6 +579,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -547,6 +593,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -557,6 +604,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -570,6 +618,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentGuidProperty)).ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -580,6 +629,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -593,6 +643,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty)).ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -603,6 +654,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -616,6 +668,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty)).ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -626,6 +679,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -639,6 +693,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty)).ParentCustomEnumValidatedNotDefaultProperty,
+                                ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
+                                ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
+                                ParentCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomGenericClassOfCustomClassProperty,
+                                Child1BoolProperty                            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
+                                Child1IntProperty                             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
+                                Child1StringProperty                          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
+                                Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
+                                Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
+                                Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
+                                Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
+                                Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
+                                Child1CustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetNoneChild1
+                            {
+                                ParentBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ParentBoolProperty,
+                                ParentIntProperty                             = ReferenceObjectForEquatableTestScenarios.ParentIntProperty,
+                                ParentStringProperty                          = ReferenceObjectForEquatableTestScenarios.ParentStringProperty,
+                                ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
+                                ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
+                                ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty)).ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -649,6 +729,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -662,6 +743,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty)).ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -672,6 +754,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -685,6 +768,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.ParentCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty)).ParentCustomBaseClassProperty,
@@ -695,6 +779,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -708,6 +793,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -718,6 +804,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -731,6 +818,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -741,6 +829,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -754,6 +843,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -764,6 +854,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -777,6 +868,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -787,6 +879,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -800,6 +893,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -810,6 +904,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1GuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1GuidProperty)).Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -823,6 +918,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -833,6 +929,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1DateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty)).Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -846,6 +943,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -856,6 +954,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1CustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty)).Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -869,6 +968,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -879,6 +979,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1CustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty)).Child1CustomEnumValidatedNotDefaultProperty,
+                                Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
+                                Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
+                                Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
+                                Child1CustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.Child1CustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetNoneChild1
+                            {
+                                ParentBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ParentBoolProperty,
+                                ParentIntProperty                             = ReferenceObjectForEquatableTestScenarios.ParentIntProperty,
+                                ParentStringProperty                          = ReferenceObjectForEquatableTestScenarios.ParentStringProperty,
+                                ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
+                                ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
+                                ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
+                                ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
+                                ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
+                                ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
+                                ParentCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ParentCustomGenericClassOfCustomClassProperty,
+                                Child1BoolProperty                            = ReferenceObjectForEquatableTestScenarios.Child1BoolProperty,
+                                Child1IntProperty                             = ReferenceObjectForEquatableTestScenarios.Child1IntProperty,
+                                Child1StringProperty                          = ReferenceObjectForEquatableTestScenarios.Child1StringProperty,
+                                Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
+                                Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
+                                Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1CustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty)).Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -892,6 +1018,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -902,6 +1029,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1CustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty)).Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -915,6 +1043,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -925,6 +1054,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetNoneChild1>().Whose(_ => !_.Child1CustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty)).Child1CustomBaseClassProperty,
@@ -938,6 +1068,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentGuidProperty,
                                 ParentDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentDateTimeProperty,
                                 ParentCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumProperty,
+                                ParentCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentCustomEnumValidatedNotDefaultProperty,
                                 ParentCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomFlagsEnumProperty,
                                 ParentCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentCustomClassProperty,
                                 ParentCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentCustomBaseClassProperty,
@@ -948,6 +1079,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1GuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1GuidProperty,
                                 Child1DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1DateTimeProperty,
                                 Child1CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumProperty,
+                                Child1CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1CustomEnumValidatedNotDefaultProperty,
                                 Child1CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomFlagsEnumProperty,
                                 Child1CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1CustomClassProperty,
                                 Child1CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1CustomBaseClassProperty,
@@ -1216,7 +1348,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentBoolProperty", "ParentIntProperty", "ParentStringProperty", "ParentGuidProperty", "ParentDateTimeProperty", "ParentCustomEnumProperty", "ParentCustomFlagsEnumProperty", "ParentCustomClassProperty", "ParentCustomBaseClassProperty", "ParentCustomGenericClassOfCustomClassProperty", "Child1BoolProperty", "Child1IntProperty", "Child1StringProperty", "Child1GuidProperty", "Child1DateTimeProperty", "Child1CustomEnumProperty", "Child1CustomFlagsEnumProperty", "Child1CustomClassProperty", "Child1CustomBaseClassProperty", "Child1CustomGenericClassOfCustomClassProperty" };
+                var propertyNames = new string[] { "ParentBoolProperty", "ParentIntProperty", "ParentStringProperty", "ParentGuidProperty", "ParentDateTimeProperty", "ParentCustomEnumProperty", "ParentCustomEnumValidatedNotDefaultProperty", "ParentCustomFlagsEnumProperty", "ParentCustomClassProperty", "ParentCustomBaseClassProperty", "ParentCustomGenericClassOfCustomClassProperty", "Child1BoolProperty", "Child1IntProperty", "Child1StringProperty", "Child1GuidProperty", "Child1DateTimeProperty", "Child1CustomEnumProperty", "Child1CustomEnumValidatedNotDefaultProperty", "Child1CustomFlagsEnumProperty", "Child1CustomClassProperty", "Child1CustomBaseClassProperty", "Child1CustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

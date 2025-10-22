@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomEnumValidatedNotDefault> Child1ReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomFlagsEnum> Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -106,6 +113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         new { this.Child1ReadOnlyCollectionInterfaceOfGuidProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child1ReadOnlyCollectionInterfaceOfDateTimeProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child1ReadOnlyCollectionInterfaceOfCustomEnumProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
+                        new { this.Child1ReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child1ReadOnlyCollectionInterfaceOfCustomClassProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls(),
                         new { this.Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls(),

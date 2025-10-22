@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyCollectionOfNullableChild2: ParentReadOnlyCollectionInterfaceOfNullableBoolProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableIntProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableGuidProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableIntProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyCollectionOfNullableChild2: ParentReadOnlyCollectionInterfaceOfNullableBoolProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableIntProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableGuidProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableIntProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -151,6 +151,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>
+                {
+                    Name = "DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty with the provided parentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().ThatIs(_ => !systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -279,6 +299,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>
                 {
+                    Name = "DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty with the provided child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().ThatIs(_ => !systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>
+                {
                     Name = "DeepCloneWithChild2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty should deep clone object and replace Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty with the provided child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty",
                     WithPropertyName = "Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -309,201 +349,261 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPublicSetReadOnlyCollectionOfNullableChild2[]
                     {
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty)).ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty)).ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty)).ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty)).ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)).ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)).ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)).ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)).ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)).Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty)).Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty)).Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)).Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty)).Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)).Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty)).Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)).Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)).Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
                             {
-                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
-                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)).Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)).Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                            },
+                        new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
+                            {
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)).Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                            },
+                        new ModelAllPublicSetReadOnlyCollectionOfNullableChild2
+                            {
+                                ParentReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableIntProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty               = A.Dummy<ModelAllPublicSetReadOnlyCollectionOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)).Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -739,6 +839,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -811,6 +923,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -840,7 +964,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentReadOnlyCollectionInterfaceOfNullableBoolProperty", "ParentReadOnlyCollectionInterfaceOfNullableIntProperty", "ParentReadOnlyCollectionInterfaceOfNullableGuidProperty", "ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty", "ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty", "ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty", "Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty", "Child2ReadOnlyCollectionInterfaceOfNullableIntProperty", "Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty", "Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty", "Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty", "Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty" };
+                var propertyNames = new string[] { "ParentReadOnlyCollectionInterfaceOfNullableBoolProperty", "ParentReadOnlyCollectionInterfaceOfNullableIntProperty", "ParentReadOnlyCollectionInterfaceOfNullableGuidProperty", "ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty", "ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty", "ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty", "Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty", "Child2ReadOnlyCollectionInterfaceOfNullableIntProperty", "Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty", "Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty", "Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty", "Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

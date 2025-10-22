@@ -57,6 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             typeof(Guid),
             typeof(DateTime),
             typeof(CustomEnum),
+            typeof(CustomEnumValidatedNotDefault),
             typeof(CustomFlagsEnum),
             typeof(CustomClass),
             typeof(CustomBaseClass),

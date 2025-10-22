@@ -108,6 +108,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return;
                 }
 
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
@@ -172,6 +179,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child2ReadOnlyListInterfaceOfCustomEnumProperty, options, propertyPathTracker, nameof(this.Child2ReadOnlyListInterfaceOfCustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child2ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.Child2ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
                 {

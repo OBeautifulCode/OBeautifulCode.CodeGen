@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetReadOnlyDictionaryChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyDictionaryChild1: ParentReadOnlyDictionaryInterfaceOfBoolProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfIntProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfGuidProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomClassProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfBoolProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfIntProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfGuidProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyDictionaryChild1: ParentReadOnlyDictionaryInterfaceOfBoolProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfIntProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfGuidProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomClassProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfBoolProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfIntProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfGuidProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -70,6 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -79,6 +80,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -103,6 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -112,6 +115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -136,6 +140,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -145,6 +150,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -169,6 +175,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -178,6 +185,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -202,6 +210,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -211,6 +220,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -235,6 +245,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new Dictionary<string, string>(),
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -244,6 +255,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -274,6 +286,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              dictionaryWithNullValue,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -283,6 +296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -307,6 +321,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              null,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -316,6 +331,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -340,6 +356,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              new Dictionary<Guid, Guid>(),
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -349,6 +366,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -373,6 +391,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              null,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -382,6 +401,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -406,6 +426,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              new Dictionary<CustomEnum, CustomEnum>(),
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -415,6 +436,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -424,6 +446,76 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCustomEnumProperty", "is an empty dictionary", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             null,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             new Dictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault>(),
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
@@ -439,6 +531,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              null,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -448,6 +541,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -472,6 +566,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              new Dictionary<CustomFlagsEnum, CustomFlagsEnum>(),
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -481,6 +576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -505,6 +601,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              null,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -514,6 +611,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -538,6 +636,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              new Dictionary<CustomClass, CustomClass>(),
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -547,6 +646,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -577,6 +677,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              dictionaryWithNullValue,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -586,6 +687,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -610,6 +712,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              null,
@@ -619,6 +722,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -643,6 +747,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              new Dictionary<CustomBaseClass, CustomBaseClass>(),
@@ -652,6 +757,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -682,6 +788,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              dictionaryWithNullValue,
@@ -691,6 +798,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -715,6 +823,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -724,6 +833,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -748,6 +858,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -757,6 +868,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -787,6 +899,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -796,6 +909,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -820,6 +934,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -829,6 +944,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -853,6 +969,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -862,6 +979,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -886,6 +1004,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -895,6 +1014,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -919,6 +1039,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -928,6 +1049,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -952,6 +1074,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -961,6 +1084,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -985,6 +1109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -994,6 +1119,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new Dictionary<string, string>(),
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1024,6 +1150,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1033,6 +1160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              dictionaryWithNullValue,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1057,6 +1185,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1066,6 +1195,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              null,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1090,6 +1220,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1099,6 +1230,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              new Dictionary<Guid, Guid>(),
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1123,6 +1255,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1132,6 +1265,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              null,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1156,6 +1290,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1165,6 +1300,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              new Dictionary<CustomEnum, CustomEnum>(),
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1174,6 +1310,76 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty", "is an empty dictionary", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             null,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             new Dictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault>(),
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
@@ -1189,6 +1395,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1198,6 +1405,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              null,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1222,6 +1430,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1231,6 +1440,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              new Dictionary<CustomFlagsEnum, CustomFlagsEnum>(),
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1255,6 +1465,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1264,6 +1475,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              null,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1288,6 +1500,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1297,6 +1510,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              new Dictionary<CustomClass, CustomClass>(),
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1327,6 +1541,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1336,6 +1551,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              dictionaryWithNullValue,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1360,6 +1576,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1369,6 +1586,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              null,
@@ -1393,6 +1611,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1402,6 +1621,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              new Dictionary<CustomBaseClass, CustomBaseClass>(),
@@ -1432,6 +1652,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1441,6 +1662,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              dictionaryWithNullValue,
@@ -1465,6 +1687,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1474,6 +1697,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1498,6 +1722,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1507,6 +1732,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1537,6 +1763,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1546,6 +1773,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                             referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                              referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1574,6 +1802,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1583,6 +1812,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1610,6 +1840,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1619,6 +1850,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1646,6 +1878,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1655,6 +1888,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1682,6 +1916,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1691,6 +1926,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1718,6 +1954,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1727,6 +1964,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1737,6 +1975,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty should return same 'parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
@@ -1754,6 +2030,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1763,6 +2040,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1790,6 +2068,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1799,6 +2078,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1826,6 +2106,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1835,6 +2116,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1862,6 +2144,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1871,6 +2154,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1898,6 +2182,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1907,6 +2192,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1934,6 +2220,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1943,6 +2230,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1970,6 +2258,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -1979,6 +2268,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2006,6 +2296,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2015,6 +2306,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2042,6 +2334,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2051,6 +2344,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2061,6 +2355,44 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty should return same 'child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
@@ -2078,6 +2410,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2087,6 +2420,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2114,6 +2448,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2123,6 +2458,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2150,6 +2486,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2159,6 +2496,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2186,6 +2524,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2195,6 +2534,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                                      referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                                       referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2303,6 +2643,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty with the provided parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -2491,6 +2851,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
                 {
+                    Name = "DeepCloneWithChild1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty with the provided child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryChild1>
+                {
                     Name = "DeepCloneWithChild1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty should deep clone object and replace Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty with the provided child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty",
                     WithPropertyName = "Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -2585,6 +2965,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2594,6 +2975,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2607,6 +2989,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2616,6 +2999,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2626,6 +3010,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2635,6 +3020,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2645,6 +3031,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty)).ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2654,6 +3041,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2664,6 +3052,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty)).ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2673,6 +3062,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2683,6 +3073,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2692,6 +3083,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2702,6 +3094,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty),
+                        new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2711,6 +3125,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2721,6 +3136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2730,6 +3146,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2740,6 +3157,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2749,6 +3167,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2759,6 +3178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2768,6 +3188,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2778,6 +3199,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2787,6 +3209,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2797,6 +3220,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2806,6 +3230,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2816,6 +3241,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2825,6 +3251,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty)).Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2835,6 +3262,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2844,6 +3272,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty)).Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2854,6 +3283,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2863,6 +3293,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty)).Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2873,6 +3304,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2882,6 +3314,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)).Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty),
+                        new ModelAllPrivateSetReadOnlyDictionaryChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2892,6 +3346,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2901,6 +3356,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty)).Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2911,6 +3367,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2920,6 +3377,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryChild1>().Whose(_ => !_.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2930,6 +3388,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -2939,6 +3398,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -3293,6 +3753,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty == null)
                 {
                     actual.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -3401,6 +3873,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty == null)
                 {
                     actual.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -3466,7 +3950,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentReadOnlyDictionaryInterfaceOfBoolProperty", "ParentReadOnlyDictionaryInterfaceOfIntProperty", "ParentReadOnlyDictionaryInterfaceOfStringProperty", "ParentReadOnlyDictionaryInterfaceOfGuidProperty", "ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty", "ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty", "ParentReadOnlyDictionaryInterfaceOfCustomClassProperty", "ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty", "ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty", "Child1ReadOnlyDictionaryInterfaceOfBoolProperty", "Child1ReadOnlyDictionaryInterfaceOfIntProperty", "Child1ReadOnlyDictionaryInterfaceOfStringProperty", "Child1ReadOnlyDictionaryInterfaceOfGuidProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty" };
+                var propertyNames = new string[] { "ParentReadOnlyDictionaryInterfaceOfBoolProperty", "ParentReadOnlyDictionaryInterfaceOfIntProperty", "ParentReadOnlyDictionaryInterfaceOfStringProperty", "ParentReadOnlyDictionaryInterfaceOfGuidProperty", "ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty", "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty", "ParentReadOnlyDictionaryInterfaceOfCustomClassProperty", "ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty", "ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty", "Child1ReadOnlyDictionaryInterfaceOfBoolProperty", "Child1ReadOnlyDictionaryInterfaceOfIntProperty", "Child1ReadOnlyDictionaryInterfaceOfStringProperty", "Child1ReadOnlyDictionaryInterfaceOfGuidProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty", "Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

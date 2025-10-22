@@ -37,6 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, string> parentReadOnlyDictionaryInterfaceOfStringProperty,
             IReadOnlyDictionary<Guid, Guid> parentReadOnlyDictionaryInterfaceOfGuidProperty,
             IReadOnlyDictionary<CustomEnum, CustomEnum> parentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyDictionary<CustomClass, CustomClass> parentReadOnlyDictionaryInterfaceOfCustomClassProperty,
             IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -47,6 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { parentReadOnlyDictionaryInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { parentReadOnlyDictionaryInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { parentReadOnlyDictionaryInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { parentReadOnlyDictionaryInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
@@ -57,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentReadOnlyDictionaryInterfaceOfStringProperty = parentReadOnlyDictionaryInterfaceOfStringProperty;
             this.ParentReadOnlyDictionaryInterfaceOfGuidProperty = parentReadOnlyDictionaryInterfaceOfGuidProperty;
             this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty = parentReadOnlyDictionaryInterfaceOfCustomEnumProperty;
+            this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty;
             this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty = parentReadOnlyDictionaryInterfaceOfCustomClassProperty;
             this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty;
@@ -97,6 +100,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomEnum, CustomEnum> ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

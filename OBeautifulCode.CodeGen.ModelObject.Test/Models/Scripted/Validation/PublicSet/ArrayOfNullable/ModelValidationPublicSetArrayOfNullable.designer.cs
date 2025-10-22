@@ -101,6 +101,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return;
                 }
 
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfNullableCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ArrayOfNullableCustomEnumValidatedNotDefaultProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfNullableCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ArrayOfNullableCustomFlagsEnumProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())

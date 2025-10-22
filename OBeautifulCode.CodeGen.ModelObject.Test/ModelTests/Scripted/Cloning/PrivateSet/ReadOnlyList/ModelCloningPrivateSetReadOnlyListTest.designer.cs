@@ -229,6 +229,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ReadOnlyListInterfaceOfCustomFlagsEnumProperty == null)
                 {
                     actual.ReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();

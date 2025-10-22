@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyDictionaryOfNullable: ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyDictionaryOfNullable: ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -69,6 +69,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -89,6 +90,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -109,6 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -129,6 +132,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new Dictionary<int?, int?>(),
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -149,6 +153,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              null,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -169,6 +174,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              new Dictionary<Guid?, Guid?>(),
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -189,6 +195,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              null,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -209,12 +216,55 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              new Dictionary<CustomEnum?, CustomEnum?>(),
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "readOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             null,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             new Dictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?>(),
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
@@ -229,6 +279,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              null);
 
                         return result;
@@ -249,6 +300,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              new Dictionary<CustomFlagsEnum?, CustomFlagsEnum?>());
 
                         return result;
@@ -273,6 +325,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                         };
@@ -296,6 +349,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                         };
@@ -319,6 +373,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                         };
@@ -342,6 +397,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
                         };
@@ -349,6 +405,30 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
+                {
+                    Name = "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should return same 'readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                            ExpectedPropertyValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
@@ -365,6 +445,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                         };
@@ -458,6 +539,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
                 {
+                    Name = "DeepCloneWithReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty with the provided readOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>().ThatIs(_ => !systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullable>
+                {
                     Name = "DeepCloneWithReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty should deep clone object and replace ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty with the provided readOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty",
                     WithPropertyName = "ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -491,6 +592,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPrivateSetReadOnlyDictionaryOfNullable[]
@@ -500,30 +602,42 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty)).ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty)).ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)).ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)).ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                        new ModelAllPrivateSetReadOnlyDictionaryOfNullable(
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullable>().Whose(_ => !_.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)).ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -862,6 +976,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -891,7 +1017,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ReadOnlyDictionaryInterfaceOfNullableBoolProperty", "ReadOnlyDictionaryInterfaceOfNullableIntProperty", "ReadOnlyDictionaryInterfaceOfNullableGuidProperty", "ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty" };
+                var propertyNames = new string[] { "ReadOnlyDictionaryInterfaceOfNullableBoolProperty", "ReadOnlyDictionaryInterfaceOfNullableIntProperty", "ReadOnlyDictionaryInterfaceOfNullableGuidProperty", "ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

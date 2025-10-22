@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomEnumValidatedNotDefault> ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomFlagsEnum> ReadOnlyListInterfaceOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -102,6 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ReadOnlyListInterfaceOfGuidProperty)
                 .Hash(this.ReadOnlyListInterfaceOfDateTimeProperty)
                 .Hash(this.ReadOnlyListInterfaceOfCustomEnumProperty)
+                .Hash(this.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ReadOnlyListInterfaceOfCustomClassProperty)
                 .Hash(this.ReadOnlyListInterfaceOfCustomBaseClassProperty)

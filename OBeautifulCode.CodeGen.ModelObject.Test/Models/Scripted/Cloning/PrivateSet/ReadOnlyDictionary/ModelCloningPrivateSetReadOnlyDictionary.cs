@@ -37,6 +37,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<string, string> readOnlyDictionaryInterfaceOfStringProperty,
             IReadOnlyDictionary<Guid, Guid> readOnlyDictionaryInterfaceOfGuidProperty,
             IReadOnlyDictionary<CustomEnum, CustomEnum> readOnlyDictionaryInterfaceOfCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> readOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyDictionary<CustomClass, CustomClass> readOnlyDictionaryInterfaceOfCustomClassProperty,
             IReadOnlyDictionary<CustomBaseClass, CustomBaseClass> readOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -47,6 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyDictionaryInterfaceOfStringProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { readOnlyDictionaryInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { readOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { readOnlyDictionaryInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
             new { readOnlyDictionaryInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues();
@@ -57,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyDictionaryInterfaceOfStringProperty = readOnlyDictionaryInterfaceOfStringProperty;
             this.ReadOnlyDictionaryInterfaceOfGuidProperty = readOnlyDictionaryInterfaceOfGuidProperty;
             this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty = readOnlyDictionaryInterfaceOfCustomEnumProperty;
+            this.ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = readOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = readOnlyDictionaryInterfaceOfCustomFlagsEnumProperty;
             this.ReadOnlyDictionaryInterfaceOfCustomClassProperty = readOnlyDictionaryInterfaceOfCustomClassProperty;
             this.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = readOnlyDictionaryInterfaceOfCustomBaseClassProperty;
@@ -97,6 +100,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomEnum, CustomEnum> ReadOnlyDictionaryInterfaceOfCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
@@ -145,6 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfStringProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfGuidProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomClassProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty) &&

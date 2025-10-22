@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault[] Child2ArrayOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum[] Child2ArrayOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -102,6 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentArrayOfGuidProperty)
                 .Hash(this.ParentArrayOfDateTimeProperty)
                 .Hash(this.ParentArrayOfCustomEnumProperty)
+                .Hash(this.ParentArrayOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentArrayOfCustomFlagsEnumProperty)
                 .Hash(this.ParentArrayOfCustomClassProperty)
                 .Hash(this.ParentArrayOfCustomBaseClassProperty)
@@ -112,6 +120,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ArrayOfGuidProperty)
                 .Hash(this.Child2ArrayOfDateTimeProperty)
                 .Hash(this.Child2ArrayOfCustomEnumProperty)
+                .Hash(this.Child2ArrayOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child2ArrayOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ArrayOfCustomClassProperty)
                 .Hash(this.Child2ArrayOfCustomBaseClassProperty)

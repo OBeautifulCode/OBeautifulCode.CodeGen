@@ -39,6 +39,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid[] parentArrayOfGuidProperty,
             DateTime[] parentArrayOfDateTimeProperty,
             CustomEnum[] parentArrayOfCustomEnumProperty,
+            CustomEnumValidatedNotDefault[] parentArrayOfCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum[] parentArrayOfCustomFlagsEnumProperty,
             CustomClass[] parentArrayOfCustomClassProperty,
             CustomBaseClass[] parentArrayOfCustomBaseClassProperty,
@@ -49,11 +50,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid[] child1ArrayOfGuidProperty,
             DateTime[] child1ArrayOfDateTimeProperty,
             CustomEnum[] child1ArrayOfCustomEnumProperty,
+            CustomEnumValidatedNotDefault[] child1ArrayOfCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum[] child1ArrayOfCustomFlagsEnumProperty,
             CustomClass[] child1ArrayOfCustomClassProperty,
             CustomBaseClass[] child1ArrayOfCustomBaseClassProperty,
             CustomGenericClass<CustomClass>[] child1ArrayOfCustomGenericClassOfCustomClassProperty)
-            : base(parentArrayOfBoolProperty, parentArrayOfIntProperty, parentArrayOfStringProperty, parentArrayOfGuidProperty, parentArrayOfDateTimeProperty, parentArrayOfCustomEnumProperty, parentArrayOfCustomFlagsEnumProperty, parentArrayOfCustomClassProperty, parentArrayOfCustomBaseClassProperty, parentArrayOfCustomGenericClassOfCustomClassProperty)
+            : base(parentArrayOfBoolProperty, parentArrayOfIntProperty, parentArrayOfStringProperty, parentArrayOfGuidProperty, parentArrayOfDateTimeProperty, parentArrayOfCustomEnumProperty, parentArrayOfCustomEnumValidatedNotDefaultProperty, parentArrayOfCustomFlagsEnumProperty, parentArrayOfCustomClassProperty, parentArrayOfCustomBaseClassProperty, parentArrayOfCustomGenericClassOfCustomClassProperty)
         {
             new { child1ArrayOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -61,6 +63,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child1ArrayOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { child1ArrayOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { child1ArrayOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -72,6 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ArrayOfGuidProperty = child1ArrayOfGuidProperty;
             this.Child1ArrayOfDateTimeProperty = child1ArrayOfDateTimeProperty;
             this.Child1ArrayOfCustomEnumProperty = child1ArrayOfCustomEnumProperty;
+            this.Child1ArrayOfCustomEnumValidatedNotDefaultProperty = child1ArrayOfCustomEnumValidatedNotDefaultProperty;
             this.Child1ArrayOfCustomFlagsEnumProperty = child1ArrayOfCustomFlagsEnumProperty;
             this.Child1ArrayOfCustomClassProperty = child1ArrayOfCustomClassProperty;
             this.Child1ArrayOfCustomBaseClassProperty = child1ArrayOfCustomBaseClassProperty;
@@ -125,6 +129,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault[] Child1ArrayOfCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum[] Child1ArrayOfCustomFlagsEnumProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -168,6 +179,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentArrayOfGuidProperty.IsEqualTo(other.ParentArrayOfGuidProperty) &&
                 this.ParentArrayOfDateTimeProperty.IsEqualTo(other.ParentArrayOfDateTimeProperty) &&
                 this.ParentArrayOfCustomEnumProperty.IsEqualTo(other.ParentArrayOfCustomEnumProperty) &&
+                this.ParentArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentArrayOfCustomEnumValidatedNotDefaultProperty) &&
                 this.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(other.ParentArrayOfCustomFlagsEnumProperty) &&
                 this.ParentArrayOfCustomClassProperty.IsEqualTo(other.ParentArrayOfCustomClassProperty) &&
                 this.ParentArrayOfCustomBaseClassProperty.IsEqualTo(other.ParentArrayOfCustomBaseClassProperty) &&
@@ -178,6 +190,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child1ArrayOfGuidProperty.IsEqualTo(other.Child1ArrayOfGuidProperty) &&
                 this.Child1ArrayOfDateTimeProperty.IsEqualTo(other.Child1ArrayOfDateTimeProperty) &&
                 this.Child1ArrayOfCustomEnumProperty.IsEqualTo(other.Child1ArrayOfCustomEnumProperty) &&
+                this.Child1ArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child1ArrayOfCustomEnumValidatedNotDefaultProperty) &&
                 this.Child1ArrayOfCustomFlagsEnumProperty.IsEqualTo(other.Child1ArrayOfCustomFlagsEnumProperty) &&
                 this.Child1ArrayOfCustomClassProperty.IsEqualTo(other.Child1ArrayOfCustomClassProperty) &&
                 this.Child1ArrayOfCustomBaseClassProperty.IsEqualTo(other.Child1ArrayOfCustomBaseClassProperty) &&

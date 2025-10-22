@@ -33,20 +33,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid?[] parentArrayOfNullableGuidProperty,
             DateTime?[] parentArrayOfNullableDateTimeProperty,
             CustomEnum?[] parentArrayOfNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault?[] parentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum?[] parentArrayOfNullableCustomFlagsEnumProperty,
             bool?[] child2ArrayOfNullableBoolProperty,
             int?[] child2ArrayOfNullableIntProperty,
             Guid?[] child2ArrayOfNullableGuidProperty,
             DateTime?[] child2ArrayOfNullableDateTimeProperty,
             CustomEnum?[] child2ArrayOfNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault?[] child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum?[] child2ArrayOfNullableCustomFlagsEnumProperty)
-            : base(parentArrayOfNullableBoolProperty, parentArrayOfNullableIntProperty, parentArrayOfNullableGuidProperty, parentArrayOfNullableDateTimeProperty, parentArrayOfNullableCustomEnumProperty, parentArrayOfNullableCustomFlagsEnumProperty)
+            : base(parentArrayOfNullableBoolProperty, parentArrayOfNullableIntProperty, parentArrayOfNullableGuidProperty, parentArrayOfNullableDateTimeProperty, parentArrayOfNullableCustomEnumProperty, parentArrayOfNullableCustomEnumValidatedNotDefaultProperty, parentArrayOfNullableCustomFlagsEnumProperty)
         {
             new { child2ArrayOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ArrayOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
 
             this.Child2ArrayOfNullableBoolProperty = child2ArrayOfNullableBoolProperty;
@@ -54,6 +57,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2ArrayOfNullableGuidProperty = child2ArrayOfNullableGuidProperty;
             this.Child2ArrayOfNullableDateTimeProperty = child2ArrayOfNullableDateTimeProperty;
             this.Child2ArrayOfNullableCustomEnumProperty = child2ArrayOfNullableCustomEnumProperty;
+            this.Child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty = child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty;
             this.Child2ArrayOfNullableCustomFlagsEnumProperty = child2ArrayOfNullableCustomFlagsEnumProperty;
         }
 
@@ -91,6 +95,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomEnum?[] Child2ArrayOfNullableCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault?[] Child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

@@ -38,6 +38,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<Guid?> readOnlyCollectionInterfaceOfNullableGuidProperty,
             IReadOnlyCollection<DateTime?> readOnlyCollectionInterfaceOfNullableDateTimeProperty,
             IReadOnlyCollection<CustomEnum?> readOnlyCollectionInterfaceOfNullableCustomEnumProperty,
+            IReadOnlyCollection<CustomEnumValidatedNotDefault?> readOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
             IReadOnlyCollection<CustomFlagsEnum?> readOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
         {
             new { readOnlyCollectionInterfaceOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -45,6 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyCollectionInterfaceOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { readOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
 
             this.ReadOnlyCollectionInterfaceOfNullableBoolProperty = readOnlyCollectionInterfaceOfNullableBoolProperty;
@@ -52,6 +54,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyCollectionInterfaceOfNullableGuidProperty = readOnlyCollectionInterfaceOfNullableGuidProperty;
             this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty = readOnlyCollectionInterfaceOfNullableDateTimeProperty;
             this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty = readOnlyCollectionInterfaceOfNullableCustomEnumProperty;
+            this.ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = readOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty;
             this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = readOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty;
         }
 
@@ -95,6 +98,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomEnumValidatedNotDefault?> ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomFlagsEnum?> ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty { get; private set; }
 
         /// <inheritdoc />
@@ -116,6 +126,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableGuidProperty) &&
                 this.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableDateTimeProperty) &&
                 this.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty) &&
+                this.ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;

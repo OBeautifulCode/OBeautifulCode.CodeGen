@@ -64,6 +64,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -98,6 +105,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         new { this.Child2ReadOnlyDictionaryInterfaceOfStringProperty }.ForRecording().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues(),
                         new { this.Child2ReadOnlyDictionaryInterfaceOfGuidProperty }.ForRecording().Must().NotBeNullNorEmptyDictionary(),
                         new { this.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty }.ForRecording().Must().NotBeNullNorEmptyDictionary(),
+                        new { this.Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty }.ForRecording().Must().NotBeNullNorEmptyDictionary(),
                         new { this.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty }.ForRecording().Must().NotBeNullNorEmptyDictionary(),
                         new { this.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty }.ForRecording().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues(),
                         new { this.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty }.ForRecording().Must().NotBeNullNorEmptyDictionaryNorContainAnyNullValues(),

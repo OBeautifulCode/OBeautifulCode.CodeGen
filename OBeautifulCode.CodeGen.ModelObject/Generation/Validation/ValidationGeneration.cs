@@ -212,7 +212,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         CodeTemplateKind.TestSnippet,
                         KeyMethodKinds.Both,
                         CodeSnippetKind.SelfValidationTestScenario)
-                    .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is null scenario")
+                    .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is null scenario"))
                     .Replace(Tokens.InvalidPropertyValueToken, "null")
                     .Replace(Tokens.ValidationFailureMessageContainsToken, "\"null\"");
 
@@ -228,7 +228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         CodeTemplateKind.TestSnippet,
                         KeyMethodKinds.Both,
                         CodeSnippetKind.SelfValidationTestScenario)
-                    .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is white space scenario")
+                    .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is white space scenario"))
                     .Replace(Tokens.InvalidPropertyValueToken, "Invariant($\"  {Environment.NewLine}  \")")
                     .Replace(Tokens.ValidationFailureMessageContainsToken, "\"white space\"");
 
@@ -246,7 +246,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             CodeTemplateKind.TestSnippet,
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
-                        .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is not a UTC DateTime (it's Local) scenario")
+                        .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is not a UTC DateTime (it's Local) scenario"))
                         .Replace(Tokens.InvalidPropertyValueToken, Invariant($"{nameof(DateTime)}.{nameof(DateTime.Now)}"))
                         .Replace(Tokens.ValidationFailureMessageContainsToken, "\"Kind that is not DateTimeKind.Utc\", \"DateTimeKind.Local\"");
 
@@ -258,7 +258,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             CodeTemplateKind.TestSnippet,
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
-                        .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is not a UTC DateTime (it's Unspecified) scenario")
+                        .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is not a UTC DateTime (it's Unspecified) scenario"))
                         .Replace(Tokens.InvalidPropertyValueToken, Invariant($"{nameof(DateTime)}.{nameof(DateTime.UtcNow)}"))
                         .Replace(Tokens.ValidationFailureMessageContainsToken, "\"Kind that is not DateTimeKind.Utc\", \"DateTimeKind.Unspecified\"");
 
@@ -275,7 +275,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         CodeTemplateKind.TestSnippet,
                         KeyMethodKinds.Both,
                         CodeSnippetKind.SelfValidationTestScenario)
-                    .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is an empty enumerable scenario")
+                    .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is an empty enumerable scenario"))
                     .Replace(Tokens.InvalidPropertyValueToken, propertyType.GenerateSystemTypeInstantiationCode())
                     .Replace(Tokens.ValidationFailureMessageContainsToken, "\"is an empty enumerable\"");
 
@@ -309,7 +309,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             CodeTemplateKind.TestSnippet,
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
-                        .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' contains a null element scenario")
+                        .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' contains a null element scenario"))
                         .Replace(Tokens.InvalidPropertyValueToken, invalidPropertyValue)
                         .Replace(Tokens.ValidationFailureMessageContainsToken, "\"contains at least one null element\"");
 
@@ -338,7 +338,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             CodeTemplateKind.TestSnippet,
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
-                        .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' contain a white space element scenario")
+                        .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' contain a white space element scenario"))
                         .Replace(Tokens.InvalidPropertyValueToken, invalidPropertyValue)
                         .Replace(Tokens.ValidationFailureMessageContainsToken, "\"contains an element that is white space\"");
 
@@ -355,7 +355,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                         CodeTemplateKind.TestSnippet,
                         KeyMethodKinds.Both,
                         CodeSnippetKind.SelfValidationTestScenario)
-                    .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is an empty dictionary scenario")
+                    .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is an empty dictionary scenario"))
                     .Replace(Tokens.InvalidPropertyValueToken, propertyType.GenerateSystemTypeInstantiationCode())
                     .Replace(Tokens.ValidationFailureMessageContainsToken, "\"is an empty dictionary\"");
 
@@ -366,11 +366,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 var valueType = propertyType.GetClosedSystemDictionaryValueType();
                 if (!valueType.IsValueType)
                 {
-                    var dictionaryWithNullValue = @"
+                    var dictionaryWithNullValue = Invariant($@"
 
-                    var dictionaryWithNullValue = systemUnderTest.[property-name-here].ToDictionary(_ => _.Key, _ => _.Value);
+                    var dictionaryWithNullValue = systemUnderTest.{Tokens.PropertyNameToken}.ToDictionary(_ => _.Key, _ => _.Value);
                     var randomKey = dictionaryWithNullValue.Keys.ElementAt(ThreadSafeRandom.Next(0, dictionaryWithNullValue.Count));
-                    dictionaryWithNullValue[randomKey] = null;";
+                    dictionaryWithNullValue[randomKey] = null;");
 
                     var invalidPropertyValue = "dictionaryWithNullValue";
 
@@ -385,7 +385,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             CodeTemplateKind.TestSnippet,
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
-                        .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' contains a key-value pair with a null value")
+                        .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' contains a key-value pair with a null value"))
                         .Replace(Tokens.InvalidPropertyValueSetupToken, dictionaryWithNullValue)
                         .Replace(Tokens.InvalidPropertyValueToken, invalidPropertyValue)
                         .Replace(Tokens.ValidationFailureMessageContainsToken, "\"contains at least one key-value pair with a null value\"");
@@ -420,8 +420,8 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             CodeTemplateKind.TestSnippet,
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
-                        .Replace(Tokens.TestScenarioNameToken, "GetSelfValidationFailures() should return a failure when property '[property-name-here]' is [property-type-name-here].[enum-value-named-unknown] scenario")
-                        .Replace(Tokens.ValidationFailureMessageContainsToken, "\"[enum-value-named-unknown]\"")
+                        .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is {enumTypeToCheck.ToStringReadable()}.{Tokens.EnumValueNamedUnknownToken} scenario"))
+                        .Replace(Tokens.ValidationFailureMessageContainsToken, Invariant($"\"{Tokens.EnumValueNamedUnknownToken}\""))
                         .Replace(Tokens.EnumValueNamedUnknownToken, UnknownEnumValueName)
                         .Replace(Tokens.InvalidPropertyValueToken, Invariant($"{enumTypeToCheck.ToStringReadable()}.{UnknownEnumValueName}"));
 

@@ -101,6 +101,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return;
                 }
 
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentArrayOfNullableCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ParentArrayOfNullableCustomFlagsEnumProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
@@ -137,6 +144,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child1ArrayOfNullableCustomEnumProperty, options, propertyPathTracker, nameof(this.Child1ArrayOfNullableCustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
                 {

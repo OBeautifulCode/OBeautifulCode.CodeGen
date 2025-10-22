@@ -215,6 +215,33 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         /// <summary>
+        /// Deep clones this object with a new <see cref="ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty" />.
+        /// </summary>
+        /// <param name="parentArrayOfNullableCustomEnumValidatedNotDefaultProperty">The new <see cref="ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetArrayOfNullableParent" /> using the specified <paramref name="parentArrayOfNullableCustomEnumValidatedNotDefaultProperty" /> for <see cref="ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public virtual ModelAllPrivateSetArrayOfNullableParent DeepCloneWithParentArrayOfNullableCustomEnumValidatedNotDefaultProperty(CustomEnumValidatedNotDefault?[] parentArrayOfNullableCustomEnumValidatedNotDefaultProperty)
+        {
+            throw new NotImplementedException("This method should be abstract.  It was generated as virtual so that you aren't forced to override it when you create a new model that derives from this model.  It will be overridden in the generated designer file.");
+        }
+
+        /// <summary>
         /// Deep clones this object with a new <see cref="ParentArrayOfNullableCustomFlagsEnumProperty" />.
         /// </summary>
         /// <param name="parentArrayOfNullableCustomFlagsEnumProperty">The new <see cref="ParentArrayOfNullableCustomFlagsEnumProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>

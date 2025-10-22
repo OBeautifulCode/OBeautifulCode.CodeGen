@@ -194,7 +194,7 @@
       <DependentUpon>CodeGenDummyFactory.cs</DependentUpon>
     </Compile>
     <Compile Include="CodeGeneratorTest\BadModels.cs" />
-    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomEnumWithUnknown.cs" />
+    <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomEnumValidatedNotDefault.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultilevelChildBaseClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultilevelGrandchildClass.cs" />
     <Compile Include="CodeGeneratorTest\CustomTypesForModelProperties\CustomMultilevelChildClass.cs" />

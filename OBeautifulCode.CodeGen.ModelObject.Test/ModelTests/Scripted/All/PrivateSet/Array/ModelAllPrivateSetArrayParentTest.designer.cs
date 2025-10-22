@@ -60,6 +60,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfGuidProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty)).ParentArrayOfGuidProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfDateTimeProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty)).ParentArrayOfDateTimeProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomEnumProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty)).ParentArrayOfCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomEnumValidatedNotDefaultProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty)).ParentArrayOfCustomEnumValidatedNotDefaultProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomFlagsEnumProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty)).ParentArrayOfCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomClassProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty)).ParentArrayOfCustomClassProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentArrayOfCustomBaseClassProperty(A.Dummy<ModelAllPrivateSetArrayParent>().Whose(_ => !_.ParentArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty)).ParentArrayOfCustomBaseClassProperty),
@@ -270,6 +271,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // The object could be a boxed value type, which will fail this asseration because
                     // a deep clone of a value type object is the same object.
                     actual.ParentArrayOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomEnumProperty);
+                }
+
+                if (systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty);
                 }
 
                 if (systemUnderTest.ParentArrayOfCustomFlagsEnumProperty == null)

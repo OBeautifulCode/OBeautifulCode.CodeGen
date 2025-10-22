@@ -59,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableGuidProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)).ParentReadOnlyCollectionInterfaceOfNullableGuidProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)).ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty(A.Dummy<ModelAllPrivateSetReadOnlyCollectionOfNullableParent>().Whose(_ => !_.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)).ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject = new ModelAllPrivateSetReadOnlyCollectionOfNullableParent[]
@@ -254,6 +255,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // The object could be a boxed value type, which will fail this asseration because
                     // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
                 }
 
                 if (systemUnderTest.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty == null)

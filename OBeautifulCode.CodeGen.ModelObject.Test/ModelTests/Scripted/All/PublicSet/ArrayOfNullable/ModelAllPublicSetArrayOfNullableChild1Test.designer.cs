@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetArrayOfNullableChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArrayOfNullableChild1: ParentArrayOfNullableBoolProperty = {systemUnderTest.ParentArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableIntProperty = {systemUnderTest.ParentArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableGuidProperty = {systemUnderTest.ParentArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableDateTimeProperty = {systemUnderTest.ParentArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableBoolProperty = {systemUnderTest.Child1ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableIntProperty = {systemUnderTest.Child1ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableGuidProperty = {systemUnderTest.Child1ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableDateTimeProperty = {systemUnderTest.Child1ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArrayOfNullableChild1: ParentArrayOfNullableBoolProperty = {systemUnderTest.ParentArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableIntProperty = {systemUnderTest.ParentArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableGuidProperty = {systemUnderTest.ParentArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableDateTimeProperty = {systemUnderTest.ParentArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableBoolProperty = {systemUnderTest.Child1ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableIntProperty = {systemUnderTest.Child1ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableGuidProperty = {systemUnderTest.Child1ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableDateTimeProperty = {systemUnderTest.Child1ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -151,6 +151,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetArrayOfNullableChild1>
+                {
+                    Name = "DeepCloneWithParentArrayOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty with the provided parentArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().ThatIs(_ => !systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetArrayOfNullableChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -279,6 +299,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetArrayOfNullableChild1>
                 {
+                    Name = "DeepCloneWithChild1ArrayOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty with the provided child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().ThatIs(_ => !systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetArrayOfNullableChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetArrayOfNullableChild1>
+                {
                     Name = "DeepCloneWithChild1ArrayOfNullableCustomFlagsEnumProperty should deep clone object and replace Child1ArrayOfNullableCustomFlagsEnumProperty with the provided child1ArrayOfNullableCustomFlagsEnumProperty",
                     WithPropertyName = "Child1ArrayOfNullableCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -309,201 +349,261 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPublicSetArrayOfNullableChild1[]
                     {
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty)).ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty)).ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty)).ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty)).ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty)).ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty)).ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty)).ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty)).ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty)).ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty)).ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty)).ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty)).ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty)).Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty)).ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty)).Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty)).Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty)).Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty)).Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty)).Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty)).Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty)).Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty)).Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetArrayOfNullableChild1
                             {
-                                ParentArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
-                                ParentArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
-                                ParentArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
-                                ParentArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
-                                ParentArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
-                                ParentArrayOfNullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
-                                Child1ArrayOfNullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
-                                Child1ArrayOfNullableIntProperty             = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
-                                Child1ArrayOfNullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
-                                Child1ArrayOfNullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
-                                Child1ArrayOfNullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
-                                Child1ArrayOfNullableCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty)).Child1ArrayOfNullableCustomFlagsEnumProperty,
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty)).Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                            },
+                        new ModelAllPublicSetArrayOfNullableChild1
+                            {
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty)).Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty,
+                            },
+                        new ModelAllPublicSetArrayOfNullableChild1
+                            {
+                                ParentArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ParentArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ParentArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ParentArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ParentArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfNullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                Child1ArrayOfNullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                Child1ArrayOfNullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                Child1ArrayOfNullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                Child1ArrayOfNullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                Child1ArrayOfNullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                Child1ArrayOfNullableCustomFlagsEnumProperty               = A.Dummy<ModelAllPublicSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty)).Child1ArrayOfNullableCustomFlagsEnumProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -739,6 +839,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentArrayOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ParentArrayOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -811,6 +923,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ArrayOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ArrayOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child1ArrayOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.Child1ArrayOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -840,7 +964,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentArrayOfNullableBoolProperty", "ParentArrayOfNullableIntProperty", "ParentArrayOfNullableGuidProperty", "ParentArrayOfNullableDateTimeProperty", "ParentArrayOfNullableCustomEnumProperty", "ParentArrayOfNullableCustomFlagsEnumProperty", "Child1ArrayOfNullableBoolProperty", "Child1ArrayOfNullableIntProperty", "Child1ArrayOfNullableGuidProperty", "Child1ArrayOfNullableDateTimeProperty", "Child1ArrayOfNullableCustomEnumProperty", "Child1ArrayOfNullableCustomFlagsEnumProperty" };
+                var propertyNames = new string[] { "ParentArrayOfNullableBoolProperty", "ParentArrayOfNullableIntProperty", "ParentArrayOfNullableGuidProperty", "ParentArrayOfNullableDateTimeProperty", "ParentArrayOfNullableCustomEnumProperty", "ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty", "ParentArrayOfNullableCustomFlagsEnumProperty", "Child1ArrayOfNullableBoolProperty", "Child1ArrayOfNullableIntProperty", "Child1ArrayOfNullableGuidProperty", "Child1ArrayOfNullableDateTimeProperty", "Child1ArrayOfNullableCustomEnumProperty", "Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty", "Child1ArrayOfNullableCustomFlagsEnumProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

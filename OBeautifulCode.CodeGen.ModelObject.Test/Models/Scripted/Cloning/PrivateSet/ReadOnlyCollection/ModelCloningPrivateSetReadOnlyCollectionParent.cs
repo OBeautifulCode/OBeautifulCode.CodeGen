@@ -38,6 +38,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyCollection<Guid> parentReadOnlyCollectionInterfaceOfGuidProperty,
             IReadOnlyCollection<DateTime> parentReadOnlyCollectionInterfaceOfDateTimeProperty,
             IReadOnlyCollection<CustomEnum> parentReadOnlyCollectionInterfaceOfCustomEnumProperty,
+            IReadOnlyCollection<CustomEnumValidatedNotDefault> parentReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyCollection<CustomFlagsEnum> parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyCollection<CustomClass> parentReadOnlyCollectionInterfaceOfCustomClassProperty,
             IReadOnlyCollection<CustomBaseClass> parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty,
@@ -49,6 +50,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { parentReadOnlyCollectionInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { parentReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { parentReadOnlyCollectionInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -60,6 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentReadOnlyCollectionInterfaceOfGuidProperty = parentReadOnlyCollectionInterfaceOfGuidProperty;
             this.ParentReadOnlyCollectionInterfaceOfDateTimeProperty = parentReadOnlyCollectionInterfaceOfDateTimeProperty;
             this.ParentReadOnlyCollectionInterfaceOfCustomEnumProperty = parentReadOnlyCollectionInterfaceOfCustomEnumProperty;
+            this.ParentReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty = parentReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty = parentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty;
             this.ParentReadOnlyCollectionInterfaceOfCustomClassProperty = parentReadOnlyCollectionInterfaceOfCustomClassProperty;
             this.ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty = parentReadOnlyCollectionInterfaceOfCustomBaseClassProperty;
@@ -107,6 +110,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomEnum> ParentReadOnlyCollectionInterfaceOfCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomEnumValidatedNotDefault> ParentReadOnlyCollectionInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

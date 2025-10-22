@@ -59,6 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfStringProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfStringProperty)).ParentReadOnlyDictionaryInterfaceOfStringProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfGuidProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfGuidProperty)).ParentReadOnlyDictionaryInterfaceOfGuidProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomEnumProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty),
+                        // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)).ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomClassProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomClassProperty),
                         // ReferenceObjectForEquatableTestScenarios.DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty(A.Dummy<ModelAllPublicSetReadOnlyDictionaryParent>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)).ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty),
@@ -257,6 +258,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // The object could be a boxed value type, which will fail this asseration because
                     // a deep clone of a value type object is the same object.
                     actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty);
+                }
+
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty);
                 }
 
                 if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty == null)

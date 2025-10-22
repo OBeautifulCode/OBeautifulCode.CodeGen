@@ -34,6 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<Guid> parentReadOnlyListInterfaceOfGuidProperty,
             IReadOnlyList<DateTime> parentReadOnlyListInterfaceOfDateTimeProperty,
             IReadOnlyList<CustomEnum> parentReadOnlyListInterfaceOfCustomEnumProperty,
+            IReadOnlyList<CustomEnumValidatedNotDefault> parentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyList<CustomFlagsEnum> parentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyList<CustomClass> parentReadOnlyListInterfaceOfCustomClassProperty,
             IReadOnlyList<CustomBaseClass> parentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -44,11 +45,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<Guid> child1ReadOnlyListInterfaceOfGuidProperty,
             IReadOnlyList<DateTime> child1ReadOnlyListInterfaceOfDateTimeProperty,
             IReadOnlyList<CustomEnum> child1ReadOnlyListInterfaceOfCustomEnumProperty,
+            IReadOnlyList<CustomEnumValidatedNotDefault> child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyList<CustomFlagsEnum> child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyList<CustomClass> child1ReadOnlyListInterfaceOfCustomClassProperty,
             IReadOnlyList<CustomBaseClass> child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
             IReadOnlyList<CustomGenericClass<CustomClass>> child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
-            : base(parentReadOnlyListInterfaceOfBoolProperty, parentReadOnlyListInterfaceOfIntProperty, parentReadOnlyListInterfaceOfStringProperty, parentReadOnlyListInterfaceOfGuidProperty, parentReadOnlyListInterfaceOfDateTimeProperty, parentReadOnlyListInterfaceOfCustomEnumProperty, parentReadOnlyListInterfaceOfCustomFlagsEnumProperty, parentReadOnlyListInterfaceOfCustomClassProperty, parentReadOnlyListInterfaceOfCustomBaseClassProperty, parentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
+            : base(parentReadOnlyListInterfaceOfBoolProperty, parentReadOnlyListInterfaceOfIntProperty, parentReadOnlyListInterfaceOfStringProperty, parentReadOnlyListInterfaceOfGuidProperty, parentReadOnlyListInterfaceOfDateTimeProperty, parentReadOnlyListInterfaceOfCustomEnumProperty, parentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty, parentReadOnlyListInterfaceOfCustomFlagsEnumProperty, parentReadOnlyListInterfaceOfCustomClassProperty, parentReadOnlyListInterfaceOfCustomBaseClassProperty, parentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty)
         {
             new { child1ReadOnlyListInterfaceOfBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -56,6 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { child1ReadOnlyListInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ReadOnlyListInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { child1ReadOnlyListInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -67,6 +70,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ReadOnlyListInterfaceOfGuidProperty = child1ReadOnlyListInterfaceOfGuidProperty;
             this.Child1ReadOnlyListInterfaceOfDateTimeProperty = child1ReadOnlyListInterfaceOfDateTimeProperty;
             this.Child1ReadOnlyListInterfaceOfCustomEnumProperty = child1ReadOnlyListInterfaceOfCustomEnumProperty;
+            this.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty = child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty = child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty;
             this.Child1ReadOnlyListInterfaceOfCustomClassProperty = child1ReadOnlyListInterfaceOfCustomClassProperty;
             this.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty = child1ReadOnlyListInterfaceOfCustomBaseClassProperty;
@@ -120,6 +124,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomEnumValidatedNotDefault> Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomFlagsEnum> Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -151,6 +162,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyListInterfaceOfGuidProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfDateTimeProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomEnumProperty)
+                .Hash(this.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomClassProperty)
                 .Hash(this.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)
@@ -161,6 +173,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child1ReadOnlyListInterfaceOfGuidProperty)
                 .Hash(this.Child1ReadOnlyListInterfaceOfDateTimeProperty)
                 .Hash(this.Child1ReadOnlyListInterfaceOfCustomEnumProperty)
+                .Hash(this.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child1ReadOnlyListInterfaceOfCustomClassProperty)
                 .Hash(this.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty)

@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetNullable>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNullable: NullableBoolProperty = {systemUnderTest.NullableBoolProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableIntProperty = {systemUnderTest.NullableIntProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableGuidProperty = {systemUnderTest.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {systemUnderTest.NullableDateTimeProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableCustomEnumProperty = {systemUnderTest.NullableCustomEnumProperty?.ToString() ?? "<null>"}, NullableCustomFlagsEnumProperty = {systemUnderTest.NullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNullable: NullableBoolProperty = {systemUnderTest.NullableBoolProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableIntProperty = {systemUnderTest.NullableIntProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableGuidProperty = {systemUnderTest.NullableGuidProperty?.ToString() ?? "<null>"}, NullableDateTimeProperty = {systemUnderTest.NullableDateTimeProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, NullableCustomEnumProperty = {systemUnderTest.NullableCustomEnumProperty?.ToString() ?? "<null>"}, NullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.NullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, NullableCustomFlagsEnumProperty = {systemUnderTest.NullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -159,6 +159,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetNullable>
                 {
+                    Name = "DeepCloneWithNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace NullableCustomEnumValidatedNotDefaultProperty with the provided nullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "NullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetNullable>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetNullable>().ThatIs(_ => !systemUnderTest.NullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.NullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetNullable>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.NullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetNullable>
+                {
                     Name = "DeepCloneWithNullableCustomFlagsEnumProperty should deep clone object and replace NullableCustomFlagsEnumProperty with the provided nullableCustomFlagsEnumProperty",
                     WithPropertyName = "NullableCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -189,69 +209,86 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
-                                NullableIntProperty             = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
-                                NullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
-                                NullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
                             },
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPublicSetNullable[]
                     {
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableBoolProperty)).NullableBoolProperty,
-                                NullableIntProperty             = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
-                                NullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
-                                NullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableBoolProperty)).NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
-                                NullableIntProperty             = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableIntProperty)).NullableIntProperty,
-                                NullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
-                                NullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableIntProperty)).NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
-                                NullableIntProperty             = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
-                                NullableGuidProperty            = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableGuidProperty)).NullableGuidProperty,
-                                NullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableGuidProperty)).NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
-                                NullableIntProperty             = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
-                                NullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
-                                NullableDateTimeProperty        = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty)).NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty)).NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
-                                NullableIntProperty             = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
-                                NullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
-                                NullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty)).NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty)).NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
                             },
                         new ModelAllPublicSetNullable
                             {
-                                NullableBoolProperty            = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
-                                NullableIntProperty             = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
-                                NullableGuidProperty            = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
-                                NullableDateTimeProperty        = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
-                                NullableCustomEnumProperty      = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
-                                NullableCustomFlagsEnumProperty = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty)).NullableCustomFlagsEnumProperty,
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty)).NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty,
+                            },
+                        new ModelAllPublicSetNullable
+                            {
+                                NullableBoolProperty                          = ReferenceObjectForEquatableTestScenarios.NullableBoolProperty,
+                                NullableIntProperty                           = ReferenceObjectForEquatableTestScenarios.NullableIntProperty,
+                                NullableGuidProperty                          = ReferenceObjectForEquatableTestScenarios.NullableGuidProperty,
+                                NullableDateTimeProperty                      = ReferenceObjectForEquatableTestScenarios.NullableDateTimeProperty,
+                                NullableCustomEnumProperty                    = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumProperty,
+                                NullableCustomEnumValidatedNotDefaultProperty = ReferenceObjectForEquatableTestScenarios.NullableCustomEnumValidatedNotDefaultProperty,
+                                NullableCustomFlagsEnumProperty               = A.Dummy<ModelAllPublicSetNullable>().Whose(_ => !_.NullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.NullableCustomFlagsEnumProperty)).NullableCustomFlagsEnumProperty,
                             },
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -443,7 +480,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "NullableBoolProperty", "NullableIntProperty", "NullableGuidProperty", "NullableDateTimeProperty", "NullableCustomEnumProperty", "NullableCustomFlagsEnumProperty" };
+                var propertyNames = new string[] { "NullableBoolProperty", "NullableIntProperty", "NullableGuidProperty", "NullableDateTimeProperty", "NullableCustomEnumProperty", "NullableCustomEnumValidatedNotDefaultProperty", "NullableCustomFlagsEnumProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

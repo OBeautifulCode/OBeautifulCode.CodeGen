@@ -64,6 +64,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault?[] Child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum?[] Child2ArrayOfNullableCustomFlagsEnumProperty { get; set; }
 
         /// <inheritdoc />
@@ -73,12 +80,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentArrayOfNullableGuidProperty)
                 .Hash(this.ParentArrayOfNullableDateTimeProperty)
                 .Hash(this.ParentArrayOfNullableCustomEnumProperty)
+                .Hash(this.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentArrayOfNullableCustomFlagsEnumProperty)
                 .Hash(this.Child2ArrayOfNullableBoolProperty)
                 .Hash(this.Child2ArrayOfNullableIntProperty)
                 .Hash(this.Child2ArrayOfNullableGuidProperty)
                 .Hash(this.Child2ArrayOfNullableDateTimeProperty)
                 .Hash(this.Child2ArrayOfNullableCustomEnumProperty)
+                .Hash(this.Child2ArrayOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child2ArrayOfNullableCustomFlagsEnumProperty)
                 .Value;
     }

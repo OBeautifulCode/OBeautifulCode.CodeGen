@@ -44,7 +44,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     SystemUnderTest = A.Dummy<ModelValidationPublicSetNullable>(),
                 });
 
-        private static readonly SelfValidationTestScenarios<ModelValidationPublicSetNullable> SelfValidationTestScenarios = new SelfValidationTestScenarios<ModelValidationPublicSetNullable>();
+        private static readonly SelfValidationTestScenarios<ModelValidationPublicSetNullable> SelfValidationTestScenarios = new SelfValidationTestScenarios<ModelValidationPublicSetNullable>()
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNullable>();
+
+                    systemUnderTest.NullableCustomEnumValidatedNotDefaultProperty = CustomEnumValidatedNotDefault.Unknown;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNullable>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'NullableCustomEnumValidatedNotDefaultProperty' is CustomEnumValidatedNotDefault.Unknown scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "NullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "NullableCustomEnumValidatedNotDefaultProperty", "Unknown", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                });
 
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]

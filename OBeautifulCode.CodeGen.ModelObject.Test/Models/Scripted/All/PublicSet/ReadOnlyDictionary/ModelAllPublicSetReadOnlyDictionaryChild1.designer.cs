@@ -74,6 +74,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfStringProperty)
                       && this.ParentReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfGuidProperty)
                       && this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)
+                      && this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
                       && this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                       && this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)
                       && this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
@@ -83,6 +84,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.Child1ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfStringProperty)
                       && this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfGuidProperty)
                       && this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty)
+                      && this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
                       && this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                       && this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty)
                       && this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
@@ -101,6 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ParentReadOnlyDictionaryInterfaceOfStringProperty)
             .Hash(this.ParentReadOnlyDictionaryInterfaceOfGuidProperty)
             .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)
+            .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
             .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
             .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)
             .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
@@ -110,6 +113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Child1ReadOnlyDictionaryInterfaceOfStringProperty)
             .Hash(this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty)
             .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty)
+            .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
             .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
             .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty)
             .Hash(this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
@@ -146,6 +150,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -155,6 +160,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -191,6 +197,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -200,6 +207,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -236,6 +244,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = parentReadOnlyDictionaryInterfaceOfStringProperty,
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -245,6 +254,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -281,6 +291,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = parentReadOnlyDictionaryInterfaceOfGuidProperty,
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -290,6 +301,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -326,6 +338,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = parentReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -335,6 +348,54 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = this.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                             };
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public override ModelAllPublicSetReadOnlyDictionaryParent DeepCloneWithParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty(IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPublicSetReadOnlyDictionaryChild1
+                             {
+                                 ParentReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfIntProperty                             = this.ParentReadOnlyDictionaryInterfaceOfIntProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = parentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = this.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfIntProperty                             = this.Child1ReadOnlyDictionaryInterfaceOfIntProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -371,6 +432,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = parentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -380,6 +442,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -416,6 +479,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = parentReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -425,6 +489,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -461,6 +526,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = parentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -470,6 +536,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -506,6 +573,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -515,6 +583,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -555,6 +624,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -564,6 +634,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -604,6 +675,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -613,6 +685,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -653,6 +726,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -662,6 +736,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = child1ReadOnlyDictionaryInterfaceOfStringProperty,
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -702,6 +777,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -711,6 +787,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = child1ReadOnlyDictionaryInterfaceOfGuidProperty,
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -751,6 +828,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -760,6 +838,58 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty,
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = this.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                             };
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" />.
+        /// </summary>
+        /// <param name="child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty">The new <see cref="Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPublicSetReadOnlyDictionaryChild1" /> using the specified <paramref name="child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" /> for <see cref="Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPublicSetReadOnlyDictionaryChild1 DeepCloneWithChild1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty(IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPublicSetReadOnlyDictionaryChild1
+                             {
+                                 ParentReadOnlyDictionaryInterfaceOfBoolProperty                            = this.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfIntProperty                             = this.ParentReadOnlyDictionaryInterfaceOfIntProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = this.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfBoolProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfBoolProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfIntProperty                             = this.Child1ReadOnlyDictionaryInterfaceOfIntProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -800,6 +930,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -809,6 +940,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty,
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -849,6 +981,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -858,6 +991,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = child1ReadOnlyDictionaryInterfaceOfCustomClassProperty,
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -898,6 +1032,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -907,6 +1042,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty,
@@ -947,6 +1083,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -956,6 +1093,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -976,6 +1114,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentReadOnlyDictionaryInterfaceOfStringProperty                          = this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -985,6 +1124,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.DeepClone(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty   = this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.DeepClone(),
                                  Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.DeepClone(),
@@ -998,7 +1138,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyDictionaryChild1: ParentReadOnlyDictionaryInterfaceOfBoolProperty = {this.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfIntProperty = {this.ParentReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfStringProperty = {this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfGuidProperty = {this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfBoolProperty = {this.Child1ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfIntProperty = {this.Child1ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfStringProperty = {this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfGuidProperty = {this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyDictionaryChild1: ParentReadOnlyDictionaryInterfaceOfBoolProperty = {this.ParentReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfIntProperty = {this.ParentReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfStringProperty = {this.ParentReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfGuidProperty = {this.ParentReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {this.ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfBoolProperty = {this.Child1ReadOnlyDictionaryInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfIntProperty = {this.Child1ReadOnlyDictionaryInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfStringProperty = {this.Child1ReadOnlyDictionaryInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfGuidProperty = {this.Child1ReadOnlyDictionaryInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = {this.Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }
@@ -1079,6 +1219,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return;
                 }
 
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
@@ -1136,6 +1283,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty, options, propertyPathTracker, nameof(this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.Child1ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
                 {

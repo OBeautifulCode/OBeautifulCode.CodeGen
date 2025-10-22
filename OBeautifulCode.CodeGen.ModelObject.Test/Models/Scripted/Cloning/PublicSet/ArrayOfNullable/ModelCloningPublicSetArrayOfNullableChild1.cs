@@ -68,6 +68,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault?[] Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum?[] Child1ArrayOfNullableCustomFlagsEnumProperty { get; set; }
 
         /// <inheritdoc />
@@ -89,12 +96,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentArrayOfNullableGuidProperty.IsEqualTo(other.ParentArrayOfNullableGuidProperty) &&
                 this.ParentArrayOfNullableDateTimeProperty.IsEqualTo(other.ParentArrayOfNullableDateTimeProperty) &&
                 this.ParentArrayOfNullableCustomEnumProperty.IsEqualTo(other.ParentArrayOfNullableCustomEnumProperty) &&
+                this.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.ParentArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ParentArrayOfNullableCustomFlagsEnumProperty) &&
                 this.Child1ArrayOfNullableBoolProperty.IsEqualTo(other.Child1ArrayOfNullableBoolProperty) &&
                 this.Child1ArrayOfNullableIntProperty.IsEqualTo(other.Child1ArrayOfNullableIntProperty) &&
                 this.Child1ArrayOfNullableGuidProperty.IsEqualTo(other.Child1ArrayOfNullableGuidProperty) &&
                 this.Child1ArrayOfNullableDateTimeProperty.IsEqualTo(other.Child1ArrayOfNullableDateTimeProperty) &&
                 this.Child1ArrayOfNullableCustomEnumProperty.IsEqualTo(other.Child1ArrayOfNullableCustomEnumProperty) &&
+                this.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.Child1ArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(other.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
             return result;

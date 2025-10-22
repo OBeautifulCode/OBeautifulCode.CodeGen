@@ -64,6 +64,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomEnumValidatedNotDefault?> ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomFlagsEnum?> ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty { get; set; }
 
         /// <inheritdoc />
@@ -76,6 +83,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     new { this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                     new { this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                     new { this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
+                    new { this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                     new { this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                 }
                 .ToSelfValidationFailures();

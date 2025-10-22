@@ -14,11 +14,11 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         public ModelPrivateSetConstructorParameterEnumValueNamedUnknown(
             CustomEnum item1,
             CustomEnum? item2,
-            CustomEnumWithUnknown item3,
-            CustomEnumWithUnknown? item4)
+            CustomEnumValidatedNotDefault item3,
+            CustomEnumValidatedNotDefault? item4)
         {
-            new { item3 }.AsArg().Must().NotBeEqualTo(CustomEnumWithUnknown.Unknown);
-            new { item4 }.AsArg().Must().NotBeEqualToWhenNotNull((CustomEnumWithUnknown?)CustomEnumWithUnknown.Unknown);
+            new { item3 }.AsArg().Must().NotBeEqualTo(CustomEnumValidatedNotDefault.Unknown);
+            new { item4 }.AsArg().Must().NotBeEqualToWhenNotNull((CustomEnumValidatedNotDefault?)CustomEnumValidatedNotDefault.Unknown);
 
             this.Item1 = item1;
             this.Item2 = item2;
@@ -30,8 +30,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         public CustomEnum? Item2 { get; private set; }
 
-        public CustomEnumWithUnknown Item3 { get; private set; }
+        public CustomEnumValidatedNotDefault Item3 { get; private set; }
 
-        public CustomEnumWithUnknown? Item4 { get; private set; }
+        public CustomEnumValidatedNotDefault? Item4 { get; private set; }
     }
 }

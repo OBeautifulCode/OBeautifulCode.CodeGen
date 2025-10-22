@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetArrayOfNullableChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArrayOfNullableChild1: ParentArrayOfNullableBoolProperty = {systemUnderTest.ParentArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableIntProperty = {systemUnderTest.ParentArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableGuidProperty = {systemUnderTest.ParentArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableDateTimeProperty = {systemUnderTest.ParentArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableBoolProperty = {systemUnderTest.Child1ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableIntProperty = {systemUnderTest.Child1ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableGuidProperty = {systemUnderTest.Child1ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableDateTimeProperty = {systemUnderTest.Child1ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArrayOfNullableChild1: ParentArrayOfNullableBoolProperty = {systemUnderTest.ParentArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableIntProperty = {systemUnderTest.ParentArrayOfNullableIntProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableGuidProperty = {systemUnderTest.ParentArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableDateTimeProperty = {systemUnderTest.ParentArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableBoolProperty = {systemUnderTest.Child1ArrayOfNullableBoolProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableIntProperty = {systemUnderTest.Child1ArrayOfNullableIntProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableGuidProperty = {systemUnderTest.Child1ArrayOfNullableGuidProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableDateTimeProperty = {systemUnderTest.Child1ArrayOfNullableDateTimeProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child1ArrayOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child1ArrayOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -70,12 +70,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -97,12 +99,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -124,12 +128,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -151,12 +157,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -178,12 +186,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -205,12 +215,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new Guid?[0],
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -232,12 +244,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              null,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -259,12 +273,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              new DateTime?[0],
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -286,12 +302,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              null,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -313,18 +331,78 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              new CustomEnum?[0],
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "parentArrayOfNullableCustomEnumProperty", "is an empty enumerable", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentArrayOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var result = new ModelAllPrivateSetArrayOfNullableChild1(
+                                             referenceObject.ParentArrayOfNullableBoolProperty,
+                                             referenceObject.ParentArrayOfNullableIntProperty,
+                                             referenceObject.ParentArrayOfNullableGuidProperty,
+                                             referenceObject.ParentArrayOfNullableDateTimeProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             null,
+                                             referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableBoolProperty,
+                                             referenceObject.Child1ArrayOfNullableIntProperty,
+                                             referenceObject.Child1ArrayOfNullableGuidProperty,
+                                             referenceObject.Child1ArrayOfNullableDateTimeProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfNullableCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentArrayOfNullableCustomEnumValidatedNotDefaultProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var result = new ModelAllPrivateSetArrayOfNullableChild1(
+                                             referenceObject.ParentArrayOfNullableBoolProperty,
+                                             referenceObject.ParentArrayOfNullableIntProperty,
+                                             referenceObject.ParentArrayOfNullableGuidProperty,
+                                             referenceObject.ParentArrayOfNullableDateTimeProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             new CustomEnumValidatedNotDefault?[0],
+                                             referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableBoolProperty,
+                                             referenceObject.Child1ArrayOfNullableIntProperty,
+                                             referenceObject.Child1ArrayOfNullableGuidProperty,
+                                             referenceObject.Child1ArrayOfNullableDateTimeProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentArrayOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
@@ -340,12 +418,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              null,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -367,12 +447,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              new CustomFlagsEnum?[0],
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -394,12 +476,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              null,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -421,12 +505,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              new bool?[0],
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -448,12 +534,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              null,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -475,12 +563,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              new int?[0],
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -502,12 +592,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              null,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -529,12 +621,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              new Guid?[0],
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -556,12 +650,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              null,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -583,12 +679,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              new DateTime?[0],
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -610,12 +708,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              null,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -637,18 +737,78 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              new CustomEnum?[0],
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "child1ArrayOfNullableCustomEnumProperty", "is an empty enumerable", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var result = new ModelAllPrivateSetArrayOfNullableChild1(
+                                             referenceObject.ParentArrayOfNullableBoolProperty,
+                                             referenceObject.ParentArrayOfNullableIntProperty,
+                                             referenceObject.ParentArrayOfNullableGuidProperty,
+                                             referenceObject.ParentArrayOfNullableDateTimeProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableBoolProperty,
+                                             referenceObject.Child1ArrayOfNullableIntProperty,
+                                             referenceObject.Child1ArrayOfNullableGuidProperty,
+                                             referenceObject.Child1ArrayOfNullableDateTimeProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             null,
+                                             referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty' is an empty enumerable scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var result = new ModelAllPrivateSetArrayOfNullableChild1(
+                                             referenceObject.ParentArrayOfNullableBoolProperty,
+                                             referenceObject.ParentArrayOfNullableIntProperty,
+                                             referenceObject.ParentArrayOfNullableGuidProperty,
+                                             referenceObject.ParentArrayOfNullableDateTimeProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableBoolProperty,
+                                             referenceObject.Child1ArrayOfNullableIntProperty,
+                                             referenceObject.Child1ArrayOfNullableGuidProperty,
+                                             referenceObject.Child1ArrayOfNullableDateTimeProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             new CustomEnumValidatedNotDefault?[0],
+                                             referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty enumerable", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
@@ -664,12 +824,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              null);
 
                         return result;
@@ -691,12 +853,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentArrayOfNullableGuidProperty,
                                              referenceObject.ParentArrayOfNullableDateTimeProperty,
                                              referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                             referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child1ArrayOfNullableBoolProperty,
                                              referenceObject.Child1ArrayOfNullableIntProperty,
                                              referenceObject.Child1ArrayOfNullableGuidProperty,
                                              referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                              referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                             referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                              new CustomFlagsEnum?[0]);
 
                         return result;
@@ -722,12 +886,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfNullableBoolProperty,
                         };
@@ -752,12 +918,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfNullableIntProperty,
                         };
@@ -782,12 +950,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfNullableGuidProperty,
                         };
@@ -812,12 +982,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfNullableDateTimeProperty,
                         };
@@ -842,12 +1014,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfNullableCustomEnumProperty,
                         };
@@ -855,6 +1029,38 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "ParentArrayOfNullableCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty should return same 'parentArrayOfNullableCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetArrayOfNullableChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetArrayOfNullableChild1(
+                                                      referenceObject.ParentArrayOfNullableBoolProperty,
+                                                      referenceObject.ParentArrayOfNullableIntProperty,
+                                                      referenceObject.ParentArrayOfNullableGuidProperty,
+                                                      referenceObject.ParentArrayOfNullableDateTimeProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableBoolProperty,
+                                                      referenceObject.Child1ArrayOfNullableIntProperty,
+                                                      referenceObject.Child1ArrayOfNullableGuidProperty,
+                                                      referenceObject.Child1ArrayOfNullableDateTimeProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
+                            ExpectedPropertyValue = referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
@@ -872,12 +1078,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                         };
@@ -902,12 +1110,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableBoolProperty,
                         };
@@ -932,12 +1142,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableIntProperty,
                         };
@@ -962,12 +1174,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableGuidProperty,
                         };
@@ -992,12 +1206,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableDateTimeProperty,
                         };
@@ -1022,12 +1238,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableCustomEnumProperty,
                         };
@@ -1035,6 +1253,38 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "Child1ArrayOfNullableCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty should return same 'child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetArrayOfNullableChild1>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetArrayOfNullableChild1(
+                                                      referenceObject.ParentArrayOfNullableBoolProperty,
+                                                      referenceObject.ParentArrayOfNullableIntProperty,
+                                                      referenceObject.ParentArrayOfNullableGuidProperty,
+                                                      referenceObject.ParentArrayOfNullableDateTimeProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableBoolProperty,
+                                                      referenceObject.Child1ArrayOfNullableIntProperty,
+                                                      referenceObject.Child1ArrayOfNullableGuidProperty,
+                                                      referenceObject.Child1ArrayOfNullableDateTimeProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
+                            ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
@@ -1052,12 +1302,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentArrayOfNullableGuidProperty,
                                                       referenceObject.ParentArrayOfNullableDateTimeProperty,
                                                       referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentArrayOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child1ArrayOfNullableBoolProperty,
                                                       referenceObject.Child1ArrayOfNullableIntProperty,
                                                       referenceObject.Child1ArrayOfNullableGuidProperty,
                                                       referenceObject.Child1ArrayOfNullableDateTimeProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomEnumProperty,
+                                                      referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child1ArrayOfNullableCustomFlagsEnumProperty,
                         };
@@ -1163,6 +1415,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentArrayOfNullableCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
+                    Name = "DeepCloneWithParentArrayOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty with the provided parentArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().ThatIs(_ => !systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetArrayOfNullableChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -1291,6 +1563,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
                 {
+                    Name = "DeepCloneWithChild1ArrayOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty with the provided child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().ThatIs(_ => !systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetArrayOfNullableChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetArrayOfNullableChild1>
+                {
                     Name = "DeepCloneWithChild1ArrayOfNullableCustomFlagsEnumProperty should deep clone object and replace Child1ArrayOfNullableCustomFlagsEnumProperty with the provided child1ArrayOfNullableCustomFlagsEnumProperty",
                     WithPropertyName = "Child1ArrayOfNullableCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -1325,12 +1617,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPrivateSetArrayOfNullableChild1[]
@@ -1341,12 +1635,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1354,12 +1650,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1367,12 +1665,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty)).ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1380,12 +1680,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty)).ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1393,12 +1695,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty)).ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1406,12 +1710,29 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty)).ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
+                        new ModelAllPrivateSetArrayOfNullableChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.ParentArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty)).ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1419,12 +1740,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty)).Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1432,12 +1755,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty)).Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1445,12 +1770,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty)).Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1458,12 +1785,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty)).Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1471,12 +1800,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty)).Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetArrayOfNullableChild1(
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
@@ -1484,12 +1815,29 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty)).Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty),
+                        new ModelAllPrivateSetArrayOfNullableChild1(
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentArrayOfNullableCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableDateTimeProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetArrayOfNullableChild1>().Whose(_ => !_.Child1ArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ArrayOfNullableCustomFlagsEnumProperty)).Child1ArrayOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -1841,6 +2189,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentArrayOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentArrayOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ParentArrayOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1913,6 +2273,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ArrayOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ArrayOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child1ArrayOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.Child1ArrayOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1942,7 +2314,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentArrayOfNullableBoolProperty", "ParentArrayOfNullableIntProperty", "ParentArrayOfNullableGuidProperty", "ParentArrayOfNullableDateTimeProperty", "ParentArrayOfNullableCustomEnumProperty", "ParentArrayOfNullableCustomFlagsEnumProperty", "Child1ArrayOfNullableBoolProperty", "Child1ArrayOfNullableIntProperty", "Child1ArrayOfNullableGuidProperty", "Child1ArrayOfNullableDateTimeProperty", "Child1ArrayOfNullableCustomEnumProperty", "Child1ArrayOfNullableCustomFlagsEnumProperty" };
+                var propertyNames = new string[] { "ParentArrayOfNullableBoolProperty", "ParentArrayOfNullableIntProperty", "ParentArrayOfNullableGuidProperty", "ParentArrayOfNullableDateTimeProperty", "ParentArrayOfNullableCustomEnumProperty", "ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty", "ParentArrayOfNullableCustomFlagsEnumProperty", "Child1ArrayOfNullableBoolProperty", "Child1ArrayOfNullableIntProperty", "Child1ArrayOfNullableGuidProperty", "Child1ArrayOfNullableDateTimeProperty", "Child1ArrayOfNullableCustomEnumProperty", "Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty", "Child1ArrayOfNullableCustomFlagsEnumProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

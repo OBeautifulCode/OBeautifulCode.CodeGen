@@ -68,6 +68,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -110,6 +117,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ReadOnlyDictionaryInterfaceOfStringProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfStringProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfGuidProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfGuidProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomEnumProperty) &&
+                this.ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomClassProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomClassProperty) &&
                 this.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty.IsEqualTo(other.ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty) &&

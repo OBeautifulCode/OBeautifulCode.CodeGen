@@ -185,6 +185,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryOfNullable>();
 
+                    systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryOfNullable>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryOfNullable>();
+
+                    systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = new Dictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?>();
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryOfNullable>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryOfNullable>();
+
                     systemUnderTest.ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = null;
 
                     var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryOfNullable>

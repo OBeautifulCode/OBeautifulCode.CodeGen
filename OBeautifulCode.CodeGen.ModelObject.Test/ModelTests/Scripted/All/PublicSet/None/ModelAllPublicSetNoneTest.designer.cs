@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetNone>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNone: BoolProperty = {systemUnderTest.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {systemUnderTest.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {systemUnderTest.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {systemUnderTest.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {systemUnderTest.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, CustomEnumProperty = {systemUnderTest.CustomEnumProperty.ToString() ?? "<null>"}, CustomFlagsEnumProperty = {systemUnderTest.CustomFlagsEnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {systemUnderTest.CustomClassProperty?.ToString() ?? "<null>"}, CustomBaseClassProperty = {systemUnderTest.CustomBaseClassProperty?.ToString() ?? "<null>"}, CustomGenericClassOfCustomClassProperty = {systemUnderTest.CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNone: BoolProperty = {systemUnderTest.BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, IntProperty = {systemUnderTest.IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, StringProperty = {systemUnderTest.StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, GuidProperty = {systemUnderTest.GuidProperty.ToString() ?? "<null>"}, DateTimeProperty = {systemUnderTest.DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, CustomEnumProperty = {systemUnderTest.CustomEnumProperty.ToString() ?? "<null>"}, CustomEnumValidatedNotDefaultProperty = {systemUnderTest.CustomEnumValidatedNotDefaultProperty.ToString() ?? "<null>"}, CustomFlagsEnumProperty = {systemUnderTest.CustomFlagsEnumProperty.ToString() ?? "<null>"}, CustomClassProperty = {systemUnderTest.CustomClassProperty?.ToString() ?? "<null>"}, CustomBaseClassProperty = {systemUnderTest.CustomBaseClassProperty?.ToString() ?? "<null>"}, CustomGenericClassOfCustomClassProperty = {systemUnderTest.CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -179,6 +179,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetNone>
                 {
+                    Name = "DeepCloneWithCustomEnumValidatedNotDefaultProperty should deep clone object and replace CustomEnumValidatedNotDefaultProperty with the provided customEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "CustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetNone>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetNone>().ThatIs(_ => !systemUnderTest.CustomEnumValidatedNotDefaultProperty.IsEqualTo(_.CustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetNone>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.CustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetNone>
+                {
                     Name = "DeepCloneWithCustomFlagsEnumProperty should deep clone object and replace CustomFlagsEnumProperty with the provided customFlagsEnumProperty",
                     WithPropertyName = "CustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -275,6 +295,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -291,6 +312,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -304,6 +326,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -317,6 +340,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -330,6 +354,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.GuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.GuidProperty)).GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -343,6 +368,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.DateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.DateTimeProperty)).DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -356,6 +382,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.CustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomEnumProperty)).CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -369,6 +396,21 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.CustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty)).CustomEnumValidatedNotDefaultProperty,
+                                CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
+                                CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
+                                CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
+                                CustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.CustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetNone
+                            {
+                                BoolProperty                            = ReferenceObjectForEquatableTestScenarios.BoolProperty,
+                                IntProperty                             = ReferenceObjectForEquatableTestScenarios.IntProperty,
+                                StringProperty                          = ReferenceObjectForEquatableTestScenarios.StringProperty,
+                                GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
+                                DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
+                                CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.CustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty)).CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -382,6 +424,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.CustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomClassProperty)).CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -395,6 +438,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetNone>().Whose(_ => !_.CustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty)).CustomBaseClassProperty,
@@ -408,6 +452,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 GuidProperty                            = ReferenceObjectForEquatableTestScenarios.GuidProperty,
                                 DateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.DateTimeProperty,
                                 CustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.CustomEnumProperty,
+                                CustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.CustomEnumValidatedNotDefaultProperty,
                                 CustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.CustomFlagsEnumProperty,
                                 CustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.CustomClassProperty,
                                 CustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.CustomBaseClassProperty,
@@ -639,7 +684,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "BoolProperty", "IntProperty", "StringProperty", "GuidProperty", "DateTimeProperty", "CustomEnumProperty", "CustomFlagsEnumProperty", "CustomClassProperty", "CustomBaseClassProperty", "CustomGenericClassOfCustomClassProperty" };
+                var propertyNames = new string[] { "BoolProperty", "IntProperty", "StringProperty", "GuidProperty", "DateTimeProperty", "CustomEnumProperty", "CustomEnumValidatedNotDefaultProperty", "CustomFlagsEnumProperty", "CustomClassProperty", "CustomBaseClassProperty", "CustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

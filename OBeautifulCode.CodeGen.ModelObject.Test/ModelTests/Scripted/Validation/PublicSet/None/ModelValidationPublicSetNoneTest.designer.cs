@@ -83,6 +83,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     var systemUnderTest = A.Dummy<ModelValidationPublicSetNone>();
 
+                    systemUnderTest.CustomEnumValidatedNotDefaultProperty = CustomEnumValidatedNotDefault.Unknown;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNone>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'CustomEnumValidatedNotDefaultProperty' is CustomEnumValidatedNotDefault.Unknown scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "CustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "CustomEnumValidatedNotDefaultProperty", "Unknown", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNone>();
+
                     systemUnderTest.CustomClassProperty = null;
 
                     var result = new SelfValidationTestScenario<ModelValidationPublicSetNone>

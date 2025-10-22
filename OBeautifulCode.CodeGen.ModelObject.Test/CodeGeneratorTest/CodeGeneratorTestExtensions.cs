@@ -16,6 +16,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.Collection.Recipes;
+    using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type.Recipes;
 
@@ -110,34 +111,56 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             return result;
         }
 
-        public static string GetMustValidationMethodName(
+        public static string GetMustValidationMethodCall(
             this Type type)
         {
             string result;
 
-            if (type.IsValueType)
+            var enumTypeToCheck = type.IsNullableType()
+                ? Nullable.GetUnderlyingType(type)
+                : type;
+
+            if (enumTypeToCheck.IsEnum && (!enumTypeToCheck.IsFlagsEnum()))
+            {
+                if (enumTypeToCheck.GetAllPossibleEnumValues().Select(_ => Enum.GetName(enumTypeToCheck, _)).Contains("Unknown"))
+                {
+                    if (type.IsNullableType())
+                    {
+                        result = Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeEqualTo)}(({type.ToStringReadable()}){enumTypeToCheck.ToStringReadable()}.Unknown)");
+                    }
+                    else
+                    {
+                        result = Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeEqualTo)}({enumTypeToCheck.ToStringReadable()}.Unknown)");
+                    }
+                }
+                else
+                {
+                    result = null;
+                }
+            }
+            else if (type.IsValueType)
             {
                 result = null;
             }
             else if (type == typeof(string))
             {
-                result = nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace);
+                result = Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)}()");
             }
             else if (type.IsClosedSystemDictionaryType())
             {
                 var valueType = type.GetClosedDictionaryValueType();
 
                 result = valueType.IsValueType
-                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionary)
-                    : nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues);
+                    ? Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionary)}()")
+                    : Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyDictionaryNorContainAnyNullValues)}()");
             }
             else if (type.IsClosedSystemCollectionType())
             {
                 var elementType = type.GetClosedSystemCollectionElementType();
 
                 result = elementType.IsValueType
-                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable)
-                    : nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
+                    ? Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable)}()")
+                    : Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls)}()");
             }
             else if (type.IsArray)
             {
@@ -145,18 +168,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 // ReSharper disable once PossibleNullReferenceException
                 result = elementType.IsValueType
-                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable)
-                    : nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls);
+                    ? Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerable)}()")
+                    : Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorEmptyEnumerableNorContainAnyNulls)}()");
             }
             else
             {
-                result = nameof(Assertion.Recipes.Verifications.NotBeNull);
+                result = Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNull)}()");
             }
 
             return result;
         }
 
-        public static string GetMustEachValidationMethodName(
+        public static string GetMustEachValidationMethodCall(
             this Type type)
         {
             string result = null;
@@ -170,7 +193,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 var elementType = type.GetClosedSystemCollectionElementType();
 
                 result = elementType == typeof(string)
-                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)
+                    ? Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)}()")
                     : null;
             }
             else if (type.IsArray)
@@ -179,7 +202,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                 // ReSharper disable once PossibleNullReferenceException
                 result = elementType == typeof(string)
-                    ? nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)
+                    ? Invariant($"{nameof(Assertion.Recipes.Verifications.NotBeNullNorWhiteSpace)}()")
                     : null;
             }
 

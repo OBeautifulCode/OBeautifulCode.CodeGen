@@ -33,21 +33,25 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid? parentNullableGuidProperty,
             DateTime? parentNullableDateTimeProperty,
             CustomEnum? parentNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault? parentNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum? parentNullableCustomFlagsEnumProperty,
             bool? child2NullableBoolProperty,
             int? child2NullableIntProperty,
             Guid? child2NullableGuidProperty,
             DateTime? child2NullableDateTimeProperty,
             CustomEnum? child2NullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault? child2NullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum? child2NullableCustomFlagsEnumProperty)
-            : base(parentNullableBoolProperty, parentNullableIntProperty, parentNullableGuidProperty, parentNullableDateTimeProperty, parentNullableCustomEnumProperty, parentNullableCustomFlagsEnumProperty)
+            : base(parentNullableBoolProperty, parentNullableIntProperty, parentNullableGuidProperty, parentNullableDateTimeProperty, parentNullableCustomEnumProperty, parentNullableCustomEnumValidatedNotDefaultProperty, parentNullableCustomFlagsEnumProperty)
         {
+            new { child2NullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeEqualTo((CustomEnumValidatedNotDefault?)CustomEnumValidatedNotDefault.Unknown);
 
             this.Child2NullableBoolProperty = child2NullableBoolProperty;
             this.Child2NullableIntProperty = child2NullableIntProperty;
             this.Child2NullableGuidProperty = child2NullableGuidProperty;
             this.Child2NullableDateTimeProperty = child2NullableDateTimeProperty;
             this.Child2NullableCustomEnumProperty = child2NullableCustomEnumProperty;
+            this.Child2NullableCustomEnumValidatedNotDefaultProperty = child2NullableCustomEnumValidatedNotDefaultProperty;
             this.Child2NullableCustomFlagsEnumProperty = child2NullableCustomFlagsEnumProperty;
         }
 
@@ -85,6 +89,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomEnum? Child2NullableCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault? Child2NullableCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

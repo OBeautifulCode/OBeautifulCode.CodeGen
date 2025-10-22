@@ -191,7 +191,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPrivateSetConstructorParameterEnumValueNamedUnknown DeepCloneWithItem3(CustomEnumWithUnknown item3)
+        public ModelPrivateSetConstructorParameterEnumValueNamedUnknown DeepCloneWithItem3(CustomEnumValidatedNotDefault item3)
         {
             var result = new ModelPrivateSetConstructorParameterEnumValueNamedUnknown(
                                  this.Item1.DeepClone(),
@@ -224,7 +224,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
-        public ModelPrivateSetConstructorParameterEnumValueNamedUnknown DeepCloneWithItem4(CustomEnumWithUnknown? item4)
+        public ModelPrivateSetConstructorParameterEnumValueNamedUnknown DeepCloneWithItem4(CustomEnumValidatedNotDefault? item4)
         {
             var result = new ModelPrivateSetConstructorParameterEnumValueNamedUnknown(
                                  this.Item1.DeepClone(),

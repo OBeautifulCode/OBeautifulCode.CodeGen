@@ -358,7 +358,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     }
                     else if (specifiedModelKind == SpecifiedModelKind.MultiLevelDeclaredValidation2)
                     {
-                        // Removing the designer file code, makes it so that there isn't a code generated
+                        // Removing the designer file code makes it so that there isn't a code generated
                         // virtual GetSelfValidationFailures method on the root base class, and thus there's
                         // no method to override.  So we having special handling logic here that
                         // changes the method modifiers so that the project will compile.
@@ -386,13 +386,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
                 else if (modelOrTest == ModelOrTest.Test)
                 {
-                    // we have hand-coded some test class files specified models
-                    // so for those we want to comment-out the file, otherwise we want to write an empty file
                     if (!File.Exists(modelFilePath))
                     {
                         File.WriteAllBytes(modelFilePath, new byte[0]);
                     }
 
+                    // We hand-coded some test class files for specified models.
+                    // So for those we want to comment-out the file, otherwise we want to write an empty file.
                     if (specifiedModelKind == SpecifiedModelKind.NotApplicable)
                     {
                         File.WriteAllBytes(modelFilePath, new byte[0]);
@@ -552,16 +552,16 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 propertyStatements.Add(string.Empty);
 
                 string mustValidation = null;
-                var mustValidationMethodName = typeToAddAsProperty.GetMustValidationMethodName();
+                var mustValidationMethodName = typeToAddAsProperty.GetMustValidationMethodCall();
                 if (mustValidationMethodName != null)
                 {
-                    var eachValidationName = typeToAddAsProperty.GetMustEachValidationMethodName();
+                    var eachValidationName = typeToAddAsProperty.GetMustEachValidationMethodCall();
 
                     var eachValidationStatement = eachValidationName == null
                         ? null
-                        : Invariant($".And().Each().{eachValidationName}()");
+                        : Invariant($".And().Each().{eachValidationName}");
 
-                    mustValidation = Invariant($"Must().{mustValidationMethodName}(){eachValidationStatement}");
+                    mustValidation = Invariant($"Must().{mustValidationMethodName}{eachValidationStatement}");
                 }
 
                 if (setterKind.RequiresConstructor())

@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetArrayChild2>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArrayChild2: ParentArrayOfBoolProperty = {systemUnderTest.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {systemUnderTest.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {systemUnderTest.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {systemUnderTest.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {systemUnderTest.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumProperty = {systemUnderTest.ParentArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomBaseClassProperty = {systemUnderTest.ParentArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {systemUnderTest.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {systemUnderTest.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {systemUnderTest.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {systemUnderTest.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {systemUnderTest.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumProperty = {systemUnderTest.Child2ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomFlagsEnumProperty = {systemUnderTest.Child2ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomBaseClassProperty = {systemUnderTest.Child2ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetArrayChild2: ParentArrayOfBoolProperty = {systemUnderTest.ParentArrayOfBoolProperty?.ToString() ?? "<null>"}, ParentArrayOfIntProperty = {systemUnderTest.ParentArrayOfIntProperty?.ToString() ?? "<null>"}, ParentArrayOfStringProperty = {systemUnderTest.ParentArrayOfStringProperty?.ToString() ?? "<null>"}, ParentArrayOfGuidProperty = {systemUnderTest.ParentArrayOfGuidProperty?.ToString() ?? "<null>"}, ParentArrayOfDateTimeProperty = {systemUnderTest.ParentArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumProperty = {systemUnderTest.ParentArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomFlagsEnumProperty = {systemUnderTest.ParentArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomBaseClassProperty = {systemUnderTest.ParentArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfBoolProperty = {systemUnderTest.Child2ArrayOfBoolProperty?.ToString() ?? "<null>"}, Child2ArrayOfIntProperty = {systemUnderTest.Child2ArrayOfIntProperty?.ToString() ?? "<null>"}, Child2ArrayOfStringProperty = {systemUnderTest.Child2ArrayOfStringProperty?.ToString() ?? "<null>"}, Child2ArrayOfGuidProperty = {systemUnderTest.Child2ArrayOfGuidProperty?.ToString() ?? "<null>"}, Child2ArrayOfDateTimeProperty = {systemUnderTest.Child2ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumProperty = {systemUnderTest.Child2ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child2ArrayOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomFlagsEnumProperty = {systemUnderTest.Child2ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomBaseClassProperty = {systemUnderTest.Child2ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child2ArrayOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child2ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -171,6 +171,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentArrayOfCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetArrayChild2>
+                {
+                    Name = "DeepCloneWithParentArrayOfCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentArrayOfCustomEnumValidatedNotDefaultProperty with the provided parentArrayOfCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentArrayOfCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetArrayChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetArrayChild2>().ThatIs(_ => !systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentArrayOfCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetArrayChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -379,6 +399,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetArrayChild2>
                 {
+                    Name = "DeepCloneWithChild2ArrayOfCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child2ArrayOfCustomEnumValidatedNotDefaultProperty with the provided child2ArrayOfCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child2ArrayOfCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetArrayChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetArrayChild2>().ThatIs(_ => !systemUnderTest.Child2ArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child2ArrayOfCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetArrayChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetArrayChild2>
+                {
                     Name = "DeepCloneWithChild2ArrayOfCustomFlagsEnumProperty should deep clone object and replace Child2ArrayOfCustomFlagsEnumProperty with the provided child2ArrayOfCustomFlagsEnumProperty",
                     WithPropertyName = "Child2ArrayOfCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -475,6 +515,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -485,6 +526,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -501,6 +543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -511,6 +554,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -524,6 +568,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -534,6 +579,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -547,6 +593,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -557,6 +604,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -570,6 +618,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty)).ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -580,6 +629,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -593,6 +643,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty)).ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -603,6 +654,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -616,6 +668,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty)).ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -626,6 +679,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -639,6 +693,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty)).ParentArrayOfCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
+                                ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
+                                ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ParentArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                Child2ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
+                                Child2ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
+                                Child2ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
+                                Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
+                                Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
+                                Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
+                                Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
+                                Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
+                                Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                Child2ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetArrayChild2
+                            {
+                                ParentArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
+                                ParentArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
+                                ParentArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfStringProperty,
+                                ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
+                                ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
+                                ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty)).ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -649,6 +729,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -662,6 +743,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty)).ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -672,6 +754,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -685,6 +768,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.ParentArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty)).ParentArrayOfCustomBaseClassProperty,
@@ -695,6 +779,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -708,6 +793,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -718,6 +804,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -731,6 +818,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -741,6 +829,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -754,6 +843,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -764,6 +854,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -777,6 +868,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -787,6 +879,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -800,6 +893,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -810,6 +904,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty)).Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -823,6 +918,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -833,6 +929,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty)).Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -846,6 +943,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -856,6 +954,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty)).Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -869,6 +968,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -879,6 +979,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty)).Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
+                                Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
+                                Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
+                                Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
+                                Child2ArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetArrayChild2
+                            {
+                                ParentArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfBoolProperty,
+                                ParentArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ParentArrayOfIntProperty,
+                                ParentArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ParentArrayOfStringProperty,
+                                ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
+                                ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
+                                ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
+                                ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
+                                ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
+                                ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
+                                ParentArrayOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomGenericClassOfCustomClassProperty,
+                                Child2ArrayOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfBoolProperty,
+                                Child2ArrayOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfIntProperty,
+                                Child2ArrayOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfStringProperty,
+                                Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
+                                Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
+                                Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty)).Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -892,6 +1018,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -902,6 +1029,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty)).Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -915,6 +1043,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -925,6 +1054,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetArrayChild2>().Whose(_ => !_.Child2ArrayOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty)).Child2ArrayOfCustomBaseClassProperty,
@@ -938,6 +1068,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentArrayOfGuidProperty,
                                 ParentArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentArrayOfDateTimeProperty,
                                 ParentArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumProperty,
+                                ParentArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomEnumValidatedNotDefaultProperty,
                                 ParentArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomFlagsEnumProperty,
                                 ParentArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomClassProperty,
                                 ParentArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentArrayOfCustomBaseClassProperty,
@@ -948,6 +1079,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child2ArrayOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfGuidProperty,
                                 Child2ArrayOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfDateTimeProperty,
                                 Child2ArrayOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumProperty,
+                                Child2ArrayOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomEnumValidatedNotDefaultProperty,
                                 Child2ArrayOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomFlagsEnumProperty,
                                 Child2ArrayOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomClassProperty,
                                 Child2ArrayOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child2ArrayOfCustomBaseClassProperty,
@@ -1199,6 +1331,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentArrayOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentArrayOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentArrayOfCustomFlagsEnumProperty == null)
                 {
                     actual.ParentArrayOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1319,6 +1463,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child2ArrayOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ArrayOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child2ArrayOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child2ArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child2ArrayOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child2ArrayOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ArrayOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child2ArrayOfCustomFlagsEnumProperty == null)
                 {
                     actual.Child2ArrayOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1384,7 +1540,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentArrayOfBoolProperty", "ParentArrayOfIntProperty", "ParentArrayOfStringProperty", "ParentArrayOfGuidProperty", "ParentArrayOfDateTimeProperty", "ParentArrayOfCustomEnumProperty", "ParentArrayOfCustomFlagsEnumProperty", "ParentArrayOfCustomClassProperty", "ParentArrayOfCustomBaseClassProperty", "ParentArrayOfCustomGenericClassOfCustomClassProperty", "Child2ArrayOfBoolProperty", "Child2ArrayOfIntProperty", "Child2ArrayOfStringProperty", "Child2ArrayOfGuidProperty", "Child2ArrayOfDateTimeProperty", "Child2ArrayOfCustomEnumProperty", "Child2ArrayOfCustomFlagsEnumProperty", "Child2ArrayOfCustomClassProperty", "Child2ArrayOfCustomBaseClassProperty", "Child2ArrayOfCustomGenericClassOfCustomClassProperty" };
+                var propertyNames = new string[] { "ParentArrayOfBoolProperty", "ParentArrayOfIntProperty", "ParentArrayOfStringProperty", "ParentArrayOfGuidProperty", "ParentArrayOfDateTimeProperty", "ParentArrayOfCustomEnumProperty", "ParentArrayOfCustomEnumValidatedNotDefaultProperty", "ParentArrayOfCustomFlagsEnumProperty", "ParentArrayOfCustomClassProperty", "ParentArrayOfCustomBaseClassProperty", "ParentArrayOfCustomGenericClassOfCustomClassProperty", "Child2ArrayOfBoolProperty", "Child2ArrayOfIntProperty", "Child2ArrayOfStringProperty", "Child2ArrayOfGuidProperty", "Child2ArrayOfDateTimeProperty", "Child2ArrayOfCustomEnumProperty", "Child2ArrayOfCustomEnumValidatedNotDefaultProperty", "Child2ArrayOfCustomFlagsEnumProperty", "Child2ArrayOfCustomClassProperty", "Child2ArrayOfCustomBaseClassProperty", "Child2ArrayOfCustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

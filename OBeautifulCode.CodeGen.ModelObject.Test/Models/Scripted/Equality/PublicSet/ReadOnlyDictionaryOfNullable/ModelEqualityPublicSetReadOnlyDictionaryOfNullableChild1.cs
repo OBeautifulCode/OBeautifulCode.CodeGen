@@ -62,6 +62,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty { get; set; }
 
         /// <inheritdoc />
@@ -82,11 +89,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty) &&
                 this.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty) &&
                 this.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty) &&
+                this.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty) &&
                 this.Child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty) &&
                 this.Child1ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfNullableIntProperty) &&
                 this.Child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty) &&
                 this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty) &&
+                this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;

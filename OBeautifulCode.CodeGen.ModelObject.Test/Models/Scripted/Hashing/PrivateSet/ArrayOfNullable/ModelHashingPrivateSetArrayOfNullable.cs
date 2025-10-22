@@ -33,6 +33,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid?[] arrayOfNullableGuidProperty,
             DateTime?[] arrayOfNullableDateTimeProperty,
             CustomEnum?[] arrayOfNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault?[] arrayOfNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum?[] arrayOfNullableCustomFlagsEnumProperty)
         {
             new { arrayOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
@@ -40,6 +41,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { arrayOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { arrayOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { arrayOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { arrayOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { arrayOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
 
             this.ArrayOfNullableBoolProperty = arrayOfNullableBoolProperty;
@@ -47,6 +49,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ArrayOfNullableGuidProperty = arrayOfNullableGuidProperty;
             this.ArrayOfNullableDateTimeProperty = arrayOfNullableDateTimeProperty;
             this.ArrayOfNullableCustomEnumProperty = arrayOfNullableCustomEnumProperty;
+            this.ArrayOfNullableCustomEnumValidatedNotDefaultProperty = arrayOfNullableCustomEnumValidatedNotDefaultProperty;
             this.ArrayOfNullableCustomFlagsEnumProperty = arrayOfNullableCustomFlagsEnumProperty;
         }
 
@@ -90,6 +93,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault?[] ArrayOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum?[] ArrayOfNullableCustomFlagsEnumProperty { get; private set; }
 
         /// <inheritdoc />
@@ -99,6 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ArrayOfNullableGuidProperty)
                 .Hash(this.ArrayOfNullableDateTimeProperty)
                 .Hash(this.ArrayOfNullableCustomEnumProperty)
+                .Hash(this.ArrayOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ArrayOfNullableCustomFlagsEnumProperty)
                 .Value;
     }

@@ -240,6 +240,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                 {
                     var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryChild2>();
 
+                    systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryChild2>();
+
+                    systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = new Dictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault>();
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryChild2>();
+
                     systemUnderTest.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty = null;
 
                     var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryChild2>
@@ -621,6 +655,40 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         SystemUnderTest = systemUnderTest,
                         ExpectedFailurePropertyNames = new[] { "Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty" },
                         ExpectedFailureMessageContains = new[] { "Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty", "is an empty dictionary", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryChild2>();
+
+                    systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetReadOnlyDictionaryChild2>();
+
+                    systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty = new Dictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault>();
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetReadOnlyDictionaryChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
                         ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
                     };
 

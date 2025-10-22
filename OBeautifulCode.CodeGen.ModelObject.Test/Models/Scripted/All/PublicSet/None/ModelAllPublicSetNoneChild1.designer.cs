@@ -75,6 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ParentGuidProperty.IsEqualTo(other.ParentGuidProperty)
                       && this.ParentDateTimeProperty.IsEqualTo(other.ParentDateTimeProperty)
                       && this.ParentCustomEnumProperty.IsEqualTo(other.ParentCustomEnumProperty)
+                      && this.ParentCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentCustomEnumValidatedNotDefaultProperty)
                       && this.ParentCustomFlagsEnumProperty.IsEqualTo(other.ParentCustomFlagsEnumProperty)
                       && this.ParentCustomClassProperty.IsEqualTo(other.ParentCustomClassProperty)
                       && this.ParentCustomBaseClassProperty.IsEqualTo(other.ParentCustomBaseClassProperty)
@@ -85,6 +86,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.Child1GuidProperty.IsEqualTo(other.Child1GuidProperty)
                       && this.Child1DateTimeProperty.IsEqualTo(other.Child1DateTimeProperty)
                       && this.Child1CustomEnumProperty.IsEqualTo(other.Child1CustomEnumProperty)
+                      && this.Child1CustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child1CustomEnumValidatedNotDefaultProperty)
                       && this.Child1CustomFlagsEnumProperty.IsEqualTo(other.Child1CustomFlagsEnumProperty)
                       && this.Child1CustomClassProperty.IsEqualTo(other.Child1CustomClassProperty)
                       && this.Child1CustomBaseClassProperty.IsEqualTo(other.Child1CustomBaseClassProperty)
@@ -104,6 +106,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ParentGuidProperty)
             .Hash(this.ParentDateTimeProperty)
             .Hash(this.ParentCustomEnumProperty)
+            .Hash(this.ParentCustomEnumValidatedNotDefaultProperty)
             .Hash(this.ParentCustomFlagsEnumProperty)
             .Hash(this.ParentCustomClassProperty)
             .Hash(this.ParentCustomBaseClassProperty)
@@ -114,6 +117,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.Child1GuidProperty)
             .Hash(this.Child1DateTimeProperty)
             .Hash(this.Child1CustomEnumProperty)
+            .Hash(this.Child1CustomEnumValidatedNotDefaultProperty)
             .Hash(this.Child1CustomFlagsEnumProperty)
             .Hash(this.Child1CustomClassProperty)
             .Hash(this.Child1CustomBaseClassProperty)
@@ -151,6 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -161,6 +166,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -198,6 +204,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -208,6 +215,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -245,6 +253,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -255,6 +264,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -292,6 +302,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = parentGuidProperty,
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -302,6 +313,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -339,6 +351,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = parentDateTimeProperty,
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -349,6 +362,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -386,6 +400,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = parentCustomEnumProperty,
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -396,6 +411,56 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
+                                 Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
+                                 Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
+                                 Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
+                                 Child1CustomGenericClassOfCustomClassProperty = this.Child1CustomGenericClassOfCustomClassProperty?.DeepClone(),
+                             };
+
+            return result;
+        }
+
+        /// <inheritdoc />
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public override ModelAllPublicSetNoneParent DeepCloneWithParentCustomEnumValidatedNotDefaultProperty(CustomEnumValidatedNotDefault parentCustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPublicSetNoneChild1
+                             {
+                                 ParentBoolProperty                            = this.ParentBoolProperty.DeepClone(),
+                                 ParentIntProperty                             = this.ParentIntProperty.DeepClone(),
+                                 ParentStringProperty                          = this.ParentStringProperty?.DeepClone(),
+                                 ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
+                                 ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
+                                 ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = parentCustomEnumValidatedNotDefaultProperty,
+                                 ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
+                                 ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
+                                 ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 ParentCustomGenericClassOfCustomClassProperty = this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 Child1BoolProperty                            = this.Child1BoolProperty.DeepClone(),
+                                 Child1IntProperty                             = this.Child1IntProperty.DeepClone(),
+                                 Child1StringProperty                          = this.Child1StringProperty?.DeepClone(),
+                                 Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
+                                 Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
+                                 Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -433,6 +498,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = parentCustomFlagsEnumProperty,
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -443,6 +509,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -480,6 +547,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = parentCustomClassProperty,
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -490,6 +558,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -527,6 +596,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = parentCustomBaseClassProperty,
@@ -537,6 +607,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -574,6 +645,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -584,6 +656,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -625,6 +698,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -635,6 +709,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -676,6 +751,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -686,6 +762,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -727,6 +804,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -737,6 +815,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -778,6 +857,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -788,6 +868,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = child1GuidProperty,
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -829,6 +910,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -839,6 +921,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = child1DateTimeProperty,
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -880,6 +963,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -890,6 +974,60 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = child1CustomEnumProperty,
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
+                                 Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
+                                 Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
+                                 Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
+                                 Child1CustomGenericClassOfCustomClassProperty = this.Child1CustomGenericClassOfCustomClassProperty?.DeepClone(),
+                             };
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="Child1CustomEnumValidatedNotDefaultProperty" />.
+        /// </summary>
+        /// <param name="child1CustomEnumValidatedNotDefaultProperty">The new <see cref="Child1CustomEnumValidatedNotDefaultProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPublicSetNoneChild1" /> using the specified <paramref name="child1CustomEnumValidatedNotDefaultProperty" /> for <see cref="Child1CustomEnumValidatedNotDefaultProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPublicSetNoneChild1 DeepCloneWithChild1CustomEnumValidatedNotDefaultProperty(CustomEnumValidatedNotDefault child1CustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPublicSetNoneChild1
+                             {
+                                 ParentBoolProperty                            = this.ParentBoolProperty.DeepClone(),
+                                 ParentIntProperty                             = this.ParentIntProperty.DeepClone(),
+                                 ParentStringProperty                          = this.ParentStringProperty?.DeepClone(),
+                                 ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
+                                 ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
+                                 ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
+                                 ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
+                                 ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
+                                 ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
+                                 ParentCustomGenericClassOfCustomClassProperty = this.ParentCustomGenericClassOfCustomClassProperty?.DeepClone(),
+                                 Child1BoolProperty                            = this.Child1BoolProperty.DeepClone(),
+                                 Child1IntProperty                             = this.Child1IntProperty.DeepClone(),
+                                 Child1StringProperty                          = this.Child1StringProperty?.DeepClone(),
+                                 Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
+                                 Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
+                                 Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = child1CustomEnumValidatedNotDefaultProperty,
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -931,6 +1069,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -941,6 +1080,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = child1CustomFlagsEnumProperty,
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -982,6 +1122,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -992,6 +1133,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = child1CustomClassProperty,
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -1033,6 +1175,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -1043,6 +1186,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = child1CustomBaseClassProperty,
@@ -1084,6 +1228,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -1094,6 +1239,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -1115,6 +1261,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  ParentGuidProperty                            = this.ParentGuidProperty.DeepClone(),
                                  ParentDateTimeProperty                        = this.ParentDateTimeProperty.DeepClone(),
                                  ParentCustomEnumProperty                      = this.ParentCustomEnumProperty.DeepClone(),
+                                 ParentCustomEnumValidatedNotDefaultProperty   = this.ParentCustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  ParentCustomFlagsEnumProperty                 = this.ParentCustomFlagsEnumProperty.DeepClone(),
                                  ParentCustomClassProperty                     = this.ParentCustomClassProperty?.DeepClone(),
                                  ParentCustomBaseClassProperty                 = this.ParentCustomBaseClassProperty?.DeepClone(),
@@ -1125,6 +1272,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  Child1GuidProperty                            = this.Child1GuidProperty.DeepClone(),
                                  Child1DateTimeProperty                        = this.Child1DateTimeProperty.DeepClone(),
                                  Child1CustomEnumProperty                      = this.Child1CustomEnumProperty.DeepClone(),
+                                 Child1CustomEnumValidatedNotDefaultProperty   = this.Child1CustomEnumValidatedNotDefaultProperty.DeepClone(),
                                  Child1CustomFlagsEnumProperty                 = this.Child1CustomFlagsEnumProperty.DeepClone(),
                                  Child1CustomClassProperty                     = this.Child1CustomClassProperty?.DeepClone(),
                                  Child1CustomBaseClassProperty                 = this.Child1CustomBaseClassProperty?.DeepClone(),
@@ -1138,7 +1286,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNoneChild1: ParentBoolProperty = {this.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {this.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {this.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {this.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {this.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentCustomEnumProperty = {this.ParentCustomEnumProperty.ToString() ?? "<null>"}, ParentCustomFlagsEnumProperty = {this.ParentCustomFlagsEnumProperty.ToString() ?? "<null>"}, ParentCustomClassProperty = {this.ParentCustomClassProperty?.ToString() ?? "<null>"}, ParentCustomBaseClassProperty = {this.ParentCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentCustomGenericClassOfCustomClassProperty = {this.ParentCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1BoolProperty = {this.Child1BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1IntProperty = {this.Child1IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1StringProperty = {this.Child1StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1GuidProperty = {this.Child1GuidProperty.ToString() ?? "<null>"}, Child1DateTimeProperty = {this.Child1DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1CustomEnumProperty = {this.Child1CustomEnumProperty.ToString() ?? "<null>"}, Child1CustomFlagsEnumProperty = {this.Child1CustomFlagsEnumProperty.ToString() ?? "<null>"}, Child1CustomClassProperty = {this.Child1CustomClassProperty?.ToString() ?? "<null>"}, Child1CustomBaseClassProperty = {this.Child1CustomBaseClassProperty?.ToString() ?? "<null>"}, Child1CustomGenericClassOfCustomClassProperty = {this.Child1CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetNoneChild1: ParentBoolProperty = {this.ParentBoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentIntProperty = {this.ParentIntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentStringProperty = {this.ParentStringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentGuidProperty = {this.ParentGuidProperty.ToString() ?? "<null>"}, ParentDateTimeProperty = {this.ParentDateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, ParentCustomEnumProperty = {this.ParentCustomEnumProperty.ToString() ?? "<null>"}, ParentCustomEnumValidatedNotDefaultProperty = {this.ParentCustomEnumValidatedNotDefaultProperty.ToString() ?? "<null>"}, ParentCustomFlagsEnumProperty = {this.ParentCustomFlagsEnumProperty.ToString() ?? "<null>"}, ParentCustomClassProperty = {this.ParentCustomClassProperty?.ToString() ?? "<null>"}, ParentCustomBaseClassProperty = {this.ParentCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentCustomGenericClassOfCustomClassProperty = {this.ParentCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1BoolProperty = {this.Child1BoolProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1IntProperty = {this.Child1IntProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1StringProperty = {this.Child1StringProperty?.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1GuidProperty = {this.Child1GuidProperty.ToString() ?? "<null>"}, Child1DateTimeProperty = {this.Child1DateTimeProperty.ToString(CultureInfo.InvariantCulture) ?? "<null>"}, Child1CustomEnumProperty = {this.Child1CustomEnumProperty.ToString() ?? "<null>"}, Child1CustomEnumValidatedNotDefaultProperty = {this.Child1CustomEnumValidatedNotDefaultProperty.ToString() ?? "<null>"}, Child1CustomFlagsEnumProperty = {this.Child1CustomFlagsEnumProperty.ToString() ?? "<null>"}, Child1CustomClassProperty = {this.Child1CustomClassProperty?.ToString() ?? "<null>"}, Child1CustomBaseClassProperty = {this.Child1CustomBaseClassProperty?.ToString() ?? "<null>"}, Child1CustomGenericClassOfCustomClassProperty = {this.Child1CustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }
@@ -1226,6 +1374,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     return;
                 }
 
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ParentCustomEnumValidatedNotDefaultProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ParentCustomFlagsEnumProperty, options, propertyPathTracker, nameof(this.ParentCustomFlagsEnumProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
@@ -1290,6 +1445,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child1CustomEnumProperty, options, propertyPathTracker, nameof(this.Child1CustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.Child1CustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.Child1CustomEnumValidatedNotDefaultProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
                 {

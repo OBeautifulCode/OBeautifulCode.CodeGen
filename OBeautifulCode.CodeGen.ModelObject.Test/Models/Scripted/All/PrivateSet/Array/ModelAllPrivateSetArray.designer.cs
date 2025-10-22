@@ -75,6 +75,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                       && this.ArrayOfGuidProperty.IsEqualTo(other.ArrayOfGuidProperty)
                       && this.ArrayOfDateTimeProperty.IsEqualTo(other.ArrayOfDateTimeProperty)
                       && this.ArrayOfCustomEnumProperty.IsEqualTo(other.ArrayOfCustomEnumProperty)
+                      && this.ArrayOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ArrayOfCustomEnumValidatedNotDefaultProperty)
                       && this.ArrayOfCustomFlagsEnumProperty.IsEqualTo(other.ArrayOfCustomFlagsEnumProperty)
                       && this.ArrayOfCustomClassProperty.IsEqualTo(other.ArrayOfCustomClassProperty)
                       && this.ArrayOfCustomBaseClassProperty.IsEqualTo(other.ArrayOfCustomBaseClassProperty)
@@ -94,6 +95,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             .Hash(this.ArrayOfGuidProperty)
             .Hash(this.ArrayOfDateTimeProperty)
             .Hash(this.ArrayOfCustomEnumProperty)
+            .Hash(this.ArrayOfCustomEnumValidatedNotDefaultProperty)
             .Hash(this.ArrayOfCustomFlagsEnumProperty)
             .Hash(this.ArrayOfCustomClassProperty)
             .Hash(this.ArrayOfCustomBaseClassProperty)
@@ -113,6 +115,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -152,6 +155,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -191,6 +195,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -230,6 +235,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -269,6 +275,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  arrayOfGuidProperty,
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -308,6 +315,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  arrayOfDateTimeProperty,
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -347,6 +355,47 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  arrayOfCustomEnumProperty,
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
+                                 this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomClassProperty?.DeepClone(),
+                                 this.ArrayOfCustomBaseClassProperty?.DeepClone(),
+                                 this.ArrayOfCustomGenericClassOfCustomClassProperty?.DeepClone());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Deep clones this object with a new <see cref="ArrayOfCustomEnumValidatedNotDefaultProperty" />.
+        /// </summary>
+        /// <param name="arrayOfCustomEnumValidatedNotDefaultProperty">The new <see cref="ArrayOfCustomEnumValidatedNotDefaultProperty" />.  This object will NOT be deep cloned; it is used as-is.</param>
+        /// <returns>New <see cref="ModelAllPrivateSetArray" /> using the specified <paramref name="arrayOfCustomEnumValidatedNotDefaultProperty" /> for <see cref="ArrayOfCustomEnumValidatedNotDefaultProperty" /> and a deep clone of every other property.</returns>
+        [SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
+        [SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings")]
+        [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+        [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+        [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+        [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+        [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+        [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        public ModelAllPrivateSetArray DeepCloneWithArrayOfCustomEnumValidatedNotDefaultProperty(CustomEnumValidatedNotDefault[] arrayOfCustomEnumValidatedNotDefaultProperty)
+        {
+            var result = new ModelAllPrivateSetArray(
+                                 this.ArrayOfBoolProperty?.DeepClone(),
+                                 this.ArrayOfIntProperty?.DeepClone(),
+                                 this.ArrayOfStringProperty?.DeepClone(),
+                                 this.ArrayOfGuidProperty?.DeepClone(),
+                                 this.ArrayOfDateTimeProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 arrayOfCustomEnumValidatedNotDefaultProperty,
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -386,6 +435,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  arrayOfCustomFlagsEnumProperty,
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -425,6 +475,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  arrayOfCustomClassProperty,
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -464,6 +515,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  arrayOfCustomBaseClassProperty,
@@ -503,6 +555,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                                  this.ArrayOfGuidProperty?.DeepClone(),
                                  this.ArrayOfDateTimeProperty?.DeepClone(),
                                  this.ArrayOfCustomEnumProperty?.DeepClone(),
+                                 this.ArrayOfCustomEnumValidatedNotDefaultProperty?.DeepClone(),
                                  this.ArrayOfCustomFlagsEnumProperty?.DeepClone(),
                                  this.ArrayOfCustomClassProperty?.DeepClone(),
                                  this.ArrayOfCustomBaseClassProperty?.DeepClone(),
@@ -515,7 +568,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public override string ToString()
         {
-            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArray: ArrayOfBoolProperty = {this.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {this.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {this.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {this.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {this.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {this.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {this.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {this.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {this.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomGenericClassOfCustomClassProperty = {this.ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
+            var result = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetArray: ArrayOfBoolProperty = {this.ArrayOfBoolProperty?.ToString() ?? "<null>"}, ArrayOfIntProperty = {this.ArrayOfIntProperty?.ToString() ?? "<null>"}, ArrayOfStringProperty = {this.ArrayOfStringProperty?.ToString() ?? "<null>"}, ArrayOfGuidProperty = {this.ArrayOfGuidProperty?.ToString() ?? "<null>"}, ArrayOfDateTimeProperty = {this.ArrayOfDateTimeProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumProperty = {this.ArrayOfCustomEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomEnumValidatedNotDefaultProperty = {this.ArrayOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ArrayOfCustomFlagsEnumProperty = {this.ArrayOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ArrayOfCustomClassProperty = {this.ArrayOfCustomClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomBaseClassProperty = {this.ArrayOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ArrayOfCustomGenericClassOfCustomClassProperty = {this.ArrayOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}.");
 
             return result;
         }
@@ -597,6 +650,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
 
                 localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomEnumProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomEnumProperty));
+                result.AddRange(localValidationFailures);
+                if (stopOnFirstObjectWithFailures && result.Any())
+                {
+                    return;
+                }
+
+                localValidationFailures = ValidatableExtensions.GetValidationFailures(this.ArrayOfCustomEnumValidatedNotDefaultProperty, options, propertyPathTracker, nameof(this.ArrayOfCustomEnumValidatedNotDefaultProperty));
                 result.AddRange(localValidationFailures);
                 if (stopOnFirstObjectWithFailures && result.Any())
                 {

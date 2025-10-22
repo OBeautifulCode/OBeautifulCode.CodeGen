@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault Child1CustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum Child1CustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -102,6 +109,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentGuidProperty)
                 .Hash(this.ParentDateTimeProperty)
                 .Hash(this.ParentCustomEnumProperty)
+                .Hash(this.ParentCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentCustomFlagsEnumProperty)
                 .Hash(this.ParentCustomClassProperty)
                 .Hash(this.ParentCustomBaseClassProperty)
@@ -112,6 +120,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child1GuidProperty)
                 .Hash(this.Child1DateTimeProperty)
                 .Hash(this.Child1CustomEnumProperty)
+                .Hash(this.Child1CustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child1CustomFlagsEnumProperty)
                 .Hash(this.Child1CustomClassProperty)
                 .Hash(this.Child1CustomBaseClassProperty)

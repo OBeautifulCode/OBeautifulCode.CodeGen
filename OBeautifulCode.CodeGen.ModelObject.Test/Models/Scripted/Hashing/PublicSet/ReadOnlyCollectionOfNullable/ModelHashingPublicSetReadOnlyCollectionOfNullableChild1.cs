@@ -64,6 +64,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyCollection<CustomEnumValidatedNotDefault?> Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyCollection<CustomFlagsEnum?> Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty { get; set; }
 
         /// <inheritdoc />
@@ -73,12 +80,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableGuidProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)
+                .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableIntProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty)
+                .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty)
                 .Value;
     }

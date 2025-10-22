@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPublicSetReadOnlyListChild1>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyListChild1: ParentReadOnlyListInterfaceOfBoolProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfIntProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfGuidProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomEnumProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomClassProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomBaseClassProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfBoolProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfIntProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfGuidProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomEnumProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomBaseClassProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPublicSetReadOnlyListChild1: ParentReadOnlyListInterfaceOfBoolProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfIntProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfStringProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfGuidProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomEnumProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomClassProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomBaseClassProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfBoolProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfBoolProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfIntProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfIntProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfStringProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfStringProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfGuidProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfGuidProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfDateTimeProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfDateTimeProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomEnumProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomBaseClassProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty?.ToString() ?? "<null>"}, Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = {systemUnderTest.Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -171,6 +171,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetReadOnlyListChild1>
+                {
+                    Name = "DeepCloneWithParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty with the provided parentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetReadOnlyListChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().ThatIs(_ => !systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetReadOnlyListChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -379,6 +399,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPublicSetReadOnlyListChild1>
                 {
+                    Name = "DeepCloneWithChild1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty with the provided child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPublicSetReadOnlyListChild1>();
+
+                        var referenceObject = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().ThatIs(_ => !systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPublicSetReadOnlyListChild1>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPublicSetReadOnlyListChild1>
+                {
                     Name = "DeepCloneWithChild1ReadOnlyListInterfaceOfCustomFlagsEnumProperty should deep clone object and replace Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty with the provided child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty",
                     WithPropertyName = "Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -475,6 +515,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -485,6 +526,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -501,6 +543,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -511,6 +554,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -524,6 +568,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -534,6 +579,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -547,6 +593,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -557,6 +604,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -570,6 +618,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty)).ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -580,6 +629,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -593,6 +643,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty)).ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -603,6 +654,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -616,6 +668,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty)).ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -626,6 +679,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -639,6 +693,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)).ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
+                                ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
+                                ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                Child1ReadOnlyListInterfaceOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfBoolProperty,
+                                Child1ReadOnlyListInterfaceOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfIntProperty,
+                                Child1ReadOnlyListInterfaceOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfStringProperty,
+                                Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
+                                Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
+                                Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
+                                Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetReadOnlyListChild1
+                            {
+                                ParentReadOnlyListInterfaceOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfBoolProperty,
+                                ParentReadOnlyListInterfaceOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfIntProperty,
+                                ParentReadOnlyListInterfaceOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfStringProperty,
+                                ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
+                                ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty)).ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -649,6 +729,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -662,6 +743,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty)).ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -672,6 +754,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -685,6 +768,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.ParentReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty)).ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -695,6 +779,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -708,6 +793,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -718,6 +804,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -731,6 +818,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -741,6 +829,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -754,6 +843,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -764,6 +854,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -777,6 +868,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -787,6 +879,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -800,6 +893,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -810,6 +904,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty)).Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -823,6 +918,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -833,6 +929,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfDateTimeProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty)).Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -846,6 +943,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -856,6 +954,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty)).Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -869,6 +968,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -879,6 +979,32 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty)).Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
+                                Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
+                                Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty,
+                            },
+                        new ModelAllPublicSetReadOnlyListChild1
+                            {
+                                ParentReadOnlyListInterfaceOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfBoolProperty,
+                                ParentReadOnlyListInterfaceOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfIntProperty,
+                                ParentReadOnlyListInterfaceOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfStringProperty,
+                                ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
+                                ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
+                                ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
+                                ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
+                                ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty,
+                                Child1ReadOnlyListInterfaceOfBoolProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfBoolProperty,
+                                Child1ReadOnlyListInterfaceOfIntProperty                             = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfIntProperty,
+                                Child1ReadOnlyListInterfaceOfStringProperty                          = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfStringProperty,
+                                Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
+                                Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty)).Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -892,6 +1018,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -902,6 +1029,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfCustomClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty)).Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -915,6 +1043,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -925,6 +1054,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<ModelAllPublicSetReadOnlyListChild1>().Whose(_ => !_.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty)).Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -938,6 +1068,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ParentReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfGuidProperty,
                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfDateTimeProperty,
                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumProperty,
+                                ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomClassProperty,
                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.ParentReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -948,6 +1079,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfGuidProperty,
                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfDateTimeProperty,
                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumProperty,
+                                Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty   = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty,
                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomClassProperty,
                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = ReferenceObjectForEquatableTestScenarios.Child1ReadOnlyListInterfaceOfCustomBaseClassProperty,
@@ -1199,6 +1331,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty == null)
                 {
                     actual.ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1319,6 +1463,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child1ReadOnlyListInterfaceOfCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty == null)
                 {
                     actual.Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1384,7 +1540,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentReadOnlyListInterfaceOfBoolProperty", "ParentReadOnlyListInterfaceOfIntProperty", "ParentReadOnlyListInterfaceOfStringProperty", "ParentReadOnlyListInterfaceOfGuidProperty", "ParentReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyListInterfaceOfCustomEnumProperty", "ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty", "ParentReadOnlyListInterfaceOfCustomClassProperty", "ParentReadOnlyListInterfaceOfCustomBaseClassProperty", "ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty", "Child1ReadOnlyListInterfaceOfBoolProperty", "Child1ReadOnlyListInterfaceOfIntProperty", "Child1ReadOnlyListInterfaceOfStringProperty", "Child1ReadOnlyListInterfaceOfGuidProperty", "Child1ReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyListInterfaceOfCustomEnumProperty", "Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty", "Child1ReadOnlyListInterfaceOfCustomClassProperty", "Child1ReadOnlyListInterfaceOfCustomBaseClassProperty", "Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty" };
+                var propertyNames = new string[] { "ParentReadOnlyListInterfaceOfBoolProperty", "ParentReadOnlyListInterfaceOfIntProperty", "ParentReadOnlyListInterfaceOfStringProperty", "ParentReadOnlyListInterfaceOfGuidProperty", "ParentReadOnlyListInterfaceOfDateTimeProperty", "ParentReadOnlyListInterfaceOfCustomEnumProperty", "ParentReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty", "ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty", "ParentReadOnlyListInterfaceOfCustomClassProperty", "ParentReadOnlyListInterfaceOfCustomBaseClassProperty", "ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty", "Child1ReadOnlyListInterfaceOfBoolProperty", "Child1ReadOnlyListInterfaceOfIntProperty", "Child1ReadOnlyListInterfaceOfStringProperty", "Child1ReadOnlyListInterfaceOfGuidProperty", "Child1ReadOnlyListInterfaceOfDateTimeProperty", "Child1ReadOnlyListInterfaceOfCustomEnumProperty", "Child1ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty", "Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty", "Child1ReadOnlyListInterfaceOfCustomClassProperty", "Child1ReadOnlyListInterfaceOfCustomBaseClassProperty", "Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

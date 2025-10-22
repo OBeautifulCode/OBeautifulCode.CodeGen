@@ -75,6 +75,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault CustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum CustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -118,6 +125,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.GuidProperty.IsEqualTo(other.GuidProperty) &&
                 this.DateTimeProperty.IsEqualTo(other.DateTimeProperty) &&
                 this.CustomEnumProperty.IsEqualTo(other.CustomEnumProperty) &&
+                this.CustomEnumValidatedNotDefaultProperty.IsEqualTo(other.CustomEnumValidatedNotDefaultProperty) &&
                 this.CustomFlagsEnumProperty.IsEqualTo(other.CustomFlagsEnumProperty) &&
                 this.CustomClassProperty.IsEqualTo(other.CustomClassProperty) &&
                 this.CustomBaseClassProperty.IsEqualTo(other.CustomBaseClassProperty) &&

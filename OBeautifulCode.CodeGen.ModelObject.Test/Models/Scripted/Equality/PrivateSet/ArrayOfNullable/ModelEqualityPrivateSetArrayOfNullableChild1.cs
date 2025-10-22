@@ -38,20 +38,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid?[] parentArrayOfNullableGuidProperty,
             DateTime?[] parentArrayOfNullableDateTimeProperty,
             CustomEnum?[] parentArrayOfNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault?[] parentArrayOfNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum?[] parentArrayOfNullableCustomFlagsEnumProperty,
             bool?[] child1ArrayOfNullableBoolProperty,
             int?[] child1ArrayOfNullableIntProperty,
             Guid?[] child1ArrayOfNullableGuidProperty,
             DateTime?[] child1ArrayOfNullableDateTimeProperty,
             CustomEnum?[] child1ArrayOfNullableCustomEnumProperty,
+            CustomEnumValidatedNotDefault?[] child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum?[] child1ArrayOfNullableCustomFlagsEnumProperty)
-            : base(parentArrayOfNullableBoolProperty, parentArrayOfNullableIntProperty, parentArrayOfNullableGuidProperty, parentArrayOfNullableDateTimeProperty, parentArrayOfNullableCustomEnumProperty, parentArrayOfNullableCustomFlagsEnumProperty)
+            : base(parentArrayOfNullableBoolProperty, parentArrayOfNullableIntProperty, parentArrayOfNullableGuidProperty, parentArrayOfNullableDateTimeProperty, parentArrayOfNullableCustomEnumProperty, parentArrayOfNullableCustomEnumValidatedNotDefaultProperty, parentArrayOfNullableCustomFlagsEnumProperty)
         {
             new { child1ArrayOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child1ArrayOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
 
             this.Child1ArrayOfNullableBoolProperty = child1ArrayOfNullableBoolProperty;
@@ -59,6 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child1ArrayOfNullableGuidProperty = child1ArrayOfNullableGuidProperty;
             this.Child1ArrayOfNullableDateTimeProperty = child1ArrayOfNullableDateTimeProperty;
             this.Child1ArrayOfNullableCustomEnumProperty = child1ArrayOfNullableCustomEnumProperty;
+            this.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty = child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty;
             this.Child1ArrayOfNullableCustomFlagsEnumProperty = child1ArrayOfNullableCustomFlagsEnumProperty;
         }
 
@@ -102,6 +106,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault?[] Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum?[] Child1ArrayOfNullableCustomFlagsEnumProperty { get; private set; }
 
         /// <inheritdoc />
@@ -123,12 +134,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentArrayOfNullableGuidProperty.IsEqualTo(other.ParentArrayOfNullableGuidProperty) &&
                 this.ParentArrayOfNullableDateTimeProperty.IsEqualTo(other.ParentArrayOfNullableDateTimeProperty) &&
                 this.ParentArrayOfNullableCustomEnumProperty.IsEqualTo(other.ParentArrayOfNullableCustomEnumProperty) &&
+                this.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentArrayOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.ParentArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ParentArrayOfNullableCustomFlagsEnumProperty) &&
                 this.Child1ArrayOfNullableBoolProperty.IsEqualTo(other.Child1ArrayOfNullableBoolProperty) &&
                 this.Child1ArrayOfNullableIntProperty.IsEqualTo(other.Child1ArrayOfNullableIntProperty) &&
                 this.Child1ArrayOfNullableGuidProperty.IsEqualTo(other.Child1ArrayOfNullableGuidProperty) &&
                 this.Child1ArrayOfNullableDateTimeProperty.IsEqualTo(other.Child1ArrayOfNullableDateTimeProperty) &&
                 this.Child1ArrayOfNullableCustomEnumProperty.IsEqualTo(other.Child1ArrayOfNullableCustomEnumProperty) &&
+                this.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child1ArrayOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.Child1ArrayOfNullableCustomFlagsEnumProperty.IsEqualTo(other.Child1ArrayOfNullableCustomFlagsEnumProperty);
 
             return result;

@@ -34,6 +34,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<Guid> readOnlyListInterfaceOfGuidProperty,
             IReadOnlyList<DateTime> readOnlyListInterfaceOfDateTimeProperty,
             IReadOnlyList<CustomEnum> readOnlyListInterfaceOfCustomEnumProperty,
+            IReadOnlyList<CustomEnumValidatedNotDefault> readOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty,
             IReadOnlyList<CustomFlagsEnum> readOnlyListInterfaceOfCustomFlagsEnumProperty,
             IReadOnlyList<CustomClass> readOnlyListInterfaceOfCustomClassProperty,
             IReadOnlyList<CustomBaseClass> readOnlyListInterfaceOfCustomBaseClassProperty,
@@ -45,6 +46,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             new { readOnlyListInterfaceOfGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyListInterfaceOfDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyListInterfaceOfCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { readOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyListInterfaceOfCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { readOnlyListInterfaceOfCustomClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
             new { readOnlyListInterfaceOfCustomBaseClassProperty }.AsArg().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls();
@@ -56,6 +58,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ReadOnlyListInterfaceOfGuidProperty = readOnlyListInterfaceOfGuidProperty;
             this.ReadOnlyListInterfaceOfDateTimeProperty = readOnlyListInterfaceOfDateTimeProperty;
             this.ReadOnlyListInterfaceOfCustomEnumProperty = readOnlyListInterfaceOfCustomEnumProperty;
+            this.ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty = readOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty;
             this.ReadOnlyListInterfaceOfCustomFlagsEnumProperty = readOnlyListInterfaceOfCustomFlagsEnumProperty;
             this.ReadOnlyListInterfaceOfCustomClassProperty = readOnlyListInterfaceOfCustomClassProperty;
             this.ReadOnlyListInterfaceOfCustomBaseClassProperty = readOnlyListInterfaceOfCustomBaseClassProperty;
@@ -103,6 +106,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomEnum> ReadOnlyListInterfaceOfCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomEnumValidatedNotDefault> ReadOnlyListInterfaceOfCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

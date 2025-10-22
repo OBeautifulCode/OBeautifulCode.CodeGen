@@ -64,6 +64,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault, CustomEnumValidatedNotDefault> Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum> Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -94,6 +101,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfStringProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfGuidProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty)
+                .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomClassProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)
@@ -103,6 +111,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfStringProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfGuidProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty)
+                .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty)

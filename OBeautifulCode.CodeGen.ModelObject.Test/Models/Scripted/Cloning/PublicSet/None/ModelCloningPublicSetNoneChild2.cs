@@ -75,6 +75,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault Child2CustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum Child2CustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -118,6 +125,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentGuidProperty.IsEqualTo(other.ParentGuidProperty) &&
                 this.ParentDateTimeProperty.IsEqualTo(other.ParentDateTimeProperty) &&
                 this.ParentCustomEnumProperty.IsEqualTo(other.ParentCustomEnumProperty) &&
+                this.ParentCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentCustomEnumValidatedNotDefaultProperty) &&
                 this.ParentCustomFlagsEnumProperty.IsEqualTo(other.ParentCustomFlagsEnumProperty) &&
                 this.ParentCustomClassProperty.IsEqualTo(other.ParentCustomClassProperty) &&
                 this.ParentCustomBaseClassProperty.IsEqualTo(other.ParentCustomBaseClassProperty) &&
@@ -128,6 +136,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.Child2GuidProperty.IsEqualTo(other.Child2GuidProperty) &&
                 this.Child2DateTimeProperty.IsEqualTo(other.Child2DateTimeProperty) &&
                 this.Child2CustomEnumProperty.IsEqualTo(other.Child2CustomEnumProperty) &&
+                this.Child2CustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child2CustomEnumValidatedNotDefaultProperty) &&
                 this.Child2CustomFlagsEnumProperty.IsEqualTo(other.Child2CustomFlagsEnumProperty) &&
                 this.Child2CustomClassProperty.IsEqualTo(other.Child2CustomClassProperty) &&
                 this.Child2CustomBaseClassProperty.IsEqualTo(other.Child2CustomBaseClassProperty) &&

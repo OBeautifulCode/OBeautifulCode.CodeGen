@@ -38,20 +38,23 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyList<Guid?> parentReadOnlyListInterfaceOfNullableGuidProperty,
             IReadOnlyList<DateTime?> parentReadOnlyListInterfaceOfNullableDateTimeProperty,
             IReadOnlyList<CustomEnum?> parentReadOnlyListInterfaceOfNullableCustomEnumProperty,
+            IReadOnlyList<CustomEnumValidatedNotDefault?> parentReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
             IReadOnlyList<CustomFlagsEnum?> parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty,
             IReadOnlyList<bool?> child2ReadOnlyListInterfaceOfNullableBoolProperty,
             IReadOnlyList<int?> child2ReadOnlyListInterfaceOfNullableIntProperty,
             IReadOnlyList<Guid?> child2ReadOnlyListInterfaceOfNullableGuidProperty,
             IReadOnlyList<DateTime?> child2ReadOnlyListInterfaceOfNullableDateTimeProperty,
             IReadOnlyList<CustomEnum?> child2ReadOnlyListInterfaceOfNullableCustomEnumProperty,
+            IReadOnlyList<CustomEnumValidatedNotDefault?> child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
             IReadOnlyList<CustomFlagsEnum?> child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty)
-            : base(parentReadOnlyListInterfaceOfNullableBoolProperty, parentReadOnlyListInterfaceOfNullableIntProperty, parentReadOnlyListInterfaceOfNullableGuidProperty, parentReadOnlyListInterfaceOfNullableDateTimeProperty, parentReadOnlyListInterfaceOfNullableCustomEnumProperty, parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty)
+            : base(parentReadOnlyListInterfaceOfNullableBoolProperty, parentReadOnlyListInterfaceOfNullableIntProperty, parentReadOnlyListInterfaceOfNullableGuidProperty, parentReadOnlyListInterfaceOfNullableDateTimeProperty, parentReadOnlyListInterfaceOfNullableCustomEnumProperty, parentReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty, parentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty)
         {
             new { child2ReadOnlyListInterfaceOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ReadOnlyListInterfaceOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ReadOnlyListInterfaceOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ReadOnlyListInterfaceOfNullableDateTimeProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ReadOnlyListInterfaceOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
+            new { child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
             new { child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyEnumerable();
 
             this.Child2ReadOnlyListInterfaceOfNullableBoolProperty = child2ReadOnlyListInterfaceOfNullableBoolProperty;
@@ -59,6 +62,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.Child2ReadOnlyListInterfaceOfNullableGuidProperty = child2ReadOnlyListInterfaceOfNullableGuidProperty;
             this.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty = child2ReadOnlyListInterfaceOfNullableDateTimeProperty;
             this.Child2ReadOnlyListInterfaceOfNullableCustomEnumProperty = child2ReadOnlyListInterfaceOfNullableCustomEnumProperty;
+            this.Child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty;
             this.Child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty;
         }
 
@@ -102,6 +106,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyList<CustomEnumValidatedNotDefault?> Child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyList<CustomFlagsEnum?> Child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty { get; private set; }
 
         /// <inheritdoc />
@@ -123,12 +134,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 this.ParentReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableGuidProperty) &&
                 this.ParentReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableDateTimeProperty) &&
                 this.ParentReadOnlyListInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableCustomEnumProperty) &&
+                this.ParentReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.ParentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.ParentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty) &&
                 this.Child2ReadOnlyListInterfaceOfNullableBoolProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableBoolProperty) &&
                 this.Child2ReadOnlyListInterfaceOfNullableIntProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableIntProperty) &&
                 this.Child2ReadOnlyListInterfaceOfNullableGuidProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableGuidProperty) &&
                 this.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableDateTimeProperty) &&
                 this.Child2ReadOnlyListInterfaceOfNullableCustomEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableCustomEnumProperty) &&
+                this.Child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableCustomEnumValidatedNotDefaultProperty) &&
                 this.Child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(other.Child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty);
 
             return result;

@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault ParentCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum ParentCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -100,6 +107,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var result = new[]
                 {
                     new { this.ParentStringProperty }.ForRecording().Must().NotBeNullNorWhiteSpace(),
+                    new { this.ParentCustomEnumValidatedNotDefaultProperty }.ForRecording().Must().NotBeEqualTo(CustomEnumValidatedNotDefault.Unknown),
                     new { this.ParentCustomClassProperty }.ForRecording().Must().NotBeNull(),
                     new { this.ParentCustomBaseClassProperty }.ForRecording().Must().NotBeNull(),
                     new { this.ParentCustomGenericClassOfCustomClassProperty }.ForRecording().Must().NotBeNull(),

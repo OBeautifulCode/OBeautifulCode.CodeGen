@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CustomEnumWithUnknown.cs" company="OBeautifulCode">
+// <copyright file="CustomEnumValidatedNotDefault.cs" company="OBeautifulCode">
 //   Copyright (c) OBeautifulCode 2018. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -13,7 +13,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     [Serializable]
     [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix", Justification = ObcSuppressBecause.CA1711_IdentifiersShouldNotHaveIncorrectSuffix_TypeNameAddedAsSuffixForTestsWhereTypeIsPrimaryConcern)]
-    public enum CustomEnumWithUnknown
+    public enum CustomEnumValidatedNotDefault
     {
         Unknown,
 

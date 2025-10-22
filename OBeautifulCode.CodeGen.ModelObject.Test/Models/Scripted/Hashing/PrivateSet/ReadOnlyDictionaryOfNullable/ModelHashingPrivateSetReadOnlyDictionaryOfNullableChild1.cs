@@ -32,24 +32,28 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             IReadOnlyDictionary<int?, int?> parentReadOnlyDictionaryInterfaceOfNullableIntProperty,
             IReadOnlyDictionary<Guid?, Guid?> parentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
             IReadOnlyDictionary<CustomEnum?, CustomEnum?> parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
             IReadOnlyDictionary<bool?, bool?> child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
             IReadOnlyDictionary<int?, int?> child1ReadOnlyDictionaryInterfaceOfNullableIntProperty,
             IReadOnlyDictionary<Guid?, Guid?> child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
             IReadOnlyDictionary<CustomEnum?, CustomEnum?> child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+            IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
             IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
-            : base(parentReadOnlyDictionaryInterfaceOfNullableBoolProperty, parentReadOnlyDictionaryInterfaceOfNullableIntProperty, parentReadOnlyDictionaryInterfaceOfNullableGuidProperty, parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty, parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
+            : base(parentReadOnlyDictionaryInterfaceOfNullableBoolProperty, parentReadOnlyDictionaryInterfaceOfNullableIntProperty, parentReadOnlyDictionaryInterfaceOfNullableGuidProperty, parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty, parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty, parentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
         {
             new { child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfNullableIntProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
+            new { child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
             new { child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty }.AsArg().Must().NotBeNullNorEmptyDictionary();
 
             this.Child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty = child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfNullableIntProperty = child1ReadOnlyDictionaryInterfaceOfNullableIntProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty = child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty;
+            this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty;
             this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty;
         }
 
@@ -86,6 +90,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty { get; private set; }
 
         /// <inheritdoc />
@@ -94,11 +105,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)
+                .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfNullableIntProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)
+                .Hash(this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
                 .Value;
     }

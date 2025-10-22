@@ -59,7 +59,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>
                 {
-                    Name = "constructor should throw ArgumentOutOfRangeException when parameter 'item3' is CustomEnumWithUnknown.Unknown",
+                    Name = "constructor should throw ArgumentOutOfRangeException when parameter 'item3' is CustomEnumValidatedNotDefault.Unknown",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>();
@@ -67,7 +67,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new ModelPrivateSetConstructorParameterEnumValueNamedUnknown(
                                              referenceObject.Item1,
                                              referenceObject.Item2,
-                                             CustomEnumWithUnknown.Unknown,
+                                             CustomEnumValidatedNotDefault.Unknown,
                                              referenceObject.Item4);
 
                         return result;
@@ -78,7 +78,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>
                 {
-                    Name = "constructor should throw ArgumentOutOfRangeException when parameter 'item4' is CustomEnumWithUnknown.Unknown",
+                    Name = "constructor should throw ArgumentOutOfRangeException when parameter 'item4' is CustomEnumValidatedNotDefault.Unknown",
                     ConstructionFunc = () =>
                     {
                         var referenceObject = A.Dummy<ModelPrivateSetConstructorParameterEnumValueNamedUnknown>();
@@ -87,7 +87,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.Item1,
                                              referenceObject.Item2,
                                              referenceObject.Item3,
-                                             CustomEnumWithUnknown.Unknown);
+                                             CustomEnumValidatedNotDefault.Unknown);
 
                         return result;
                     },

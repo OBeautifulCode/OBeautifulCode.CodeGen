@@ -57,6 +57,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public IReadOnlyDictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?> Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?> Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty { get; set; }
 
         /// <inheritdoc />
@@ -65,11 +72,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)
+                .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)
+                .Hash(this.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)
                 .Hash(this.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)
                 .Value;
     }

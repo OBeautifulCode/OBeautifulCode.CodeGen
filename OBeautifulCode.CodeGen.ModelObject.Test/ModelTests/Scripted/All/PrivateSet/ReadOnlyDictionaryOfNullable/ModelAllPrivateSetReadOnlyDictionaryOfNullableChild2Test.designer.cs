@@ -48,7 +48,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         var result = new SystemUnderTestExpectedStringRepresentation<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
                         {
                             SystemUnderTest = systemUnderTest,
-                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2: ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
+                            ExpectedStringRepresentation = Invariant($"OBeautifulCode.CodeGen.ModelObject.Test.ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2: ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty?.ToString() ?? "<null>"}, Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = {systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty?.ToString() ?? "<null>"}."),
                         };
 
                         return result;
@@ -69,11 +69,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -94,11 +96,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -119,11 +123,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              null,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -144,11 +150,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              new Dictionary<int?, int?>(),
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -169,11 +177,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              null,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -194,11 +204,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              new Dictionary<Guid?, Guid?>(),
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -219,11 +231,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              null,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -244,17 +258,73 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              new Dictionary<CustomEnum?, CustomEnum?>(),
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             null,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             new Dictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?>(),
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
@@ -269,11 +339,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              null,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -294,11 +366,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              new Dictionary<CustomFlagsEnum?, CustomFlagsEnum?>(),
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -319,11 +393,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              null,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -344,11 +420,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              new Dictionary<bool?, bool?>(),
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -369,11 +447,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              null,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -394,11 +474,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              new Dictionary<int?, int?>(),
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -419,11 +501,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              null,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -444,11 +528,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              new Dictionary<Guid?, Guid?>(),
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -469,11 +555,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              null,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
@@ -494,17 +582,73 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              new Dictionary<CustomEnum?, CustomEnum?>(),
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
 
                         return result;
                     },
                     ExpectedExceptionType = typeof(ArgumentException),
                     ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "is an empty dictionary", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "constructor should throw ArgumentNullException when parameter 'child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is null scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             null,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentNullException),
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", },
+                })
+            .AddScenario(() =>
+                new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "constructor should throw ArgumentException when parameter 'child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' is an empty dictionary scenario",
+                    ConstructionFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var result = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             new Dictionary<CustomEnumValidatedNotDefault?, CustomEnumValidatedNotDefault?>(),
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty);
+
+                        return result;
+                    },
+                    ExpectedExceptionType = typeof(ArgumentException),
+                    ExpectedExceptionMessageContains = new[] { "child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "is an empty dictionary", },
                 })
             .AddScenario(() =>
                 new ConstructorArgumentValidationTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
@@ -519,11 +663,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              null);
 
                         return result;
@@ -544,11 +690,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                              referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                             referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                              new Dictionary<CustomFlagsEnum?, CustomFlagsEnum?>());
 
                         return result;
@@ -573,11 +721,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                         };
@@ -601,11 +751,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                         };
@@ -629,11 +781,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                         };
@@ -657,11 +811,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
                         };
@@ -669,6 +825,36 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should return same 'parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                            ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
@@ -685,11 +871,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                         };
@@ -713,11 +901,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                         };
@@ -741,11 +931,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                         };
@@ -769,11 +961,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                         };
@@ -797,11 +991,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
                         };
@@ -809,6 +1005,36 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         return result;
                     },
                     PropertyName = "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty",
+                })
+            .AddScenario(() =>
+                new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should return same 'child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty' parameter passed to constructor when getting",
+                    SystemUnderTestExpectedPropertyValueFunc = () =>
+                    {
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var result = new SystemUnderTestExpectedPropertyValue<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                        {
+                            SystemUnderTest = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                            ExpectedPropertyValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                    PropertyName = "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
                 })
             .AddScenario(() =>
                 new ConstructorPropertyAssignmentTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
@@ -825,11 +1051,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                                      referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                                       referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                             ExpectedPropertyValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                         };
@@ -915,6 +1143,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                         {
                             SystemUnderTest = systemUnderTest,
                             DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
+                    Name = "DeepCloneWithParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty with the provided parentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().ThatIs(_ => !systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                         };
 
                         return result;
@@ -1023,6 +1271,26 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             .AddScenario(() =>
                 new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
                 {
+                    Name = "DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty should deep clone object and replace Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty with the provided child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    WithPropertyName = "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty",
+                    SystemUnderTestDeepCloneWithValueFunc = () =>
+                    {
+                        var systemUnderTest = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>();
+
+                        var referenceObject = A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().ThatIs(_ => !systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(_.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty));
+
+                        var result = new SystemUnderTestDeepCloneWithValue<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                        {
+                            SystemUnderTest = systemUnderTest,
+                            DeepCloneWithValue = referenceObject.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                        };
+
+                        return result;
+                    },
+                })
+            .AddScenario(() =>
+                new DeepCloneWithTestScenario<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>
+                {
                     Name = "DeepCloneWithChild2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty should deep clone object and replace Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty with the provided child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty",
                     WithPropertyName = "Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty",
                     SystemUnderTestDeepCloneWithValueFunc = () =>
@@ -1056,11 +1324,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotEqualToReferenceObject = new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2[]
@@ -1070,110 +1340,156 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty)).ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty)).ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)).ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)).ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                        new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)).ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty)).Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty)).Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty)).Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty)).Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                         new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
                                 ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty)).Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
+                        new ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2(
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
+                                ReferenceObjectForEquatableTestScenarios.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty,
+                                ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty,
                                 A.Dummy<ModelAllPrivateSetReadOnlyDictionaryOfNullableChild2>().Whose(_ => !_.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.IsEqualTo(ReferenceObjectForEquatableTestScenarios.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty)).Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty),
                     },
                     ObjectsThatAreNotOfTheSameTypeAsReferenceObject = new object[]
@@ -1513,6 +1829,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1573,6 +1901,18 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty);
                 }
 
+                if (systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty == null)
+                {
+                    actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().BeNull();
+                }
+                else if (!actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.GetType().IsValueType)
+                {
+                    // When the declared type is a reference type, we still have to check the runtime type.
+                    // The object could be a boxed value type, which will fail this asseration because
+                    // a deep clone of a value type object is the same object.
+                    actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty.AsTest().Must().NotBeSameReferenceAs(systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty);
+                }
+
                 if (systemUnderTest.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty == null)
                 {
                     actual.Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty.AsTest().Must().BeNull();
@@ -1602,7 +1942,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
             public static void DeepCloneWith___Should_deep_clone_object_and_replace_the_associated_property_with_the_provided_value___When_called()
             {
-                var propertyNames = new string[] { "ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty", "ParentReadOnlyDictionaryInterfaceOfNullableIntProperty", "ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty", "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty" };
+                var propertyNames = new string[] { "ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty", "ParentReadOnlyDictionaryInterfaceOfNullableIntProperty", "ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty", "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumValidatedNotDefaultProperty", "Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty" };
 
                 var scenarios = DeepCloneWithTestScenarios.ValidateAndPrepareForTesting();
 

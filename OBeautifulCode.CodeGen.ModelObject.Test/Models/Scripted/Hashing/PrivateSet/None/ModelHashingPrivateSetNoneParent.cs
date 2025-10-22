@@ -34,12 +34,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             Guid parentGuidProperty,
             DateTime parentDateTimeProperty,
             CustomEnum parentCustomEnumProperty,
+            CustomEnumValidatedNotDefault parentCustomEnumValidatedNotDefaultProperty,
             CustomFlagsEnum parentCustomFlagsEnumProperty,
             CustomClass parentCustomClassProperty,
             CustomBaseClass parentCustomBaseClassProperty,
             CustomGenericClass<CustomClass> parentCustomGenericClassOfCustomClassProperty)
         {
             new { parentStringProperty }.AsArg().Must().NotBeNullNorWhiteSpace();
+            new { parentCustomEnumValidatedNotDefaultProperty }.AsArg().Must().NotBeEqualTo(CustomEnumValidatedNotDefault.Unknown);
             new { parentCustomClassProperty }.AsArg().Must().NotBeNull();
             new { parentCustomBaseClassProperty }.AsArg().Must().NotBeNull();
             new { parentCustomGenericClassOfCustomClassProperty }.AsArg().Must().NotBeNull();
@@ -50,6 +52,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             this.ParentGuidProperty = parentGuidProperty;
             this.ParentDateTimeProperty = parentDateTimeProperty;
             this.ParentCustomEnumProperty = parentCustomEnumProperty;
+            this.ParentCustomEnumValidatedNotDefaultProperty = parentCustomEnumValidatedNotDefaultProperty;
             this.ParentCustomFlagsEnumProperty = parentCustomFlagsEnumProperty;
             this.ParentCustomClassProperty = parentCustomClassProperty;
             this.ParentCustomBaseClassProperty = parentCustomBaseClassProperty;
@@ -97,6 +100,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomEnum ParentCustomEnumProperty { get; private set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault ParentCustomEnumValidatedNotDefaultProperty { get; private set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
         [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]

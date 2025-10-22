@@ -71,6 +71,13 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public CustomEnumValidatedNotDefault[] Child2ArrayOfCustomEnumValidatedNotDefaultProperty { get; set; }
+
+        [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
+        [SuppressMessage("Microsoft.Naming", "CA1720: IdentifiersShouldNotContainTypeNames")]
+        [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public CustomFlagsEnum[] Child2ArrayOfCustomFlagsEnumProperty { get; set; }
 
         [SuppressMessage("Microsoft.Design", "CA1002: DoNotExposeGenericLists")]
@@ -106,6 +113,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                         new { this.Child2ArrayOfGuidProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child2ArrayOfDateTimeProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child2ArrayOfCustomEnumProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
+                        new { this.Child2ArrayOfCustomEnumValidatedNotDefaultProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child2ArrayOfCustomFlagsEnumProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerable(),
                         new { this.Child2ArrayOfCustomClassProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls(),
                         new { this.Child2ArrayOfCustomBaseClassProperty }.ForRecording().Must().NotBeNullNorEmptyEnumerableNorContainAnyNulls(),
