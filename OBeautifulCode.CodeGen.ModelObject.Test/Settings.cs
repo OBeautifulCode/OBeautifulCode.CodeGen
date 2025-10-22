@@ -178,13 +178,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 }
             },
             {
-                SpecifiedModelKind.ConstructorParameterEnumValueNamedUnknown,
-                new[]
-                {
-                    "ConstructorParameterEnumValueNamedUnknown",
-                }
-            },
-            {
                 SpecifiedModelKind.UtcDateTime,
                 new[]
                 {

@@ -29,8 +29,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
         OptionalConstructorParameters,
 
-        ConstructorParameterEnumValueNamedUnknown,
-
         UtcDateTime,
 
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "MultiLevel", Justification = ObcSuppressBecause.CA1702_CompoundWordsShouldBeCasedCorrectly_AnalyzerIsIncorrectlyDetectingCompoundWords)]

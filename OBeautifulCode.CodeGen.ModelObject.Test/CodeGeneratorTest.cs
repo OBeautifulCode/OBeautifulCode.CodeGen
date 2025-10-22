@@ -197,7 +197,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 SpecifiedModelKind.MultipleConstructors,
                 SpecifiedModelKind.ConstructorMissingProperty,
                 SpecifiedModelKind.OptionalConstructorParameters,
-                SpecifiedModelKind.ConstructorParameterEnumValueNamedUnknown,
                 SpecifiedModelKind.ConstructorMoreDerivedThanProperty,
             };
 
