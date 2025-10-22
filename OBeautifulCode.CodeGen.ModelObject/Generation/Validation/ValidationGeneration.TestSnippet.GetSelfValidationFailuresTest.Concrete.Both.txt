@@ -1,0 +1,47 @@
+﻿            [Fact]
+[test-method-code-analysis-suppressions-here]
+            public static void GetSelfValidationFailures___Should_return_failures___When_properties_are_invalid()
+            {
+                var scenarios = SelfValidationTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.SystemUnderTest.GetSelfValidationFailures();
+
+                    // Assert
+                    var actualFailures = (actual ?? new SelfValidationFailure[0])
+                        .Where(_ => _ != null)
+                        .ToList();
+
+                    actualFailures.AsTest().Must().NotBeEmptyEnumerable(because: scenario.Id);
+
+                    var countOfActualFailuresThatMeetScenarioExpectedFailure = 0;
+                    foreach (var actualFailure in actualFailures)
+                    {
+                        if (actualFailure.PropertyNames.IsUnorderedEqualTo(scenario.ExpectedFailurePropertyNames) &&
+                            ((scenario.ExpectedFailureMessageEquals == null) || (actualFailure.Message == scenario.ExpectedFailureMessageEquals)) &&
+                            (scenario.ExpectedFailureMessageContains ?? new string[0]).All(_ => actualFailure.Message?.Contains(_) ?? false))
+                        {
+                            countOfActualFailuresThatMeetScenarioExpectedFailure++;
+                        }
+                    }
+
+                    if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AtLeastOneFailureMeetsExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeGreaterThan(0, because: scenario.Id);
+                    }
+                    else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                    }
+                    else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AllFailuresMeetExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(scenarios.Count, because: scenario.Id);
+                    }
+                    else
+                    {
+                        throw new NotSupportedException(Invariant($"This {nameof(SelfValidationTestScenarioPassesWhen)} is not supported: {scenario.ScenarioPassesWhen}."));
+                    }
+                }
+            }

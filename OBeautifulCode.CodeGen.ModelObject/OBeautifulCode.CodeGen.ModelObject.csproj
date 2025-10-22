@@ -299,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".analyzers\dictionary.xml" />
+    <EmbeddedResource Include="Generation\Validation\ValidationGeneration.TestSnippet.SelfValidationTestScenario.Concrete.Both.txt" />
+    <EmbeddedResource Include="Generation\Validation\ValidationGeneration.TestSnippet.GetSelfValidationFailuresTest.Concrete.Both.txt" />
+    <EmbeddedResource Include="Generation\Validation\ValidationGeneration.TestSnippet.SelfValidationTestFields.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Validation\ValidationGeneration.TestSnippet.ValidModelTestFields.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Validation\ValidationGeneration.Test.Concrete.Both.txt" />
     <EmbeddedResource Include="Generation\Validation\ValidationGeneration.ModelSnippet.GetValidationFailuresSingleProperty.Concrete.Both.txt" />

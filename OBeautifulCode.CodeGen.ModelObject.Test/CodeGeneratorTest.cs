@@ -177,6 +177,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 new { Type = typeof(MissingGetHashCodeMethod), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(MissingGetHashCodeMethod).ToStringReadable()}) directly implements {nameof(IDeclareGetHashCodeMethod)}, but does not directly implement the {nameof(IDeclareGetHashCodeMethod.GetHashCode)} method.") },
                 new { Type = typeof(MissingToStringMethod), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(MissingToStringMethod).ToStringReadable()}) directly implements {nameof(IDeclareToStringMethod)}, but does not directly implement the {nameof(IDeclareToStringMethod.ToString)} method.") },
                 new { Type = typeof(MissingGetSelfValidationFailuresMethod), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(MissingGetSelfValidationFailuresMethod).ToStringReadable()}) directly implements {nameof(IDeclareGetSelfValidationFailuresMethod)}, but does not directly implement the {nameof(IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures)} method.") },
+                new { Type = typeof(HasConstructorButAlsoValidates), ExpectedExceptionMessageContains = Invariant($"Type ({typeof(HasConstructorButAlsoValidates).ToStringReadable()}) implements {nameof(IDeclareGetSelfValidationFailuresMethod)} and has a non-default constructor.  The constructor should be use for validation instead of declaring self-validation.") },
             };
 
             // Act
@@ -259,7 +260,12 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     {
                         if ((declaredKeyMethod == DeclaredKeyMethod.Comparing) && (typeWrapperKind != TypeWrapperKind.NotWrapped))
                         {
-                            break;
+                            continue;
+                        }
+
+                        if ((declaredKeyMethod == DeclaredKeyMethod.Validation) && (setterKind == SetterKind.PrivateSetters))
+                        {
+                            continue;
                         }
 
                         var directoryPath = modelOrTest.GetScriptedModelsDirectoryPath(
@@ -513,8 +519,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             var equalityParentStatements = new List<string>();
             var hashingStatements = new List<string>();
             var hashingParentStatements = new List<string>();
-
             var propertyStatements = new List<string>();
+            var selfValidationStatements = new List<string>();
 
             if (setterKind.RequiresConstructor())
             {
@@ -545,6 +551,19 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 propertyStatements.Add(Invariant($"        public {typeCompilableString} {propertyName} {{ get; {setterKind.ToSetterString()}}}"));
                 propertyStatements.Add(string.Empty);
 
+                string mustValidation = null;
+                var mustValidationMethodName = typeToAddAsProperty.GetMustValidationMethodName();
+                if (mustValidationMethodName != null)
+                {
+                    var eachValidationName = typeToAddAsProperty.GetMustEachValidationMethodName();
+
+                    var eachValidationStatement = eachValidationName == null
+                        ? null
+                        : Invariant($".And().Each().{eachValidationName}()");
+
+                    mustValidation = Invariant($"Must().{mustValidationMethodName}(){eachValidationStatement}");
+                }
+
                 if (setterKind.RequiresConstructor())
                 {
                     var constructorParameterName = propertyName.ToLowerFirstCharacter();
@@ -560,17 +579,15 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
                     constructorPropertySettingStatements.Add(Invariant($"            this.{propertyName} = {constructorParameterName};"));
 
-                    var mustValidationMethodName = typeToAddAsProperty.GetMustValidationMethodName();
-                    if (mustValidationMethodName != null)
+                    if (mustValidation != null)
                     {
-                        var eachValidationName = typeToAddAsProperty.GetMustEachValidationMethodName();
-
-                        var eachValidationStatement = eachValidationName == null
-                            ? null
-                            : Invariant($".And().Each().{eachValidationName}()");
-
-                        constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().Must().{mustValidationMethodName}(){eachValidationStatement};"));
+                        constructorValidationStatements.Add(Invariant($"            new {{ {constructorParameterName} }}.AsArg().{mustValidation};"));
                     }
+                }
+
+                if (mustValidation != null)
+                {
+                    selfValidationStatements.Add(Invariant($"                    new {{ this.{propertyName} }}.ForRecording().{mustValidation},"));
                 }
 
                 equalityStatements.Add(Invariant($"                this.{propertyName}.IsEqualTo(other.{propertyName}) &&"));
@@ -662,9 +679,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 "    using System.Collections.Generic;",
                 "    using System.Collections.ObjectModel;",
                 "    using System.Diagnostics.CodeAnalysis;",
-                string.Empty,
+                "    using System.Linq;",
                 "    using FakeItEasy;",
-                string.Empty,
                 "    using OBeautifulCode.Assertion.Recipes;",
                 "    using OBeautifulCode.CodeAnalysis.Recipes;",
                 "    using OBeautifulCode.Equality.Recipes;",
@@ -873,23 +889,41 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 methodStatements.Add(string.Empty);
                 methodStatements.Add(Invariant($"        /// <inheritdoc />"));
 
+                selfValidationStatements.ToNewLineDelimited();
+
+                var arrayType = selfValidationStatements.Any() ? string.Empty : " AssertionTracker";
+
                 if (hierarchyKind == HierarchyKind.AbstractBaseRoot)
                 {
                     methodStatements.Add(Invariant($"        public virtual IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
                     methodStatements.Add(Invariant($"        {{"));
-                    methodStatements.Add(Invariant($"            var result = new SelfValidationFailure[0];"));
-                }
-                else if (hierarchyKind == HierarchyKind.ConcreteInherited)
-                {
-                    methodStatements.Add(Invariant($"        public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
-                    methodStatements.Add(Invariant($"        {{"));
-                    methodStatements.Add(Invariant($"            var result = base.GetSelfValidationFailures();"));
+                    methodStatements.Add(Invariant($"            var result = new{arrayType}[]"));
+                    methodStatements.Add(Invariant($"                {{"));
+                    methodStatements.AddRange(selfValidationStatements);
+                    methodStatements.Add(Invariant($"                }}"));
+                    methodStatements.Add(Invariant($"                .ToSelfValidationFailures();"));
                 }
                 else if (hierarchyKind == HierarchyKind.Standalone)
                 {
                     methodStatements.Add(Invariant($"        public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
                     methodStatements.Add(Invariant($"        {{"));
-                    methodStatements.Add(Invariant($"            var result = new SelfValidationFailure[0];"));
+                    methodStatements.Add(Invariant($"            var result = new{arrayType}[]"));
+                    methodStatements.Add(Invariant($"                {{"));
+                    methodStatements.AddRange(selfValidationStatements);
+                    methodStatements.Add(Invariant($"                }}"));
+                    methodStatements.Add(Invariant($"                .ToSelfValidationFailures();"));
+                }
+                else if (hierarchyKind == HierarchyKind.ConcreteInherited)
+                {
+                    methodStatements.Add(Invariant($"        public override IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()"));
+                    methodStatements.Add(Invariant($"        {{"));
+                    methodStatements.Add(Invariant($"            var result = base.GetSelfValidationFailures()"));
+                    methodStatements.Add(Invariant($"                .Concat(new{arrayType}[]"));
+                    methodStatements.Add(Invariant($"                    {{"));
+                    methodStatements.AddRange(selfValidationStatements.Select(_ => "    " + _));
+                    methodStatements.Add(Invariant($"                    }}"));
+                    methodStatements.Add(Invariant($"                    .ToSelfValidationFailures())"));
+                    methodStatements.Add(Invariant($"                .ToList();"));
                 }
 
                 methodStatements.Add(string.Empty);

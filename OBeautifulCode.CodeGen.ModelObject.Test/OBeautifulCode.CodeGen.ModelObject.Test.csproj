@@ -79,8 +79,8 @@
     <Reference Include="OBeautifulCode.Serialization.PropertyBag, Version=1.0.151.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\OBeautifulCode.Serialization.PropertyBag.1.0.151\lib\net462\OBeautifulCode.Serialization.PropertyBag.dll</HintPath>
     </Reference>
-    <Reference Include="OBeautifulCode.Type, Version=1.0.146.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\OBeautifulCode.Type.1.0.146\lib\net462\OBeautifulCode.Type.dll</HintPath>
+    <Reference Include="OBeautifulCode.Type, Version=1.0.151.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OBeautifulCode.Type.1.0.151\lib\net462\OBeautifulCode.Type.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,6 +110,7 @@
     <Compile Include=".recipes\OBeautifulCode.Assertion\ApplyBecause.cs" />
     <Compile Include=".recipes\OBeautifulCode.Assertion\AssertionKind.cs" />
     <Compile Include=".recipes\OBeautifulCode.Assertion\AssertionTracker.cs" />
+    <Compile Include=".recipes\OBeautifulCode.Assertion\AssertionTrackerExtensions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Assertion\AssertionTrackerShould.cs" />
     <Compile Include=".recipes\OBeautifulCode.Assertion\AssertionVerificationFailedException.cs" />
     <Compile Include=".recipes\OBeautifulCode.Assertion\Delegates.cs" />
@@ -1995,21 +1996,53 @@
     <Compile Include="Models\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListParent.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNone.cs" />
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNone.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNone.cs</DependentUpon>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullable.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullable.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1.cs" />
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneChild1.cs</DependentUpon>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableChild1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2.cs" />
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneChild2.cs</DependentUpon>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableChild2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParent.cs" />
-    <Compile Include="Models\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParent.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneParent.cs</DependentUpon>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArray.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArray.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMisc.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMisc.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMisc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNone.cs" />
     <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNone.designer.cs">
@@ -2026,6 +2059,118 @@
     <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneParent.cs" />
     <Compile Include="Models\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneParent.designer.cs">
       <DependentUpon>ModelValidationPublicSetNoneParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullable.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullable.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullable.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullable.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollection.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollection.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullable.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullable.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionary.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionary.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullable.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullable.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyList.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyList.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild1.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild1.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListChild1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild2.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild2.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListChild2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListParent.cs" />
+    <Compile Include="Models\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListParent.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.cs" />
     <Compile Include="Models\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1.designer.cs">
@@ -3958,21 +4103,53 @@
     <Compile Include="ModelTests\Scripted\StringRepresentation\PublicSet\ReadOnlyList\ModelStringRepresentationPublicSetReadOnlyListTest.designer.cs">
       <DependentUpon>ModelStringRepresentationPublicSetReadOnlyListTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1Test.cs" />
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild1Test.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneChild1Test.cs</DependentUpon>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableChild1Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2Test.cs" />
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneChild2Test.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneChild2Test.cs</DependentUpon>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableChild2Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParentTest.cs" />
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneParentTest.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneParentTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableParentTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneTest.cs" />
-    <Compile Include="ModelTests\Scripted\Validation\PrivateSet\None\ModelValidationPrivateSetNoneTest.designer.cs">
-      <DependentUpon>ModelValidationPrivateSetNoneTest.cs</DependentUpon>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ArrayOfNullable\ModelValidationPublicSetArrayOfNullableTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayOfNullableTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Array\ModelValidationPublicSetArrayTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetArrayTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Misc\ModelValidationPublicSetMiscTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetMiscTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild1Test.cs" />
     <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneChild1Test.designer.cs">
@@ -3989,6 +4166,118 @@
     <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneTest.cs" />
     <Compile Include="ModelTests\Scripted\Validation\PublicSet\None\ModelValidationPublicSetNoneTest.designer.cs">
       <DependentUpon>ModelValidationPublicSetNoneTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\Nullable\ModelValidationPublicSetNullableTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetNullableTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollectionOfNullable\ModelValidationPublicSetReadOnlyCollectionOfNullableTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionOfNullableTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyCollection\ModelValidationPublicSetReadOnlyCollectionTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyCollectionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionaryOfNullable\ModelValidationPublicSetReadOnlyDictionaryOfNullableTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryOfNullableTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyDictionary\ModelValidationPublicSetReadOnlyDictionaryTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyDictionaryTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyListOfNullable\ModelValidationPublicSetReadOnlyListOfNullableTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListOfNullableTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild1Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild1Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListChild1Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild2Test.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListChild2Test.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListChild2Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListParentTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListParentTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListParentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListTest.cs" />
+    <Compile Include="ModelTests\Scripted\Validation\PublicSet\ReadOnlyList\ModelValidationPublicSetReadOnlyListTest.designer.cs">
+      <DependentUpon>ModelValidationPublicSetReadOnlyListTest.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.cs" />
     <Compile Include="ModelTests\Specified\ConstructorMoreDerivedThanProperty\PrivateSet\ModelPrivateSetConstructorMoreDerivedThanPropertyChild1Test.designer.cs">

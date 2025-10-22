@@ -352,5 +352,35 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Validate individual properties in a GetValidationFailures() method.
         /// </summary>
         public const string ValidatePropertiesToken = "[validate-properties-here]";
+
+        /// <summary>
+        /// Gets the method that tests the self-validation scenarios.
+        /// </summary>
+        public const string SelfValidationTestMethodToken = "[self-validation-test-method-here]";
+
+        /// <summary>
+        /// Gets the self-validation test scenarios.
+        /// </summary>
+        public const string SelfValidationTestScenariosToken = "[self-validation-test-scenarios-here]";
+
+        /// <summary>
+        /// Gets an invalid value for a property.
+        /// </summary>
+        public const string InvalidPropertyValueToken = "[invalid-property-value-here]";
+
+        /// <summary>
+        /// Gets the setup for an invalid value for a property.
+        /// </summary>
+        public const string InvalidPropertyValueSetupToken = "[invalid-property-value-setup-here]";
+
+        /// <summary>
+        /// Gets the name of a test scenario.
+        /// </summary>
+        public const string TestScenarioNameToken = "[test-scenario-name-here]";
+
+        /// <summary>
+        /// Gets a string that is contained within a validation failure message.
+        /// </summary>
+        public const string ValidationFailureMessageContainsToken = "[validation-failure-message-contains-here]";
     }
 }

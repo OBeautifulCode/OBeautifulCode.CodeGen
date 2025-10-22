@@ -80,6 +80,11 @@ namespace OBeautifulCode.CodeGen
             this.GenericParametersUsedAsKeyInDictionary = GetGenericParametersUsedAsKeyInDictionary(type, propertiesOfConcern);
             this.CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCode = CanHaveTwoDummiesThatAreNotEqualButHaveTheSameHashCodeInternal(propertiesOfConcern, new HashSet<Type>());
 
+            // Constructor
+            var getConstructorResult = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern, this.CaseInsensitivePropertyNameToPropertyOfConcernMap);
+            this.Constructor = getConstructorResult.ConstructorInfo;
+            this.PropertyNameToConstructorParameterTypeMap = getConstructorResult.PropertyNameToConstructorParameterTypeMap;
+
             // Required/Declared/Generated methods
             var requiresComparability = typeof(IComparableViaCodeGen).IsAssignableFrom(type);
             var requiresDeepCloning = typeof(IDeepCloneableViaCodeGen).IsAssignableFrom(type);
@@ -91,26 +96,32 @@ namespace OBeautifulCode.CodeGen
 
             var forsakesDeepCloneWithVariantMethods = typeof(IForsakeDeepCloneWithVariantsViaCodeGen).IsAssignableFrom(type);
 
-            var declaresCompareToMethod = typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type).IsAssignableFrom(type);
-            var declaresDeepCloneMethod = typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type).IsAssignableFrom(type);
-            var declaresEqualsMethod = typeof(IDeclareEqualsMethod<>).MakeGenericType(type).IsAssignableFrom(type);
-            var declaresGetHashCodeMethod = typeof(IDeclareGetHashCodeMethod).IsAssignableFrom(type);
+            var implementsIDeclareCompareToForRelativeSortOrderMethod = typeof(IDeclareCompareToForRelativeSortOrderMethod<>).MakeGenericType(type).IsAssignableFrom(type);
+            var implementsIDeclareDeepCloneMethod = typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type).IsAssignableFrom(type);
+            var implementsIDeclareEqualsMethod = typeof(IDeclareEqualsMethod<>).MakeGenericType(type).IsAssignableFrom(type);
+            var implementsIDeclareGetHashCodeMethod = typeof(IDeclareGetHashCodeMethod).IsAssignableFrom(type);
             var directlyImplementsGetHashCodeMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetHashCodeMethod));
-            var declaresToStringMethod = typeof(IDeclareToStringMethod).IsAssignableFrom(type);
+            var implementsIDeclareToStringMethod = typeof(IDeclareToStringMethod).IsAssignableFrom(type);
             var directlyImplementsToStringMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareToStringMethod));
+            var implementsIDeclareGetSelfValidationFailuresMethod = typeof(IDeclareGetSelfValidationFailuresMethod).IsAssignableFrom(type);
             var directlyImplementsGetSelfValidationFailuresMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetSelfValidationFailuresMethod));
-            var declaresGetSelfValidationFailuresMethod = directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsInterface;
 
+            // Note that we throw for most of these key method interfaces when the type is abstract.
+            // And per other checks we've already performed, we don't allow a concrete class to derive from another concrete class.
+            // So storing these bools as Declares... is perfectly fine, because you won't get a type where Declares... is true
+            // but the IDeclare interface is not directly implemented, but rather implemented by a base class.
             ThrowIfRequiredAndDeclaredMethodsNotSupported(
                 type,
+                this.Constructor,
                 requiresComparability,
-                declaresCompareToMethod,
-                declaresDeepCloneMethod,
-                declaresEqualsMethod,
-                declaresGetHashCodeMethod,
+                implementsIDeclareCompareToForRelativeSortOrderMethod,
+                implementsIDeclareDeepCloneMethod,
+                implementsIDeclareEqualsMethod,
+                implementsIDeclareGetHashCodeMethod,
                 directlyImplementsGetHashCodeMethodResult,
-                declaresToStringMethod,
+                implementsIDeclareToStringMethod,
                 directlyImplementsToStringMethodResult,
+                implementsIDeclareGetSelfValidationFailuresMethod,
                 directlyImplementsGetSelfValidationFailuresMethodResult);
 
             this.RequiresComparability = requiresComparability;
@@ -121,12 +132,13 @@ namespace OBeautifulCode.CodeGen
             this.RequiresStringRepresentation = requiresStringRepresentation;
             this.RequiresValidation = requiresValidation;
             this.ForsakesDeepCloneWithVariantMethods = forsakesDeepCloneWithVariantMethods;
-            this.DeclaresCompareToMethod = declaresCompareToMethod;
-            this.DeclaresDeepCloneMethod = declaresDeepCloneMethod;
-            this.DeclaresEqualsMethod = declaresEqualsMethod;
-            this.DeclaresGetHashCodeMethod = declaresGetHashCodeMethod;
-            this.DeclaresToStringMethod = declaresToStringMethod;
-            this.DeclaresGetSelfValidationFailuresMethod = declaresGetSelfValidationFailuresMethod;
+            this.DeclaresCompareToMethod = implementsIDeclareCompareToForRelativeSortOrderMethod;
+            this.DeclaresDeepCloneMethod = implementsIDeclareDeepCloneMethod;
+            this.DeclaresEqualsMethod = implementsIDeclareEqualsMethod;
+            this.DeclaresGetHashCodeMethod = implementsIDeclareGetHashCodeMethod;
+            this.DeclaresToStringMethod = implementsIDeclareToStringMethod;
+            this.DeclaresGetSelfValidationFailuresMethod = directlyImplementsGetSelfValidationFailuresMethodResult.DirectlyImplementsInterface;
+            this.DeclaresGetSelfValidationFailuresMethodInSelfOrInheritancePath = implementsIDeclareGetSelfValidationFailuresMethod;
 
             this.RequiredInterfaces = DetermineRequiredInterfaces(
                 type,
@@ -138,17 +150,12 @@ namespace OBeautifulCode.CodeGen
                 requiresComparability,
                 requiresValidation);
 
-            this.CompareToKeyMethodKinds = declaresCompareToMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.DeepCloneKeyMethodKinds = declaresDeepCloneMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.EqualsKeyMethodKinds = declaresEqualsMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.GetHashCodeKeyMethodKinds = declaresGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.ToStringKeyMethodKinds = declaresToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-            this.ValidationKeyMethodKinds = declaresGetSelfValidationFailuresMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
-
-            // Constructor
-            var getConstructorResult = GetConstructorAndThrowIfNotSupported(type, propertiesOfConcern, declaredOnlyPropertiesOfConcern, this.CaseInsensitivePropertyNameToPropertyOfConcernMap);
-            this.Constructor = getConstructorResult.ConstructorInfo;
-            this.PropertyNameToConstructorParameterTypeMap = getConstructorResult.PropertyNameToConstructorParameterTypeMap;
+            this.CompareToKeyMethodKinds = implementsIDeclareCompareToForRelativeSortOrderMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.DeepCloneKeyMethodKinds = implementsIDeclareDeepCloneMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.EqualsKeyMethodKinds = implementsIDeclareEqualsMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.GetHashCodeKeyMethodKinds = implementsIDeclareGetHashCodeMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.ToStringKeyMethodKinds = implementsIDeclareToStringMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
+            this.ValidationKeyMethodKinds = this.DeclaresGetSelfValidationFailuresMethod ? KeyMethodKinds.Declared : KeyMethodKinds.Generated;
 
             // Types Names
             this.InheritancePathTypeNamesInCode = type.GetInheritancePath().Reverse().Skip(1).Reverse().Select(_ => _.ToStringReadable()).ToList();
@@ -324,19 +331,21 @@ namespace OBeautifulCode.CodeGen
 
         private static void ThrowIfRequiredAndDeclaredMethodsNotSupported(
             Type type,
+            ConstructorInfo constructorInfo,
             bool requiresComparability,
-            bool declaresCompareToMethod,
-            bool declaresDeepCloneMethod,
-            bool declaresEqualsMethod,
-            bool declaresGetHashCodeMethod,
+            bool implementsIDeclareCompareToForRelativeSortOrderMethod,
+            bool implementsIDeclareDeepCloneMethod,
+            bool implementsIDeclareEqualsMethod,
+            bool implementsIDeclareGetHashCodeMethod,
             DirectlyImplementsKeyMethodInterfaceResult directlyImplementsGetHashCodeMethodResult,
-            bool declaresToStringMethod,
+            bool implementsIDeclareToStringMethod,
             DirectlyImplementsKeyMethodInterfaceResult directlyImplementsToStringMethodResult,
+            bool implementsIDeclareGetSelfValidationFailuresMethod,
             DirectlyImplementsKeyMethodInterfaceResult directlyImplementsGetSelfValidationFailuresMethodResult)
         {
             // note: declaresGetSelfValidationFailuresMethod can be added to an abstract type to validate the type's properties.
             // however unlike comparability, the method does not need to be declared if the type is concrete.
-            if (declaresCompareToMethod || declaresDeepCloneMethod || declaresEqualsMethod || declaresGetHashCodeMethod || declaresToStringMethod)
+            if (implementsIDeclareCompareToForRelativeSortOrderMethod || implementsIDeclareDeepCloneMethod || implementsIDeclareEqualsMethod || implementsIDeclareGetHashCodeMethod || implementsIDeclareToStringMethod)
             {
                 if (type.IsAbstract)
                 {
@@ -346,16 +355,28 @@ namespace OBeautifulCode.CodeGen
 
             if (requiresComparability)
             {
-                if ((!type.IsAbstract) && (!declaresCompareToMethod))
+                if ((!type.IsAbstract) && (!implementsIDeclareCompareToForRelativeSortOrderMethod))
                 {
                     throw new NotSupportedException(Invariant($"This type ({type.ToStringReadable()}) is not supported; it is a concrete class that implements IComparableViaCodeGen but does not implement IDeclareCompareToForRelativeSortOrderMethod."));
                 }
             }
 
+            if (implementsIDeclareGetSelfValidationFailuresMethod && (constructorInfo != null) && (!constructorInfo.IsDefaultConstructor()))
+            {
+                // If we allow objects with constructors (properties cannot be set by callers)
+                // to declare self-validation failures, then there's no good way to code generate tests.
+                // The tests themselves would attempted to construct objects with invalid properties,
+                // but that would likely cause the constructor to throw and we'd never get a chance to call
+                // GetSelfValidationFailures().  We could just put the burden on the user to remove all the
+                // code generated scenarios and add their own if there's a legitimate reason for allowing
+                // an object to be constructed in an invalid state.
+                throw new NotSupportedException(Invariant($"Type ({type.ToStringReadable()}) implements {nameof(IDeclareGetSelfValidationFailuresMethod)} and has a non-default constructor.  The constructor should be use for validation instead of declaring self-validation."));
+            }
+
             // It's possible for the caller to implement IDeclareGetHashCodeMethod, but not implement
             // the GetHashCode() method.  This could happen simply because GetHashCode() is already a virtual method on Object.
             // So there would be no build break if the current class doesn't implement that method.  But it's still wrong and we catch this here.
-            if (declaresGetHashCodeMethod && (!directlyImplementsGetHashCodeMethodResult.DirectlyImplementsKeyMethod))
+            if (implementsIDeclareGetHashCodeMethod && (!directlyImplementsGetHashCodeMethodResult.DirectlyImplementsKeyMethod))
             {
                 throw new NotSupportedException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareGetHashCodeMethod)}, but does not directly implement the {nameof(IDeclareGetHashCodeMethod.GetHashCode)} method."));
             }
@@ -363,7 +384,7 @@ namespace OBeautifulCode.CodeGen
             // It's possible for the caller to implement IDeclareGetHashCodeMethod, but not implement
             // the GetHashCode() method.  This could happen simply because GetHashCode() is already a virtual method on Object.
             // So there would be no build break if the current class doesn't implement that method.  But it's still wrong and we catch this here.
-            if (declaresToStringMethod && (!directlyImplementsToStringMethodResult.DirectlyImplementsKeyMethod))
+            if (implementsIDeclareToStringMethod && (!directlyImplementsToStringMethodResult.DirectlyImplementsKeyMethod))
             {
                 throw new NotSupportedException(Invariant($"Type ({type.ToStringReadable()}) directly implements {nameof(IDeclareToStringMethod)}, but does not directly implement the {nameof(IDeclareToStringMethod.ToString)} method."));
             }

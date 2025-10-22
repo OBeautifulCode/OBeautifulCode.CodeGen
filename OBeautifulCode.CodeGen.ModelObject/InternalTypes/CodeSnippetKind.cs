@@ -144,9 +144,19 @@ namespace OBeautifulCode.CodeGen.ModelObject
         ValidModelTestFields,
 
         /// <summary>
+        /// A code snippet for self-validation test fields.
+        /// </summary>
+        SelfValidationTestFields,
+
+        /// <summary>
         /// A code snippet for a GetSelfValidationFailures() method.
         /// </summary>
         GetSelfValidationFailures,
+
+        /// <summary>
+        /// A code snippet for a GetSelfValidationFailures() test method.
+        /// </summary>
+        GetSelfValidationFailuresTest,
 
         /// <summary>
         /// A code snippet for the BSON serialization tests.
@@ -232,5 +242,10 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// A code snippet for getting validation failures on a single property.
         /// </summary>
         GetValidationFailuresSingleProperty,
+
+        /// <summary>
+        /// A code snippet for a single self-validation test scenario.
+        /// </summary>
+        SelfValidationTestScenario,
     }
 }

@@ -832,6 +832,24 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     public abstract class MissingGetSelfValidationFailuresMethod : MissingGetSelfValidationFailuresMethodBase, IDeclareGetSelfValidationFailuresMethod
     {
     }
+
+    [ExcludeFromCodeCoverage]
+    [GeneratedCode("ignore", "ignore")]
+    public class HasConstructorButAlsoValidates : IValidatableViaCodeGen, IDeclareGetSelfValidationFailuresMethod
+    {
+        public HasConstructorButAlsoValidates(
+            string test)
+        {
+            this.Test = test;
+        }
+
+        public string Test { get; private set; }
+
+        public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
+        {
+            return new SelfValidationFailure[0];
+        }
+    }
 #pragma warning restore SA1201 // Elements should appear in the correct order
 #pragma warning restore SA1649 // File name should match first type name
 }

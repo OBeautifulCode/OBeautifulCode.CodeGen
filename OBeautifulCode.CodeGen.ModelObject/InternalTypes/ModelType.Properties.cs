@@ -10,7 +10,6 @@ namespace OBeautifulCode.CodeGen
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
-
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
     using OBeautifulCode.Type;
@@ -206,6 +205,11 @@ namespace OBeautifulCode.CodeGen
         /// Gets a value indicating whether the model declares a <see cref="IDeclareGetSelfValidationFailuresMethod.GetSelfValidationFailures"/> method.
         /// </summary>
         public bool DeclaresGetSelfValidationFailuresMethod { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the model implements <see cref="IDeclareGetSelfValidationFailuresMethod"/> directly or indirectly.
+        /// </summary>
+        public bool DeclaresGetSelfValidationFailuresMethodInSelfOrInheritancePath { get; }
 
         /// <summary>
         /// Gets a value indicating whether the model forsakes the generation of DeepCloneWith variant methods.

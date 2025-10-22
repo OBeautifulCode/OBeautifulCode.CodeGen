@@ -14,9 +14,8 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Diagnostics.CodeAnalysis;
-
+    using System.Linq;
     using FakeItEasy;
-
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Equality.Recipes;
@@ -98,7 +97,14 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         /// <inheritdoc />
         public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
         {
-            var result = new SelfValidationFailure[0];
+            var result = new[]
+                {
+                    new { this.StringProperty }.ForRecording().Must().NotBeNullNorWhiteSpace(),
+                    new { this.CustomClassProperty }.ForRecording().Must().NotBeNull(),
+                    new { this.CustomBaseClassProperty }.ForRecording().Must().NotBeNull(),
+                    new { this.CustomGenericClassOfCustomClassProperty }.ForRecording().Must().NotBeNull(),
+                }
+                .ToSelfValidationFailures();
 
             return result;
         }

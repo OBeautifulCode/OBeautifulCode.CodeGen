@@ -37,5 +37,9 @@
     <file src="ValidModel\ValidModelTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidModel\ValidModelTestScenario{T}.cs" />
     <file src="ValidModel\ValidModelTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidModel\ValidModelTestScenarios{T}.cs" />
     <file src="ValidModel\ValidatedValidModelTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\ValidModel\ValidatedValidModelTestScenario{T}.cs" />
+    <file src="SelfValidation\SelfValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SelfValidation\SelfValidationTestScenario{T}.cs" />
+    <file src="SelfValidation\SelfValidationTestScenarios{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SelfValidation\SelfValidationTestScenarios{T}.cs" />
+    <file src="SelfValidation\ValidatedSelfValidationTestScenario{T}.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SelfValidation\ValidatedSelfValidationTestScenario{T}.cs" />
+    <file src="SelfValidation\SelfValidationTestScenarioPassesWhen.cs" target="content\net462\.recipes\OBeautifulCode.CodeGen\SelfValidation\SelfValidationTestScenarioPassesWhen.cs" />
   </files>
 </package>

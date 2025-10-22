@@ -1,0 +1,17 @@
+﻿            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<[model-type-name-in-code-here]>();[invalid-property-value-setup-here]
+
+                    systemUnderTest.[property-name-here] = [invalid-property-value-here];
+
+                    var result = new SelfValidationTestScenario<[model-type-name-in-code-here]>
+                    {
+                        Name = "[test-scenario-name-here]",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "[property-name-here]" },
+                        ExpectedFailureMessageContains = new[] { "[property-name-here]", [validation-failure-message-contains-here], },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })

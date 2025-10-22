@@ -110,6 +110,10 @@
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringReadableOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\ToStringXmlDocOptions.cs" />
     <Compile Include=".recipes\OBeautifulCode.Type\TypeExtensions.cs" />
+    <Compile Include="SelfValidation\SelfValidationTestScenarios{T}.cs" />
+    <Compile Include="SelfValidation\SelfValidationTestScenarioPassesWhen.cs" />
+    <Compile Include="SelfValidation\SelfValidationTestScenario{T}.cs" />
+    <Compile Include="SelfValidation\ValidatedSelfValidationTestScenario{T}.cs" />
     <Compile Include="ConstructorPropertyAssignment\CompareActualToExpectedUsing.cs" />
     <Compile Include="DeepCloneWith\DeepCloneWithTestScenarios{T}.cs" />
     <Compile Include="DeepCloneWith\DeepCloneWithTestScenario{T}.cs" />

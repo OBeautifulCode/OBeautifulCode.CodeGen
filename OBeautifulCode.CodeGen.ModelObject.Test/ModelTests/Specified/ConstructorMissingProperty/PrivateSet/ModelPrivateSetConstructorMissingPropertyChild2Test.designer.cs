@@ -1675,7 +1675,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = scenario.SystemUnderTest.GetValidationFailures();
 
                     // Assert
-                    actual.AsTest().Must().BeEmptyEnumerable();
+                    actual.AsTest().Must().BeEmptyEnumerable(because: scenario.Id);
                 }
             }
         }

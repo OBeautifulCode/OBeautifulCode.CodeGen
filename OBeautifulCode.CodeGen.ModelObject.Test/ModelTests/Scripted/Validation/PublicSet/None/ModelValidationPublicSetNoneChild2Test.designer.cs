@@ -44,6 +44,178 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     SystemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>(),
                 });
 
+        private static readonly SelfValidationTestScenarios<ModelValidationPublicSetNoneChild2> SelfValidationTestScenarios = new SelfValidationTestScenarios<ModelValidationPublicSetNoneChild2>()
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.ParentStringProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentStringProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentStringProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentStringProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.ParentStringProperty = Invariant($"  {Environment.NewLine}  ");
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentStringProperty' is white space scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentStringProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentStringProperty", "white space", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.ParentCustomClassProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentCustomClassProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentCustomClassProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentCustomClassProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.ParentCustomBaseClassProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentCustomBaseClassProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentCustomBaseClassProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentCustomBaseClassProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.ParentCustomGenericClassOfCustomClassProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'ParentCustomGenericClassOfCustomClassProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "ParentCustomGenericClassOfCustomClassProperty" },
+                        ExpectedFailureMessageContains = new[] { "ParentCustomGenericClassOfCustomClassProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.Child2StringProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2StringProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2StringProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2StringProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.Child2StringProperty = Invariant($"  {Environment.NewLine}  ");
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2StringProperty' is white space scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2StringProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2StringProperty", "white space", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.Child2CustomClassProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2CustomClassProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2CustomClassProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2CustomClassProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.Child2CustomBaseClassProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2CustomBaseClassProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2CustomBaseClassProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2CustomBaseClassProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelValidationPublicSetNoneChild2>();
+
+                    systemUnderTest.Child2CustomGenericClassOfCustomClassProperty = null;
+
+                    var result = new SelfValidationTestScenario<ModelValidationPublicSetNoneChild2>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Child2CustomGenericClassOfCustomClassProperty' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Child2CustomGenericClassOfCustomClassProperty" },
+                        ExpectedFailureMessageContains = new[] { "Child2CustomGenericClassOfCustomClassProperty", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                });
+
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Structural
@@ -136,7 +308,67 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = scenario.SystemUnderTest.GetValidationFailures();
 
                     // Assert
-                    actual.AsTest().Must().BeEmptyEnumerable();
+                    actual.AsTest().Must().BeEmptyEnumerable(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+            public static void GetSelfValidationFailures___Should_return_failures___When_properties_are_invalid()
+            {
+                var scenarios = SelfValidationTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.SystemUnderTest.GetSelfValidationFailures();
+
+                    // Assert
+                    var actualFailures = (actual ?? new SelfValidationFailure[0])
+                        .Where(_ => _ != null)
+                        .ToList();
+
+                    actualFailures.AsTest().Must().NotBeEmptyEnumerable(because: scenario.Id);
+
+                    var countOfActualFailuresThatMeetScenarioExpectedFailure = 0;
+                    foreach (var actualFailure in actualFailures)
+                    {
+                        if (actualFailure.PropertyNames.IsUnorderedEqualTo(scenario.ExpectedFailurePropertyNames) &&
+                            ((scenario.ExpectedFailureMessageEquals == null) || (actualFailure.Message == scenario.ExpectedFailureMessageEquals)) &&
+                            (scenario.ExpectedFailureMessageContains ?? new string[0]).All(_ => actualFailure.Message?.Contains(_) ?? false))
+                        {
+                            countOfActualFailuresThatMeetScenarioExpectedFailure++;
+                        }
+                    }
+
+                    if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AtLeastOneFailureMeetsExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeGreaterThan(0, because: scenario.Id);
+                    }
+                    else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                    }
+                    else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AllFailuresMeetExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(scenarios.Count, because: scenario.Id);
+                    }
+                    else
+                    {
+                        throw new NotSupportedException(Invariant($"This {nameof(SelfValidationTestScenarioPassesWhen)} is not supported: {scenario.ScenarioPassesWhen}."));
+                    }
                 }
             }
         }

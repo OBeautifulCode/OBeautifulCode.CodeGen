@@ -7804,78 +7804,230 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                 });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
-                () => new ModelValidationPrivateSetNone(
-                                 A.Dummy<bool>(),
-                                 A.Dummy<int>(),
-                                 A.Dummy<string>(),
-                                 A.Dummy<Guid>(),
-                                 A.Dummy<DateTime>(),
-                                 A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomFlagsEnum>(),
-                                 A.Dummy<CustomClass>(),
-                                 A.Dummy<CustomBaseClass>(),
-                                 A.Dummy<CustomGenericClass<CustomClass>>()));
+                () => new ModelValidationPublicSetArrayOfNullable
+                             {
+                                 ArrayOfNullableBoolProperty            = A.Dummy<bool?[]>(),
+                                 ArrayOfNullableIntProperty             = A.Dummy<int?[]>(),
+                                 ArrayOfNullableGuidProperty            = A.Dummy<Guid?[]>(),
+                                 ArrayOfNullableDateTimeProperty        = A.Dummy<DateTime?[]>(),
+                                 ArrayOfNullableCustomEnumProperty      = A.Dummy<CustomEnum?[]>(),
+                                 ArrayOfNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?[]>(),
+                             });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
-                () => new ModelValidationPrivateSetNoneChild1(
-                                 A.Dummy<bool>(),
-                                 A.Dummy<int>(),
-                                 A.Dummy<string>(),
-                                 A.Dummy<Guid>(),
-                                 A.Dummy<DateTime>(),
-                                 A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomFlagsEnum>(),
-                                 A.Dummy<CustomClass>(),
-                                 A.Dummy<CustomBaseClass>(),
-                                 A.Dummy<CustomGenericClass<CustomClass>>(),
-                                 A.Dummy<bool>(),
-                                 A.Dummy<int>(),
-                                 A.Dummy<string>(),
-                                 A.Dummy<Guid>(),
-                                 A.Dummy<DateTime>(),
-                                 A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomFlagsEnum>(),
-                                 A.Dummy<CustomClass>(),
-                                 A.Dummy<CustomBaseClass>(),
-                                 A.Dummy<CustomGenericClass<CustomClass>>()));
+                () => new ModelValidationPublicSetArrayOfNullableChild1
+                             {
+                                 ParentArrayOfNullableBoolProperty            = A.Dummy<bool?[]>(),
+                                 ParentArrayOfNullableIntProperty             = A.Dummy<int?[]>(),
+                                 ParentArrayOfNullableGuidProperty            = A.Dummy<Guid?[]>(),
+                                 ParentArrayOfNullableDateTimeProperty        = A.Dummy<DateTime?[]>(),
+                                 ParentArrayOfNullableCustomEnumProperty      = A.Dummy<CustomEnum?[]>(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?[]>(),
+                                 Child1ArrayOfNullableBoolProperty            = A.Dummy<bool?[]>(),
+                                 Child1ArrayOfNullableIntProperty             = A.Dummy<int?[]>(),
+                                 Child1ArrayOfNullableGuidProperty            = A.Dummy<Guid?[]>(),
+                                 Child1ArrayOfNullableDateTimeProperty        = A.Dummy<DateTime?[]>(),
+                                 Child1ArrayOfNullableCustomEnumProperty      = A.Dummy<CustomEnum?[]>(),
+                                 Child1ArrayOfNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?[]>(),
+                             });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
-                () => new ModelValidationPrivateSetNoneChild2(
-                                 A.Dummy<bool>(),
-                                 A.Dummy<int>(),
-                                 A.Dummy<string>(),
-                                 A.Dummy<Guid>(),
-                                 A.Dummy<DateTime>(),
-                                 A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomFlagsEnum>(),
-                                 A.Dummy<CustomClass>(),
-                                 A.Dummy<CustomBaseClass>(),
-                                 A.Dummy<CustomGenericClass<CustomClass>>(),
-                                 A.Dummy<bool>(),
-                                 A.Dummy<int>(),
-                                 A.Dummy<string>(),
-                                 A.Dummy<Guid>(),
-                                 A.Dummy<DateTime>(),
-                                 A.Dummy<CustomEnum>(),
-                                 A.Dummy<CustomFlagsEnum>(),
-                                 A.Dummy<CustomClass>(),
-                                 A.Dummy<CustomBaseClass>(),
-                                 A.Dummy<CustomGenericClass<CustomClass>>()));
+                () => new ModelValidationPublicSetArrayOfNullableChild2
+                             {
+                                 ParentArrayOfNullableBoolProperty            = A.Dummy<bool?[]>(),
+                                 ParentArrayOfNullableIntProperty             = A.Dummy<int?[]>(),
+                                 ParentArrayOfNullableGuidProperty            = A.Dummy<Guid?[]>(),
+                                 ParentArrayOfNullableDateTimeProperty        = A.Dummy<DateTime?[]>(),
+                                 ParentArrayOfNullableCustomEnumProperty      = A.Dummy<CustomEnum?[]>(),
+                                 ParentArrayOfNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?[]>(),
+                                 Child2ArrayOfNullableBoolProperty            = A.Dummy<bool?[]>(),
+                                 Child2ArrayOfNullableIntProperty             = A.Dummy<int?[]>(),
+                                 Child2ArrayOfNullableGuidProperty            = A.Dummy<Guid?[]>(),
+                                 Child2ArrayOfNullableDateTimeProperty        = A.Dummy<DateTime?[]>(),
+                                 Child2ArrayOfNullableCustomEnumProperty      = A.Dummy<CustomEnum?[]>(),
+                                 Child2ArrayOfNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?[]>(),
+                             });
 
             AutoFixtureBackedDummyFactory.AddDummyCreator(
                 () =>
                 {
                     var availableTypes = new[]
                     {
-                        typeof(ModelValidationPrivateSetNoneChild1),
-                        typeof(ModelValidationPrivateSetNoneChild2)
+                        typeof(ModelValidationPublicSetArrayOfNullableChild1),
+                        typeof(ModelValidationPublicSetArrayOfNullableChild2)
                     };
 
                     var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
 
                     var randomType = availableTypes[randomIndex];
 
-                    var result = (ModelValidationPrivateSetNoneParent)AD.ummy(randomType);
+                    var result = (ModelValidationPublicSetArrayOfNullableParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetArray
+                             {
+                                 ArrayOfBoolProperty                            = A.Dummy<bool[]>(),
+                                 ArrayOfIntProperty                             = A.Dummy<int[]>(),
+                                 ArrayOfStringProperty                          = A.Dummy<string[]>(),
+                                 ArrayOfGuidProperty                            = A.Dummy<Guid[]>(),
+                                 ArrayOfDateTimeProperty                        = A.Dummy<DateTime[]>(),
+                                 ArrayOfCustomEnumProperty                      = A.Dummy<CustomEnum[]>(),
+                                 ArrayOfCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum[]>(),
+                                 ArrayOfCustomClassProperty                     = A.Dummy<CustomClass[]>(),
+                                 ArrayOfCustomBaseClassProperty                 = A.Dummy<CustomBaseClass[]>(),
+                                 ArrayOfCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>[]>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetArrayChild1
+                             {
+                                 ParentArrayOfBoolProperty                            = A.Dummy<bool[]>(),
+                                 ParentArrayOfIntProperty                             = A.Dummy<int[]>(),
+                                 ParentArrayOfStringProperty                          = A.Dummy<string[]>(),
+                                 ParentArrayOfGuidProperty                            = A.Dummy<Guid[]>(),
+                                 ParentArrayOfDateTimeProperty                        = A.Dummy<DateTime[]>(),
+                                 ParentArrayOfCustomEnumProperty                      = A.Dummy<CustomEnum[]>(),
+                                 ParentArrayOfCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum[]>(),
+                                 ParentArrayOfCustomClassProperty                     = A.Dummy<CustomClass[]>(),
+                                 ParentArrayOfCustomBaseClassProperty                 = A.Dummy<CustomBaseClass[]>(),
+                                 ParentArrayOfCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>[]>(),
+                                 Child1ArrayOfBoolProperty                            = A.Dummy<bool[]>(),
+                                 Child1ArrayOfIntProperty                             = A.Dummy<int[]>(),
+                                 Child1ArrayOfStringProperty                          = A.Dummy<string[]>(),
+                                 Child1ArrayOfGuidProperty                            = A.Dummy<Guid[]>(),
+                                 Child1ArrayOfDateTimeProperty                        = A.Dummy<DateTime[]>(),
+                                 Child1ArrayOfCustomEnumProperty                      = A.Dummy<CustomEnum[]>(),
+                                 Child1ArrayOfCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum[]>(),
+                                 Child1ArrayOfCustomClassProperty                     = A.Dummy<CustomClass[]>(),
+                                 Child1ArrayOfCustomBaseClassProperty                 = A.Dummy<CustomBaseClass[]>(),
+                                 Child1ArrayOfCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>[]>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetArrayChild2
+                             {
+                                 ParentArrayOfBoolProperty                            = A.Dummy<bool[]>(),
+                                 ParentArrayOfIntProperty                             = A.Dummy<int[]>(),
+                                 ParentArrayOfStringProperty                          = A.Dummy<string[]>(),
+                                 ParentArrayOfGuidProperty                            = A.Dummy<Guid[]>(),
+                                 ParentArrayOfDateTimeProperty                        = A.Dummy<DateTime[]>(),
+                                 ParentArrayOfCustomEnumProperty                      = A.Dummy<CustomEnum[]>(),
+                                 ParentArrayOfCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum[]>(),
+                                 ParentArrayOfCustomClassProperty                     = A.Dummy<CustomClass[]>(),
+                                 ParentArrayOfCustomBaseClassProperty                 = A.Dummy<CustomBaseClass[]>(),
+                                 ParentArrayOfCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>[]>(),
+                                 Child2ArrayOfBoolProperty                            = A.Dummy<bool[]>(),
+                                 Child2ArrayOfIntProperty                             = A.Dummy<int[]>(),
+                                 Child2ArrayOfStringProperty                          = A.Dummy<string[]>(),
+                                 Child2ArrayOfGuidProperty                            = A.Dummy<Guid[]>(),
+                                 Child2ArrayOfDateTimeProperty                        = A.Dummy<DateTime[]>(),
+                                 Child2ArrayOfCustomEnumProperty                      = A.Dummy<CustomEnum[]>(),
+                                 Child2ArrayOfCustomFlagsEnumProperty                 = A.Dummy<CustomFlagsEnum[]>(),
+                                 Child2ArrayOfCustomClassProperty                     = A.Dummy<CustomClass[]>(),
+                                 Child2ArrayOfCustomBaseClassProperty                 = A.Dummy<CustomBaseClass[]>(),
+                                 Child2ArrayOfCustomGenericClassOfCustomClassProperty = A.Dummy<CustomGenericClass<CustomClass>[]>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetArrayChild1),
+                        typeof(ModelValidationPublicSetArrayChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetArrayParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetMisc
+                             {
+                                 CollectionInterfaceOfStringProperty                                                                                    = A.Dummy<ICollection<string>>(),
+                                 ListInterfaceOfStringProperty                                                                                          = A.Dummy<IList<string>>(),
+                                 ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty                                                       = A.Dummy<IReadOnlyCollection<ICollection<string>>>(),
+                                 CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty                                                             = A.Dummy<ICollection<IReadOnlyList<string>>>(),
+                                 ListInterfaceOfCollectionInterfaceOfStringProperty                                                                     = A.Dummy<IList<ICollection<string>>>(),
+                                 ReadOnlyListInterfaceOfListInterfaceOfStringProperty                                                                   = A.Dummy<IReadOnlyList<IList<string>>>(),
+                                 DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                                                           = A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>(),
+                                 ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty                                                     = A.Dummy<IReadOnlyDictionary<string, ICollection<DateTime>>>(),
+                                 ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                            = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>(),
+                                 ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetMiscChild1
+                             {
+                                 ParentCollectionInterfaceOfStringProperty                                                                                    = A.Dummy<ICollection<string>>(),
+                                 ParentListInterfaceOfStringProperty                                                                                          = A.Dummy<IList<string>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty                                                       = A.Dummy<IReadOnlyCollection<ICollection<string>>>(),
+                                 ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty                                                             = A.Dummy<ICollection<IReadOnlyList<string>>>(),
+                                 ParentListInterfaceOfCollectionInterfaceOfStringProperty                                                                     = A.Dummy<IList<ICollection<string>>>(),
+                                 ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty                                                                   = A.Dummy<IReadOnlyList<IList<string>>>(),
+                                 ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                                                           = A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty                                                     = A.Dummy<IReadOnlyDictionary<string, ICollection<DateTime>>>(),
+                                 ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                            = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>>(),
+                                 Child1CollectionInterfaceOfStringProperty                                                                                    = A.Dummy<ICollection<string>>(),
+                                 Child1ListInterfaceOfStringProperty                                                                                          = A.Dummy<IList<string>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty                                                       = A.Dummy<IReadOnlyCollection<ICollection<string>>>(),
+                                 Child1CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty                                                             = A.Dummy<ICollection<IReadOnlyList<string>>>(),
+                                 Child1ListInterfaceOfCollectionInterfaceOfStringProperty                                                                     = A.Dummy<IList<ICollection<string>>>(),
+                                 Child1ReadOnlyListInterfaceOfListInterfaceOfStringProperty                                                                   = A.Dummy<IReadOnlyList<IList<string>>>(),
+                                 Child1DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                                                           = A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty                                                     = A.Dummy<IReadOnlyDictionary<string, ICollection<DateTime>>>(),
+                                 Child1ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                            = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetMiscChild2
+                             {
+                                 ParentCollectionInterfaceOfStringProperty                                                                                    = A.Dummy<ICollection<string>>(),
+                                 ParentListInterfaceOfStringProperty                                                                                          = A.Dummy<IList<string>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty                                                       = A.Dummy<IReadOnlyCollection<ICollection<string>>>(),
+                                 ParentCollectionInterfaceOfReadOnlyListInterfaceOfStringProperty                                                             = A.Dummy<ICollection<IReadOnlyList<string>>>(),
+                                 ParentListInterfaceOfCollectionInterfaceOfStringProperty                                                                     = A.Dummy<IList<ICollection<string>>>(),
+                                 ParentReadOnlyListInterfaceOfListInterfaceOfStringProperty                                                                   = A.Dummy<IReadOnlyList<IList<string>>>(),
+                                 ParentDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                                                           = A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty                                                     = A.Dummy<IReadOnlyDictionary<string, ICollection<DateTime>>>(),
+                                 ParentReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                            = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>>(),
+                                 Child2CollectionInterfaceOfStringProperty                                                                                    = A.Dummy<ICollection<string>>(),
+                                 Child2ListInterfaceOfStringProperty                                                                                          = A.Dummy<IList<string>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfCollectionInterfaceOfStringProperty                                                       = A.Dummy<IReadOnlyCollection<ICollection<string>>>(),
+                                 Child2CollectionInterfaceOfReadOnlyListInterfaceOfStringProperty                                                             = A.Dummy<ICollection<IReadOnlyList<string>>>(),
+                                 Child2ListInterfaceOfCollectionInterfaceOfStringProperty                                                                     = A.Dummy<IList<ICollection<string>>>(),
+                                 Child2ReadOnlyListInterfaceOfListInterfaceOfStringProperty                                                                   = A.Dummy<IReadOnlyList<IList<string>>>(),
+                                 Child2DictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                                                           = A.Dummy<IDictionary<string, IReadOnlyList<DateTime>>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfCollectionInterfaceOfDateTimeProperty                                                     = A.Dummy<IReadOnlyDictionary<string, ICollection<DateTime>>>(),
+                                 Child2ReadOnlyListInterfaceOfReadOnlyDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty                            = A.Dummy<IReadOnlyList<IReadOnlyDictionary<string, IReadOnlyList<DateTime>>>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfReadOnlyDictionaryInterfaceOfDictionaryInterfaceOfReadOnlyListInterfaceOfDateTimeProperty = A.Dummy<IReadOnlyDictionary<string, IReadOnlyDictionary<string, IDictionary<CustomClass, IReadOnlyList<DateTime>>>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetMiscChild1),
+                        typeof(ModelValidationPublicSetMiscChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetMiscParent)AD.ummy(randomType);
 
                     return result;
                 });
@@ -7959,6 +8111,497 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     var randomType = availableTypes[randomIndex];
 
                     var result = (ModelValidationPublicSetNoneParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetNullable
+                             {
+                                 NullableBoolProperty            = A.Dummy<bool?>(),
+                                 NullableIntProperty             = A.Dummy<int?>(),
+                                 NullableGuidProperty            = A.Dummy<Guid?>(),
+                                 NullableDateTimeProperty        = A.Dummy<DateTime?>(),
+                                 NullableCustomEnumProperty      = A.Dummy<CustomEnum?>(),
+                                 NullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetNullableChild1
+                             {
+                                 ParentNullableBoolProperty            = A.Dummy<bool?>(),
+                                 ParentNullableIntProperty             = A.Dummy<int?>(),
+                                 ParentNullableGuidProperty            = A.Dummy<Guid?>(),
+                                 ParentNullableDateTimeProperty        = A.Dummy<DateTime?>(),
+                                 ParentNullableCustomEnumProperty      = A.Dummy<CustomEnum?>(),
+                                 ParentNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?>(),
+                                 Child1NullableBoolProperty            = A.Dummy<bool?>(),
+                                 Child1NullableIntProperty             = A.Dummy<int?>(),
+                                 Child1NullableGuidProperty            = A.Dummy<Guid?>(),
+                                 Child1NullableDateTimeProperty        = A.Dummy<DateTime?>(),
+                                 Child1NullableCustomEnumProperty      = A.Dummy<CustomEnum?>(),
+                                 Child1NullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetNullableChild2
+                             {
+                                 ParentNullableBoolProperty            = A.Dummy<bool?>(),
+                                 ParentNullableIntProperty             = A.Dummy<int?>(),
+                                 ParentNullableGuidProperty            = A.Dummy<Guid?>(),
+                                 ParentNullableDateTimeProperty        = A.Dummy<DateTime?>(),
+                                 ParentNullableCustomEnumProperty      = A.Dummy<CustomEnum?>(),
+                                 ParentNullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?>(),
+                                 Child2NullableBoolProperty            = A.Dummy<bool?>(),
+                                 Child2NullableIntProperty             = A.Dummy<int?>(),
+                                 Child2NullableGuidProperty            = A.Dummy<Guid?>(),
+                                 Child2NullableDateTimeProperty        = A.Dummy<DateTime?>(),
+                                 Child2NullableCustomEnumProperty      = A.Dummy<CustomEnum?>(),
+                                 Child2NullableCustomFlagsEnumProperty = A.Dummy<CustomFlagsEnum?>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetNullableChild1),
+                        typeof(ModelValidationPublicSetNullableChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetNullableParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyCollectionOfNullable
+                             {
+                                 ReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyCollection<bool?>>(),
+                                 ReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyCollection<int?>>(),
+                                 ReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyCollection<Guid?>>(),
+                                 ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyCollection<CustomEnum?>>(),
+                                 ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyCollection<CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyCollectionOfNullableChild1
+                             {
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyCollection<bool?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyCollection<int?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyCollection<Guid?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyCollection<CustomEnum?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyCollection<CustomFlagsEnum?>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyCollection<bool?>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyCollection<int?>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyCollection<Guid?>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyCollection<CustomEnum?>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyCollection<CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyCollectionOfNullableChild2
+                             {
+                                 ParentReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyCollection<bool?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyCollection<int?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyCollection<Guid?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyCollection<CustomEnum?>>(),
+                                 ParentReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyCollection<CustomFlagsEnum?>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyCollection<bool?>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyCollection<int?>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyCollection<Guid?>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyCollection<DateTime?>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyCollection<CustomEnum?>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyCollection<CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetReadOnlyCollectionOfNullableChild1),
+                        typeof(ModelValidationPublicSetReadOnlyCollectionOfNullableChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetReadOnlyCollectionOfNullableParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyCollection
+                             {
+                                 ReadOnlyCollectionInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyCollection<bool>>(),
+                                 ReadOnlyCollectionInterfaceOfIntProperty                             = A.Dummy<IReadOnlyCollection<int>>(),
+                                 ReadOnlyCollectionInterfaceOfStringProperty                          = A.Dummy<IReadOnlyCollection<string>>(),
+                                 ReadOnlyCollectionInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyCollection<Guid>>(),
+                                 ReadOnlyCollectionInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 ReadOnlyCollectionInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyCollection<CustomEnum>>(),
+                                 ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyCollection<CustomFlagsEnum>>(),
+                                 ReadOnlyCollectionInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyCollection<CustomClass>>(),
+                                 ReadOnlyCollectionInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyCollection<CustomBaseClass>>(),
+                                 ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyCollection<CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyCollectionChild1
+                             {
+                                 ParentReadOnlyCollectionInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyCollection<bool>>(),
+                                 ParentReadOnlyCollectionInterfaceOfIntProperty                             = A.Dummy<IReadOnlyCollection<int>>(),
+                                 ParentReadOnlyCollectionInterfaceOfStringProperty                          = A.Dummy<IReadOnlyCollection<string>>(),
+                                 ParentReadOnlyCollectionInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyCollection<Guid>>(),
+                                 ParentReadOnlyCollectionInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyCollection<CustomEnum>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyCollection<CustomFlagsEnum>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyCollection<CustomClass>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyCollection<CustomBaseClass>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyCollection<CustomGenericClass<CustomClass>>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyCollection<bool>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfIntProperty                             = A.Dummy<IReadOnlyCollection<int>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfStringProperty                          = A.Dummy<IReadOnlyCollection<string>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyCollection<Guid>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyCollection<CustomEnum>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyCollection<CustomFlagsEnum>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyCollection<CustomClass>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyCollection<CustomBaseClass>>(),
+                                 Child1ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyCollection<CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyCollectionChild2
+                             {
+                                 ParentReadOnlyCollectionInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyCollection<bool>>(),
+                                 ParentReadOnlyCollectionInterfaceOfIntProperty                             = A.Dummy<IReadOnlyCollection<int>>(),
+                                 ParentReadOnlyCollectionInterfaceOfStringProperty                          = A.Dummy<IReadOnlyCollection<string>>(),
+                                 ParentReadOnlyCollectionInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyCollection<Guid>>(),
+                                 ParentReadOnlyCollectionInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyCollection<CustomEnum>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyCollection<CustomFlagsEnum>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyCollection<CustomClass>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyCollection<CustomBaseClass>>(),
+                                 ParentReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyCollection<CustomGenericClass<CustomClass>>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyCollection<bool>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfIntProperty                             = A.Dummy<IReadOnlyCollection<int>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfStringProperty                          = A.Dummy<IReadOnlyCollection<string>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyCollection<Guid>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyCollection<DateTime>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyCollection<CustomEnum>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyCollection<CustomFlagsEnum>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyCollection<CustomClass>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyCollection<CustomBaseClass>>(),
+                                 Child2ReadOnlyCollectionInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyCollection<CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetReadOnlyCollectionChild1),
+                        typeof(ModelValidationPublicSetReadOnlyCollectionChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetReadOnlyCollectionParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyDictionaryOfNullable
+                             {
+                                 ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyDictionary<bool?, bool?>>(),
+                                 ReadOnlyDictionaryInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyDictionary<int?, int?>>(),
+                                 ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyDictionary<CustomEnum?, CustomEnum?>>(),
+                                 ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1
+                             {
+                                 ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyDictionary<bool?, bool?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyDictionary<int?, int?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyDictionary<CustomEnum?, CustomEnum?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyDictionary<bool?, bool?>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyDictionary<int?, int?>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyDictionary<CustomEnum?, CustomEnum?>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2
+                             {
+                                 ParentReadOnlyDictionaryInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyDictionary<bool?, bool?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyDictionary<int?, int?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyDictionary<CustomEnum?, CustomEnum?>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyDictionary<bool?, bool?>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyDictionary<int?, int?>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyDictionary<Guid?, Guid?>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyDictionary<CustomEnum?, CustomEnum?>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum?, CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetReadOnlyDictionaryOfNullableChild1),
+                        typeof(ModelValidationPublicSetReadOnlyDictionaryOfNullableChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetReadOnlyDictionaryOfNullableParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyDictionary
+                             {
+                                 ReadOnlyDictionaryInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyDictionary<bool, bool>>(),
+                                 ReadOnlyDictionaryInterfaceOfIntProperty                             = A.Dummy<IReadOnlyDictionary<int, int>>(),
+                                 ReadOnlyDictionaryInterfaceOfStringProperty                          = A.Dummy<IReadOnlyDictionary<string, string>>(),
+                                 ReadOnlyDictionaryInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyDictionary<Guid, Guid>>(),
+                                 ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyDictionary<CustomEnum, CustomEnum>>(),
+                                 ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum>>(),
+                                 ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyDictionary<CustomClass, CustomClass>>(),
+                                 ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyDictionary<CustomBaseClass, CustomBaseClass>>(),
+                                 ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyDictionaryChild1
+                             {
+                                 ParentReadOnlyDictionaryInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyDictionary<bool, bool>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfIntProperty                             = A.Dummy<IReadOnlyDictionary<int, int>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfStringProperty                          = A.Dummy<IReadOnlyDictionary<string, string>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyDictionary<Guid, Guid>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyDictionary<CustomEnum, CustomEnum>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyDictionary<CustomClass, CustomClass>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyDictionary<CustomBaseClass, CustomBaseClass>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyDictionary<bool, bool>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfIntProperty                             = A.Dummy<IReadOnlyDictionary<int, int>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfStringProperty                          = A.Dummy<IReadOnlyDictionary<string, string>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyDictionary<Guid, Guid>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyDictionary<CustomEnum, CustomEnum>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyDictionary<CustomClass, CustomClass>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyDictionary<CustomBaseClass, CustomBaseClass>>(),
+                                 Child1ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyDictionaryChild2
+                             {
+                                 ParentReadOnlyDictionaryInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyDictionary<bool, bool>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfIntProperty                             = A.Dummy<IReadOnlyDictionary<int, int>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfStringProperty                          = A.Dummy<IReadOnlyDictionary<string, string>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyDictionary<Guid, Guid>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyDictionary<CustomEnum, CustomEnum>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyDictionary<CustomClass, CustomClass>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyDictionary<CustomBaseClass, CustomBaseClass>>(),
+                                 ParentReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyDictionary<bool, bool>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfIntProperty                             = A.Dummy<IReadOnlyDictionary<int, int>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfStringProperty                          = A.Dummy<IReadOnlyDictionary<string, string>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyDictionary<Guid, Guid>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyDictionary<CustomEnum, CustomEnum>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyDictionary<CustomFlagsEnum, CustomFlagsEnum>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyDictionary<CustomClass, CustomClass>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyDictionary<CustomBaseClass, CustomBaseClass>>(),
+                                 Child2ReadOnlyDictionaryInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyDictionary<CustomGenericClass<CustomClass>, CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetReadOnlyDictionaryChild1),
+                        typeof(ModelValidationPublicSetReadOnlyDictionaryChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetReadOnlyDictionaryParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyListOfNullable
+                             {
+                                 ReadOnlyListInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyList<bool?>>(),
+                                 ReadOnlyListInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyList<int?>>(),
+                                 ReadOnlyListInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyList<Guid?>>(),
+                                 ReadOnlyListInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyList<DateTime?>>(),
+                                 ReadOnlyListInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyList<CustomEnum?>>(),
+                                 ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyList<CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyListOfNullableChild1
+                             {
+                                 ParentReadOnlyListInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyList<bool?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyList<int?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyList<Guid?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyList<DateTime?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyList<CustomEnum?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyList<CustomFlagsEnum?>>(),
+                                 Child1ReadOnlyListInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyList<bool?>>(),
+                                 Child1ReadOnlyListInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyList<int?>>(),
+                                 Child1ReadOnlyListInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyList<Guid?>>(),
+                                 Child1ReadOnlyListInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyList<DateTime?>>(),
+                                 Child1ReadOnlyListInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyList<CustomEnum?>>(),
+                                 Child1ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyList<CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyListOfNullableChild2
+                             {
+                                 ParentReadOnlyListInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyList<bool?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyList<int?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyList<Guid?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyList<DateTime?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyList<CustomEnum?>>(),
+                                 ParentReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyList<CustomFlagsEnum?>>(),
+                                 Child2ReadOnlyListInterfaceOfNullableBoolProperty            = A.Dummy<IReadOnlyList<bool?>>(),
+                                 Child2ReadOnlyListInterfaceOfNullableIntProperty             = A.Dummy<IReadOnlyList<int?>>(),
+                                 Child2ReadOnlyListInterfaceOfNullableGuidProperty            = A.Dummy<IReadOnlyList<Guid?>>(),
+                                 Child2ReadOnlyListInterfaceOfNullableDateTimeProperty        = A.Dummy<IReadOnlyList<DateTime?>>(),
+                                 Child2ReadOnlyListInterfaceOfNullableCustomEnumProperty      = A.Dummy<IReadOnlyList<CustomEnum?>>(),
+                                 Child2ReadOnlyListInterfaceOfNullableCustomFlagsEnumProperty = A.Dummy<IReadOnlyList<CustomFlagsEnum?>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetReadOnlyListOfNullableChild1),
+                        typeof(ModelValidationPublicSetReadOnlyListOfNullableChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetReadOnlyListOfNullableParent)AD.ummy(randomType);
+
+                    return result;
+                });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyList
+                             {
+                                 ReadOnlyListInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyList<bool>>(),
+                                 ReadOnlyListInterfaceOfIntProperty                             = A.Dummy<IReadOnlyList<int>>(),
+                                 ReadOnlyListInterfaceOfStringProperty                          = A.Dummy<IReadOnlyList<string>>(),
+                                 ReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyList<Guid>>(),
+                                 ReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyList<DateTime>>(),
+                                 ReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyList<CustomEnum>>(),
+                                 ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyList<CustomFlagsEnum>>(),
+                                 ReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyList<CustomClass>>(),
+                                 ReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyList<CustomBaseClass>>(),
+                                 ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyList<CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyListChild1
+                             {
+                                 ParentReadOnlyListInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyList<bool>>(),
+                                 ParentReadOnlyListInterfaceOfIntProperty                             = A.Dummy<IReadOnlyList<int>>(),
+                                 ParentReadOnlyListInterfaceOfStringProperty                          = A.Dummy<IReadOnlyList<string>>(),
+                                 ParentReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyList<Guid>>(),
+                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyList<DateTime>>(),
+                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyList<CustomEnum>>(),
+                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyList<CustomFlagsEnum>>(),
+                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyList<CustomClass>>(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyList<CustomBaseClass>>(),
+                                 ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyList<CustomGenericClass<CustomClass>>>(),
+                                 Child1ReadOnlyListInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyList<bool>>(),
+                                 Child1ReadOnlyListInterfaceOfIntProperty                             = A.Dummy<IReadOnlyList<int>>(),
+                                 Child1ReadOnlyListInterfaceOfStringProperty                          = A.Dummy<IReadOnlyList<string>>(),
+                                 Child1ReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyList<Guid>>(),
+                                 Child1ReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyList<DateTime>>(),
+                                 Child1ReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyList<CustomEnum>>(),
+                                 Child1ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyList<CustomFlagsEnum>>(),
+                                 Child1ReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyList<CustomClass>>(),
+                                 Child1ReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyList<CustomBaseClass>>(),
+                                 Child1ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyList<CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () => new ModelValidationPublicSetReadOnlyListChild2
+                             {
+                                 ParentReadOnlyListInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyList<bool>>(),
+                                 ParentReadOnlyListInterfaceOfIntProperty                             = A.Dummy<IReadOnlyList<int>>(),
+                                 ParentReadOnlyListInterfaceOfStringProperty                          = A.Dummy<IReadOnlyList<string>>(),
+                                 ParentReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyList<Guid>>(),
+                                 ParentReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyList<DateTime>>(),
+                                 ParentReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyList<CustomEnum>>(),
+                                 ParentReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyList<CustomFlagsEnum>>(),
+                                 ParentReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyList<CustomClass>>(),
+                                 ParentReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyList<CustomBaseClass>>(),
+                                 ParentReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyList<CustomGenericClass<CustomClass>>>(),
+                                 Child2ReadOnlyListInterfaceOfBoolProperty                            = A.Dummy<IReadOnlyList<bool>>(),
+                                 Child2ReadOnlyListInterfaceOfIntProperty                             = A.Dummy<IReadOnlyList<int>>(),
+                                 Child2ReadOnlyListInterfaceOfStringProperty                          = A.Dummy<IReadOnlyList<string>>(),
+                                 Child2ReadOnlyListInterfaceOfGuidProperty                            = A.Dummy<IReadOnlyList<Guid>>(),
+                                 Child2ReadOnlyListInterfaceOfDateTimeProperty                        = A.Dummy<IReadOnlyList<DateTime>>(),
+                                 Child2ReadOnlyListInterfaceOfCustomEnumProperty                      = A.Dummy<IReadOnlyList<CustomEnum>>(),
+                                 Child2ReadOnlyListInterfaceOfCustomFlagsEnumProperty                 = A.Dummy<IReadOnlyList<CustomFlagsEnum>>(),
+                                 Child2ReadOnlyListInterfaceOfCustomClassProperty                     = A.Dummy<IReadOnlyList<CustomClass>>(),
+                                 Child2ReadOnlyListInterfaceOfCustomBaseClassProperty                 = A.Dummy<IReadOnlyList<CustomBaseClass>>(),
+                                 Child2ReadOnlyListInterfaceOfCustomGenericClassOfCustomClassProperty = A.Dummy<IReadOnlyList<CustomGenericClass<CustomClass>>>(),
+                             });
+
+            AutoFixtureBackedDummyFactory.AddDummyCreator(
+                () =>
+                {
+                    var availableTypes = new[]
+                    {
+                        typeof(ModelValidationPublicSetReadOnlyListChild1),
+                        typeof(ModelValidationPublicSetReadOnlyListChild2)
+                    };
+
+                    var randomIndex = ThreadSafeRandom.Next(0, availableTypes.Length);
+
+                    var randomType = availableTypes[randomIndex];
+
+                    var result = (ModelValidationPublicSetReadOnlyListParent)AD.ummy(randomType);
 
                     return result;
                 });

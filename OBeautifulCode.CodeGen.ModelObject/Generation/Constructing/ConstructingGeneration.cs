@@ -57,6 +57,9 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             var referenceObjectDummyCode = "var referenceObject = A.Dummy<[model-type-name-in-code-here]>();" + Environment.NewLine + Environment.NewLine + "                        ";
 
+            // IMPORTANT: All of the below scenarios mirror the ones in GetSelfValidationFailures() validation.
+            // Maybe in the future we'll harmonize those code paths, but for now, if something changes here
+            // it should be reflected back in the GetSelfValidationFailures() scenarios.
             foreach (var parameter in parameters)
             {
                 // If the parameter is optional and it's default value is null
@@ -65,11 +68,11 @@ namespace OBeautifulCode.CodeGen.ModelObject
                 // (e.g. if a string is set to a constant value then we validate that it cannot be assigned to null).
                 var isOptionalWithNullDefault = parameter.IsOptional && (parameter.RawDefaultValue == null);
 
-                // Don't test for null value on Nullable types; often enough it's ok for those to be null.
                 var parameterType = parameter.ParameterType;
 
                 if ((!parameterType.IsValueType) && (!isOptionalWithNullDefault))
                 {
+                    // Don't test for null value on Nullable types; often enough it's ok for those to be null.
                     var referenceObjectUsed = false;
 
                     var parametersCode = parameters.Select(_ =>

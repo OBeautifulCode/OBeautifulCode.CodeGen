@@ -1,0 +1,1 @@
+﻿        private static readonly SelfValidationTestScenarios<[model-type-name-in-code-here]> SelfValidationTestScenarios = new SelfValidationTestScenarios<[model-type-name-in-code-here]>()[self-validation-test-scenarios-here];

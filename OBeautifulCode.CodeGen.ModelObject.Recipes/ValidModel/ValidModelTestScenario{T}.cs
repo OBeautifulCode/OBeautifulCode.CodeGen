@@ -9,7 +9,6 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
-    using global::System;
     using global::System.Diagnostics.CodeAnalysis;
     using OBeautifulCode.CodeAnalysis.Recipes;
 

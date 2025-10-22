@@ -9,7 +9,6 @@
 
 namespace OBeautifulCode.CodeGen.ModelObject.Recipes
 {
-    using global::System;
     using OBeautifulCode.Assertion.Recipes;
 
     /// <summary>
@@ -36,7 +35,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
             T systemUnderTest)
         {
             new { id }.AsTest().Must().NotBeNullNorWhiteSpace();
-            new { systemUnderTest }.AsTest().Must().NotBeNull();
+            new { systemUnderTest }.AsTest().Must().NotBeNull(id);
 
             this.Id = id;
             this.SystemUnderTest = systemUnderTest;
