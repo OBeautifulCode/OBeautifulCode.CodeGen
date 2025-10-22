@@ -348,6 +348,212 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     SystemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>(),
                 });
 
+        private static readonly SelfValidationTestScenarios<ModelPublicSetUtcDateTime> SelfValidationTestScenarios = new SelfValidationTestScenarios<ModelPublicSetUtcDateTime>()
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item3Utc = DateTime.Now;
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item3Utc' is not a UTC DateTime (it's Local) scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item3Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item3Utc", "Kind that is not DateTimeKind.Utc", "DateTimeKind.Local", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item3Utc = DateTime.UtcNow.ToUnspecified();
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item3Utc' is not a UTC DateTime (it's Unspecified) scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item3Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item3Utc", "Kind that is not DateTimeKind.Utc", "DateTimeKind.Unspecified", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item4Utc = DateTime.Now;
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item4Utc' is not a UTC DateTime (it's Local) scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item4Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item4Utc", "Kind that is not DateTimeKind.Utc", "DateTimeKind.Local", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item4Utc = DateTime.UtcNow.ToUnspecified();
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item4Utc' is not a UTC DateTime (it's Unspecified) scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item4Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item4Utc", "Kind that is not DateTimeKind.Utc", "DateTimeKind.Unspecified", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item5Utc = null;
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item5Utc' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item5Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item5Utc", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item5Utc = new List<DateTime>();
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item5Utc' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item5Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item5Utc", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item6Utc = null;
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item6Utc' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item6Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item6Utc", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item6Utc = new List<DateTime?>();
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item6Utc' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item6Utc" },
+                        ExpectedFailureMessageContains = new[] { "Item6Utc", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item7 = null;
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item7' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item7" },
+                        ExpectedFailureMessageContains = new[] { "Item7", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item7 = new List<DateTime>();
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item7' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item7" },
+                        ExpectedFailureMessageContains = new[] { "Item7", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item8 = null;
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item8' is null scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item8" },
+                        ExpectedFailureMessageContains = new[] { "Item8", "null", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                })
+            .AddScenario(() =>
+                {
+                    var systemUnderTest = A.Dummy<ModelPublicSetUtcDateTime>();
+
+                    systemUnderTest.Item8 = new List<DateTime?>();
+
+                    var result = new SelfValidationTestScenario<ModelPublicSetUtcDateTime>
+                    {
+                        Name = "GetSelfValidationFailures() should return a failure when property 'Item8' is an empty enumerable scenario",
+                        SystemUnderTest = systemUnderTest,
+                        ExpectedFailurePropertyNames = new[] { "Item8" },
+                        ExpectedFailureMessageContains = new[] { "Item8", "is an empty enumerable", },
+                        ScenarioPassesWhen = SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation,
+                    };
+
+                    return result;
+                });
+
         [SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
         [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
         public static class Structural
@@ -1491,6 +1697,66 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
 
                     // Assert
                     actual.AsTest().Must().BeEmptyEnumerable(because: scenario.Id);
+                }
+            }
+
+            [Fact]
+            [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
+            [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
+            [SuppressMessage("Microsoft.Naming", "CA1715:IdentifiersShouldHaveCorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
+            [SuppressMessage("Microsoft.Naming", "CA1719:ParameterNamesShouldNotMatchMemberNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1720:IdentifiersShouldNotContainTypeNames")]
+            [SuppressMessage("Microsoft.Naming", "CA1722:IdentifiersShouldNotHaveIncorrectPrefix")]
+            [SuppressMessage("Microsoft.Naming", "CA1725:ParameterNamesShouldMatchBaseDeclaration")]
+            [SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
+            [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
+            public static void GetSelfValidationFailures___Should_return_failures___When_properties_are_invalid()
+            {
+                var scenarios = SelfValidationTestScenarios.ValidateAndPrepareForTesting();
+
+                foreach (var scenario in scenarios)
+                {
+                    // Arrange, Act
+                    var actual = scenario.SystemUnderTest.GetSelfValidationFailures();
+
+                    // Assert
+                    var actualFailures = (actual ?? new SelfValidationFailure[0])
+                        .Where(_ => _ != null)
+                        .ToList();
+
+                    actualFailures.AsTest().Must().NotBeEmptyEnumerable(because: scenario.Id);
+
+                    var countOfActualFailuresThatMeetScenarioExpectedFailure = 0;
+                    foreach (var actualFailure in actualFailures)
+                    {
+                        if (actualFailure.PropertyNames.IsUnorderedEqualTo(scenario.ExpectedFailurePropertyNames) &&
+                            ((scenario.ExpectedFailureMessageEquals == null) || (actualFailure.Message == scenario.ExpectedFailureMessageEquals)) &&
+                            (scenario.ExpectedFailureMessageContains ?? new string[0]).All(_ => actualFailure.Message?.Contains(_) ?? false))
+                        {
+                            countOfActualFailuresThatMeetScenarioExpectedFailure++;
+                        }
+                    }
+
+                    if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AtLeastOneFailureMeetsExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeGreaterThan(0, because: scenario.Id);
+                    }
+                    else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.OnlyOneFailureMeetsExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(1, because: scenario.Id);
+                    }
+                    else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AllFailuresMeetExpectation)
+                    {
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(scenarios.Count, because: scenario.Id);
+                    }
+                    else
+                    {
+                        throw new NotSupportedException(Invariant($"This {nameof(SelfValidationTestScenarioPassesWhen)} is not supported: {scenario.ScenarioPassesWhen}."));
+                    }
                 }
             }
         }

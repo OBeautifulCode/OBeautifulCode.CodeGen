@@ -14,6 +14,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Linq;
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Collection.Recipes;
+    using OBeautifulCode.DateTime.Recipes;
     using OBeautifulCode.Enum.Recipes;
     using OBeautifulCode.Type.Recipes;
     using static System.FormattableString;
@@ -262,7 +263,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
                             KeyMethodKinds.Both,
                             CodeSnippetKind.SelfValidationTestScenario)
                         .Replace(Tokens.TestScenarioNameToken, Invariant($"GetSelfValidationFailures() should return a failure when property '{Tokens.PropertyNameToken}' is not a UTC DateTime (it's Unspecified) scenario"))
-                        .Replace(Tokens.InvalidPropertyValueToken, Invariant($"{nameof(DateTime)}.{nameof(DateTime.UtcNow)}"))
+                        .Replace(Tokens.InvalidPropertyValueToken, Invariant($"{nameof(DateTime)}.{nameof(DateTime.UtcNow)}.{nameof(DateTimeExtensions.ToUnspecified)}()"))
                         .Replace(Tokens.ValidationFailureMessageContainsToken, "\"Kind that is not DateTimeKind.Utc\", \"DateTimeKind.Unspecified\"");
 
                     result.Add(scenario);

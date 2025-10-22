@@ -593,13 +593,5 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
             return result;
         }
-
-        /// <inheritdoc />
-        public IReadOnlyList<SelfValidationFailure> GetSelfValidationFailures()
-        {
-            var result = new SelfValidationFailure[0];
-
-            return result;
-        }
     }
 }

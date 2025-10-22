@@ -11,7 +11,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
-
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
@@ -20,9 +19,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
     using OBeautifulCode.String.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
-
     using Xunit;
-
     using static System.FormattableString;
 
     public class CodeGeneratorTest
