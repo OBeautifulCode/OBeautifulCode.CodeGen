@@ -178,7 +178,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             };
 
             // Act
-            var actuals = tests.Select(_ => Record.Exception(() => _.Type.GenerateForModel(GenerateFor.AllPossibleCode))).ToList();
+            var actuals = tests.Select(_ => Record.Exception(() => _.Type.GenerateForModel(GenerateFor.AllPossibleCode, assembly => null))).ToList();
 
             // Assert
             for (int x = 0; x < tests.Length; x++)
@@ -436,7 +436,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
                     throw new NotSupportedException("This kind is not supported: " + modelOrTest);
             }
 
-            var generatedCode = modelType.GenerateForModel(generateFor);
+            var generatedCode = modelType.GenerateForModel(generateFor, assembly => null);
 
             if (WriteFiles)
             {
@@ -1050,7 +1050,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
             {
                 if (hierarchyKind != HierarchyKind.AbstractBaseRoot)
                 {
-                    var equalityTestFields = modelName.GetModelType().GenerateEqualityTestFieldsInUserCode();
+                    var equalityTestFields = modelName.GetModelType().GenerateEqualityTestFieldsInUserCode(assembly => null);
 
                     var statements = new List<string>
                     {
@@ -1209,7 +1209,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         {
             if (WriteFiles)
             {
-                var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenSolution");
+                var code = CodeGenerator.GenerateDummyFactory(types, typeof(CodeGeneratorTest).Namespace, nameof(CodeGenDummyFactory), "OBeautifulCodeCodeGenSolution", assembly => null);
 
                 File.WriteAllText(Settings.DummyFactoryFilePath, code, Settings.Encoding);
             }

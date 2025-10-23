@@ -11,17 +11,15 @@ namespace OBeautifulCode.CodeGen.Console
     using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Text;
-
     using NewtonsoftFork.Json.Linq;
-
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.CodeGen.ModelObject;
     using OBeautifulCode.Collection.Recipes;
     using OBeautifulCode.Reflection.Recipes;
     using OBeautifulCode.Type;
     using OBeautifulCode.Type.Recipes;
-
     using static System.FormattableString;
 
     /// <summary>
@@ -81,8 +79,16 @@ namespace OBeautifulCode.CodeGen.Console
 
             CopyMissingAssembliesFromProjectOutputDirectoryToRunningDirectory(projectOutputDirectory, runningDirectory);
 
-            using (AssemblyLoader.CreateAndLoadFromDirectory(runningDirectory))
+            using (var assemblyLoader = AssemblyLoader.CreateAndLoadFromDirectory(runningDirectory))
             {
+                string GetAssemblyMissingLocationFunc(Assembly assembly)
+                {
+                    // ReSharper disable once AccessToDisposedClosure
+                    var assemblyLocation = assemblyLoader.FilePathToAssemblyMap.Where(_ => _.Value == assembly).Select(_ => _.Key).FirstOrDefault();
+
+                    return assemblyLocation;
+                }
+
                 var typesToCheck = AssemblyLoader
                     .GetLoadedAssemblies()
                     .Where(_ => (_.GetName().Name ?? string.Empty).StartsWith(projectName, StringComparison.Ordinal))
@@ -112,11 +118,11 @@ namespace OBeautifulCode.CodeGen.Console
                         {
                             Console.WriteLine("Generating code for type: " + type.ToStringReadable());
 
-                            WriteModelFile(type, projectSourceFilePaths);
+                            WriteModelFile(type, projectSourceFilePaths, GetAssemblyMissingLocationFunc);
 
                             if (hasTestProject)
                             {
-                                WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder, includeSerializationTesting);
+                                WriteTestFiles(type, testProjectDirectory, testProjectSourceFilePaths, testNamespace, fileHeaderBuilder, includeSerializationTesting, GetAssemblyMissingLocationFunc);
                             }
 
                             if (typeof(IModelViaCodeGen).IsAssignableFrom(type))
@@ -137,7 +143,15 @@ namespace OBeautifulCode.CodeGen.Console
 
                 if (hasDummyFactory)
                 {
-                    WriteDummyFactoryFile(typesForDummyFactory, dummyFactoryFilePath, testNamespace, testProjectDirectory, testProjectSourceFilePaths, fileHeaderBuilder, recipeConditionalCompilationSymbol);
+                    WriteDummyFactoryFile(
+                        typesForDummyFactory,
+                        dummyFactoryFilePath,
+                        testNamespace,
+                        testProjectDirectory,
+                        testProjectSourceFilePaths,
+                        fileHeaderBuilder,
+                        recipeConditionalCompilationSymbol,
+                        GetAssemblyMissingLocationFunc);
                 }
             }
         }
@@ -226,9 +240,10 @@ namespace OBeautifulCode.CodeGen.Console
 
         private static void WriteModelFile(
             Type type,
-            IReadOnlyCollection<string> projectSourceFilePaths)
+            IReadOnlyCollection<string> projectSourceFilePaths,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
-            var modelPartialClassContents = type.GenerateForModel(GenerateFor.ModelImplementationPartialClass);
+            var modelPartialClassContents = type.GenerateForModel(GenerateFor.ModelImplementationPartialClass, getAssemblyMissingLocationFunc);
 
             var modelFileName = type.ToStringXmlDoc().Replace(" ", string.Empty) + ".cs";
 
@@ -255,7 +270,8 @@ namespace OBeautifulCode.CodeGen.Console
             IReadOnlyCollection<string> testProjectSourceFilePaths,
             string testNamespace,
             Func<string, string> fileHeaderBuilder,
-            bool includeSerializationTesting)
+            bool includeSerializationTesting,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             var modelTestFileNameWithoutExtension = type.ToStringXmlDoc().Replace(" ", string.Empty) + "Test";
 
@@ -285,7 +301,7 @@ namespace OBeautifulCode.CodeGen.Console
 
             var modelTestDesignerFilePath = GetDesignerFilePath(modelTestFilePath);
 
-            var testPartialClassContents = type.GenerateForModel(includeSerializationTesting ? GenerateFor.ModelImplementationTestsPartialClassWithSerialization : GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization);
+            var testPartialClassContents = type.GenerateForModel(includeSerializationTesting ? GenerateFor.ModelImplementationTestsPartialClassWithSerialization : GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization, getAssemblyMissingLocationFunc);
 
             WriteFileWithWindowsNewLines(modelTestDesignerFilePath, testPartialClassContents);
         }
@@ -368,14 +384,15 @@ namespace OBeautifulCode.CodeGen.Console
             string testProjectDirectory,
             IReadOnlyCollection<string> testProjectSourceFilePaths,
             Func<string, string> fileHeaderBuilder,
-            string recipeConditionalCompilationSymbol)
+            string recipeConditionalCompilationSymbol,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             var dummyFactoryDesignerFilePath = GetDesignerFilePath(dummyFactoryFilePath);
 
             // ReSharper disable once PossibleNullReferenceException
             var dummyFactoryTypeName = Path.GetFileName(dummyFactoryFilePath).Replace(".cs", string.Empty);
 
-            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(typesForDummyFactory, testNamespace, dummyFactoryTypeName, recipeConditionalCompilationSymbol);
+            var dummyFactoryDesignerFileContents = CodeGenerator.GenerateDummyFactory(typesForDummyFactory, testNamespace, dummyFactoryTypeName, recipeConditionalCompilationSymbol, getAssemblyMissingLocationFunc);
 
             WriteFileWithWindowsNewLines(dummyFactoryDesignerFilePath, dummyFactoryDesignerFileContents);
 

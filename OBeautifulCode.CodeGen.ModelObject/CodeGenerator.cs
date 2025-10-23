@@ -10,6 +10,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using System.Reflection;
     using OBeautifulCode.Assertion.Recipes;
     using OBeautifulCode.CodeAnalysis.Recipes;
     using OBeautifulCode.Type;
@@ -39,15 +40,17 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// </summary>
         /// <typeparam name="T">The type of the model object.</typeparam>
         /// <param name="kind">Specifies the kind of code to generate.</param>
+        /// <param name="getAssemblyMissingLocationFunc">Function that gets the location from an assembly, when an assembly is missing a <see cref="Assembly.Location"/> or null if it cannot be determined.</param>
         /// <returns>
         /// The generated code.
         /// </returns>
         public static string GenerateForModel<T>(
-            GenerateFor kind)
+            GenerateFor kind,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             var type = typeof(T);
 
-            var result = type.GenerateForModel(kind);
+            var result = type.GenerateForModel(kind, getAssemblyMissingLocationFunc);
 
             return result;
         }
@@ -57,16 +60,18 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// </summary>
         /// <param name="type">The type of the model object.</param>
         /// <param name="kind">Specifies the kind of code to generate.</param>
+        /// <param name="getAssemblyMissingLocationFunc">Function that gets the location from an assembly, when an assembly is missing a <see cref="Assembly.Location"/> or null if it cannot be determined.</param>
         /// <returns>
         /// The generated code.
         /// </returns>
         public static string GenerateForModel(
             this Type type,
-            GenerateFor kind)
+            GenerateFor kind,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             new { type }.AsArg().Must().NotBeNull();
 
-            var modelType = type.ToModelType();
+            var modelType = type.ToModelType(getAssemblyMissingLocationFunc);
 
             var generatedCode = new List<string>();
 
@@ -79,7 +84,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
 
             if (kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithSerialization) || kind.HasFlag(GenerateFor.ModelImplementationTestsPartialClassWithoutSerialization))
             {
-                var tests = modelType.ExampleClosedModelType.ToModelType().GenerateCodeForTests(kind);
+                var tests = modelType.ExampleClosedModelType.ToModelType(getAssemblyMissingLocationFunc).GenerateCodeForTests(kind);
 
                 generatedCode.Add(tests);
             }
@@ -98,6 +103,7 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// <param name="dummyFactoryTypeNamespace">The dummy factory type's namespace.</param>
         /// <param name="dummyFactoryTypeName">The dummy factory type name.</param>
         /// <param name="recipeConditionalCompilationSymbol">The conditional compilation symbol to use for recipes.</param>
+        /// <param name="getAssemblyMissingLocationFunc">Function that gets the location from an assembly, when an assembly is missing a <see cref="Assembly.Location"/> or null if it cannot be determined.</param>
         /// <returns>
         /// The dummy factory code.
         /// </returns>
@@ -105,13 +111,14 @@ namespace OBeautifulCode.CodeGen.ModelObject
             IReadOnlyCollection<Type> types,
             string dummyFactoryTypeNamespace,
             string dummyFactoryTypeName,
-            string recipeConditionalCompilationSymbol)
+            string recipeConditionalCompilationSymbol,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             new { types }.Must().NotBeNull().And().NotContainAnyNullElements();
             new { dummyFactoryTypeNamespace }.Must().NotBeNullNorWhiteSpace();
             new { dummyFactoryTypeName }.Must().NotBeNullNorWhiteSpace();
 
-            var modelTypes = types.Select(_ => _.ToModelType().ExampleClosedModelType.ToModelType()).ToList();
+            var modelTypes = types.Select(_ => _.ToModelType(getAssemblyMissingLocationFunc).ExampleClosedModelType.ToModelType(getAssemblyMissingLocationFunc)).ToList();
 
             var result = ModelImplementationGeneration.GenerateCodeForDummyFactory(modelTypes, dummyFactoryTypeNamespace, dummyFactoryTypeName, recipeConditionalCompilationSymbol);
 
@@ -142,23 +149,26 @@ namespace OBeautifulCode.CodeGen.ModelObject
         /// Generates equality test fields for use in user (non-designer) code.
         /// </summary>
         /// <param name="type">The type of the model object.</param>
+        /// <param name="getAssemblyMissingLocationFunc">Function that gets the location from an assembly, when an assembly is missing a <see cref="Assembly.Location"/> or null if it cannot be determined.</param>
         /// <returns>
         /// The equality test fields for use in user (non-designer) code.
         /// </returns>
         public static string GenerateEqualityTestFieldsInUserCode(
-            this Type type)
+            this Type type,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             new { type }.AsArg().Must().NotBeNull();
 
-            var result = type.ToModelType().GenerateEqualityTestFieldsInUserCode();
+            var result = type.ToModelType(getAssemblyMissingLocationFunc).GenerateEqualityTestFieldsInUserCode();
 
             return result;
         }
 
         private static ModelType ToModelType(
-            this Type type)
+            this Type type,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
-            var result = new ModelType(type);
+            var result = new ModelType(type, getAssemblyMissingLocationFunc);
 
             return result;
         }

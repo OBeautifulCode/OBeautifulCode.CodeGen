@@ -35,9 +35,11 @@ namespace OBeautifulCode.CodeGen
         /// Initializes a new instance of the <see cref="ModelType"/> class.
         /// </summary>
         /// <param name="type">The model type.</param>
+        /// <param name="getAssemblyMissingLocationFunc">Function that gets the location from an assembly, when an assembly is missing a <see cref="Assembly.Location"/> or null if it cannot be determined.</param>
         [SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = ObcSuppressBecause.CA1506_AvoidExcessiveClassCoupling_DisagreeWithAssessment)]
         public ModelType(
-            Type type)
+            Type type,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             new { type }.AsArg().Must().NotBeNull();
 
@@ -100,11 +102,11 @@ namespace OBeautifulCode.CodeGen
             var implementsIDeclareDeepCloneMethod = typeof(IDeclareDeepCloneMethod<>).MakeGenericType(type).IsAssignableFrom(type);
             var implementsIDeclareEqualsMethod = typeof(IDeclareEqualsMethod<>).MakeGenericType(type).IsAssignableFrom(type);
             var implementsIDeclareGetHashCodeMethod = typeof(IDeclareGetHashCodeMethod).IsAssignableFrom(type);
-            var directlyImplementsGetHashCodeMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetHashCodeMethod));
+            var directlyImplementsGetHashCodeMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetHashCodeMethod), getAssemblyMissingLocationFunc);
             var implementsIDeclareToStringMethod = typeof(IDeclareToStringMethod).IsAssignableFrom(type);
-            var directlyImplementsToStringMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareToStringMethod));
+            var directlyImplementsToStringMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareToStringMethod), getAssemblyMissingLocationFunc);
             var implementsIDeclareGetSelfValidationFailuresMethod = typeof(IDeclareGetSelfValidationFailuresMethod).IsAssignableFrom(type);
-            var directlyImplementsGetSelfValidationFailuresMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetSelfValidationFailuresMethod));
+            var directlyImplementsGetSelfValidationFailuresMethodResult = DirectlyImplementsKeyMethodInterface(type, typeof(IDeclareGetSelfValidationFailuresMethod), getAssemblyMissingLocationFunc);
 
             // Note that we throw for most of these key method interfaces when the type is abstract.
             // And per other checks we've already performed, we don't allow a concrete class to derive from another concrete class.
@@ -1263,7 +1265,8 @@ namespace OBeautifulCode.CodeGen
 
         private static DirectlyImplementsKeyMethodInterfaceResult DirectlyImplementsKeyMethodInterface(
             Type modelType,
-            Type interfaceType)
+            Type interfaceType,
+            Func<Assembly, string> getAssemblyMissingLocationFunc)
         {
             if (!interfaceType.IsInterface)
             {
@@ -1274,7 +1277,17 @@ namespace OBeautifulCode.CodeGen
             var metadataReferences =
                 GetAllTypesInUse(modelType)
                     .Concat(new[] { interfaceType })
-                    .Select(_ => _.Assembly.Location)
+                    .Select(_ =>
+                    {
+                        var assemblyFilePath = _.Assembly.Location;
+
+                        if (string.IsNullOrWhiteSpace(assemblyFilePath))
+                        {
+                            assemblyFilePath = getAssemblyMissingLocationFunc(_.Assembly);
+                        }
+
+                        return assemblyFilePath;
+                    })
                     .Where(_ => !string.IsNullOrWhiteSpace(_))
                     .Distinct()
                     .Select(_ => MetadataReference.CreateFromFile(_))
