@@ -1275,6 +1275,7 @@ namespace OBeautifulCode.CodeGen
                 GetAllTypesInUse(modelType)
                     .Concat(new[] { interfaceType })
                     .Select(_ => _.Assembly.Location)
+                    .Where(_ => !string.IsNullOrWhiteSpace(_))
                     .Distinct()
                     .Select(_ => MetadataReference.CreateFromFile(_))
                     .ToList();
