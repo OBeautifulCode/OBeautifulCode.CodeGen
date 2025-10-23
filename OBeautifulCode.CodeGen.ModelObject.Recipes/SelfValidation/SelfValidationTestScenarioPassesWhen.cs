@@ -18,7 +18,6 @@ namespace OBeautifulCode.CodeGen.ModelObject.Recipes
     /// to determine whether the scenario has passed or failed.
     /// </remarks>
 #if !OBeautifulCodeCodeGenSolution
-    [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
     [global::System.CodeDom.Compiler.GeneratedCode("OBeautifulCode.CodeGen.ModelObject.Recipes", "See package version number")]
     internal
 #else
