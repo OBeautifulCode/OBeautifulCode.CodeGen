@@ -194,7 +194,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     {
                         if (actualFailure.PropertyNames.IsUnorderedEqualTo(scenario.ExpectedFailurePropertyNames) &&
                             ((scenario.ExpectedFailureMessageEquals == null) || (actualFailure.Message == scenario.ExpectedFailureMessageEquals)) &&
-                            (scenario.ExpectedFailureMessageContains ?? new string[0]).All(_ => actualFailure.Message?.Contains(_) ?? false))
+                            (scenario.ExpectedFailureMessageContains ?? new string[0]).All(_ => actualFailure.Message.Contains(_)))
                         {
                             countOfActualFailuresThatMeetScenarioExpectedFailure++;
                         }
@@ -210,7 +210,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     }
                     else if (scenario.ScenarioPassesWhen == SelfValidationTestScenarioPassesWhen.AllFailuresMeetExpectation)
                     {
-                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(scenarios.Count, because: scenario.Id);
+                        new { countOfActualFailuresThatMeetScenarioExpectedFailure }.AsTest().Must().BeEqualTo(actualFailures.Count, because: scenario.Id);
                     }
                     else
                     {
