@@ -18,7 +18,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
 
     public static class GetValidationFailuresTest
     {
-        public static readonly ValidatableObject InvalidSystemUnderTest = new ValidatableObject
+        private static readonly ValidatableObject InvalidSystemUnderTest = new ValidatableObject
         {
             ValidatableNumber1 = new ValidatableNumeric
             {
@@ -459,7 +459,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test
         }
 
         [Fact]
-        public static void GetValidationFailures___Should_format_multi_property_failure_into_ValidationFailure_Path____When_a_single_SelfValidationFailure_has_multiple_properties()
+        public static void GetValidationFailures___Should_format_multiple_property_failure_into_ValidationFailure_Path____When_a_single_SelfValidationFailure_has_multiple_properties()
         {
             // Arrange
             var systemUnderTest = new ValidatableComboProperties();
