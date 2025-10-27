@@ -1,5 +1,5 @@
 ﻿[nested-test-class-code-analysis-suppressions-here]
-        public static class Equality
+        public static class EqualityTesting
         {
             [Fact]
 [test-method-code-analysis-suppressions-here]

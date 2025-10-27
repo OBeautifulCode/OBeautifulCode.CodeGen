@@ -1,5 +1,5 @@
 ﻿[nested-test-class-code-analysis-suppressions-here]
-        public static class StringRepresentation
+        public static class StringRepresentationTesting
         {
             [Fact]
 [test-method-code-analysis-suppressions-here]

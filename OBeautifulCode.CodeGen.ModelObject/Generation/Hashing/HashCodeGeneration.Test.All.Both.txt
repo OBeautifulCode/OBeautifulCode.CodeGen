@@ -1,5 +1,5 @@
 ﻿[nested-test-class-code-analysis-suppressions-here]
-        public static class Hashing
+        public static class HashTesting
         {
             [Fact[skip-get-hash-code-test-here]]
 [test-method-code-analysis-suppressions-here]

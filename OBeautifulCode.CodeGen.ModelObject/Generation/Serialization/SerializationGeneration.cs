@@ -7,10 +7,7 @@
 namespace OBeautifulCode.CodeGen.ModelObject
 {
     using System;
-    using System.Linq;
-
     using OBeautifulCode.Assertion.Recipes;
-    using OBeautifulCode.Collection.Recipes;
 
     /// <summary>
     /// Generates code related to serialization.
