@@ -812,7 +812,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = (ModelAllPublicSetNullableChild2)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
 
                     // Assert
-                    foreach(var propertyName in propertyNames)
+                    foreach (var propertyName in propertyNames)
                     {
                         var propertyInfo = typeof(ModelAllPublicSetNullableChild2).GetPropertyFiltered(propertyName, MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public);
 

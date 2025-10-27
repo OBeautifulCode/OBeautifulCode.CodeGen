@@ -1246,7 +1246,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = null < scenario.ReferenceObject;
@@ -1274,7 +1274,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject < null;
@@ -1302,7 +1302,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     #pragma warning disable CS1718 // Comparison made to same variable
@@ -1332,7 +1332,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ < scenario.ReferenceObject).ToList();
@@ -1362,7 +1362,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ < scenario.ReferenceObject).ToList();
@@ -1392,7 +1392,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ < scenario.ReferenceObject).ToList();
@@ -1422,7 +1422,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ < scenario.ReferenceObject)).ToList();
@@ -1482,7 +1482,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = null > scenario.ReferenceObject;
@@ -1510,7 +1510,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject > null;
@@ -1538,7 +1538,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     #pragma warning disable CS1718 // Comparison made to same variable
@@ -1568,7 +1568,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ > scenario.ReferenceObject).ToList();
@@ -1598,7 +1598,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ > scenario.ReferenceObject).ToList();
@@ -1628,7 +1628,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ > scenario.ReferenceObject).ToList();
@@ -1658,7 +1658,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ > scenario.ReferenceObject)).ToList();
@@ -1718,7 +1718,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = null <= scenario.ReferenceObject;
@@ -1746,7 +1746,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject <= null;
@@ -1774,7 +1774,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     #pragma warning disable CS1718 // Comparison made to same variable
@@ -1804,7 +1804,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ <= scenario.ReferenceObject).ToList();
@@ -1834,7 +1834,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ <= scenario.ReferenceObject).ToList();
@@ -1864,7 +1864,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ <= scenario.ReferenceObject).ToList();
@@ -1894,7 +1894,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ <= scenario.ReferenceObject)).ToList();
@@ -1954,7 +1954,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = null >= scenario.ReferenceObject;
@@ -1982,7 +1982,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject >= null;
@@ -2010,7 +2010,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     #pragma warning disable CS1718 // Comparison made to same variable
@@ -2040,7 +2040,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => _ >= scenario.ReferenceObject).ToList();
@@ -2070,7 +2070,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _ >= scenario.ReferenceObject).ToList();
@@ -2100,7 +2100,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _ >= scenario.ReferenceObject).ToList();
@@ -2130,7 +2130,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => _ >= scenario.ReferenceObject)).ToList();
@@ -2194,7 +2194,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject.CompareTo(scenario.ReferenceObject);
@@ -2222,7 +2222,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo(_)).ToList();
@@ -2250,7 +2250,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo(scenario.ReferenceObject)).ToList();
@@ -2280,7 +2280,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo(scenario.ReferenceObject)).ToList();
@@ -2310,7 +2310,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo(_))).ToList();
@@ -2367,7 +2367,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject.CompareTo((object)scenario.ReferenceObject);
@@ -2395,7 +2395,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo((object)_)).ToList();
@@ -2423,7 +2423,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo((object)scenario.ReferenceObject)).ToList();
@@ -2453,7 +2453,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo((object)scenario.ReferenceObject)).ToList();
@@ -2483,7 +2483,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo((object)_))).ToList();
@@ -2547,7 +2547,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject.CompareToForRelativeSortOrder(scenario.ReferenceObject);
@@ -2575,7 +2575,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareToForRelativeSortOrder(_)).ToList();
@@ -2603,7 +2603,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder(scenario.ReferenceObject)).ToList();
@@ -2633,7 +2633,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareToForRelativeSortOrder(scenario.ReferenceObject)).ToList();
@@ -2663,7 +2663,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareToForRelativeSortOrder(_))).ToList();

@@ -484,7 +484,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = (ModelPublicSetExpressionBodyChild2)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
 
                     // Assert
-                    foreach(var propertyName in propertyNames)
+                    foreach (var propertyName in propertyNames)
                     {
                         var propertyInfo = typeof(ModelPublicSetExpressionBodyChild2).GetPropertyFiltered(propertyName, MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public);
 

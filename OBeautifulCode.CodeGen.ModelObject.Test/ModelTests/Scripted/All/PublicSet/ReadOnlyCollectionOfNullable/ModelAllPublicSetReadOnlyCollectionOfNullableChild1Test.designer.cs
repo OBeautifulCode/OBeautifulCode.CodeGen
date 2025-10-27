@@ -980,7 +980,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = (ModelAllPublicSetReadOnlyCollectionOfNullableChild1)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
 
                     // Assert
-                    foreach(var propertyName in propertyNames)
+                    foreach (var propertyName in propertyNames)
                     {
                         var propertyInfo = typeof(ModelAllPublicSetReadOnlyCollectionOfNullableChild1).GetPropertyFiltered(propertyName, MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public);
 

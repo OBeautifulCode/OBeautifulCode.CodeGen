@@ -23,7 +23,7 @@
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actual = scenario.ReferenceObject.CompareTo([cast-here]scenario.ReferenceObject);
@@ -39,7 +39,7 @@
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatAreEqualToButNotTheSameAsReferenceObject.Select(_ => scenario.ReferenceObject.CompareTo([cast-here]_)).ToList();
@@ -55,7 +55,7 @@
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreLessThanReferenceObject.Select(_ => _.CompareTo([cast-here]scenario.ReferenceObject)).ToList();
@@ -73,7 +73,7 @@
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals1 = scenario.ObjectsThatAreGreaterThanReferenceObject.Select(_ => _.CompareTo([cast-here]scenario.ReferenceObject)).ToList();
@@ -91,7 +91,7 @@
             {
                 var scenarios = ComparableTestScenarios.ValidateAndPrepareForTesting();
 
-                foreach(var scenario in scenarios)
+                foreach (var scenario in scenarios)
                 {
                     // Arrange, Act
                     var actuals = scenario.ObjectsThatDeriveFromScenarioTypeButAreNotOfTheSameTypeAsReferenceObject.Select(_ => Record.Exception(() => scenario.ReferenceObject.CompareTo([cast-here]_))).ToList();

@@ -1059,7 +1059,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     // Assert
                     actual.AsTest().Must().BeOfType(scenario.ExpectedExceptionType, because: scenario.Id);
 
-                    foreach(var expected in scenario.ExpectedExceptionMessageContains ?? new List<string>())
+                    foreach (var expected in scenario.ExpectedExceptionMessageContains ?? new List<string>())
                     {
                         actual.Message.AsTest().Must().ContainString(expected, because: scenario.Id);
                     }
@@ -1271,7 +1271,7 @@ namespace OBeautifulCode.CodeGen.ModelObject.Test.Test
                     var actual = (ModelAllPrivateSetNone)scenario.DeepCloneWithMethod.Invoke(scenario.SystemUnderTest, new[] { scenario.WithValue });
 
                     // Assert
-                    foreach(var propertyName in propertyNames)
+                    foreach (var propertyName in propertyNames)
                     {
                         var propertyInfo = typeof(ModelAllPrivateSetNone).GetPropertyFiltered(propertyName, MemberRelationships.DeclaredOrInherited, MemberOwners.Instance, MemberAccessModifiers.Public);
 
